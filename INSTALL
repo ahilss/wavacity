@@ -1,0 +1,10 @@
+Compilation and install instructions
+
+
+Compilation instructions for Audacity are provided in the source code:
+* Windows: win\build.txt
+* macOS: mac/build.txt
+* GNU/Linux: linux/build.txt 
+
+You can ask for help with compilation problems at:
+   http://forum.audacityteam.org/viewforum.php?f=19 .
