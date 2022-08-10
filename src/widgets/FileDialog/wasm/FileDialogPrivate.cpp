@@ -170,30 +170,13 @@ void FileDialog::OnOpenFileFailed(const wxString& fileName)
 
 extern "C" {
 
-void EMSCRIPTEN_KEEPALIVE OpenFileCallback(const char *fileName, int size, unsigned char *data) {
-   printf("OpenFile: %s %d %p\n", fileName, size, data);
-
+void EMSCRIPTEN_KEEPALIVE OpenFileCallback(const char *fileName, int retCode) {
    if (g_file_dialog)
    {
-      std::string path = "/tmp/" + std::string(fileName);
-      FILE* f = fopen(path.c_str(), "wb");
-      if (f)
-      {
-         size_t num_written = fwrite(data, 1, size, f);
-         fclose(f);
-
-         if (num_written == size)
-         {
-            g_file_dialog->OnOpenFile(path);
-         }
-         else
-         {
-            g_file_dialog->OnOpenFileFailed(path);
-         }
-      }
-      else
-      {
-         g_file_dialog->OnOpenFileFailed(path);
+      if (retCode == 0) {
+         g_file_dialog->OnOpenFile(fileName);
+      } else {
+         g_file_dialog->OnOpenFileFailed(fileName);
       }
 
       g_file_dialog = NULL;

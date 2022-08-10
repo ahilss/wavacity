@@ -224,6 +224,8 @@ bool DBConnection::Close()
    // are sent our way.  (Though this shouldn't really happen.)
    sqlite3_wal_hook(mDB, nullptr, nullptr);
 
+// Sleep will block the browser main thread
+#ifndef __WXWASM__
    // Display a progress dialog if there's active or pending checkpoints
    if (mCheckpointPending || mCheckpointActive)
    {
@@ -250,6 +252,7 @@ bool DBConnection::Close()
          pd.Pulse();
       }
    }
+#endif
 
    // Tell the checkpoint thread to shutdown
    {
@@ -258,11 +261,16 @@ bool DBConnection::Close()
       mCheckpointCondition.notify_one();
    }
 
+// Join will block the browser main thread
+#ifndef __WXWASM__
    // And wait for it to do so
    if (mCheckpointThread.joinable())
    {
       mCheckpointThread.join();
    }
+#else
+   mCheckpointThread.detach();
+#endif
 
    // We're done with the prepared statements
    {
