@@ -62,7 +62,7 @@
 // Increment as appropriate every time we release a NEW version.
 #define WAVVY_VERSION   0
 #define WAVVY_RELEASE   1
-#define WAVVY_REVISION  32
+#define WAVVY_REVISION  33
 #define WAVVY_MODLEVEL  0
 
 #if defined(IS_BETA)
