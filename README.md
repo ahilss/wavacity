@@ -1,4 +1,4 @@
-# Wavvy Audio Editor
+# Wavacity Audio Editor
 
 ## Prerequisites
 
@@ -27,29 +27,29 @@ export CMAKE_ARGS=" \
     -DCMAKE_PREFIX_PATH=/Users/ahilss/emsdk/3.1.12-wasm32/emscripten/system/local \
     -DWASM=1 \
     -DwxWidgets_CONFIG_EXECUTABLE=~/emsdk/3.1.12-wasm32/emscripten/system/local/bin/wx-config \
-    -Dwavvy_use_wxwidgets=system \
-    -Dwavvy_use_expat=system \
-    -Dwavvy_use_lame=system \
-    -Dwavvy_use_sndfile=system \
-    -Dwavvy_use_soxr=system \
-    -Dwavvy_use_portaudio=system \
-    -Dwavvy_use_sqlite=local \
-    -Dwavvy_use_ffmpeg=linked \
-    -Dwavvy_use_id3tag=system \
-    -Dwavvy_use_mad=system \
-    -Dwavvy_use_nyquist=local \
-    -Dwavvy_use_vamp=off \
-    -Dwavvy_use_ogg=system \
-    -Dwavvy_use_vorbis=system \
-    -Dwavvy_use_flac=system \
-    -Dwavvy_use_lv2=off \
-    -Dwavvy_use_midi=off \
-    -Dwavvy_use_portmixer=off \
-    -Dwavvy_use_portsmf=off \
-    -Dwavvy_use_sbsms=off \
-    -Dwavvy_use_soundtouch=system \
-    -Dwavvy_use_twolame=off \
-    -Dwavvy_use_vst=off"
+    -Dwavacity_use_wxwidgets=system \
+    -Dwavacity_use_expat=system \
+    -Dwavacity_use_lame=system \
+    -Dwavacity_use_sndfile=system \
+    -Dwavacity_use_soxr=system \
+    -Dwavacity_use_portaudio=system \
+    -Dwavacity_use_sqlite=local \
+    -Dwavacity_use_ffmpeg=linked \
+    -Dwavacity_use_id3tag=system \
+    -Dwavacity_use_mad=system \
+    -Dwavacity_use_nyquist=local \
+    -Dwavacity_use_vamp=off \
+    -Dwavacity_use_ogg=system \
+    -Dwavacity_use_vorbis=system \
+    -Dwavacity_use_flac=system \
+    -Dwavacity_use_lv2=off \
+    -Dwavacity_use_midi=off \
+    -Dwavacity_use_portmixer=off \
+    -Dwavacity_use_portsmf=off \
+    -Dwavacity_use_sbsms=off \
+    -Dwavacity_use_soundtouch=system \
+    -Dwavacity_use_twolame=off \
+    -Dwavacity_use_vst=off"
 
 $EMSCRIPTEN/emcmake cmake $CMAKE_ARGS $SOURCE_DIR
 
