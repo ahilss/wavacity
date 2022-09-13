@@ -54,9 +54,9 @@ const wxString HelpSystem::HelpHostname = wxT("alphamanual.audacityteam.org");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/man/");
 const wxString HelpSystem::HelpServerManDir = wxT("/man/");
 #else
-const wxString HelpSystem::HelpHostname = wxT("www.apollovibes.com");
-const wxString HelpSystem::HelpServerHomeDir = wxT("/wavacity/manual.html");
-const wxString HelpSystem::HelpServerManDir = wxT("/wavacity/manual.html");
+const wxString HelpSystem::HelpHostname = wxT("wavacity.com");
+const wxString HelpSystem::HelpServerHomeDir = wxT("/manual.html");
+const wxString HelpSystem::HelpServerManDir = wxT("/manual.html");
 #endif
 const wxString HelpSystem::LocalHelpManDir = wxT("/man/");
 const wxString HelpSystem::ReleaseSuffix = wxT(".html");
