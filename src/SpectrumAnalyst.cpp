@@ -23,7 +23,7 @@ and in the spectrogram spectral selection.
 */
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "SpectrumAnalyst.h"
 #include "FFT.h"
 

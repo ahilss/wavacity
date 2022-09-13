@@ -1,14 +1,14 @@
-# translation of wavvy.po to
-# Wavvy Strings for Translation.
-# Copyright (C) 2008 Wavvy Development Team
-# This file is distributed under the same license as Wavvy.
+# translation of wavacity.po to
+# Wavacity Strings for Translation.
+# Copyright (C) 2008 Wavacity Development Team
+# This file is distributed under the same license as Wavacity.
 #
-# Wavvy Team <wavvy-translation@lists.sourceforge.net>, YEAR.
+# Wavacity Team <wavacity-translation@lists.sourceforge.net>, YEAR.
 # Djalel Chefrour <cdjalel@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: wavvy 3.0.1\n"
-"Report-Msgid-Bugs-To: wavvy-translation@lists.sourceforge.net\n"
+"Project-Id-Version: wavacity 3.0.1\n"
+"Report-Msgid-Bugs-To: wavacity-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-03-31 12:57+0100\n"
 "PO-Revision-Date: 2020-06-17 17:06-0400\n"
 "Last-Translator: Hussam al-Homsi <sawuare@gmail.com>\n"
@@ -147,7 +147,7 @@ msgstr "نصوص Nyquist (*.ny)|*.ny|نصوص Lisp (*.lsp)|*.lsp|جميع الم
 msgid "Script was not saved."
 msgstr "لم يحفظ النص."
 
-#: modules/mod-nyq-bench/NyqBench.cpp src/WavvyLogger.cpp
+#: modules/mod-nyq-bench/NyqBench.cpp src/WavacityLogger.cpp
 #: src/DBConnection.cpp src/Project.cpp src/ProjectFileIO.cpp
 #: src/ProjectHistory.cpp src/SqliteSampleBlock.cpp src/WaveClip.cpp
 #: src/WaveTrack.cpp src/export/Export.cpp src/export/ExportCL.cpp
@@ -182,8 +182,8 @@ msgstr "(C) 2009 بواسطة Leland Lucius"
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Wavvy module which provides a simple IDE for writing effects."
-msgstr "وحدة Wavvy خارجية توفر بيئة تطوير متكاملة لكتابة التأثيرات."
+"External Wavacity module which provides a simple IDE for writing effects."
+msgstr "وحدة Wavacity خارجية توفر بيئة تطوير متكاملة لكتابة التأثيرات."
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid "Nyquist Effect Workbench"
@@ -370,79 +370,79 @@ msgstr "أوقف النص"
 msgid "No revision identifier was provided"
 msgstr ""
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, system administration"
 msgstr "إدارة النظام"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, co-founder and developer"
 msgstr "%s، مؤسس مشارك و مطور"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer"
 msgstr "مطور"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support"
 msgstr "%s، الوثائق و الدعم"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support, French"
 msgstr "%s، الوثائق و الدعم، الفرنسية"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, quality assurance"
 msgstr "تأكيد الجودة"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, accessibility advisor"
 msgstr "مستشار إمكانية الوصول"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphic artist"
 msgstr "%s، فنان رسومي"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, composer"
 msgstr "%s، ملحن"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, tester"
 msgstr "%s، مختبر"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "موصلات Nyquist"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, web developer"
 msgstr "مطور ويب"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, graphics"
@@ -473,8 +473,8 @@ msgid ""
 "%s is a free program written by a worldwide team of %s. %s is %s for "
 "Windows, Mac, and GNU/Linux (and other Unix-like systems)."
 msgstr ""
-"Wavvy برنامج مجاني كتبه فريق عالمي من [[http://www.audacityteam.org/about/"
-"credits|المتطوعين]]. Wavvy [[http://www.audacityteam.org/download|متاح]] "
+"Wavacity برنامج مجاني كتبه فريق عالمي من [[http://www.audacityteam.org/about/"
+"credits|المتطوعين]]. Wavacity [[http://www.audacityteam.org/download|متاح]] "
 "لـ Mac ،Windows و GNU/Linux (و أنظمة أخرى تشبه Unix)."
 
 #. i18n-hint: substitutes into "a worldwide team of %s"
@@ -482,7 +482,7 @@ msgstr ""
 msgid "volunteers"
 msgstr ""
 
-#. i18n-hint: substitutes into "Wavvy is %s"
+#. i18n-hint: substitutes into "Wavacity is %s"
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "available"
@@ -518,7 +518,7 @@ msgid "forum"
 msgstr ""
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Wavvy window.  Use this to add
+#. *  in the credits in the About Wavacity window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -537,15 +537,15 @@ msgid ""
 "%s the free, open source, cross-platform software for recording and editing "
 "sounds."
 msgstr ""
-"Wavvy برنامج مجاني، مفتوح المصدر، متعدد-المنصات لتسجيل و تحرير الأصوات."
+"Wavacity برنامج مجاني، مفتوح المصدر، متعدد-المنصات لتسجيل و تحرير الأصوات."
 
 #: src/AboutDialog.cpp
 msgid "Credits"
 msgstr "تقدير"
 
 #: src/AboutDialog.cpp
-msgid "DarkWavvy Customisation"
-msgstr "تعديلات Wavvy المظلم"
+msgid "DarkWavacity Customisation"
+msgstr "تعديلات Wavacity المظلم"
 
 #. i18n-hint: The program's name substitutes for %s
 #: src/AboutDialog.cpp
@@ -561,7 +561,7 @@ msgstr "فخري:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "Distinguished %s Team members, not currently active"
-msgstr "أعضاء فريق Wavvy المتميزون، ليسوا نشيطين حاليا"
+msgstr "أعضاء فريق Wavacity المتميزون، ليسوا نشيطين حاليا"
 
 #: src/AboutDialog.cpp
 msgid "Contributors"
@@ -583,7 +583,7 @@ msgstr "المكتبات"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s includes code from the following projects:"
-msgstr "Wavvy يتضمن شفرات من المشاريع التالية:"
+msgstr "Wavacity يتضمن شفرات من المشاريع التالية:"
 
 #: src/AboutDialog.cpp
 msgid "Special thanks:"
@@ -593,21 +593,21 @@ msgstr "شكر خاص:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s website: "
-msgstr "موقع Wavvy الشبكي: "
+msgstr "موقع Wavacity الشبكي: "
 
-#. i18n-hint Wavvy's name substitutes for first and third %s,
+#. i18n-hint Wavacity's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr ""
 
-#. i18n-hint Wavvy's name substitutes for %s
+#. i18n-hint Wavacity's name substitutes for %s
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "The name %s is a registered trademark of Dominic Mazzoni."
 msgstr ""
-"&nbsp; &nbsp; الاسم<b>Wavvy</b> علامة تجارية مسجلة لأجل Dominic Mazzoni."
+"&nbsp; &nbsp; الاسم<b>Wavacity</b> علامة تجارية مسجلة لأجل Dominic Mazzoni."
 "<br><br>"
 
 #: src/AboutDialog.cpp
@@ -623,7 +623,7 @@ msgstr "ممَكن"
 msgid "Disabled"
 msgstr "غير ممَكن"
 
-#. i18n-hint: Information about when wavvy was compiled follows
+#. i18n-hint: Information about when wavacity was compiled follows
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "The Build"
@@ -660,7 +660,7 @@ msgstr "نوع الصيغة:"
 msgid "Compiler:"
 msgstr "المجمع:"
 
-#. i18n-hint: The directory wavvy is installed into (on *nix systems)
+#. i18n-hint: The directory wavacity is installed into (on *nix systems)
 #: src/AboutDialog.cpp
 msgid "Installation Prefix:"
 msgstr "بادئة التثبيت:"
@@ -670,7 +670,7 @@ msgstr "بادئة التثبيت:"
 msgid "Settings folder:"
 msgstr "مجلد الأوضاع: "
 
-#. i18n-hint: Libraries that are essential to wavvy
+#. i18n-hint: Libraries that are essential to wavacity
 #: src/AboutDialog.cpp
 msgid "Core Libraries"
 msgstr "المكتبات الأساسية"
@@ -880,16 +880,16 @@ msgstr "لا أستطيع قفل المنطقة بعد نهاية المشروع
 msgid "Error"
 msgstr "خطأ"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid "Failed to remove %s"
 msgstr "أخفقت في إزالة %s"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Failed!"
 msgstr "أخفق!"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Reset Preferences?\n"
 "\n"
@@ -900,11 +900,11 @@ msgstr ""
 "\n"
 "هذا سؤال مرة واحدة، بعد 'تثبيت' طلبت فيه أن يعاد تعيين التفضيلات."
 
-#: src/WavvyApp.cpp
-msgid "Reset Wavvy Preferences"
-msgstr "أعد تعيين تفضيلات Wavvy"
+#: src/WavacityApp.cpp
+msgid "Reset Wavacity Preferences"
+msgstr "أعد تعيين تفضيلات Wavacity"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid ""
 "%s could not be found.\n"
@@ -915,114 +915,114 @@ msgstr ""
 "\n"
 "لقد تمت إزالته من قائمة الملفات الحديثة."
 
-#: src/WavvyApp.cpp
-msgid "SQLite library failed to initialize.  Wavvy cannot continue."
+#: src/WavacityApp.cpp
+msgid "SQLite library failed to initialize.  Wavacity cannot continue."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Block size must be within 256 to 100000000\n"
 msgstr "حجم الكتلة يجب أن يكون ما بين 256 إلى 100000000\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is starting up..."
-msgstr "Wavvy يبدأ..."
+#: src/WavacityApp.cpp
+msgid "Wavacity is starting up..."
+msgstr "Wavacity يبدأ..."
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
-#: src/WavvyApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
 msgid "&New"
 msgstr "جديد"
 
 #. i18n-hint: (verb)
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&Open..."
 msgstr "افتح..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Open &Recent..."
 msgstr "فتح ملف حديث..."
 
-#: src/WavvyApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Wavvy..."
-msgstr "حول Wavvy..."
+#: src/WavacityApp.cpp src/menus/HelpMenus.cpp
+msgid "&About Wavacity..."
+msgstr "حول Wavacity..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "&Preferences..."
 msgstr "التفضيلات..."
 
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&File"
 msgstr "ملف"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a safe place to store temporary files.\n"
-"Wavvy needs a place where automatic cleanup programs won't delete the "
+"Wavacity could not find a safe place to store temporary files.\n"
+"Wavacity needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Wavvy لم يجد مكانا آمنا لتخزين الملفات المؤقتة.\n"
-"Wavvy يحتاج إلى مكان لا تحذف فيه برامج التنظيف التلقائي الملفات المؤقتة.\n"
+"Wavacity لم يجد مكانا آمنا لتخزين الملفات المؤقتة.\n"
+"Wavacity يحتاج إلى مكان لا تحذف فيه برامج التنظيف التلقائي الملفات المؤقتة.\n"
 "من فضلك أدخل مجلدا مناسبا لهذه الملفات في حوار التفضيلات."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a place to store temporary files.\n"
+"Wavacity could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Wavvy لم يتمكن من إيجاد مكان لتخزين الملفات المؤقتة.\n"
+"Wavacity لم يتمكن من إيجاد مكان لتخزين الملفات المؤقتة.\n"
 "من فضلك أدخل مجلدا مناسبا في حوار التفضيلات."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy is now going to exit. Please launch Wavvy again to use the new "
+"Wavacity is now going to exit. Please launch Wavacity again to use the new "
 "temporary directory."
 msgstr ""
-"سيتم الخروج من Wavvy الآن. من فضلك شغل Wavvy مرة أخرى لكي تستخدم "
+"سيتم الخروج من Wavacity الآن. من فضلك شغل Wavacity مرة أخرى لكي تستخدم "
 "المجلد المؤقت الجديد."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Running two copies of Wavvy simultaneously may cause\n"
+"Running two copies of Wavacity simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"قد يؤدي تشغيل نسختين من Wavvy معا\n"
+"قد يؤدي تشغيل نسختين من Wavacity معا\n"
 "إلى فقدان البيانات أو يؤدي إلى تحطم نظامك.\n"
 "\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Wavvy.\n"
+"Wavacity was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Wavacity.\n"
 msgstr ""
-"لم يستطع Wavvy من إقفال مجلد الملفات المؤقتة.\n"
-"يُحتمل أن نسخة أخرى من Wavvy تستخدم هذا المجلد.\n"
+"لم يستطع Wavacity من إقفال مجلد الملفات المؤقتة.\n"
+"يُحتمل أن نسخة أخرى من Wavacity تستخدم هذا المجلد.\n"
 
-#: src/WavvyApp.cpp
-msgid "Do you still want to start Wavvy?"
-msgstr "هل لا تزال تريد بدأ Wavvy؟"
+#: src/WavacityApp.cpp
+msgid "Do you still want to start Wavacity?"
+msgstr "هل لا تزال تريد بدأ Wavacity؟"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "خطأ في إقفال وجهة الملفات المؤقتة"
 
-#: src/WavvyApp.cpp
-msgid "The system has detected that another copy of Wavvy is running.\n"
-msgstr "كشف النظام أن هناك نسخة أخرى من Wavvy قيد الاستخدام.\n"
+#: src/WavacityApp.cpp
+msgid "The system has detected that another copy of Wavacity is running.\n"
+msgstr "كشف النظام أن هناك نسخة أخرى من Wavacity قيد الاستخدام.\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Wavvy\n"
+"Use the New or Open commands in the currently running Wavacity\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
-"استخدم أوامر \"جديد\" أو \"فتح\" في Wavvy الذي قيد الاستخدام حاليا \n"
+"استخدم أوامر \"جديد\" أو \"فتح\" في Wavacity الذي قيد الاستخدام حاليا \n"
 "أكمل لفتح عدة مشاريع معا.\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is already running"
-msgstr "Wavvy يشتغل الآن"
+#: src/WavacityApp.cpp
+msgid "Wavacity is already running"
+msgstr "Wavacity يشتغل الآن"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire semaphores.\n"
 "\n"
@@ -1030,12 +1030,12 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, fuzzy
-msgid "Wavvy Startup Failure"
-msgstr "ملفات مشروع Wavvy"
+msgid "Wavacity Startup Failure"
+msgstr "ملفات مشروع Wavacity"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to create semaphores.\n"
 "\n"
@@ -1043,7 +1043,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire lock semaphore.\n"
 "\n"
@@ -1051,7 +1051,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire server semaphore.\n"
 "\n"
@@ -1059,73 +1059,73 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"The Wavvy IPC server failed to initialize.\n"
+"The Wavacity IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "An unrecoverable error has occurred during startup"
 msgstr ""
 
-#. i18n-hint: This controls the number of bytes that Wavvy will
+#. i18n-hint: This controls the number of bytes that Wavacity will
 #. *           use when writing files to the disk
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "set max disk block size in bytes"
 msgstr "عين الحجم الأقصى لكتل القرص بالبايتات"
 
 #. i18n-hint: This displays a list of available options
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "this help message"
 msgstr "رسالة المساعدة هذه"
 
-#. i18n-hint: This runs a set of automatic tests on Wavvy itself
-#: src/WavvyApp.cpp
+#. i18n-hint: This runs a set of automatic tests on Wavacity itself
+#: src/WavacityApp.cpp
 msgid "run self diagnostics"
 msgstr "شغل التشخيصات الذاتية"
 
-#. i18n-hint: This displays the Wavvy version
-#: src/WavvyApp.cpp
-msgid "display Wavvy version"
-msgstr "اعرض إصدار Wavvy"
+#. i18n-hint: This displays the Wavacity version
+#: src/WavacityApp.cpp
+msgid "display Wavacity version"
+msgstr "اعرض إصدار Wavacity"
 
-#. i18n-hint: This is a list of one or more files that Wavvy
+#. i18n-hint: This is a list of one or more files that Wavacity
 #. *           should open upon startup
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "audio or project file name"
 msgstr "اسم ملف صوتي أو مشروع"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, fuzzy
 msgid ""
-"Wavvy project (.aup3) files are not currently \n"
-"associated with Wavvy. \n"
+"Wavacity project (.aup3) files are not currently \n"
+"associated with Wavacity. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"ملفات مشروع Wavvy (.AUP) \n"
-"ليست مرتبطة بWavvy حاليا. \n"
+"ملفات مشروع Wavacity (.AUP) \n"
+"ليست مرتبطة بWavacity حاليا. \n"
 "\n"
 "هل تريد ربطها حتى يمكن فتحها بنقرة-مزدوجة؟"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy Project Files"
-msgstr "ملفات مشروع Wavvy"
+#: src/WavacityApp.cpp
+msgid "Wavacity Project Files"
+msgstr "ملفات مشروع Wavacity"
 
-#: src/WavvyException.h src/commands/MessageCommand.cpp
-#: src/widgets/WavvyMessageBox.cpp
+#: src/WavacityException.h src/commands/MessageCommand.cpp
+#: src/widgets/WavacityMessageBox.cpp
 msgid "Message"
 msgstr "رسالة"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 #, fuzzy
-msgid "Wavvy Configuration Error"
-msgstr "تعديلات Wavvy المظلم"
+msgid "Wavacity Configuration Error"
+msgstr "تعديلات Wavacity المظلم"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 #, c-format
 msgid ""
 "The following configuration file could not be accessed:\n"
@@ -1138,52 +1138,52 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Wavvy\", your project may be left in an unsaved "
+"If you choose to \"Quit Wavacity\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 
-#: src/WavvyFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
+#: src/WavacityFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
 #: src/effects/Equalization.cpp src/export/Export.cpp src/menus/HelpMenus.cpp
 #: src/widgets/MultiDialog.cpp
 msgid "Help"
 msgstr "مساعدة"
 
-#: src/WavvyFileConfig.cpp src/AutoRecoveryDialog.cpp
+#: src/WavacityFileConfig.cpp src/AutoRecoveryDialog.cpp
 #, fuzzy
-msgid "&Quit Wavvy"
-msgstr "اخرج من Wavvy"
+msgid "&Quit Wavacity"
+msgstr "اخرج من Wavacity"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 msgid "&Retry"
 msgstr ""
 
-#: src/WavvyLogger.cpp
-msgid "Wavvy Log"
-msgstr "سجل Wavvy"
+#: src/WavacityLogger.cpp
+msgid "Wavacity Log"
+msgstr "سجل Wavacity"
 
-#: src/WavvyLogger.cpp src/Tags.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp
 msgid "&Save..."
 msgstr "حفظ..."
 
 #. i18n-hint: (verb)
-#: src/WavvyLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
 msgid "Cl&ear"
 msgstr "مسح"
 
-#: src/WavvyLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
+#: src/WavacityLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
 #: src/menus/FileMenus.cpp
 msgid "&Close"
 msgstr "إغلاق"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "log.txt"
 msgstr "سجل.txt"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "Save log to:"
 msgstr "حفظ السجل في:"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 #, c-format
 msgid "Couldn't save log to file: %s"
 msgstr "لم أتمكن من حفظ السجل إلى الملف: %s"
@@ -1223,8 +1223,8 @@ msgstr "خطأ في بدء MIDI"
 
 #: src/AudioIO.cpp
 #, fuzzy
-msgid "Wavvy Audio"
-msgstr "سجل Wavvy"
+msgid "Wavacity Audio"
+msgstr "سجل Wavacity"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, c-format
@@ -1478,12 +1478,12 @@ msgstr "استرجاع تلقائي بعد التحطم"
 #: src/AutoRecoveryDialog.cpp
 #, fuzzy
 msgid ""
-"The following projects were not saved properly the last time Wavvy was "
+"The following projects were not saved properly the last time Wavacity was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
 msgstr ""
-"بعض المشاريع لم تُحفظ بشكل  عند آخر تشغيل لWavvy.\n"
+"بعض المشاريع لم تُحفظ بشكل  عند آخر تشغيل لWavacity.\n"
 "لحسن الحظ، يمكن استرجاع المشاريع التالية تلقائيا:"
 
 #: src/AutoRecoveryDialog.cpp
@@ -2089,8 +2089,8 @@ msgstr ""
 "(اختيار نوع آخر من المقاطع لن يعمل.)"
 
 #: src/CrashReport.cpp
-msgid "Wavvy Support Data"
-msgstr "بيانات دعم Wavvy"
+msgid "Wavacity Support Data"
+msgstr "بيانات دعم Wavacity"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2211,20 +2211,20 @@ msgstr "انسخ جميع الملفات (أأمن)"
 msgid "Whenever a project depends on other files:"
 msgstr "كلما كان هناك مشروع يعتمد على ملفات أخرى:"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "اسألني"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "انسخ جميع الملفات دائماُ (الأأمن)"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "لا تنسخ أي ملفات أبدا"
@@ -2259,13 +2259,13 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Wavvy projects may not be self-contained, and care \n"
+"Some older Wavacity projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
 "مشروعك محتوى-ذاتيا؛ لا يعتمد على أية ملفات صوت خارجية.\n"
 "\n"
-"بعض مشاريع Wavvy القديمة قد لا تكون محتواة-ذاتيا،\n"
+"بعض مشاريع Wavacity القديمة قد لا تكون محتواة-ذاتيا،\n"
 "و الحذر مطلوب لإبقاء متعلقاتها الخارجية في المكان الصحيح.\n"
 "المشاريع الجديدة ستكون محتواة-ذاتيا و أقل خطورة."
 
@@ -2349,12 +2349,12 @@ msgstr "دعم FFmpeg غير مجمع"
 #, fuzzy
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Wavvy failed to load it at startup. \n"
+"but this time Wavacity failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
 "كون FFmpeg في التفضيلات و تم تحميله بنجاح من قبل،                         \n"
-"لكن Wavvy أخفق هذه المرة في تحميله عند البدء.                         \n"
+"لكن Wavacity أخفق هذه المرة في تحميله عند البدء.                         \n"
 "\n"
 "قد تريد أن تذهب إلى التفضيلات > المكتبات و تعيد تكوينه."
 
@@ -2372,8 +2372,8 @@ msgstr "حدد موقع FFmpeg"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Wavvy needs the file '%s' to import and export audio via FFmpeg."
-msgstr "Wavvy يحتاج إلى الملف '%s' ليستورد و يصدر الصوت عبر FFmpeg."
+msgid "Wavacity needs the file '%s' to import and export audio via FFmpeg."
+msgstr "Wavacity يحتاج إلى الملف '%s' ليستورد و يصدر الصوت عبر FFmpeg."
 
 #: src/FFmpeg.cpp
 #, c-format
@@ -2413,13 +2413,13 @@ msgstr "لم يعثر على FFmpeg"
 
 #: src/FFmpeg.cpp
 msgid ""
-"Wavvy attempted to use FFmpeg to import an audio file,\n"
+"Wavacity attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"حاول Wavvy استخدام FFmpeg ليستورد ملف صوت،\n"
+"حاول Wavacity استخدام FFmpeg ليستورد ملف صوت،\n"
 "لكن لم يعثر على المكتبات.\n"
 "\n"
 "لتستخدم استوراد FFmpeg، اذهب إلى حرر > التفضيلات > المكتبات\n"
@@ -2444,27 +2444,27 @@ msgstr "فقط libavformat.so"
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to open a file in %s."
-msgstr "أخفق Wavvy في فتح ملف في %s."
+msgid "Wavacity failed to open a file in %s."
+msgstr "أخفق Wavacity في فتح ملف في %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to read from a file in %s."
-msgstr "أخفق Wavvy في القراءة من ملف في %s."
+msgid "Wavacity failed to read from a file in %s."
+msgstr "أخفق Wavacity في القراءة من ملف في %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy successfully wrote a file in %s but failed to rename it as %s."
-msgstr "كتب Wavvy ملفا في %s بنجاح لكن أخفق في إعادة تسميته إلى %s."
+msgid "Wavacity successfully wrote a file in %s but failed to rename it as %s."
+msgstr "كتب Wavacity ملفا في %s بنجاح لكن أخفق في إعادة تسميته إلى %s."
 
 #: src/FileException.cpp
 #, fuzzy, c-format
 msgid ""
-"Wavvy failed to write to a file.\n"
+"Wavacity failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"أخفق Wavvy في الكتابة إلى ملف.\n"
+"أخفق Wavacity في الكتابة إلى ملف.\n"
 "ربما %s غير قابل للكتابة أو القرص ممتلئ."
 
 #: src/FileException.h
@@ -2504,7 +2504,7 @@ msgstr "اسأل"
 msgid "All files"
 msgstr "جميع الملفات|*"
 
-#. i18n-hint an Wavvy project is the state of the program, stored as
+#. i18n-hint an Wavacity project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 #, fuzzy
@@ -2769,8 +2769,8 @@ msgstr "صدار ملف صوت"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Wavvy Project"
-msgstr "حفظ مشروع Wavvy"
+msgid "Saving an Wavacity Project"
+msgstr "حفظ مشروع Wavacity"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -2788,18 +2788,18 @@ msgstr "لا توجد مساعدة محلية"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is an <b>Alpha test version</"
+"<br><br>The version of Wavacity you are using is an <b>Alpha test version</"
 "b>."
-msgstr "<br><br>الإصدار من Wavvy الذي تستخدمه هو <b>إصدار اختبار ألفا</b>."
+msgstr "<br><br>الإصدار من Wavacity الذي تستخدمه هو <b>إصدار اختبار ألفا</b>."
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is a <b>Beta test version</b>."
-msgstr "<br><br>الإصدار من Wavvy الذي تستخدمه هو <b>إصدار اختبار بيتا</b>."
+"<br><br>The version of Wavacity you are using is a <b>Beta test version</b>."
+msgstr "<br><br>الإصدار من Wavacity الذي تستخدمه هو <b>إصدار اختبار بيتا</b>."
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Wavvy"
-msgstr "احصل على الإصدار المطلق الرسمي من Wavvy"
+msgid "Get the Official Released Version of Wavacity"
+msgstr "احصل على الإصدار المطلق الرسمي من Wavacity"
 
 #: src/HelpText.cpp
 msgid ""
@@ -2811,10 +2811,10 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Wavvy ready for release by joining our [[https://www."
+"You can help us get Wavacity ready for release by joining our [[https://www."
 "audacityteam.org/community/|community]].<hr><br><br>"
 msgstr ""
-"يمكنك أن تساعدنا في جعل Wavvy جاهزا للإطلاق بالالتحاق [[https://www."
+"يمكنك أن تساعدنا في جعل Wavacity جاهزا للإطلاق بالالتحاق [[https://www."
 "audacityteam.org/community/|بمجتمعنا]].<hr><br><br>"
 
 #: src/HelpText.cpp
@@ -2861,13 +2861,13 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"Wavvy can import unprotected files in many other formats (such as M4A and "
+"Wavacity can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
 "audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] to your computer."
 msgstr ""
-"يستطيع Wavvy استيراد الملفات الغير محمية في الكثير من الصيغ الأخرى (مثل "
+"يستطيع Wavacity استيراد الملفات الغير محمية في الكثير من الصيغ الأخرى (مثل "
 "M4A و WMA، ملفات WAV المضغوطة من المسجلات المتنقلة و الصوت من ملفات الفيديو) "
 "إذا نزلت و ثبتت [[https://manual.audacityteam.org/man/"
 "faq_opening_and_saving_files.html#foreign| مكتبة FFmpeg]] الاختيارية على "
@@ -2975,19 +2975,19 @@ msgstr "التاريخ..."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 "خطأ داخلي في %s عند %s سطر %d.\n"
-"من فضلك أخبر فريق Wavvy عند /https://forum.audacityteam.org."
+"من فضلك أخبر فريق Wavacity عند /https://forum.audacityteam.org."
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 "خطأ داخلي عند %s سطر %d.\n"
-"من فضلك أخبر فريق Wavvy عند /https://forum.audacityteam.org."
+"من فضلك أخبر فريق Wavacity عند /https://forum.audacityteam.org."
 
 #: src/InconsistencyException.h
 msgid "Internal Error"
@@ -3102,14 +3102,14 @@ msgid "One or more saved labels could not be read."
 msgstr "لم بمكن قراءة واحد أو أكثر من العلامات المحفوظة."
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Wavvy has been run.
+#. * time Wavacity has been run.
 #: src/LangChoice.cpp
-msgid "Wavvy First Run"
-msgstr "أول تشغيل لWavvy"
+msgid "Wavacity First Run"
+msgstr "أول تشغيل لWavacity"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Wavvy to use:"
-msgstr "اختر لغة ليستخدمها Wavvy:"
+msgid "Choose Language for Wavacity to use:"
+msgstr "اختر لغة ليستخدمها Wavacity:"
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3149,13 +3149,13 @@ msgstr ""
 "الملف القديم محفوظ كـ '%s'"
 
 #: src/Legacy.cpp
-msgid "Opening Wavvy Project"
-msgstr "فتح مشروع  Wavvy"
+msgid "Opening Wavacity Project"
+msgstr "فتح مشروع  Wavacity"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Wavvy Karaoke%s"
-msgstr "Karaoke Wavvy%s"
+msgid "Wavacity Karaoke%s"
+msgstr "Karaoke Wavacity%s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3206,8 +3206,8 @@ msgstr "مزج و تقديم المقاطع"
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Wavvy Mixer Board%s"
-msgstr "منصة مازج Wavvy%s"
+msgid "Wavacity Mixer Board%s"
+msgstr "منصة مازج Wavacity%s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
 #. i18n-hint: Title of the Gain slider, used to adjust the volume
@@ -3298,11 +3298,11 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, c-format
 msgid ""
-"The module \"%s\" is matched with Wavvy version \"%s\".\n"
+"The module \"%s\" is matched with Wavacity version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
-"الوحدة \"%s\" تتطابق مع إصدار \"%s\" من Wavvy.\n"
+"الوحدة \"%s\" تتطابق مع إصدار \"%s\" من Wavacity.\n"
 "\n"
 "لن تحمل."
 
@@ -3342,8 +3342,8 @@ msgid "No"
 msgstr "لا"
 
 #: src/ModuleManager.cpp
-msgid "Wavvy Module Loader"
-msgstr "محمل وحدة Wavvy"
+msgid "Wavacity Module Loader"
+msgstr "محمل وحدة Wavacity"
 
 #: src/ModuleManager.cpp
 msgid "Try and load this module?"
@@ -3664,7 +3664,7 @@ msgstr ""
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Wavvy requires two channels at the same sample rate for\n"
+"(Wavacity requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 
@@ -3693,13 +3693,13 @@ msgstr "الانقطاعات المؤقتة"
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Wavvy for processor time\n"
+"Other applications are competing with Wavacity for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
 "فقد الصوت المسجل عند المواقع المعلمة. أسباب جائزة:\n"
 "\n"
-"\tتطبيقات أخرى تتنافس مع Wavvy لوقت المعالج\n"
+"\tتطبيقات أخرى تتنافس مع Wavacity لوقت المعالج\n"
 "\n"
 "\tأنت تحفظ مباشرة إلى جهاز تخرين خارجي بطيء\n"
 
@@ -3707,7 +3707,7 @@ msgstr ""
 msgid "Turn off dropout detection"
 msgstr "أطفئ اكتشاف الانقطاعات المؤقتة"
 
-#. i18n-hint: The wavvy project file is XML and has 'tags' in it,
+#. i18n-hint: The wavacity project file is XML and has 'tags' in it,
 #. rather like html tags <something>some stuff</something>.
 #. This error message is about the tags that hold the sequence information.
 #. The error message is confusing to users in English, and could just say
@@ -3743,7 +3743,7 @@ msgstr "افتش بيانات ملف المشروع"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Wavvy \n"
+"('aliased files'). There is no way for Wavacity \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3759,7 +3759,7 @@ msgid ""
 msgstr ""
 "تحقق المشروع من مجلد \"%s\" \n"
 "وجد %lld ملفات صوت خارجية مفقودة \n"
-"('ملفات ذات اسم مستعار'). لا يمكن لWavvy \n"
+"('ملفات ذات اسم مستعار'). لا يمكن لWavacity \n"
 "استعادة هذه الملفات تلقائيا. \n"
 "\n"
 "إذا اخترت الاختيار الأول أو الثاني في الأسفل، \n"
@@ -3789,12 +3789,12 @@ msgstr "تحذير - ملف(ات) ذو(ذات) اسم مستعار مفقود(ة
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Wavvy can fully regenerate these files \n"
+"Wavacity can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "تحقق المشروع من مجلد \"%s\" \n"
 "كشف %lld ملف(ات) كتلة ذو(ذات) اسم مستعار (auf.) مفقود(ة). \n"
-"بإمكان Wavvy إعادة توليد هذه الملفات بشكل كامل \n"
+"بإمكان Wavacity إعادة توليد هذه الملفات بشكل كامل \n"
 " من الصوت الحالي في المشروع."
 
 #: src/ProjectFSCK.cpp
@@ -3819,7 +3819,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Wavvy to recover \n"
+"deletion. There is no way for Wavacity to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3832,7 +3832,7 @@ msgstr ""
 "تحقق المشروع من مجلد \"%s\" \n"
 "كشف %lld ملفات كتلة بيانات صوت (au.) مفقودة، \n"
 "على الأرجح بسبب خطأ برمجي أو تحطم نظام أو حذف عن غير قصد. \n"
-"لا يمكن لWavvy استعادة هذه الملفات المفقودة بشكل تلقائي. \n"
+"لا يمكن لWavacity استعادة هذه الملفات المفقودة بشكل تلقائي. \n"
 "\n"
 "إذا اخترت الاختيار الأول أو الثاني في الأسفل، \n"
 "يمكنك أن تحاول أن تجد و تعيد الملفات المفقودة إلى موقعها السابق. \n"
@@ -3964,12 +3964,12 @@ msgstr ""
 
 #: src/ProjectFileIO.cpp
 #, fuzzy
-msgid "This is not an Wavvy project file"
-msgstr "حفظ مشروع Wavvy"
+msgid "This is not an Wavacity project file"
+msgstr "حفظ مشروع Wavacity"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Wavvy:\n"
+"This project was created with a newer version of Wavacity:\n"
 "\n"
 "You will need to upgrade to process it"
 msgstr ""
@@ -4088,11 +4088,11 @@ msgstr "خطأ في كتابة الملف: \"%s\""
 #: src/ProjectFileIO.cpp
 #, fuzzy, c-format
 msgid ""
-"Wavvy failed to write file %s.\n"
+"Wavacity failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"أخفق Wavvy في الكتابة إلى ملف.\n"
+"أخفق Wavacity في الكتابة إلى ملف.\n"
 "ربما %s غير قابل للكتابة أو القرص ممتلئ."
 
 #: src/ProjectFileIO.cpp
@@ -4103,7 +4103,7 @@ msgstr "احفظ المشاريع"
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Wavvy \"%s\""
+msgid "[Project %02i] Wavacity \"%s\""
 msgstr ""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
@@ -4115,12 +4115,12 @@ msgstr "(مسترجع)"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Wavvy %s.\n"
-"You are using Wavvy %s. You may need to upgrade to a newer version to "
+"This file was saved using Wavacity %s.\n"
+"You are using Wavacity %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"حفظ المشروع باستخدام Wavvy %s.\n"
-"أنت تستخدم Wavvy %s. قد تحتاج إلى أن تحدث إلى إصدار أحدث لتفتح هذا الملف."
+"حفظ المشروع باستخدام Wavacity %s.\n"
+"أنت تستخدم Wavacity %s. قد تحتاج إلى أن تحدث إلى إصدار أحدث لتفتح هذا الملف."
 
 #: src/ProjectFileIO.cpp
 msgid "Can't open project file"
@@ -4185,16 +4185,16 @@ msgstr "احفظ المشاريع الفارغة"
 #: src/ProjectFileManager.cpp
 #, fuzzy
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
-"بعض المشاريع لم تُحفظ بشكل  عند آخر تشغيل لWavvy.\n"
+"بعض المشاريع لم تُحفظ بشكل  عند آخر تشغيل لWavacity.\n"
 "لحسن الحظ، يمكن استرجاع المشاريع التالية تلقائيا:"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
@@ -4272,10 +4272,10 @@ msgstr "%sاحفظ المشروع \"%s\" كـ..."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Wavvy project, not an audio file.\n"
+"'Save Project' is for an Wavacity project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
-"'احفظ المشروع' هي لمشروع Wavvy، ليست لملف صوت.\n"
+"'احفظ المشروع' هي لمشروع Wavacity، ليست لملف صوت.\n"
 "لملف صوت قابل للفتح في تطبيقات أخرى، استخدم 'استورد'.\n"
 
 #. i18n-hint: In each case, %s is the name
@@ -4350,12 +4350,12 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Wavvy project file instead."
+"Please open the actual Wavacity project file instead."
 msgstr ""
 "أنت تحاول فتح ملف احتياطي منشأ تلقائيا.\n"
 "فعل هذا قد يؤدي إلى فقدان بيانات خطر.\n"
 "\n"
-"من فضلك افتح ملف مشروع Wavvy الفعلي بدلا منه."
+"من فضلك افتح ملف مشروع Wavacity الفعلي بدلا منه."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4451,8 +4451,8 @@ msgstr "الحفظ التلقائي ممكن:"
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Wavvy version %s"
-msgstr "أهلا و سهلا في Wavvy إصدار %s"
+msgid "Welcome to Wavacity version %s"
+msgstr "أهلا و سهلا في Wavacity إصدار %s"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4519,12 +4519,12 @@ msgstr "%s و %s."
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Wavvy 2.3.0 or before.\n"
-"You need to run that version of Wavvy to recover the project."
+"This recovery file was saved by Wavacity 2.3.0 or before.\n"
+"You need to run that version of Wavacity to recover the project."
 msgstr ""
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Wavvy is put on a notebook tab, and this is the name on that tab.
+#. Wavacity is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -4860,8 +4860,8 @@ msgid "Activation level (dB):"
 msgstr "مستوى التفعيل (dB):"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Wavvy!"
-msgstr "أهلا و سهلا في Wavvy!"
+msgid "Welcome to Wavacity!"
+msgstr "أهلا و سهلا في Wavacity!"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5006,15 +5006,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write file:\n"
+"Wavacity could not write file:\n"
 "  %s."
 msgstr ""
-"لم يتمكن Wavvy من كتابة الملف:\n"
+"لم يتمكن Wavacity من كتابة الملف:\n"
 "  %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5028,21 +5028,21 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not open file:\n"
+"Wavacity could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"لم يتمكن Wavvy من فتح الملف:\n"
+"لم يتمكن Wavacity من فتح الملف:\n"
 "  %s\n"
 "للكتابة."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write images to file:\n"
+"Wavacity could not write images to file:\n"
 "  %s."
 msgstr ""
-"لم يتمكن Wavvy من كتابة الصور في الملف:\n"
+"لم يتمكن Wavacity من كتابة الصور في الملف:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5058,11 +5058,11 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not find file:\n"
+"Wavacity could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
-"لم يتمكن Wavvy من إيجاد الملف:\n"
+"لم يتمكن Wavacity من إيجاد الملف:\n"
 "  %s.\n"
 "لم يتم تحميل الموضوع."
 
@@ -5070,20 +5070,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not load file:\n"
+"Wavacity could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
-"لم يتمكن Wavvy من تحميل الملف:\n"
+"لم يتمكن Wavacity من تحميل الملف:\n"
 "  %s.\n"
 "ربما تكون صيغة بي.أن.جي سيئة؟"
 
 #: src/Theme.cpp
 msgid ""
-"Wavvy could not read its default theme.\n"
+"Wavacity could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
-"لم يتمكن Wavvy من قراءة الموضوع الافتراضي.\n"
+"لم يتمكن Wavacity من قراءة الموضوع الافتراضي.\n"
 "من فضلك أخبر عن هذا المشكل."
 
 #: src/Theme.cpp
@@ -5120,14 +5120,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not save file:\n"
+"Wavacity could not save file:\n"
 "  %s"
 msgstr ""
-"لم يتمكن Wavvy من حفظ الملف:\n"
+"لم يتمكن Wavacity من حفظ الملف:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Wavvy
+#. appearance of older versions of Wavacity
 #: src/Theme.cpp
 msgid "Classic"
 msgstr "كلاسيكي"
@@ -5174,8 +5174,8 @@ msgid "Time Track"
 msgstr "مقطع وقت"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record"
-msgstr "مسجِل مؤقِت Wavvy"
+msgid "Wavacity Timer Record"
+msgstr "مسجِل مؤقِت Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Save Timer Recording As"
@@ -5272,8 +5272,8 @@ msgid "Action after Timer Recording:"
 msgstr "الفعل بعد تسجيل المؤقت:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record Progress"
-msgstr "تقدم تسجيل مؤقت Wavvy"
+msgid "Wavacity Timer Record Progress"
+msgstr "تقدم تسجيل مؤقت Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Timer Recording stopped."
@@ -5427,8 +5427,8 @@ msgid "Do nothing"
 msgstr "افعل لا شيء"
 
 #: src/TimerRecordDialog.cpp
-msgid "Exit Wavvy"
-msgstr "اخرج من Wavvy"
+msgid "Exit Wavacity"
+msgstr "اخرج من Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5451,8 +5451,8 @@ msgid "Scheduled to stop at:"
 msgstr "معين ليتوقف عند:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting for Start"
-msgstr "تسجيل مؤقت Wavvy - أنتظر للبدء"
+msgid "Wavacity Timer Record - Waiting for Start"
+msgstr "تسجيل مؤقت Wavacity - أنتظر للبدء"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5460,7 +5460,7 @@ msgstr "تسجيل مؤقت Wavvy - أنتظر للبدء"
 msgid "Recording will commence in:"
 msgstr "سيبدأ التسجيل في:"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Wavvy", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Wavacity", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5477,8 +5477,8 @@ msgid "Recording Exported:"
 msgstr "التسجيل المصدر:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting"
-msgstr "تسجيل مؤقِت Wavvy - ينتظر"
+msgid "Wavacity Timer Record - Waiting"
+msgstr "تسجيل مؤقِت Wavacity - ينتظر"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5660,12 +5660,12 @@ msgstr "ليست هناك مساحة كافية لتوسيع خط القص"
 msgid "This operation cannot be done until importation of %s completes."
 msgstr "لا بمكن أن تنجز هذه العملية حتى ينتهي استوراد %s."
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
-msgid "Wavvy"
-msgstr "Wavvy"
+msgid "Wavacity"
+msgstr "Wavacity"
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid ""
 "%s: Could not load settings below. Default settings will be used.\n"
@@ -5676,13 +5676,13 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid "Applying %s..."
 msgstr "أطبق %s..."
 
 #. i18n-hint: An item name followed by a value, with appropriate separating punctuation
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/vamp/VampEffect.cpp src/menus/PluginMenus.cpp
 #: src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.cpp
 #: src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.cpp
@@ -5691,7 +5691,7 @@ msgstr "أطبق %s..."
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/commands/WavvyCommand.h
+#: src/commands/WavacityCommand.h
 msgid "FAIL"
 msgstr "فشل"
 
@@ -5951,13 +5951,13 @@ msgstr "أمر مبني داخليا"
 #: src/effects/VST/VSTEffect.cpp src/effects/audiounits/AudioUnitEffect.cpp
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
-msgid "The Wavvy Team"
-msgstr "فريق Wavvy"
+msgid "The Wavacity Team"
+msgstr "فريق Wavacity"
 
 #: src/commands/LoadCommands.cpp
 #, fuzzy
-msgid "Provides builtin commands to Wavvy"
-msgstr "يوفر تأثيرات مصيغة-داخليا إلى Wavvy"
+msgid "Provides builtin commands to Wavacity"
+msgstr "يوفر تأثيرات مصيغة-داخليا إلى Wavacity"
 
 #: src/commands/LoadCommands.cpp
 #, fuzzy
@@ -7706,7 +7706,7 @@ msgid "Previewing"
 msgstr "أعرض"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8460,8 +8460,8 @@ msgid "Builtin Effects"
 msgstr "التأثيرات المصيغة داخليا"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Wavvy"
-msgstr "يوفر تأثيرات مصيغة-داخليا إلى Wavvy"
+msgid "Provides builtin effects to Wavacity"
+msgstr "يوفر تأثيرات مصيغة-داخليا إلى Wavacity"
 
 #: src/effects/LoadEffects.cpp
 msgid "Unknown built-in effect name"
@@ -8699,10 +8699,10 @@ msgstr "خطوة 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Wavvy knows what to filter out,\n"
+"Select a few seconds of just noise so Wavacity knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"اختر بضع ثوان من الضجيج فقط حتى يعرف Wavvy ماذا يرشح،\n"
+"اختر بضع ثوان من الضجيج فقط حتى يعرف Wavacity ماذا يرشح،\n"
 "ثم انقر وصف الضجيج:"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
@@ -9581,8 +9581,8 @@ msgid "VST Effects"
 msgstr "تأثيرات VST"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Wavvy."
-msgstr "يضيف القدرة على استخدام تأثيرات VST في Wavvy."
+msgid "Adds the ability to use VST effects in Wavacity."
+msgstr "يضيف القدرة على استخدام تأثيرات VST في Wavacity."
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Scanning Shell VST"
@@ -9626,7 +9626,7 @@ msgstr "تعويض الكمون"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
@@ -9671,8 +9671,8 @@ msgstr "ملف برنامج VST قياسي"
 
 #: src/effects/VST/VSTEffect.cpp
 #, fuzzy
-msgid "Wavvy VST preset file"
-msgstr "ملفات مشروع Wavvy"
+msgid "Wavacity VST preset file"
+msgstr "ملفات مشروع Wavacity"
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Unrecognized file extension."
@@ -9759,8 +9759,8 @@ msgid "Audio Unit Effects"
 msgstr "تأثيرات Audio Unit"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Wavvy"
-msgstr "يوفر دعم تأثيرات Audio Unit لWavvy"
+msgid "Provides Audio Unit Effects support to Wavacity"
+msgstr "يوفر دعم تأثيرات Audio Unit لWavacity"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid "Could not find component"
@@ -9777,7 +9777,7 @@ msgstr "اختيارات تأثير وحدة الصوت"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will notice "
+"audio to Wavacity. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
@@ -9940,8 +9940,8 @@ msgid "Provides LADSPA Effects"
 msgstr "يوفر تأثيرات LADSPA"
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Wavvy no longer uses vst-bridge"
-msgstr "Wavvy لا يستخدم vst-bridge بعد الآن"
+msgid "Wavacity no longer uses vst-bridge"
+msgstr "Wavacity لا يستخدم vst-bridge بعد الآن"
 
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid "LADSPA Effect Options"
@@ -9950,7 +9950,7 @@ msgstr "اختيارات تأثير LADSPA"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Wavvy. When not compensating for this delay, you will notice that "
+"to Wavacity. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
@@ -9987,7 +9987,7 @@ msgstr "حجم الصوان (8 إلى 1048576 عينة):"
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
@@ -10029,16 +10029,16 @@ msgid "LV2 Effects"
 msgstr "تأثيرات LV2"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Wavvy"
-msgstr "يوفر دعم تأثيرات LV2 لWavvy"
+msgid "Provides LV2 Effects support to Wavacity"
+msgstr "يوفر دعم تأثيرات LV2 لWavacity"
 
 #: src/effects/nyquist/LoadNyquist.cpp
 msgid "Nyquist Effects"
 msgstr "تأثيرات Nyquist"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Wavvy"
-msgstr "يوفر دعم تأثيرات Nyquist لWavvy"
+msgid "Provides Nyquist Effects support to Wavacity"
+msgstr "يوفر دعم تأثيرات Nyquist لWavacity"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Applying Nyquist Effect..."
@@ -10160,8 +10160,8 @@ msgstr "[تحذير: أرجع Nyquist سلسلة UTF-8 غير صالحة، مح�
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Wavvy does not support Nyquist plug-in version %ld"
-msgstr "هذا الإصدار من Wavvy لا بدعم إصدار %ld من موصلة Nyquist"
+msgid "This version of Wavacity does not support Nyquist plug-in version %ld"
+msgstr "هذا الإصدار من Wavacity لا بدعم إصدار %ld من موصلة Nyquist"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Could not open file"
@@ -10273,8 +10273,8 @@ msgid "Vamp Effects"
 msgstr "تأثيرات Vamp"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Wavvy"
-msgstr "يوفر دعم تأثيرات  Vamp لWavvy"
+msgid "Provides Vamp Effects support to Wavacity"
+msgstr "يوفر دعم تأثيرات  Vamp لWavacity"
 
 #: src/effects/vamp/VampEffect.cpp
 msgid ""
@@ -11491,8 +11491,8 @@ msgstr "حدد موقع LAME"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Wavvy needs the file %s to create MP3s."
-msgstr "Wavvy يحتاج الملف %s لإنشاء MP3."
+msgid "Wavacity needs the file %s to create MP3s."
+msgstr "Wavacity يحتاج الملف %s لإنشاء MP3."
 
 #: src/export/ExportMP3.cpp
 #, c-format
@@ -11522,12 +11522,12 @@ msgstr "أين %s؟"
 #, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Wavvy %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Wavvy'."
+"Wavacity %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Wavacity'."
 msgstr ""
-"أنت تربط إلى lame_enc.dll v%d.%d.. هذا الإصدار غير متوافق مع Wavvy %d.%d."
+"أنت تربط إلى lame_enc.dll v%d.%d.. هذا الإصدار غير متوافق مع Wavacity %d.%d."
 "%d.\n"
-"من فضلك نزل أحدث إصدار من 'LAME لـ Wavvy'."
+"من فضلك نزل أحدث إصدار من 'LAME لـ Wavacity'."
 
 #: src/export/ExportMP3.cpp
 msgid "Only lame_enc.dll"
@@ -11850,7 +11850,7 @@ msgstr "ملفات غير مضغوطة اخرى"
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Wavvy cannot do this, the Export was abandoned."
+"Wavacity cannot do this, the Export was abandoned."
 msgstr ""
 
 #: src/export/ExportPCM.cpp
@@ -11860,7 +11860,7 @@ msgstr "خطأ في الاستوراد"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Wavvy cannot export WAV\n"
+"Your exported WAV file has been truncated as Wavacity cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
 
@@ -11901,12 +11901,12 @@ msgstr "جميع الملفات|*|جميع الملفات المدعومة|"
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Wavvy cannot open this type of file for playing, but you can\n"
+"Wavacity cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 "\"%s\" \n"
 "هو ملف MIDI، ليس ملف صوت.\n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات للتشغيل، و لكن تستطيع\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات للتشغيل، و لكن تستطيع\n"
 "تحريره بنقر ملف > استورد > MIDI."
 
 #: src/import/Import.cpp
@@ -11914,11 +11914,11 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Wavvy cannot open this type of file."
+"Wavacity cannot open this type of file."
 msgstr ""
 "\"%s\" \n"
 "هو ملف MIDI، ليس ملف صوت.\n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات للتشغيل، و لكن تستطيع\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات للتشغيل، و لكن تستطيع\n"
 "تحريره بنقر ملف > استورد > MIDI."
 
 #: src/import/Import.cpp
@@ -11927,21 +11927,21 @@ msgstr "اختر المجرى/المجاري لتستورد"
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Wavvy was not compiled with %s support."
-msgstr "هذا الإصدار من Wavvy لم يجمع مع دعم %s."
+msgid "This version of Wavacity was not compiled with %s support."
+msgstr "هذا الإصدار من Wavacity لم يجمع مع دعم %s."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Wavvy cannot open audio CDs directly. \n"
+"Wavacity cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Wavvy can import, such as WAV or AIFF."
+"Wavacity can import, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو مقطع قرص مضغوط صوتي. \n"
-"Wavvy لا يستطيع فتح الأقراص المضغوطة الصوتية مباشرة. \n"
-"استخرج مقاطع القرص المضغوط إلى صيغة صوتية يمكن لWavvy استيرادها، \n"
+"Wavacity لا يستطيع فتح الأقراص المضغوطة الصوتية مباشرة. \n"
+"استخرج مقاطع القرص المضغوط إلى صيغة صوتية يمكن لWavacity استيرادها، \n"
 "مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -11949,13 +11949,13 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Wavvy cannot open this file because it only contains links to other "
+"Wavacity cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
 msgstr ""
 "\"%s\" هو ملف قائمة تشغيل. \n"
-"Wavvy لا يستطيع فتح هذا الملف لأنه يحتوي روابط لملفات أخرى فقط. \n"
+"Wavacity لا يستطيع فتح هذا الملف لأنه يحتوي روابط لملفات أخرى فقط. \n"
 "قد يمكنك فتحه في محرر نصوص و تنزيل الملفات الصوتية الموجودة."
 
 #. i18n-hint: %s will be the filename
@@ -11963,11 +11963,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Wavvy cannot open this type of file due to patent restrictions. \n"
+"Wavacity cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف Windows Media Audio. \n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات بسبب قيود براءة الاختراع.\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات بسبب قيود براءة الاختراع.\n"
 "أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -11975,13 +11975,13 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Wavvy cannot open this type of "
+"Without the optional FFmpeg library, Wavacity cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
 msgstr ""
 "\"%s\" هو ملف Advanced Audio Coding. \n"
-"بدون مكتبة FFmpeg الاختيارية، لا يستطيع Wavvy فتح هذا النوع من الملفات. \n"
+"بدون مكتبة FFmpeg الاختيارية، لا يستطيع Wavacity فتح هذا النوع من الملفات. \n"
 "بطريقة أخرى، أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -11990,13 +11990,13 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Wavvy cannot open this type of file due to the encryption. \n"
-"Try recording the file into Wavvy, or burn it to audio CD then \n"
+"Wavacity cannot open this type of file due to the encryption. \n"
+"Try recording the file into Wavacity, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف صوت مشفر، عادة يكون مصدره موقع بيع على الإنترنت. \n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات بسبب التشفير. \n"
-"حاول تسجيل الملف إلى Wavvy، أو انسخه إلى قرص مضغوط للصوت ثم استخرج\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات بسبب التشفير. \n"
+"حاول تسجيل الملف إلى Wavacity، أو انسخه إلى قرص مضغوط للصوت ثم استخرج\n"
 "مقطع القرص المضغوط إلى صيغة صوت مدعومة مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12004,11 +12004,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Wavvy cannot open this proprietary format. \n"
+"Wavacity cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف وسائط RealPlayer . \n"
-"Wavvy لا يستطيع فتح هذه الصيغة المملوكة. \n"
+"Wavacity لا يستطيع فتح هذه الصيغة المملوكة. \n"
 "أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12016,28 +12016,28 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Wavvy."
+"then import it, or record it into Wavacity."
 msgstr ""
 "\"%s\" هو ملف علامات، ليس ملف صوت. \n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات.\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات.\n"
 "حاول تحويله إلى ملف صوت من نوع WAV أو AIFF \n"
-"ثم استورده، أو سجله إلى Wavvy."
+"ثم استورده، أو سجله إلى Wavacity."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
 "format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف Musepack و ليس ملف صوت. \n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات.\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات.\n"
 "إذا كنت تظن أنه ملف mp3، حاول تسميته بامتداد \".mp3\" \n"
 "و استوراده مرة ثانية. عدا هذا أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة\n"
 "مثل WAV أو AIFF."
@@ -12047,11 +12047,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف Wavpack و ليس ملف صوت. \n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات.\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات.\n"
 "أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12059,11 +12059,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف صوت Dolby Digital. \n"
-"Wavvy لا يستطيع حاليا فتح هذا النوع من الملفات.\n"
+"Wavacity لا يستطيع حاليا فتح هذا النوع من الملفات.\n"
 "أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12071,11 +12071,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف صوت Ogg Speex. \n"
-"Wavvy لا يستطيع حاليا فتح هذا النوع من الملفات.\n"
+"Wavacity لا يستطيع حاليا فتح هذا النوع من الملفات.\n"
 "أنت تحتاج إلى تحويله إلى صيغة صوت مدعومة، مثل WAV أو AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12083,11 +12083,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" هو ملف فيديو.\n"
-"Wavvy لا يستطيع فتح هذا النوع من الملفات حاليا.\n"
+"Wavacity لا يستطيع فتح هذا النوع من الملفات حاليا.\n"
 "تحتاج إلى أن تستخلص الصوت إلى صيغة مدعومة، مثل WAV أو AIFF."
 
 #: src/import/Import.cpp
@@ -12099,11 +12099,11 @@ msgstr "الملف \"%s\" لم يوجد."
 #: src/import/Import.cpp
 #, fuzzy, c-format
 msgid ""
-"Wavvy did not recognize the type of the file '%s'.\n"
+"Wavacity did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
-"لم يتعرف Wavvy على نوع الملف '%s'.\n"
+"لم يتعرف Wavacity على نوع الملف '%s'.\n"
 "جرب تثبيت FFmpeg. للملفات الغير مضغوطة، جرب أيضا ملف > صدر > بيانات خام."
 
 #: src/import/Import.cpp
@@ -12121,12 +12121,12 @@ msgstr "%s، %s"
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Wavvy recognized the type of the file '%s'.\n"
+"Wavacity recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
 msgstr ""
-"تعرف Wavvy على نوع الملف '%s'.\n"
+"تعرف Wavacity على نوع الملف '%s'.\n"
 "المصدرون المفترض دعمهم لهكذا ملفات هم:\n"
 "%s،\n"
 "لكن لم يفهم أي واحد منهم هذه الصيغة."
@@ -12152,11 +12152,11 @@ msgstr "استورد مسبقات"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Wavvy version 1.0 or earlier. The format has\n"
-"changed and this version of Wavvy is unable to import the project.\n"
+"This project was saved by Wavacity version 1.0 or earlier. The format has\n"
+"changed and this version of Wavacity is unable to import the project.\n"
 "\n"
-"Use a version of Wavvy prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Wavvy."
+"Use a version of Wavacity prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Wavacity."
 msgstr ""
 
 #: src/import/ImportAUP.cpp
@@ -12204,7 +12204,7 @@ msgstr "لم أتمكن من إيجاد مجلد بيانات المشروع: \"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Wavvy does not "
+"MIDI tracks found in project file, but this build of Wavacity does not "
 "include MIDI support, bypassing track."
 msgstr ""
 
@@ -13398,8 +13398,8 @@ msgid "&Getting Started"
 msgstr "أتهيأ للبدأ"
 
 #: src/menus/HelpMenus.cpp
-msgid "Wavvy &Manual"
-msgstr "كتيب Wavvy"
+msgid "Wavacity &Manual"
+msgstr "كتيب Wavacity"
 
 #: src/menus/HelpMenus.cpp
 msgid "&Quick Help..."
@@ -13446,7 +13446,7 @@ msgstr "العلامة المضافة"
 msgid "Paste Text to New Label"
 msgstr "الصق النص إلى علامة جديدة"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Wavacity has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13457,7 +13457,7 @@ msgstr "قصصت الصوت المعلم إلى الحافظة"
 msgid "Cut Labeled Audio"
 msgstr "قص الصوت المعلم"
 
-#. i18n-hint: (verb) Wavvy has just deleted the labeled audio regions
+#. i18n-hint: (verb) Wavacity has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "حذفت مناطق الصوت المعلم"
@@ -13467,7 +13467,7 @@ msgstr "حذفت مناطق الصوت المعلم"
 msgid "Delete Labeled Audio"
 msgstr "احذف الصوت المعلم"
 
-#. i18n-hint: (verb) Wavvy has just split cut the labeled audio
+#. i18n-hint: (verb) Wavacity has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13478,7 +13478,7 @@ msgstr "قسم و قص المناطق المعلمة إلى الحافظة"
 msgid "Split Cut Labeled Audio"
 msgstr "قسم و قص الصوت المعلم"
 
-#. i18n-hint: (verb) Wavvy has just done a special kind of DELETE on
+#. i18n-hint: (verb) Wavacity has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13509,7 +13509,7 @@ msgstr "نسخت الصوت المعلم إلى الحافظة"
 msgid "Copy Labeled Audio"
 msgstr "انسخ الصوت المُعلّم"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just split the labeled
+#. i18n-hint: (verb) past tense.  Wavacity has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13520,7 +13520,7 @@ msgstr "قسمت الصوت المعلم (نقاط أو مناطق)"
 msgid "Split Labeled Audio"
 msgstr "افلق الصوت المعلم"
 
-#. i18n-hint: (verb) Wavvy has just joined the labeled audio (points or
+#. i18n-hint: (verb) Wavacity has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13531,9 +13531,9 @@ msgstr "ضممت الصوت المعلم (نقاط أو مناطق)"
 msgid "Join Labeled Audio"
 msgstr "ضم الصوت المُعلّم"
 
-#. i18n-hint: (verb) Wavvy has just detached the labeled audio regions.
+#. i18n-hint: (verb) Wavacity has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Wavvy has done.
+#. Wavacity has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "فصلت مناطق الصوت المعلم"
@@ -14367,8 +14367,8 @@ msgstr "أنشأت مقطع علامة جديد"
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Wavvy only allows one time track for each project window."
-msgstr "يسمح هذا الإصدار من Wavvy بمقطع وقت واحد فقط لكل نافذة مشروع."
+"This version of Wavacity only allows one time track for each project window."
+msgstr "يسمح هذا الإصدار من Wavacity بمقطع وقت واحد فقط لكل نافذة مشروع."
 
 #: src/menus/TrackMenus.cpp
 msgid "Created new time track"
@@ -14645,13 +14645,13 @@ msgstr "حرك المقطع المركز إلى القمة"
 msgid "Move Focused Track to &Bottom"
 msgstr "حرك المقطع المركز إلى القاع"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 msgid "Playing"
 msgstr "أشغل"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15228,9 +15228,9 @@ msgstr "لا يمكن كتابة المجلد %s"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Wavvy is "
+"Changes to temporary directory will not take effect until Wavacity is "
 "restarted"
-msgstr "التغييرات إلى المجلد المؤقت لن تكون فعّالة إلا عند إعادة تشغيل Wavvy"
+msgstr "التغييرات إلى المجلد المؤقت لن تكون فعّالة إلا عند إعادة تشغيل Wavacity"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid "Temp Directory Update"
@@ -15274,7 +15274,7 @@ msgid "LV&2"
 msgstr "LV2"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15314,12 +15314,12 @@ msgid "Plugin Options"
 msgstr "اختيارات البرامج المساعدة"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Wavvy starts"
-msgstr "تحقق من وجود تأثيرات محدثة عندما يبدأ Wavvy"
+msgid "Check for updated plugins when Wavacity starts"
+msgstr "تحقق من وجود تأثيرات محدثة عندما يبدأ Wavacity"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Rescan plugins next time Wavvy is started"
-msgstr "أعد فحص التأثيرات في المرة القادمة عندما يبدأ Wavvy"
+msgid "Rescan plugins next time Wavacity is started"
+msgstr "أعد فحص التأثيرات في المرة القادمة عندما يبدأ Wavacity"
 
 #: src/prefs/EffectsPrefs.cpp
 msgid "Instruction Set"
@@ -15391,12 +15391,12 @@ msgstr "المراشح الغير مستخدمة:"
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Wavvy "
+"what you are doing, it is recommended to trim spaces. Do you want Wavacity "
 "to trim spaces for you?"
 msgstr ""
 "هناك أحرف مسافات (مسافات، سطر جديدة، تبويبات أو تغذية سطر) في أحد البنود. من "
 "المرجح أن يكسروا مكافئة الأنماط. إلا إذا كنت تعرف ما تفعل، من المستحسن أن "
-"تقلم المسافات. هل تريد من Wavvy أن يقلم المسافات من أجلك؟"
+"تقلم المسافات. هل تريد من Wavacity أن يقلم المسافات من أجلك؟"
 
 #: src/prefs/ExtImportPrefs.cpp
 msgid "Spaces detected"
@@ -15415,7 +15415,7 @@ msgstr "تأكيد حذف القانون"
 msgid "Ext Import"
 msgstr "الاستيراد الممدد"
 
-#. i18n-hint: refers to Wavvy's user interface settings
+#. i18n-hint: refers to Wavacity's user interface settings
 #: src/prefs/GUIPrefs.cpp
 #, fuzzy
 msgctxt "GUI"
@@ -15507,8 +15507,8 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr "احتفظ بالعلامات إذا كان الاختيار يتلقف إلى علامة"
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Wavvy theme"
-msgstr "ادمح موضوع النظام و Wavvy"
+msgid "B&lend system and Wavacity theme"
+msgstr "ادمح موضوع النظام و Wavacity"
 
 #. i18n-hint: RTL stands for 'Right to Left'
 #: src/prefs/GUIPrefs.cpp
@@ -15693,8 +15693,8 @@ msgid ""
 msgstr ""
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Wavvy keyboard shortcuts..."
-msgstr "اختر ملف XML يحتوي اختصارات لوحة مفاتيح Wavvy..."
+msgid "Select an XML file containing Wavacity keyboard shortcuts..."
+msgstr "اختر ملف XML يحتوي اختصارات لوحة مفاتيح Wavacity..."
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -15833,10 +15833,10 @@ msgstr "نزل"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Wavvy has automatically detected valid FFmpeg libraries.\n"
+"Wavacity has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"Wavvy اكتشف تلقائيا مكتبات FFmpeg صالحة.\n"
+"Wavacity اكتشف تلقائيا مكتبات FFmpeg صالحة.\n"
 "هل لا تزال تريد أن تعيين موقعهم يدويا؟"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -15883,7 +15883,7 @@ msgstr "يجب أن يكون كمون مركب MIDI عددا صحيحا"
 msgid "Midi IO"
 msgstr ""
 
-#. i18n-hint: Modules are optional extensions to Wavvy that add NEW features.
+#. i18n-hint: Modules are optional extensions to Wavacity that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "الوحدات"
@@ -15894,27 +15894,27 @@ msgstr "تفضيلات للوحدة"
 
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"These are experimental modules. Enable them only if you've read the Wavvy "
+"These are experimental modules. Enable them only if you've read the Wavacity "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
-"هذه وحدات تجريبية. مَكنها فقط إذا قرأت كتيب Wavvy\n"
+"هذه وحدات تجريبية. مَكنها فقط إذا قرأت كتيب Wavacity\n"
 "و تعرف ماذا تفعل."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
 msgid ""
-"  'Ask' means Wavvy will ask if you want to load the module each time it "
+"  'Ask' means Wavacity will ask if you want to load the module each time it "
 "starts."
 msgstr ""
-"'اسأل' تعني أن Wavvy سيسأل إذا كنت تريد تحميل الوحدة عند كل بدء لWavvy."
+"'اسأل' تعني أن Wavacity سيسأل إذا كنت تريد تحميل الوحدة عند كل بدء لWavacity."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
-msgid "  'Failed' means Wavvy thinks the module is broken and won't run it."
-msgstr "'أخفق' تعني أن Wavvy يظن أن الوحدة مكسورة و لن يشغلها."
+msgid "  'Failed' means Wavacity thinks the module is broken and won't run it."
+msgstr "'أخفق' تعني أن Wavacity يظن أن الوحدة مكسورة و لن يشغلها."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
@@ -15923,8 +15923,8 @@ msgid "  'New' means no choice has been made yet."
 msgstr "'جديد' تعني أنه لم يتم عمل اختيار حتى الآن."
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Wavvy starts up."
-msgstr "التغييرات إلى هذه الأوضاع  ستكون فعالة فقط عند بدء Wavvy."
+msgid "Changes to these settings only take effect when Wavacity starts up."
+msgstr "التغييرات إلى هذه الأوضاع  ستكون فعالة فقط عند بدء Wavacity."
 
 #: src/prefs/ModulePrefs.cpp
 msgid "Ask"
@@ -16205,8 +16205,8 @@ msgid "Always scrub un&pinned"
 msgstr ""
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Wavvy Preferences"
-msgstr "تفضيلات Wavvy"
+msgid "Wavacity Preferences"
+msgstr "تفضيلات Wavacity"
 
 #: src/prefs/PrefsDialog.cpp
 msgid "Category"
@@ -16604,7 +16604,7 @@ msgstr "العدد الأعلى من العلامات يجب أن يكون في 
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -16627,7 +16627,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Wavvy.\n"
+"Wavacity.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -16641,7 +16641,7 @@ msgstr ""
 "مثل (Gimp).\n"
 "\n"
 "انقر \"تحميل مخبأ الموضوع\" لتحميل الصور المُبدلة\n"
-"و اﻷلوان في برنامج Wavvy من جديد.\n"
+"و اﻷلوان في برنامج Wavacity من جديد.\n"
 "\n"
 "(حاليا يمكن فقط تبديل شريط التحكم و اﻷلوان على \n"
 "مقطع الموجة، حتى و لو كان ملف الصور\n"
@@ -16935,7 +16935,7 @@ msgstr ""
 msgid "Waveform dB &range:"
 msgstr "مدى dB للشكل الموجي:"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 msgid "Stopped"
@@ -16973,7 +16973,7 @@ msgstr "الاختيار إلى النهاية"
 msgid "Select to Start"
 msgstr "الاختيار إلى البداية"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, fuzzy, c-format
@@ -17338,8 +17338,8 @@ msgstr "شريط أدوات الزمن"
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, c-format
-msgid "Wavvy %s Toolbar"
-msgstr "شريط أدوات %s Wavvy"
+msgid "Wavacity %s Toolbar"
+msgstr "شريط أدوات %s Wavacity"
 
 #: src/toolbars/ToolBar.cpp
 msgid "Click and drag to resize toolbar"
@@ -18016,7 +18016,7 @@ msgstr "انقر و اسحب لتفتل وقت التشغيل"
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "انقر و اسحب لتحرير غلاف السِعة"
 
-#. i18n-hint: (verb) Wavvy has just adjusted the envelope .
+#. i18n-hint: (verb) Wavacity has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr "الغلاف المعدل."
@@ -20353,7 +20353,7 @@ msgstr "يمين (dB)"
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Wavvy</a> by Steve\n"
+"<a href=\"~a\">Wavacity</a> by Steve\n"
 "Daulton"
 msgstr ""
 
@@ -20699,21 +20699,21 @@ msgstr ""
 #~ msgid "File dialog failed with error code %0lx."
 #~ msgstr "أخفق حوار الملف مع شفرة خطأ %0lx."
 
-#~ msgid "About Wavvy"
-#~ msgstr "حول Wavvy"
+#~ msgid "About Wavacity"
+#~ msgstr "حول Wavacity"
 
-#~ msgid "<h3>Wavvy "
-#~ msgstr "<h3>Wavvy "
+#~ msgid "<h3>Wavacity "
+#~ msgstr "<h3>Wavacity "
 
-#~ msgid "Wavvy Team Members"
-#~ msgstr "أعضاء فريق Wavvy"
+#~ msgid "Wavacity Team Members"
+#~ msgstr "أعضاء فريق Wavacity"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Wavvy<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Wavvy Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Wavacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Wavacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; برمجيات <b>Wavvy<sup>&reg;</sup></b> محمية بموجب "
-#~ "حقوق النشر &copy; 1999-2018 فريق Wavvy.<br>"
+#~ "<p><br>&nbsp; &nbsp; برمجيات <b>Wavacity<sup>&reg;</sup></b> محمية بموجب "
+#~ "حقوق النشر &copy; 1999-2018 فريق Wavacity.<br>"
 
 #~ msgid ""
 #~ "One or more external audio files could not be found.\n"
@@ -20795,11 +20795,11 @@ msgstr ""
 #~ msgid "Export recording"
 #~ msgstr "صدر التسجيل"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Wavvy"
-#~ msgstr "هذه النسخة من Wavvy لا تتضمن دعم Ogg Vorbis"
+#~ msgid "Ogg Vorbis support is not included in this build of Wavacity"
+#~ msgstr "هذه النسخة من Wavacity لا تتضمن دعم Ogg Vorbis"
 
-#~ msgid "FLAC support is not included in this build of Wavvy"
-#~ msgstr "هذه النسخة من Wavvy لا تتضمن دعم FLAC"
+#~ msgid "FLAC support is not included in this build of Wavacity"
+#~ msgstr "هذه النسخة من Wavacity لا تتضمن دعم FLAC"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "الأمر %s ليس منفذا بعد"
@@ -20829,11 +20829,11 @@ msgstr ""
 #~ msgstr "mkdir في DirManager::MakeBlockFilePath أخفق."
 
 #~ msgid ""
-#~ "Wavvy found an orphan block file: %s. \n"
+#~ "Wavacity found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
-#~ "عثر Wavvy على ملف كتلة يتيم: %s. \n"
+#~ "عثر Wavacity على ملف كتلة يتيم: %s. \n"
 #~ "من فضلك فكر في حفظ و إعادة تشغيل المشروع لتقوم بفحص كامل للمشروع."
 
 #~ msgid "%s-old%d"
@@ -20877,8 +20877,8 @@ msgstr ""
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "احفظ الصوت المسجل إلى القرص"
 
-#~ msgid "Wavvy projects"
-#~ msgstr "مشروعات Wavvy"
+#~ msgid "Wavacity projects"
+#~ msgstr "مشروعات Wavacity"
 
 #~ msgid "Reclaimable Space"
 #~ msgstr "الحيز الممكن استصلاحه"
@@ -20899,9 +20899,9 @@ msgstr ""
 #~ msgstr "لا توفر الوحدة %s سلسلة إصدار. لن تحمل."
 
 #~ msgid ""
-#~ "The module \"%s\" is matched with Wavvy version \"%s\". It will not be "
+#~ "The module \"%s\" is matched with Wavacity version \"%s\". It will not be "
 #~ "loaded."
-#~ msgstr "الوحدة \"%s\" تتطابق مع إصدار \"%s\" من Wavvy. لن تحمل."
+#~ msgstr "الوحدة \"%s\" تتطابق مع إصدار \"%s\" من Wavacity. لن تحمل."
 
 #, fuzzy
 #~ msgid ""
@@ -20940,22 +20940,22 @@ msgstr ""
 #~ "تحقق المشروع وجد تناقضات في الملفات عند تفتيش بيانات المشروع المحملة."
 
 #~ msgid ""
-#~ "This file was saved by Wavvy version %s. The format has changed. \n"
+#~ "This file was saved by Wavacity version %s. The format has changed. \n"
 #~ "\n"
-#~ "Wavvy can try to open and save this file, but saving it in this \n"
+#~ "Wavacity can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Wavvy might corrupt the file in opening it, so you should back it up "
+#~ "Wavacity might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "حفظ هذا الملف بواسطة إصدار Wavvy %s. تغيرت الصيغة. \n"
+#~ "حفظ هذا الملف بواسطة إصدار Wavacity %s. تغيرت الصيغة. \n"
 #~ "\n"
-#~ "بمكن أن يحاول Wavvy فتح و حفظ هذا الملف، لكن حفظه في هذا \n"
+#~ "بمكن أن يحاول Wavacity فتح و حفظ هذا الملف، لكن حفظه في هذا \n"
 #~ "الإصدار سيمنع أي 1.2 أو إصدار أقدم من فتحه. \n"
 #~ "\n"
-#~ "قد يحرف Wavvy الملف عند فتحه، و بالتالي يجب عليك نسخه احتياطيا أولا. \n"
+#~ "قد يحرف Wavacity الملف عند فتحه، و بالتالي يجب عليك نسخه احتياطيا أولا. \n"
 #~ "\n"
 #~ "افتح هذا الملف الآن؟"
 
@@ -20992,14 +20992,14 @@ msgstr ""
 #~ "مجلد \"%s\" قبل حفظ المشروع بهذا الاسم."
 
 #~ msgid ""
-#~ "'Save Lossless Copy of Project' is for an Wavvy project, not an audio "
+#~ "'Save Lossless Copy of Project' is for an Wavacity project, not an audio "
 #~ "file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
 #~ "Lossless copies of project are a good way to backup your project, \n"
 #~ "with no loss of quality, but the projects are large.\n"
 #~ msgstr ""
-#~ "'احفظ المشروع مضغوطا' هي لمشروع Wavvy، ليست لملف صوت.\n"
+#~ "'احفظ المشروع مضغوطا' هي لمشروع Wavacity، ليست لملف صوت.\n"
 #~ "لملف صوت قابل للفتح في تطبيقات أخرى، استخدم 'استورد'.\n"
 #~ "\n"
 #~ "ملفات المشروع المضغوطة وسيلة جيدة لتنقل مشروعك على الشبكة،\n"
@@ -21012,7 +21012,7 @@ msgstr ""
 #~ msgstr "%sاحفظ نسخة مضغوطة من المشروع \"%s\" كـ..."
 
 #~ msgid ""
-#~ "'Save Compressed Copy of Project' is for an Wavvy project, not an "
+#~ "'Save Compressed Copy of Project' is for an Wavacity project, not an "
 #~ "audio file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
@@ -21020,7 +21020,7 @@ msgstr ""
 #~ "online, \n"
 #~ "but they have some loss of fidelity.\n"
 #~ msgstr ""
-#~ "'احفظ المشروع مضغوطا' هي لمشروع Wavvy، ليست لملف صوت.\n"
+#~ "'احفظ المشروع مضغوطا' هي لمشروع Wavacity، ليست لملف صوت.\n"
 #~ "لملف صوت قابل للفتح في تطبيقات أخرى، استخدم 'استورد'.\n"
 #~ "\n"
 #~ "ملفات المشروع المضغوطة وسيلة جيدة لتنقل مشروعك على الشبكة،\n"
@@ -21030,10 +21030,10 @@ msgstr ""
 #~ "كل مقطع مضغوط.\n"
 
 #~ msgid ""
-#~ "Wavvy was unable to convert an Wavvy 1.0 project to the new project "
+#~ "Wavacity was unable to convert an Wavacity 1.0 project to the new project "
 #~ "format."
 #~ msgstr ""
-#~ "لم يستطع Wavvy من تحويل مشروع Wavvy إصدار 1.0 إلى الصيغة الجديدة "
+#~ "لم يستطع Wavacity من تحويل مشروع Wavacity إصدار 1.0 إلى الصيغة الجديدة "
 #~ "للمشاريع."
 
 #~ msgid "Could not remove old auto save file"
@@ -21126,11 +21126,11 @@ msgstr ""
 #~ msgstr "%d kbps"
 
 #~ msgid ""
-#~ "\"%s\" is an Wavvy Project file. \n"
-#~ "Use the 'File > Open' command to open Wavvy Projects."
+#~ "\"%s\" is an Wavacity Project file. \n"
+#~ "Use the 'File > Open' command to open Wavacity Projects."
 #~ msgstr ""
-#~ "\"%s\" هو ملف مشروع Wavvy.\n"
-#~ "استخدم أمر 'ملف > افتح' لتفتح مشاريع Wavvy."
+#~ "\"%s\" هو ملف مشروع Wavacity.\n"
+#~ "استخدم أمر 'ملف > افتح' لتفتح مشاريع Wavacity."
 
 #~ msgid ""
 #~ "When importing uncompressed audio files you can either copy them into the "
@@ -21380,8 +21380,8 @@ msgstr ""
 #~ msgid "As part of their processing, some VST effects must delay returning "
 #~ msgstr "كجزء من معالجتها، بعض تأثيرات VST يجب أن تأخر الصوت "
 
-#~ msgid "audio to Wavvy. When not compensating for this delay, you will "
-#~ msgstr "العائد إلى Wavvy. عندما لا تعوض لهذا التأخير، سوف "
+#~ msgid "audio to Wavacity. When not compensating for this delay, you will "
+#~ msgstr "العائد إلى Wavacity. عندما لا تعوض لهذا التأخير، سوف "
 
 #~ msgid "notice that small silences have been inserted into the audio. "
 #~ msgstr "لاحظ أن فترات سكون صغيرة أدرجت في الصوت. "
@@ -21504,11 +21504,11 @@ msgstr ""
 #~ msgstr "%s - %s"
 
 #~ msgid ""
-#~ "This is a debug version of Wavvy, with an extra button, 'Output "
+#~ "This is a debug version of Wavacity, with an extra button, 'Output "
 #~ "Sourcery'. This will save a\n"
 #~ "C version of the image cache that can be compiled in as a default."
 #~ msgstr ""
-#~ "هذا إصدار تنقيح من Wavvy، مع زر إضافي، 'Output Sourcery'. هذا سيحفظ\n"
+#~ "هذا إصدار تنقيح من Wavacity، مع زر إضافي، 'Output Sourcery'. هذا سيحفظ\n"
 #~ "إصدار C من مخبآت الصورة الذي يمكن تجميعه كأساسي."
 
 #~ msgid "Waveform (dB)"
@@ -21642,7 +21642,7 @@ msgstr ""
 #~ msgid ""
 #~ "Latency Correction setting has caused the recorded audio to be hidden "
 #~ "before zero.\n"
-#~ "Wavvy has brought it back to start at zero.\n"
+#~ "Wavacity has brought it back to start at zero.\n"
 #~ "You may have to use the Time Shift Tool (<---> or F5) to drag the track "
 #~ "to the right place."
 #~ msgstr ""
@@ -21675,27 +21675,27 @@ msgstr ""
 #~ msgid "C&hain (Double-Click or press SPACE to edit)"
 #~ msgstr "سلسلة (انقر نقرة مزدوجة أو اضغط على زر المسافة للتحرير)"
 
-#~ msgid "<br><br>DarkWavvy is based on Wavvy:"
+#~ msgid "<br><br>DarkWavacity is based on Wavacity:"
 #~ msgstr "<br><br>جرأة القاتم مبني على أساس جرأة:"
 
 #~ msgid ""
-#~ " [[http://www.darkwavvy.com|www.darkwavvy.com]] - for differences "
+#~ " [[http://www.darkwavacity.com|www.darkwavacity.com]] - for differences "
 #~ "between them."
 #~ msgstr ""
-#~ " [[http://www.darkwavvy.com|www.darkwavvy.com]] - لاختلافات بينهما."
+#~ " [[http://www.darkwavacity.com|www.darkwavacity.com]] - لاختلافات بينهما."
 
 #~ msgid ""
 #~ " email to [[mailto:james@audacityteam.org|james@audacityteam.org]] - for "
-#~ "help using DarkWavvy."
+#~ "help using DarkWavacity."
 #~ msgstr ""
 #~ " أرسل بريداً إلكترونياً إلى [[mailto:james@audacityteam.org|"
 #~ "james@audacityteam.org]] - للمساعدة باستخدام جرأة المظلم."
 
 #~ msgid ""
-#~ " [[http://www.darkwavvy.com/video.html|Tutorials]] - for getting "
-#~ "started with DarkWavvy."
+#~ " [[http://www.darkwavacity.com/video.html|Tutorials]] - for getting "
+#~ "started with DarkWavacity."
 #~ msgstr ""
-#~ " [[http://www.darkwavvy.com/video.html|دروس]] - لتبدأ مع جرأة القاتم."
+#~ " [[http://www.darkwavacity.com/video.html|دروس]] - لتبدأ مع جرأة القاتم."
 
 #~ msgid "Insert &After"
 #~ msgstr "أدخل بعد"
@@ -21821,7 +21821,7 @@ msgstr ""
 #~ msgid "&Display a mono channel as virtual stereo"
 #~ msgstr "أظهر قناة أحايدة كصوت مجسم افتراضي"
 
-#~ msgid "Wavvy failed to write to a file in %s."
+#~ msgid "Wavacity failed to write to a file in %s."
 #~ msgstr "عجز جرأة عن الكتابة إلى ملف في %s."
 
 #~ msgid "Could not open file: "
@@ -22169,7 +22169,7 @@ msgstr ""
 #~ "'%s'"
 
 #~ msgid ""
-#~ "Wavvy website: [[http://www.audacityteam.org/|http://www.audacityteam."
+#~ "Wavacity website: [[http://www.audacityteam.org/|http://www.audacityteam."
 #~ "org/]]"
 #~ msgstr ""
 #~ "موقع-ويب جرأة: [[http://www.audacityteam.org/|http://www.audacityteam."
@@ -22305,13 +22305,13 @@ msgstr ""
 #~ msgstr "موافق... جريئ!"
 
 #, fuzzy
-#~ msgid "Wavvy Support Team"
+#~ msgid "Wavacity Support Team"
 #~ msgstr "فريق دعم جُرأة %s"
 
 #~ msgid "Emeritus Developers"
 #~ msgstr "المطورين القدماء"
 
-#~ msgid "Welcome to Wavvy "
+#~ msgid "Welcome to Wavacity "
 #~ msgstr "مرحبا بك في برنامج جُرأة"
 
 #~ msgid "Edit Metadata"
@@ -22499,7 +22499,7 @@ msgstr ""
 #~ msgstr "خيارات سطر اﻷوامر المتوفرة:"
 
 #~ msgid ""
-#~ "In addition, specify the name of an audio file or Wavvy project to "
+#~ "In addition, specify the name of an audio file or Wavacity project to "
 #~ "open it."
 #~ msgstr "أضف إلى الخيارات اسم ملف صوتي أو مشروع جُرأة لفتحه."
 
@@ -22850,7 +22850,7 @@ msgstr ""
 #~ msgid "Align End with Cu&rsor"
 #~ msgstr "صف النهاية مع ال&مؤشر"
 
-#~ msgid "&About Wavvy CleanSpeech..."
+#~ msgid "&About Wavacity CleanSpeech..."
 #~ msgstr "&حول الخطاب النظيف لجُرأة..."
 
 #~ msgid "Trim"

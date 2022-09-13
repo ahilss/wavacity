@@ -16,16 +16,16 @@
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_SCREENSHOT__
-#define __WAVVY_SCREENSHOT__
+#ifndef __WAVACITY_SCREENSHOT__
+#define __WAVACITY_SCREENSHOT__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <wx/defs.h>
 
-class WavvyProject;
+class WavacityProject;
 
-void OpenScreenshotTools( WavvyProject &project );
+void OpenScreenshotTools( WavacityProject &project );
 void CloseScreenshotTools();
 
-#endif // __WAVVY_SCREENSHOT__
+#endif // __WAVACITY_SCREENSHOT__

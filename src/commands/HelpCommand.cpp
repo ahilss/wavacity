@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "HelpCommand.h"
 
 #include "../Shuttle.h"

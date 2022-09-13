@@ -9,7 +9,7 @@
 *******************************************************************//**
 
 \class AdornedRulerPanel
-\brief This is an Wavvy Specific ruler panel which additionally
+\brief This is an Wavacity Specific ruler panel which additionally
   has border, selection markers, play marker.
   
   Once TrackPanel uses wxSizers, we will derive it from some
@@ -18,7 +18,7 @@
 
 *//******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "AdornedRulerPanel.h"
 
 #include "Experimental.h"
@@ -51,7 +51,7 @@
 #include "tracks/ui/Scrubbing.h"
 #include "tracks/ui/TrackView.h"
 #include "widgets/AButton.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/Grabber.h"
 
 #include <wx/dcclient.h>
@@ -168,14 +168,14 @@ class AdornedRulerPanel::QuickPlayIndicatorOverlay final : public Overlay
    friend AdornedRulerPanel;
 
 public:
-   QuickPlayIndicatorOverlay(WavvyProject *project);
+   QuickPlayIndicatorOverlay(WavacityProject *project);
 
 private:
    unsigned SequenceNumber() const override;
    std::pair<wxRect, bool> DoGetRectangle(wxSize size) override;
    void Draw(OverlayPanel &panel, wxDC &dc) override;
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 
    std::shared_ptr<QuickPlayRulerOverlay> mPartner
       { std::make_shared<QuickPlayRulerOverlay>(*this) };
@@ -299,7 +299,7 @@ void AdornedRulerPanel::QuickPlayRulerOverlay::Draw(
  **********************************************************************/
 
 AdornedRulerPanel::QuickPlayIndicatorOverlay::QuickPlayIndicatorOverlay(
-   WavvyProject *project)
+   WavacityProject *project)
    : mProject(project)
 {
 }
@@ -406,7 +406,7 @@ public:
    {}
    
    HitTestPreview DefaultPreview
-      (const TrackPanelMouseState &state, const WavvyProject *pProject)
+      (const TrackPanelMouseState &state, const WavacityProject *pProject)
       override
    {
       (void)pProject;// Compiler food
@@ -427,7 +427,7 @@ public:
 
    unsigned DoContextMenu
       (const wxRect &rect,
-       wxWindow *pParent, wxPoint *pPosition, WavvyProject*) final override
+       wxWindow *pParent, wxPoint *pPosition, WavacityProject*) final override
    {
       (void)pParent;// Compiler food
       (void)rect;// Compiler food
@@ -463,20 +463,20 @@ public:
 
 protected:
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *) override
+      (const TrackPanelMouseEvent &event, WavacityProject *) override
    {
       mClicked = event.event.LeftIsDown() ? Button::Left : Button::Right;
       return RefreshCode::DrawOverlays;
    }
 
    Result Drag
-      (const TrackPanelMouseEvent &, WavvyProject *) override
+      (const TrackPanelMouseEvent &, WavacityProject *) override
    {
       return RefreshCode::DrawOverlays;
    }
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *,
+      (const TrackPanelMouseEvent &event, WavacityProject *,
        wxWindow *) override
    {
       if ( mParent && mClicked == Button::Right ) {
@@ -486,13 +486,13 @@ protected:
       return RefreshCode::DrawOverlays;
    }
 
-   Result Cancel(WavvyProject *pProject) override
+   Result Cancel(WavacityProject *pProject) override
    {
       (void)pProject;// Compiler food
       return RefreshCode::DrawOverlays;
    }
    
-   void Enter(bool, WavvyProject *) override
+   void Enter(bool, WavacityProject *) override
    {
       mChangeHighlight = RefreshCode::DrawOverlays;
    }
@@ -520,20 +520,20 @@ public:
 
 private:
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
    override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    SelectedRegion mOldSelection;
 };
@@ -541,7 +541,7 @@ private:
 namespace
 {
 
-wxCoord GetPlayHeadX( const WavvyProject *pProject )
+wxCoord GetPlayHeadX( const WavacityProject *pProject )
 {
    const auto &viewInfo = ViewInfo::Get( *pProject );
    auto width = viewInfo.GetTracksUsableWidth();
@@ -549,7 +549,7 @@ wxCoord GetPlayHeadX( const WavvyProject *pProject )
       + width * TracksPrefs::GetPinnedHeadPositionPreference();
 }
 
-double GetPlayHeadFraction( const WavvyProject *pProject, wxCoord xx )
+double GetPlayHeadFraction( const WavacityProject *pProject, wxCoord xx )
 {
    const auto &viewInfo = ViewInfo::Get( *pProject );
    auto width = viewInfo.GetTracksUsableWidth();
@@ -576,7 +576,7 @@ public:
    }
    
    static std::shared_ptr<PlayheadHandle>
-   HitTest( const WavvyProject *pProject, wxCoord xx )
+   HitTest( const WavacityProject *pProject, wxCoord xx )
    {
       if( Scrubber::Get( *pProject )
          .IsTransportingPinned() &&
@@ -591,7 +591,7 @@ public:
    
 protected:
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override
    {
       (void)pProject;// Compiler food
       if (event.event.LeftDClick()) {
@@ -611,7 +611,7 @@ protected:
    }
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override
    {
 
       auto value = GetPlayHeadFraction(pProject, event.event.m_x );
@@ -620,7 +620,7 @@ protected:
    }
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override
    {
       (void)pProject;// Compiler food
@@ -637,7 +637,7 @@ protected:
    }
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *) override
    {
       auto value = GetPlayHeadFraction(pProject, event.event.m_x );
@@ -645,14 +645,14 @@ protected:
       return RefreshCode::DrawOverlays;
    }
 
-   Result Cancel(WavvyProject *pProject) override
+   Result Cancel(WavacityProject *pProject) override
    {
       (void)pProject;// Compiler food
       TracksPrefs::SetPinnedHeadPositionPreference( mOrigPreference );
       return RefreshCode::DrawOverlays;
    }
    
-   void Enter(bool, WavvyProject *) override
+   void Enter(bool, WavacityProject *) override
    {
       mChangeHighlight = RefreshCode::DrawOverlays;
    }
@@ -673,7 +673,7 @@ public:
    
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
    
    // Return shared_ptr to self, stored in parent
    std::shared_ptr<TrackPanelCell> ContextMenuDelegate() override
@@ -692,7 +692,7 @@ public:
 
 std::vector<UIHandlePtr> AdornedRulerPanel::QPCell::HitTest
 (const TrackPanelMouseState &state,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    // Creation of overlays on demand here -- constructor of AdornedRulerPanel
    // is too early to do it
@@ -738,7 +738,7 @@ public:
 
 private:
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override
    {
       auto result = CommonRulerHandle::Click(event, pProject);
       if (!( result & RefreshCode::Cancelled )) {
@@ -763,7 +763,7 @@ private:
    }
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override
    {
       auto result = CommonRulerHandle::Drag(event, pProject);
       if (!( result & RefreshCode::Cancelled )) {
@@ -774,11 +774,11 @@ private:
    }
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
    override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override {
       auto result = CommonRulerHandle::Release(event, pProject, pParent);
       if (!( result & RefreshCode::Cancelled )) {
@@ -789,7 +789,7 @@ private:
       return result;
    }
 
-   Result Cancel(WavvyProject *pProject) override
+   Result Cancel(WavacityProject *pProject) override
    {
       auto result = CommonRulerHandle::Cancel(pProject);
 
@@ -814,7 +814,7 @@ public:
    
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
    
    // Return shared_ptr to self, stored in parent
    std::shared_ptr<TrackPanelCell> ContextMenuDelegate() override
@@ -833,7 +833,7 @@ private:
 
 std::vector<UIHandlePtr> AdornedRulerPanel::ScrubbingCell::HitTest
 (const TrackPanelMouseState &state,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    (void)pProject;// Compiler food
    // Creation of overlays on demand here -- constructor of AdornedRulerPanel
@@ -857,8 +857,8 @@ std::vector<UIHandlePtr> AdornedRulerPanel::ScrubbingCell::HitTest
 }
 
 namespace{
-WavvyProject::AttachedWindows::RegisteredFactory sKey{
-[]( WavvyProject &project ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sKey{
+[]( WavacityProject &project ) -> wxWeakRef< wxWindow > {
    auto &viewInfo = ViewInfo::Get( project );
    auto &window = ProjectWindow::Get( project );
 
@@ -871,17 +871,17 @@ WavvyProject::AttachedWindows::RegisteredFactory sKey{
 };
 }
 
-AdornedRulerPanel &AdornedRulerPanel::Get( WavvyProject &project )
+AdornedRulerPanel &AdornedRulerPanel::Get( WavacityProject &project )
 {
    return project.AttachedWindows::Get< AdornedRulerPanel >( sKey );
 }
 
-const AdornedRulerPanel &AdornedRulerPanel::Get( const WavvyProject &project )
+const AdornedRulerPanel &AdornedRulerPanel::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-void AdornedRulerPanel::Destroy( WavvyProject &project )
+void AdornedRulerPanel::Destroy( WavacityProject &project )
 {
    auto *pPanel = project.AttachedWindows::Find( sKey );
    if (pPanel) {
@@ -890,7 +890,7 @@ void AdornedRulerPanel::Destroy( WavvyProject &project )
    }
 }
 
-AdornedRulerPanel::AdornedRulerPanel(WavvyProject* project,
+AdornedRulerPanel::AdornedRulerPanel(WavacityProject* project,
                                      wxWindow *parent,
                                      wxWindowID id,
                                      const wxPoint& pos,
@@ -1351,7 +1351,7 @@ bool AdornedRulerPanel::IsWithinMarker(int mousePosX, double markerTime)
 }
 
 auto AdornedRulerPanel::QPHandle::Click
-(const TrackPanelMouseEvent &event, WavvyProject *pProject) -> Result
+(const TrackPanelMouseEvent &event, WavacityProject *pProject) -> Result
 {
    auto result = CommonRulerHandle::Click(event, pProject);
    if (!( result & RefreshCode::Cancelled )) {
@@ -1420,7 +1420,7 @@ void AdornedRulerPanel::HandleQPClick(wxMouseEvent &evt, wxCoord mousePosX)
 }
 
 auto AdornedRulerPanel::QPHandle::Drag
-(const TrackPanelMouseEvent &event, WavvyProject *pProject) -> Result
+(const TrackPanelMouseEvent &event, WavacityProject *pProject) -> Result
 {
    auto result = CommonRulerHandle::Drag(event, pProject);
    if (!( result & RefreshCode::Cancelled )) {
@@ -1515,7 +1515,7 @@ void AdornedRulerPanel::HandleQPDrag(wxMouseEvent &/*event*/, wxCoord mousePosX)
 }
 
 auto AdornedRulerPanel::ScrubbingHandle::Preview
-(const TrackPanelMouseState &state, WavvyProject *pProject)
+(const TrackPanelMouseState &state, WavacityProject *pProject)
 -> HitTestPreview
 {
    (void)state;// Compiler food
@@ -1531,7 +1531,7 @@ auto AdornedRulerPanel::ScrubbingHandle::Preview
 }
 
 auto AdornedRulerPanel::QPHandle::Preview
-(const TrackPanelMouseState &state, WavvyProject *pProject)
+(const TrackPanelMouseState &state, WavacityProject *pProject)
 -> HitTestPreview
 {
    TranslatableString tooltip;
@@ -1572,7 +1572,7 @@ auto AdornedRulerPanel::QPHandle::Preview
 }
 
 auto AdornedRulerPanel::QPHandle::Release
-(const TrackPanelMouseEvent &event, WavvyProject *pProject,
+(const TrackPanelMouseEvent &event, WavacityProject *pProject,
  wxWindow *pParent) -> Result
 {
    // Keep a shared pointer to self.  Otherwise *this might get deleted
@@ -1650,7 +1650,7 @@ void AdornedRulerPanel::HandleQPRelease(wxMouseEvent &evt)
 }
 
 auto AdornedRulerPanel::QPHandle::Cancel
-(WavvyProject *pProject) -> Result
+(WavacityProject *pProject) -> Result
 {
    auto result = CommonRulerHandle::Cancel(pProject);
 
@@ -2215,7 +2215,7 @@ AdornedRulerPanel::GetIndicatorBitmap(wxCoord xx, bool playing) const
 void AdornedRulerPanel::SetPlayRegion(double playRegionStart,
                                       double playRegionEnd)
 {
-   // This is called by WavvyProject to make the play region follow
+   // This is called by WavacityProject to make the play region follow
    // the current selection. But while the user is selecting a play region
    // with the mouse directly in the ruler, changes from outside are blocked.
    if (mMouseEventState != mesNone)
@@ -2303,7 +2303,7 @@ std::shared_ptr<TrackPanelNode> AdornedRulerPanel::Root()
    return std::make_shared< MainGroup >( *this );
 }
 
-WavvyProject * AdornedRulerPanel::GetProject() const
+WavacityProject * AdornedRulerPanel::GetProject() const
 {
    return mProject;
 }
@@ -2360,7 +2360,7 @@ void AdornedRulerPanel::LockPlayRegion()
    auto &viewInfo = ViewInfo::Get( project );
    auto &playRegion = viewInfo.playRegion;
    if (playRegion.GetStart() >= tracks.GetEndTime()) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Cannot lock region beyond\nend of project."),
          XO("Error"));
    }

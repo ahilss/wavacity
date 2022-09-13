@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h" // for USE_* macros
+#include "../../../../Wavacity.h" // for USE_* macros
 
 #ifdef USE_MIDI
 #include "NoteTrackButtonHandle.h"
@@ -30,7 +30,7 @@ NoteTrackButtonHandle::NoteTrackButtonHandle
 {
 }
 
-void NoteTrackButtonHandle::Enter(bool, WavvyProject *)
+void NoteTrackButtonHandle::Enter(bool, WavacityProject *)
 {
    mChangeHighlight = RefreshCode::RefreshCell;
 }
@@ -69,19 +69,19 @@ UIHandlePtr NoteTrackButtonHandle::HitTest
 }
 
 UIHandle::Result NoteTrackButtonHandle::Click
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result NoteTrackButtonHandle::Drag
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    return RefreshCode::RefreshNone;
 }
 
 HitTestPreview NoteTrackButtonHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *)
+(const TrackPanelMouseState &, WavacityProject *)
 {
    // auto pTrack = pProject->GetTracks()->Lock(mpTrack);
    auto pTrack = mpTrack.lock();
@@ -92,7 +92,7 @@ HitTestPreview NoteTrackButtonHandle::Preview
 }
 
 UIHandle::Result NoteTrackButtonHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject, wxWindow *)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject, wxWindow *)
 {
    using namespace RefreshCode;
 
@@ -110,7 +110,7 @@ UIHandle::Result NoteTrackButtonHandle::Release
    return RefreshNone;
 }
 
-UIHandle::Result NoteTrackButtonHandle::Cancel(WavvyProject *)
+UIHandle::Result NoteTrackButtonHandle::Cancel(WavacityProject *)
 {
    return RefreshCode::RefreshNone;
 }

@@ -8,7 +8,7 @@ Paul Licameli split from Menus.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "CommonCommandFlags.h"
 
 #include "Experimental.h"
@@ -42,7 +42,7 @@ cycles.
 */
 
 // Strong predicate excludes tracks that do not support basic editing.
-bool EditableTracksSelectedPred( const WavvyProject &project )
+bool EditableTracksSelectedPred( const WavacityProject &project )
 {
    auto range = TrackList::Get( project ).Selected()
      - []( const Track *pTrack ){
@@ -51,19 +51,19 @@ bool EditableTracksSelectedPred( const WavvyProject &project )
 };
 
 // Weaker predicate.
-bool AnyTracksSelectedPred( const WavvyProject &project )
+bool AnyTracksSelectedPred( const WavacityProject &project )
 {
    auto range = TrackList::Get( project ).Selected();
    return !range.empty();
 };
 
-bool AudioIOBusyPred( const WavvyProject &project )
+bool AudioIOBusyPred( const WavacityProject &project )
 {
    return AudioIOBase::Get()->IsAudioTokenActive(
       ProjectAudioIO::Get( project ).GetAudioIOToken());
 };
 
-bool TimeSelectedPred( const WavvyProject &project )
+bool TimeSelectedPred( const WavacityProject &project )
 {
    // This is equivalent to check if there is a valid selection,
    // so it's used for Zoom to Selection too
@@ -133,7 +133,7 @@ const CommandFlagOptions noiseReductionOptions{
    // significant.
 const ReservedCommandFlag&
    AudioIONotBusyFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project ){
+      [](const WavacityProject &project ){
          return !AudioIOBusyPred( project );
       },
       CommandFlagOptions{ []( const TranslatableString& ) { return
@@ -145,7 +145,7 @@ const ReservedCommandFlag&
    }; return flag; }//lll
 const ReservedCommandFlag&
    StereoRequiredFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          // True iff at least one stereo track is selected, i.e., at least
          // one right channel is selected.
          // TODO: more-than-two-channels
@@ -156,7 +156,7 @@ const ReservedCommandFlag&
       { []( const TranslatableString& ) { return
          // This reason will not be shown, because the stereo-to-mono is greyed out if not allowed.
          XO("You must first select some stereo audio to perform this\naction. (You cannot use this with mono.)");
-      } ,"Wavvy_Selection"}
+      } ,"Wavacity_Selection"}
    }; return flag; }  //lda
 const ReservedCommandFlag&
    NoiseReductionTimeSelectedFlag() { static ReservedCommandFlag flag{
@@ -170,16 +170,16 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    WaveTracksSelectedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Selected<const WaveTrack>().empty();
       },
       { []( const TranslatableString& ) { return
          XO("You must first select some audio to perform this action.\n(Selecting other kinds of track won't work.)");
-      } ,"Wavvy_Selection"}
+      } ,"Wavacity_Selection"}
    }; return flag; }
 const ReservedCommandFlag&
    TracksExistFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Any().empty();
       },
       CommandFlagOptions{}.DisableDefaultMessage()
@@ -190,7 +190,7 @@ const ReservedCommandFlag&
       { []( const TranslatableString &Name ){ return
          // i18n-hint: %s will be replaced by the name of an action, such as "Remove Tracks".
          XO("\"%s\" requires one or more tracks to be selected.").Format( Name );
-      },"Wavvy_Selection" }
+      },"Wavacity_Selection" }
    }; return flag; }
 const ReservedCommandFlag&
    AnyTracksSelectedFlag() { static ReservedCommandFlag flag{
@@ -198,11 +198,11 @@ const ReservedCommandFlag&
       { []( const TranslatableString &Name ){ return
          // i18n-hint: %s will be replaced by the name of an action, such as "Remove Tracks".
          XO("\"%s\" requires one or more tracks to be selected.").Format( Name );
-      },"Wavvy_Selection" }
+      },"Wavacity_Selection" }
    }; return flag; }
 const ReservedCommandFlag&
    TrackPanelHasFocus() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          for (auto w = wxWindow::FindFocus(); w; w = w->GetParent()) {
             if (dynamic_cast<const NonKeystrokeInterceptingWindow*>(w))
                return true;
@@ -219,7 +219,7 @@ const ReservedCommandFlag&
    }; return flag; } //lll
 const ReservedCommandFlag&
    CaptureNotBusyFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &){
+      [](const WavacityProject &){
          auto gAudioIO = AudioIO::Get();
          return !(
             gAudioIO->IsBusy() &&
@@ -230,13 +230,13 @@ const ReservedCommandFlag&
 
 const ReservedCommandFlag&
    LabelTracksExistFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Any<const LabelTrack>().empty();
       }
    }; return flag; }
 const ReservedCommandFlag&
    UnsavedChangesFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          auto &undoManager = UndoManager::Get( project );
          return
             undoManager.UnsavedChanges()
@@ -247,19 +247,19 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    UndoAvailableFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return ProjectHistory::Get( project ).UndoAvailable();
       }
    }; return flag; }
 const ReservedCommandFlag&
    RedoAvailableFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return ProjectHistory::Get( project ).RedoAvailable();
       }
    }; return flag; }
 const ReservedCommandFlag&
    ZoomInAvailableFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return
             ViewInfo::Get( project ).ZoomInAvailable()
          &&
@@ -269,7 +269,7 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    ZoomOutAvailableFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return
             ViewInfo::Get( project ).ZoomOutAvailable()
          &&
@@ -279,52 +279,52 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    PlayRegionLockedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return ViewInfo::Get(project).playRegion.Locked();
       }
    }; return flag; }  //msmeyer
 const ReservedCommandFlag&
    PlayRegionNotLockedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          const auto &playRegion = ViewInfo::Get(project).playRegion;
          return !playRegion.Locked() && !playRegion.Empty();
       }
    }; return flag; }  //msmeyer
 const ReservedCommandFlag&
    WaveTracksExistFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Any<const WaveTrack>().empty();
       }
    }; return flag; }
 #ifdef USE_MIDI
 const ReservedCommandFlag&
    NoteTracksExistFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Any<const NoteTrack>().empty();
       }
    }; return flag; }  //gsw
 const ReservedCommandFlag&
    NoteTracksSelectedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !TrackList::Get( project ).Selected<const NoteTrack>().empty();
       }
    }; return flag; }  //gsw
 #endif
 const ReservedCommandFlag&
    IsNotSyncLockedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !ProjectSettings::Get( project ).IsSyncLocked();
       }
    }; return flag; }  //awd
 const ReservedCommandFlag&
    IsSyncLockedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return ProjectSettings::Get( project ).IsSyncLocked();
       }
    }; return flag; }  //awd
 const ReservedCommandFlag&
    NotMinimizedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          const wxWindow *focus = FindProjectFrame( &project );
          if (focus) {
             while (focus && focus->GetParent())
@@ -338,14 +338,14 @@ const ReservedCommandFlag&
    }; return flag; } // prl
 const ReservedCommandFlag&
    PausedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject&){
+      [](const WavacityProject&){
          return AudioIOBase::Get()->IsPaused();
       },
       CommandFlagOptions{}.QuickTest()
    }; return flag; }
 const ReservedCommandFlag&
    PlayableTracksExistFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          auto &tracks = TrackList::Get( project );
          return
 #ifdef EXPERIMENTAL_MIDI_OUT
@@ -358,7 +358,7 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    AudioTracksSelectedFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          auto &tracks = TrackList::Get( project );
          return
 #ifdef USE_MIDI
@@ -372,7 +372,7 @@ const ReservedCommandFlag&
    }; return flag; }
 const ReservedCommandFlag&
    NoAutoSelect() { static ReservedCommandFlag flag{
-     [](const WavvyProject &){ return true; }
+     [](const WavacityProject &){ return true; }
    }; return flag; } // jkc
 ;
 

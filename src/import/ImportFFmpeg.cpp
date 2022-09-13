@@ -20,7 +20,7 @@ Licensed under the GNU General Public License v2 or later
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"    // needed before FFmpeg.h // for USE_* macros
+#include "../Wavacity.h"    // needed before FFmpeg.h // for USE_* macros
 
 #include "../Experimental.h"
 
@@ -159,7 +159,7 @@ static const auto exts = {
 class FFmpegImportFileHandle;
 
 /// A representative of FFmpeg loader in
-/// the Wavvy import plugin list
+/// the Wavacity import plugin list
 class FFmpegImportPlugin final : public ImportPlugin
 {
 public:
@@ -175,7 +175,7 @@ public:
 
    ///! Probes the file and opens it if appropriate
    std::unique_ptr<ImportFileHandle> Open(
-      const FilePath &Filename, WavvyProject*) override;
+      const FilePath &Filename, WavacityProject*) override;
 };
 
 ///! Does actual import, returned by FFmpegImportPlugin::Open
@@ -218,12 +218,12 @@ public:
 
    ///! Writes extracted metadata to tags object
    ///\param avf - file context
-   ///\ tags - Wavvy tags object
+   ///\ tags - Wavacity tags object
    void WriteMetadata(Tags *tags);
 
    ///! Retrieves metadata from FFmpeg and converts to wxString
    ///\param avf - file context
-   ///\ tags - Wavvy tags object
+   ///\ tags - Wavacity tags object
    ///\ tag - name of tag to set
    ///\ name - name of metadata item to retrieve
    void GetMetadata(Tags &tags, const wxChar *tag, const char *name);
@@ -278,7 +278,7 @@ TranslatableString FFmpegImportPlugin::GetPluginFormatDescription()
 }
 
 std::unique_ptr<ImportFileHandle> FFmpegImportPlugin::Open(
-   const FilePath &filename, WavvyProject*)
+   const FilePath &filename, WavacityProject*)
 {
    auto handle = std::make_unique<FFmpegImportFileHandle>(filename);
 
@@ -286,11 +286,11 @@ std::unique_ptr<ImportFileHandle> FFmpegImportPlugin::Open(
    wxString extension = filename.AfterLast(wxT('.'));
    if (SupportsExtension(extension))
    {
-      //Wavvy is trying to load something that is declared as
+      //Wavacity is trying to load something that is declared as
       //officially supported by this plugin.
       //If we don't have FFmpeg configured - tell the user about it.
       //Since this will be happening often, use disableable "FFmpeg not found" dialog
-      //insdead of usual WavvyMessageBox()
+      //insdead of usual WavacityMessageBox()
       bool newsession = false;
       gPrefs->Read(wxT("/NewImportingSession"), &newsession);
       if (!FFmpegLibsInst()->ValidLibsLoaded())

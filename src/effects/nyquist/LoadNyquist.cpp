@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 
 #include "LoadNyquist.h"
 
@@ -19,7 +19,7 @@
 #include "../../FileNames.h"
 
 // ============================================================================
-// List of effects that ship with Wavvy.  These will be autoregistered.
+// List of effects that ship with Wavacity.  These will be autoregistered.
 // ============================================================================
 const static wxChar *kShippedEffects[] =
 {
@@ -58,13 +58,13 @@ const static wxChar *kShippedEffects[] =
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -122,7 +122,7 @@ wxString NyquistEffectsModule::GetVersion()
 
 TranslatableString NyquistEffectsModule::GetDescription()
 {
-   return XO("Provides Nyquist Effects support to Wavvy");
+   return XO("Provides Nyquist Effects support to Wavacity");
 }
 
 // ============================================================================
@@ -131,11 +131,11 @@ TranslatableString NyquistEffectsModule::GetDescription()
 
 bool NyquistEffectsModule::Initialize()
 {
-   const auto &wavvyPathList = FileNames::WavvyPathList();
+   const auto &wavacityPathList = FileNames::WavacityPathList();
 
-   for (size_t i = 0, cnt = wavvyPathList.size(); i < cnt; i++)
+   for (size_t i = 0, cnt = wavacityPathList.size(); i < cnt; i++)
    {
-      wxFileName name(wavvyPathList[i], wxT(""));
+      wxFileName name(wavacityPathList[i], wxT(""));
       name.AppendDir(wxT("nyquist"));
       name.SetFullName(wxT("nyquist.lsp"));
       if (name.FileExists())
@@ -181,7 +181,7 @@ FilePath NyquistEffectsModule::InstallPath()
 bool NyquistEffectsModule::AutoRegisterPlugins(PluginManagerInterface & pm)
 {
    // Autoregister effects that we "think" are ones that have been shipped with
-   // Wavvy.  A little simplistic, but it should suffice for now.
+   // Wavacity.  A little simplistic, but it should suffice for now.
    auto pathList = NyquistEffect::GetNyquistSearchPath();
    FilePaths files;
    TranslatableString ignoredErrMsg;

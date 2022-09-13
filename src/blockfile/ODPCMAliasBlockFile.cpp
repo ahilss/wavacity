@@ -16,7 +16,7 @@ The summary is eventually computed and written to a file in a background thread.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ODPCMAliasBlockFile.h"
 
 #include <float.h>
@@ -38,7 +38,7 @@ The summary is eventually computed and written to a file in a background thread.
 //#include <errno.h>
 
 const int aheaderTagLen = 20;
-char aheaderTag[aheaderTagLen + 1] = "WavvyBlockFile112";
+char aheaderTag[aheaderTagLen + 1] = "WavacityBlockFile112";
 
 
 ODPCMAliasBlockFile::ODPCMAliasBlockFile(
@@ -389,7 +389,7 @@ void ODPCMAliasBlockFile::WriteSummary()
 
       //wxFFile is not thread-safe - if any error occurs in opening the file,
       // it posts a wxlog message which WILL crash
-      // Wavvy because it goes into the wx GUI.
+      // Wavacity because it goes into the wx GUI.
       // For this reason I left the wxFFile method commented out. (mchinen)
       //    wxFFile summaryFile(mFileName.GetFullPath(), wxT("wb"));
 

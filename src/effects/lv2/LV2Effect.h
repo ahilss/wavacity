@@ -9,7 +9,7 @@
 
 *********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if USE_LV2
 

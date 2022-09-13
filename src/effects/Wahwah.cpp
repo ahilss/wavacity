@@ -18,7 +18,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Wahwah.h"
 #include "LoadEffects.h"
 
@@ -122,7 +122,7 @@ EffectType EffectWahwah::GetType()
 
 bool EffectWahwah::SupportsRealtime()
 {
-#if defined(EXPERIMENTAL_REALTIME_WAVVY_EFFECTS)
+#if defined(EXPERIMENTAL_REALTIME_WAVACITY_EFFECTS)
    return true;
 #else
    return false;

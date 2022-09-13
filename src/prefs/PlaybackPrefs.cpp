@@ -18,7 +18,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "PlaybackPrefs.h"
 
 #include <wx/defs.h>
@@ -184,7 +184,7 @@ bool PlaybackPrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Playback",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew PlaybackPrefs(parent, winid);

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wavvy 3.0.1\n"
-"Report-Msgid-Bugs-To: wavvy-translation@lists.sourceforge.net\n"
+"Project-Id-Version: wavacity 3.0.1\n"
+"Report-Msgid-Bugs-To: wavacity-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-03-31 12:57+0100\n"
 "PO-Revision-Date: 2021-03-31 18:59+0300\n"
 "Last-Translator: Sampo Hippeläinen\n"
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Script was not saved."
 msgstr "Skriptiä ei ole tallennettu."
 
-#: modules/mod-nyq-bench/NyqBench.cpp src/WavvyLogger.cpp
+#: modules/mod-nyq-bench/NyqBench.cpp src/WavacityLogger.cpp
 #: src/DBConnection.cpp src/Project.cpp src/ProjectFileIO.cpp
 #: src/ProjectHistory.cpp src/SqliteSampleBlock.cpp src/WaveClip.cpp
 #: src/WaveTrack.cpp src/export/Export.cpp src/export/ExportCL.cpp
@@ -175,9 +175,9 @@ msgstr "(C) 2009 Leland Lucius"
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Wavvy module which provides a simple IDE for writing effects."
+"External Wavacity module which provides a simple IDE for writing effects."
 msgstr ""
-"Ulkoinen Wavvy-moduuli, joka tarjoaa yksinkertaisen integroidun "
+"Ulkoinen Wavacity-moduuli, joka tarjoaa yksinkertaisen integroidun "
 "kehitysympäristön efektien kirjoitukseen."
 
 #: modules/mod-nyq-bench/NyqBench.cpp
@@ -365,79 +365,79 @@ msgstr "Pysäytä skripiti"
 msgid "No revision identifier was provided"
 msgstr "Versiotunnusta ei annettu"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, system administration"
 msgstr "%s, järjestelmänhallinta"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, co-founder and developer"
 msgstr "%s, perustaja ja kehittäjä"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, developer"
 msgstr "%s, kehittäjä"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support"
 msgstr "%s, dokumentaatio ja tuki"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, documentation and support, French"
 msgstr "%s, dokumentaatio ja tuki, ranska"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, quality assurance"
 msgstr "%s, laadunvarmistus"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, accessibility advisor"
 msgstr "%s, helppokäyttötoimintojen neuvoja"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphic artist"
 msgstr "%s, graafikko"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, composer"
 msgstr "%s, säveltäjä"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, tester"
 msgstr "%s, testaaja"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "%s, Nyquist-laajennukset"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, web developer"
 msgstr "%s, www-kehittäjä"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s, graphics"
@@ -478,7 +478,7 @@ msgstr ""
 msgid "volunteers"
 msgstr "vapaaehtoisia"
 
-#. i18n-hint: substitutes into "Wavvy is %s"
+#. i18n-hint: substitutes into "Wavacity is %s"
 #: src/AboutDialog.cpp
 msgid "available"
 msgstr "saatavilla"
@@ -513,7 +513,7 @@ msgid "forum"
 msgstr "palstallamme"
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Wavvy window.  Use this to add
+#. *  in the credits in the About Wavacity window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -542,8 +542,8 @@ msgid "Credits"
 msgstr "Tekijät"
 
 #: src/AboutDialog.cpp
-msgid "DarkWavvy Customisation"
-msgstr "DarkWavvyn mukauttaminen"
+msgid "DarkWavacity Customisation"
+msgstr "DarkWavacityn mukauttaminen"
 
 #. i18n-hint: The program's name substitutes for %s
 #: src/AboutDialog.cpp
@@ -594,14 +594,14 @@ msgstr "Erityiskiitokset:"
 msgid "%s website: "
 msgstr "%s-verkkosivusto: "
 
-#. i18n-hint Wavvy's name substitutes for first and third %s,
+#. i18n-hint Wavacity's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr "%s-ohjelmiston tekijänoikeus %s 1999-2021 %s-tiimi."
 
-#. i18n-hint Wavvy's name substitutes for %s
+#. i18n-hint Wavacity's name substitutes for %s
 #: src/AboutDialog.cpp
 #, c-format
 msgid "The name %s is a registered trademark of Dominic Mazzoni."
@@ -620,7 +620,7 @@ msgstr "Käytössä"
 msgid "Disabled"
 msgstr "Ei käytössä"
 
-#. i18n-hint: Information about when wavvy was compiled follows
+#. i18n-hint: Information about when wavacity was compiled follows
 #: src/AboutDialog.cpp
 msgid "The Build"
 msgstr "Koontiversio"
@@ -656,7 +656,7 @@ msgstr "Koostetyyppi:"
 msgid "Compiler:"
 msgstr "Kääntäjä:"
 
-#. i18n-hint: The directory wavvy is installed into (on *nix systems)
+#. i18n-hint: The directory wavacity is installed into (on *nix systems)
 #: src/AboutDialog.cpp
 msgid "Installation Prefix:"
 msgstr "Asennuksen etuliite:"
@@ -665,7 +665,7 @@ msgstr "Asennuksen etuliite:"
 msgid "Settings folder:"
 msgstr "Asetuskansio:"
 
-#. i18n-hint: Libraries that are essential to wavvy
+#. i18n-hint: Libraries that are essential to wavacity
 #: src/AboutDialog.cpp
 msgid "Core Libraries"
 msgstr "Ydinkirjastot"
@@ -873,16 +873,16 @@ msgstr ""
 msgid "Error"
 msgstr "Virhe"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid "Failed to remove %s"
 msgstr "Kohteen %s poisto epäonnistui"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Failed!"
 msgstr "Epäonnistui!"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Reset Preferences?\n"
 "\n"
@@ -894,11 +894,11 @@ msgstr ""
 "Tämä on kertaluonteinen kysymys 'asennuksen' jälkeen, jossa pyysit "
 "oletusasetusten palauttamista."
 
-#: src/WavvyApp.cpp
-msgid "Reset Wavvy Preferences"
-msgstr "Palauta Wavvyn asetukset"
+#: src/WavacityApp.cpp
+msgid "Reset Wavacity Preferences"
+msgstr "Palauta Wavacityn asetukset"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid ""
 "%s could not be found.\n"
@@ -909,115 +909,115 @@ msgstr ""
 "\n"
 "Se on poistettu luettelosta 'Viimeksi avatut tiedostot'."
 
-#: src/WavvyApp.cpp
-msgid "SQLite library failed to initialize.  Wavvy cannot continue."
-msgstr "SQLite-kirjastoa ei voitu alustaa.  Wavvy ei voi käynnistyä."
+#: src/WavacityApp.cpp
+msgid "SQLite library failed to initialize.  Wavacity cannot continue."
+msgstr "SQLite-kirjastoa ei voitu alustaa.  Wavacity ei voi käynnistyä."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Block size must be within 256 to 100000000\n"
 msgstr "Lohkon koko täytyy olla välillä 256 - 100000000\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is starting up..."
-msgstr "Wavvy käynnistyy..."
+#: src/WavacityApp.cpp
+msgid "Wavacity is starting up..."
+msgstr "Wavacity käynnistyy..."
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
-#: src/WavvyApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
 msgid "&New"
 msgstr "&Uusi"
 
 #. i18n-hint: (verb)
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&Open..."
 msgstr "&Avaa..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Open &Recent..."
 msgstr "Avaa &viimeisin..."
 
-#: src/WavvyApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Wavvy..."
-msgstr "&Tietoja Wavvystä..."
+#: src/WavacityApp.cpp src/menus/HelpMenus.cpp
+msgid "&About Wavacity..."
+msgstr "&Tietoja Wavacitystä..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "&Preferences..."
 msgstr "&Asetukset..."
 
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&File"
 msgstr "&Tiedosto"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a safe place to store temporary files.\n"
-"Wavvy needs a place where automatic cleanup programs won't delete the "
+"Wavacity could not find a safe place to store temporary files.\n"
+"Wavacity needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Wavvy ei löytänyt turvallista paikkaa väliaikaisten tiedostojen "
+"Wavacity ei löytänyt turvallista paikkaa väliaikaisten tiedostojen "
 "tallentamiseen.\n"
-"Wavvy tarvitsee paikan, josta automaattiset puhdistusohjelmat eivät "
+"Wavacity tarvitsee paikan, josta automaattiset puhdistusohjelmat eivät "
 "poista väliaikaisia tiedostoja.\n"
 "Anna sopiva hakemisto asetusikkunassa."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a place to store temporary files.\n"
+"Wavacity could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Wavvy ei löytänyt paikkaa väliaikaisille tiedostoille.\n"
+"Wavacity ei löytänyt paikkaa väliaikaisille tiedostoille.\n"
 "Ole hyvä ja syötä kelvollinen hakemisto asetusikkunassa."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy is now going to exit. Please launch Wavvy again to use the new "
+"Wavacity is now going to exit. Please launch Wavacity again to use the new "
 "temporary directory."
 msgstr ""
-"Wavvy on nyt sulkeutumassa. Wavvyn uudelleenkäynnistys ottaa uuden "
+"Wavacity on nyt sulkeutumassa. Wavacityn uudelleenkäynnistys ottaa uuden "
 "tilapäishakemiston käyttöön."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Running two copies of Wavvy simultaneously may cause\n"
+"Running two copies of Wavacity simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"Kahden Wavvyn samanaikaisesta käytöstä voi seurata\n"
+"Kahden Wavacityn samanaikaisesta käytöstä voi seurata\n"
 "datan menetys tai järjestelmän kaatuminen.\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Wavvy.\n"
+"Wavacity was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Wavacity.\n"
 msgstr ""
-"Wavvy ei voinut lukita väliaikaistiedostojen hakemistoa.\n"
-"Se saattaa olla toisen Wavvy-kopion käytössä.\n"
+"Wavacity ei voinut lukita väliaikaistiedostojen hakemistoa.\n"
+"Se saattaa olla toisen Wavacity-kopion käytössä.\n"
 
-#: src/WavvyApp.cpp
-msgid "Do you still want to start Wavvy?"
-msgstr "Haluatko silti käynnistää Wavvyn?"
+#: src/WavacityApp.cpp
+msgid "Do you still want to start Wavacity?"
+msgstr "Haluatko silti käynnistää Wavacityn?"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "Virhe tilapäiskansion lukitsemisessa"
 
-#: src/WavvyApp.cpp
-msgid "The system has detected that another copy of Wavvy is running.\n"
-msgstr "Järjestelmä on havainnut toisen käynnissä olevan Wavvyn.\n"
+#: src/WavacityApp.cpp
+msgid "The system has detected that another copy of Wavacity is running.\n"
+msgstr "Järjestelmä on havainnut toisen käynnissä olevan Wavacityn.\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Wavvy\n"
+"Use the New or Open commands in the currently running Wavacity\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
-"Jos tarvitset avata useamman projektin Wavvyyn, \n"
-"käytä käynnissä olevan Wavvyn Uusi tai Avaa -komentoa.\n"
+"Jos tarvitset avata useamman projektin Wavacityyn, \n"
+"käytä käynnissä olevan Wavacityn Uusi tai Avaa -komentoa.\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is already running"
-msgstr "Wavvy on jo käynnissä"
+#: src/WavacityApp.cpp
+msgid "Wavacity is already running"
+msgstr "Wavacity on jo käynnissä"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire semaphores.\n"
 "\n"
@@ -1030,11 +1030,11 @@ msgstr ""
 "Järjestelmä tulee ehkä käynnistää\n"
 "uudelleen."
 
-#: src/WavvyApp.cpp
-msgid "Wavvy Startup Failure"
-msgstr "Wavvy-käynnistysvirhe"
+#: src/WavacityApp.cpp
+msgid "Wavacity Startup Failure"
+msgstr "Wavacity-käynnistysvirhe"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to create semaphores.\n"
 "\n"
@@ -1047,7 +1047,7 @@ msgstr ""
 "Järjestelmä tulee ehkä käynnistää\n"
 "uudelleen."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire lock semaphore.\n"
 "\n"
@@ -1060,7 +1060,7 @@ msgstr ""
 "Järjestelmä tulee ehkä käynnistää\n"
 "uudelleen."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire server semaphore.\n"
 "\n"
@@ -1073,77 +1073,77 @@ msgstr ""
 "Järjestelmä tulee ehkä käynnistää\n"
 "uudelleen."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"The Wavvy IPC server failed to initialize.\n"
+"The Wavacity IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
 msgstr ""
-"Wavvyn IPC-palvelin ei käynnistynyt.\n"
+"Wavacityn IPC-palvelin ei käynnistynyt.\n"
 "\n"
 "Resurssit saattavat olla vähissä.\n"
 "Järjestelmä tulee ehkä käynnistää\n"
 "uudelleen."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "An unrecoverable error has occurred during startup"
 msgstr "Käynnistyksen aikana tapahtui korjaamaton virhe"
 
-#. i18n-hint: This controls the number of bytes that Wavvy will
+#. i18n-hint: This controls the number of bytes that Wavacity will
 #. *           use when writing files to the disk
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "set max disk block size in bytes"
 msgstr "aseta levylohkon enimmäiskoko tavuina"
 
 #. i18n-hint: This displays a list of available options
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "this help message"
 msgstr "tämä ohje"
 
-#. i18n-hint: This runs a set of automatic tests on Wavvy itself
-#: src/WavvyApp.cpp
+#. i18n-hint: This runs a set of automatic tests on Wavacity itself
+#: src/WavacityApp.cpp
 msgid "run self diagnostics"
 msgstr "suorita itsediagnostiikka"
 
-#. i18n-hint: This displays the Wavvy version
-#: src/WavvyApp.cpp
-msgid "display Wavvy version"
-msgstr "näytä Wavvyn versio"
+#. i18n-hint: This displays the Wavacity version
+#: src/WavacityApp.cpp
+msgid "display Wavacity version"
+msgstr "näytä Wavacityn versio"
 
-#. i18n-hint: This is a list of one or more files that Wavvy
+#. i18n-hint: This is a list of one or more files that Wavacity
 #. *           should open upon startup
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "audio or project file name"
 msgstr "ääni- tai projektitiedoston nimi"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy project (.aup3) files are not currently \n"
-"associated with Wavvy. \n"
+"Wavacity project (.aup3) files are not currently \n"
+"associated with Wavacity. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"Wavvyn projektitiedostoja (.aup3) ei ole\n"
-"asetettu käynnistymään Wavvyssä.\n"
+"Wavacityn projektitiedostoja (.aup3) ei ole\n"
+"asetettu käynnistymään Wavacityssä.\n"
 "\n"
 "Kytketäänkö tiedostomuoto, jotta voit avata\n"
 "projektitiedostot kaksoisnapsautuksella?"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy Project Files"
-msgstr "Wavvyn projektitiedostot"
+#: src/WavacityApp.cpp
+msgid "Wavacity Project Files"
+msgstr "Wavacityn projektitiedostot"
 
-#: src/WavvyException.h src/commands/MessageCommand.cpp
-#: src/widgets/WavvyMessageBox.cpp
+#: src/WavacityException.h src/commands/MessageCommand.cpp
+#: src/widgets/WavacityMessageBox.cpp
 msgid "Message"
 msgstr "Viesti"
 
-#: src/WavvyFileConfig.cpp
-msgid "Wavvy Configuration Error"
-msgstr "Wavvyn määritysvirhe"
+#: src/WavacityFileConfig.cpp
+msgid "Wavacity Configuration Error"
+msgstr "Wavacityn määritysvirhe"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 #, c-format
 msgid ""
 "The following configuration file could not be accessed:\n"
@@ -1156,7 +1156,7 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Wavvy\", your project may be left in an unsaved "
+"If you choose to \"Quit Wavacity\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 "Seuraavaa määritystiedostoa ei voitu avata:\n"
@@ -1169,50 +1169,50 @@ msgstr ""
 "\n"
 "Voit yrittää korjata ongelman ja painaa \"Yritä uudelleen\" jatkaaksesi.\n"
 "\n"
-"Jos päätät sulkea Wavvyn, projekti saattaa jäädä keskeneräiseen tilaan ja "
-"Wavvyn pitää palauttaa se ensi kerralla."
+"Jos päätät sulkea Wavacityn, projekti saattaa jäädä keskeneräiseen tilaan ja "
+"Wavacityn pitää palauttaa se ensi kerralla."
 
-#: src/WavvyFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
+#: src/WavacityFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
 #: src/effects/Equalization.cpp src/export/Export.cpp src/menus/HelpMenus.cpp
 #: src/widgets/MultiDialog.cpp
 msgid "Help"
 msgstr "Ohje"
 
-#: src/WavvyFileConfig.cpp src/AutoRecoveryDialog.cpp
-msgid "&Quit Wavvy"
-msgstr "&Lopeta Wavvy"
+#: src/WavacityFileConfig.cpp src/AutoRecoveryDialog.cpp
+msgid "&Quit Wavacity"
+msgstr "&Lopeta Wavacity"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 msgid "&Retry"
 msgstr "&Yritä uudelleen"
 
-#: src/WavvyLogger.cpp
-msgid "Wavvy Log"
-msgstr "Wavvyn loki"
+#: src/WavacityLogger.cpp
+msgid "Wavacity Log"
+msgstr "Wavacityn loki"
 
-#: src/WavvyLogger.cpp src/Tags.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp
 msgid "&Save..."
 msgstr "&Tallenna..."
 
 #. i18n-hint: (verb)
-#: src/WavvyLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
 msgid "Cl&ear"
 msgstr "Tyhj&ennä"
 
-#: src/WavvyLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
+#: src/WavacityLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
 #: src/menus/FileMenus.cpp
 msgid "&Close"
 msgstr "&Sulje"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "log.txt"
 msgstr "log.txt"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "Save log to:"
 msgstr "Tallenna loki kansioon:"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 #, c-format
 msgid "Couldn't save log to file: %s"
 msgstr "Lokia ei voitu tallentaa tiedostoon: %s"
@@ -1255,8 +1255,8 @@ msgid "Error Initializing Midi"
 msgstr "Virhe MIDIn alustuksessa"
 
 #: src/AudioIO.cpp
-msgid "Wavvy Audio"
-msgstr "Wavvy-ääni"
+msgid "Wavacity Audio"
+msgstr "Wavacity-ääni"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, c-format
@@ -1508,12 +1508,12 @@ msgstr "Automaattinen kaatumispalautus"
 
 #: src/AutoRecoveryDialog.cpp
 msgid ""
-"The following projects were not saved properly the last time Wavvy was "
+"The following projects were not saved properly the last time Wavacity was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
 msgstr ""
-"Joitakin projekteja ei tallennettu oikein Wavvyn viimeisen käyttökerran "
+"Joitakin projekteja ei tallennettu oikein Wavacityn viimeisen käyttökerran "
 "aikana, mutta ne voidaan palauttaa automaattisesti.\n"
 "\n"
 "Palautuksen jälkeen projektit tulee tallentaa, tai muuten niiden tiedot "
@@ -2116,8 +2116,8 @@ msgstr ""
 "(Muuntyyppiset raidat eivät kelpaa.)"
 
 #: src/CrashReport.cpp
-msgid "Wavvy Support Data"
-msgstr "Wavvyn tukidata"
+msgid "Wavacity Support Data"
+msgstr "Wavacityn tukidata"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2247,20 +2247,20 @@ msgstr "Kopioi kaikki tiedostot (turvallisempi)"
 msgid "Whenever a project depends on other files:"
 msgstr "Aina kun projekti riippuu muista tiedostoista:"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "Kysy minulta"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "Kopioi aina kaikki tiedostot (turvallisin)"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "Älä koskaan kopioi mitään tiedostoja"
@@ -2294,13 +2294,13 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Wavvy projects may not be self-contained, and care \n"
+"Some older Wavacity projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
 "Projektisi on itsenäinen; se ei riipu ulkoisista äänitiedostoista. \n"
 "\n"
-"Jotkin vanhemmat Wavvy-projektit eivät ehkä ole itsenäisiä, ja \n"
+"Jotkin vanhemmat Wavacity-projektit eivät ehkä ole itsenäisiä, ja \n"
 "on tarpeen pitää ulkoiset riippuvuutensa oikeassa paikassa.\n"
 "Uudet projektit ovat itsenäisiä ja vähemmän riskialttiita."
 
@@ -2383,12 +2383,12 @@ msgstr "FFmpeg-tukea ei ole käännetty"
 #: src/FFmpeg.cpp
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Wavvy failed to load it at startup. \n"
+"but this time Wavacity failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
 "FFmpeg on määritelty asetuksissa ja sitä on käytetty aiemmin onnistuneesti,\n"
-"mutta tällä kertaa Wavvy ei onnistunut lataamaan sitä käynnistettäessä.\n"
+"mutta tällä kertaa Wavacity ei onnistunut lataamaan sitä käynnistettäessä.\n"
 "\n"
 "Voit palata takaisin Asetuksiin > Kirjastot ja määrittää sen uudelleen."
 
@@ -2406,9 +2406,9 @@ msgstr "Etsi FFmpeg"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Wavvy needs the file '%s' to import and export audio via FFmpeg."
+msgid "Wavacity needs the file '%s' to import and export audio via FFmpeg."
 msgstr ""
-"Wavvy tarvitsee tiedoston '%s' äänen tuontiin ja vientiin FFmpeg:llä."
+"Wavacity tarvitsee tiedoston '%s' äänen tuontiin ja vientiin FFmpeg:llä."
 
 #: src/FFmpeg.cpp
 #, c-format
@@ -2448,13 +2448,13 @@ msgstr "FFmpegiä ei löytynyt"
 
 #: src/FFmpeg.cpp
 msgid ""
-"Wavvy attempted to use FFmpeg to import an audio file,\n"
+"Wavacity attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"Wavvy yritti käyttää FFmpegiä äänitiedoston tuontiin,\n"
+"Wavacity yritti käyttää FFmpegiä äänitiedoston tuontiin,\n"
 "mutta vaadittuja kirjastoja ei löytynyt.\n"
 "\n"
 "Jos haluat tuoda FFmpeg:llä, avaa Muokkaa > Asetukset >\n"
@@ -2479,29 +2479,29 @@ msgstr "Vain libavformat.so"
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to open a file in %s."
-msgstr "Wavvy ei voinut avata tiedostoa kohteessa %s."
+msgid "Wavacity failed to open a file in %s."
+msgstr "Wavacity ei voinut avata tiedostoa kohteessa %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to read from a file in %s."
-msgstr "Wavvy ei voinut lukea tiedostoa kohteessa %s."
+msgid "Wavacity failed to read from a file in %s."
+msgstr "Wavacity ei voinut lukea tiedostoa kohteessa %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy successfully wrote a file in %s but failed to rename it as %s."
+msgid "Wavacity successfully wrote a file in %s but failed to rename it as %s."
 msgstr ""
-"Wavvy kirjoitti tiedoston kohteessa %s, mutta sen nimeäminen uudelleen "
+"Wavacity kirjoitti tiedoston kohteessa %s, mutta sen nimeäminen uudelleen "
 "nimelle %s ei onnistunut."
 
 #: src/FileException.cpp
 #, c-format
 msgid ""
-"Wavvy failed to write to a file.\n"
+"Wavacity failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Wavvy ei voinut kirjoittaa tiedostoon.\n"
+"Wavacity ei voinut kirjoittaa tiedostoon.\n"
 "Ehkä %s ei ole kirjoitettavissa tai levy on täynnä.\n"
 "Ohjenapista löytyy vihjeitä tilan vapauttamiseen."
 
@@ -2541,7 +2541,7 @@ msgstr "&Kysy"
 msgid "All files"
 msgstr "Kaikki tiedostot"
 
-#. i18n-hint an Wavvy project is the state of the program, stored as
+#. i18n-hint an Wavacity project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 msgid "AUP3 project files"
@@ -2805,8 +2805,8 @@ msgstr "Viedään äänitiedostoa"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Wavvy Project"
-msgstr "Tallennetaan Wavvy-projektia"
+msgid "Saving an Wavacity Project"
+msgstr "Tallennetaan Wavacity-projektia"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -2824,18 +2824,18 @@ msgstr "Ei paikallista ohjetta"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is an <b>Alpha test version</"
+"<br><br>The version of Wavacity you are using is an <b>Alpha test version</"
 "b>."
-msgstr "<br><br>Käyttämäsi Wavvy on <b>alpha-testiversio.</b>."
+msgstr "<br><br>Käyttämäsi Wavacity on <b>alpha-testiversio.</b>."
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is a <b>Beta test version</b>."
-msgstr "<br><br>Käyttämäsi Wavvy on <b>beta-testiversio.</b>."
+"<br><br>The version of Wavacity you are using is a <b>Beta test version</b>."
+msgstr "<br><br>Käyttämäsi Wavacity on <b>beta-testiversio.</b>."
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Wavvy"
-msgstr "Hanki Wavvyn virallinen julkaisuversio"
+msgid "Get the Official Released Version of Wavacity"
+msgstr "Hanki Wavacityn virallinen julkaisuversio"
 
 #: src/HelpText.cpp
 msgid ""
@@ -2847,10 +2847,10 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Wavvy ready for release by joining our [[https://www."
+"You can help us get Wavacity ready for release by joining our [[https://www."
 "audacityteam.org/community/|community]].<hr><br><br>"
 msgstr ""
-"Voit auttaa saamaan Wavvyn valmiiksi julkaistavaksi liittymällä [[https://"
+"Voit auttaa saamaan Wavacityn valmiiksi julkaistavaksi liittymällä [[https://"
 "www.audacityteam.org/community/|yhteisöön]].<hr><br><br>"
 
 #: src/HelpText.cpp
@@ -2898,13 +2898,13 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"Wavvy can import unprotected files in many other formats (such as M4A and "
+"Wavacity can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
 "audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] to your computer."
 msgstr ""
-"Wavvy voi tuoda suojaamattomia tiedostoja monista muista "
+"Wavacity voi tuoda suojaamattomia tiedostoja monista muista "
 "tiedostomuodoista (kuten M4A ja WMA, pakatut WAV-tiedostot kannettavista "
 "tallentimista ja ääntä videotiedostoista), jos lataat ja asennat valinnaisen "
 "[[https://manual.audacityteam.org/man/faq_opening_and_saving_files."
@@ -3008,19 +3008,19 @@ msgstr "&Historia..."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 "Sisäinen virhe kohdassa %s tiedostossa %s rivi %d.\n"
-"Ilmoitathan Wavvy-tiimille osoitteessa https://forum.audacityteam.org/."
+"Ilmoitathan Wavacity-tiimille osoitteessa https://forum.audacityteam.org/."
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 "Sisäinen virhe tiedostossa %s rivillä %d.\n"
-"Ilmoitathan Wavvy-tiimille https://forum.audacityteam.org/."
+"Ilmoitathan Wavacity-tiimille https://forum.audacityteam.org/."
 
 #: src/InconsistencyException.h
 msgid "Internal Error"
@@ -3135,14 +3135,14 @@ msgid "One or more saved labels could not be read."
 msgstr "Vähintään yhtä tallennettua merkkiä ei voitu lukea."
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Wavvy has been run.
+#. * time Wavacity has been run.
 #: src/LangChoice.cpp
-msgid "Wavvy First Run"
-msgstr "Wavvyn ensimmäinen käynnistys"
+msgid "Wavacity First Run"
+msgstr "Wavacityn ensimmäinen käynnistys"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Wavvy to use:"
-msgstr "Valitse Wavvyn kieli:"
+msgid "Choose Language for Wavacity to use:"
+msgstr "Valitse Wavacityn kieli:"
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3181,13 +3181,13 @@ msgstr ""
 "Vanha tiedosto on tallennettu nimellä '%s'"
 
 #: src/Legacy.cpp
-msgid "Opening Wavvy Project"
-msgstr "Avataan Wavvy-projektia"
+msgid "Opening Wavacity Project"
+msgstr "Avataan Wavacity-projektia"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Wavvy Karaoke%s"
-msgstr "Wavvyn karaoke%s"
+msgid "Wavacity Karaoke%s"
+msgstr "Wavacityn karaoke%s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3238,8 +3238,8 @@ msgstr "Miksataan ja hahmonnetaan raitoja"
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Wavvy Mixer Board%s"
-msgstr "Wavvyn miksauspöytä%s"
+msgid "Wavacity Mixer Board%s"
+msgstr "Wavacityn miksauspöytä%s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
 #. i18n-hint: Title of the Gain slider, used to adjust the volume
@@ -3334,11 +3334,11 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, c-format
 msgid ""
-"The module \"%s\" is matched with Wavvy version \"%s\".\n"
+"The module \"%s\" is matched with Wavacity version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
-"Moduuli \"%s\" on yhteensopiva Wavvy-version \"%s\" kanssa.\n"
+"Moduuli \"%s\" on yhteensopiva Wavacity-version \"%s\" kanssa.\n"
 "\n"
 "Sitä ei ladata."
 
@@ -3379,8 +3379,8 @@ msgid "No"
 msgstr "Ei"
 
 #: src/ModuleManager.cpp
-msgid "Wavvy Module Loader"
-msgstr "Wavvy-moduulin lataaja"
+msgid "Wavacity Module Loader"
+msgstr "Wavacity-moduulin lataaja"
 
 #: src/ModuleManager.cpp
 msgid "Try and load this module?"
@@ -3702,7 +3702,7 @@ msgstr "Näytteenottotaajuudet eivät täsmää"
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Wavvy requires two channels at the same sample rate for\n"
+"(Wavacity requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 "Raitoja ei ole valittu tarpeeksi tällä näytteenottotaajuudella\n"
@@ -3734,13 +3734,13 @@ msgstr "Katkokset"
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Wavvy for processor time\n"
+"Other applications are competing with Wavacity for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
 "Äänitetty ääni menetettiin merkityissä paikoissa. Mahdolliset syyt:\n"
 "\n"
-"Muut sovellukset kilpailevat Wavvyn kanssa suoritinajasta\n"
+"Muut sovellukset kilpailevat Wavacityn kanssa suoritinajasta\n"
 "\n"
 "Tallennat suoraan hitaaseen ulkoiseen tallennuslaitteeseen\n"
 
@@ -3748,7 +3748,7 @@ msgstr ""
 msgid "Turn off dropout detection"
 msgstr "Sammuta katkosten tunnistus"
 
-#. i18n-hint: The wavvy project file is XML and has 'tags' in it,
+#. i18n-hint: The wavacity project file is XML and has 'tags' in it,
 #. rather like html tags <something>some stuff</something>.
 #. This error message is about the tags that hold the sequence information.
 #. The error message is confusing to users in English, and could just say
@@ -3784,7 +3784,7 @@ msgstr "Tarkistetaan projektitiedoston tietoja"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Wavvy \n"
+"('aliased files'). There is no way for Wavacity \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3800,7 +3800,7 @@ msgid ""
 msgstr ""
 "Projektin tarkistus havaitsi kansiossa \"%s\" \n"
 "%lld puuttuvaa ulkoista äänitiedostoa \n"
-"('alias-tiedostoa'). Wavvy ei voi palauttaa \n"
+"('alias-tiedostoa'). Wavacity ei voi palauttaa \n"
 "näitä tiedostoja automaattisesti. \n"
 "\n"
 "Jos valitset alta ensimmäisen tai toisen vaihtoehdon, \n"
@@ -3831,12 +3831,12 @@ msgstr "Varoitus - Puuttuvia alias-tiedostoja"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Wavvy can fully regenerate these files \n"
+"Wavacity can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "Projektin tarkistus havaitsi kansiossa \"%s\" \n"
 "%lld puuttuvaa alias. (.auf) lohkotiedostoa. \n"
-"Wavvy voi täysin luoda  nämä tiedostot \n"
+"Wavacity voi täysin luoda  nämä tiedostot \n"
 "uudelleen nykyisen projektin äänestä."
 
 #: src/ProjectFSCK.cpp
@@ -3861,7 +3861,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Wavvy to recover \n"
+"deletion. There is no way for Wavacity to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3874,7 +3874,7 @@ msgstr ""
 "Projektin tarkistus havaitsi kansiossa \"%s\"  \n"
 "%lld puuttuvaa äänen (.au) lohkotiedostoa, \n"
 "mikä johtunee viasta, kaatumisesta, tai vahingossa \n"
-"poistamisesta. Wavvy ei voi palauttaa näitä \n"
+"poistamisesta. Wavacity ei voi palauttaa näitä \n"
 "puuttuvia tiedostoja automaattisesti. \n"
 "\n"
 "Jos valitset alta ensimmäisen tai toisen vaihtoehdon, \n"
@@ -4020,18 +4020,18 @@ msgstr ""
 "(Väliaikaistiedostoja ei voi luoda)"
 
 #: src/ProjectFileIO.cpp
-msgid "This is not an Wavvy project file"
-msgstr "Tämä ei ole Wavvy-projektitiedosto"
+msgid "This is not an Wavacity project file"
+msgstr "Tämä ei ole Wavacity-projektitiedosto"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Wavvy:\n"
+"This project was created with a newer version of Wavacity:\n"
 "\n"
 "You will need to upgrade to process it"
 msgstr ""
-"Projekti luotiin Wavvyn uudemmalla versiolla:\n"
+"Projekti luotiin Wavacityn uudemmalla versiolla:\n"
 "\n"
-"Päivitä Wavvy avataksesi se"
+"Päivitä Wavacity avataksesi se"
 
 #: src/ProjectFileIO.cpp
 msgid "Unable to initialize the project file"
@@ -4160,11 +4160,11 @@ msgstr "Virhe tiedoston kirjoituksessa"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"Wavvy failed to write file %s.\n"
+"Wavacity failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Wavvy ei voinut kirjoittaa tiedostoon %s.\n"
+"Wavacity ei voinut kirjoittaa tiedostoon %s.\n"
 "Levy on ehkä täynnä tai kirjoitussuojattu.\n"
 "Ohjenapista löytyy vihjeitä tilan vapauttamiseen."
 
@@ -4175,8 +4175,8 @@ msgstr "Tiivistetään projektia"
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Wavvy \"%s\""
-msgstr "[Projekti %02i] Wavvy \"%s\""
+msgid "[Project %02i] Wavacity \"%s\""
+msgstr "[Projekti %02i] Wavacity \"%s\""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
 #: src/ProjectFileIO.cpp
@@ -4187,12 +4187,12 @@ msgstr "(Palautettu)"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Wavvy %s.\n"
-"You are using Wavvy %s. You may need to upgrade to a newer version to "
+"This file was saved using Wavacity %s.\n"
+"You are using Wavacity %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"Tämän tiedoston on tallentanut Wavvy %s.\n"
-"Käytät Wavvyn versiota %s. Sinun tulee päivittää uudempi versio tiedoston "
+"Tämän tiedoston on tallentanut Wavacity %s.\n"
+"Käytät Wavacityn versiota %s. Sinun tulee päivittää uudempi versio tiedoston "
 "avaamiseksi."
 
 #: src/ProjectFileIO.cpp
@@ -4263,23 +4263,23 @@ msgstr "Varmuuskopioidaan projektia"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
-"Tätä projektia ei tallennettu oikein Wavvyn viimeisen käyttökerran "
+"Tätä projektia ei tallennettu oikein Wavacityn viimeisen käyttökerran "
 "aikana.\n"
 "\n"
 "Se on palautettu viimeisimpään vedokseen."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
 msgstr ""
-"Projekti ei tallentunut oikein viime Wavvyn käyttökerralla.\n"
+"Projekti ei tallentunut oikein viime Wavacityn käyttökerralla.\n"
 "\n"
 "Se on palautettu viimeisimpään vedokseen, mutta sinun\n"
 "pitää tallentaa se säilyttääksesi sen sisällön."
@@ -4360,10 +4360,10 @@ msgstr "%sTallenna projekti \"%s\" nimellä..."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Wavvy project, not an audio file.\n"
+"'Save Project' is for an Wavacity project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
-"'Tallenna projekti' tallentaa Wavvy-projektin, ei äänitiedostoa.\n"
+"'Tallenna projekti' tallentaa Wavacity-projektin, ei äänitiedostoa.\n"
 "Jos haluat avata äänitiedoston muissa sovelluksissa, käytä \"Vie\" -"
 "toimintoa.\n"
 
@@ -4444,12 +4444,12 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Wavvy project file instead."
+"Please open the actual Wavacity project file instead."
 msgstr ""
 "Yrität avata automaattisesti luotua varmuuskopiota.\n"
 "Tämä voi aiheuttaa vakavaa tietojen häviämistä.\n"
 "\n"
-"Avaa sen sijaan varsinainen Wavvyn projektitiedosto."
+"Avaa sen sijaan varsinainen Wavacityn projektitiedosto."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4550,8 +4550,8 @@ msgstr "Tietokannan automaattinen varmuuskopiointi epäonnistui."
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Wavvy version %s"
-msgstr "Tervetuloa käyttämään Wavvyn versiota %s"
+msgid "Welcome to Wavacity version %s"
+msgstr "Tervetuloa käyttämään Wavacityn versiota %s"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4610,14 +4610,14 @@ msgstr "%s ja %s."
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Wavvy 2.3.0 or before.\n"
-"You need to run that version of Wavvy to recover the project."
+"This recovery file was saved by Wavacity 2.3.0 or before.\n"
+"You need to run that version of Wavacity to recover the project."
 msgstr ""
-"Tämän palautustiedoston on tallentanut Wavvy 2.3.0 tai aikaisempi.\n"
-"Sinun on suoritettava kyseinen Wavvy-versio projektin palauttamiseksi."
+"Tämän palautustiedoston on tallentanut Wavacity 2.3.0 tai aikaisempi.\n"
+"Sinun on suoritettava kyseinen Wavacity-versio projektin palauttamiseksi."
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Wavvy is put on a notebook tab, and this is the name on that tab.
+#. Wavacity is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -4955,8 +4955,8 @@ msgid "Activation level (dB):"
 msgstr "Aktivointitaso (dB):"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Wavvy!"
-msgstr "Tervetuloa käyttämään Wavvyä!"
+msgid "Welcome to Wavacity!"
+msgstr "Tervetuloa käyttämään Wavacityä!"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5106,15 +5106,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write file:\n"
+"Wavacity could not write file:\n"
 "  %s."
 msgstr ""
-"Wavvy ei voinut kirjoittaa tiedostoa:\n"
+"Wavacity ei voinut kirjoittaa tiedostoa:\n"
 "  %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5128,21 +5128,21 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not open file:\n"
+"Wavacity could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"Wavvy ei voinut avata tiedostoa:\n"
+"Wavacity ei voinut avata tiedostoa:\n"
 "  %s\n"
 "kirjoitusta varten."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write images to file:\n"
+"Wavacity could not write images to file:\n"
 "  %s."
 msgstr ""
-"Wavvy ei voinut kirjoittaa kuvia tiedostoon:\n"
+"Wavacity ei voinut kirjoittaa kuvia tiedostoon:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5158,11 +5158,11 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not find file:\n"
+"Wavacity could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
-"Wavvy ei löytänyt tiedostoa:\n"
+"Wavacity ei löytänyt tiedostoa:\n"
 "  %s.\n"
 "Teemaa ei ole ladattu."
 
@@ -5170,20 +5170,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not load file:\n"
+"Wavacity could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
-"Wavvy ei voinut ladata tiedostoa:\n"
+"Wavacity ei voinut ladata tiedostoa:\n"
 "  %s.\n"
 "Ehkä virheellinen png-muoto?"
 
 #: src/Theme.cpp
 msgid ""
-"Wavvy could not read its default theme.\n"
+"Wavacity could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
-"Wavvy ei voinut lukea sen oletusteemaa.\n"
+"Wavacity ei voinut lukea sen oletusteemaa.\n"
 "Ilmoita tästä virheestä."
 
 #: src/Theme.cpp
@@ -5220,14 +5220,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not save file:\n"
+"Wavacity could not save file:\n"
 "  %s"
 msgstr ""
-"Wavvy ei voinut tallentaa tiedostoa:\n"
+"Wavacity ei voinut tallentaa tiedostoa:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Wavvy
+#. appearance of older versions of Wavacity
 #: src/Theme.cpp
 msgid "Classic"
 msgstr "Klassinen"
@@ -5274,8 +5274,8 @@ msgid "Time Track"
 msgstr "Aikaraita"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record"
-msgstr "Wavvyn ajastettu äänitys"
+msgid "Wavacity Timer Record"
+msgstr "Wavacityn ajastettu äänitys"
 
 #: src/TimerRecordDialog.cpp
 msgid "Save Timer Recording As"
@@ -5372,8 +5372,8 @@ msgid "Action after Timer Recording:"
 msgstr "Toiminto ajastetun tallennuksen jälkeen:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record Progress"
-msgstr "Wavvyn ajastettu äänitys käynnissä"
+msgid "Wavacity Timer Record Progress"
+msgstr "Wavacityn ajastettu äänitys käynnissä"
 
 #: src/TimerRecordDialog.cpp
 msgid "Timer Recording stopped."
@@ -5527,8 +5527,8 @@ msgid "Do nothing"
 msgstr "Älä tee mitään"
 
 #: src/TimerRecordDialog.cpp
-msgid "Exit Wavvy"
-msgstr "Poistu Wavvystä"
+msgid "Exit Wavacity"
+msgstr "Poistu Wavacitystä"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5551,8 +5551,8 @@ msgid "Scheduled to stop at:"
 msgstr "Ajoitettu pysähtymään:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting for Start"
-msgstr "Wavvyn ajastettu äänitys - odottaa aloitusta"
+msgid "Wavacity Timer Record - Waiting for Start"
+msgstr "Wavacityn ajastettu äänitys - odottaa aloitusta"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5560,7 +5560,7 @@ msgstr "Wavvyn ajastettu äänitys - odottaa aloitusta"
 msgid "Recording will commence in:"
 msgstr "Äänitys alkaa:"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Wavvy", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Wavacity", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5577,8 +5577,8 @@ msgid "Recording Exported:"
 msgstr "Äänite viety:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting"
-msgstr "Wavvy ajoitettu äänitys - Odotetaan"
+msgid "Wavacity Timer Record - Waiting"
+msgstr "Wavacity ajoitettu äänitys - Odotetaan"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5761,12 +5761,12 @@ msgstr "Leikkauslinjan laajentamiseksi ei ole tarpeeksi tilaa"
 msgid "This operation cannot be done until importation of %s completes."
 msgstr "Tätä toimintoa ei voi tehdä, kunnes kohteen %s tuonti on valmis."
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
-msgid "Wavvy"
-msgstr "Wavvy"
+msgid "Wavacity"
+msgstr "Wavacity"
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid ""
 "%s: Could not load settings below. Default settings will be used.\n"
@@ -5777,13 +5777,13 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid "Applying %s..."
 msgstr "%s kesken..."
 
 #. i18n-hint: An item name followed by a value, with appropriate separating punctuation
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/vamp/VampEffect.cpp src/menus/PluginMenus.cpp
 #: src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.cpp
 #: src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.cpp
@@ -5792,7 +5792,7 @@ msgstr "%s kesken..."
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/commands/WavvyCommand.h
+#: src/commands/WavacityCommand.h
 msgid "FAIL"
 msgstr "EPÄONN"
 
@@ -6051,12 +6051,12 @@ msgstr "Sisäänrakennetut komennot"
 #: src/effects/VST/VSTEffect.cpp src/effects/audiounits/AudioUnitEffect.cpp
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
-msgid "The Wavvy Team"
-msgstr "Wavvy-tiimi"
+msgid "The Wavacity Team"
+msgstr "Wavacity-tiimi"
 
 #: src/commands/LoadCommands.cpp
-msgid "Provides builtin commands to Wavvy"
-msgstr "Tarjoaa sisäänrakennettuja komentoja Wavvylle"
+msgid "Provides builtin commands to Wavacity"
+msgstr "Tarjoaa sisäänrakennettuja komentoja Wavacitylle"
 
 #: src/commands/LoadCommands.cpp
 msgid "Unknown built-in command name"
@@ -7754,7 +7754,7 @@ msgid "Previewing"
 msgstr "Esikuunnellaan"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8504,8 +8504,8 @@ msgid "Builtin Effects"
 msgstr "Sisäänrakennetut tehosteet"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Wavvy"
-msgstr "Huolehtii Wavvyn sisäänrakennetuista efekteistä"
+msgid "Provides builtin effects to Wavacity"
+msgstr "Huolehtii Wavacityn sisäänrakennetuista efekteistä"
 
 #: src/effects/LoadEffects.cpp
 msgid "Unknown built-in effect name"
@@ -8741,10 +8741,10 @@ msgstr "Vaihe 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Wavvy knows what to filter out,\n"
+"Select a few seconds of just noise so Wavacity knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"Valitse muutama sekunti pelkkää kohinaa, jotta Wavvy tietää, mitä pitää\n"
+"Valitse muutama sekunti pelkkää kohinaa, jotta Wavacity tietää, mitä pitää\n"
 "suodattaa pois. Kun valinta on tehty, paina \"Luo kohinaprofiili\":"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
@@ -9611,8 +9611,8 @@ msgid "VST Effects"
 msgstr "VST-tehosteet"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Wavvy."
-msgstr "Mahdollistaa VST-tehosteiden käytön Wavvyssä."
+msgid "Adds the ability to use VST effects in Wavacity."
+msgstr "Mahdollistaa VST-tehosteiden käytön Wavacityssä."
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Scanning Shell VST"
@@ -9661,12 +9661,12 @@ msgstr "Viiveenkorjaus"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
 "Joidenkin VST-tehosteiden pitää käsittelyn takia viivästää äänen "
-"palauttamista Wavvyyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
+"palauttamista Wavacityyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
 "tulla lyhyitä hiljaisia kohtia. Tämän vaihtoehdon käyttäminen pyrkii "
 "korjaamaan viiveet, mutta se ei välttämättä toimi kaikille VST-tehosteille."
 
@@ -9711,8 +9711,8 @@ msgid "Standard VST program file"
 msgstr "Tavallinen VST-ohjelmatiedosto"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Wavvy VST preset file"
-msgstr "Wavvyn VST-esiasetustiedosto"
+msgid "Wavacity VST preset file"
+msgstr "Wavacityn VST-esiasetustiedosto"
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Unrecognized file extension."
@@ -9800,8 +9800,8 @@ msgid "Audio Unit Effects"
 msgstr "Audio Units -tehosteet"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Wavvy"
-msgstr "Huolehtii Wavvyn Audio Units -tehostetuesta"
+msgid "Provides Audio Unit Effects support to Wavacity"
+msgstr "Huolehtii Wavacityn Audio Units -tehostetuesta"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid "Could not find component"
@@ -9818,13 +9818,13 @@ msgstr "Audio Units -tehostevalinnat"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will notice "
+"audio to Wavacity. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
 msgstr ""
 "Joidenkin Audio Units -tehosteiden pitää käsittelyn takia viivästää äänen "
-"palauttamista Wavvyyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
+"palauttamista Wavacityyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
 "tulla lyhyitä hiljaisia kohtia. Tämän vaihtoehdon käyttäminen pyrkii "
 "korjaamaan viiveet, mutta se ei välttämättä toimi kaikille Audio Units -"
 "tehosteille."
@@ -9988,8 +9988,8 @@ msgid "Provides LADSPA Effects"
 msgstr "Huolehtii LADSPA-tehosteista"
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Wavvy no longer uses vst-bridge"
-msgstr "Wavvy ei käytä enää vst-bridgeä"
+msgid "Wavacity no longer uses vst-bridge"
+msgstr "Wavacity ei käytä enää vst-bridgeä"
 
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid "LADSPA Effect Options"
@@ -9998,12 +9998,12 @@ msgstr "LADSPA-tehostevalinnat"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Wavvy. When not compensating for this delay, you will notice that "
+"to Wavacity. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
 "Joidenkin LADSPA-tehosteiden pitää käsittelyn takia viivästää äänen "
-"palauttamista Wavvyyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
+"palauttamista Wavacityyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
 "tulla lyhyitä hiljaisia kohtia. Tämän vaihtoehdon käyttäminen pyrkii "
 "korjaamaan viiveet, mutta se ei välttämättä toimi kaikille LADSPA-"
 "tehosteille."
@@ -10040,12 +10040,12 @@ msgstr "&Puskurin koko (8 – %d) näytettä):"
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
 "Joidenkin LV2-tehosteiden pitää käsittelyn takia viivästää äänen "
-"palauttamista Wavvyyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
+"palauttamista Wavacityyn. Jos tätä viivettä ei korjaa, äänen väliin voi "
 "tulla lyhyitä hiljaisia kohtia. Tämän vaihtoehdon käyttäminen pyrkii "
 "korjaamaan viiveet, mutta se ei välttämättä toimi kaikille LV2-tehosteille."
 
@@ -10088,16 +10088,16 @@ msgid "LV2 Effects"
 msgstr "LV2-tehosteet"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Wavvy"
-msgstr "Huolehtii Wavvyn LV2-tehostetuesta"
+msgid "Provides LV2 Effects support to Wavacity"
+msgstr "Huolehtii Wavacityn LV2-tehostetuesta"
 
 #: src/effects/nyquist/LoadNyquist.cpp
 msgid "Nyquist Effects"
 msgstr "Nyquist-tehosteet"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Wavvy"
-msgstr "Huolehtii Wavvyn Nyquist-tehostetuesta"
+msgid "Provides Nyquist Effects support to Wavacity"
+msgstr "Huolehtii Wavacityn Nyquist-tehostetuesta"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Applying Nyquist Effect..."
@@ -10221,8 +10221,8 @@ msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Wavvy does not support Nyquist plug-in version %ld"
-msgstr "Tämä Wavvy-versio ei tue Nyquist-laajennusversiota %ld"
+msgid "This version of Wavacity does not support Nyquist plug-in version %ld"
+msgstr "Tämä Wavacity-versio ei tue Nyquist-laajennusversiota %ld"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Could not open file"
@@ -10333,8 +10333,8 @@ msgid "Vamp Effects"
 msgstr "Vamp-tehosteet"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Wavvy"
-msgstr "Huolehtii Wavvyn Vamp-tehostetuesta"
+msgid "Provides Vamp Effects support to Wavacity"
+msgstr "Huolehtii Wavacityn Vamp-tehostetuesta"
 
 #: src/effects/vamp/VampEffect.cpp
 msgid ""
@@ -11544,8 +11544,8 @@ msgstr "Etsi LAME"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Wavvy needs the file %s to create MP3s."
-msgstr "Wavvy tarvitsee %s -tiedostoa MP3:n luomiseen."
+msgid "Wavacity needs the file %s to create MP3s."
+msgstr "Wavacity tarvitsee %s -tiedostoa MP3:n luomiseen."
 
 #: src/export/ExportMP3.cpp
 #, c-format
@@ -11575,12 +11575,12 @@ msgstr "Missä on %s?"
 #, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Wavvy %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Wavvy'."
+"Wavacity %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Wavacity'."
 msgstr ""
 "Olet linkittämässä kohteeseen lame_enc.dll v%d.%d. Tämä versio ei ole "
-"yhteensopiva Wavvyn %d.%d.%d kanssa.\n"
-"Lataa uusin versio \"LAME for Wavvy\"."
+"yhteensopiva Wavacityn %d.%d.%d kanssa.\n"
+"Lataa uusin versio \"LAME for Wavacity\"."
 
 #: src/export/ExportMP3.cpp
 msgid "Only lame_enc.dll"
@@ -11907,10 +11907,10 @@ msgstr "Muut pakkaamattomat tiedostot"
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Wavvy cannot do this, the Export was abandoned."
+"Wavacity cannot do this, the Export was abandoned."
 msgstr ""
 "Yritit viedä WAV- tai AIFF-tiedoston, joka olisi suurempi kuin 4 Gt.\n"
-"Wavvy ei pysty tähän, joten vienti hylättiin."
+"Wavacity ei pysty tähän, joten vienti hylättiin."
 
 #: src/export/ExportPCM.cpp
 msgid "Error Exporting"
@@ -11918,10 +11918,10 @@ msgstr "Virhe vietäessä"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Wavvy cannot export WAV\n"
+"Your exported WAV file has been truncated as Wavacity cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
-"Viety WAV-tiedosto on katkaistu, koska Wavvy ei voi viedä\n"
+"Viety WAV-tiedosto on katkaistu, koska Wavacity ei voi viedä\n"
 "WAV-tiedostoja, jotka ovat suurempia kuin 4 Gt."
 
 #: src/export/ExportPCM.cpp
@@ -11962,12 +11962,12 @@ msgstr "Kaikki tuetut tiedostot"
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Wavvy cannot open this type of file for playing, but you can\n"
+"Wavacity cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 "\"%s\" \n"
 "on MIDI-tiedosto, ei äänitiedosto. \n"
-"Wavvy ei voi avata ja toistaa tällaista tiedostoa, mutta voit\n"
+"Wavacity ei voi avata ja toistaa tällaista tiedostoa, mutta voit\n"
 "muokata sitä valitsemalla Tiedosto > Tuo > MIDI."
 
 #: src/import/Import.cpp
@@ -11975,11 +11975,11 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Wavvy cannot open this type of file."
+"Wavacity cannot open this type of file."
 msgstr ""
 "\"%s\" \n"
 "ei ole äänitiedosto. \n"
-"Wavvy ei voi avata tällaista tiedostoa."
+"Wavacity ei voi avata tällaista tiedostoa."
 
 #: src/import/Import.cpp
 msgid "Select stream(s) to import"
@@ -11987,21 +11987,21 @@ msgstr "Valitse tuotavat virrat"
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Wavvy was not compiled with %s support."
-msgstr "Tähän Wavvyn versioon ei ole käännetty tukea muodolle %s."
+msgid "This version of Wavacity was not compiled with %s support."
+msgstr "Tähän Wavacityn versioon ei ole käännetty tukea muodolle %s."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Wavvy cannot open audio CDs directly. \n"
+"Wavacity cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Wavvy can import, such as WAV or AIFF."
+"Wavacity can import, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on ääni-CD-raita. \n"
-"Wavvy ei voi avata CD:tä suoraan. \n"
-"Pura (rippaa) CD-raidat Wavvyn tukemaan\n"
+"Wavacity ei voi avata CD:tä suoraan. \n"
+"Pura (rippaa) CD-raidat Wavacityn tukemaan\n"
 "äänimuotoon, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12009,13 +12009,13 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Wavvy cannot open this file because it only contains links to other "
+"Wavacity cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
 msgstr ""
 "\"%s\" on soittolistatiedosto. \n"
-"Wavvy ei voi avata tätä tiedostoa, koska se sisältää vain linkkejä muihin "
+"Wavacity ei voi avata tätä tiedostoa, koska se sisältää vain linkkejä muihin "
 "tiedostoihin.\n"
 "Voit ehkä avata sen tekstieditorissa ja avata sen viittaamat äänitiedostot."
 
@@ -12024,11 +12024,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Wavvy cannot open this type of file due to patent restrictions. \n"
+"Wavacity cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on Windows Media Audio -tiedosto. \n"
-"Wavvy ei voi avata tällaista tiedostoa patenttirajoitusten vuoksi. \n"
+"Wavacity ei voi avata tällaista tiedostoa patenttirajoitusten vuoksi. \n"
 "Sinun täytyy muuntaa se tuettuun formaattiin, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12036,13 +12036,13 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Wavvy cannot open this type of "
+"Without the optional FFmpeg library, Wavacity cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
 msgstr ""
 "\"%s\" on Advanced Audio Coding t-iedosto. \n"
-"Ilman valinnaista FFmpeg-kirjastoa Wavvy ei voi avata tämäntyyppistä "
+"Ilman valinnaista FFmpeg-kirjastoa Wavacity ei voi avata tämäntyyppistä "
 "tiedostoa.\n"
 "Muussa tapauksessa se on muunnettava tuetuksi äänimuodoksi, kuten WAV tai "
 "AIFF."
@@ -12053,14 +12053,14 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Wavvy cannot open this type of file due to the encryption. \n"
-"Try recording the file into Wavvy, or burn it to audio CD then \n"
+"Wavacity cannot open this type of file due to the encryption. \n"
+"Try recording the file into Wavacity, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 "\"%s\" on salattu äänitiedosto. \n"
 "Nämä ovat tyypillisesti peräisin verkkomusiikkikaupasta. \n"
-"Wavvy ei voi avata salattuja tiedostoja. \n"
-"Yritä äänittää tiedosto Wavvyllä, tai polttaa se CD-äänilevylle\n"
+"Wavacity ei voi avata salattuja tiedostoja. \n"
+"Yritä äänittää tiedosto Wavacityllä, tai polttaa se CD-äänilevylle\n"
 "ja pura sitten CD-raita tuettuun äänimuotoon, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12068,11 +12068,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Wavvy cannot open this proprietary format. \n"
+"Wavacity cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on RealPlayer-mediatiedosto. \n"
-"Wavvy ei voi avata tätä patentoitua formaattia. \n"
+"Wavacity ei voi avata tätä patentoitua formaattia. \n"
 "Sinun täytyy muuntaa se tuettuun äänimuotoon, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12080,28 +12080,28 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Wavvy."
+"then import it, or record it into Wavacity."
 msgstr ""
 "\"%s\" on nuottipohjainen tiedosto, ei äänitiedosto. \n"
-"Wavvy ei voi avata tällaista tiedostoa.  \n"
+"Wavacity ei voi avata tällaista tiedostoa.  \n"
 "Yritä muuttaa se äänitiedostoksi, kuten WAV tai AIFF ja \n"
-"sitten tuoda se, tai äänittää se Wavvyllä."
+"sitten tuoda se, tai äänittää se Wavacityllä."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
 "format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on Musepack-äänitiedosto. \n"
-"Wavvy ei voi avata tällaista tiedostoa. \n"
+"Wavacity ei voi avata tällaista tiedostoa. \n"
 "Jos luulet sen olevan MP#-tiedosto, vaihda sen päätteeksi \".mp3\"\n"
 "ja yritä tuoda se uudelleen. Muussa tapauksessa sinun tulee muuntaa se \n"
 "tuettuun äänimuotoon, kuten WAV tai AIFF."
@@ -12111,11 +12111,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on Wavpack-äänitiedosto. \n"
-"Wavvy ei voi avata tällaista tiedostoa. \n"
+"Wavacity ei voi avata tällaista tiedostoa. \n"
 "Sinun täytyy muuntaa se tuettuun äänimuotoon, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12123,11 +12123,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on Dolby Digital -äänitiedosto. \n"
-"Wavvy ei voi tällä hetkellä avata tällaista tiedostoa. \n"
+"Wavacity ei voi tällä hetkellä avata tällaista tiedostoa. \n"
 "Sinun täytyy muuntaa se tuettuun äänimuotoon, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12135,11 +12135,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on Ogg Speex -äänitiedosto. \n"
-"Wavvy ei voi tällä hetkellä avata tällaista tiedostoa. \n"
+"Wavacity ei voi tällä hetkellä avata tällaista tiedostoa. \n"
 "Sinun täytyy muuntaa se tuettuun formaattiin, kuten WAV tai AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12147,11 +12147,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 "\"%s\" on videotiedosto. \n"
-"Wavvy ei voi tällä hetkellä avata tällaista tiedostoa. \n"
+"Wavacity ei voi tällä hetkellä avata tällaista tiedostoa. \n"
 "Sinun täytyy purkaa ääni tuettuun muotoon, kuten WAV tai AIFF."
 
 #: src/import/Import.cpp
@@ -12163,11 +12163,11 @@ msgstr "Tiedostoa %s ei löydy."
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Wavvy did not recognize the type of the file '%s'.\n"
+"Wavacity did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
-"Wavvy ei tunnistanut tiedoston '%s' tyyppiä.\n"
+"Wavacity ei tunnistanut tiedoston '%s' tyyppiä.\n"
 "\n"
 "%s Pakkaamattomille tiedostoille voit myös kokeilla Tiedosto > Tuo > "
 "Raakadata."
@@ -12189,12 +12189,12 @@ msgstr "%s, %s"
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Wavvy recognized the type of the file '%s'.\n"
+"Wavacity recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
 msgstr ""
-"Wavvy tunnisti tiedostotyypin '%s'.\n"
+"Wavacity tunnisti tiedostotyypin '%s'.\n"
 "Seuraavat tuojat tukisivat tätä tyyppiä:\n"
 "%s\n"
 "mutta mikään niistä ei ymmärtänyt tätä tiedostomuotoa."
@@ -12220,17 +12220,17 @@ msgstr "Tuo projekti"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Wavvy version 1.0 or earlier. The format has\n"
-"changed and this version of Wavvy is unable to import the project.\n"
+"This project was saved by Wavacity version 1.0 or earlier. The format has\n"
+"changed and this version of Wavacity is unable to import the project.\n"
 "\n"
-"Use a version of Wavvy prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Wavvy."
+"Use a version of Wavacity prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Wavacity."
 msgstr ""
-"Projekti tallennettiin Wavvyn versiolla 1.0 tai vanhemmalla.\n"
+"Projekti tallennettiin Wavacityn versiolla 1.0 tai vanhemmalla.\n"
 "Koska tiedostomuoto on muuttunut, tämä versio ei voi tuoda sitä.\n"
 "\n"
-"Käytä Wavvyn vanhempaa versiota (vanhempi kuin v3.0.0), tuo\n"
-"projekti sillä ja sitten tuo päivitetty projekti tällä Wavvy-versiolla."
+"Käytä Wavacityn vanhempaa versiota (vanhempi kuin v3.0.0), tuo\n"
+"projekti sillä ja sitten tuo päivitetty projekti tällä Wavacity-versiolla."
 
 #: src/import/ImportAUP.cpp
 msgid "Internal error in importer...tag not recognized"
@@ -12276,10 +12276,10 @@ msgstr "Projektin datakansiota \"%s\" ei löytynyt."
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Wavvy does not "
+"MIDI tracks found in project file, but this build of Wavacity does not "
 "include MIDI support, bypassing track."
 msgstr ""
-"Projektitiedostossa on MIDI-raitoja, mutta tämä koontiversio Wavvysta ei "
+"Projektitiedostossa on MIDI-raitoja, mutta tämä koontiversio Wavacitysta ei "
 "tue niitä, joten ne ohitetaan."
 
 #: src/import/ImportAUP.cpp
@@ -13449,8 +13449,8 @@ msgid "&Getting Started"
 msgstr "&Aloitusopas"
 
 #: src/menus/HelpMenus.cpp
-msgid "Wavvy &Manual"
-msgstr "Wavvyn &käyttöohje"
+msgid "Wavacity &Manual"
+msgstr "Wavacityn &käyttöohje"
 
 #: src/menus/HelpMenus.cpp
 msgid "&Quick Help..."
@@ -13497,7 +13497,7 @@ msgstr "Lisättiin merkki"
 msgid "Paste Text to New Label"
 msgstr "Liitä tekstiä uuteen merkkiin"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Wavacity has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13508,7 +13508,7 @@ msgstr "Leikkaa merkityt äänialueet leikepöydälle"
 msgid "Cut Labeled Audio"
 msgstr "Leikkaa merkitty ääni"
 
-#. i18n-hint: (verb) Wavvy has just deleted the labeled audio regions
+#. i18n-hint: (verb) Wavacity has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "Poistettiin merkityt äänialueet"
@@ -13518,7 +13518,7 @@ msgstr "Poistettiin merkityt äänialueet"
 msgid "Delete Labeled Audio"
 msgstr "Poista merkitty ääni"
 
-#. i18n-hint: (verb) Wavvy has just split cut the labeled audio
+#. i18n-hint: (verb) Wavacity has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13529,7 +13529,7 @@ msgstr "Halkaistiin ja leikattiin merkityt äänialueet"
 msgid "Split Cut Labeled Audio"
 msgstr "Halkaise ja leikkaa merkitty ääni"
 
-#. i18n-hint: (verb) Wavvy has just done a special kind of DELETE on
+#. i18n-hint: (verb) Wavacity has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13560,7 +13560,7 @@ msgstr "Kopioitiin merkityt äänialueet leikepöydälle"
 msgid "Copy Labeled Audio"
 msgstr "Kopioi merkitty ääni"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just split the labeled
+#. i18n-hint: (verb) past tense.  Wavacity has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13571,7 +13571,7 @@ msgstr "Halkaistiin merkityt äänialueet (kohdat tai alueet)"
 msgid "Split Labeled Audio"
 msgstr "Halkaise merkitty ääni"
 
-#. i18n-hint: (verb) Wavvy has just joined the labeled audio (points or
+#. i18n-hint: (verb) Wavacity has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13582,9 +13582,9 @@ msgstr "Liitettiin merkityt äänialueet yhteen (kohdat tai alueet)"
 msgid "Join Labeled Audio"
 msgstr "Liitä merkitty ääni yhteen"
 
-#. i18n-hint: (verb) Wavvy has just detached the labeled audio regions.
+#. i18n-hint: (verb) Wavacity has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Wavvy has done.
+#. Wavacity has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "Irrotettiin merkityt äänialueet"
@@ -14388,9 +14388,9 @@ msgstr "Luotiin uusi merkkiraita"
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Wavvy only allows one time track for each project window."
+"This version of Wavacity only allows one time track for each project window."
 msgstr ""
-"Tämä Wavvyn versio sallii vain yhden aikaraidan kussakin projekti-"
+"Tämä Wavacityn versio sallii vain yhden aikaraidan kussakin projekti-"
 "ikkunassa."
 
 #: src/menus/TrackMenus.cpp
@@ -14656,13 +14656,13 @@ msgstr "Siirrä kohdistettu rai&ta ylimmäksi"
 msgid "Move Focused Track to &Bottom"
 msgstr "Siirrä kohdistettu raita &alimmaksi"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 msgid "Playing"
 msgstr "Toistetaan"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15226,10 +15226,10 @@ msgstr "Hakemisto %s ei ole kirjoitettava"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Wavvy is "
+"Changes to temporary directory will not take effect until Wavacity is "
 "restarted"
 msgstr ""
-"Väliaikaiskansion muutos tulee voimaan vasta, kun Wavvy käynnistetään "
+"Väliaikaiskansion muutos tulee voimaan vasta, kun Wavacity käynnistetään "
 "uudelleen"
 
 #: src/prefs/DirectoriesPrefs.cpp
@@ -15274,7 +15274,7 @@ msgid "LV&2"
 msgstr "LV&2"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15314,13 +15314,13 @@ msgid "Plugin Options"
 msgstr "Laajennusvalinnat"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Wavvy starts"
-msgstr "Tarkista päivitetyt liitännäiset Wavvyn käynnistyessä"
+msgid "Check for updated plugins when Wavacity starts"
+msgstr "Tarkista päivitetyt liitännäiset Wavacityn käynnistyessä"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Rescan plugins next time Wavvy is started"
+msgid "Rescan plugins next time Wavacity is started"
 msgstr ""
-"Tarkista laajennukset uudelleen kun Wavvy käynnistetään seuraavan kerran"
+"Tarkista laajennukset uudelleen kun Wavacity käynnistetään seuraavan kerran"
 
 #: src/prefs/EffectsPrefs.cpp
 msgid "Instruction Set"
@@ -15392,12 +15392,12 @@ msgstr "Käyttämättömät suodattimet:"
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Wavvy "
+"what you are doing, it is recommended to trim spaces. Do you want Wavacity "
 "to trim spaces for you?"
 msgstr ""
 "Jossakin kohteista on välilyöntejä (välilyönti, rivinvaihto, sarkainmerkki "
 "tai rivinsiirto), jotka aiheuttavat ongelmia hahmontunnistuksessa. Jos et "
-"ole varma, niiden poistamista suositellaan. Haluatko Wavvyn tekevän niin "
+"ole varma, niiden poistamista suositellaan. Haluatko Wavacityn tekevän niin "
 "puolestasi?"
 
 #: src/prefs/ExtImportPrefs.cpp
@@ -15416,7 +15416,7 @@ msgstr "Viivaimen poiston vahvistus"
 msgid "Ext Import"
 msgstr "ExtImport"
 
-#. i18n-hint: refers to Wavvy's user interface settings
+#. i18n-hint: refers to Wavacity's user interface settings
 #: src/prefs/GUIPrefs.cpp
 msgctxt "GUI"
 msgid "Interface"
@@ -15507,8 +15507,8 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr "Pidä merkit, jos valinta tarraa merkkiin"
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Wavvy theme"
-msgstr "Sulauta järjestelmä- ja Wavvy-teemaa"
+msgid "B&lend system and Wavacity theme"
+msgstr "Sulauta järjestelmä- ja Wavacity-teemaa"
 
 #. i18n-hint: RTL stands for 'Right to Left'
 #: src/prefs/GUIPrefs.cpp
@@ -15689,8 +15689,8 @@ msgstr ""
 "   *   \"%s\"  (koska pikanäppäin '%s' on annettu toiminnolle \"%s\")\n"
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Wavvy keyboard shortcuts..."
-msgstr "Valitse Wavvyn pikanäppäimet sisältävä XML-tiedosto..."
+msgid "Select an XML file containing Wavacity keyboard shortcuts..."
+msgstr "Valitse Wavacityn pikanäppäimet sisältävä XML-tiedosto..."
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -15838,10 +15838,10 @@ msgstr "Lataa"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Wavvy has automatically detected valid FFmpeg libraries.\n"
+"Wavacity has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"Wavvy on tunnistanut automaattisesti kelvolliset FFmpeg-kirjastot.\n"
+"Wavacity on tunnistanut automaattisesti kelvolliset FFmpeg-kirjastot.\n"
 "Haluatko silti paikantaa ne manuaalisesti?"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -15887,7 +15887,7 @@ msgstr "MIDI-syntetisaattorin viive tulee olla kokonaisluku"
 msgid "Midi IO"
 msgstr "Midi IO"
 
-#. i18n-hint: Modules are optional extensions to Wavvy that add NEW features.
+#. i18n-hint: Modules are optional extensions to Wavacity that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "Moduulit"
@@ -15898,28 +15898,28 @@ msgstr "Moduulin asetukset"
 
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"These are experimental modules. Enable them only if you've read the Wavvy "
+"These are experimental modules. Enable them only if you've read the Wavacity "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
 "Nämä ovat kokeellisia moduuleja. Ota ne käyttöön vain, jos olet lukenut "
-"Wavvy-käyttöohjeet\n"
+"Wavacity-käyttöohjeet\n"
 "ja tiedät, mitä olet tekemässä."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"  'Ask' means Wavvy will ask if you want to load the module each time it "
+"  'Ask' means Wavacity will ask if you want to load the module each time it "
 "starts."
 msgstr ""
-"  'Kysy' tarkoittaa: Wavvy kysyy, haluatko ladata moduulin joka kerta "
+"  'Kysy' tarkoittaa: Wavacity kysyy, haluatko ladata moduulin joka kerta "
 "ohjelman käynnistyessä."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
-msgid "  'Failed' means Wavvy thinks the module is broken and won't run it."
+msgid "  'Failed' means Wavacity thinks the module is broken and won't run it."
 msgstr ""
-"  'Virhe' tarkoittaa: Wavvy arvelee moduulin olevan rikki eikä käytä sitä."
+"  'Virhe' tarkoittaa: Wavacity arvelee moduulin olevan rikki eikä käytä sitä."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
@@ -15927,8 +15927,8 @@ msgid "  'New' means no choice has been made yet."
 msgstr "  'Uusi' tarkoittaa: Valintaa ei ole vielä tehty."
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Wavvy starts up."
-msgstr "Muutos tulee voimaan vasta, kun Wavvy käynnistetään uudelleen."
+msgid "Changes to these settings only take effect when Wavacity starts up."
+msgstr "Muutos tulee voimaan vasta, kun Wavacity käynnistetään uudelleen."
 
 #: src/prefs/ModulePrefs.cpp
 msgid "Ask"
@@ -16209,8 +16209,8 @@ msgid "Always scrub un&pinned"
 msgstr "&Hankaa aina kiinnittämättömiä"
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Wavvy Preferences"
-msgstr "Wavvyn asetukset"
+msgid "Wavacity Preferences"
+msgstr "Wavacityn asetukset"
 
 #: src/prefs/PrefsDialog.cpp
 msgid "Category"
@@ -16605,7 +16605,7 @@ msgstr "Merkintöjen maksimimäärä täytyy olla välillä 1...128"
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -16628,7 +16628,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Wavvy.\n"
+"Wavacity.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -16641,7 +16641,7 @@ msgstr ""
 "-tiedostot ja muokkaa niissä olevia kuvia sekä värejä käyttäen "
 "kuvankäsittelyohjelmaa, kuten Gimp.\n"
 "\n"
-"Lataa muutetut kuvat ja värit takaisin Wavvyyn napsauttamalla \"Lataa "
+"Lataa muutetut kuvat ja värit takaisin Wavacityyn napsauttamalla \"Lataa "
 "teemavälimuisti\".\n"
 "\n"
 "(Tämä vaikuttaa tällä hetkellä vain siirtotyökaluriviin ja aaltoraidan "
@@ -16933,7 +16933,7 @@ msgstr "Aaltomuotoasetukset"
 msgid "Waveform dB &range:"
 msgstr "Aaltomuodon dB-&alue:"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 msgid "Stopped"
@@ -16971,7 +16971,7 @@ msgstr "Valitse loppuun"
 msgid "Select to Start"
 msgstr "Valitse alkuun"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, c-format
@@ -17336,8 +17336,8 @@ msgstr "Aika&työkalupalkki"
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, c-format
-msgid "Wavvy %s Toolbar"
-msgstr "Wavvyn %s-palkki"
+msgid "Wavacity %s Toolbar"
+msgstr "Wavacityn %s-palkki"
 
 #: src/toolbars/ToolBar.cpp
 msgid "Click and drag to resize toolbar"
@@ -18007,7 +18007,7 @@ msgstr "Vääristä toistoaikaa napsauttamalla ja raahaamalla"
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "Muokkaa amplitudikäyrää napsauttamalla ja raahaamalla"
 
-#. i18n-hint: (verb) Wavvy has just adjusted the envelope .
+#. i18n-hint: (verb) Wavacity has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr "Muokattu verhokäyrä."
@@ -20320,10 +20320,10 @@ msgstr "Oikea (dB)"
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Wavvy</a> by Steve\n"
+"<a href=\"~a\">Wavacity</a> by Steve\n"
 "Daulton"
 msgstr ""
-"Tehty <a href=\"~a\">Wavvylle</a>-ohjelman\n"
+"Tehty <a href=\"~a\">Wavacitylle</a>-ohjelman\n"
 "<span>Sample Data Exportilla</span>, tekijänä Steve\n"
 "Daulton"
 
@@ -20778,11 +20778,11 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "Export recording"
 #~ msgstr "Vie äänitys"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Wavvy"
-#~ msgstr "Ogg Vorbis -tukea ei ole sisällytetty tähän Wavvyn versioon"
+#~ msgid "Ogg Vorbis support is not included in this build of Wavacity"
+#~ msgstr "Ogg Vorbis -tukea ei ole sisällytetty tähän Wavacityn versioon"
 
-#~ msgid "FLAC support is not included in this build of Wavvy"
-#~ msgstr "FLAC-tukea ei ole sisällytetty tähän Wavvyn versioon"
+#~ msgid "FLAC support is not included in this build of Wavacity"
+#~ msgstr "FLAC-tukea ei ole sisällytetty tähän Wavacityn versioon"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "Komentoa %s ei ole vielä toteutettu"
@@ -20835,36 +20835,36 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "Tallennetaan äänitettä levylle"
 
-#~ msgid "Wavvy projects"
-#~ msgstr "Wavvyn projektit"
+#~ msgid "Wavacity projects"
+#~ msgstr "Wavacityn projektit"
 
 #~ msgid "Reclaimable Space"
 #~ msgstr "Takaisin saatava tila"
 
 #~ msgid ""
-#~ "Wavvy cannot start because the settings file at %s is not writable."
+#~ "Wavacity cannot start because the settings file at %s is not writable."
 #~ msgstr ""
-#~ "Wavvyä ei voi käynnistää, koska asetustiedostoon %s ei voi kirjoittaa."
+#~ "Wavacityä ei voi käynnistää, koska asetustiedostoon %s ei voi kirjoittaa."
 
 #~ msgid ""
-#~ "This file was saved by Wavvy version %s. The format has changed. \n"
+#~ "This file was saved by Wavacity version %s. The format has changed. \n"
 #~ "\n"
-#~ "Wavvy can try to open and save this file, but saving it in this \n"
+#~ "Wavacity can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Wavvy might corrupt the file in opening it, so you should back it up "
+#~ "Wavacity might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "Tämä tiedosto oli tallennettu Wavvyn versiolla %s. Tiedostomuoto on "
+#~ "Tämä tiedosto oli tallennettu Wavacityn versiolla %s. Tiedostomuoto on "
 #~ "sittemmin muuttunut. \n"
 #~ "\n"
-#~ "Wavvy voi yrittää avata ja tallentaa tämän tiedoston, mutta "
+#~ "Wavacity voi yrittää avata ja tallentaa tämän tiedoston, mutta "
 #~ "tallentaminen \n"
 #~ "tässä versiossa voi estää versiota 1.2 tai aiempaa avaamasta sitä. \n"
 #~ "\n"
-#~ "Wavvy voi rikkoa tiedoston sitä avatessa, joten se kannattaa "
+#~ "Wavacity voi rikkoa tiedoston sitä avatessa, joten se kannattaa "
 #~ "varmuuskopioida ensin. \n"
 #~ "\n"
 #~ "Avataanko tämä tiedosto nyt?"
@@ -20902,14 +20902,14 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ "hakemisto \"%s\" ennen tämännimisen projektin tallentamista."
 
 #~ msgid ""
-#~ "'Save Lossless Copy of Project' is for an Wavvy project, not an audio "
+#~ "'Save Lossless Copy of Project' is for an Wavacity project, not an audio "
 #~ "file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
 #~ "Lossless copies of project are a good way to backup your project, \n"
 #~ "with no loss of quality, but the projects are large.\n"
 #~ msgstr ""
-#~ "'Tallenna projektista häviötön kopio' tallentaa Wavvy-projektin, ei "
+#~ "'Tallenna projektista häviötön kopio' tallentaa Wavacity-projektin, ei "
 #~ "äänitiedostoa.\n"
 #~ "Jos haluat avata äänitiedoston muissa sovelluksissa, käytä \"Vie\" -"
 #~ "toimintoa.\n"
@@ -20922,7 +20922,7 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgstr "%sTallenna projektin \"%s\" pakattu kopio nimellä..."
 
 #~ msgid ""
-#~ "'Save Compressed Copy of Project' is for an Wavvy project, not an "
+#~ "'Save Compressed Copy of Project' is for an Wavacity project, not an "
 #~ "audio file.\n"
 #~ "For an audio file that will open in other apps, use 'Export'.\n"
 #~ "\n"
@@ -20930,7 +20930,7 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ "online, \n"
 #~ "but they have some loss of fidelity.\n"
 #~ msgstr ""
-#~ "'Tallenna projektista pakattu kopio' tallentaa Wavvy-projektin, ei "
+#~ "'Tallenna projektista pakattu kopio' tallentaa Wavacity-projektin, ei "
 #~ "äänitiedostoa.\n"
 #~ "Jos haluat avata äänitiedoston muissa sovelluksissa, käytä \"Vie\" -"
 #~ "toimintoa.\n"
@@ -20939,10 +20939,10 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ "mutta äänenlaatu tosin hieman kärsii.\n"
 
 #~ msgid ""
-#~ "Wavvy was unable to convert an Wavvy 1.0 project to the new project "
+#~ "Wavacity was unable to convert an Wavacity 1.0 project to the new project "
 #~ "format."
 #~ msgstr ""
-#~ "Wavvy ei kyennyt muuntamaan Wavvy 1.0:n projektia uuteen "
+#~ "Wavacity ei kyennyt muuntamaan Wavacity 1.0:n projektia uuteen "
 #~ "projektimuotoon."
 
 #~ msgid "Could not remove old auto save file"
@@ -20993,11 +20993,11 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgstr "FFmpeg: VIRHE - Äänikehyksen kirjoitus tiedostoon epäonnistui."
 
 #~ msgid ""
-#~ "\"%s\" is an Wavvy Project file. \n"
-#~ "Use the 'File > Open' command to open Wavvy Projects."
+#~ "\"%s\" is an Wavacity Project file. \n"
+#~ "Use the 'File > Open' command to open Wavacity Projects."
 #~ msgstr ""
-#~ "\"%s\" on Wavvyn projektitiedosto. \n"
-#~ "Avaa Wavvy-projekti käyttämällä Tiedosto > Avaa."
+#~ "\"%s\" on Wavacityn projektitiedosto. \n"
+#~ "Avaa Wavacity-projekti käyttämällä Tiedosto > Avaa."
 
 #~ msgid ""
 #~ "MP3 Decoding Failed:\n"
@@ -21187,31 +21187,31 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "File dialog failed with error code %0lx."
 #~ msgstr "Tiedostodialogi epäonnistui, virhekoodi %0lx."
 
-#~ msgid "About Wavvy"
-#~ msgstr "Tietoja Wavvystä"
+#~ msgid "About Wavacity"
+#~ msgstr "Tietoja Wavacitystä"
 
-#~ msgid "<h3>Wavvy "
-#~ msgstr "<h3>Wavvy "
+#~ msgid "<h3>Wavacity "
+#~ msgstr "<h3>Wavacity "
 
-#~ msgid "Wavvy Team Members"
-#~ msgstr "Wavvy-tiimin jäsenet"
+#~ msgid "Wavacity Team Members"
+#~ msgstr "Wavacity-tiimin jäsenet"
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Wavvy<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Wavvy Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Wavacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Wavacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; <b>Wavvy<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Wavvy Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Wavacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Wavacity Team.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "mkdir komennossa DirManager::MakeBlockFilePath epäonnistui."
 
 #~ msgid ""
-#~ "Wavvy found an orphan block file: %s. \n"
+#~ "Wavacity found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
-#~ "Wavvy löysi orvon lohkotiedoston: %s. \n"
+#~ "Wavacity löysi orvon lohkotiedoston: %s. \n"
 #~ "Harkitse projektin tallennusta ja uudelleen lataamista suorittaaksesi "
 #~ "koko projektin tarkistus."
 
@@ -21251,10 +21251,10 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgstr "Moduuli \"%s\" ei tarjoa version merkkijonoa. Sitä ei ladata."
 
 #~ msgid ""
-#~ "The module \"%s\" is matched with Wavvy version \"%s\". It will not be "
+#~ "The module \"%s\" is matched with Wavacity version \"%s\". It will not be "
 #~ "loaded."
 #~ msgstr ""
-#~ "Moduuli %s on yhteensopiva Wavvy-version \"%s\" kanssa. Sitä ei ladata."
+#~ "Moduuli %s on yhteensopiva Wavacity-version \"%s\" kanssa. Sitä ei ladata."
 
 #~ msgid ""
 #~ "The module \"%s\" failed to initialize.\n"
@@ -21456,8 +21456,8 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "Use loudness instead of peak amplitude"
 #~ msgstr "Luo ääntä nolla amplitudilla"
 
-#~ msgid "audio to Wavvy. When not compensating for this delay, you will "
-#~ msgstr "audio Wavvyyn. Jos tätä viiveettä ei kompensoida , voit "
+#~ msgid "audio to Wavacity. When not compensating for this delay, you will "
+#~ msgstr "audio Wavacityyn. Jos tätä viiveettä ei kompensoida , voit "
 
 #~ msgid "Enabling this option will provide that compensation, but it may "
 #~ msgstr "Tämän vaihtoehdon salliminen tarjoaa korvausta, mutta se voi "
@@ -21657,13 +21657,13 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid ""
 #~ "Latency Correction setting has caused the recorded audio to be hidden "
 #~ "before zero.\n"
-#~ "Wavvy has brought it back to start at zero.\n"
+#~ "Wavacity has brought it back to start at zero.\n"
 #~ "You may have to use the Time Shift Tool (<---> or F5) to drag the track "
 #~ "to the right place."
 #~ msgstr ""
 #~ "Latenssin korjausasetus on aiheuttanut että äänitetty audio on piilotettu "
 #~ "ennen nollaa.\n"
-#~ "Wavvy on tuonut sen takaisin alkamaan nollasta.\n"
+#~ "Wavacity on tuonut sen takaisin alkamaan nollasta.\n"
 #~ "Saatat joutua käyttämään Aikakorjaustyökalua (<---> tai F5) raidan "
 #~ "siirtämiseksi oikeaan paikkaan."
 
@@ -21801,9 +21801,9 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgstr "Vaihda raidan nimeksi:"
 
 #, fuzzy
-#~ msgid "Wavvy failed to write to a file in %s."
+#~ msgid "Wavacity failed to write to a file in %s."
 #~ msgstr ""
-#~ "Wavvy ei voinut kirjoittaa tiedostoa:\n"
+#~ "Wavacity ei voinut kirjoittaa tiedostoa:\n"
 #~ "  %s."
 
 #~ msgid "Could not open file: "
@@ -22284,8 +22284,8 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "co-founder"
 #~ msgstr "perustaja"
 
-#~ msgid "Wavvy Support Team"
-#~ msgstr "Wavvyn tukitiimi"
+#~ msgid "Wavacity Support Team"
+#~ msgstr "Wavacityn tukitiimi"
 
 #~ msgid "Emeritus Developers"
 #~ msgstr "Emeritus kehittäjät"
@@ -22293,8 +22293,8 @@ msgstr "Virhe.~%Stereoraita vaaditaan."
 #~ msgid "<center><h3>How to Get Help</h3></center>"
 #~ msgstr "<center><h3>Mistä saan apua</h3></center>"
 
-#~ msgid "Welcome to Wavvy "
-#~ msgstr "Tervetuloa käyttämään Wavvyä"
+#~ msgid "Welcome to Wavacity "
+#~ msgstr "Tervetuloa käyttämään Wavacityä"
 
 #~ msgid ""
 #~ " For even quicker answers, all the online resources above are "

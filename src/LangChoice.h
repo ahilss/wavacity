@@ -12,11 +12,11 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LANG_CHOICE__
-#define __WAVVY_LANG_CHOICE__
+#ifndef __WAVACITY_LANG_CHOICE__
+#define __WAVACITY_LANG_CHOICE__
 
 class wxString;
 
 wxString ChooseLanguage(wxWindow *parent);
 
-#endif // __WAVVY_LANG_CHOICE__
+#endif // __WAVACITY_LANG_CHOICE__

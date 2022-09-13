@@ -15,7 +15,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "ImportExportPrefs.h"
 
 #include <wx/defs.h>
@@ -183,7 +183,7 @@ bool ImportExportPrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "ImportExport",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew ImportExportPrefs(parent, winid);

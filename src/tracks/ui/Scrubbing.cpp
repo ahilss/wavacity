@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "Scrubbing.h"
 
 #include "../../Experimental.h"
@@ -192,24 +192,24 @@ void Scrubber::ScrubPoller::Notify()
    mScrubber.ContinueScrubbingUI();
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &parent ){
      return std::make_shared< Scrubber >( &parent ); }
 };
 
 void RegisterScrubber() {}
 
-Scrubber &Scrubber::Get( WavvyProject &project )
+Scrubber &Scrubber::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< Scrubber >( key );
 }
 
-const Scrubber &Scrubber::Get( const WavvyProject &project )
+const Scrubber &Scrubber::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-Scrubber::Scrubber(WavvyProject *project)
+Scrubber::Scrubber(WavacityProject *project)
    : mScrubToken(-1)
    , mPaused(true)
    , mScrubSpeedDisplayCountdown(0)
@@ -241,7 +241,7 @@ Scrubber::~Scrubber()
 }
 
 static const auto HasWaveDataPred =
-   [](const WavvyProject &project){
+   [](const WavacityProject &project){
       auto range = TrackList::Get( project ).Any<const WaveTrack>()
          + [](const WaveTrack *pTrack){
             return pTrack->GetEndTime() > pTrack->GetStartTime();
@@ -1105,7 +1105,7 @@ wxString Scrubber::StatusMessageForWave() const
 
 static ProjectStatus::RegisteredStatusWidthFunction
 registeredStatusWidthFunction{
-   []( const WavvyProject &, StatusBarField field )
+   []( const WavacityProject &, StatusBarField field )
       -> ProjectStatus::StatusWidthResult
    {
       if ( field == stateStatusBarField ) {
@@ -1208,7 +1208,7 @@ void Scrubber::OnKeyboardScrubForwards(const CommandContext &context)
 namespace {
 
 static const auto finder =
-   [](WavvyProject &project) -> CommandHandlerObject&
+   [](WavacityProject &project) -> CommandHandlerObject&
      { return Scrubber::Get( project ); };
 
 using namespace MenuTable;
@@ -1228,7 +1228,7 @@ BaseItemSharedPtr ToolbarMenu()
                item.flags,
                item.StatusTest
                   ? // a checkmark item
-                     Options{}.CheckTest( [&item](WavvyProject &project){
+                     Options{}.CheckTest( [&item](WavacityProject &project){
                      return ( Scrubber::Get(project).*(item.StatusTest) )(); } )
                   : // not a checkmark item
                      Options{}

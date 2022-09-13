@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FORMATCLASSIFIER_H_
-#define __WAVVY_FORMATCLASSIFIER_H_
+#ifndef __WAVACITY_FORMATCLASSIFIER_H_
+#define __WAVACITY_FORMATCLASSIFIER_H_
 
 #include <vector>
 #include "MultiFormatReader.h"

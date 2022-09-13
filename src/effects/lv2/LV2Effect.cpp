@@ -9,7 +9,7 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if defined(USE_LV2)
 
@@ -48,7 +48,7 @@
 
 #include "../../ShuttleGui.h"
 #include "../../widgets/valnum.h"
-#include "../../widgets/WavvyMessageBox.h"
+#include "../../widgets/WavacityMessageBox.h"
 #include "../../widgets/wxPanelWrapper.h"
 #include "../../widgets/NumericTextCtrl.h"
 
@@ -276,7 +276,7 @@ void LV2EffectSettingsDialog::PopulateOrExchange(ShuttleGui &S)
          {
             S.AddVariableText( XO(
 "As part of their processing, some LV2 effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will "
+"audio to Wavacity. When not compensating for this delay, you will "
 "notice that small silences have been inserted into the audio. "
 "Enabling this setting will provide that compensation, but it may "
 "not work for all LV2 effects."),
@@ -1567,7 +1567,7 @@ bool LV2Effect::PopulateUI(ShuttleGui &S)
    mMaster = InitInstance(mSampleRate);
    if (mMaster == NULL)
    {
-      WavvyMessageBox( XO("Couldn't instantiate effect") );
+      WavacityMessageBox( XO("Couldn't instantiate effect") );
       return false;
    }
 

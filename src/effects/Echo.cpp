@@ -19,7 +19,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Echo.h"
 #include "LoadEffects.h"
 
@@ -29,7 +29,7 @@
 
 #include "../ShuttleGui.h"
 #include "../Shuttle.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/valnum.h"
 
 // Define keys, defaults, minimums, and maximums for the effect parameters

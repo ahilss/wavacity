@@ -16,7 +16,7 @@
 #ifndef __SCRIPT_COMMAND_RELAY__
 #define __SCRIPT_COMMAND_RELAY__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../MemoryX.h"
 

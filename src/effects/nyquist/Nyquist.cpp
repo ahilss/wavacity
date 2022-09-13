@@ -24,7 +24,7 @@ effects from this one class.
 
 *//*******************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 #include "Nyquist.h"
 
 #include "../../Experimental.h"
@@ -68,7 +68,7 @@ effects from this one class.
 #include "../../WaveClip.h"
 #include "../../WaveTrack.h"
 #include "../../widgets/valnum.h"
-#include "../../widgets/WavvyMessageBox.h"
+#include "../../widgets/WavacityMessageBox.h"
 #include "../../Prefs.h"
 #include "../../wxFileNameWrapper.h"
 #include "../../prefs/GUIPrefs.h"
@@ -220,7 +220,7 @@ VendorSymbol NyquistEffect::GetVendor()
 {
    if (mIsPrompt)
    {
-      return XO("Wavvy");
+      return XO("Wavacity");
    }
 
    return mAuthor;
@@ -556,7 +556,7 @@ bool NyquistEffect::Init()
       mVersion = 4;
    }
 
-   // As of Wavvy 2.1.2 rc1, 'spectral' effects are allowed only if
+   // As of Wavacity 2.1.2 rc1, 'spectral' effects are allowed only if
    // the selected track(s) are in a spectrogram view, and there is at
    // least one frequency bound and Spectral Selection is enabled for the
    // selected track(s) - (but don't apply to Nyquist Prompt).
@@ -691,10 +691,10 @@ bool NyquistEffect::Process()
 
       mProps = wxEmptyString;
 
-      mProps += wxString::Format(wxT("(putprop '*WAVVY* (list %d %d %d) 'VERSION)\n"), WAVVY_VERSION, WAVVY_RELEASE, WAVVY_REVISION);
+      mProps += wxString::Format(wxT("(putprop '*WAVACITY* (list %d %d %d) 'VERSION)\n"), WAVACITY_VERSION, WAVACITY_RELEASE, WAVACITY_REVISION);
       wxString lang = gPrefs->Read(wxT("/Locale/Language"), wxT(""));
       lang = (lang.empty())? GUIPrefs::SetLang(lang) : lang;
-      mProps += wxString::Format(wxT("(putprop '*WAVVY* \"%s\" 'LANGUAGE)\n"), lang);
+      mProps += wxString::Format(wxT("(putprop '*WAVACITY* \"%s\" 'LANGUAGE)\n"), lang);
 
       mProps += wxString::Format(wxT("(setf *DECIMAL-SEPARATOR* #\\%c)\n"), wxNumberFormatter::GetDecimalSeparator());
 
@@ -1177,11 +1177,11 @@ bool NyquistEffect::ProcessOne()
       cmd += wxString::Format(wxT("(putprop '*TRACK* %d 'INDEX)\n"), ++mTrackIndex);
       cmd += wxString::Format(wxT("(putprop '*TRACK* \"%s\" 'NAME)\n"), EscapeString(mCurTrack[0]->GetName()));
       cmd += wxString::Format(wxT("(putprop '*TRACK* \"%s\" 'TYPE)\n"), type);
-      // Note: "View" property may change when Wavvy's choice of track views has stabilized.
+      // Note: "View" property may change when Wavacity's choice of track views has stabilized.
       cmd += wxString::Format(wxT("(putprop '*TRACK* %s 'VIEW)\n"), view);
       cmd += wxString::Format(wxT("(putprop '*TRACK* %d 'CHANNELS)\n"), mCurNumChannels);
 
-      //NOTE: Wavvy 2.1.3 True if spectral selection is enabled regardless of track view.
+      //NOTE: Wavacity 2.1.3 True if spectral selection is enabled regardless of track view.
       cmd += wxString::Format(wxT("(putprop '*TRACK* %s 'SPECTRAL-EDIT-ENABLED)\n"), spectralEditp);
 
       auto channels = TrackList::Channels( mCurTrack[0] );
@@ -1368,7 +1368,7 @@ bool NyquistEffect::ProcessOne()
       // error will be raised when we try to return the value of aud:result
       // which is unbound
       cmd += wxT("(setf aud:result nil)\n");
-      cmd += wxT("(sal-compile-wavvy \"") + str + wxT("\" t t nil)\n");
+      cmd += wxT("(sal-compile-wavacity \"") + str + wxT("\" t t nil)\n");
       // Capture the value returned by main (saved in aud:result), but
       // set aud:result to nil so sound results can be evaluated without
       // retaining audio in memory
@@ -1400,7 +1400,7 @@ bool NyquistEffect::ProcessOne()
          mName.Translation(), output);
    }
 
-   // Wavvy has no idea how long Nyquist processing will take, but
+   // Wavacity has no idea how long Nyquist processing will take, but
    // can monitor audio being returned.
    // Anything other than audio should be returned almost instantly
    // so notify the user that process has completed (bug 558)
@@ -1627,7 +1627,7 @@ wxString NyquistEffect::NyquistToWxString(const char *nyqString)
         // invalid UTF-8 string, convert as Latin-1
         str = _("[Warning: Nyquist returned invalid UTF-8 string, converted here as Latin-1]");
        // TODO: internationalization of strings from Nyquist effects, at least
-       // from those shipped with Wavvy
+       // from those shipped with Wavacity
         str += LAT1CTOWX(nyqString);
     }
     return str;
@@ -2030,7 +2030,7 @@ bool NyquistEffect::Parse(
          // This is an unsupported plug-in version
          mOK = false;
          mInitError = XO(
-"This version of Wavvy does not support Nyquist plug-in version %ld")
+"This version of Wavacity does not support Nyquist plug-in version %ld")
             .Format( v );
          return true;
       }
@@ -2122,7 +2122,7 @@ bool NyquistEffect::Parse(
       return true;
    }
 
-   // Page name in Wavvy development manual
+   // Page name in Wavacity development manual
    if (len >= 2 && tokens[0] == wxT("manpage")) {
       // do not translate
       mManPage = UnQuote(tokens[1], false);
@@ -2211,14 +2211,14 @@ bool NyquistEffect::Parse(
                str.Printf(wxT("Bad Nyquist 'control' type specification: '%s' in plug-in file '%s'.\nControl not created."),
                         tokens[3], mFileName.GetFullPath());
 
-               // Too disturbing to show alert before Wavvy frame is up.
+               // Too disturbing to show alert before Wavacity frame is up.
                //    Effect::MessageBox(
                //       str,
                //       wxOK | wxICON_EXCLAMATION,
                //       XO("Nyquist Warning") );
 
-               // Note that the WavvyApp's mLogger has not yet been created,
-               // so this brings up an alert box, but after the Wavvy frame is up.
+               // Note that the WavacityApp's mLogger has not yet been created,
+               // so this brings up an alert box, but after the Wavacity frame is up.
                wxLogWarning(str);
                return true;
             }
@@ -2301,7 +2301,7 @@ bool NyquistEffect::ParseProgram(wxInputStream & stream)
    mControls.clear();
    mCategories.clear();
    mIsSpectral = false;
-   mManPage = wxEmptyString; // If not wxEmptyString, must be a page in the Wavvy manual.
+   mManPage = wxEmptyString; // If not wxEmptyString, must be a page in the Wavacity manual.
    mHelpFile = wxEmptyString; // If not wxEmptyString, must be a valid HTML help file.
    mHelpFileExists = false;
    mDebug = false;
@@ -2533,7 +2533,7 @@ void NyquistEffect::OSCallback()
    //       really necessary on Linux and Windows.
    //
    //       However, on the Mac, the spinning cursor appears during longer
-   //       Nyquist processing and that may cause the user to think Wavvy
+   //       Nyquist processing and that may cause the user to think Wavacity
    //       has crashed or hung.  In addition, yielding or not on the Mac
    //       doesn't seem to make much of a difference in execution time.
    //
@@ -2545,12 +2545,12 @@ void NyquistEffect::OSCallback()
 
 FilePaths NyquistEffect::GetNyquistSearchPath()
 {
-   const auto &wavvyPathList = FileNames::WavvyPathList();
+   const auto &wavacityPathList = FileNames::WavacityPathList();
    FilePaths pathList;
 
-   for (size_t i = 0; i < wavvyPathList.size(); i++)
+   for (size_t i = 0; i < wavacityPathList.size(); i++)
    {
-      wxString prefix = wavvyPathList[i] + wxFILE_SEP_PATH;
+      wxString prefix = wavacityPathList[i] + wxFILE_SEP_PATH;
       FileNames::AddUniquePathToPathList(prefix + wxT("nyquist"), pathList);
       FileNames::AddUniquePathToPathList(prefix + wxT("plugins"), pathList);
       FileNames::AddUniquePathToPathList(prefix + wxT("plug-ins"), pathList);

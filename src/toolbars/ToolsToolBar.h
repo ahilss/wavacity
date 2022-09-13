@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TOOLS_TOOLBAR__
-#define __WAVVY_TOOLS_TOOLBAR__
+#ifndef __WAVACITY_TOOLS_TOOLBAR__
+#define __WAVACITY_TOOLS_TOOLBAR__
 
 #include <wx/defs.h>
 
@@ -25,7 +25,7 @@ class wxImage;
 class wxWindow;
 
 class AButton;
-class WavvyProject;
+class WavacityProject;
 
 // Code duplication warning: these apparently need to be in the
 // same order as the enum in ToolsToolBar.cpp
@@ -36,11 +36,11 @@ class ToolsToolBar final : public ToolBar {
 
  public:
 
-   ToolsToolBar( WavvyProject &project );
+   ToolsToolBar( WavacityProject &project );
    virtual ~ToolsToolBar();
 
-   static ToolsToolBar &Get( WavvyProject &project );
-   static const ToolsToolBar &Get( const WavvyProject &project );
+   static ToolsToolBar &Get( WavacityProject &project );
+   static const ToolsToolBar &Get( const WavacityProject &project );
 
    void UpdatePrefs() override;
 

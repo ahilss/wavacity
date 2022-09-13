@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "EnvelopeHandle.h"
 
 #include "../../Experimental.h"
@@ -34,7 +34,7 @@ EnvelopeHandle::EnvelopeHandle( Envelope *pEnvelope )
 {
 }
 
-void EnvelopeHandle::Enter(bool, WavvyProject *)
+void EnvelopeHandle::Enter(bool, WavacityProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -54,7 +54,7 @@ UIHandlePtr EnvelopeHandle::HitAnywhere
 
 namespace {
    void GetTimeTrackData
-      (const WavvyProject &project, const TimeTrack &tt,
+      (const WavacityProject &project, const TimeTrack &tt,
        double &dBRange, bool &dB, float &zoomMin, float &zoomMax)
    {
       const auto &viewInfo = ViewInfo::Get( project );
@@ -72,7 +72,7 @@ namespace {
 UIHandlePtr EnvelopeHandle::TimeTrackHitTest
 (std::weak_ptr<EnvelopeHandle> &holder,
  const wxMouseState &state, const wxRect &rect,
- const WavvyProject *pProject, const std::shared_ptr<TimeTrack> &tt)
+ const WavacityProject *pProject, const std::shared_ptr<TimeTrack> &tt)
 {
    auto envelope = tt->GetEnvelope();
    if (!envelope)
@@ -89,7 +89,7 @@ UIHandlePtr EnvelopeHandle::TimeTrackHitTest
 UIHandlePtr EnvelopeHandle::WaveTrackHitTest
 (std::weak_ptr<EnvelopeHandle> &holder,
  const wxMouseState &state, const wxRect &rect,
- const WavvyProject *pProject, const std::shared_ptr<WaveTrack> &wt)
+ const WavacityProject *pProject, const std::shared_ptr<WaveTrack> &wt)
 {
    /// method that tells us if the mouse event landed on an
    /// envelope boundary.
@@ -114,7 +114,7 @@ UIHandlePtr EnvelopeHandle::WaveTrackHitTest
 
 UIHandlePtr EnvelopeHandle::HitEnvelope
 (std::weak_ptr<EnvelopeHandle> &holder,
- const wxMouseState &state, const wxRect &rect, const WavvyProject *pProject,
+ const wxMouseState &state, const wxRect &rect, const WavacityProject *pProject,
  Envelope *envelope, float zoomMin, float zoomMax,
  bool dB, float dBRange, bool timeTrack)
 {
@@ -166,7 +166,7 @@ UIHandlePtr EnvelopeHandle::HitEnvelope
 }
 
 UIHandle::Result EnvelopeHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
@@ -236,7 +236,7 @@ UIHandle::Result EnvelopeHandle::Click
 }
 
 UIHandle::Result EnvelopeHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const wxMouseEvent &event = evt.event;
@@ -252,7 +252,7 @@ UIHandle::Result EnvelopeHandle::Drag
 }
 
 HitTestPreview EnvelopeHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *pProject)
+(const TrackPanelMouseState &, WavacityProject *pProject)
 {
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
    static auto disabledCursor =
@@ -273,7 +273,7 @@ HitTestPreview EnvelopeHandle::Preview
 }
 
 UIHandle::Result EnvelopeHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *)
 {
    const wxMouseEvent &event = evt.event;
@@ -285,7 +285,7 @@ UIHandle::Result EnvelopeHandle::Release
    const bool needUpdate = ForwardEventToEnvelopes(event, viewInfo);
 
    ProjectHistory::Get( *pProject ).PushState(
-      /* i18n-hint: (verb) Wavvy has just adjusted the envelope .*/
+      /* i18n-hint: (verb) Wavacity has just adjusted the envelope .*/
       XO("Adjusted envelope."),
       /* i18n-hint: The envelope is a curve that controls the audio loudness.*/
       XO("Envelope")
@@ -297,7 +297,7 @@ UIHandle::Result EnvelopeHandle::Release
    return needUpdate ? RefreshCell : RefreshNone;
 }
 
-UIHandle::Result EnvelopeHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result EnvelopeHandle::Cancel(WavacityProject *pProject)
 {
    ProjectHistory::Get( *pProject ).RollbackState();
    mEnvelopeEditors.clear();

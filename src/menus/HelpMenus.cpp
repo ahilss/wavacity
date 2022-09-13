@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include <wx/bmpbuttn.h>
@@ -7,7 +7,7 @@
 
 #include "../AboutDialog.h"
 #include "../AllThemeResources.h"
-#include "../WavvyLogger.h"
+#include "../WavacityLogger.h"
 #include "../AudioIOBase.h"
 #include "../CommonCommandFlags.h"
 #include "../CrashReport.h"
@@ -23,7 +23,7 @@
 #include "../commands/CommandContext.h"
 #include "../commands/CommandManager.h"
 #include "../prefs/PrefsDialog.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 #if defined(EXPERIMENTAL_CRASH_REPORT)
@@ -34,7 +34,7 @@
 namespace {
 
 void ShowDiagnostics(
-   WavvyProject &project, const wxString &info,
+   WavacityProject &project, const wxString &info,
    const TranslatableString &description, const wxString &defaultPath,
    bool fixedWidth = false)
 {
@@ -80,7 +80,7 @@ void ShowDiagnostics(
       {
          if (!text->SaveFile(fName))
          {
-            WavvyMessageBox(
+            WavacityMessageBox(
                XO("Unable to save %s").Format( description ),
                fileDialogTitle);
          }
@@ -100,7 +100,7 @@ class QuickFixDialog : public wxDialogWrapper
 public:
    using PrefSetter = std::function< void() > ;
 
-   QuickFixDialog(wxWindow * pParent, WavvyProject &project);
+   QuickFixDialog(wxWindow * pParent, WavacityProject &project);
    void Populate();
    void PopulateOrExchange(ShuttleGui & S);
    void AddStuck( ShuttleGui & S, bool & bBool,
@@ -112,7 +112,7 @@ public:
    void OnHelp(const wxString &Str);
    void OnFix(const PrefSetter &setter, wxWindowID id);
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    int mItem;
    bool mbSyncLocked;
@@ -130,7 +130,7 @@ BEGIN_EVENT_TABLE(QuickFixDialog, wxDialogWrapper)
    EVT_BUTTON(wxID_CANCEL,                                        QuickFixDialog::OnCancel)
 END_EVENT_TABLE();
 
-QuickFixDialog::QuickFixDialog(wxWindow * pParent, WavvyProject &project) :
+QuickFixDialog::QuickFixDialog(wxWindow * pParent, WavacityProject &project) :
       wxDialogWrapper(pParent, wxID_ANY, XO("Do you have these problems?"),
             wxDefaultPosition, wxDefaultSize,
             wxDEFAULT_DIALOG_STYLE )
@@ -208,7 +208,7 @@ void QuickFixDialog::PopulateOrExchange(ShuttleGui & S)
          mItem = -1;
 
          auto defaultAction =
-         [](WavvyProject *pProject, const wxString &path){ return
+         [](WavacityProject *pProject, const wxString &path){ return
             [pProject, path]{
                gPrefs->Write(path, 0);
                gPrefs->Flush();
@@ -347,7 +347,7 @@ void OnMidiDeviceInfo(const CommandContext &context)
 
 void OnShowLog( const CommandContext &context )
 {
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    if (logger) {
       logger->Show();
    }
@@ -451,7 +451,7 @@ void OnAbout(const CommandContext &context)
 
 // Only does the update checks if it's an ALPHA build and not disabled by
 // preferences.
-void MayCheckForUpdates(WavvyProject &project)
+void MayCheckForUpdates(WavacityProject &project)
 {
 #ifdef IS_ALPHA
    OnCheckForUpdates(project);
@@ -469,9 +469,9 @@ void OnHelpWelcome(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static HelpActions::Handler instance;
    return instance;
 };
@@ -488,7 +488,7 @@ BaseItemSharedPtr HelpMenu()
    ( FinderScope{ findCommandHandler },
    Menu( wxT("Help"), XXO("&Help"),
       Section( "Basic",
-         // QuickFix menu item not in Wavvy 2.3.1 whilst we discuss further.
+         // QuickFix menu item not in Wavacity 2.3.1 whilst we discuss further.
    #ifdef EXPERIMENTAL_DA
          // DA: Has QuickFix menu item.
          Command( wxT("QuickFix"), XXO("&Quick Fix..."), FN(OnQuickFix),
@@ -496,8 +496,8 @@ BaseItemSharedPtr HelpMenu()
          // DA: 'Getting Started' rather than 'Quick Help'.
          Command( wxT("QuickHelp"), XXO("&Getting Started"), FN(OnQuickHelp),
             AlwaysEnabledFlag ),
-         // DA: Emphasise it is the Wavvy Manual (No separate DA manual).
-         Command( wxT("Manual"), XXO("Wavvy &Manual"), FN(OnManual),
+         // DA: Emphasise it is the Wavacity Manual (No separate DA manual).
+         Command( wxT("Manual"), XXO("Wavacity &Manual"), FN(OnManual),
             AlwaysEnabledFlag )
 
    #else
@@ -556,7 +556,7 @@ BaseItemSharedPtr HelpMenu()
             AlwaysEnabledFlag ),
       #endif
    #endif
-         Command( wxT("About"), XXO("&About Wavvy..."), FN(OnAbout),
+         Command( wxT("About"), XXO("&About Wavacity..."), FN(OnAbout),
             AlwaysEnabledFlag )
       )
    ) ) };

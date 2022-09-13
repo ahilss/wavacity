@@ -145,10 +145,10 @@ void ODTask::DoSome(float amountWork)
    }
    else
    {
-      //for profiling, uncomment and look in wavvy.app/exe's folder for WavvyProfile.txt
+      //for profiling, uncomment and look in wavacity.app/exe's folder for WavacityProfile.txt
       //static int tempLog =0;
       //if(++tempLog % 5==0)
-         //END_TASK_PROFILING("On Demand Drag and Drop 5 80 mb files into wavvy, 5 wavs per task");
+         //END_TASK_PROFILING("On Demand Drag and Drop 5 80 mb files into wavacity, 5 wavs per task");
       //END_TASK_PROFILING("On Demand open an 80 mb wav stereo file");
 
       wxCommandEvent event( EVT_ODTASK_COMPLETE );
@@ -173,7 +173,7 @@ void ODTask::DoSome(float amountWork)
    mBlockUntilTerminateMutex.Unlock();
 }
 
-bool ODTask::IsTaskAssociatedWithProject(WavvyProject* proj)
+bool ODTask::IsTaskAssociatedWithProject(WavacityProject* proj)
 {
    for (auto tr : TrackList::Get( *proj ).Any<const WaveTrack>())
    {

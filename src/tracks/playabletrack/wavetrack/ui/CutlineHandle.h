@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_CUTLINE_HANDLE__
-#define __WAVVY_CUTLINE_HANDLE__
+#ifndef __WAVACITY_CUTLINE_HANDLE__
+#define __WAVACITY_CUTLINE_HANDLE__
 
 #include "../../../../UIHandle.h"
 #include "../../../../WaveTrackLocation.h"
@@ -31,11 +31,11 @@ public:
    CutlineHandle &operator=(const CutlineHandle&) = default;
 
    static UIHandlePtr HitAnywhere
-      (const WavvyProject *pProject, bool cutline, UIHandlePtr ptr);
+      (const WavacityProject *pProject, bool cutline, UIHandlePtr ptr);
    static UIHandlePtr HitTest
       (std::weak_ptr<CutlineHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const WavvyProject *pProject,
+       const WavacityProject *pProject,
        const std::shared_ptr<WaveTrack> &pTrack);
 
    virtual ~CutlineHandle();
@@ -43,23 +43,23 @@ public:
    const WaveTrackLocation &GetLocation() { return mLocation; }
    std::shared_ptr<WaveTrack> GetTrack() { return mpTrack; }
 
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 

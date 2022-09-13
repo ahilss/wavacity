@@ -16,7 +16,7 @@ the ability to not see similar warnings again for this session.
 
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Warning.h"
 
 #include "../Prefs.h"

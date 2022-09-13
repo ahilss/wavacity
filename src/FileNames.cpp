@@ -16,11 +16,11 @@ for us to keep track of the different kinds of files we read and write
 from.
 
 JKC: In time I plan to add all file names and file extensions
-used throughout Wavvy into this one place.
+used throughout Wavacity into this one place.
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "FileNames.h"
 
 #include "Experimental.h"
@@ -36,7 +36,7 @@ used throughout Wavvy into this one place.
 #include "Internat.h"
 #include "PlatformCompatibility.h"
 #include "wxFileNameWrapper.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/FileDialog/FileDialog.h"
 
 #if defined(__WXMAC__) || defined(__WXGTK__)
@@ -51,9 +51,9 @@ static wxString gDataDir;
 
 const FileNames::FileType
      FileNames::AllFiles{ XO("All files"), { wxT("") } }
-     /* i18n-hint an Wavvy project is the state of the program, stored as
+     /* i18n-hint an Wavacity project is the state of the program, stored as
      files that can be reopened to resume the session later */
-   , FileNames::WavvyProjects{ XO("AUP3 project files"), { wxT("aup3") }, true }
+   , FileNames::WavacityProjects{ XO("AUP3 project files"), { wxT("aup3") }, true }
    , FileNames::DynamicLibraries{
 #if defined(__WXMSW__)
       XO("Dynamically Linked Libraries"), { wxT("dll") }, true
@@ -211,17 +211,17 @@ void FileNames::MakeNameUnique(FilePaths &otherNames,
    otherNames.push_back(newName.GetFullName());
 }
 
-// The APP name has upercase first letter (so that Quit Wavvy is correctly
+// The APP name has upercase first letter (so that Quit Wavacity is correctly
 // capitalised on Mac, but we want lower case APP name in paths.
 // This function does that substitution, IF the last component of
-// the path is 'Wavvy'.
+// the path is 'Wavacity'.
 wxString FileNames::LowerCaseAppNameInPath( const wxString & dirIn){
    wxString dir = dirIn;
-   // BUG 1577 Capitalisation of Wavvy in path...
-   if( dir.EndsWith( "Wavvy" ) )
+   // BUG 1577 Capitalisation of Wavacity in path...
+   if( dir.EndsWith( "Wavacity" ) )
    {
-      int nChars = dir.length() - wxString( "Wavvy" ).length();
-      dir = dir.Left( nChars ) + "wavvy";
+      int nChars = dir.length() - wxString( "Wavacity" ).length();
+      dir = dir.Left( nChars ) + "wavacity";
    }
    return dir;
 }
@@ -230,8 +230,8 @@ FilePath FileNames::DataDir()
 {
    // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
    //       between wxStandardPaths and wxConfig under Linux.  The latter
-   //       creates a normal file as "$HOME/.wavvy", while the former
-   //       expects the ".wavvy" portion to be a directory.
+   //       creates a normal file as "$HOME/.wavacity", while the former
+   //       expects the ".wavacity" portion to be a directory.
    if (gDataDir.empty())
    {
       // If there is a directory "Portable Settings" relative to the
@@ -239,7 +239,7 @@ FilePath FileNames::DataDir()
       // the prefs are stored in the user data dir provided by the OS.
       wxFileName exePath(PlatformCompatibility::GetExecutablePath());
 #if defined(__WXMAC__)
-      // Path ends for example in "Wavvy.app/Contents/MacOSX"
+      // Path ends for example in "Wavacity.app/Contents/MacOSX"
       //exePath.RemoveLastDir();
       //exePath.RemoveLastDir();
       // just remove the MacOSX part.
@@ -273,16 +273,16 @@ FilePath FileNames::HtmlHelpDir()
 {
 #if defined(__WXMAC__)
    wxFileName exePath(PlatformCompatibility::GetExecutablePath());
-      // Path ends for example in "Wavvy.app/Contents/MacOSX"
+      // Path ends for example in "Wavacity.app/Contents/MacOSX"
       //exePath.RemoveLastDir();
       //exePath.RemoveLastDir();
       // just remove the MacOSX part.
       exePath.RemoveLastDir();
 
-   //for mac this puts us within the .app: Wavvy.app/Contents/SharedSupport/
+   //for mac this puts us within the .app: Wavacity.app/Contents/SharedSupport/
    return wxFileName( exePath.GetPath()+wxT("/help/manual"), wxEmptyString ).GetFullPath();
 #else
-   //linux goes into /*prefix*/share/wavvy/
+   //linux goes into /*prefix*/share/wavacity/
    //windows (probably) goes into the dir containing the .exe
    wxString dataDir = FileNames::LowerCaseAppNameInPath( wxStandardPaths::Get().GetDataDir());
    return wxFileName( dataDir+wxT("/help/manual"), wxEmptyString ).GetFullPath();
@@ -332,7 +332,7 @@ FilePath FileNames::BaseDir()
 #if defined(__WXMAC__)
    baseDir = PlatformCompatibility::GetExecutablePath();
 
-   // Path ends for example in "Wavvy.app/Contents/MacOSX"
+   // Path ends for example in "Wavacity.app/Contents/MacOSX"
    //baseDir.RemoveLastDir();
    //baseDir.RemoveLastDir();
    // just remove the MacOSX part.
@@ -342,7 +342,7 @@ FilePath FileNames::BaseDir()
    // the "Debug" directory in debug builds.
    baseDir = PlatformCompatibility::GetExecutablePath();
 #else
-   // Linux goes into /*prefix*/share/wavvy/
+   // Linux goes into /*prefix*/share/wavacity/
    baseDir = FileNames::LowerCaseAppNameInPath(wxStandardPaths::Get().GetDataDir());
 #endif
 
@@ -489,7 +489,7 @@ wxFileNameWrapper FileNames::DefaultToDocumentsFolder(const wxString &preference
    {
       // The default path might not exist since it is a sub-directory of 'Documents'
       // There is no error if the path could not be created.  That's OK.
-      // The dialog that Wavvy offers will allow the user to select a valid directory.
+      // The dialog that Wavacity offers will allow the user to select a valid directory.
       result.Mkdir(0755, wxPATH_MKDIR_FULL);
    }
 #else
@@ -633,16 +633,16 @@ bool FileNames::IsMidi(const FilePath &fName)
       extension.IsSameAs(wxT("mid"), false);
 }
 
-static FilePaths sWavvyPathList;
+static FilePaths sWavacityPathList;
 
-const FilePaths &FileNames::WavvyPathList()
+const FilePaths &FileNames::WavacityPathList()
 {
-   return sWavvyPathList;
+   return sWavacityPathList;
 }
 
-void FileNames::SetWavvyPathList( FilePaths list )
+void FileNames::SetWavacityPathList( FilePaths list )
 {
-   sWavvyPathList = std::move( list );
+   sWavacityPathList = std::move( list );
 }
 
 // static
@@ -717,7 +717,7 @@ char *FileNames::VerifyFilename(const wxString &s, bool input)
       wxFileName ff(name);
       FileExtension ext;
       while ((char *) (const char *)name.mb_str() == NULL) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO(
 "The specified filename could not be converted due to Unicode character use."));
 

@@ -15,7 +15,7 @@ SetPreferenceCommand classes
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "PreferenceCommands.h"
 
 #include "LoadCommands.h"

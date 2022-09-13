@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: wavvy 3.0.1\n"
-"Report-Msgid-Bugs-To: wavvy-translation@lists.sourceforge.net\n"
+"Project-Id-Version: wavacity 3.0.1\n"
+"Report-Msgid-Bugs-To: wavacity-translation@lists.sourceforge.net\n"
 "POT-Creation-Date: 2021-03-31 12:57+0100\n"
 "PO-Revision-Date: 2018-09-10 17:16+0200\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
@@ -144,7 +144,7 @@ msgstr ""
 msgid "Script was not saved."
 msgstr "No s'ha desat l'script."
 
-#: modules/mod-nyq-bench/NyqBench.cpp src/WavvyLogger.cpp
+#: modules/mod-nyq-bench/NyqBench.cpp src/WavacityLogger.cpp
 #: src/DBConnection.cpp src/Project.cpp src/ProjectFileIO.cpp
 #: src/ProjectHistory.cpp src/SqliteSampleBlock.cpp src/WaveClip.cpp
 #: src/WaveTrack.cpp src/export/Export.cpp src/export/ExportCL.cpp
@@ -179,7 +179,7 @@ msgstr "(C) 2009 per Leland Lucius"
 
 #: modules/mod-nyq-bench/NyqBench.cpp
 msgid ""
-"External Wavvy module which provides a simple IDE for writing effects."
+"External Wavacity module which provides a simple IDE for writing effects."
 msgstr ""
 
 #: modules/mod-nyq-bench/NyqBench.cpp
@@ -368,79 +368,79 @@ msgstr "Atura l'script"
 msgid "No revision identifier was provided"
 msgstr ""
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, system administration"
 msgstr "administració del sistema"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, co-founder and developer"
 msgstr "cofundador i desenvolupador"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, developer"
 msgstr "desenvolupador"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, documentation and support"
 msgstr "documentació i suport"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, documentation and support, French"
 msgstr "documentació i suport, francès"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, quality assurance"
 msgstr "assegurament de la qualitat"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, accessibility advisor"
 msgstr "assessor d'accessibilitat"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, graphic artist"
 msgstr "artista gràfic"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, composer"
 msgstr "compositor"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, tester"
 msgstr "provador"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, Nyquist plug-ins"
 msgstr "Connectors Nyquist"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, web developer"
 msgstr "desenvolupador web"
 
-#. i18n-hint: For "About Wavvy..." credits, substituting a person's proper name
+#. i18n-hint: For "About Wavacity..." credits, substituting a person's proper name
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s, graphics"
@@ -477,7 +477,7 @@ msgstr ""
 msgid "volunteers"
 msgstr ""
 
-#. i18n-hint: substitutes into "Wavvy is %s"
+#. i18n-hint: substitutes into "Wavacity is %s"
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "available"
@@ -509,7 +509,7 @@ msgid "forum"
 msgstr ""
 
 #. i18n-hint: The translation of "translator_credits" will appear
-#. *  in the credits in the About Wavvy window.  Use this to add
+#. *  in the credits in the About Wavacity window.  Use this to add
 #. *  your own name(s) to the credits.
 #. *
 #. *  For example:  "English translation by Dominic Mazzoni."
@@ -528,7 +528,7 @@ msgid ""
 "%s the free, open source, cross-platform software for recording and editing "
 "sounds."
 msgstr ""
-"Wavvy és el programari gratuït, de codi obert i multiplataforma per "
+"Wavacity és el programari gratuït, de codi obert i multiplataforma per "
 "enregistrar i editar sons."
 
 #: src/AboutDialog.cpp
@@ -536,14 +536,14 @@ msgid "Credits"
 msgstr "Crèdits"
 
 #: src/AboutDialog.cpp
-msgid "DarkWavvy Customisation"
-msgstr "Personalització de DarkWavvy"
+msgid "DarkWavacity Customisation"
+msgstr "Personalització de DarkWavacity"
 
 #. i18n-hint: The program's name substitutes for %s
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s Team Members"
-msgstr "Els membres de l'equip d'Wavvy"
+msgstr "Els membres de l'equip d'Wavacity"
 
 #: src/AboutDialog.cpp
 msgid "Emeritus:"
@@ -553,7 +553,7 @@ msgstr "Emèrits:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "Distinguished %s Team members, not currently active"
-msgstr "Membres distingits de l'equip d'Wavvy, no actius actualment"
+msgstr "Membres distingits de l'equip d'Wavacity, no actius actualment"
 
 #: src/AboutDialog.cpp
 msgid "Contributors"
@@ -575,7 +575,7 @@ msgstr "Biblioteques"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s includes code from the following projects:"
-msgstr "Wavvy inclou el codi dels següents projectes:"
+msgstr "Wavacity inclou el codi dels següents projectes:"
 
 #: src/AboutDialog.cpp
 msgid "Special thanks:"
@@ -585,21 +585,21 @@ msgstr "Agraïments especials:"
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "%s website: "
-msgstr "Lloc web d'Wavvy: "
+msgstr "Lloc web d'Wavacity: "
 
-#. i18n-hint Wavvy's name substitutes for first and third %s,
+#. i18n-hint Wavacity's name substitutes for first and third %s,
 #. and a "copyright" symbol for the second
 #: src/AboutDialog.cpp
 #, c-format
 msgid "%s software is copyright %s 1999-2021 %s Team."
 msgstr ""
 
-#. i18n-hint Wavvy's name substitutes for %s
+#. i18n-hint Wavacity's name substitutes for %s
 #: src/AboutDialog.cpp
 #, fuzzy, c-format
 msgid "The name %s is a registered trademark of Dominic Mazzoni."
 msgstr ""
-"&nbsp; &nbsp; El nom <b>Wavvy</b> és una marca registrada de Dominic "
+"&nbsp; &nbsp; El nom <b>Wavacity</b> és una marca registrada de Dominic "
 "Mazzoni.<br><br>"
 
 #: src/AboutDialog.cpp
@@ -615,7 +615,7 @@ msgstr "Habilitat"
 msgid "Disabled"
 msgstr "Inhabilitat"
 
-#. i18n-hint: Information about when wavvy was compiled follows
+#. i18n-hint: Information about when wavacity was compiled follows
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "The Build"
@@ -653,7 +653,7 @@ msgstr "Tipus de construcció:"
 msgid "Compiler:"
 msgstr "Compilador:"
 
-#. i18n-hint: The directory wavvy is installed into (on *nix systems)
+#. i18n-hint: The directory wavacity is installed into (on *nix systems)
 #: src/AboutDialog.cpp
 #, fuzzy
 msgid "Installation Prefix:"
@@ -664,7 +664,7 @@ msgstr "Directori base d'instal·lació: "
 msgid "Settings folder:"
 msgstr "Carpeta dels ajusts: "
 
-#. i18n-hint: Libraries that are essential to wavvy
+#. i18n-hint: Libraries that are essential to wavacity
 #: src/AboutDialog.cpp
 msgid "Core Libraries"
 msgstr "Biblioteques del nucli"
@@ -877,16 +877,16 @@ msgstr ""
 msgid "Error"
 msgstr "Error"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid "Failed to remove %s"
 msgstr "No s'ha pogut suprimir %s"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Failed!"
 msgstr "Ha fallat!"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Reset Preferences?\n"
 "\n"
@@ -898,11 +898,11 @@ msgstr ""
 "Aquesta pregunta només es fa una vegada, després d'una instal·lació on heu "
 "demanat restablir les preferències."
 
-#: src/WavvyApp.cpp
-msgid "Reset Wavvy Preferences"
-msgstr "Restableix les preferències d'Wavvy"
+#: src/WavacityApp.cpp
+msgid "Reset Wavacity Preferences"
+msgstr "Restableix les preferències d'Wavacity"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, c-format
 msgid ""
 "%s could not be found.\n"
@@ -913,114 +913,114 @@ msgstr ""
 "\n"
 "S'ha eliminat de la llista de fitxers recents."
 
-#: src/WavvyApp.cpp
-msgid "SQLite library failed to initialize.  Wavvy cannot continue."
+#: src/WavacityApp.cpp
+msgid "SQLite library failed to initialize.  Wavacity cannot continue."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Block size must be within 256 to 100000000\n"
 msgstr "La mida de bloc ha d'estar entre 256 i 100000000\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is starting up..."
-msgstr "Wavvy s'està iniciant..."
+#: src/WavacityApp.cpp
+msgid "Wavacity is starting up..."
+msgstr "Wavacity s'està iniciant..."
 
 #. i18n-hint: "New" is an action (verb) to create a NEW project
-#: src/WavvyApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/BatchProcessDialog.cpp src/menus/FileMenus.cpp
 msgid "&New"
 msgstr "&Nou"
 
 #. i18n-hint: (verb)
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&Open..."
 msgstr "&Obre..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Open &Recent..."
 msgstr "Obre un fitxer &recent..."
 
-#: src/WavvyApp.cpp src/menus/HelpMenus.cpp
-msgid "&About Wavvy..."
-msgstr "Quant a &Wavvy..."
+#: src/WavacityApp.cpp src/menus/HelpMenus.cpp
+msgid "&About Wavacity..."
+msgstr "Quant a &Wavacity..."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "&Preferences..."
 msgstr "&Preferències..."
 
-#: src/WavvyApp.cpp src/menus/FileMenus.cpp
+#: src/WavacityApp.cpp src/menus/FileMenus.cpp
 msgid "&File"
 msgstr "&Fitxer"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a safe place to store temporary files.\n"
-"Wavvy needs a place where automatic cleanup programs won't delete the "
+"Wavacity could not find a safe place to store temporary files.\n"
+"Wavacity needs a place where automatic cleanup programs won't delete the "
 "temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy could not find a place to store temporary files.\n"
+"Wavacity could not find a place to store temporary files.\n"
 "Please enter an appropriate directory in the preferences dialog."
 msgstr ""
-"Wavvy no troba cap lloc per desar-hi els fitxers temporals.\n"
+"Wavacity no troba cap lloc per desar-hi els fitxers temporals.\n"
 "Si us plau, indiqueu un directori adient a les preferències."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy is now going to exit. Please launch Wavvy again to use the new "
+"Wavacity is now going to exit. Please launch Wavacity again to use the new "
 "temporary directory."
 msgstr ""
-"Wavvy es tancarà tot seguit. Reinicieu-lo per començar a utilitzar el nou "
+"Wavacity es tancarà tot seguit. Reinicieu-lo per començar a utilitzar el nou "
 "directori temporal."
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Running two copies of Wavvy simultaneously may cause\n"
+"Running two copies of Wavacity simultaneously may cause\n"
 "data loss or cause your system to crash.\n"
 "\n"
 msgstr ""
-"Si executeu simultàniament dues còpies d'Wavvy, us\n"
+"Si executeu simultàniament dues còpies d'Wavacity, us\n"
 "podeu trobar amb pèrdua de dades, o que falli el sistema.\n"
 "\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Wavvy was not able to lock the temporary files directory.\n"
-"This folder may be in use by another copy of Wavvy.\n"
+"Wavacity was not able to lock the temporary files directory.\n"
+"This folder may be in use by another copy of Wavacity.\n"
 msgstr ""
-"Wavvy no ha estat capaç de bloquejar la carpeta de fitxers\n"
+"Wavacity no ha estat capaç de bloquejar la carpeta de fitxers\n"
 "temporals. Pot ser que aquesta carpeta estigui en ús\n"
-"per alguna altra còpia d'Wavvy.\n"
+"per alguna altra còpia d'Wavacity.\n"
 
-#: src/WavvyApp.cpp
-msgid "Do you still want to start Wavvy?"
-msgstr "Encara voleu que iniciar Wavvy?"
+#: src/WavacityApp.cpp
+msgid "Do you still want to start Wavacity?"
+msgstr "Encara voleu que iniciar Wavacity?"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "Error Locking Temporary Folder"
 msgstr "S'ha produït un error en bloquejar la carpeta de fitxers temporals"
 
-#: src/WavvyApp.cpp
-msgid "The system has detected that another copy of Wavvy is running.\n"
+#: src/WavacityApp.cpp
+msgid "The system has detected that another copy of Wavacity is running.\n"
 msgstr ""
-"El sistema ha detectat que hi ha una altra còpia d'Wavvy en "
+"El sistema ha detectat que hi ha una altra còpia d'Wavacity en "
 "funcionament.\n"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"Use the New or Open commands in the currently running Wavvy\n"
+"Use the New or Open commands in the currently running Wavacity\n"
 "process to open multiple projects simultaneously.\n"
 msgstr ""
 "Per obrir diversos projectes de forma simultània podeu utilitzar les\n"
-"ordres 'Nou' o 'Obre' del procés actual d'Wavvy.\n"
+"ordres 'Nou' o 'Obre' del procés actual d'Wavacity.\n"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy is already running"
-msgstr "Wavvy ja està en execució"
+#: src/WavacityApp.cpp
+msgid "Wavacity is already running"
+msgstr "Wavacity ja està en execució"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire semaphores.\n"
 "\n"
@@ -1028,12 +1028,12 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, fuzzy
-msgid "Wavvy Startup Failure"
-msgstr "Fitxers de projecte d'Wavvy"
+msgid "Wavacity Startup Failure"
+msgstr "Fitxers de projecte d'Wavacity"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to create semaphores.\n"
 "\n"
@@ -1041,7 +1041,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire lock semaphore.\n"
 "\n"
@@ -1049,7 +1049,7 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
 "Unable to acquire server semaphore.\n"
 "\n"
@@ -1057,73 +1057,73 @@ msgid ""
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid ""
-"The Wavvy IPC server failed to initialize.\n"
+"The Wavacity IPC server failed to initialize.\n"
 "\n"
 "This is likely due to a resource shortage\n"
 "and a reboot may be required."
 msgstr ""
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "An unrecoverable error has occurred during startup"
 msgstr ""
 
-#. i18n-hint: This controls the number of bytes that Wavvy will
+#. i18n-hint: This controls the number of bytes that Wavacity will
 #. *           use when writing files to the disk
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "set max disk block size in bytes"
 msgstr "estableix la mida màx. de bloc de disc en bytes"
 
 #. i18n-hint: This displays a list of available options
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "this help message"
 msgstr "aquest missatge d'ajuda"
 
-#. i18n-hint: This runs a set of automatic tests on Wavvy itself
-#: src/WavvyApp.cpp
+#. i18n-hint: This runs a set of automatic tests on Wavacity itself
+#: src/WavacityApp.cpp
 msgid "run self diagnostics"
 msgstr "executa l'autodiagnòstic"
 
-#. i18n-hint: This displays the Wavvy version
-#: src/WavvyApp.cpp
-msgid "display Wavvy version"
-msgstr "mostra la versió d'Wavvy"
+#. i18n-hint: This displays the Wavacity version
+#: src/WavacityApp.cpp
+msgid "display Wavacity version"
+msgstr "mostra la versió d'Wavacity"
 
-#. i18n-hint: This is a list of one or more files that Wavvy
+#. i18n-hint: This is a list of one or more files that Wavacity
 #. *           should open upon startup
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 msgid "audio or project file name"
 msgstr "nom de fitxer d'àudio o de projecte"
 
-#: src/WavvyApp.cpp
+#: src/WavacityApp.cpp
 #, fuzzy
 msgid ""
-"Wavvy project (.aup3) files are not currently \n"
-"associated with Wavvy. \n"
+"Wavacity project (.aup3) files are not currently \n"
+"associated with Wavacity. \n"
 "\n"
 "Associate them, so they open on double-click?"
 msgstr ""
-"Els fitxers de tipus 'projecte Wavvy' (.AUP) no es troben actualment \n"
-"associats a Wavvy. \n"
+"Els fitxers de tipus 'projecte Wavacity' (.AUP) no es troben actualment \n"
+"associats a Wavacity. \n"
 "\n"
 "Voleu associar-los-hi per tal que es puguin obrir amb un doble clic?"
 
-#: src/WavvyApp.cpp
-msgid "Wavvy Project Files"
-msgstr "Fitxers de projecte d'Wavvy"
+#: src/WavacityApp.cpp
+msgid "Wavacity Project Files"
+msgstr "Fitxers de projecte d'Wavacity"
 
-#: src/WavvyException.h src/commands/MessageCommand.cpp
-#: src/widgets/WavvyMessageBox.cpp
+#: src/WavacityException.h src/commands/MessageCommand.cpp
+#: src/widgets/WavacityMessageBox.cpp
 msgid "Message"
 msgstr "Missatge"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 #, fuzzy
-msgid "Wavvy Configuration Error"
-msgstr "Personalització de DarkWavvy"
+msgid "Wavacity Configuration Error"
+msgstr "Personalització de DarkWavacity"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 #, c-format
 msgid ""
 "The following configuration file could not be accessed:\n"
@@ -1136,52 +1136,52 @@ msgid ""
 "\n"
 "You can attempt to correct the issue and then click \"Retry\" to continue.\n"
 "\n"
-"If you choose to \"Quit Wavvy\", your project may be left in an unsaved "
+"If you choose to \"Quit Wavacity\", your project may be left in an unsaved "
 "state which will be recovered the next time you open it."
 msgstr ""
 
-#: src/WavvyFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
+#: src/WavacityFileConfig.cpp src/ShuttleGui.cpp src/commands/HelpCommand.cpp
 #: src/effects/Equalization.cpp src/export/Export.cpp src/menus/HelpMenus.cpp
 #: src/widgets/MultiDialog.cpp
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/WavvyFileConfig.cpp src/AutoRecoveryDialog.cpp
+#: src/WavacityFileConfig.cpp src/AutoRecoveryDialog.cpp
 #, fuzzy
-msgid "&Quit Wavvy"
-msgstr "Surt d'Wavvy"
+msgid "&Quit Wavacity"
+msgstr "Surt d'Wavacity"
 
-#: src/WavvyFileConfig.cpp
+#: src/WavacityFileConfig.cpp
 msgid "&Retry"
 msgstr ""
 
-#: src/WavvyLogger.cpp
-msgid "Wavvy Log"
-msgstr "Registre d'Wavvy"
+#: src/WavacityLogger.cpp
+msgid "Wavacity Log"
+msgstr "Registre d'Wavacity"
 
-#: src/WavvyLogger.cpp src/Tags.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp
 msgid "&Save..."
 msgstr "&Desa..."
 
 #. i18n-hint: (verb)
-#: src/WavvyLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
+#: src/WavacityLogger.cpp src/Tags.cpp src/prefs/KeyConfigPrefs.cpp
 msgid "Cl&ear"
 msgstr "&Neteja"
 
-#: src/WavvyLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
+#: src/WavacityLogger.cpp src/ShuttleGui.cpp src/effects/Contrast.cpp
 #: src/menus/FileMenus.cpp
 msgid "&Close"
 msgstr "Tan&ca"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "log.txt"
 msgstr "registre.txt"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 msgid "Save log to:"
 msgstr "Desa el fitxer de registre a:"
 
-#: src/WavvyLogger.cpp
+#: src/WavacityLogger.cpp
 #, c-format
 msgid "Couldn't save log to file: %s"
 msgstr "No s'ha pogut desar el registre al fitxer: %s"
@@ -1227,8 +1227,8 @@ msgstr "S'ha produït un error en inicialitzar el MIDI"
 
 #: src/AudioIO.cpp
 #, fuzzy
-msgid "Wavvy Audio"
-msgstr "Registre d'Wavvy"
+msgid "Wavacity Audio"
+msgstr "Registre d'Wavacity"
 
 #: src/AudioIO.cpp src/ProjectAudioManager.cpp
 #, c-format
@@ -1488,13 +1488,13 @@ msgstr "Recuperació automàtica de fallades"
 #: src/AutoRecoveryDialog.cpp
 #, fuzzy
 msgid ""
-"The following projects were not saved properly the last time Wavvy was "
+"The following projects were not saved properly the last time Wavacity was "
 "run and can be automatically recovered.\n"
 "\n"
 "After recovery, save the projects to ensure changes are written to disk."
 msgstr ""
 "Alguns projectes no es van desar bé l'última vegada que es va executar "
-"Wavvy.\n"
+"Wavacity.\n"
 "Per sort, els projectes següents poden ser recuperats de manera automàtica:"
 
 #: src/AutoRecoveryDialog.cpp
@@ -2087,8 +2087,8 @@ msgid ""
 msgstr ""
 
 #: src/CrashReport.cpp
-msgid "Wavvy Support Data"
-msgstr "Dades de suport d'Wavvy"
+msgid "Wavacity Support Data"
+msgstr "Dades de suport d'Wavacity"
 
 #: src/CrashReport.cpp src/DBConnection.cpp src/ProjectFileIO.cpp
 msgid "This may take several seconds"
@@ -2216,20 +2216,20 @@ msgstr "Copia tots els fitxers (més segur)"
 msgid "Whenever a project depends on other files:"
 msgstr "Cada vegada que un projecte depèn d'altres fitxers:"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Ask me"
 msgstr "Pregunta-m'ho"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Always copy all files (safest)"
 msgstr "Copia sempre tots els fitxers (el més segur)"
 
-#. i18n-hint: One of the choices of what you want Wavvy to do when
-#. * Wavvy finds a project depends on another file.
+#. i18n-hint: One of the choices of what you want Wavacity to do when
+#. * Wavacity finds a project depends on another file.
 #: src/Dependencies.cpp
 msgid "Never copy any files"
 msgstr "No copiïs mai cap fitxer"
@@ -2266,7 +2266,7 @@ msgid ""
 "Your project is self-contained; it does not depend on any external audio "
 "files. \n"
 "\n"
-"Some older Wavvy projects may not be self-contained, and care \n"
+"Some older Wavacity projects may not be self-contained, and care \n"
 "is needed to keep their external dependencies in the right place.\n"
 "New projects will be self-contained and are less risky."
 msgstr ""
@@ -2358,13 +2358,13 @@ msgstr "La compilació s'ha fet sense el suport a FFmpeg"
 #, fuzzy
 msgid ""
 "FFmpeg was configured in Preferences and successfully loaded before, \n"
-"but this time Wavvy failed to load it at startup. \n"
+"but this time Wavacity failed to load it at startup. \n"
 "\n"
 "You may want to go back to Preferences > Libraries and re-configure it."
 msgstr ""
 "FFmpeg es va configurar a les Preferències i s'havia carregat amb èxit en "
 "ocasions anteriors,                       \n"
-"però aquesta vegada Wavvy no ha pogut carregar-lo a "
+"però aquesta vegada Wavacity no ha pogut carregar-lo a "
 "l'inici.                       \n"
 "\n"
 "Hauríeu de tornar a Preferències > Biblioteques i configurar-lo novament."
@@ -2383,9 +2383,9 @@ msgstr "Ubicació de FFmpeg"
 
 #: src/FFmpeg.cpp
 #, c-format
-msgid "Wavvy needs the file '%s' to import and export audio via FFmpeg."
+msgid "Wavacity needs the file '%s' to import and export audio via FFmpeg."
 msgstr ""
-"Wavvy necessita el fitxer «%s» per importar i exportar àudio a través de "
+"Wavacity necessita el fitxer «%s» per importar i exportar àudio a través de "
 "FFmpeg."
 
 #: src/FFmpeg.cpp
@@ -2427,13 +2427,13 @@ msgstr "No s'ha trobat FFmpeg"
 #: src/FFmpeg.cpp
 #, fuzzy
 msgid ""
-"Wavvy attempted to use FFmpeg to import an audio file,\n"
+"Wavacity attempted to use FFmpeg to import an audio file,\n"
 "but the libraries were not found.\n"
 "\n"
 "To use FFmpeg import, go to Edit > Preferences > Libraries\n"
 "to download or locate the FFmpeg libraries."
 msgstr ""
-"Wavvy ha intentat utilitzar FFmpeg per importar un fitxer d'àudio,\n"
+"Wavacity ha intentat utilitzar FFmpeg per importar un fitxer d'àudio,\n"
 "però no ha pogut trobar les biblioteques.\n"
 "\n"
 "Per importar mitjançant FFmpeg aneu a Preferències > Biblioteques\n"
@@ -2458,29 +2458,29 @@ msgstr ""
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to open a file in %s."
-msgstr "Wavvy no ha pogut obrir un fitxer a %s."
+msgid "Wavacity failed to open a file in %s."
+msgstr "Wavacity no ha pogut obrir un fitxer a %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy failed to read from a file in %s."
-msgstr "Wavvy no ha pogut llegir d'un fitxer a %s."
+msgid "Wavacity failed to read from a file in %s."
+msgstr "Wavacity no ha pogut llegir d'un fitxer a %s."
 
 #: src/FileException.cpp
 #, c-format
-msgid "Wavvy successfully wrote a file in %s but failed to rename it as %s."
+msgid "Wavacity successfully wrote a file in %s but failed to rename it as %s."
 msgstr ""
-"Wavvy ha escrit amb èxit un fitxer a %s però ha fallat el canvi de nom a "
+"Wavacity ha escrit amb èxit un fitxer a %s però ha fallat el canvi de nom a "
 "%s."
 
 #: src/FileException.cpp
 #, fuzzy, c-format
 msgid ""
-"Wavvy failed to write to a file.\n"
+"Wavacity failed to write to a file.\n"
 "Perhaps %s is not writable or the disk is full.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Wavvy no ha pogut escriure un fitxer.\n"
+"Wavacity no ha pogut escriure un fitxer.\n"
 "Potser no es pot escriure a %s o bé el disc està ple."
 
 #: src/FileException.h
@@ -2520,7 +2520,7 @@ msgstr "&Pregunta-m'ho"
 msgid "All files"
 msgstr "Tots els fitxers|*"
 
-#. i18n-hint an Wavvy project is the state of the program, stored as
+#. i18n-hint an Wavacity project is the state of the program, stored as
 #. files that can be reopened to resume the session later
 #: src/FileNames.cpp
 #, fuzzy
@@ -2791,8 +2791,8 @@ msgstr "Exportació de fitxers d'àudio"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
-msgid "Saving an Wavvy Project"
-msgstr "Desament d'un projecte d'Wavvy"
+msgid "Saving an Wavacity Project"
+msgstr "Desament d'un projecte d'Wavacity"
 
 #. i18n-hint: Title for a topic.
 #: src/HelpText.cpp
@@ -2810,22 +2810,22 @@ msgstr "No hi ha cap ajuda local disponible"
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is an <b>Alpha test version</"
+"<br><br>The version of Wavacity you are using is an <b>Alpha test version</"
 "b>."
 msgstr ""
-"<br><br>La versió d'Wavvy que esteu utilitzant és una <b>versió de prova "
+"<br><br>La versió d'Wavacity que esteu utilitzant és una <b>versió de prova "
 "alfa</b>."
 
 #: src/HelpText.cpp
 msgid ""
-"<br><br>The version of Wavvy you are using is a <b>Beta test version</b>."
+"<br><br>The version of Wavacity you are using is a <b>Beta test version</b>."
 msgstr ""
-"<br><br>La versió d'Wavvy que esteu utilitzant és una <b>versió de prova "
+"<br><br>La versió d'Wavacity que esteu utilitzant és una <b>versió de prova "
 "beta</b>."
 
 #: src/HelpText.cpp
-msgid "Get the Official Released Version of Wavvy"
-msgstr "Obtenir la versió del llançament oficial d'Wavvy"
+msgid "Get the Official Released Version of Wavacity"
+msgstr "Obtenir la versió del llançament oficial d'Wavacity"
 
 #: src/HelpText.cpp
 msgid ""
@@ -2837,10 +2837,10 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"You can help us get Wavvy ready for release by joining our [[https://www."
+"You can help us get Wavacity ready for release by joining our [[https://www."
 "audacityteam.org/community/|community]].<hr><br><br>"
 msgstr ""
-"Podeu ajudar-nos a fer que Wavvy estigui preparat per al seu llançament "
+"Podeu ajudar-nos a fer que Wavacity estigui preparat per al seu llançament "
 "unint-vos a la nostra [[https://www.audacityteam.org/community/|communitat]]."
 "<hr><br><br>"
 
@@ -2890,13 +2890,13 @@ msgstr ""
 
 #: src/HelpText.cpp
 msgid ""
-"Wavvy can import unprotected files in many other formats (such as M4A and "
+"Wavacity can import unprotected files in many other formats (such as M4A and "
 "WMA, compressed WAV files from portable recorders and audio from video "
 "files) if you download and install the optional [[https://manual."
 "audacityteam.org/man/faq_opening_and_saving_files.html#foreign| FFmpeg "
 "library]] to your computer."
 msgstr ""
-"Wavvy pot importar fitxers no protegits en molts altres formats (com ara "
+"Wavacity pot importar fitxers no protegits en molts altres formats (com ara "
 "M4A i WMA, fitxers WAV comprimits de gravadores portàtils i àudio de fitxers "
 "de vídeo) si baixeu i instal·leu la [[https://manual.audacityteam.org/man/"
 "faq_opening_and_saving_files.html#foreign| biblioteca FFmpeg]] opcional al "
@@ -3006,14 +3006,14 @@ msgstr "&Historial..."
 #, c-format
 msgid ""
 "Internal error in %s at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 
 #: src/InconsistencyException.cpp
 #, c-format
 msgid ""
 "Internal error at %s line %d.\n"
-"Please inform the Wavvy team at https://forum.audacityteam.org/."
+"Please inform the Wavacity team at https://forum.audacityteam.org/."
 msgstr ""
 
 #: src/InconsistencyException.h
@@ -3129,14 +3129,14 @@ msgid "One or more saved labels could not be read."
 msgstr "No s'han pogut llegir una o més etiquetes."
 
 #. i18n-hint: Title on a dialog indicating that this is the first
-#. * time Wavvy has been run.
+#. * time Wavacity has been run.
 #: src/LangChoice.cpp
-msgid "Wavvy First Run"
-msgstr "És la primera vegada que s'executa Wavvy"
+msgid "Wavacity First Run"
+msgstr "És la primera vegada que s'executa Wavacity"
 
 #: src/LangChoice.cpp
-msgid "Choose Language for Wavvy to use:"
-msgstr "Trieu l'idioma per utilitzar-lo amb Wavvy:"
+msgid "Choose Language for Wavacity to use:"
+msgstr "Trieu l'idioma per utilitzar-lo amb Wavacity:"
 
 #. i18n-hint: The %s's are replaced by translated and untranslated
 #. * versions of language names.
@@ -3178,13 +3178,13 @@ msgstr ""
 "El fitxer antic ha estat desat com a «%s»"
 
 #: src/Legacy.cpp
-msgid "Opening Wavvy Project"
-msgstr "S'està obrint el projecte d'Wavvy"
+msgid "Opening Wavacity Project"
+msgstr "S'està obrint el projecte d'Wavacity"
 
 #: src/LyricsWindow.cpp
 #, c-format
-msgid "Wavvy Karaoke%s"
-msgstr "Karaoke d'Wavvy%s"
+msgid "Wavacity Karaoke%s"
+msgstr "Karaoke d'Wavacity%s"
 
 #: src/LyricsWindow.cpp
 msgid "&Karaoke..."
@@ -3235,8 +3235,8 @@ msgstr "S'estan mesclant i renderitzant les pistes"
 
 #: src/MixerBoard.cpp
 #, c-format
-msgid "Wavvy Mixer Board%s"
-msgstr "Taula de mescles d'Wavvy%s"
+msgid "Wavacity Mixer Board%s"
+msgstr "Taula de mescles d'Wavacity%s"
 
 #. i18n-hint: title of the Gain slider, used to adjust the volume
 #. i18n-hint: Title of the Gain slider, used to adjust the volume
@@ -3327,11 +3327,11 @@ msgstr ""
 #: src/ModuleManager.cpp
 #, fuzzy, c-format
 msgid ""
-"The module \"%s\" is matched with Wavvy version \"%s\".\n"
+"The module \"%s\" is matched with Wavacity version \"%s\".\n"
 "\n"
 "It will not be loaded."
 msgstr ""
-"El mòdul %s correspon a la versió d'Wavvy %s.\n"
+"El mòdul %s correspon a la versió d'Wavacity %s.\n"
 "\n"
 "No es carregarà."
 
@@ -3371,8 +3371,8 @@ msgid "No"
 msgstr "No"
 
 #: src/ModuleManager.cpp
-msgid "Wavvy Module Loader"
-msgstr "Carregador de mòduls d'Wavvy"
+msgid "Wavacity Module Loader"
+msgstr "Carregador de mòduls d'Wavacity"
 
 #: src/ModuleManager.cpp
 msgid "Try and load this module?"
@@ -3692,7 +3692,7 @@ msgstr ""
 #: src/ProjectAudioManager.cpp src/menus/TransportMenus.cpp
 msgid ""
 "Too few tracks are selected for recording at this sample rate.\n"
-"(Wavvy requires two channels at the same sample rate for\n"
+"(Wavacity requires two channels at the same sample rate for\n"
 "each stereo track)"
 msgstr ""
 
@@ -3721,7 +3721,7 @@ msgstr "Abandonaments"
 msgid ""
 "Recorded audio was lost at the labeled locations. Possible causes:\n"
 "\n"
-"Other applications are competing with Wavvy for processor time\n"
+"Other applications are competing with Wavacity for processor time\n"
 "\n"
 "You are saving directly to a slow external storage device\n"
 msgstr ""
@@ -3730,7 +3730,7 @@ msgstr ""
 msgid "Turn off dropout detection"
 msgstr "Desactiva la detecció d'abandonaments"
 
-#. i18n-hint: The wavvy project file is XML and has 'tags' in it,
+#. i18n-hint: The wavacity project file is XML and has 'tags' in it,
 #. rather like html tags <something>some stuff</something>.
 #. This error message is about the tags that hold the sequence information.
 #. The error message is confusing to users in English, and could just say
@@ -3769,7 +3769,7 @@ msgstr "S'estan inspeccionant les dades del fitxer de projecte"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing external audio file(s) \n"
-"('aliased files'). There is no way for Wavvy \n"
+"('aliased files'). There is no way for Wavacity \n"
 "to recover these files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3785,7 +3785,7 @@ msgid ""
 msgstr ""
 "La comprovació del projecte de la carpeta «%s» \n"
 "ha detectat %lld fitxer(s) extern(s) d'àudio desaparegut(s) \n"
-"('fitxers referenciats per àlies'). Wavvy no pot recuperar \n"
+"('fitxers referenciats per àlies'). Wavacity no pot recuperar \n"
 "aquests fitxers de manera automàtica. \n"
 "\n"
 "Si escolliu la primera o la segona opció de les que es mostren, \n"
@@ -3817,12 +3817,12 @@ msgstr "Advertència - Falten fitxers referenciats per àlies"
 msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing alias (.auf) blockfile(s). \n"
-"Wavvy can fully regenerate these files \n"
+"Wavacity can fully regenerate these files \n"
 "from the current audio in the project."
 msgstr ""
 "La comprovació del projecte de la carpeta «%s»\n"
 "ha detectat %lld fitxer(s) àlies (.auf) de bloc(s) perdut(s). \n"
-"Wavvy pot regenerar totalment aquests fitxers \n"
+"Wavacity pot regenerar totalment aquests fitxers \n"
 "a partir de l'àudio actualment existent al projecte."
 
 #: src/ProjectFSCK.cpp
@@ -3847,7 +3847,7 @@ msgid ""
 "Project check of \"%s\" folder \n"
 "detected %lld missing audio data (.au) blockfile(s), \n"
 "probably due to a bug, system crash, or accidental \n"
-"deletion. There is no way for Wavvy to recover \n"
+"deletion. There is no way for Wavacity to recover \n"
 "these missing files automatically. \n"
 "\n"
 "If you choose the first or second option below, \n"
@@ -3860,7 +3860,7 @@ msgstr ""
 "La comprovació del projecte de la carpeta «%s» \n"
 "ha detectat %lld bloc(s) de fitxers d'àudio (.au) desaparegut(s), \n"
 "probablement a causa d'una errada, una pana del sistema o un esborrament \n"
-"accidental. Wavvy no té cap manera de recuperar aquestes dades \n"
+"accidental. Wavacity no té cap manera de recuperar aquestes dades \n"
 "perdudes de manera automàtica.\n"
 "\n"
 "Si escolliu la primera o segona opció de les que es mostren, \n"
@@ -4002,12 +4002,12 @@ msgstr ""
 
 #: src/ProjectFileIO.cpp
 #, fuzzy
-msgid "This is not an Wavvy project file"
-msgstr "Desament d'un projecte d'Wavvy"
+msgid "This is not an Wavacity project file"
+msgstr "Desament d'un projecte d'Wavacity"
 
 #: src/ProjectFileIO.cpp
 msgid ""
-"This project was created with a newer version of Wavvy:\n"
+"This project was created with a newer version of Wavacity:\n"
 "\n"
 "You will need to upgrade to process it"
 msgstr ""
@@ -4125,11 +4125,11 @@ msgstr "S'ha produït un error en escriure al fitxer: «%s»"
 #: src/ProjectFileIO.cpp
 #, fuzzy, c-format
 msgid ""
-"Wavvy failed to write file %s.\n"
+"Wavacity failed to write file %s.\n"
 "Perhaps disk is full or not writable.\n"
 "For tips on freeing up space, click the help button."
 msgstr ""
-"Wavvy no ha pogut escriure un fitxer.\n"
+"Wavacity no ha pogut escriure un fitxer.\n"
 "Potser no es pot escriure a %s o bé el disc està ple."
 
 #: src/ProjectFileIO.cpp
@@ -4140,7 +4140,7 @@ msgstr "Quan es desen els &projectes"
 #. i18n-hint: The %02i is the project number, the %s is the project name.
 #: src/ProjectFileIO.cpp
 #, c-format
-msgid "[Project %02i] Wavvy \"%s\""
+msgid "[Project %02i] Wavacity \"%s\""
 msgstr ""
 
 #. i18n-hint: E.g this is recovered audio that had been lost.
@@ -4152,12 +4152,12 @@ msgstr "(recuperat)"
 #: src/ProjectFileIO.cpp
 #, c-format
 msgid ""
-"This file was saved using Wavvy %s.\n"
-"You are using Wavvy %s. You may need to upgrade to a newer version to "
+"This file was saved using Wavacity %s.\n"
+"You are using Wavacity %s. You may need to upgrade to a newer version to "
 "open this file."
 msgstr ""
-"Aquest fitxer es va desar amb Wavvy %s.\n"
-"Esteu utilitzant Wavvy %s. Per obrir aquest fitxer heu d'actualitzar el "
+"Aquest fitxer es va desar amb Wavacity %s.\n"
+"Esteu utilitzant Wavacity %s. Per obrir aquest fitxer heu d'actualitzar el "
 "programa a una versió més recent."
 
 #: src/ProjectFileIO.cpp
@@ -4223,17 +4223,17 @@ msgstr "Quan es desa un projecte &buit"
 #: src/ProjectFileManager.cpp
 #, fuzzy
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot."
 msgstr ""
 "Alguns projectes no es van desar bé l'última vegada que es va executar "
-"Wavvy.\n"
+"Wavacity.\n"
 "Per sort, els projectes següents poden ser recuperats de manera automàtica:"
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"This project was not saved properly the last time Wavvy ran.\n"
+"This project was not saved properly the last time Wavacity ran.\n"
 "\n"
 "It has been recovered to the last snapshot, but you must save it\n"
 "to preserve its contents."
@@ -4312,10 +4312,10 @@ msgstr "%sAnomena i desa el projecte «%s»..."
 
 #: src/ProjectFileManager.cpp
 msgid ""
-"'Save Project' is for an Wavvy project, not an audio file.\n"
+"'Save Project' is for an Wavacity project, not an audio file.\n"
 "For an audio file that will open in other apps, use 'Export'.\n"
 msgstr ""
-"«Desa el projecte» només és per a un projecte d'Wavvy, no per a un fitxer "
+"«Desa el projecte» només és per a un projecte d'Wavacity, no per a un fitxer "
 "d'àudio.\n"
 "Per a un fitxer d'àudio que s'obrirà en altres aplicacions, utilitzeu "
 "«Exporta».\n"
@@ -4388,14 +4388,14 @@ msgid ""
 "You are trying to open an automatically created backup file.\n"
 "Doing this may result in severe data loss.\n"
 "\n"
-"Please open the actual Wavvy project file instead."
+"Please open the actual Wavacity project file instead."
 msgstr ""
 "Esteu intentant obrir un fitxer de còpia de seguretat que es va crear "
 "automàticament.\n"
 "Fent això es podria produir una pèrdua de dades important.\n"
 "\n"
 "Si us plau, en comptes de fer això obriu el corresponent fitxer de projecte "
-"Wavvy."
+"Wavacity."
 
 #: src/ProjectFileManager.cpp
 msgid "Warning - Backup File Detected"
@@ -4492,8 +4492,8 @@ msgstr "Desament automàtic habilitat:"
 
 #: src/ProjectManager.cpp
 #, c-format
-msgid "Welcome to Wavvy version %s"
-msgstr "Benvingut a la versió %s d'Wavvy"
+msgid "Welcome to Wavacity version %s"
+msgstr "Benvingut a la versió %s d'Wavacity"
 
 #. i18n-hint: The first %s numbers the project, the second %s is the project name.
 #: src/ProjectManager.cpp
@@ -4553,12 +4553,12 @@ msgstr "%s i %s."
 
 #: src/ProjectSerializer.cpp
 msgid ""
-"This recovery file was saved by Wavvy 2.3.0 or before.\n"
-"You need to run that version of Wavvy to recover the project."
+"This recovery file was saved by Wavacity 2.3.0 or before.\n"
+"You need to run that version of Wavacity to recover the project."
 msgstr ""
 
 #. i18n-hint: This is an experimental feature where the main panel in
-#. Wavvy is put on a notebook tab, and this is the name on that tab.
+#. Wavacity is put on a notebook tab, and this is the name on that tab.
 #. Other tabs in that notebook may have instruments, patch panels etc.
 #: src/ProjectWindow.cpp
 msgid "Main Mix"
@@ -4897,8 +4897,8 @@ msgid "Activation level (dB):"
 msgstr "Nivell d'activació (dB):"
 
 #: src/SplashDialog.cpp
-msgid "Welcome to Wavvy!"
-msgstr "Benvingut a Wavvy!"
+msgid "Welcome to Wavacity!"
+msgstr "Benvingut a Wavacity!"
 
 #: src/SplashDialog.cpp
 msgid "Don't show this again at start up"
@@ -5048,15 +5048,15 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write file:\n"
+"Wavacity could not write file:\n"
 "  %s."
 msgstr ""
-"Wavvy no ha pogut escriure al fitxer:\n"
+"Wavacity no ha pogut escriure al fitxer:\n"
 "  %s."
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/Theme.cpp
 #, c-format
@@ -5070,21 +5070,21 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not open file:\n"
+"Wavacity could not open file:\n"
 "  %s\n"
 "for writing."
 msgstr ""
-"Wavvy no ha pogut obrir el fitxer:\n"
+"Wavacity no ha pogut obrir el fitxer:\n"
 "  %s\n"
 "per escriure-hi."
 
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not write images to file:\n"
+"Wavacity could not write images to file:\n"
 "  %s."
 msgstr ""
-"Wavvy no ha pogut escriure les imatges al fitxer:\n"
+"Wavacity no ha pogut escriure les imatges al fitxer:\n"
 "  %s."
 
 #. i18n-hint "Cee" means the C computer programming language
@@ -5098,11 +5098,11 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not find file:\n"
+"Wavacity could not find file:\n"
 "  %s.\n"
 "Theme not loaded."
 msgstr ""
-"Wavvy no ha pogut trobar el fitxer:\n"
+"Wavacity no ha pogut trobar el fitxer:\n"
 "  %s.\n"
 "El tema no s'ha carregat."
 
@@ -5110,20 +5110,20 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not load file:\n"
+"Wavacity could not load file:\n"
 "  %s.\n"
 "Bad png format perhaps?"
 msgstr ""
-"Wavvy no pot carregar el fitxer:\n"
+"Wavacity no pot carregar el fitxer:\n"
 "  %s.\n"
 "Potser té un format PNG incorrecte?"
 
 #: src/Theme.cpp
 msgid ""
-"Wavvy could not read its default theme.\n"
+"Wavacity could not read its default theme.\n"
 "Please report the problem."
 msgstr ""
-"Wavvy no ha pogut carregar el tema predeterminat.\n"
+"Wavacity no ha pogut carregar el tema predeterminat.\n"
 "Informeu del problema."
 
 #: src/Theme.cpp
@@ -5157,14 +5157,14 @@ msgstr ""
 #: src/Theme.cpp
 #, c-format
 msgid ""
-"Wavvy could not save file:\n"
+"Wavacity could not save file:\n"
 "  %s"
 msgstr ""
-"Wavvy no ha pogut desar el fitxer:\n"
+"Wavacity no ha pogut desar el fitxer:\n"
 "  %s"
 
 #. i18n-hint: describing the "classic" or traditional
-#. appearance of older versions of Wavvy
+#. appearance of older versions of Wavacity
 #: src/Theme.cpp
 msgid "Classic"
 msgstr "Clàssic"
@@ -5211,8 +5211,8 @@ msgid "Time Track"
 msgstr "Pista de temps"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record"
-msgstr "Enregistrament programat d'Wavvy"
+msgid "Wavacity Timer Record"
+msgstr "Enregistrament programat d'Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Save Timer Recording As"
@@ -5306,8 +5306,8 @@ msgid "Action after Timer Recording:"
 msgstr "Acció posterior a l'enregistrament temporitzat:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record Progress"
-msgstr "Progrés de l'enregistrament temporitzat d'Wavvy"
+msgid "Wavacity Timer Record Progress"
+msgstr "Progrés de l'enregistrament temporitzat d'Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Timer Recording stopped."
@@ -5443,8 +5443,8 @@ msgid "Do nothing"
 msgstr "No facis res"
 
 #: src/TimerRecordDialog.cpp
-msgid "Exit Wavvy"
-msgstr "Surt d'Wavvy"
+msgid "Exit Wavacity"
+msgstr "Surt d'Wavacity"
 
 #: src/TimerRecordDialog.cpp
 msgid "Restart system"
@@ -5467,8 +5467,8 @@ msgid "Scheduled to stop at:"
 msgstr ""
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting for Start"
-msgstr "Enregistrament temporitzat d'Wavvy - S'està esperant per començar"
+msgid "Wavacity Timer Record - Waiting for Start"
+msgstr "Enregistrament temporitzat d'Wavacity - S'està esperant per començar"
 
 #. i18n-hint: "in" means after a duration of time,
 #. which is shown below this string
@@ -5476,7 +5476,7 @@ msgstr "Enregistrament temporitzat d'Wavvy - S'està esperant per començar"
 msgid "Recording will commence in:"
 msgstr "L'enregistrament començarà d'aquí:"
 
-#. i18n-hint: %s is one of "Do nothing", "Exit Wavvy", "Restart system",
+#. i18n-hint: %s is one of "Do nothing", "Exit Wavacity", "Restart system",
 #. or "Shutdown system", and
 #. "in" means after a duration of time, shown below this string
 #: src/TimerRecordDialog.cpp
@@ -5493,8 +5493,8 @@ msgid "Recording Exported:"
 msgstr "S'ha exportat l'enregistrament:"
 
 #: src/TimerRecordDialog.cpp
-msgid "Wavvy Timer Record - Waiting"
-msgstr "Enregistrament temporitzat d'Wavvy - S'està esperant"
+msgid "Wavacity Timer Record - Waiting"
+msgstr "Enregistrament temporitzat d'Wavacity - S'està esperant"
 
 #: src/TrackInfo.cpp
 msgid "Stereo, 999999Hz"
@@ -5677,12 +5677,12 @@ msgstr "No hi ha prou espai disponible per expandir la línia del retall"
 msgid "This operation cannot be done until importation of %s completes."
 msgstr ""
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/nyquist/Nyquist.cpp src/prefs/PrefsPanel.cpp plug-ins/beat.ny
-msgid "Wavvy"
-msgstr "Wavvy"
+msgid "Wavacity"
+msgstr "Wavacity"
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid ""
 "%s: Could not load settings below. Default settings will be used.\n"
@@ -5690,13 +5690,13 @@ msgid ""
 "%s"
 msgstr ""
 
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #, c-format
 msgid "Applying %s..."
 msgstr "S'està aplicant %s..."
 
 #. i18n-hint: An item name followed by a value, with appropriate separating punctuation
-#: src/commands/WavvyCommand.cpp src/effects/Effect.cpp
+#: src/commands/WavacityCommand.cpp src/effects/Effect.cpp
 #: src/effects/vamp/VampEffect.cpp src/menus/PluginMenus.cpp
 #: src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.cpp
 #: src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.cpp
@@ -5705,7 +5705,7 @@ msgstr "S'està aplicant %s..."
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/commands/WavvyCommand.h
+#: src/commands/WavacityCommand.h
 msgid "FAIL"
 msgstr ""
 
@@ -5960,11 +5960,11 @@ msgstr "Ordres integrades"
 #: src/effects/VST/VSTEffect.cpp src/effects/audiounits/AudioUnitEffect.cpp
 #: src/effects/ladspa/LadspaEffect.cpp src/effects/lv2/LoadLV2.cpp
 #: src/effects/nyquist/LoadNyquist.cpp src/effects/vamp/LoadVamp.cpp
-msgid "The Wavvy Team"
-msgstr "L'equip d'Wavvy"
+msgid "The Wavacity Team"
+msgstr "L'equip d'Wavacity"
 
 #: src/commands/LoadCommands.cpp
-msgid "Provides builtin commands to Wavvy"
+msgid "Provides builtin commands to Wavacity"
 msgstr ""
 
 #: src/commands/LoadCommands.cpp
@@ -7721,7 +7721,7 @@ msgid "Previewing"
 msgstr "Vista prèvia"
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/effects/Effect.h
@@ -8476,8 +8476,8 @@ msgid "Builtin Effects"
 msgstr "Efectes predefinits"
 
 #: src/effects/LoadEffects.cpp
-msgid "Provides builtin effects to Wavvy"
-msgstr "Proporciona suport per utilitzar efectes predefinits amb Wavvy"
+msgid "Provides builtin effects to Wavacity"
+msgstr "Proporciona suport per utilitzar efectes predefinits amb Wavacity"
 
 #: src/effects/LoadEffects.cpp
 msgid "Unknown built-in effect name"
@@ -8732,10 +8732,10 @@ msgstr "Pas 1"
 
 #: src/effects/NoiseReduction.cpp src/effects/NoiseRemoval.cpp
 msgid ""
-"Select a few seconds of just noise so Wavvy knows what to filter out,\n"
+"Select a few seconds of just noise so Wavacity knows what to filter out,\n"
 "then click Get Noise Profile:"
 msgstr ""
-"Seleccioneu uns quants segons on només hi hagi soroll, perquè Wavvy\n"
+"Seleccioneu uns quants segons on només hi hagi soroll, perquè Wavacity\n"
 "sàpiga què és el que cal filtrar. Després feu clic a Obtén el perfil del "
 "soroll:"
 
@@ -9614,8 +9614,8 @@ msgid "VST Effects"
 msgstr "Efectes VST"
 
 #: src/effects/VST/VSTEffect.cpp
-msgid "Adds the ability to use VST effects in Wavvy."
-msgstr "Afegeix la capacitat d'utilitzar efectes VST amb Wavvy."
+msgid "Adds the ability to use VST effects in Wavacity."
+msgstr "Afegeix la capacitat d'utilitzar efectes VST amb Wavacity."
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Scanning Shell VST"
@@ -9659,7 +9659,7 @@ msgstr "Compensació de latència"
 #: src/effects/VST/VSTEffect.cpp
 msgid ""
 "As part of their processing, some VST effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all VST effects."
 msgstr ""
@@ -9706,8 +9706,8 @@ msgstr ""
 
 #: src/effects/VST/VSTEffect.cpp
 #, fuzzy
-msgid "Wavvy VST preset file"
-msgstr "Fitxers de projecte d'Wavvy"
+msgid "Wavacity VST preset file"
+msgstr "Fitxers de projecte d'Wavacity"
 
 #: src/effects/VST/VSTEffect.cpp
 msgid "Unrecognized file extension."
@@ -9798,8 +9798,8 @@ msgid "Audio Unit Effects"
 msgstr "Efectes d'Audio Unit"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
-msgid "Provides Audio Unit Effects support to Wavvy"
-msgstr "Proporciona suport per utilitzar els efectes d'Audio Unit a Wavvy"
+msgid "Provides Audio Unit Effects support to Wavacity"
+msgstr "Proporciona suport per utilitzar els efectes d'Audio Unit a Wavacity"
 
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid "Could not find component"
@@ -9816,7 +9816,7 @@ msgstr "Opcions de l'efecte d'Audio Unit"
 #: src/effects/audiounits/AudioUnitEffect.cpp
 msgid ""
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will notice "
+"audio to Wavacity. When not compensating for this delay, you will notice "
 "that small silences have been inserted into the audio. Enabling this option "
 "will provide that compensation, but it may not work for all Audio Unit "
 "effects."
@@ -9980,8 +9980,8 @@ msgid "Provides LADSPA Effects"
 msgstr "Proveeix efectes LADSPA"
 
 #: src/effects/ladspa/LadspaEffect.cpp
-msgid "Wavvy no longer uses vst-bridge"
-msgstr "Wavvy ja no utilitza vst-bridge"
+msgid "Wavacity no longer uses vst-bridge"
+msgstr "Wavacity ja no utilitza vst-bridge"
 
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid "LADSPA Effect Options"
@@ -9990,7 +9990,7 @@ msgstr "Opcions dels efectes LADSPA"
 #: src/effects/ladspa/LadspaEffect.cpp
 msgid ""
 "As part of their processing, some LADSPA effects must delay returning audio "
-"to Wavvy. When not compensating for this delay, you will notice that "
+"to Wavacity. When not compensating for this delay, you will notice that "
 "small silences have been inserted into the audio. Enabling this option will "
 "provide that compensation, but it may not work for all LADSPA effects."
 msgstr ""
@@ -10027,7 +10027,7 @@ msgstr "Mida de la &memòria intermèdia (de 8 a 1.048.576 mostres):"
 #: src/effects/lv2/LV2Effect.cpp
 msgid ""
 "As part of their processing, some LV2 effects must delay returning audio to "
-"Wavvy. When not compensating for this delay, you will notice that small "
+"Wavacity. When not compensating for this delay, you will notice that small "
 "silences have been inserted into the audio. Enabling this setting will "
 "provide that compensation, but it may not work for all LV2 effects."
 msgstr ""
@@ -10071,16 +10071,16 @@ msgid "LV2 Effects"
 msgstr "Efectes LV2"
 
 #: src/effects/lv2/LoadLV2.cpp
-msgid "Provides LV2 Effects support to Wavvy"
-msgstr "Proporciona suport per utilitzar efectes LV2 amb Wavvy"
+msgid "Provides LV2 Effects support to Wavacity"
+msgstr "Proporciona suport per utilitzar efectes LV2 amb Wavacity"
 
 #: src/effects/nyquist/LoadNyquist.cpp
 msgid "Nyquist Effects"
 msgstr "Efectes Nyquist"
 
 #: src/effects/nyquist/LoadNyquist.cpp
-msgid "Provides Nyquist Effects support to Wavvy"
-msgstr "Proporciona suport per utilitzar efectes Nyquist amb Wavvy"
+msgid "Provides Nyquist Effects support to Wavacity"
+msgstr "Proporciona suport per utilitzar efectes Nyquist amb Wavacity"
 
 #: src/effects/nyquist/Nyquist.cpp
 msgid "Applying Nyquist Effect..."
@@ -10198,7 +10198,7 @@ msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
 #, c-format
-msgid "This version of Wavvy does not support Nyquist plug-in version %ld"
+msgid "This version of Wavacity does not support Nyquist plug-in version %ld"
 msgstr ""
 
 #: src/effects/nyquist/Nyquist.cpp
@@ -10306,8 +10306,8 @@ msgid "Vamp Effects"
 msgstr "Efectes Vamp"
 
 #: src/effects/vamp/LoadVamp.cpp
-msgid "Provides Vamp Effects support to Wavvy"
-msgstr "Proporciona suport per utilitzar efectes Vamp amb Wavvy"
+msgid "Provides Vamp Effects support to Wavacity"
+msgstr "Proporciona suport per utilitzar efectes Vamp amb Wavacity"
 
 #: src/effects/vamp/VampEffect.cpp
 msgid ""
@@ -11554,8 +11554,8 @@ msgstr "Localitza LAME"
 
 #: src/export/ExportMP3.cpp
 #, c-format
-msgid "Wavvy needs the file %s to create MP3s."
-msgstr "Wavvy necessita el fitxer %s per crear els MP3."
+msgid "Wavacity needs the file %s to create MP3s."
+msgstr "Wavacity necessita el fitxer %s per crear els MP3."
 
 #: src/export/ExportMP3.cpp
 #, c-format
@@ -11585,11 +11585,11 @@ msgstr "On és %s?"
 #, fuzzy, c-format
 msgid ""
 "You are linking to lame_enc.dll v%d.%d. This version is not compatible with "
-"Wavvy %d.%d.%d.\n"
-"Please download the latest version of 'LAME for Wavvy'."
+"Wavacity %d.%d.%d.\n"
+"Please download the latest version of 'LAME for Wavacity'."
 msgstr ""
 "Esteu enllaçant amb lame_enc.dll v%d.%d. Aquesta versió no és compatible amb "
-"Wavvy %d.%d.%d.\n"
+"Wavacity %d.%d.%d.\n"
 "Si us plau, descarregueu l'última versió de la biblioteca LAME MP3."
 
 #: src/export/ExportMP3.cpp
@@ -11924,7 +11924,7 @@ msgstr "Altres fitxers no comprimits"
 msgid ""
 "You have attempted to Export a WAV or AIFF file which would be greater than "
 "4GB.\n"
-"Wavvy cannot do this, the Export was abandoned."
+"Wavacity cannot do this, the Export was abandoned."
 msgstr ""
 
 #: src/export/ExportPCM.cpp
@@ -11934,7 +11934,7 @@ msgstr "S'ha produït un error en importar"
 
 #: src/export/ExportPCM.cpp
 msgid ""
-"Your exported WAV file has been truncated as Wavvy cannot export WAV\n"
+"Your exported WAV file has been truncated as Wavacity cannot export WAV\n"
 "files bigger than 4GB."
 msgstr ""
 
@@ -11977,12 +11977,12 @@ msgstr "Tots els fitxers|*|Tots els fitxers admesos|"
 msgid ""
 "\"%s\" \n"
 "is a MIDI file, not an audio file. \n"
-"Wavvy cannot open this type of file for playing, but you can\n"
+"Wavacity cannot open this type of file for playing, but you can\n"
 "edit it by clicking File > Import > MIDI."
 msgstr ""
 "«%s» \n"
 "és un fitxer MIDI, i no un fitxer d'àudio. \n"
-"Wavvy no pot obrir aquest tipus de fitxer per reproduir-lo, però podeu\n"
+"Wavacity no pot obrir aquest tipus de fitxer per reproduir-lo, però podeu\n"
 "editar-lo en fer clic a Fitxer > Importa > MIDI."
 
 #: src/import/Import.cpp
@@ -11990,11 +11990,11 @@ msgstr ""
 msgid ""
 "\"%s\" \n"
 "is a not an audio file. \n"
-"Wavvy cannot open this type of file."
+"Wavacity cannot open this type of file."
 msgstr ""
 "«%s» \n"
 "és un fitxer MIDI, i no un fitxer d'àudio. \n"
-"Wavvy no pot obrir aquest tipus de fitxer per reproduir-lo, però podeu\n"
+"Wavacity no pot obrir aquest tipus de fitxer per reproduir-lo, però podeu\n"
 "editar-lo en fer clic a Fitxer > Importa > MIDI."
 
 #: src/import/Import.cpp
@@ -12003,36 +12003,36 @@ msgstr "Seleccioneu el(s) flux(es) de dades a importar"
 
 #: src/import/Import.cpp
 #, c-format
-msgid "This version of Wavvy was not compiled with %s support."
+msgid "This version of Wavacity was not compiled with %s support."
 msgstr ""
-"Aquesta versió d'Wavvy no s'ha compilat amb la compatibilitat per a %s."
+"Aquesta versió d'Wavacity no s'ha compilat amb la compatibilitat per a %s."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is an audio CD track. \n"
-"Wavvy cannot open audio CDs directly. \n"
+"Wavacity cannot open audio CDs directly. \n"
 "Extract (rip) the CD tracks to an audio format that \n"
-"Wavvy can import, such as WAV or AIFF."
+"Wavacity can import, such as WAV or AIFF."
 msgstr ""
 "«%s» és una pista de CD d'àudio. \n"
-"Wavvy no pot obrir directament els CD d'àudio.\n"
+"Wavacity no pot obrir directament els CD d'àudio.\n"
 "Heu d'extreure (tramar) les pistes del CD a un format d'àudio que\n"
-"Wavvy pugui importar, com ara WAV o AIFF."
+"Wavacity pugui importar, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a playlist file. \n"
-"Wavvy cannot open this file because it only contains links to other "
+"Wavacity cannot open this file because it only contains links to other "
 "files. \n"
 "You may be able to open it in a text editor and download the actual audio "
 "files."
 msgstr ""
 "«%s» és un fitxer de llista de reproducció.\n"
-"Wavvy no pot obrir aquest fitxer perquè conté únicament enllaços a altres "
+"Wavacity no pot obrir aquest fitxer perquè conté únicament enllaços a altres "
 "fitxers.\n"
 "Podeu intentar d'obrir-lo amb un editor de text i baixar els fitxers d'àudio "
 "reals."
@@ -12042,11 +12042,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Windows Media Audio file. \n"
-"Wavvy cannot open this type of file due to patent restrictions. \n"
+"Wavacity cannot open this type of file due to patent restrictions. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer WMA (Windows Media Audio). \n"
-"Wavvy no pot obrir aquest tipus de fitxer a causa de les restriccions de "
+"Wavacity no pot obrir aquest tipus de fitxer a causa de les restriccions de "
 "patents.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
@@ -12055,13 +12055,13 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "\"%s\" is an Advanced Audio Coding file.\n"
-"Without the optional FFmpeg library, Wavvy cannot open this type of "
+"Without the optional FFmpeg library, Wavacity cannot open this type of "
 "file.\n"
 "Otherwise, you need to convert it to a supported audio format, such as WAV "
 "or AIFF."
 msgstr ""
 "«%s» és un fitxer AAC (Advanced Audio Coding). \n"
-"Wavvy no pot obrir aquest tipus de fitxer.\n"
+"Wavacity no pot obrir aquest tipus de fitxer.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12070,14 +12070,14 @@ msgstr ""
 msgid ""
 "\"%s\" is an encrypted audio file. \n"
 "These typically are from an online music store. \n"
-"Wavvy cannot open this type of file due to the encryption. \n"
-"Try recording the file into Wavvy, or burn it to audio CD then \n"
+"Wavacity cannot open this type of file due to the encryption. \n"
+"Try recording the file into Wavacity, or burn it to audio CD then \n"
 "extract the CD track to a supported audio format such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer d'àudio xifrat. \n"
 "Probablement ha estat adquirit en una botiga de música en línia. \n"
-"Wavvy no pot obrir aquest tipus de fitxer a causa del xifrat.\n"
-"Intenteu enregistrar el fitxer a Wavvy, o graveu-ho a un CD i\n"
+"Wavacity no pot obrir aquest tipus de fitxer a causa del xifrat.\n"
+"Intenteu enregistrar el fitxer a Wavacity, o graveu-ho a un CD i\n"
 "després extraieu la pista del CD a un format admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12085,11 +12085,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a RealPlayer media file. \n"
-"Wavvy cannot open this proprietary format. \n"
+"Wavacity cannot open this proprietary format. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer RealPlayer media. \n"
-"Wavvy no pot obrir aquest format propietari.\n"
+"Wavacity no pot obrir aquest format propietari.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12097,28 +12097,28 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a notes-based file, not an audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "Try converting it to an audio file such as WAV or AIFF and \n"
-"then import it, or record it into Wavvy."
+"then import it, or record it into Wavacity."
 msgstr ""
 "«%s» és un fitxer basat en notes, i no un fitxer d'àudio.\n"
-"Wavvy no pot obrir aquest tipus de fitxer.\n"
+"Wavacity no pot obrir aquest tipus de fitxer.\n"
 "Proveu de convertir-lo a un format d'àudio com ara WAV o AIFF,\n"
-"i després importar-lo, o enregistreu-lo a Wavvy."
+"i després importar-lo, o enregistreu-lo a Wavacity."
 
 #. i18n-hint: %s will be the filename
 #: src/import/Import.cpp
 #, c-format
 msgid ""
 "\"%s\" is a Musepack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "If you think it might be an mp3 file, rename it to end with \".mp3\" \n"
 "and try importing it again. Otherwise you need to convert it to a supported "
 "audio \n"
 "format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer d'àudio Musepack. \n"
-"Wavvy no pot obrir aquest tipus de fitxer.\n"
+"Wavacity no pot obrir aquest tipus de fitxer.\n"
 "Si penseu que podria tractar-se d'un fitxer mp3, canvieu-li el nom per tal "
 "que acabi en «.mp3» \n"
 "i intenteu importar-lo un altre cop. Altrament haureu de convertir-lo a un "
@@ -12130,11 +12130,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Wavpack audio file. \n"
-"Wavvy cannot open this type of file. \n"
+"Wavacity cannot open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer d'àudio Wavpack. \n"
-"Wavvy no pot obrir aquest tipus de fitxer.\n"
+"Wavacity no pot obrir aquest tipus de fitxer.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12142,11 +12142,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a Dolby Digital audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer d'àudio Dolby Digital. \n"
-"Wavvy no pot obrir actualment aquest tipus de fitxer.\n"
+"Wavacity no pot obrir actualment aquest tipus de fitxer.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12154,11 +12154,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is an Ogg Speex audio file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to convert it to a supported audio format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer d'àudio Ogg Speex. \n"
-"Wavvy no pot obrir fitxers d'aquest tipus.\n"
+"Wavacity no pot obrir fitxers d'aquest tipus.\n"
 "Hauríeu de convertir-lo a un format d'àudio admès, com ara WAV o AIFF."
 
 #. i18n-hint: %s will be the filename
@@ -12166,11 +12166,11 @@ msgstr ""
 #, c-format
 msgid ""
 "\"%s\" is a video file. \n"
-"Wavvy cannot currently open this type of file. \n"
+"Wavacity cannot currently open this type of file. \n"
 "You need to extract the audio to a supported format, such as WAV or AIFF."
 msgstr ""
 "«%s» és un fitxer de vídeo. \n"
-"Wavvy no pot obrir fitxers d'aquest tipus.\n"
+"Wavacity no pot obrir fitxers d'aquest tipus.\n"
 "Hauríeu d'extreure l'àudio a un format admès, com ara WAV o AIFF."
 
 #: src/import/Import.cpp
@@ -12182,7 +12182,7 @@ msgstr "S'ha trobat el mòdul «%s»."
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Wavvy did not recognize the type of the file '%s'.\n"
+"Wavacity did not recognize the type of the file '%s'.\n"
 "\n"
 "%sFor uncompressed files, also try File > Import > Raw Data."
 msgstr ""
@@ -12202,12 +12202,12 @@ msgstr "%s, %s"
 #: src/import/Import.cpp
 #, c-format
 msgid ""
-"Wavvy recognized the type of the file '%s'.\n"
+"Wavacity recognized the type of the file '%s'.\n"
 "Importers supposedly supporting such files are:\n"
 "%s,\n"
 "but none of them understood this file format."
 msgstr ""
-"Wavvy reconeix el tipus de fitxer «%s».\n"
+"Wavacity reconeix el tipus de fitxer «%s».\n"
 "Els importadors que suposadament haurien d'admetre aquests fitxers són:\n"
 "%s,\n"
 "però cap d'ells ha entès el format del fitxer."
@@ -12231,11 +12231,11 @@ msgstr "Importa els valors predefinits"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"This project was saved by Wavvy version 1.0 or earlier. The format has\n"
-"changed and this version of Wavvy is unable to import the project.\n"
+"This project was saved by Wavacity version 1.0 or earlier. The format has\n"
+"changed and this version of Wavacity is unable to import the project.\n"
 "\n"
-"Use a version of Wavvy prior to v3.0.0 to upgrade the project and then\n"
-"you may import it with this version of Wavvy."
+"Use a version of Wavacity prior to v3.0.0 to upgrade the project and then\n"
+"you may import it with this version of Wavacity."
 msgstr ""
 
 #: src/import/ImportAUP.cpp
@@ -12283,7 +12283,7 @@ msgstr "No s'ha pogut trobar la carpeta de dades del projecte: «%s»"
 
 #: src/import/ImportAUP.cpp
 msgid ""
-"MIDI tracks found in project file, but this build of Wavvy does not "
+"MIDI tracks found in project file, but this build of Wavacity does not "
 "include MIDI support, bypassing track."
 msgstr ""
 
@@ -13478,8 +13478,8 @@ msgid "&Getting Started"
 msgstr "&Com començar"
 
 #: src/menus/HelpMenus.cpp
-msgid "Wavvy &Manual"
-msgstr "&Manual d'Wavvy"
+msgid "Wavacity &Manual"
+msgstr "&Manual d'Wavacity"
 
 #: src/menus/HelpMenus.cpp
 msgid "&Quick Help..."
@@ -13526,7 +13526,7 @@ msgstr "S'ha afegit l'etiqueta"
 msgid "Paste Text to New Label"
 msgstr "Enganxa el text a una etiqueta nova"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just cut the labeled audio
+#. i18n-hint: (verb) past tense.  Wavacity has just cut the labeled audio
 #. regions.
 #: src/menus/LabelMenus.cpp
 msgid "Cut labeled audio regions to clipboard"
@@ -13537,7 +13537,7 @@ msgstr "S'han retallat fragments d'àudio etiquetat al porta-retalls"
 msgid "Cut Labeled Audio"
 msgstr "Retalla l'àudio etiquetat"
 
-#. i18n-hint: (verb) Wavvy has just deleted the labeled audio regions
+#. i18n-hint: (verb) Wavacity has just deleted the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Deleted labeled audio regions"
 msgstr "S'han eliminat fragments d'àudio etiquetat"
@@ -13547,7 +13547,7 @@ msgstr "S'han eliminat fragments d'àudio etiquetat"
 msgid "Delete Labeled Audio"
 msgstr "Elimina l'àudio etiquetat"
 
-#. i18n-hint: (verb) Wavvy has just split cut the labeled audio
+#. i18n-hint: (verb) Wavacity has just split cut the labeled audio
 #. regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Cut labeled audio regions to clipboard"
@@ -13558,7 +13558,7 @@ msgstr "S'han dividit i retallat fragments d'àudio etiquetat al porta-retalls"
 msgid "Split Cut Labeled Audio"
 msgstr "Divideix i retalla l'àudio"
 
-#. i18n-hint: (verb) Wavvy has just done a special kind of DELETE on
+#. i18n-hint: (verb) Wavacity has just done a special kind of DELETE on
 #. the labeled audio regions
 #: src/menus/LabelMenus.cpp
 msgid "Split Deleted labeled audio regions"
@@ -13589,7 +13589,7 @@ msgstr "S'han copiat fragments d'àudio etiquetat al porta-retalls"
 msgid "Copy Labeled Audio"
 msgstr "Copia l'àudio etiquetat"
 
-#. i18n-hint: (verb) past tense.  Wavvy has just split the labeled
+#. i18n-hint: (verb) past tense.  Wavacity has just split the labeled
 #. audio (a point or a region)
 #: src/menus/LabelMenus.cpp
 msgid "Split labeled audio (points or regions)"
@@ -13600,7 +13600,7 @@ msgstr "S'ha dividit àudio etiquetat (punts o fragments)"
 msgid "Split Labeled Audio"
 msgstr "Divideix l'àudio etiquetat"
 
-#. i18n-hint: (verb) Wavvy has just joined the labeled audio (points or
+#. i18n-hint: (verb) Wavacity has just joined the labeled audio (points or
 #. regions)
 #: src/menus/LabelMenus.cpp
 msgid "Joined labeled audio (points or regions)"
@@ -13611,9 +13611,9 @@ msgstr "S'ha unit àudio etiquetat (punts o fragments)"
 msgid "Join Labeled Audio"
 msgstr "Uneix l'àudio etiquetat"
 
-#. i18n-hint: (verb) Wavvy has just detached the labeled audio regions.
+#. i18n-hint: (verb) Wavacity has just detached the labeled audio regions.
 #. This message appears in history and tells you about something
-#. Wavvy has done.
+#. Wavacity has done.
 #: src/menus/LabelMenus.cpp
 msgid "Detached labeled audio regions"
 msgstr "S'han desenganxat fragments d'àudio etiquetat"
@@ -14424,9 +14424,9 @@ msgstr "S'ha creat una pista d'etiquetes nova"
 
 #: src/menus/TrackMenus.cpp
 msgid ""
-"This version of Wavvy only allows one time track for each project window."
+"This version of Wavacity only allows one time track for each project window."
 msgstr ""
-"Aquesta versió d'Wavvy només permet tenir una pista de temps a cada "
+"Aquesta versió d'Wavacity només permet tenir una pista de temps a cada "
 "finestra de projecte."
 
 #: src/menus/TrackMenus.cpp
@@ -14697,13 +14697,13 @@ msgstr "Mou la pista amb focus al capdamun&t"
 msgid "Move Focused Track to &Bottom"
 msgstr "Mou la pista amb focus al capdava&ll"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/toolbars/ControlToolBar.cpp
 msgid "Playing"
 msgstr "Reproduint"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/menus/TransportMenus.cpp src/prefs/DevicePrefs.cpp
 #: src/prefs/MidiIOPrefs.cpp src/prefs/RecordingPrefs.cpp
@@ -15276,10 +15276,10 @@ msgstr "No es pot escriure al directori %s"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid ""
-"Changes to temporary directory will not take effect until Wavvy is "
+"Changes to temporary directory will not take effect until Wavacity is "
 "restarted"
 msgstr ""
-"Els canvis en el directori temporal tindran efecte en reiniciar Wavvy"
+"Els canvis en el directori temporal tindran efecte en reiniciar Wavacity"
 
 #: src/prefs/DirectoriesPrefs.cpp
 msgid "Temp Directory Update"
@@ -15325,7 +15325,7 @@ msgid "LV&2"
 msgstr ""
 
 #. i18n-hint: "Nyquist" is an embedded interpreted programming language in
-#. Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+#. Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
 #. In the translations of this and other strings, you may transliterate the
 #. name into another alphabet.
 #: src/prefs/EffectsPrefs.cpp
@@ -15367,12 +15367,12 @@ msgid "Plugin Options"
 msgstr "Opcions del connector"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Check for updated plugins when Wavvy starts"
-msgstr "Comprova si hi ha connectors actualitzats quan s'iniciï Wavvy"
+msgid "Check for updated plugins when Wavacity starts"
+msgstr "Comprova si hi ha connectors actualitzats quan s'iniciï Wavacity"
 
 #: src/prefs/EffectsPrefs.cpp
-msgid "Rescan plugins next time Wavvy is started"
-msgstr "Torna a escanejar els efectes la següent vegada que Wavvy s'iniciï"
+msgid "Rescan plugins next time Wavacity is started"
+msgstr "Torna a escanejar els efectes la següent vegada que Wavacity s'iniciï"
 
 #: src/prefs/EffectsPrefs.cpp
 msgid "Instruction Set"
@@ -15446,13 +15446,13 @@ msgstr "Filtres no utilitzats:"
 msgid ""
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of "
 "the items. They are likely to break the pattern matching. Unless you know "
-"what you are doing, it is recommended to trim spaces. Do you want Wavvy "
+"what you are doing, it is recommended to trim spaces. Do you want Wavacity "
 "to trim spaces for you?"
 msgstr ""
 "Hi ha lletres d'espai en blanc (espais, salts de línia, tabuladors o retorns "
 "de carro) en un dels elements. Aquests caràcters podrien trencar la cerca "
 "per patrons. A no ser que sapigueu exactament què esteu fent, és recomanable "
-"que elimineu aquests espais en blanc. Voleu que Wavvy netegi els espais "
+"que elimineu aquests espais en blanc. Voleu que Wavacity netegi els espais "
 "en blanc?"
 
 #: src/prefs/ExtImportPrefs.cpp
@@ -15472,7 +15472,7 @@ msgstr "Confirmació de l'eliminació del criteri"
 msgid "Ext Import"
 msgstr "Importació ampliada"
 
-#. i18n-hint: refers to Wavvy's user interface settings
+#. i18n-hint: refers to Wavacity's user interface settings
 #: src/prefs/GUIPrefs.cpp
 #, fuzzy
 msgctxt "GUI"
@@ -15565,7 +15565,7 @@ msgid "Re&tain labels if selection snaps to a label"
 msgstr ""
 
 #: src/prefs/GUIPrefs.cpp
-msgid "B&lend system and Wavvy theme"
+msgid "B&lend system and Wavacity theme"
 msgstr ""
 
 #. i18n-hint: RTL stands for 'Right to Left'
@@ -15752,8 +15752,8 @@ msgid ""
 msgstr ""
 
 #: src/prefs/KeyConfigPrefs.cpp
-msgid "Select an XML file containing Wavvy keyboard shortcuts..."
-msgstr "Seleccioneu un fitxer XML amb les dreceres de teclat d'Wavvy..."
+msgid "Select an XML file containing Wavacity keyboard shortcuts..."
+msgstr "Seleccioneu un fitxer XML amb les dreceres de teclat d'Wavacity..."
 
 #: src/prefs/KeyConfigPrefs.cpp
 msgid "Error Importing Keyboard Shortcuts"
@@ -15894,10 +15894,10 @@ msgstr "Bai&xa"
 
 #: src/prefs/LibraryPrefs.cpp
 msgid ""
-"Wavvy has automatically detected valid FFmpeg libraries.\n"
+"Wavacity has automatically detected valid FFmpeg libraries.\n"
 "Do you still want to locate them manually?"
 msgstr ""
-"Wavvy ha detectat automàticament les biblioteques FFmpeg vàlides.\n"
+"Wavacity ha detectat automàticament les biblioteques FFmpeg vàlides.\n"
 "Encara voleu localitzar-les manualment?"
 
 #: src/prefs/LibraryPrefs.cpp
@@ -15946,7 +15946,7 @@ msgstr "La latència del sintetitzador MIDI ha de ser un nombre enter"
 msgid "Midi IO"
 msgstr ""
 
-#. i18n-hint: Modules are optional extensions to Wavvy that add NEW features.
+#. i18n-hint: Modules are optional extensions to Wavacity that add NEW features.
 #: src/prefs/ModulePrefs.cpp
 msgid "Modules"
 msgstr "Mòduls"
@@ -15958,30 +15958,30 @@ msgstr "Preferències: "
 
 #: src/prefs/ModulePrefs.cpp
 msgid ""
-"These are experimental modules. Enable them only if you've read the Wavvy "
+"These are experimental modules. Enable them only if you've read the Wavacity "
 "Manual\n"
 "and know what you are doing."
 msgstr ""
 "Aquests mòduls són experimentals. Activeu-los només si us heu llegit el "
 "manual\n"
-"d'Wavvy i sabeu el que esteu fent."
+"d'Wavacity i sabeu el que esteu fent."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
 msgid ""
-"  'Ask' means Wavvy will ask if you want to load the module each time it "
+"  'Ask' means Wavacity will ask if you want to load the module each time it "
 "starts."
 msgstr ""
-"'Pregunta-m'ho' significa que Wavvy us preguntarà si voleu carregar el "
+"'Pregunta-m'ho' significa que Wavacity us preguntarà si voleu carregar el "
 "connector cada vegada que engegui."
 
 #. i18n-hint preserve the leading spaces
 #: src/prefs/ModulePrefs.cpp
 #, fuzzy
-msgid "  'Failed' means Wavvy thinks the module is broken and won't run it."
+msgid "  'Failed' means Wavacity thinks the module is broken and won't run it."
 msgstr ""
-"'Fallit' significa que Wavvy creu que el connector està trencat i no "
+"'Fallit' significa que Wavacity creu que el connector està trencat i no "
 "l'executarà."
 
 #. i18n-hint preserve the leading spaces
@@ -15991,9 +15991,9 @@ msgid "  'New' means no choice has been made yet."
 msgstr "«Nou» significa que encara no s'ha fet cap tria."
 
 #: src/prefs/ModulePrefs.cpp
-msgid "Changes to these settings only take effect when Wavvy starts up."
+msgid "Changes to these settings only take effect when Wavacity starts up."
 msgstr ""
-"Els canvis en aquests ajusts només tindran efecte quan Wavvy s'iniciï de "
+"Els canvis en aquests ajusts només tindran efecte quan Wavacity s'iniciï de "
 "nou."
 
 #: src/prefs/ModulePrefs.cpp
@@ -16278,8 +16278,8 @@ msgid "Always scrub un&pinned"
 msgstr "Rastreja sem&pre sense enclavar"
 
 #: src/prefs/PrefsDialog.cpp
-msgid "Wavvy Preferences"
-msgstr "Preferències d'Wavvy"
+msgid "Wavacity Preferences"
+msgstr "Preferències d'Wavacity"
 
 #: src/prefs/PrefsDialog.cpp
 msgid "Category"
@@ -16681,7 +16681,7 @@ msgstr "El nombre màxim de notes ha d'estar dins de l'interval 1..128"
 
 #. i18n-hint: A theme is a consistent visual style across an application's
 #. graphical user interface, including choices of colors, and similarity of images
-#. such as those on button controls.  Wavvy can load and save alternative
+#. such as those on button controls.  Wavacity can load and save alternative
 #. themes.
 #: src/prefs/ThemePrefs.cpp src/prefs/ThemePrefs.h
 msgid "Theme"
@@ -16705,7 +16705,7 @@ msgid ""
 "ImageCacheVxx.png using an image editor such as the Gimp.\n"
 "\n"
 "Click \"Load Theme Cache\" to load the changed images and colors back into "
-"Wavvy.\n"
+"Wavacity.\n"
 "\n"
 "(Only the Transport Toolbar and the colors on the wavetrack are currently "
 "affected, even\n"
@@ -16719,7 +16719,7 @@ msgstr ""
 "ara el Gimp.\n"
 "\n"
 "Feu clic a \"Carrega la mostra del tema\" per comprovar com es veuen a "
-"Wavvy els\n"
+"Wavacity els\n"
 "canvis fets a les imatges i els colors .\n"
 "\n"
 "(Ara per ara els canvis només afecten la barra d'eines de transport i els "
@@ -17024,7 +17024,7 @@ msgstr "Preferències: "
 msgid "Waveform dB &range:"
 msgstr "Ma&rge de dB del vúmetre:"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp
 msgid "Stopped"
@@ -17062,7 +17062,7 @@ msgstr "Selecciona fins a l'acabament"
 msgid "Select to Start"
 msgstr "Selecciona fins al començament"
 
-#. i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+#. i18n-hint: These are strings for the status bar, and indicate whether Wavacity
 #. is playing or recording or stopped, and whether it is paused.
 #: src/toolbars/ControlToolBar.cpp src/tracks/ui/Scrubbing.cpp
 #, fuzzy, c-format
@@ -17431,8 +17431,8 @@ msgstr "Barra d'eines dels &dispositius"
 #. i18n-hint: %s will be replaced by the name of the kind of toolbar.
 #: src/toolbars/ToolBar.cpp
 #, c-format
-msgid "Wavvy %s Toolbar"
-msgstr "Barra d'eines %s d'Wavvy"
+msgid "Wavacity %s Toolbar"
+msgstr "Barra d'eines %s d'Wavacity"
 
 #: src/toolbars/ToolBar.cpp
 msgid "Click and drag to resize toolbar"
@@ -18112,7 +18112,7 @@ msgstr ""
 msgid "Click and drag to edit the amplitude envelope"
 msgstr "Feu clic i arrossegueu per a modificar l'envolupant d'amplitud"
 
-#. i18n-hint: (verb) Wavvy has just adjusted the envelope .
+#. i18n-hint: (verb) Wavacity has just adjusted the envelope .
 #: src/tracks/ui/EnvelopeHandle.cpp
 msgid "Adjusted envelope."
 msgstr "S'ha ajustat l'envolupant."
@@ -20444,11 +20444,11 @@ msgstr "Dreta (dB)"
 #, lisp-format
 msgid ""
 "Produced with <span>Sample Data Export</span> for\n"
-"<a href=\"~a\">Wavvy</a> by Steve\n"
+"<a href=\"~a\">Wavacity</a> by Steve\n"
 "Daulton"
 msgstr ""
 "S'ha produït amb <span>Exportació de dades de mostres</span> for\n"
-"<a href=\"~a\">Wavvy</a> per Steve\n"
+"<a href=\"~a\">Wavacity</a> per Steve\n"
 "Daulton"
 
 #: plug-ins/sample-data-export.ny
@@ -20833,15 +20833,15 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ msgid "Export recording"
 #~ msgstr "Exporta l'enregistrament"
 
-#~ msgid "Ogg Vorbis support is not included in this build of Wavvy"
+#~ msgid "Ogg Vorbis support is not included in this build of Wavacity"
 #~ msgstr ""
 #~ "La compatibilitat per al format Ogg Vorbis no s'ha inclòs en aquesta "
-#~ "construcció d'Wavvy"
+#~ "construcció d'Wavacity"
 
-#~ msgid "FLAC support is not included in this build of Wavvy"
+#~ msgid "FLAC support is not included in this build of Wavacity"
 #~ msgstr ""
 #~ "La compatibilitat per al format FLAC no s'ha inclòs en aquesta "
-#~ "construcció d'Wavvy"
+#~ "construcció d'Wavacity"
 
 #~ msgid "Command %s not implemented yet"
 #~ msgstr "L'ordre %s encara no està implementada"
@@ -20894,26 +20894,26 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ msgid "Saving recorded audio to disk"
 #~ msgstr "S'està desant l'àudio al disc"
 
-#~ msgid "Wavvy projects"
-#~ msgstr "Projectes Wavvy"
+#~ msgid "Wavacity projects"
+#~ msgstr "Projectes Wavacity"
 
 #~ msgid "Reclaimable Space"
 #~ msgstr "Espai recuperable"
 
 #~ msgid ""
-#~ "This file was saved by Wavvy version %s. The format has changed. \n"
+#~ "This file was saved by Wavacity version %s. The format has changed. \n"
 #~ "\n"
-#~ "Wavvy can try to open and save this file, but saving it in this \n"
+#~ "Wavacity can try to open and save this file, but saving it in this \n"
 #~ "version will then prevent any 1.2 or earlier version opening it. \n"
 #~ "\n"
-#~ "Wavvy might corrupt the file in opening it, so you should back it up "
+#~ "Wavacity might corrupt the file in opening it, so you should back it up "
 #~ "first. \n"
 #~ "\n"
 #~ "Open this file now?"
 #~ msgstr ""
-#~ "Aquest fitxer es va desar amb Wavvy %s. El format ha canviat.\n"
+#~ "Aquest fitxer es va desar amb Wavacity %s. El format ha canviat.\n"
 #~ "\n"
-#~ "Wavvy pot intentar obrir i desar aquest fitxer, però el fet de desar-"
+#~ "Wavacity pot intentar obrir i desar aquest fitxer, però el fet de desar-"
 #~ "lo amb el nou format\n"
 #~ "farà que no es pugui obrir amb versions antigues (1.2 o anteriors) del "
 #~ "programa.\n"
@@ -20958,9 +20958,9 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ "el directori «%s» abans de desar el projecte amb aquest nom."
 
 #~ msgid ""
-#~ "Wavvy was unable to convert an Wavvy 1.0 project to the new project "
+#~ "Wavacity was unable to convert an Wavacity 1.0 project to the new project "
 #~ "format."
-#~ msgstr "No s'ha pogut convertir el projecte d'Wavvy 1.0 al nou format."
+#~ msgstr "No s'ha pogut convertir el projecte d'Wavacity 1.0 al nou format."
 
 #~ msgid "Could not remove old auto save file"
 #~ msgstr "No s'ha pogut esborrar el fitxer antic de restabliment automàtic"
@@ -20993,11 +20993,11 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ msgstr "FFmpeg : ERROR - No s'ha pogut escriure la trama d'àudio al fitxer."
 
 #~ msgid ""
-#~ "\"%s\" is an Wavvy Project file. \n"
-#~ "Use the 'File > Open' command to open Wavvy Projects."
+#~ "\"%s\" is an Wavacity Project file. \n"
+#~ "Use the 'File > Open' command to open Wavacity Projects."
 #~ msgstr ""
-#~ "«%s» és un fitxer de projecte d'Wavvy. \n"
-#~ "Utilitzeu l'ordre «Fitxer > Obre» per obrir els projectes d'Wavvy."
+#~ "«%s» és un fitxer de projecte d'Wavacity. \n"
+#~ "Utilitzeu l'ordre «Fitxer > Obre» per obrir els projectes d'Wavacity."
 
 #, fuzzy
 #~ msgid ""
@@ -21119,28 +21119,28 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ msgid "Apply Low-Cut filter"
 #~ msgstr "S'està aplicant el filtre eliminabanda..."
 
-#~ msgid "About Wavvy"
-#~ msgstr "Quant a Wavvy"
+#~ msgid "About Wavacity"
+#~ msgstr "Quant a Wavacity"
 
-#~ msgid "<h3>Wavvy "
-#~ msgstr "<h3>Wavvy "
+#~ msgid "<h3>Wavacity "
+#~ msgstr "<h3>Wavacity "
 
 #~ msgid ""
-#~ "<p><br>&nbsp; &nbsp; <b>Wavvy<sup>&reg;</sup></b> software is "
-#~ "copyright &copy; 1999-2018 Wavvy Team.<br>"
+#~ "<p><br>&nbsp; &nbsp; <b>Wavacity<sup>&reg;</sup></b> software is "
+#~ "copyright &copy; 1999-2018 Wavacity Team.<br>"
 #~ msgstr ""
-#~ "<p><br>&nbsp; &nbsp; El programari d'<b>Wavvy<sup>&reg;</sup></b> és "
-#~ "propietat intel·lectual de l'equip d'Wavvy &copy; 1999-2018.<br>"
+#~ "<p><br>&nbsp; &nbsp; El programari d'<b>Wavacity<sup>&reg;</sup></b> és "
+#~ "propietat intel·lectual de l'equip d'Wavacity &copy; 1999-2018.<br>"
 
 #~ msgid "mkdir in DirManager::MakeBlockFilePath failed."
 #~ msgstr "Ha fallat mkdir a DirManager::MakeBlockFilePath."
 
 #~ msgid ""
-#~ "Wavvy found an orphan block file: %s. \n"
+#~ "Wavacity found an orphan block file: %s. \n"
 #~ "Please consider saving and reloading the project to perform a complete "
 #~ "project check."
 #~ msgstr ""
-#~ "Wavvy ha trobat un fitxer de blocs orfe: %s. \n"
+#~ "Wavacity ha trobat un fitxer de blocs orfe: %s. \n"
 #~ "Considereu desar i tornar a carregar el projecte per fer una comprovació "
 #~ "completa del projecte."
 
@@ -21179,9 +21179,9 @@ msgstr "Error.~%Es requereix la pista estèreo."
 
 #, fuzzy
 #~ msgid ""
-#~ "The module \"%s\" is matched with Wavvy version \"%s\". It will not be "
+#~ "The module \"%s\" is matched with Wavacity version \"%s\". It will not be "
 #~ "loaded."
-#~ msgstr "El mòdul %s correspon a la versió d'Wavvy %s.  No es carregarà."
+#~ msgstr "El mòdul %s correspon a la versió d'Wavacity %s.  No es carregarà."
 
 #, fuzzy
 #~ msgid ""
@@ -21355,8 +21355,8 @@ msgstr "Error.~%Es requereix la pista estèreo."
 #~ msgstr ""
 #~ "A causa del seu processament, alguns efectes VST poden trigar a retornar "
 
-#~ msgid "audio to Wavvy. When not compensating for this delay, you will "
-#~ msgstr "l'àudio a Wavvy. Si no compenseu aquest retard, observareu "
+#~ msgid "audio to Wavacity. When not compensating for this delay, you will "
+#~ msgstr "l'àudio a Wavacity. Si no compenseu aquest retard, observareu "
 
 #~ msgid "notice that small silences have been inserted into the audio. "
 #~ msgstr "que alguns silencis petits apareixen inserits dins de l'àudio. "

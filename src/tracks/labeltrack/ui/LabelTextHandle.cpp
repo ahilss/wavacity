@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "LabelTextHandle.h"
 
 #include "LabelTrackView.h"
@@ -33,7 +33,7 @@ LabelTextHandle::LabelTextHandle
 {
 }
 
-void LabelTextHandle::Enter(bool, WavvyProject *)
+void LabelTextHandle::Enter(bool, WavacityProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -71,7 +71,7 @@ LabelTextHandle::~LabelTextHandle()
 {
 }
 
-void LabelTextHandle::HandleTextClick(WavvyProject &
+void LabelTextHandle::HandleTextClick(WavacityProject &
 #if defined(__WXGTK__) && (HAVE_GTK)
                                                        project
 #endif
@@ -151,7 +151,7 @@ void LabelTextHandle::HandleTextClick(WavvyProject &
 }
 
 UIHandle::Result LabelTextHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto pLT = mpLT.lock();
    if (!pLT)
@@ -199,7 +199,7 @@ UIHandle::Result LabelTextHandle::Click
 }
 
 void LabelTextHandle::HandleTextDragRelease(
-   WavvyProject &project, const wxMouseEvent & evt)
+   WavacityProject &project, const wxMouseEvent & evt)
 {
    auto pTrack = mpLT.lock();
    if (!pTrack)
@@ -252,7 +252,7 @@ void LabelTextHandle::HandleTextDragRelease(
 }
 
 UIHandle::Result LabelTextHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto &project = *pProject;
    using namespace RefreshCode;
@@ -288,13 +288,13 @@ UIHandle::Result LabelTextHandle::Drag
 }
 
 HitTestPreview LabelTextHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *)
+(const TrackPanelMouseState &, WavacityProject *)
 {
    return HitPreview();
 }
 
 UIHandle::Result LabelTextHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    auto result = LabelDefaultClickHandle::Release( evt, pProject, pParent );
@@ -319,7 +319,7 @@ UIHandle::Result LabelTextHandle::Release
    return result | RefreshCode::RefreshNone;
 }
 
-UIHandle::Result LabelTextHandle::Cancel( WavvyProject *pProject )
+UIHandle::Result LabelTextHandle::Cancel( WavacityProject *pProject )
 {
    // Restore the selection states of tracks
    // Note that we are also relying on LabelDefaultClickHandle::Cancel

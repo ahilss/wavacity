@@ -32,7 +32,7 @@ a graph for EffectScienFilter.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ScienFilter.h"
 #include "LoadEffects.h"
 
@@ -62,7 +62,7 @@ a graph for EffectScienFilter.
 #include "../Theme.h"
 #include "../WaveTrack.h"
 #include "../widgets/valnum.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/Ruler.h"
 #include "../widgets/WindowAccessible.h"
 

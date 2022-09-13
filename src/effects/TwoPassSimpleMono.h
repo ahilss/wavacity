@@ -9,8 +9,8 @@
   This bit by Martyn Shaw.
 
 **********************************************************************/
-#ifndef __WAVVY_EFFECT_TWOPASSSIMPLEMONO__
-#define __WAVVY_EFFECT_TWOPASSSIMPLEMONO__
+#ifndef __WAVACITY_EFFECT_TWOPASSSIMPLEMONO__
+#define __WAVACITY_EFFECT_TWOPASSSIMPLEMONO__
 
 #include "SimpleMono.h"
 

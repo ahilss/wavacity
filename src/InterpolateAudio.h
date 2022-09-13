@@ -22,10 +22,10 @@
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_INTERPOLATE_AUDIO__
-#define __WAVVY_INTERPOLATE_AUDIO__
+#ifndef __WAVACITY_INTERPOLATE_AUDIO__
+#define __WAVACITY_INTERPOLATE_AUDIO__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include <cstddef>
 
 // See top of file for a description of the algorithm.  Interpolates
@@ -36,7 +36,7 @@
 // side (6x the number of bad samples on either side is great).  However,
 // it will work with less data, and with the bad samples on one end or
 // the other.
-void WAVVY_DLL_API InterpolateAudio(float *buffer, size_t len,
+void WAVACITY_DLL_API InterpolateAudio(float *buffer, size_t len,
                                        size_t firstBad, size_t numBad);
 
-#endif // __WAVVY_INTERPOLATE_AUDIO__
+#endif // __WAVACITY_INTERPOLATE_AUDIO__

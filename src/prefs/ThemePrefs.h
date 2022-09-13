@@ -6,13 +6,13 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/
 
-#ifndef __WAVVY_THEME_PREFS__
-#define __WAVVY_THEME_PREFS__
+#ifndef __WAVACITY_THEME_PREFS__
+#define __WAVACITY_THEME_PREFS__
 
 #include <wx/defs.h>
 #include <wx/event.h> // to declare a custom event type
@@ -22,7 +22,7 @@
 class ShuttleGui;
 
 // An event sent to the application when the user changes choice of theme
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_THEME_CHANGE, wxCommandEvent);
 
 #define THEME_PREFS_PLUGIN_SYMBOL ComponentInterfaceSymbol{ XO("Theme") }

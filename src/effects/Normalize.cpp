@@ -15,7 +15,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h" // for rint from configwin.h
+#include "../Wavacity.h" // for rint from configwin.h
 #include "Normalize.h"
 #include "LoadEffects.h"
 

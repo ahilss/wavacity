@@ -24,27 +24,27 @@ Paul Licameli split from ProjectManager.cpp
 #include "toolbars/SpectralSelectionBar.h"
 #include "toolbars/TimeToolBar.h"
 
-static WavvyProject::AttachedObjects::RegisteredFactory
+static WavacityProject::AttachedObjects::RegisteredFactory
 sProjectSelectionManagerKey {
-   []( WavvyProject &project ) {
+   []( WavacityProject &project ) {
       return std::make_shared< ProjectSelectionManager >( project );
    }
 };
 
 ProjectSelectionManager &ProjectSelectionManager::Get(
-   WavvyProject &project )
+   WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectSelectionManager >(
       sProjectSelectionManagerKey );
 }
 
 const ProjectSelectionManager &ProjectSelectionManager::Get(
-   const WavvyProject &project )
+   const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectSelectionManager::ProjectSelectionManager( WavvyProject &project )
+ProjectSelectionManager::ProjectSelectionManager( WavacityProject &project )
    : mProject{ project }
 {
 }

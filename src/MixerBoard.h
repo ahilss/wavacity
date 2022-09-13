@@ -8,11 +8,11 @@
 
 **********************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Experimental.h"
 
-#ifndef __WAVVY_MIXER_BOARD__
-#define __WAVVY_MIXER_BOARD__
+#ifndef __WAVACITY_MIXER_BOARD__
+#define __WAVACITY_MIXER_BOARD__
 
 #include <wx/frame.h> // to inherit
 #include <wx/scrolwin.h> // to inherit
@@ -59,7 +59,7 @@ public:
 };
 
 
-class WavvyProject;
+class WavacityProject;
 class MeterPanel;
 class MixerBoard;
 
@@ -76,7 +76,7 @@ class MixerTrackCluster final : public wxPanelWrapper
 {
 public:
    MixerTrackCluster(wxWindow* parent,
-                     MixerBoard* grandParent, WavvyProject* project,
+                     MixerBoard* grandParent, WavacityProject* project,
                      const std::shared_ptr<PlayableTrack> &pTrack,
                      const wxPoint& pos = wxDefaultPosition,
                      const wxSize& size = wxDefaultSize);
@@ -129,7 +129,7 @@ public:
 
 private:
    MixerBoard* mMixerBoard;
-   WavvyProject* mProject;
+   WavacityProject* mProject;
 
    // controls
    auStaticText* mStaticText_TrackName;
@@ -168,7 +168,7 @@ using MusicalInstrumentArray = std::vector<std::unique_ptr<MusicalInstrument>>;
 class MixerBoardScrolledWindow final : public wxScrolledWindow
 {
 public:
-   MixerBoardScrolledWindow(WavvyProject* project,
+   MixerBoardScrolledWindow(WavacityProject* project,
                               MixerBoard* parent, wxWindowID id = -1,
                               const wxPoint& pos = wxDefaultPosition,
                               const wxSize& size = wxDefaultSize,
@@ -180,7 +180,7 @@ private:
 
 private:
    MixerBoard* mMixerBoard;
-   WavvyProject* mProject;
+   WavacityProject* mProject;
 
 public:
    DECLARE_EVENT_TABLE()
@@ -195,7 +195,7 @@ class MixerBoard final : public wxWindow, private PrefsListener
    friend class MixerBoardFrame;
 
 public:
-   MixerBoard(WavvyProject* pProject,
+   MixerBoard(WavacityProject* pProject,
                wxFrame* parent,
                const wxPoint& pos = wxDefaultPosition,
                const wxSize& size = wxDefaultSize);
@@ -251,7 +251,7 @@ private:
    std::vector<MixerTrackCluster*> mMixerTrackClusters;
 
    MusicalInstrumentArray     mMusicalInstruments;
-   WavvyProject*           mProject;
+   WavacityProject*           mProject;
    MixerBoardScrolledWindow*  mScrolledWindow; // Holds the MixerTrackClusters and handles scrolling.
    double                     mPrevT1;
    TrackList*                 mTracks;
@@ -267,10 +267,10 @@ class MixerBoardFrame final
    , public TopLevelKeystrokeHandlingWindow
 {
 public:
-   MixerBoardFrame(WavvyProject* parent);
+   MixerBoardFrame(WavacityProject* parent);
    virtual ~MixerBoardFrame();
 
-   void Recreate(WavvyProject *pProject);
+   void Recreate(WavacityProject *pProject);
 
 private:
    // event handlers
@@ -281,7 +281,7 @@ private:
 
    void SetWindowTitle();
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 public:
    MixerBoard* mMixerBoard;
 
@@ -289,6 +289,6 @@ public:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_MIXER_BOARD__
+#endif // __WAVACITY_MIXER_BOARD__
 
 

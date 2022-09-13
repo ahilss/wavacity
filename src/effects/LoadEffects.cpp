@@ -11,7 +11,7 @@
 \brief Internal module to auto register all built in effects.  
 *****************************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "LoadEffects.h"
 
 #include "../Prefs.h"
@@ -43,13 +43,13 @@ void BuiltinEffectsModule::DoRegistration(
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -102,12 +102,12 @@ VendorSymbol BuiltinEffectsModule::GetVendor()
 wxString BuiltinEffectsModule::GetVersion()
 {
    // This "may" be different if this were to be maintained as a separate DLL
-   return WAVVY_VERSION_STRING;
+   return WAVACITY_VERSION_STRING;
 }
 
 TranslatableString BuiltinEffectsModule::GetDescription()
 {
-   return XO("Provides builtin effects to Wavvy");
+   return XO("Provides builtin effects to Wavacity");
 }
 
 // ============================================================================

@@ -1,16 +1,16 @@
 //
 //  CommandFunctors.h
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 4/22/16.
 //
 //
 
-#ifndef __WAVVY_COMMAND_FUNCTORS__
-#define __WAVVY_COMMAND_FUNCTORS__
+#ifndef __WAVACITY_COMMAND_FUNCTORS__
+#define __WAVACITY_COMMAND_FUNCTORS__
 
-class WavvyProject;
-class WavvyApp;
+class WavacityProject;
+class WavacityApp;
 class CommandContext;
 class wxEvtHandler;
 
@@ -28,9 +28,9 @@ class wxEvtHandler;
 using CommandHandlerObject = wxEvtHandler;
 
 // First of two functions registered with each command: an extractor
-// of the handler object from the WavvyProject
+// of the handler object from the WavacityProject
 using CommandHandlerFinder =
-   std::function< CommandHandlerObject&(WavvyProject &) >;
+   std::function< CommandHandlerObject&(WavacityProject &) >;
 
 // Second of two function pointers registered with each command: a pointer
 // to a member function of the handler object

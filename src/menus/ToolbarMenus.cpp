@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../Menus.h"
 #include "../ProjectSettings.h"
@@ -26,9 +26,9 @@ void OnResetToolBars(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static ToolbarActions::Handler instance;
    return instance;
 };

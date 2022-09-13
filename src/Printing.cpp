@@ -8,13 +8,13 @@
 
 *******************************************************************//*!
 
-\class WavvyPrintout
+\class WavacityPrintout
 \brief Derived from wxPrintout, this class helps with printing.
 
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Printing.h"
 
 #include <wx/defs.h>
@@ -28,7 +28,7 @@
 #include "ViewInfo.h"
 #include "Track.h"
 #include "widgets/Ruler.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 #include "TrackPanelDrawingContext.h"
 
@@ -41,10 +41,10 @@ wxPrintData &gPrintData()
    return theData;
 }
 
-class WavvyPrintout final : public wxPrintout
+class WavacityPrintout final : public wxPrintout
 {
  public:
-   WavvyPrintout(wxString title,
+   WavacityPrintout(wxString title,
                     TrackList *tracks, TrackPanel &panel):
       wxPrintout(title),
       mTracks(tracks)
@@ -62,7 +62,7 @@ class WavvyPrintout final : public wxPrintout
    TrackList *mTracks;
 };
 
-bool WavvyPrintout::OnPrintPage(int WXUNUSED(page))
+bool WavacityPrintout::OnPrintPage(int WXUNUSED(page))
 {
    wxDC *dc = GetDC();
    if (!dc)
@@ -135,17 +135,17 @@ bool WavvyPrintout::OnPrintPage(int WXUNUSED(page))
    return true;
 }
 
-bool WavvyPrintout::HasPage(int page)
+bool WavacityPrintout::HasPage(int page)
 {
    return (page==1);
 }
 
-bool WavvyPrintout::OnBeginDocument(int startPage, int endPage)
+bool WavacityPrintout::OnBeginDocument(int startPage, int endPage)
 {
    return wxPrintout::OnBeginDocument(startPage, endPage);
 }
 
-void WavvyPrintout::GetPageInfo(int *minPage, int *maxPage,
+void WavacityPrintout::GetPageInfo(int *minPage, int *maxPage,
                                    int *selPageFrom, int *selPageTo)
 {
    *minPage = 1;
@@ -171,10 +171,10 @@ void HandlePrint(
    wxPrintDialogData printDialogData(gPrintData());
 
    wxPrinter printer(&printDialogData);
-   WavvyPrintout printout(name, tracks, panel);
+   WavacityPrintout printout(name, tracks, panel);
    if (!printer.Print(parent, &printout, true)) {
       if (wxPrinter::GetLastError() == wxPRINTER_ERROR) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("There was a problem printing."),
             XO("Print"),
             wxOK);

@@ -12,7 +12,7 @@
 #define _IMPORT_
 
 #include "ImportForwards.h"
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include <vector>
 #include <wx/tokenzr.h> // for enum wxStringTokenizerMode
 
@@ -23,7 +23,7 @@
 
 class wxArrayString;
 class wxListBox;
-class WavvyProject;
+class WavacityProject;
 class Tags;
 class WaveTrackFactory;
 class Track;
@@ -165,7 +165,7 @@ public:
     std::unique_ptr<ExtImportItem> CreateDefaultImportItem();
 
    // if false, the import failed and errorMessage will be set.
-   bool Import( WavvyProject &project,
+   bool Import( WavacityProject &project,
               const FilePath &fName,
               WaveTrackFactory *trackFactory,
               TrackHolders &tracks,

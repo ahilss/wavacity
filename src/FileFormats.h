@@ -8,12 +8,12 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FILE_FORMATS__
-#define __WAVVY_FILE_FORMATS__
+#ifndef __WAVACITY_FILE_FORMATS__
+#define __WAVACITY_FILE_FORMATS__
 
-#include "Wavvy.h" // for __UNIX__
+#include "Wavacity.h" // for __UNIX__
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 //#include <mutex>
 #include "MemoryX.h"

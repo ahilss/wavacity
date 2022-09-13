@@ -6,7 +6,7 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   License: GPL v2 - see LICENSE.txt
 
 ********************************************************************//**
@@ -14,7 +14,7 @@
 \file AllThemeResources.h
 
 This file contains definitions of all images, cursors, colours, fonts
-and grids used by Wavvy.
+and grids used by Wavacity.
 
 This will be split up into separate include files to reduce the amount
 of recompilation on a change.
@@ -30,7 +30,7 @@ To add an image, you give its size and name like so:
 
 If you do this and run the program the image will be black to start
 with, but you can go into ThemePrefs and load it (load components)
-from there.  Wavvy will look for a file called "Pause.png".
+from there.  Wavacity will look for a file called "Pause.png".
 
  - Now save into ImageCache.
  - From here on you can get the image by loading ImageCache.
@@ -44,7 +44,7 @@ from there.  Wavvy will look for a file called "Pause.png".
 // Note: No '#ifndef/#define' pair on this header file.
 // we want to include it multiple times in Theme.cpp.
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Experimental.h"
 
 #include "MacroMagic.h"
@@ -243,7 +243,7 @@ from there.  Wavvy will look for a file called "Pause.png".
 #define LOGOWITHNAME_HEIGHT 200
 
    SET_THEME_FLAGS( resFlagNewLine );
-   DEFINE_IMAGE( bmpWavvyLogo48x48, wxImage( 48, 48 ), wxT("WavvyLogo48x48"));
+   DEFINE_IMAGE( bmpWavacityLogo48x48, wxImage( 48, 48 ), wxT("WavacityLogo48x48"));
 
 
    DEFINE_COLOUR( clrBlank,      wxColour( 64,  64,  64), wxT("Blank"));

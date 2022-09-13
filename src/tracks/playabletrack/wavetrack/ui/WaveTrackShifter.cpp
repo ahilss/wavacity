@@ -189,7 +189,7 @@ private:
 
 using MakeWaveTrackShifter = MakeTrackShifter::Override<WaveTrack>;
 template<> template<> auto MakeWaveTrackShifter::Implementation() -> Function {
-   return [](WaveTrack &track, WavvyProject&) {
+   return [](WaveTrack &track, WavacityProject&) {
       return std::make_unique<WaveTrackShifter>(track);
    };
 }

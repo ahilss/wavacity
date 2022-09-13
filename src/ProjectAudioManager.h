@@ -8,8 +8,8 @@ Paul Licameli split from ProjectManager.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_AUDIO_MANAGER__
-#define __WAVVY_PROJECT_AUDIO_MANAGER__
+#ifndef __WAVACITY_PROJECT_AUDIO_MANAGER__
+#define __WAVACITY_PROJECT_AUDIO_MANAGER__
 
 #include <memory>
 #include <vector>
@@ -19,7 +19,7 @@ Paul Licameli split from ProjectManager.h
 
 constexpr int RATE_NOT_SELECTED{ -1 };
 
-class WavvyProject;
+class WavacityProject;
 struct AudioIOStartStreamOptions;
 class TrackList;
 class SelectedRegion;
@@ -44,12 +44,12 @@ class ProjectAudioManager final
    , public std::enable_shared_from_this< ProjectAudioManager >
 {
 public:
-   static ProjectAudioManager &Get( WavvyProject &project );
-   static const ProjectAudioManager &Get( const WavvyProject &project );
+   static ProjectAudioManager &Get( WavacityProject &project );
+   static const ProjectAudioManager &Get( const WavacityProject &project );
 
    // Find suitable tracks to record into, or return an empty array.
    static WaveTrackArray ChooseExistingRecordingTracks(
-      WavvyProject &proj, bool selectedOnly,
+      WavacityProject &proj, bool selectedOnly,
       double targetRate = RATE_NOT_SELECTED);
 
    static bool UseDuplex();
@@ -57,7 +57,7 @@ public:
    static TransportTracks GetAllPlaybackTracks(
       TrackList &trackList, bool selectedOnly, bool useMidi = false);
 
-   explicit ProjectAudioManager( WavvyProject &project );
+   explicit ProjectAudioManager( WavacityProject &project );
    ProjectAudioManager( const ProjectAudioManager & ) PROHIBITED;
    ProjectAudioManager &operator=( const ProjectAudioManager & ) PROHIBITED;
    ~ProjectAudioManager() override;
@@ -86,7 +86,7 @@ public:
 
    void OnRecord(bool altAppearance);
 
-   bool DoRecord(WavvyProject &project,
+   bool DoRecord(WavacityProject &project,
       const TransportTracks &transportTracks, // If captureTracks is empty, then tracks are created
       double t0, double t1,
       bool altAppearance,
@@ -142,7 +142,7 @@ private:
 
    void OnCheckpointFailure(wxCommandEvent &evt);
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    std::shared_ptr<TrackList> mCutPreviewTracks;
 
@@ -160,11 +160,11 @@ private:
    int mDisplayedRate{ 0 };
    static std::pair< TranslatableStrings, unsigned >
       StatusWidthFunction(
-         const WavvyProject &project, StatusBarField field);
+         const WavacityProject &project, StatusBarField field);
 };
 
-AudioIOStartStreamOptions DefaultPlayOptions( WavvyProject &project );
-AudioIOStartStreamOptions DefaultSpeedPlayOptions( WavvyProject &project );
+AudioIOStartStreamOptions DefaultPlayOptions( WavacityProject &project );
+AudioIOStartStreamOptions DefaultSpeedPlayOptions( WavacityProject &project );
 
 struct PropertiesOfSelected
 {
@@ -173,7 +173,7 @@ struct PropertiesOfSelected
    int numberOfSelected{ 0 };
 };
 
-PropertiesOfSelected GetPropertiesOfSelected(const WavvyProject &proj);
+PropertiesOfSelected GetPropertiesOfSelected(const WavacityProject &proj);
 
 #include "commands/CommandFlag.h"
 

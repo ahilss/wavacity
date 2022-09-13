@@ -8,7 +8,7 @@ Paul Licameli
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "ButtonHandle.h"
 
 #include "../../HitTestResult.h"
@@ -27,13 +27,13 @@ ButtonHandle::~ButtonHandle()
 {
 }
 
-void ButtonHandle::Enter(bool, WavvyProject *)
+void ButtonHandle::Enter(bool, WavacityProject *)
 {
    mChangeHighlight = RefreshCode::RefreshCell;
 }
 
 UIHandle::Result ButtonHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -56,7 +56,7 @@ UIHandle::Result ButtonHandle::Click
 }
 
 UIHandle::Result ButtonHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    const wxMouseEvent &event = evt.event;
    using namespace RefreshCode;
@@ -71,7 +71,7 @@ UIHandle::Result ButtonHandle::Drag
 }
 
 HitTestPreview ButtonHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *project)
+(const TrackPanelMouseState &st, WavacityProject *project)
 {
    // No special cursor
    TranslatableString message;
@@ -81,7 +81,7 @@ HitTestPreview ButtonHandle::Preview
 }
 
 UIHandle::Result ButtonHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    using namespace RefreshCode;
@@ -96,7 +96,7 @@ UIHandle::Result ButtonHandle::Release
    return result;
 }
 
-UIHandle::Result ButtonHandle::Cancel(WavvyProject *WXUNUSED(pProject))
+UIHandle::Result ButtonHandle::Cancel(WavacityProject *WXUNUSED(pProject))
 {
    using namespace RefreshCode;
    return RefreshCell; // perhaps unnecessarily if pointer is out of the box

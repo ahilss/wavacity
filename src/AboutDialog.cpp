@@ -20,12 +20,12 @@ close it.
 
 \class AboutDialogCreditItem
 \brief AboutDialogCreditItem is a structure used by the AboutDialog to
-hold information about one contributor to Wavvy.
+hold information about one contributor to Wavacity.
 
 *//********************************************************************/
 
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "AboutDialog.h"
 
 #include "Experimental.h"
@@ -49,9 +49,9 @@ hold information about one contributor to Wavvy.
 
 // DA: Logo for About box.
 #ifdef EXPERIMENTAL_DA
-#include "../images/DarkWavvyLogoWithName.xpm"
+#include "../images/DarkWavacityLogoWithName.xpm"
 #else
-#include "../images/WavvyLogoWithName.xpm"
+#include "../images/WavacityLogoWithName.xpm"
 #endif
 
 // Notice this is a "system include".  This is on purpose and only until
@@ -69,58 +69,58 @@ hold information about one contributor to Wavvy.
 #endif
 
 #ifdef REV_LONG
-#define REV_IDENT wxString( "[[https://github.com/ahilss/wavvy/commit/" )+ REV_LONG + "|" + wxString( REV_LONG ).Left(6) + "]] of " +  REV_TIME 
+#define REV_IDENT wxString( "[[https://github.com/ahilss/wavacity/commit/" )+ REV_LONG + "|" + wxString( REV_LONG ).Left(6) + "]] of " +  REV_TIME 
 #else
 #define REV_IDENT (XO("No revision identifier was provided").Translation())
 #endif
 
-#define ORIGINAL_NAME wxString("AudaciTy").Capitalize()
+#define ORIGINAL_NAME wxString("AuDaCiTy").Capitalize()
 
 // To substitute into many other translatable strings
 static const auto ProgramName =
-   //XO("Wavvy");
-   Verbatim("Wavvy");
+   //XO("Wavacity");
+   Verbatim("Wavacity");
 
 void AboutDialog::CreateCreditsList()
 {
    const auto sysAdminFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, system administration");
    const auto coFounderFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, co-founder and developer");
    const auto developerFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, developer");
    const auto documentationAndSupportFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, documentation and support");
    const auto documentationAndSupportFrenchFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, documentation and support, French");
    const auto qualityAssuranceFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, quality assurance");
    const auto accessibilityAdvisorFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, accessibility advisor");
    const auto graphicArtistFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, graphic artist");
    const auto composerFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, composer");
    const auto testerFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, tester");
    const auto NyquistPluginsFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, Nyquist plug-ins");
    const auto webDeveloperFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, web developer");
    const auto graphicsFormat =
-   /* i18n-hint: For "About Wavvy..." credits, substituting a person's proper name */
+   /* i18n-hint: For "About Wavacity..." credits, substituting a person's proper name */
       XO("%s, graphics");
 
    // The Audacity Team: developers and support
@@ -298,7 +298,7 @@ AboutDialog::AboutDialog(wxWindow * parent)
    ShuttleGui S( this, eIsCreating );
    S.StartNotebook();
    {
-      PopulateWavvyPage( S );
+      PopulateWavacityPage( S );
       PopulateInformationPage( S );
       PopulateLicensePage( S );
    }
@@ -314,7 +314,7 @@ AboutDialog::AboutDialog(wxWindow * parent)
 
 #define ABOUT_DIALOG_WIDTH 506
 
-void AboutDialog::PopulateWavvyPage( ShuttleGui & S )
+void AboutDialog::PopulateWavacityPage( ShuttleGui & S )
 {
    CreateCreditsList();
 
@@ -322,8 +322,8 @@ void AboutDialog::PopulateWavvyPage( ShuttleGui & S )
 // DA: Says that it is a customised version.
 #ifdef EXPERIMENTAL_DA
       wxT(
-"Wavvy, which this is a customised version of, is a free program written by a worldwide team of [[https://www.audacityteam.org/about/credits|volunteers]]. \
-Wavvy is [[https://www.audacityteam.org/download|available]] for Windows, Mac, and GNU/Linux (and other Unix-like systems).")
+"Wavacity, which this is a customised version of, is a free program written by a worldwide team of [[https://www.audacityteam.org/about/credits|volunteers]]. \
+Wavacity is [[https://www.audacityteam.org/download|available]] for Windows, Mac, and GNU/Linux (and other Unix-like systems).")
 #else
 /* Do the i18n of a string with markup carefully with hints.
  (Remember languages with cases.) */
@@ -339,7 +339,7 @@ Wavvy is [[https://www.audacityteam.org/download|available]] for Windows, Mac, a
                .Format( XO("volunteers") ),
             ProgramName,
             Verbatim("[[https://www.audacityteam.org/download|%s]]")
-               /* i18n-hint: substitutes into "Wavvy is %s" */
+               /* i18n-hint: substitutes into "Wavacity is %s" */
                .Format( XO("available") ) )
 #endif
    ;
@@ -367,7 +367,7 @@ visit our %s.")
       par2StrTranslated.Replace( wxT(", in English,"), wxT("") );
 
    /* i18n-hint: The translation of "translator_credits" will appear
-    *  in the credits in the About Wavvy window.  Use this to add
+    *  in the credits in the About Wavacity window.  Use this to add
     *  your own name(s) to the credits.
     *
     *  For example:  "English translation by Dominic Mazzoni." */
@@ -387,19 +387,19 @@ visit our %s.")
 #ifdef EXPERIMENTAL_DA
       #undef _
       #define _(s) wxGetTranslation((s))
-      << wxT("<h3>DarkWavvy ")
-      << wxString(WAVVY_VERSION_STRING)
+      << wxT("<h3>DarkWavacity ")
+      << wxString(WAVACITY_VERSION_STRING)
       << wxT("</center></h3>")
-      << wxT("Customised version of the Wavvy free, open source, cross-platform software " )
+      << wxT("Customised version of the Wavacity free, open source, cross-platform software " )
       << wxT("for recording and editing sounds.")
       << wxT("<p><br>&nbsp; &nbsp; <b>Audacity<sup>&reg;</sup></b> software is copyright &copy; 1999-2021 Audacity Team.<br>")
-      << wxT("&nbsp; &nbsp; The name <b>Wavvy</b> is a registered trademark of Dominic Mazzoni.<br><br>")
+      << wxT("&nbsp; &nbsp; The name <b>Wavacity</b> is a registered trademark of Dominic Mazzoni.<br><br>")
 
 #else
       << XO("<h3>")
-      << wxT("Wavvy Audio Editor")
+      << wxT("Wavacity Audio Editor")
       << wxT(" ")
-      << wxString(WAVVY_VERSION_STRING)
+      << wxString(WAVACITY_VERSION_STRING)
       << wxT("</center></h3>")
       /* i18n-hint: The program's name substitutes for %s */
       << XO("A free, open source audio editor for the web.")
@@ -427,7 +427,7 @@ visit our %s.")
 // DA: Customisation credit
 #ifdef EXPERIMENTAL_DA
       << wxT("<p><b>")
-      << XO("DarkWavvy Customisation")
+      << XO("DarkWavacity Customisation")
       << wxT("</b><br>")
 #endif
 
@@ -491,10 +491,10 @@ visit our %s.")
 
 // DA: Link for DA url too
 #ifdef EXPERIMENTAL_DA
-      << wxT("<br>DarkWavvy website: [[http://www.darkwavvy.com/|https://www.darkwavvy.com/]]")
+      << wxT("<br>DarkWavacity website: [[http://www.darkwavacity.com/|https://www.darkwavacity.com/]]")
 #else
       << wxT("<p><br>")
-      /* i18n-hint Wavvy's name substitutes for first and third %s,
+      /* i18n-hint Wavacity's name substitutes for first and third %s,
        and a "copyright" symbol for the second */
       << XO("%s software is copyright %s 2022 [[https://www.apollovibes.com/|Apollo Vibes, LLC]].")
          .Format(
@@ -511,8 +511,8 @@ visit our %s.")
    auto pPage = S.StartNotebookPage( ProgramName );
    S.StartVerticalLay(1);
    {
-      //v For now, change to WavvyLogoWithName via old-fashioned way, not Theme.
-      wxBitmap logo(WavvyLogoWithName_xpm); //v
+      //v For now, change to WavacityLogoWithName via old-fashioned way, not Theme.
+      wxBitmap logo(WavacityLogoWithName_xpm); //v
 
       // JKC: Resize to 50% of size.  Later we may use a smaller xpm as
       // our source, but this allows us to tweak the size - if we want to.
@@ -531,8 +531,8 @@ visit our %s.")
       icon =
          safenew wxStaticBitmap(S.GetParent(), -1,
          //*logo, //v
-         //v theTheme.Bitmap(bmpWavvyLogo), wxPoint(93, 10), wxSize(215, 190));
-         //v theTheme.Bitmap(bmpWavvyLogoWithName),
+         //v theTheme.Bitmap(bmpWavacityLogo), wxPoint(93, 10), wxSize(215, 190));
+         //v theTheme.Bitmap(bmpWavacityLogoWithName),
          RescaledBitmap,
          wxDefaultPosition,
          wxSize((int)(LOGOWITHNAME_WIDTH*fScale), (int)(LOGOWITHNAME_HEIGHT*fScale)));
@@ -585,7 +585,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
  
    informationStr
       << wxT("<h3>")
-   /* i18n-hint: Information about when wavvy was compiled follows */
+   /* i18n-hint: Information about when wavacity was compiled follows */
       << XO("The Build")
       << wxT("</h3>\n<table>"); // start build info table
 
@@ -629,7 +629,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
 
    // Install prefix
 #ifdef __WXGTK__
-   /* i18n-hint: The directory wavvy is installed into (on *nix systems) */
+   /* i18n-hint: The directory wavacity is installed into (on *nix systems) */
    AddBuildinfoRow(&informationStr, XO("Installation Prefix:"), \
          wxT(INSTALL_PREFIX));
 #endif
@@ -643,7 +643,7 @@ void AboutDialog::PopulateInformationPage( ShuttleGui & S )
 
    informationStr
       << wxT("<h3>")
-      /* i18n-hint: Libraries that are essential to wavvy */
+      /* i18n-hint: Libraries that are essential to wavacity */
       << XO("Core Libraries")
       << wxT("</h3>\n<table>");  // start table of core libraries
 

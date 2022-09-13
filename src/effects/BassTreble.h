@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_BASS_TREBLE__
-#define __WAVVY_EFFECT_BASS_TREBLE__
+#ifndef __WAVACITY_EFFECT_BASS_TREBLE__
+#define __WAVACITY_EFFECT_BASS_TREBLE__
 
 #include "Effect.h"
 

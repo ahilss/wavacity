@@ -8,18 +8,18 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABELDIALOG__
-#define __WAVVY_LABELDIALOG__
+#ifndef __WAVACITY_LABELDIALOG__
+#define __WAVACITY_LABELDIALOG__
 
 #include <vector>
 #include <wx/defs.h>
 
 #include "widgets/wxPanelWrapper.h" // to inherit
-#include "wavvy/ComponentInterface.h" // member variable
+#include "wavacity/ComponentInterface.h" // member variable
 
 class wxArrayString;
 class wxGridEvent;
-class WavvyProject;
+class WavacityProject;
 class ChoiceEditor;
 class Grid;
 class NumericEditor;
@@ -37,7 +37,7 @@ class LabelDialog final : public wxDialogWrapper
  public:
 
    LabelDialog(wxWindow *parent,
-               WavvyProject &project,
+               WavacityProject &project,
                TrackList *tracks,
 
                // if NULL edit all tracks, else this one only:
@@ -93,7 +93,7 @@ class LabelDialog final : public wxDialogWrapper
 
  private:
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    Grid *mGrid;
    ChoiceEditor *mChoiceEditor;

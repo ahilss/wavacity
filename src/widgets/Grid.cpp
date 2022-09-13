@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Grid.h"
 
 #include <wx/setup.h> // for wxUSE_* macros

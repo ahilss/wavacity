@@ -24,7 +24,7 @@
 #include "CommandType.h"
 #include "Command.h"
 
-class MessageCommand : public WavvyCommand
+class MessageCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -36,7 +36,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#message");};
 public:
    wxString mMessage;

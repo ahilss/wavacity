@@ -12,13 +12,13 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIME_TEXT_CTRL__
-#define __WAVVY_TIME_TEXT_CTRL__
+#ifndef __WAVACITY_TIME_TEXT_CTRL__
+#define __WAVACITY_TIME_TEXT_CTRL__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../MemoryX.h"
-#include "../../include/wavvy/ComponentInterface.h"
+#include "../../include/wavacity/ComponentInterface.h"
 #include <vector>
 #include <wx/setup.h> // for wxUSE_* macros
 #include <wx/defs.h>
@@ -29,9 +29,9 @@
 // One event type for each type of control.  Event is raised when a control
 // changes its format.  Owners of controls of the same type can listen and
 // update their formats to agree.
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_TIMETEXTCTRL_UPDATED, -1);
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_FREQUENCYTEXTCTRL_UPDATED, -1);
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_BANDWIDTHTEXTCTRL_UPDATED,
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_TIMETEXTCTRL_UPDATED, -1);
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_FREQUENCYTEXTCTRL_UPDATED, -1);
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_BANDWIDTHTEXTCTRL_UPDATED,
                             -1);
 
 /** \brief struct to hold a formatting control string and its user facing name
@@ -298,4 +298,4 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_TIME_TEXT_CTRL__
+#endif // __WAVACITY_TIME_TEXT_CTRL__

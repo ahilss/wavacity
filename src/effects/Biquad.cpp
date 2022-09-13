@@ -10,7 +10,7 @@ Max Maisel
 ***********************************************************************/
 
 #include "Biquad.h"
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include <cmath>
 
 #define square(a) ((a)*(a))

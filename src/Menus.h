@@ -7,10 +7,10 @@
   Dominic Mazzoni
 
 **********************************************************************/
-#ifndef __WAVVY_MENUS__
-#define __WAVVY_MENUS__
+#ifndef __WAVACITY_MENUS__
+#define __WAVACITY_MENUS__
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 #include <wx/string.h> // member variable
 #include "Prefs.h"
@@ -19,7 +19,7 @@
 
 class wxArrayString;
 class wxCommandEvent;
-class WavvyProject;
+class WavacityProject;
 class CommandContext;
 class CommandManager;
 class PluginDescriptor;
@@ -40,8 +40,8 @@ class MenuCreator
 public:
    MenuCreator();
    ~MenuCreator();
-   void CreateMenusAndCommands(WavvyProject &project);
-   void RebuildMenuBar(WavvyProject &project);
+   void CreateMenusAndCommands(WavacityProject &project);
+   void RebuildMenuBar(WavacityProject &project);
 
    static void RebuildAllMenuBars();
 
@@ -78,19 +78,19 @@ class MenuManager final
 {
 public:
 
-   static MenuManager &Get( WavvyProject &project );
-   static const MenuManager &Get( const WavvyProject &project );
+   static MenuManager &Get( WavacityProject &project );
+   static const MenuManager &Get( const WavacityProject &project );
 
    explicit
-   MenuManager( WavvyProject &project );
+   MenuManager( WavacityProject &project );
    MenuManager( const MenuManager & ) PROHIBITED;
    MenuManager &operator=( const MenuManager & ) PROHIBITED;
    ~MenuManager();
 
    static void Visit( ToolbarMenuVisitor &visitor );
 
-   static void ModifyUndoMenuItems(WavvyProject &project);
-   static void ModifyToolbarMenus(WavvyProject &project);
+   static void ModifyUndoMenuItems(WavacityProject &project);
+   static void ModifyToolbarMenus(WavacityProject &project);
    // Calls ModifyToolbarMenus() on all projects
    static void ModifyAllProjectToolbarMenus();
 
@@ -116,7 +116,7 @@ private:
 
    void OnUndoRedo( wxCommandEvent &evt );
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
 public:
    // 0 is grey out, 1 is Autoselect, 2 is Give warnings.

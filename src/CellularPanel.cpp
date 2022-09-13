@@ -27,7 +27,7 @@
 
 *//*****************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "CellularPanel.h"
 
 #include <wx/eventfilter.h>
@@ -566,7 +566,7 @@ void CellularPanel::OnKeyDown(wxKeyEvent & event)
       // This switch case is now redundant with the global filter
       if(HandleEscapeKey(true))
          // Don't skip the event, eat it so that
-         // WavvyApp does not also stop any playback.
+         // WavacityApp does not also stop any playback.
          return;
       else
          break;

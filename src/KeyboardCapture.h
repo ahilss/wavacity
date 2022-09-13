@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_KEYBOARD_CAPTURE__
-#define __WAVVY_KEYBOARD_CAPTURE__
+#ifndef __WAVACITY_KEYBOARD_CAPTURE__
+#define __WAVACITY_KEYBOARD_CAPTURE__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <functional>
 #include <wx/event.h>
@@ -24,10 +24,10 @@
 /// installed as the handler with KeyboardCapture::Capture; if it does not skip
 /// the event, it will receive further events of type wxEVT_KEY_DOWN,
 /// and then wxEVT_CHAR (if key-down was not skipped; those further events
-/// don't actually come from wxWidgets, but are simulated by Wavvy, as
+/// don't actually come from wxWidgets, but are simulated by Wavacity, as
 /// translations of the EVT_CHAR_HOOK event); or, wxEVT_KEY_UP (really from
 /// wxWidgets).
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_CAPTURE_KEY, -1);
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_CAPTURE_KEY, -1);
 
 namespace KeyboardCapture
 {

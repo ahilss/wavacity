@@ -14,7 +14,7 @@ ODTask requests and internals.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ODManager.h"
 
 #include "ODTask.h"
@@ -170,7 +170,7 @@ ODManager::~ODManager()
    mTerminateMutex.Unlock();
 
    //This while loop waits for ODTasks to finish and the DELETE removes all tasks from the Queue.
-   //This function is called from the main wavvy event thread, so there should not be more requests for pMan
+   //This function is called from the main wavacity event thread, so there should not be more requests for pMan
    mTerminatedMutex.Lock();
    while (!mTerminated)
    {

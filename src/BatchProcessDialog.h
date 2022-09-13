@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MACROS_WINDOW__
-#define __WAVVY_MACROS_WINDOW__
+#ifndef __WAVACITY_MACROS_WINDOW__
+#define __WAVACITY_MACROS_WINDOW__
 
 #include <wx/defs.h>
 
@@ -23,14 +23,14 @@ class wxListCtrl;
 class wxListEvent;
 class wxButton;
 class wxTextCtrl;
-class WavvyProject;
+class WavacityProject;
 class ShuttleGui;
 
 class ApplyMacroDialog : public wxDialogWrapper {
  public:
    // constructors and destructors
    ApplyMacroDialog(
-      wxWindow * parent, WavvyProject &project, bool bInherited=false);
+      wxWindow * parent, WavacityProject &project, bool bInherited=false);
    virtual ~ApplyMacroDialog();
  public:
    // Populate methods NOT virtual.
@@ -63,7 +63,7 @@ class ApplyMacroDialog : public wxDialogWrapper {
    wxString mMacroBeingRenamed;
 
 protected:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
    const MacroCommandsCatalog mCatalog;
 
    DECLARE_EVENT_TABLE()
@@ -74,7 +74,7 @@ class MacrosWindow final : public ApplyMacroDialog,
 {
 public:
    MacrosWindow(
-      wxWindow * parent, WavvyProject &project, bool bExpanded=true);
+      wxWindow * parent, WavacityProject &project, bool bExpanded=true);
    ~MacrosWindow();
    void UpdateDisplay( bool bExpanded );
 
@@ -131,7 +131,7 @@ private:
    // PrefsListener implementation
    void UpdatePrefs() override;
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    wxButton *mRemove;
    wxButton *mRename;

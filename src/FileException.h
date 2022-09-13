@@ -7,10 +7,10 @@
 
 */
 
-#ifndef __WAVVY_FILE_EXCEPTION__
-#define __WAVVY_FILE_EXCEPTION__
+#ifndef __WAVACITY_FILE_EXCEPTION__
+#define __WAVACITY_FILE_EXCEPTION__
 
-#include "WavvyException.h"
+#include "WavacityException.h"
 #include <wx/filename.h> // wxFileName member variable
 
 //! Thrown for failure of file or database operations in deeply nested places

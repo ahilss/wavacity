@@ -13,7 +13,7 @@
 \brief An ImportFileHandle for LOF data
 
   Supports the opening of ".lof" files which are text files that contain
-  a list of individual files to open in wavvy in specific formats. Files may
+  a list of individual files to open in wavacity in specific formats. Files may
   be file names (in the same directory as the LOF file), absolute paths or
   relative paths relative to the directory of the LOF file.
 
@@ -69,7 +69,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #include <wx/string.h>
 #include <wx/utils.h>
@@ -89,7 +89,7 @@
 #include "../ProjectManager.h"
 #include "../ProjectWindow.h"
 #include "../Prefs.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 
 #define BINARY_FILE_CHECK_BUFFER_SIZE 1024
@@ -113,14 +113,14 @@ public:
    wxString GetPluginStringID() override { return wxT("lof"); }
    TranslatableString GetPluginFormatDescription() override;
    std::unique_ptr<ImportFileHandle> Open(
-      const FilePath &Filename, WavvyProject *pProject) override;
+      const FilePath &Filename, WavacityProject *pProject) override;
 };
 
 
 class LOFImportFileHandle final : public ImportFileHandle
 {
 public:
-   LOFImportFileHandle( WavvyProject *pProject,
+   LOFImportFileHandle( WavacityProject *pProject,
       const FilePath & name, std::unique_ptr<wxTextFile> &&file);
    ~LOFImportFileHandle();
 
@@ -148,7 +148,7 @@ private:
    std::unique_ptr<wxTextFile> mTextFile;
    wxFileName mLOFFileName;  /**< The name of the LOF file, which is used to
                                 interpret relative paths in it */
-   WavvyProject *mProject{};
+   WavacityProject *mProject{};
 
    // In order to know whether or not to create a NEW window
    bool              windowCalledOnce{ false };
@@ -162,7 +162,7 @@ private:
    double            scrollOffset{ 0 };
 };
 
-LOFImportFileHandle::LOFImportFileHandle( WavvyProject *pProject,
+LOFImportFileHandle::LOFImportFileHandle( WavacityProject *pProject,
    const FilePath & name, std::unique_ptr<wxTextFile> &&file)
 :  ImportFileHandle(name)
    , mTextFile(std::move(file))
@@ -177,7 +177,7 @@ TranslatableString LOFImportPlugin::GetPluginFormatDescription()
 }
 
 std::unique_ptr<ImportFileHandle> LOFImportPlugin::Open(
-   const FilePath &filename, WavvyProject *pProject)
+   const FilePath &filename, WavacityProject *pProject)
 {
    // Check if it is a binary file
    {
@@ -228,12 +228,12 @@ ProgressResult LOFImportFileHandle::Import(
 {
    // Unlike other ImportFileHandle subclasses, this one never gives any tracks
    // back to the caller.
-   // Instead, it recursively calls WavvyProject::Import for each file listed
+   // Instead, it recursively calls WavacityProject::Import for each file listed
    // in the .lof file.
    // Each importation creates a NEW undo state.
    // If there is an error or exception during one of them, only that one's
    // side effects are rolled back, and the rest of the import list is skipped.
-   // The file may have "window" directives that cause NEW WavvyProjects
+   // The file may have "window" directives that cause NEW WavacityProjects
    // to be created, and the undo states are pushed onto the latest project.
    // If a project is created but the first file import into it fails, destroy
    // the project.
@@ -277,10 +277,10 @@ void RegisterLOFImportPlugin() {}
 #ifdef USE_MIDI
 // return null on failure; if success, return the given project, or a NEW
 // one, if the given was null; create no NEW project if failure
-static WavvyProject *DoImportMIDIProject(
-   WavvyProject *pProject, const FilePath &fileName)
+static WavacityProject *DoImportMIDIProject(
+   WavacityProject *pProject, const FilePath &fileName)
 {
-   WavvyProject *pNewProject {};
+   WavacityProject *pNewProject {};
    if ( !pProject )
       pProject = pNewProject = ProjectManager::New();
    auto cleanup = finally( [&]
@@ -341,7 +341,7 @@ void LOFImportFileHandle::lofOpenFiles(wxString* ln)
             }
             else
             {
-               WavvyMessageBox(
+               WavacityMessageBox(
                   /* i18n-hint: You do not need to translate "LOF" */
                   XO("Invalid window offset in LOF file."),
                   /* i18n-hint: You do not need to translate "LOF" */
@@ -364,7 +364,7 @@ void LOFImportFileHandle::lofOpenFiles(wxString* ln)
             }
             else
             {
-               WavvyMessageBox(
+               WavacityMessageBox(
                   /* i18n-hint: You do not need to translate "LOF" */
                   XO("Invalid duration in LOF file."),
                   /* i18n-hint: You do not need to translate "LOF" */
@@ -459,7 +459,7 @@ void LOFImportFileHandle::lofOpenFiles(wxString* ln)
                if (targetfile.AfterLast(wxT('.')).IsSameAs(wxT("mid"), false) ||
                    targetfile.AfterLast(wxT('.')).IsSameAs(wxT("midi"), false))
                {
-                  WavvyMessageBox(
+                  WavacityMessageBox(
                      XO("MIDI tracks cannot be offset individually, only audio files can be."),
                      XO("LOF Error"),
                      wxOK | wxCENTRE);
@@ -476,7 +476,7 @@ void LOFImportFileHandle::lofOpenFiles(wxString* ln)
             } // end of converting "offset" argument
             else
             {
-               WavvyMessageBox(
+               WavacityMessageBox(
                   /* i18n-hint: You do not need to translate "LOF" */
                   XO("Invalid track offset in LOF file."),
                   /* i18n-hint: You do not need to translate "LOF" */

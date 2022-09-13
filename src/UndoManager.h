@@ -46,38 +46,38 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_UNDOMANAGER__
-#define __WAVVY_UNDOMANAGER__
+#ifndef __WAVACITY_UNDOMANAGER__
+#define __WAVACITY_UNDOMANAGER__
 
 #include <vector>
 #include <wx/event.h> // to declare custom event types
 #include "ClientData.h"
 #include "SelectedRegion.h"
 
-// Events emitted by WavvyProject for the use of listeners
+// Events emitted by WavacityProject for the use of listeners
 
 // Project state did not change, but a new state was copied into Undo history
 // and any redo states were lost
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_PUSHED, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_PUSHED, wxCommandEvent);
 
 // Project state did not change, but current state was modified in Undo history
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_MODIFIED, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_MODIFIED, wxCommandEvent);
 
 // Project state did not change, but current state was renamed in Undo history
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_RENAMED, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_RENAMED, wxCommandEvent);
 
 // Project state changed because of undo or redo; undo manager
 // contents did not change other than the pointer to current state
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_OR_REDO, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_OR_REDO, wxCommandEvent);
 
 // Project state changed other than for single-step undo/redo; undo manager
 // contents did not change other than the pointer to current state
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_RESET, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_RESET, wxCommandEvent);
 
 // Undo or redo states discarded
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API, EVT_UNDO_PURGE, wxCommandEvent);
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API, EVT_UNDO_PURGE, wxCommandEvent);
 
-class WavvyProject;
+class WavacityProject;
 class Tags;
 class Track;
 class TrackList;
@@ -132,15 +132,15 @@ inline UndoPush operator & (UndoPush a, UndoPush b)
 
 //! Maintain a non-persistent list of states of the project, to support undo and redo commands
 /*! The history should be cleared before destruction */
-class WAVVY_DLL_API UndoManager final
+class WAVACITY_DLL_API UndoManager final
    : public ClientData::Base
 {
  public:
-   static UndoManager &Get( WavvyProject &project );
-   static const UndoManager &Get( const WavvyProject &project );
+   static UndoManager &Get( WavacityProject &project );
+   static const UndoManager &Get( const WavacityProject &project );
  
    explicit
-   UndoManager( WavvyProject &project );
+   UndoManager( WavacityProject &project );
    ~UndoManager();
 
    UndoManager( const UndoManager& ) = delete;
@@ -211,7 +211,7 @@ class WAVVY_DLL_API UndoManager final
 
    void RemoveStateAt(int n);
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
  
    int current;
    int saved;

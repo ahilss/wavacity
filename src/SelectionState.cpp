@@ -6,27 +6,27 @@
 
  **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "SelectionState.h"
 
 #include "ViewInfo.h"
 #include "Track.h"
 #include "Project.h"
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  [](WavvyProject &){ return std::make_shared< SelectionState >(); }
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  [](WavacityProject &){ return std::make_shared< SelectionState >(); }
 };
 
 void RegisterSelectionState() {}
 
-SelectionState &SelectionState::Get( WavvyProject &project )
+SelectionState &SelectionState::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< SelectionState >( key );
 }
 
-const SelectionState &SelectionState::Get( const WavvyProject &project )
+const SelectionState &SelectionState::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 // Set selection length to the length of a track -- but if sync-lock is turned

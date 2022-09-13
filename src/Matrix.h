@@ -23,8 +23,8 @@
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_MATRIX__
-#define __WAVVY_MATRIX__
+#ifndef __WAVACITY_MATRIX__
+#define __WAVACITY_MATRIX__
 
 #include "SampleFormat.h"
 
@@ -110,4 +110,4 @@ Matrix MatrixConcatenateCols(const Matrix& left, const Matrix& right);
 
 bool InvertMatrix(const Matrix& M, Matrix& Minv);
 
-#endif // __WAVVY_MATRIX__
+#endif // __WAVACITY_MATRIX__

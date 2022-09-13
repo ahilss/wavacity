@@ -17,8 +17,8 @@ class ShuttleGui;
 
 #ifdef EXPERIMENTAL_MIDI_OUT
 
-#ifndef __WAVVY_MIDI_IO_PREFS__
-#define __WAVVY_MIDI_IO_PREFS__
+#ifndef __WAVACITY_MIDI_IO_PREFS__
+#define __WAVACITY_MIDI_IO_PREFS__
 
 #include <wx/defs.h>
 

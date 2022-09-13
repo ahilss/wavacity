@@ -38,7 +38,7 @@
 
 *//******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "Meter.h"
 
 #include "../Experimental.h"
@@ -287,7 +287,7 @@ END_EVENT_TABLE()
 
 IMPLEMENT_CLASS(MeterPanel, wxPanelWrapper)
 
-MeterPanel::MeterPanel(WavvyProject *project,
+MeterPanel::MeterPanel(WavacityProject *project,
              wxWindow* parent, wxWindowID id,
              bool isInput,
              const wxPoint& pos /*= wxDefaultPosition*/,
@@ -1893,7 +1893,7 @@ void MeterPanel::StartMonitoring()
    } 
 
    if (start && !gAudioIO->IsBusy()){
-      WavvyProject *p = mProject;
+      WavacityProject *p = mProject;
       if (p){
          gAudioIO->StartMonitoring( DefaultPlayOptions( *p ) );
       }
@@ -1915,7 +1915,7 @@ void MeterPanel::StopMonitoring(){
 void MeterPanel::OnAudioIOStatus(wxCommandEvent &evt)
 {
    evt.Skip();
-   WavvyProject *p = (WavvyProject *) evt.GetEventObject();
+   WavacityProject *p = (WavacityProject *) evt.GetEventObject();
 
    mActive = (evt.GetInt() != 0) && (p == mProject);
 

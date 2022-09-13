@@ -8,8 +8,8 @@
   Licensed under the GPL version 2.0
 
 **********************************************************************/
-#ifndef __WAVVY_CROSSFADE__
-#define __WAVVY_CROSSFADE__
+#ifndef __WAVACITY_CROSSFADE__
+#define __WAVACITY_CROSSFADE__
 
 /// This defines a crossfader class that
 /// accepts a list of WaveClips and can do a mini-mixing

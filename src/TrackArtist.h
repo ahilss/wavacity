@@ -15,10 +15,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACKARTIST__
-#define __WAVVY_TRACKARTIST__
+#ifndef __WAVACITY_TRACKARTIST__
+#define __WAVACITY_TRACKARTIST__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Experimental.h"
 
 #include <wx/brush.h> // member variable
@@ -52,7 +52,7 @@ namespace TrackArt {
                                        const wxRect & rect );
 }
 
-class WAVVY_DLL_API TrackArtist final : private PrefsListener {
+class WAVACITY_DLL_API TrackArtist final : private PrefsListener {
 
 public:
 
@@ -144,4 +144,4 @@ extern float FromDB(float value, double dBRange);
 extern float ValueOfPixel(int yy, int height, bool offset,
                           bool dB, double dBRange, float zoomMin, float zoomMax);
 
-#endif                          // define __WAVVY_TRACKARTIST__
+#endif                          // define __WAVACITY_TRACKARTIST__

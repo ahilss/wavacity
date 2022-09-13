@@ -11,7 +11,7 @@
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ActiveProjects.h"
 #include "Prefs.h"
 

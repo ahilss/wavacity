@@ -9,7 +9,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Project.h"
 
 #include "KeyboardCapture.h"
@@ -25,30 +25,30 @@ wxDEFINE_EVENT(EVT_PROJECT_ACTIVATION, wxCommandEvent);
 
 size_t AllProjects::size() const
 {
-   return gWavvyProjects.size();
+   return gWavacityProjects.size();
 }
 
 auto AllProjects::begin() const -> const_iterator
 {
-   return gWavvyProjects.begin();
+   return gWavacityProjects.begin();
 }
 
 auto AllProjects::end() const -> const_iterator
 {
-   return gWavvyProjects.end();
+   return gWavacityProjects.end();
 }
 
 auto AllProjects::rbegin() const -> const_reverse_iterator
 {
-   return gWavvyProjects.rbegin();
+   return gWavacityProjects.rbegin();
 }
 
 auto AllProjects::rend() const -> const_reverse_iterator
 {
-   return gWavvyProjects.rend();
+   return gWavacityProjects.rend();
 }
 
-auto AllProjects::Remove( WavvyProject &project ) -> value_type
+auto AllProjects::Remove( WavacityProject &project ) -> value_type
 {
    std::lock_guard<std::mutex> guard{ Mutex() };
    auto start = begin(), finish = end(), iter = std::find_if(
@@ -58,14 +58,14 @@ auto AllProjects::Remove( WavvyProject &project ) -> value_type
    if (iter == finish)
       return nullptr;
    auto result = *iter;
-   gWavvyProjects.erase( iter );
+   gWavacityProjects.erase( iter );
    return result;
 }
 
 void AllProjects::Add( const value_type &pProject )
 {
    std::lock_guard<std::mutex> guard{ Mutex() };
-   gWavvyProjects.push_back( pProject );
+   gWavacityProjects.push_back( pProject );
 }
 
 bool AllProjects::sbClosing = false;
@@ -76,7 +76,7 @@ bool AllProjects::Close( bool force )
    while (AllProjects{}.size())
    {
       // Closing the project has global side-effect
-      // of deletion from gWavvyProjects
+      // of deletion from gWavacityProjects
       if ( force )
       {
          GetProjectFrame( **AllProjects{}.begin() ).Close(true);
@@ -96,20 +96,20 @@ std::mutex &AllProjects::Mutex()
    return theMutex;
 }
 
-int WavvyProject::mProjectCounter=0;// global counter.
+int WavacityProject::mProjectCounter=0;// global counter.
 
 /* Define Global Variables */
 //This is a pointer to the currently-active project.
-static WavvyProject *gActiveProject;
+static WavacityProject *gActiveProject;
 //This array holds onto all of the projects currently open
-AllProjects::Container AllProjects::gWavvyProjects;
+AllProjects::Container AllProjects::gWavacityProjects;
 
-WAVVY_DLL_API WavvyProject *GetActiveProject()
+WAVACITY_DLL_API WavacityProject *GetActiveProject()
 {
    return gActiveProject;
 }
 
-void SetActiveProject(WavvyProject * project)
+void SetActiveProject(WavacityProject * project)
 {
    if ( gActiveProject != project ) {
       gActiveProject = project;
@@ -119,7 +119,7 @@ void SetActiveProject(WavvyProject * project)
    wxTheApp->SetTopWindow( FindProjectFrame( project ) );
 }
 
-WavvyProject::WavvyProject()
+WavacityProject::WavacityProject()
 {
    mProjectNo = mProjectCounter++; // Bug 322
    AttachedObjects::BuildAll();
@@ -146,36 +146,36 @@ WavvyProject::WavvyProject()
 
 }
 
-WavvyProject::~WavvyProject()
+WavacityProject::~WavacityProject()
 {
 }
 
-void WavvyProject::SetFrame( wxFrame *pFrame )
+void WavacityProject::SetFrame( wxFrame *pFrame )
 {
    mFrame = pFrame;
 }
 
-void WavvyProject::SetPanel( wxWindow *pPanel )
+void WavacityProject::SetPanel( wxWindow *pPanel )
 {
    mPanel = pPanel;
 }
 
-const wxString &WavvyProject::GetProjectName() const
+const wxString &WavacityProject::GetProjectName() const
 {
    return mName;
 }
 
-void WavvyProject::SetProjectName(const wxString &name)
+void WavacityProject::SetProjectName(const wxString &name)
 {
    mName = name;
 }
 
-FilePath WavvyProject::GetInitialImportPath() const
+FilePath WavacityProject::GetInitialImportPath() const
 {
    return mInitialImportPath;
 }
 
-void WavvyProject::SetInitialImportPath(const FilePath &path)
+void WavacityProject::SetInitialImportPath(const FilePath &path)
 {
    if (mInitialImportPath.empty())
    {
@@ -183,7 +183,7 @@ void WavvyProject::SetInitialImportPath(const FilePath &path)
    }
 }
 
-WAVVY_DLL_API wxFrame &GetProjectFrame( WavvyProject &project )
+WAVACITY_DLL_API wxFrame &GetProjectFrame( WavacityProject &project )
 {
    auto ptr = project.GetFrame();
    if ( !ptr )
@@ -191,7 +191,7 @@ WAVVY_DLL_API wxFrame &GetProjectFrame( WavvyProject &project )
    return *ptr;
 }
 
-WAVVY_DLL_API const wxFrame &GetProjectFrame( const WavvyProject &project )
+WAVACITY_DLL_API const wxFrame &GetProjectFrame( const WavacityProject &project )
 {
    auto ptr = project.GetFrame();
    if ( !ptr )
@@ -199,7 +199,7 @@ WAVVY_DLL_API const wxFrame &GetProjectFrame( const WavvyProject &project )
    return *ptr;
 }
 
-WAVVY_DLL_API wxWindow &GetProjectPanel( WavvyProject &project )
+WAVACITY_DLL_API wxWindow &GetProjectPanel( WavacityProject &project )
 {
    auto ptr = project.GetPanel();
    if ( !ptr )
@@ -207,8 +207,8 @@ WAVVY_DLL_API wxWindow &GetProjectPanel( WavvyProject &project )
    return *ptr;
 }
 
-WAVVY_DLL_API const wxWindow &GetProjectPanel(
-   const WavvyProject &project )
+WAVACITY_DLL_API const wxWindow &GetProjectPanel(
+   const WavacityProject &project )
 {
    auto ptr = project.GetPanel();
    if ( !ptr )

@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "BatchEvalCommand.h"
 
 #include "CommandContext.h"
@@ -39,7 +39,7 @@ void BatchEvalCommandType::BuildSignature(CommandSignature &signature)
    signature.AddParameter(wxT("MacroName"), wxT(""), std::move(macroValidator));
 }
 
-OldStyleCommandPointer BatchEvalCommandType::Create( WavvyProject *project,
+OldStyleCommandPointer BatchEvalCommandType::Create( WavacityProject *project,
    std::unique_ptr<CommandOutputTargets> && WXUNUSED(target))
 {
    return std::make_shared<BatchEvalCommand>(*project, *this);

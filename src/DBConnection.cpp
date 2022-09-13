@@ -16,7 +16,7 @@ Paul Licameli -- split from ProjectFileIO.cpp
 #include <wx/progdlg.h>
 #include <wx/string.h>
 
-#include "WavvyLogger.h"
+#include "WavacityLogger.h"
 #include "FileNames.h"
 #include "Internat.h"
 #include "Project.h"
@@ -39,7 +39,7 @@ static const char *FastConfig =
    "PRAGMA <schema>.journal_mode = OFF;";
 
 DBConnection::DBConnection(
-   const std::weak_ptr<WavvyProject> &pProject,
+   const std::weak_ptr<WavacityProject> &pProject,
    const std::shared_ptr<DBConnectionErrors> &pErrors,
    CheckpointFailureCallback callback)
 : mpProject{ pProject }
@@ -90,7 +90,7 @@ void DBConnection::SetError(
                  mpErrors->mLastError.Debug(),
                  mpErrors->mLibraryError.Debug());
 
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    if (logger)
    {
       mpErrors->mLog = logger->GetLog(10);
@@ -122,7 +122,7 @@ void DBConnection::SetDBError(
                  mpErrors->mLastError.Debug(),
                  mpErrors->mLibraryError.Debug());
 
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    if (logger)
    {
       mpErrors->mLog = logger->GetLog(10);
@@ -513,7 +513,7 @@ void DBConnection::CheckpointThread(sqlite3 *db, const FilePath &fileName)
             throw SimpleMessageBoxException{
                message, XO("Warning"), "Error:_Disk_full_or_not_writable" }; },
             SimpleGuard<void>{},
-            [this](WavvyException * e) {
+            [this](WavacityException * e) {
                // This executes in the main thread.
                if (mCallback)
                   mCallback();
@@ -659,9 +659,9 @@ ConnectionPtr::~ConnectionPtr()
    }
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory
+static const WavacityProject::AttachedObjects::RegisteredFactory
 sConnectionPtrKey{
-   []( WavvyProject & ){
+   []( WavacityProject & ){
       // Ignore the argument; this is just a holder of a
       // unique_ptr to DBConnection, which must be filled in later
       // (when we can get a weak_ptr to the project)
@@ -670,15 +670,15 @@ sConnectionPtrKey{
    }
 };
 
-ConnectionPtr &ConnectionPtr::Get( WavvyProject &project )
+ConnectionPtr &ConnectionPtr::Get( WavacityProject &project )
 {
    auto &result =
       project.AttachedObjects::Get< ConnectionPtr >( sConnectionPtrKey );
    return result;
 }
 
-const ConnectionPtr &ConnectionPtr::Get( const WavvyProject &project )
+const ConnectionPtr &ConnectionPtr::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 

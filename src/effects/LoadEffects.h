@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LOAD_EFFECTS__
-#define __WAVVY_LOAD_EFFECTS__
+#ifndef __WAVACITY_LOAD_EFFECTS__
+#define __WAVACITY_LOAD_EFFECTS__
 
-#include "wavvy/ModuleInterface.h"
+#include "wavacity/ModuleInterface.h"
 
 #include <functional>
 #include <memory>

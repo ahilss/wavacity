@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_RULER__
-#define __WAVVY_RULER__
+#ifndef __WAVACITY_RULER__
+#define __WAVACITY_RULER__
 
 #include "wxPanelWrapper.h" // to inherit
 #include "../NumberScale.h" // member variable
@@ -23,7 +23,7 @@ class wxFont;
 class Envelope;
 class ZoomInfo;
 
-class WAVVY_DLL_API Ruler {
+class WAVACITY_DLL_API Ruler {
  public:
 
    enum RulerFormat {
@@ -225,7 +225,7 @@ private:
    NumberScale mNumberScale;
 };
 
-class WAVVY_DLL_API RulerPanel final : public wxPanelWrapper {
+class WAVACITY_DLL_API RulerPanel final : public wxPanelWrapper {
    DECLARE_DYNAMIC_CLASS(RulerPanel)
 
  public:
@@ -291,4 +291,4 @@ private:
     DECLARE_EVENT_TABLE()
 };
 
-#endif //define __WAVVY_RULER__
+#endif //define __WAVACITY_RULER__

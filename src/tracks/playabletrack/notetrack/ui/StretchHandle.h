@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_STRETCH_HANDLE__
-#define __WAVVY_STRETCH_HANDLE__
+#ifndef __WAVACITY_STRETCH_HANDLE__
+#define __WAVACITY_STRETCH_HANDLE__
 
 #include "../../../../UIHandle.h"
 
@@ -63,26 +63,26 @@ public:
 
    static UIHandlePtr HitTest
       (std::weak_ptr<StretchHandle> &holder,
-       const TrackPanelMouseState &state, const WavvyProject *pProject,
+       const TrackPanelMouseState &state, const WavacityProject *pProject,
        const std::shared_ptr<NoteTrack> &pTrack );
 
    virtual ~StretchHandle();
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
       wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 
@@ -91,7 +91,7 @@ private:
    static double GetT1(const Track &track, const ViewInfo &viewInfo);
 
    void Stretch
-      (WavvyProject *pProject, int mouseXCoordinate, int trackLeftEdge, Track *pTrack);
+      (WavacityProject *pProject, int mouseXCoordinate, int trackLeftEdge, Track *pTrack);
 
    std::shared_ptr<NoteTrack> mpTrack{};
    int mLeftEdge{ -1 };

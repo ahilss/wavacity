@@ -25,8 +25,8 @@ robust enough to allow all the user changes such as copy/paste, DELETE, and so o
 
 
 
-#ifndef __WAVVY_ODDecodeFLACTask__
-#define __WAVVY_ODDecodeFLACTask__
+#ifndef __WAVACITY_ODDecodeFLACTask__
+#define __WAVACITY_ODDecodeFLACTask__
 
 #include <vector>
 #include <wx/ffile.h> // data member

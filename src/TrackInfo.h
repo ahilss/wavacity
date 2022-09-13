@@ -8,10 +8,10 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_INFO__
-#define __WAVVY_TRACK_INFO__
+#ifndef __WAVACITY_TRACK_INFO__
+#define __WAVACITY_TRACK_INFO__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Experimental.h"
 
 #include <vector>

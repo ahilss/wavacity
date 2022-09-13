@@ -2,8 +2,8 @@
 
 use strict 'vars';
 
-open(my $fh, "<", "wavvy.pot")
-    or die "Can't open < wavvy.pot: $!";
+open(my $fh, "<", "wavacity.pot")
+    or die "Can't open < wavacity.pot: $!";
 
 my @sourcelines = ();
 

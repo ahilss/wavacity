@@ -19,8 +19,8 @@ tasks associated with a WaveTrack.
 
 
 
-#ifndef __WAVVY_ODWAVETRACKTASKQUEUE__
-#define __WAVVY_ODWAVETRACKTASKQUEUE__
+#ifndef __WAVACITY_ODWAVETRACKTASKQUEUE__
+#define __WAVACITY_ODWAVETRACKTASKQUEUE__
 
 #include <vector>
 #include "ODTaskThread.h"

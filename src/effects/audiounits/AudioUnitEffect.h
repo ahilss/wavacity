@@ -8,9 +8,9 @@
   Leland Lucius
 
 **********************************************************************/
-#ifndef WAVVY_AUDIOUNIT_EFFECT_H
+#ifndef WAVACITY_AUDIOUNIT_EFFECT_H
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if USE_AUDIO_UNITS
 
@@ -21,9 +21,9 @@
 #include <AudioUnit/AudioUnit.h>
 #include <AudioUnit/AudioUnitProperties.h>
 
-#include "wavvy/EffectInterface.h"
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #include "AUControl.h"
 

@@ -12,12 +12,12 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #if USE_SOUNDTOUCH
 
-#ifndef __WAVVY_EFFECT_SOUNDTOUCH__
-#define __WAVVY_EFFECT_SOUNDTOUCH__
+#ifndef __WAVACITY_EFFECT_SOUNDTOUCH__
+#define __WAVACITY_EFFECT_SOUNDTOUCH__
 
 #include "Effect.h"
 

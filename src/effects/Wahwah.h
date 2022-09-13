@@ -13,8 +13,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_WAHWAH__
-#define __WAVVY_EFFECT_WAHWAH__
+#ifndef __WAVACITY_EFFECT_WAHWAH__
+#define __WAVACITY_EFFECT_WAHWAH__
 
 #include "Effect.h"
 

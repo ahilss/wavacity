@@ -6,8 +6,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MOUSE_PREFS__
-#define __WAVVY_MOUSE_PREFS__
+#ifndef __WAVACITY_MOUSE_PREFS__
+#define __WAVACITY_MOUSE_PREFS__
 
 #include <wx/defs.h>
 

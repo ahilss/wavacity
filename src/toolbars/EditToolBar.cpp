@@ -22,7 +22,7 @@
   window, or within a ToolBarFrame.
 
   All of the controls in this window were custom-written for
-  Wavvy - they are not native controls on any platform -
+  Wavacity - they are not native controls on any platform -
   however, it is intended that the images could be easily
   replaced to allow "skinning" or just customization to
   match the look and feel of each platform.
@@ -30,7 +30,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "EditToolBar.h"
 
 #include "../Experimental.h"
@@ -77,7 +77,7 @@ BEGIN_EVENT_TABLE( EditToolBar, ToolBar )
 END_EVENT_TABLE()
 
 //Standard constructor
-EditToolBar::EditToolBar( WavvyProject &project )
+EditToolBar::EditToolBar( WavacityProject &project )
 : ToolBar(project, EditBarID, XO("Edit"), wxT("Edit"))
 {
 }
@@ -256,7 +256,7 @@ static const struct Entry {
 
 void EditToolBar::ForAllButtons(int Action)
 {
-   WavvyProject *p;
+   WavacityProject *p;
    CommandManager* cm = nullptr;
 
    if( Action & ETBActEnableDisable ){
@@ -295,7 +295,7 @@ void EditToolBar::OnButton(wxCommandEvent &event)
    // Be sure the pop-up happens even if there are exceptions, except for buttons which toggle.
    auto cleanup = finally( [&] { mButtons[id]->InteractionOver();});
 
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
    auto &cm = CommandManager::Get( *p );
 
    auto flags = MenuManager::Get(*p).GetUpdateFlags();
@@ -315,7 +315,7 @@ void EditToolBar::OnButton(wxCommandEvent &event)
 }
 
 static RegisteredToolbarFactory factory{ EditBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew EditToolBar{ project } }; }
 };
 

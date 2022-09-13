@@ -16,7 +16,7 @@ Paul Licameli split from AutoRecovery.cpp
 #include "ProjectFileManager.h"
 #include "ShuttleGui.h"
 #include "TempDirectory.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/wxPanelWrapper.h"
 
 #include <wx/dir.h>
@@ -26,7 +26,7 @@ Paul Licameli split from AutoRecovery.cpp
 #include <wx/listctrl.h>
 
 enum {
-   ID_QUIT_WAVVY = 10000,
+   ID_QUIT_WAVACITY = 10000,
    ID_DISCARD_SELECTED,
    ID_RECOVER_SELECTED,
    ID_SKIP,
@@ -36,7 +36,7 @@ enum {
 class AutoRecoveryDialog final : public wxDialogWrapper
 {
 public:
-   AutoRecoveryDialog(WavvyProject *proj);
+   AutoRecoveryDialog(WavacityProject *proj);
 
    bool HasRecoverables() const;
    FilePaths GetRecoverables();
@@ -46,7 +46,7 @@ private:
    void PopulateList();
    bool HaveChecked();
 
-   void OnQuitWavvy(wxCommandEvent &evt);
+   void OnQuitWavacity(wxCommandEvent &evt);
    void OnDiscardSelected(wxCommandEvent &evt);
    void OnRecoverSelected(wxCommandEvent &evt);
    void OnSkip(wxCommandEvent &evt);
@@ -56,14 +56,14 @@ private:
 
    FilePaths mFiles;
    wxListCtrl *mFileList;
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 
 public:
    DECLARE_EVENT_TABLE()
 };
 
 BEGIN_EVENT_TABLE(AutoRecoveryDialog, wxDialogWrapper)
-   EVT_BUTTON(ID_QUIT_WAVVY, AutoRecoveryDialog::OnQuitWavvy)
+   EVT_BUTTON(ID_QUIT_WAVACITY, AutoRecoveryDialog::OnQuitWavacity)
    EVT_BUTTON(ID_DISCARD_SELECTED, AutoRecoveryDialog::OnDiscardSelected)
    EVT_BUTTON(ID_RECOVER_SELECTED, AutoRecoveryDialog::OnRecoverSelected)
    EVT_BUTTON(ID_SKIP, AutoRecoveryDialog::OnSkip)
@@ -71,7 +71,7 @@ BEGIN_EVENT_TABLE(AutoRecoveryDialog, wxDialogWrapper)
    EVT_LIST_ITEM_ACTIVATED(ID_FILE_LIST, AutoRecoveryDialog::OnItemActivated)
 END_EVENT_TABLE()
 
-AutoRecoveryDialog::AutoRecoveryDialog(WavvyProject *project)
+AutoRecoveryDialog::AutoRecoveryDialog(WavacityProject *project)
 :  wxDialogWrapper(nullptr, wxID_ANY, XO("Automatic Crash Recovery"),
                    wxDefaultPosition, wxDefaultSize,
                    (wxDEFAULT_DIALOG_STYLE & (~wxCLOSE_BOX)) | wxRESIZE_BORDER), // no close box
@@ -98,7 +98,7 @@ void AutoRecoveryDialog::PopulateOrExchange(ShuttleGui &S)
    S.StartVerticalLay(wxEXPAND, 1);
    {
       S.AddFixedText(
-         XO("The following projects were not saved properly the last time Wavvy was run and "
+         XO("The following projects were not saved properly the last time Wavacity was run and "
             "can be automatically recovered.\n\n"
             "After recovery, save the projects to ensure changes are written to disk."),
          false,
@@ -122,7 +122,7 @@ void AutoRecoveryDialog::PopulateOrExchange(ShuttleGui &S)
 
       S.StartHorizontalLay(wxALIGN_CENTRE, 0);
       {
-         S.Id(ID_QUIT_WAVVY).AddButton(XXO("&Quit Wavvy"));
+         S.Id(ID_QUIT_WAVACITY).AddButton(XXO("&Quit Wavacity"));
          S.Id(ID_DISCARD_SELECTED).AddButton(XXO("&Discard Selected"));
          S.Id(ID_RECOVER_SELECTED).AddButton(XXO("&Recover Selected"), wxALIGN_CENTRE, true);
          S.Id(ID_SKIP).AddButton(XXO("&Skip"));
@@ -223,14 +223,14 @@ bool AutoRecoveryDialog::HaveChecked()
       }
    }
 
-   WavvyMessageBox(XO("No projects selected"), XO("Automatic Crash Recovery"));
+   WavacityMessageBox(XO("No projects selected"), XO("Automatic Crash Recovery"));
 
    return false;
 }
 
-void AutoRecoveryDialog::OnQuitWavvy(wxCommandEvent &WXUNUSED(evt))
+void AutoRecoveryDialog::OnQuitWavacity(wxCommandEvent &WXUNUSED(evt))
 {
-   EndModal(ID_QUIT_WAVVY);
+   EndModal(ID_QUIT_WAVACITY);
 }
 
 void AutoRecoveryDialog::OnDiscardSelected(wxCommandEvent &WXUNUSED(evt))
@@ -258,7 +258,7 @@ void AutoRecoveryDialog::OnDiscardSelected(wxCommandEvent &WXUNUSED(evt))
    // Don't give this warning message if all of the checked items are
    // previously saved, non-temporary projects.
    if (selectedTemporary) {
-      int ret = WavvyMessageBox(
+      int ret = WavacityMessageBox(
          XO("Are you sure you want to discard the selected projects?\n\n"
             "Choosing \"Yes\" permanently deletes the selected projects immediately."),
          XO("Automatic Crash Recovery"),
@@ -332,7 +332,7 @@ void AutoRecoveryDialog::OnRecoverSelected(wxCommandEvent &WXUNUSED(evt))
       {
          if (!selected)
          {
-            WavvyMessageBox(XO("No projects selected"), XO("Automatic Crash Recovery"));
+            WavacityMessageBox(XO("No projects selected"), XO("Automatic Crash Recovery"));
          }
          break;
       }
@@ -417,14 +417,14 @@ void AutoRecoveryDialog::OnListKeyDown(wxKeyEvent &evt)
 ////////////////////////////////////////////////////////////////////////////
 
 static bool RecoverAllProjects(const FilePaths &files,
-                               WavvyProject **pproj)
+                               WavacityProject **pproj)
 {
    // Open a project window for each auto save file
    wxString filename;
 
    for (auto &file: files)
    {
-      WavvyProject *proj = nullptr;
+      WavacityProject *proj = nullptr;
       if (*pproj)
       {
          // Reuse existing project window
@@ -449,7 +449,7 @@ static void DiscardAllProjects(const FilePaths &files)
       ProjectFileManager::DiscardAutosave(file);
 }
 
-bool ShowAutoRecoveryDialogIfNeeded(WavvyProject **pproj, bool *didRecoverAnything)
+bool ShowAutoRecoveryDialogIfNeeded(WavacityProject **pproj, bool *didRecoverAnything)
 {
    if (didRecoverAnything)
    {
@@ -501,7 +501,7 @@ bool ShowAutoRecoveryDialogIfNeeded(WavvyProject **pproj, bool *didRecoverAnythi
          break;
 
       default:
-         // This includes ID_QUIT_WAVVY
+         // This includes ID_QUIT_WAVACITY
          return false;
       }
    }

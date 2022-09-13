@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectFileManager.cpp
 
-Paul Licameli split from WavvyProject.cpp
+Paul Licameli split from WavacityProject.cpp
 
 **********************************************************************/
 
@@ -42,27 +42,27 @@ Paul Licameli split from WavvyProject.cpp
 #include "import/Import.h"
 #include "import/ImportMIDI.h"
 #include "toolbars/SelectionBar.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ErrorDialog.h"
 #include "widgets/FileHistory.h"
 #include "widgets/Warning.h"
 #include "xml/XMLFileReader.h"
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sFileManagerKey{
-   []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sFileManagerKey{
+   []( WavacityProject &parent ){
       auto result = std::make_shared< ProjectFileManager >( parent );
       return result;
    }
 };
 
-ProjectFileManager &ProjectFileManager::Get( WavvyProject &project )
+ProjectFileManager &ProjectFileManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectFileManager >( sFileManagerKey );
 }
 
-const ProjectFileManager &ProjectFileManager::Get( const WavvyProject &project )
+const ProjectFileManager &ProjectFileManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 void ProjectFileManager::DiscardAutosave(const FilePath &filename)
@@ -83,7 +83,7 @@ void ProjectFileManager::DiscardAutosave(const FilePath &filename)
    // closes the temporary project properly
 }
 
-ProjectFileManager::ProjectFileManager( WavvyProject &project )
+ProjectFileManager::ProjectFileManager( WavacityProject &project )
 : mProject{ project }
 {
 }
@@ -93,7 +93,7 @@ ProjectFileManager::~ProjectFileManager() = default;
 namespace {
 
 const char *const defaultHelpUrl =
-   "FAQ:Errors_on_opening_or_recovering_an_Wavvy_project";
+   "FAQ:Errors_on_opening_or_recovering_an_Wavacity_project";
 
 using Pair = std::pair< const char *, const char * >;
 const Pair helpURLTable[] = {
@@ -168,11 +168,11 @@ auto ProjectFileManager::ReadProjectFile(
             resaved = projectFileIO.SaveProject(fileName, nullptr);
          }
 
-         WavvyMessageBox(
+         WavacityMessageBox(
             resaved
-               ? XO("This project was not saved properly the last time Wavvy ran.\n\n"
+               ? XO("This project was not saved properly the last time Wavacity ran.\n\n"
                     "It has been recovered to the last snapshot.")
-               : XO("This project was not saved properly the last time Wavvy ran.\n\n"
+               : XO("This project was not saved properly the last time Wavacity ran.\n\n"
                     "It has been recovered to the last snapshot, but you must save it\n"
                     "to preserve its contents."),
             XO("Project Recovered"),
@@ -280,7 +280,7 @@ bool ProjectFileManager::DoSave(const FilePath & fileName, const bool fromSaveAs
          if (UndoManager::Get( proj ).UnsavedChanges() &&
                settings.EmptyCanBeDirty())
          {
-            int result = WavvyMessageBox(
+            int result = WavacityMessageBox(
                XO(
    "Your project is now empty.\nIf saved, the project will have no tracks.\n\nTo save any previously open tracks:\nClick 'No', Edit > Undo until all tracks\nare open, then File > Save Project.\n\nSave anyway?"),
                XO("Warning - Empty Project"),
@@ -392,7 +392,7 @@ bool ProjectFileManager::SaveAs(const FilePath &newFileName, bool addToHistory /
    //We should only overwrite it if this project already has the same name, where the user
    //simply chose to use the save as command although the save command would have the effect.
    if( !bOwnsNewName && wxFileExists(newFileName)) {
-      WavvyMessageDialog m(
+      WavacityMessageDialog m(
          nullptr,
          XO("The project was not saved because the file name provided would overwrite another project.\nPlease try again and select an original name."),
          XO("Error Saving Project"),
@@ -434,7 +434,7 @@ bool ProjectFileManager::SaveAs(bool allowOverwrite /* = false */)
    TranslatableString title = XO("%sSave Project \"%s\" As...")
       .Format( Restorer.sProjNumber, Restorer.sProjName );
    TranslatableString message = XO("\
-'Save Project' is for an Wavvy project, not an audio file.\n\
+'Save Project' is for an Wavacity project, not an audio file.\n\
 For an audio file that will open in other apps, use 'Export'.\n");
 
    if (ShowWarningDialog(&window, wxT("FirstProjectSave"), message, true) != wxID_OK) {
@@ -454,7 +454,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
             filename.GetPath(),
             filename.GetFullName(),
             wxT("aup3"),
-            { FileNames::WavvyProjects },
+            { FileNames::WavacityProjects },
             wxFD_SAVE | wxRESIZE_BORDER,
             &window);
 
@@ -468,7 +468,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
 
       if ((!bPrompt || !allowOverwrite) && filename.FileExists()) {
          // Saving a copy of the project should never overwrite an existing project.
-         WavvyMessageDialog m(
+         WavacityMessageDialog m(
             nullptr,
             XO("The project was not saved because the file name provided would overwrite another project.\nPlease try again and select an original name."),
             XO("Error Saving Project"),
@@ -509,7 +509,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
    will be irreversibly overwritten.").Format( fName, fName );
 
             // For safety, there should NOT be an option to hide this warning.
-            int result = WavvyMessageBox(
+            int result = WavacityMessageBox(
                Message,
                /* i18n-hint: Heading: A warning that a project is about to be overwritten.*/
                XO("Overwrite Project Warning"),
@@ -524,7 +524,7 @@ For an audio file that will open in other apps, use 'Export'.\n");
          }
          else {
             // Overwrite disallowed. The destination project is open in another window.
-            WavvyMessageDialog m(
+            WavacityMessageDialog m(
                nullptr,
                XO("The project was not saved because the selected project is open in another window.\nPlease try again and select an original name."),
                XO("Error Saving Project"),
@@ -594,7 +594,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
                                        filename.GetPath(),
                                        filename.GetFullName(),
                                        wxT("aup3"),
-                                       { FileNames::WavvyProjects },
+                                       { FileNames::WavacityProjects },
                                        wxFD_SAVE | wxRESIZE_BORDER,
                                        &window);
 
@@ -621,7 +621,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
       if (filename.FileExists())
       {
          // Saving a copy of the project should never overwrite an existing project.
-         WavvyMessageDialog m(nullptr,
+         WavacityMessageDialog m(nullptr,
                                  XO("Saving a copy must not overwrite an existing saved project.\nPlease try again and select an original name."),
                                  XO("Error Saving Copy of Project"),
                                  wxOK | wxICON_ERROR);
@@ -681,7 +681,7 @@ bool ProjectFileManager::SaveCopy(const FilePath &fileName /* = wxT("") */)
    if (!projectFileIO.SaveCopy(fName))
    {
       auto msg = FileException::WriteFailureMessage(fName);
-      WavvyMessageDialog m(
+      WavacityMessageDialog m(
          nullptr, msg, XO("Error Saving Project"), wxOK | wxICON_ERROR);
 
       m.ShowModal();
@@ -859,7 +859,7 @@ bool ProjectFileManager::IsAlreadyOpen(const FilePath &projPathName)
       XO("%s is already open in another window.")
          .Format( newProjPathName.GetName() );
       wxLogError(errMsg.Translation()); //Debug?
-      WavvyMessageBox(
+      WavacityMessageBox(
          errMsg,
          XO("Error Opening Project"),
          wxOK | wxCENTRE);
@@ -869,7 +869,7 @@ bool ProjectFileManager::IsAlreadyOpen(const FilePath &projPathName)
 }
 
 // FIXME:? TRAP_ERR This should return a result that is checked.
-//    See comment in WavvyApp::MRUOpen().
+//    See comment in WavacityApp::MRUOpen().
 void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory)
 {
    auto &project = mProject;
@@ -892,8 +892,8 @@ void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory
    }
 
    // Make sure it isn't already open.
-   // Vaughan, 2011-03-25: This was done previously in WavvyProject::OpenFiles()
-   //    and WavvyApp::MRUOpen(), but if you open an aup file by double-clicking it
+   // Vaughan, 2011-03-25: This was done previously in WavacityProject::OpenFiles()
+   //    and WavacityApp::MRUOpen(), but if you open an aup file by double-clicking it
    //    from, e.g., Win Explorer, it would bypass those, get to here with no check,
    //    then open a NEW project from the same data with no warning.
    //    This was reported in http://bugzilla.audacityteam.org/show_bug.cgi?id=137#c17,
@@ -902,13 +902,13 @@ void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory
       return;
 
    // Data loss may occur if users mistakenly try to open ".aup3.bak" files
-   // left over from an unsuccessful save or by previous versions of Wavvy.
+   // left over from an unsuccessful save or by previous versions of Wavacity.
    // So we always refuse to open such files.
    if (fileName.Lower().EndsWith(wxT(".aup3.bak")))
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
-"You are trying to open an automatically created backup file.\nDoing this may result in severe data loss.\n\nPlease open the actual Wavvy project file instead."),
+"You are trying to open an automatically created backup file.\nDoing this may result in severe data loss.\n\nPlease open the actual Wavacity project file instead."),
          XO("Warning - Backup File Detected"),
          wxOK | wxCENTRE,
          &window);
@@ -916,7 +916,7 @@ void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory
    }
 
    if (!::wxFileExists(fileName)) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file: %s").Format( fileName ),
          XO("Error Opening File"),
          wxOK | wxCENTRE,
@@ -936,7 +936,7 @@ void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory
       });
 
       if (!ff.IsOpened()) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Could not open file: %s").Format( fileName ),
             XO("Error opening file"),
             wxOK | wxCENTRE,
@@ -947,7 +947,7 @@ void ProjectFileManager::OpenFile(const FilePath &fileNameArg, bool addtohistory
       char buf[7];
       auto numRead = ff.Read(buf, 6);
       if (numRead != 6) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("File may be invalid or corrupted: \n%s").Format( fileName ),
             XO("Error Opening File or Project"),
             wxOK | wxCENTRE,
@@ -1160,7 +1160,7 @@ ProjectFileManager::AddImportedTracks(const FilePath &fileName,
 }
 
 namespace {
-bool ImportProject(WavvyProject &dest, const FilePath &fileName)
+bool ImportProject(WavacityProject &dest, const FilePath &fileName)
 {
    InvisibleTemporaryProject temp;
    auto &project = temp.Project();
@@ -1426,7 +1426,7 @@ void ProjectFileManager::Compact()
 
       if (!isBatch)
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Compacting actually freed %s of disk space.")
             .Format(Internat::FormatSize((before - after).GetValue())),
             XO("Compact Project"));

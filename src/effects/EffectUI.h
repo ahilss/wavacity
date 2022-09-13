@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECTUI_H__
-#define __WAVVY_EFFECTUI_H__
+#ifndef __WAVACITY_EFFECTUI_H__
+#define __WAVACITY_EFFECTUI_H__
 
 #include "../Experimental.h"
 
@@ -30,7 +30,7 @@ class wxFlexGridSizer;
 class wxPanel;
 class wxStaticText;
 
-class WavvyProject;
+class WavacityProject;
 
 class Effect;
 using EffectArray = std::vector<Effect*>;
@@ -38,12 +38,12 @@ using EffectArray = std::vector<Effect*>;
 class EffectRack final : public wxFrame
 {
 public:
-   EffectRack( WavvyProject &project );
+   EffectRack( WavacityProject &project );
    virtual ~EffectRack();
 
    void Add(Effect *effect, bool active = false, bool favorite = false);
 
-   static EffectRack &Get( WavvyProject &project );
+   static EffectRack &Get( WavacityProject &project );
 
 private:
 
@@ -65,7 +65,7 @@ private:
    void OnRemove(wxCommandEvent & evt);
 
 private:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    wxStaticText *mLatency;
    int mLastLatency;
@@ -104,13 +104,13 @@ private:
 
 #endif
 
-#include "wavvy/EffectInterface.h"
+#include "wavacity/EffectInterface.h"
 #include "../widgets/wxPanelWrapper.h" // to inherit
 
 #include "../SelectedRegion.h"
 
-class WavvyCommand;
-class WavvyProject;
+class WavacityCommand;
+class WavacityProject;
 class Effect;
 
 class wxCheckBox;
@@ -122,12 +122,12 @@ class EffectUIHost final : public wxDialogWrapper,
 public:
    // constructors and destructors
    EffectUIHost(wxWindow *parent,
-                WavvyProject &project,
+                WavacityProject &project,
                 Effect *effect,
                 EffectUIClientInterface *client);
    EffectUIHost(wxWindow *parent,
-                WavvyProject &project,
-                WavvyCommand *command,
+                WavacityProject &project,
+                WavacityCommand *command,
                 EffectUIClientInterface *client);
    virtual ~EffectUIHost();
 
@@ -175,10 +175,10 @@ private:
    void Resume();
 
 private:
-   WavvyProject *mProject;
+   WavacityProject *mProject;
    wxWindow *mParent;
    Effect *mEffect;
-   WavvyCommand * mCommand;
+   WavacityCommand * mCommand;
    EffectUIClientInterface *mClient;
 
    RegistryPaths mUserPresets;
@@ -228,7 +228,7 @@ namespace  EffectUI {
    /** Run an effect given the plugin ID */
    // Returns true on success.  Will only operate on tracks that
    // have the "selected" flag set to true, which is consistent with
-   // Wavvy's standard UI.
+   // Wavacity's standard UI.
    bool DoEffect(
       const PluginID & ID, const CommandContext &context, unsigned flags );
 
@@ -237,7 +237,7 @@ namespace  EffectUI {
 class ShuttleGui;
 
 // Obsolescent dialog still used only in Noise Reduction/Removal
-class WAVVY_DLL_API EffectDialog /* not final */ : public wxDialogWrapper
+class WAVACITY_DLL_API EffectDialog /* not final */ : public wxDialogWrapper
 {
 public:
    // constructors and destructors
@@ -266,4 +266,4 @@ private:
    wxDECLARE_NO_COPY_CLASS(EffectDialog);
 };
 
-#endif // __WAVVY_EFFECTUI_H__
+#endif // __WAVACITY_EFFECTUI_H__

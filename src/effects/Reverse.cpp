@@ -14,7 +14,7 @@
 *//********************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Reverse.h"
 #include "LoadEffects.h"
 

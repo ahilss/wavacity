@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_BUTTON_HANDLE__
-#define __WAVVY_BUTTON_HANDLE__
+#ifndef __WAVACITY_BUTTON_HANDLE__
+#define __WAVACITY_BUTTON_HANDLE__
 
 #include "../../UIHandle.h"
 
@@ -43,31 +43,31 @@ protected:
    // change.
    // Subclass can decide to refresh other things and the results will be ORed.
    virtual Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent) = 0;
+      (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent) = 0;
 
    // Define a message for the status bar and tooltip.
    virtual TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &project) const = 0;
+      const wxMouseState &state, WavacityProject &project) const = 0;
 
-   void Enter(bool forward, WavvyProject *) final override;
+   void Enter(bool forward, WavacityProject *) final override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject)
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject)
       final override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject)
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject)
       final override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       final override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) final override;
 
-   Result Cancel(WavvyProject *pProject) final override;
+   Result Cancel(WavacityProject *pProject) final override;
 
    std::weak_ptr<Track> mpTrack;
    wxRect mRect;

@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "SampleHandle.h"
 
 #include "../../../../Experimental.h"
@@ -28,7 +28,7 @@ Paul Licameli split from TrackPanel.cpp
 #include "../../../../ViewInfo.h"
 #include "../../../../WaveTrack.h"
 #include "../../../../../images/Cursors.h"
-#include "../../../../widgets/WavvyMessageBox.h"
+#include "../../../../widgets/WavacityMessageBox.h"
 
 
 static const int SMOOTHING_KERNEL_RADIUS = 3;
@@ -41,7 +41,7 @@ SampleHandle::SampleHandle( const std::shared_ptr<WaveTrack> &pTrack )
 {
 }
 
-void SampleHandle::Enter(bool, WavvyProject *)
+void SampleHandle::Enter(bool, WavacityProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -49,7 +49,7 @@ void SampleHandle::Enter(bool, WavvyProject *)
 }
 
 HitTestPreview SampleHandle::HitPreview
-(const wxMouseState &state, const WavvyProject *WXUNUSED(pProject), bool unsafe)
+(const wxMouseState &state, const WavacityProject *WXUNUSED(pProject), bool unsafe)
 {
    static auto disabledCursor =
       ::MakeCursor(wxCURSOR_NO_ENTRY, DisabledCursorXpm, 16, 16);
@@ -112,7 +112,7 @@ namespace {
 UIHandlePtr SampleHandle::HitTest
 (std::weak_ptr<SampleHandle> &holder,
  const wxMouseState &state, const wxRect &rect,
- const WavvyProject *pProject, const std::shared_ptr<WaveTrack> &pTrack)
+ const WavacityProject *pProject, const std::shared_ptr<WaveTrack> &pTrack)
 {
    const auto &viewInfo = ViewInfo::Get( *pProject );
 
@@ -178,7 +178,7 @@ namespace {
       const double time = adjustTime(wt, viewInfo.PositionToTime(event.m_x, rect.x));
       if (!SampleResolutionTest(viewInfo, wt, time, width))
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO(
 "To use Draw, zoom in further until you can see the individual samples."),
             XO("Draw Tool"));
@@ -189,7 +189,7 @@ namespace {
 }
 
 UIHandle::Result SampleHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
@@ -318,7 +318,7 @@ UIHandle::Result SampleHandle::Click
 }
 
 UIHandle::Result SampleHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const wxMouseEvent &event = evt.event;
@@ -401,14 +401,14 @@ UIHandle::Result SampleHandle::Drag
 }
 
 HitTestPreview SampleHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *pProject)
+(const TrackPanelMouseState &st, WavacityProject *pProject)
 {
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
    return HitPreview(st.state, pProject, unsafe);
 }
 
 UIHandle::Result SampleHandle::Release
-(const TrackPanelMouseEvent &, WavvyProject *pProject,
+(const TrackPanelMouseEvent &, WavacityProject *pProject,
  wxWindow *)
 {
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
@@ -428,7 +428,7 @@ UIHandle::Result SampleHandle::Release
    return RefreshCode::RefreshNone;
 }
 
-UIHandle::Result SampleHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result SampleHandle::Cancel(WavacityProject *pProject)
 {
    mClickedTrack.reset();
    ProjectHistory::Get( *pProject ).RollbackState();

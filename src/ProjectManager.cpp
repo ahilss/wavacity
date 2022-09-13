@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectManager.cpp
 
-Paul Licameli split from WavvyProject.cpp
+Paul Licameli split from WavacityProject.cpp
 
 **********************************************************************/
 
@@ -42,7 +42,7 @@ Paul Licameli split from WavvyProject.cpp
 #include "toolbars/SpectralSelectionBar.h"
 #include "toolbars/TimeToolBar.h"
 #include "toolbars/ToolManager.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/FileHistory.h"
 #include "widgets/ErrorDialog.h"
 #include "widgets/WindowAccessible.h"
@@ -53,30 +53,30 @@ Paul Licameli split from WavvyProject.cpp
 #include <wx/sizer.h>
 
 #if defined(__WXGTK__) || defined(__WXWASM__)
-#include "../images/WavvyLogoAlpha.xpm"
+#include "../images/WavacityLogoAlpha.xpm"
 #endif
 
-const int WavvyProjectTimerID = 5200;
+const int WavacityProjectTimerID = 5200;
 
-static WavvyProject::AttachedObjects::RegisteredFactory sProjectManagerKey {
-   []( WavvyProject &project ) {
+static WavacityProject::AttachedObjects::RegisteredFactory sProjectManagerKey {
+   []( WavacityProject &project ) {
       return std::make_shared< ProjectManager >( project );
    }
 };
 
-ProjectManager &ProjectManager::Get( WavvyProject &project )
+ProjectManager &ProjectManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectManager >( sProjectManagerKey );
 }
 
-const ProjectManager &ProjectManager::Get( const WavvyProject &project )
+const ProjectManager &ProjectManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectManager::ProjectManager( WavvyProject &project )
+ProjectManager::ProjectManager( WavacityProject &project )
    : mProject{ project }
-   , mTimer{ std::make_unique<wxTimer>(this, WavvyProjectTimerID) }
+   , mTimer{ std::make_unique<wxTimer>(this, WavacityProjectTimerID) }
 {
    auto &window = ProjectWindow::Get( mProject );
    window.Bind( wxEVT_CLOSE_WINDOW, &ProjectManager::OnCloseWindow, this );
@@ -88,17 +88,17 @@ ProjectManager::ProjectManager( WavvyProject &project )
 
 ProjectManager::~ProjectManager() = default;
 
-// PRL:  This event type definition used to be in WavvyApp.h, which created
+// PRL:  This event type definition used to be in WavacityApp.h, which created
 // a bad compilation dependency.  The event was never emitted anywhere.  I
 // preserve it and its handler here but I move it to remove the dependency.
 // Asynchronous open
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_OPEN_AUDIO_FILE, wxCommandEvent);
 wxDEFINE_EVENT(EVT_OPEN_AUDIO_FILE, wxCommandEvent);
 
 BEGIN_EVENT_TABLE( ProjectManager, wxEvtHandler )
    EVT_COMMAND(wxID_ANY, EVT_OPEN_AUDIO_FILE, ProjectManager::OnOpenAudioFile)
-   EVT_TIMER(WavvyProjectTimerID, ProjectManager::OnTimer)
+   EVT_TIMER(WavacityProjectTimerID, ProjectManager::OnTimer)
 END_EVENT_TABLE()
 
 bool ProjectManager::sbWindowRectAlreadySaved = false;
@@ -162,7 +162,7 @@ void ProjectManager::SaveWindowSize()
       }
       else {
          // this would be a very strange case that might possibly occur on the Mac
-         // Wavvy would have to be running with no projects open
+         // Wavacity would have to be running with no projects open
          // in this case we are going to write only the default values
          wxRect defWndRect;
          GetDefaultWindowRect(&defWndRect);
@@ -212,7 +212,7 @@ public:
 class DropTarget final : public wxFileDropTarget
 {
 public:
-   DropTarget(WavvyProject *proj)
+   DropTarget(WavacityProject *proj)
    {
       mProject = proj;
 
@@ -345,7 +345,7 @@ public:
    }
 
 private:
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 };
 
 #endif
@@ -428,7 +428,7 @@ void InitProjectWindow( ProjectWindow &window )
 
    auto &trackPanel = TrackPanel::Get( project );
 
-   // LLL: When Wavvy starts or becomes active after returning from
+   // LLL: When Wavacity starts or becomes active after returning from
    //      another application, the first window that can accept focus
    //      will be given the focus even if we try to SetFocus().  By
    //      making the TrackPanel that first window, we resolve several
@@ -498,20 +498,20 @@ void InitProjectWindow( ProjectWindow &window )
 #if !defined(__WXMAC__) && !defined(__WXX11__)
    {
 #if defined(__WXMSW__)
-      wxIcon ic{ wxICON(WavvyLogo) };
+      wxIcon ic{ wxICON(WavacityLogo) };
 #elif defined(__WXGTK__) || defined(__WXWASM__)
-      wxIcon ic{wxICON(WavvyLogoAlpha)};
+      wxIcon ic{wxICON(WavacityLogoAlpha)};
 #else
       wxIcon ic{};
-      ic.CopyFromBitmap(theTheme.Bitmap(bmpWavvyLogo48x48));
+      ic.CopyFromBitmap(theTheme.Bitmap(bmpWavacityLogo48x48));
 #endif
       window.SetIcon(ic);
    }
 #endif
 
    window.UpdateStatusWidths();
-   auto msg = XO("Welcome to Wavvy version %s")
-      .Format( WAVVY_VERSION_STRING );
+   auto msg = XO("Welcome to Wavacity version %s")
+      .Format( WAVACITY_VERSION_STRING );
    ProjectManager::Get( project ).SetStatusText( msg, mainStatusBarField );
 
 #ifdef EXPERIMENTAL_DA2
@@ -519,7 +519,7 @@ void InitProjectWindow( ProjectWindow &window )
 #endif
 }
 
-WavvyProject *ProjectManager::New()
+WavacityProject *ProjectManager::New()
 {
    wxRect wndRect;
    bool bMaximized = false;
@@ -528,7 +528,7 @@ WavvyProject *ProjectManager::New()
    
    // Create and show a NEW project
    // Use a non-default deleter in the smart pointer!
-   auto sp = std::make_shared< WavvyProject >();
+   auto sp = std::make_shared< WavacityProject >();
    AllProjects{}.Add( sp );
    auto p = sp.get();
    auto &project = *p;
@@ -573,8 +573,8 @@ WavvyProject *ProjectManager::New()
    
 #if wxUSE_DRAG_AND_DROP
    // We can import now, so become a drag target
-   //   SetDropTarget(safenew WavvyDropTarget(this));
-   //   mTrackPanel->SetDropTarget(safenew WavvyDropTarget(this));
+   //   SetDropTarget(safenew WavacityDropTarget(this));
+   //   mTrackPanel->SetDropTarget(safenew WavacityDropTarget(this));
    
    // SetDropTarget takes ownership
    TrackPanel::Get( project ).SetDropTarget( safenew DropTarget( &project ) );
@@ -642,7 +642,7 @@ void ProjectManager::OnCloseWindow(wxCloseEvent & event)
    // and flush the tracks once we've completely finished
    // recording NEW state.
    // This code is derived from similar code in
-   // WavvyProject::~WavvyProject() and TrackPanel::OnTimer().
+   // WavacityProject::~WavacityProject() and TrackPanel::OnTimer().
    if (projectAudioIO.GetAudioIOToken()>0 &&
        gAudioIO->IsStreamActive(projectAudioIO.GetAudioIOToken())) {
 
@@ -674,7 +674,7 @@ void ProjectManager::OnCloseWindow(wxCloseEvent & event)
          {
           Message += XO("\nIf saved, the project will have no tracks.\n\nTo save any previously open tracks:\nCancel, Edit > Undo until all tracks\nare open, then File > Save Project.");
          }
-         int result = WavvyMessageBox(
+         int result = WavacityMessageBox(
             Message,
             Title,
             wxYES_NO | wxCANCEL | wxICON_QUESTION,
@@ -768,7 +768,7 @@ void ProjectManager::OnCloseWindow(wxCloseEvent & event)
    }
 
    // Some of the AdornedRulerPanel functions refer to the TrackPanel, so destroy this
-   // before the TrackPanel is destroyed. This change was needed to stop Wavvy
+   // before the TrackPanel is destroyed. This change was needed to stop Wavacity
    // crashing when running with Jaws on Windows 10 1703.
    AdornedRulerPanel::Destroy( project );
 
@@ -855,7 +855,7 @@ void ProjectManager::OnOpenAudioFile(wxCommandEvent & event)
 }
 
 // static method, can be called outside of a project
-void ProjectManager::OpenFiles(WavvyProject *proj)
+void ProjectManager::OpenFiles(WavacityProject *proj)
 {
    const FileNames::FileType extraType = {};
 
@@ -897,7 +897,7 @@ void ProjectManager::OpenFiles(WavvyProject *proj)
             // there are no tracks, but there's an Undo history, etc, then
             // bad things can happen, including data files moving to the NEW
             // project directory, etc.
-            WavvyProject *newProj = proj;
+            WavacityProject *newProj = proj;
             if ( proj && (
                ProjectHistory::Get( *proj ).GetDirty() ||
                !TrackList::Get( *proj ).empty()
@@ -913,10 +913,10 @@ void ProjectManager::OpenFiles(WavvyProject *proj)
       });
 }
 
-WavvyProject *ProjectManager::OpenProject(
-   WavvyProject *pProject, const FilePath &fileNameArg, bool addtohistory)
+WavacityProject *ProjectManager::OpenProject(
+   WavacityProject *pProject, const FilePath &fileNameArg, bool addtohistory)
 {
-   WavvyProject *pNewProject = nullptr;
+   WavacityProject *pNewProject = nullptr;
    if ( ! pProject )
       pProject = pNewProject = New();
    auto cleanup = finally( [&] {

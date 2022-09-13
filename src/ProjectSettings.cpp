@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectSettings.cpp
 
-Paul Licameli split from WavvyProject.cpp
+Paul Licameli split from WavacityProject.cpp
 
 **********************************************************************/
 
@@ -20,7 +20,7 @@ Paul Licameli split from WavvyProject.cpp
 wxDEFINE_EVENT(EVT_PROJECT_SETTINGS_CHANGE, wxCommandEvent);
 
 namespace {
-   void Notify( WavvyProject &project, ProjectSettings::EventCode code )
+   void Notify( WavacityProject &project, ProjectSettings::EventCode code )
    {
       wxCommandEvent e{ EVT_PROJECT_SETTINGS_CHANGE };
       e.SetInt( static_cast<int>( code ) );
@@ -28,26 +28,26 @@ namespace {
    }
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory
+static const WavacityProject::AttachedObjects::RegisteredFactory
 sProjectSettingsKey{
-  []( WavvyProject &project ){
+  []( WavacityProject &project ){
      auto result = std::make_shared< ProjectSettings >( project );
      return result;
    }
 };
 
-ProjectSettings &ProjectSettings::Get( WavvyProject &project )
+ProjectSettings &ProjectSettings::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectSettings >(
       sProjectSettingsKey );
 }
 
-const ProjectSettings &ProjectSettings::Get( const WavvyProject &project )
+const ProjectSettings &ProjectSettings::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectSettings::ProjectSettings(WavvyProject &project)
+ProjectSettings::ProjectSettings(WavacityProject &project)
    : mProject{ project }
    , mSelectionFormat{ NumericTextCtrl::LookupFormat(
       NumericConverter::TIME,
@@ -70,7 +70,7 @@ ProjectSettings::ProjectSettings(WavvyProject &project)
    if (!gPrefs->Read(wxT("/SamplingRate/DefaultProjectSampleRate"), &mRate,
          AudioIOBase::GetOptimalSupportedSampleRate())) {
       // The default given above can vary with host/devices. So unless there is
-      // an entry for the default sample rate in wavvy.cfg, Wavvy can open
+      // an entry for the default sample rate in wavacity.cfg, Wavacity can open
       // with a rate which is different from the rate with which it closed.
       // See bug 1879.
       gPrefs->Write(wxT("/SamplingRate/DefaultProjectSampleRate"), mRate);

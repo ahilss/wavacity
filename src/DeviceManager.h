@@ -11,12 +11,12 @@
 ******************************************************************//**
 
 \class DeviceManager
-\brief A singleton that manages the audio devices known to Wavvy
+\brief A singleton that manages the audio devices known to Wavacity
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_DEVICEMANAGER__
-#define __WAVVY_DEVICEMANAGER__
+#ifndef __WAVACITY_DEVICEMANAGER__
+#define __WAVACITY_DEVICEMANAGER__
 
 #include "Experimental.h"
 
@@ -31,7 +31,7 @@
 #endif
 
 // Event sent to the application
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_RESCANNED_DEVICES, wxCommandEvent);
 
 typedef struct DeviceSourceMap {

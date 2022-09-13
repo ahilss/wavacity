@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SLIDER__
-#define __WAVVY_SLIDER__
+#ifndef __WAVACITY_SLIDER__
+#define __WAVACITY_SLIDER__
 
 #include <wx/setup.h> // for wxUSE_* macros
 #include <wx/defs.h>

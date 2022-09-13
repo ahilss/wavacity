@@ -11,16 +11,16 @@
 *******************************************************************//*!
 
 \file ModuleManager.cpp
-\brief Based on LoadLadspa, this code loads pluggable Wavvy 
+\brief Based on LoadLadspa, this code loads pluggable Wavacity 
 extension modules.  It also has the code to (a) invoke a script
 server and (b) invoke a function returning a replacement window,
-i.e. an alternative to the usual interface, for Wavvy.
+i.e. an alternative to the usual interface, for Wavacity.
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ModuleManager.h"
-#include "wavvy/ModuleInterface.h"
+#include "wavacity/ModuleInterface.h"
 
 #include "Experimental.h"
 
@@ -34,7 +34,7 @@ i.e. an alternative to the usual interface, for Wavvy.
 
 #include "commands/ScriptCommandRelay.h"
 
-#include "wavvy/PluginInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #ifdef EXPERIMENTAL_MODULE_PREFS
 #include "Prefs.h"
@@ -43,7 +43,7 @@ i.e. an alternative to the usual interface, for Wavvy.
 
 #include "widgets/MultiDialog.h"
 
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 #define initFnName      "ExtensionModuleInit"
 #define versionFnName   "GetVersionString"
@@ -111,7 +111,7 @@ bool Module::Load()
 
    if (!mLib->Load(mName, wxDL_LAZY | wxDL_QUIET)) {
       auto Error = wxString(wxSysErrorMsg());
-      WavvyMessageBox(XO("Unable to load the \"%s\" module.\n\nError: %s").Format(ShortName, Error),
+      WavacityMessageBox(XO("Unable to load the \"%s\" module.\n\nError: %s").Format(ShortName, Error),
                          XO("Module Unsuitable"));
       wxLogMessage(wxT("Unable to load the module \"%s\". Error: %s"), mName, Error);
       return false;
@@ -120,7 +120,7 @@ bool Module::Load()
    // Check version string matches.  (For now, they must match exactly)
    tVersionFn versionFn = (tVersionFn)(mLib->GetSymbol(wxT(versionFnName)));
    if (versionFn == NULL){
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("The module \"%s\" does not provide a version string.\n\nIt will not be loaded.")
             .Format( ShortName),
          XO("Module Unsuitable"));
@@ -130,12 +130,12 @@ bool Module::Load()
    }
 
    wxString moduleVersion = versionFn();
-   if( moduleVersion != WAVVY_VERSION_STRING) {
-      WavvyMessageBox(
-         XO("The module \"%s\" is matched with Wavvy version \"%s\".\n\nIt will not be loaded.")
+   if( moduleVersion != WAVACITY_VERSION_STRING) {
+      WavacityMessageBox(
+         XO("The module \"%s\" is matched with Wavacity version \"%s\".\n\nIt will not be loaded.")
             .Format(ShortName, moduleVersion),
          XO("Module Unsuitable"));
-      wxLogMessage(wxT("The module \"%s\" is matched with Wavvy version \"%s\". It will not be loaded."), mName, moduleVersion);
+      wxLogMessage(wxT("The module \"%s\" is matched with Wavacity version \"%s\". It will not be loaded."), mName, moduleVersion);
       mLib->Unload();
       return false;
    }
@@ -144,7 +144,7 @@ bool Module::Load()
    if (!mDispatch) {
       // Module does not provide a dispatch function. Special case modules like this could be:
       // (a) for scripting (RegScriptServerFunc entry point)
-      // (b) for hijacking the entire Wavvy panel (MainPanelFunc entry point)
+      // (b) for hijacking the entire Wavacity panel (MainPanelFunc entry point)
       return true;
    }
 
@@ -157,7 +157,7 @@ bool Module::Load()
 
    mDispatch = NULL;
 
-   WavvyMessageBox(
+   WavacityMessageBox(
       XO("The module \"%s\" failed to initialize.\n\nIt will not be loaded.").Format(ShortName),
       XO("Module Unsuitable"));
    wxLogMessage(wxT("The module \"%s\" failed to initialize.\nIt will not be loaded."), mName);
@@ -234,19 +234,19 @@ ModuleManager::~ModuleManager()
 // static 
 void ModuleManager::Initialize(CommandHandler &cmdHandler)
 {
-   const auto &wavvyPathList = FileNames::WavvyPathList();
+   const auto &wavacityPathList = FileNames::WavacityPathList();
    FilePaths pathList;
    FilePaths files;
    wxString pathVar;
    size_t i;
 
    // Code from LoadLadspa that might be useful in load modules.
-   pathVar = wxGetenv(wxT("WAVVY_MODULES_PATH"));
+   pathVar = wxGetenv(wxT("WAVACITY_MODULES_PATH"));
    if (!pathVar.empty())
       FileNames::AddMultiPathsToPathList(pathVar, pathList);
 
-   for (i = 0; i < wavvyPathList.size(); i++) {
-      wxString prefix = wavvyPathList[i] + wxFILE_SEP_PATH;
+   for (i = 0; i < wavacityPathList.size(); i++) {
+      wxString prefix = wavacityPathList[i] + wxFILE_SEP_PATH;
       FileNames::AddUniquePathToPathList(prefix + wxT("modules"),
                                          pathList);
       if (files.size()) {
@@ -302,7 +302,7 @@ void ModuleManager::Initialize(CommandHandler &cmdHandler)
             XO("Yes"), XO("No"),
          };  // could add a button here for 'yes and remember that', and put it into the cfg file.  Needs more thought.
          int action;
-         action = ShowMultiDialog(msg, XO("Wavvy Module Loader"),
+         action = ShowMultiDialog(msg, XO("Wavacity Module Loader"),
             buttons,
             "",
             XO("Try and load this module?"), 
@@ -340,7 +340,7 @@ void ModuleManager::Initialize(CommandHandler &cmdHandler)
                scriptFn = (tpRegScriptServerFunc)(module->GetSymbol(wxT(scriptFnName)));
             }
 
-            // (b) for hijacking the entire Wavvy panel.
+            // (b) for hijacking the entire Wavacity panel.
             if (pPanelHijack == NULL)
             {
                pPanelHijack = (tPanelFn)(module->GetSymbol(wxT(mainPanelFnName)));
@@ -350,7 +350,7 @@ void ModuleManager::Initialize(CommandHandler &cmdHandler)
          if (!module->HasDispatch() && !scriptFn && !pPanelHijack)
          {
             auto ShortName = wxFileName(files[i]).GetName();
-            WavvyMessageBox(
+            WavacityMessageBox(
                XO("The module \"%s\" does not provide any of the required functions.\n\nIt will not be loaded.").Format(ShortName),
                XO("Module Unsuitable"));
             wxLogMessage(wxT("The module \"%s\" does not provide any of the required functions. It will not be loaded."), files[i]);
@@ -412,7 +412,7 @@ bool ModuleManager::DiscoverProviders()
    FilePaths pathList;
 
    // Code from LoadLadspa that might be useful in load modules.
-   wxString pathVar = wxString::FromUTF8(getenv("WAVVY_MODULES_PATH"));
+   wxString pathVar = wxString::FromUTF8(getenv("WAVACITY_MODULES_PATH"));
 
    if (!pathVar.empty())
    {
@@ -486,12 +486,12 @@ ModuleInterface *ModuleManager::LoadModule(const PluginPath & path)
    if (lib->Load(path, wxDL_NOW))
    {
       bool success = false;
-      ModuleMain wavvyMain = (ModuleMain) lib->GetSymbol(wxSTRINGIZE_T(MODULE_ENTRY),
+      ModuleMain wavacityMain = (ModuleMain) lib->GetSymbol(wxSTRINGIZE_T(MODULE_ENTRY),
                                                             &success);
-      if (success && wavvyMain)
+      if (success && wavacityMain)
       {
          ModuleInterfaceHandle handle {
-            wavvyMain(&path), ModuleInterfaceDeleter{}
+            wavacityMain(&path), ModuleInterfaceDeleter{}
          };
          if (handle)
          {

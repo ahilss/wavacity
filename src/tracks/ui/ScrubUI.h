@@ -8,8 +8,8 @@
  
  **********************************************************************/
 
-#ifndef __WAVVY_SCRUB_UI__
-#define __WAVVY_SCRUB_UI__
+#ifndef __WAVACITY_SCRUB_UI__
+#define __WAVACITY_SCRUB_UI__
 
 
 

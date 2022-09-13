@@ -1,5 +1,5 @@
 //
-// Copied from wxWidgets 3.0.2 and modified for Wavvy
+// Copied from wxWidgets 3.0.2 and modified for Wavacity
 //
 /////////////////////////////////////////////////////////////////////////////
 // Name:        src/gtk/filedlg.cpp
@@ -12,7 +12,7 @@
 #include <gtk/gtk.h>
 
 #include "Internat.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "../FileDialog.h"
 
 #ifdef __UNIX__
@@ -68,7 +68,7 @@ static void gtk_filedialog_ok_callback(GtkWidget *widget, FileDialog *dialog)
         {
             if ( g_file_test(filename, G_FILE_TEST_EXISTS) )
             {
-                int result = WavvyMessageBox(
+                int result = WavacityMessageBox(
                   XO("File '%s' already exists, do you really want to overwrite it?")
                      .Format(wxString::FromUTF8(filename)),
                   XO("Confirm"),
@@ -86,7 +86,7 @@ static void gtk_filedialog_ok_callback(GtkWidget *widget, FileDialog *dialog)
     {
         if ( !g_file_test(filename, G_FILE_TEST_EXISTS) )
         {
-            WavvyMessageBox(XO("Please choose an existing file."),
+            WavacityMessageBox(XO("Please choose an existing file."),
                                XO("Error"),
                                wxOK | wxICON_ERROR);
             return;

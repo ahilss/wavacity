@@ -7,10 +7,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DITHER_H__
-#define __WAVVY_DITHER_H__
+#ifndef __WAVACITY_DITHER_H__
+#define __WAVACITY_DITHER_H__
 
-#include "wavvy/Types.h" // for samplePtr
+#include "wavacity/Types.h" // for samplePtr
 
 template< typename Enum > class EnumSetting;
 
@@ -62,4 +62,4 @@ private:
     float mBuffer[8 /* = BUF_SIZE */];
 };
 
-#endif /* __WAVVY_DITHER_H__ */
+#endif /* __WAVACITY_DITHER_H__ */

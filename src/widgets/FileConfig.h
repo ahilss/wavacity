@@ -8,15 +8,15 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_FILECONFIG__
-#define __WAVVY_WIDGETS_FILECONFIG__
+#ifndef __WAVACITY_WIDGETS_FILECONFIG__
+#define __WAVACITY_WIDGETS_FILECONFIG__
 
 #include <memory>
 
 #include <wx/defs.h>
 #include <wx/fileconf.h>
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class FileConfig : public wxConfigBase
 {
@@ -47,7 +47,7 @@ public:
    virtual bool DeleteGroup(const wxString& key) wxOVERRIDE;
    virtual bool DeleteAll() wxOVERRIDE;
 
-   // Set and Get values of the version major/minor/micro keys in wavvy.cfg when Wavvy first opens
+   // Set and Get values of the version major/minor/micro keys in wavacity.cfg when Wavacity first opens
    void SetVersionKeysInit( int major, int minor, int micro)
    {
       mVersionMajorKeyInit = major;
@@ -90,8 +90,8 @@ private:
 
    std::unique_ptr<wxFileConfig> mConfig;
 
-   // values of the version major/minor/micro keys in wavvy.cfg
-   // when Wavvy first opens
+   // values of the version major/minor/micro keys in wavacity.cfg
+   // when Wavacity first opens
    int mVersionMajorKeyInit{};
    int mVersionMinorKeyInit{};
    int mVersionMicroKeyInit{};

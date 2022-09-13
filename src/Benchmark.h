@@ -8,11 +8,11 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_BENCHMARK__
-#define __WAVVY_BENCHMARK__
+#ifndef __WAVACITY_BENCHMARK__
+#define __WAVACITY_BENCHMARK__
 
-class WavvyProject;
+class WavacityProject;
 
-void RunBenchmark( wxWindow *parent, WavvyProject &project );
+void RunBenchmark( wxWindow *parent, WavacityProject &project );
 
-#endif // define __WAVVY_BENCHMARK__
+#endif // define __WAVACITY_BENCHMARK__

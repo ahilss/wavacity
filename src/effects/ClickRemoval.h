@@ -8,13 +8,13 @@
 
   (Structure largely stolen from NoiseRemoval.h by Dominic Mazzoni)
 
-  This file is intended to become part of Wavvy.  You may modify and/or
-  distribute it under the same terms as Wavvy itself.
+  This file is intended to become part of Wavacity.  You may modify and/or
+  distribute it under the same terms as Wavacity itself.
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_CLICK_REMOVAL__
-#define __WAVVY_EFFECT_CLICK_REMOVAL__
+#ifndef __WAVACITY_EFFECT_CLICK_REMOVAL__
+#define __WAVACITY_EFFECT_CLICK_REMOVAL__
 
 #include "Effect.h"
 

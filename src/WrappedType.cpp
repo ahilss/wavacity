@@ -3,7 +3,7 @@
   WrappedType.cpp
 
   James Crook
-  (C) Wavvy Developers, 2007
+  (C) Wavacity Developers, 2007
 
   wxWidgets license. See Licensing.txt
 
@@ -25,7 +25,7 @@
 
 *//**********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "WrappedType.h"
 
 #include <wx/wxprec.h>

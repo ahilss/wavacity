@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SHUTTLE_GET_DEFINITION__
-#define __WAVVY_SHUTTLE_GET_DEFINITION__
+#ifndef __WAVACITY_SHUTTLE_GET_DEFINITION__
+#define __WAVACITY_SHUTTLE_GET_DEFINITION__
 
 #include "Shuttle.h" // to inherit
 #include "commands/CommandTargets.h" // to inherit

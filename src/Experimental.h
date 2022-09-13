@@ -17,7 +17,7 @@
 
   JKC: This file solves a problem of how to avoid forking the
   code base when working on NEW features e.g:
-    - Additional displays in Wavvy
+    - Additional displays in Wavacity
     - Modular architecture.
   Add #defines in here for the NEW features, and make your code
   conditional on those #defines.
@@ -30,9 +30,9 @@
 #ifndef __EXPERIMENTAL__
 #define __EXPERIMENTAL__
 
-#ifndef __WAVVY_H__
-// Wavvy.h is needed for the USE_* macros
-#error Must include Wavvy.h before Experimental.h
+#ifndef __WAVACITY_H__
+// Wavacity.h is needed for the USE_* macros
+#error Must include Wavacity.h before Experimental.h
 #endif
 
 // ACH 08 Jan 2014
@@ -57,10 +57,10 @@
 // feature to link audio tracks to a label track
 #define EXPERIMENTAL_SYNC_LOCK
 
-// DA: Enables dark wavvy theme and customisations.
+// DA: Enables dark wavacity theme and customisations.
 //#define EXPERIMENTAL_DA
 
-// These CFG macros allow easy distinction between Wavvy and DA defaults.
+// These CFG macros allow easy distinction between Wavacity and DA defaults.
 #ifdef EXPERIMENTAL_DA
 #define CFG_A( x ) 
 #define CFG_DA( x ) x
@@ -152,11 +152,11 @@
 //#define EXPERIMENTAL_SCOREALIGN
 
 //If you want any of these files, ask JKC.  They are not
-//yet checked in to Wavvy SVN as of 12-Feb-2010
+//yet checked in to Wavacity SVN as of 12-Feb-2010
 #ifdef EXPERIMENTAL_NOTEBOOK
    #include "widgets/GuiFactory.h"
    #include "widgets/APanel.h"
-   extern void AddPages(   WavvyProject * pProj, GuiFactory & Factory,  wxNotebook  * pNotebook );
+   extern void AddPages(   WavacityProject * pProj, GuiFactory & Factory,  wxNotebook  * pNotebook );
 #endif
 
 #ifdef EXPERIMENTAL_NYQUIST_INSPECTOR
@@ -174,8 +174,8 @@
 #define EXPERIMENTAL_MODULE_PREFS
 #endif
 
-// Define to allow realtime processing in Wavvy effects that have been converted.
-#define EXPERIMENTAL_REALTIME_WAVVY_EFFECTS
+// Define to allow realtime processing in Wavacity effects that have been converted.
+#define EXPERIMENTAL_REALTIME_WAVACITY_EFFECTS
 
 // Define to include the effects rack (such as it is).
 //#define EXPERIMENTAL_EFFECTS_RACK

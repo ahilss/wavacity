@@ -8,28 +8,28 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMAND_CONTEXT__
-#define __WAVVY_COMMAND_CONTEXT__
+#ifndef __WAVACITY_COMMAND_CONTEXT__
+#define __WAVACITY_COMMAND_CONTEXT__
 
 #include <memory>
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
-class WavvyProject;
+class WavacityProject;
 class wxEvent;
 class CommandOutputTargets;
 using CommandParameter = CommandID;
 
-class WAVVY_DLL_API CommandContext {
+class WAVACITY_DLL_API CommandContext {
 public:
    CommandContext(
-      WavvyProject &p
+      WavacityProject &p
       , const wxEvent *e = nullptr
       , int ii = 0
       , const CommandParameter &param = CommandParameter{}
    );
 
    CommandContext(
-      WavvyProject &p,
+      WavacityProject &p,
       std::unique_ptr<CommandOutputTargets> target);
 
    ~CommandContext();
@@ -49,7 +49,7 @@ public:
    void AddBool(const bool value      , const wxString &name = {} ) const;
    void AddItem(const double value    , const wxString &name = {} ) const;
 
-   WavvyProject &project;
+   WavacityProject &project;
    std::unique_ptr<CommandOutputTargets> pOutput;
    const wxEvent *pEvt;
    int index;

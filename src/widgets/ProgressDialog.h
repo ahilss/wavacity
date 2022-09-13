@@ -15,10 +15,10 @@
 
 *************************************************************************/
 
-#ifndef __WAVVY_WIDGETS_PROGRESSDIALOG__
-#define __WAVVY_WIDGETS_PROGRESSDIALOG__
+#ifndef __WAVACITY_WIDGETS_PROGRESSDIALOG__
+#define __WAVACITY_WIDGETS_PROGRESSDIALOG__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <vector>
 #include <wx/defs.h>
@@ -52,7 +52,7 @@ enum ProgressDialogFlags
 /// ProgressDialog Class
 ////////////////////////////////////////////////////////////
 
-class WAVVY_DLL_API ProgressDialog /* not final */ : public wxDialogWrapper
+class WAVACITY_DLL_API ProgressDialog /* not final */ : public wxDialogWrapper
 {
 public:
    ProgressDialog();
@@ -153,7 +153,7 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-class WAVVY_DLL_API TimerProgressDialog final : public ProgressDialog
+class WAVACITY_DLL_API TimerProgressDialog final : public ProgressDialog
 {
 public:
    TimerProgressDialog(const wxLongLong_t duration,

@@ -19,11 +19,11 @@ custom controls.
 
 #include <wx/filedlg.h> // to inherit
 
-#ifndef WAVVY_DLL_API
-#define WAVVY_DLL_API
+#ifndef WAVACITY_DLL_API
+#define WAVACITY_DLL_API
 #endif
 
-class WAVVY_DLL_API FileDialogBase : public wxFileDialogBase
+class WAVACITY_DLL_API FileDialogBase : public wxFileDialogBase
 {
 public:
    FileDialogBase();

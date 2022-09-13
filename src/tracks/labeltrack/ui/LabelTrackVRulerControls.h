@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_TRACK_VRULER_CONTROLS__
-#define __WAVVY_LABEL_TRACK_VRULER_CONTROLS__
+#ifndef __WAVACITY_LABEL_TRACK_VRULER_CONTROLS__
+#define __WAVACITY_LABEL_TRACK_VRULER_CONTROLS__
 
 #include "../../ui/TrackVRulerControls.h"
 

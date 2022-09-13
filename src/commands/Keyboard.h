@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_KEYBOARD__
-#define __WAVVY_KEYBOARD__
+#ifndef __WAVACITY_KEYBOARD__
+#define __WAVACITY_KEYBOARD__
 
-#include <wavvy/Types.h>
+#include <wavacity/Types.h>
 #include <wx/defs.h>
 
 class wxKeyEvent;

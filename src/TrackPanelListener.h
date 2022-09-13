@@ -8,19 +8,19 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_LISTENER__
-#define __WAVVY_TRACK_PANEL_LISTENER__
+#ifndef __WAVACITY_TRACK_PANEL_LISTENER__
+#define __WAVACITY_TRACK_PANEL_LISTENER__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 enum class UndoPush : unsigned char;
 
 /*
 \brief A now badly named abstract class which was a failed attempt to let
-TrackPanel code pretend it doesn't completely know what an WavvyProject is
+TrackPanel code pretend it doesn't completely know what an WavacityProject is
 and use only a limited number of its services.
 */
-class WAVVY_DLL_API TrackPanelListener /* not final */ {
+class WAVACITY_DLL_API TrackPanelListener /* not final */ {
 
  public:
    TrackPanelListener(){};

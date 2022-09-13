@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECTMANAGER__
-#define __WAVVY_EFFECTMANAGER__
+#ifndef __WAVACITY_EFFECTMANAGER__
+#define __WAVACITY_EFFECTMANAGER__
 
 #include "../Experimental.h"
 
@@ -18,11 +18,11 @@
 #include <vector>
 
 #include <unordered_map>
-#include "wavvy/EffectInterface.h"
-#include "wavvy/Types.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/Types.h"
 
-class WavvyCommand;
-class WavvyProject;
+class WavacityCommand;
+class WavacityProject;
 class CommandContext;
 class CommandMessageTarget;
 class ComponentInterfaceSymbol;
@@ -33,18 +33,18 @@ class wxString;
 typedef wxString PluginID;
 
 using EffectMap = std::unordered_map<wxString, Effect *>;
-using WavvyCommandMap = std::unordered_map<wxString, WavvyCommand *>;
+using WavacityCommandMap = std::unordered_map<wxString, WavacityCommand *>;
 using EffectOwnerMap = std::unordered_map< wxString, std::shared_ptr<Effect> >;
 
 #if defined(EXPERIMENTAL_EFFECTS_RACK)
 class EffectRack;
 #endif
-class WavvyCommand;
+class WavacityCommand;
 
 
 class NotifyingSelectedRegion;
 
-class WAVVY_DLL_API EffectManager
+class WAVACITY_DLL_API EffectManager
 {
 public:
 
@@ -88,7 +88,7 @@ public:
 
    /** Run a command given the plugin ID */
    // Returns true on success. 
-   bool DoWavvyCommand(const PluginID & ID,
+   bool DoWavacityCommand(const PluginID & ID,
                          const CommandContext &,
                          wxWindow *parent,
                          bool shouldPrompt  = true );
@@ -141,10 +141,10 @@ public:
    Effect *GetEffect(const PluginID & ID);
 
 private:
-   WavvyCommand *GetWavvyCommand(const PluginID & ID);
+   WavacityCommand *GetWavacityCommand(const PluginID & ID);
 
    EffectMap mEffects;
-   WavvyCommandMap mCommands;
+   WavacityCommandMap mCommands;
    EffectOwnerMap mHostEffects;
 
    int mNumEffects;

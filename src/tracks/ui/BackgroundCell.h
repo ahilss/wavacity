@@ -8,13 +8,13 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_BACKGROUND_CELL__
-#define __WAVVY_BACKGROUND_CELL__
+#ifndef __WAVACITY_BACKGROUND_CELL__
+#define __WAVACITY_BACKGROUND_CELL__
 
 #include "../../ClientData.h"
 #include "CommonTrackPanelCell.h"
 
-class WavvyProject;
+class WavacityProject;
 
 class BackgroundHandle;
 class ZoomHandle;
@@ -27,11 +27,11 @@ class BackgroundCell final
    , public ClientData::Base
 {
 public:
-   static BackgroundCell &Get( WavvyProject &project );
-   static const BackgroundCell &Get( const WavvyProject &project );
+   static BackgroundCell &Get( WavacityProject &project );
+   static const BackgroundCell &Get( const WavacityProject &project );
 
    explicit
-   BackgroundCell(WavvyProject *pProject)
+   BackgroundCell(WavacityProject *pProject)
       : mpProject(pProject)
    {}
 
@@ -40,7 +40,7 @@ public:
 protected:
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *) override;
+       const WavacityProject *) override;
 
    std::shared_ptr<Track> DoFindTrack() override;
 
@@ -54,7 +54,7 @@ private:
       TrackPanelDrawingContext &,
       const wxRect &rect, const wxRect &panelRect, unsigned iPass ) override;
    
-   WavvyProject *mpProject;
+   WavacityProject *mpProject;
 
    std::weak_ptr<BackgroundHandle> mHandle;
 

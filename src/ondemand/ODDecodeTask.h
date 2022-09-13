@@ -25,8 +25,8 @@ robust enough to allow all the user changes such as copy/paste, DELETE, and so o
 
 
 
-#ifndef __WAVVY_ODDecodeTask__
-#define __WAVVY_ODDecodeTask__
+#ifndef __WAVACITY_ODDecodeTask__
+#define __WAVACITY_ODDecodeTask__
 
 #include <vector>
 #include "ODTask.h"

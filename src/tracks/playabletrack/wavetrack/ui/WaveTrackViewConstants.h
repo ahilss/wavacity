@@ -8,10 +8,10 @@ Paul Licameli split from class WaveTrack
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVE_TRACK_VIEW_CONSTANTS__
-#define __WAVVY_WAVE_TRACK_VIEW_CONSTANTS__
+#ifndef __WAVACITY_WAVE_TRACK_VIEW_CONSTANTS__
+#define __WAVACITY_WAVE_TRACK_VIEW_CONSTANTS__
 
-#include "wavvy/ComponentInterface.h" // for EnumValueSymbol
+#include "wavacity/ComponentInterface.h" // for EnumValueSymbol
 
 namespace WaveTrackViewConstants
 {

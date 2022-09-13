@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "PlayIndicatorOverlay.h"
 
 #include "../../AColor.h"
@@ -38,7 +38,7 @@ namespace {
    enum { IndicatorMediumWidth = 13 };
 }
 
-PlayIndicatorOverlayBase::PlayIndicatorOverlayBase(WavvyProject *project, bool isMaster)
+PlayIndicatorOverlayBase::PlayIndicatorOverlayBase(WavacityProject *project, bool isMaster)
 : mProject(project)
 , mIsMaster(isMaster)
 {
@@ -130,8 +130,8 @@ void PlayIndicatorOverlayBase::Draw(OverlayPanel &panel, wxDC &dc)
       wxASSERT(false);
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sOverlayKey{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sOverlayKey{
+  []( WavacityProject &parent ){
      auto result = std::make_shared< PlayIndicatorOverlay >( &parent );
      TrackPanel::Get( parent ).AddOverlay( result );
      return result;
@@ -140,7 +140,7 @@ static const WavvyProject::AttachedObjects::RegisteredFactory sOverlayKey{
 
 void RegisterPlayIndicatorOverlay() {}
 
-PlayIndicatorOverlay::PlayIndicatorOverlay(WavvyProject *project)
+PlayIndicatorOverlay::PlayIndicatorOverlay(WavacityProject *project)
 : PlayIndicatorOverlayBase(project, true)
 {
    ProjectWindow::Get( *mProject ).GetPlaybackScroller().Bind(

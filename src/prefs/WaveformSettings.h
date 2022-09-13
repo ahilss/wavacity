@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVEFORM_SETTINGS__
-#define __WAVVY_WAVEFORM_SETTINGS__
+#ifndef __WAVACITY_WAVEFORM_SETTINGS__
+#define __WAVACITY_WAVEFORM_SETTINGS__
 
 #include "../Internat.h" // for TranslatableStrings
 #include "../Prefs.h"

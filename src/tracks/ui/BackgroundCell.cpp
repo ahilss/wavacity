@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "BackgroundCell.h"
 
 #include "../../AColor.h"
@@ -47,7 +47,7 @@ public:
    {}
 
    Result Click
-      (const TrackPanelMouseEvent &evt, WavvyProject *pProject) override
+      (const TrackPanelMouseEvent &evt, WavacityProject *pProject) override
    {
       using namespace RefreshCode;
       const wxMouseEvent &event = evt.event;
@@ -66,24 +66,24 @@ public:
    }
 
    Result Drag
-      (const TrackPanelMouseEvent &, WavvyProject *) override
+      (const TrackPanelMouseEvent &, WavacityProject *) override
    { return RefreshCode::RefreshNone; }
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &, WavvyProject *) override
+      (const TrackPanelMouseState &, WavacityProject *) override
    { return HitPreview(); }
 
    Result Release
-      (const TrackPanelMouseEvent &, WavvyProject *,
+      (const TrackPanelMouseEvent &, WavacityProject *,
        wxWindow *) override
    { return RefreshCode::RefreshNone; }
 
-   Result Cancel(WavvyProject *) override
+   Result Cancel(WavacityProject *) override
    { return RefreshCode::RefreshNone; }
 };
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &parent ){
      auto result = std::make_shared< BackgroundCell >( &parent );
      TrackPanel::Get( parent ).SetBackgroundCell( result );
      return result;
@@ -92,14 +92,14 @@ static const WavvyProject::AttachedObjects::RegisteredFactory key{
 
 void RegisterBackgroundCell() {}
 
-BackgroundCell &BackgroundCell::Get( WavvyProject &project )
+BackgroundCell &BackgroundCell::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< BackgroundCell >( key );
 }
 
-const BackgroundCell &BackgroundCell::Get( const WavvyProject &project )
+const BackgroundCell &BackgroundCell::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 BackgroundCell::~BackgroundCell()
@@ -108,7 +108,7 @@ BackgroundCell::~BackgroundCell()
 
 std::vector<UIHandlePtr> BackgroundCell::HitTest
 (const TrackPanelMouseState &,
- const WavvyProject *)
+ const WavacityProject *)
 {
    std::vector<UIHandlePtr> results;
    auto result = mHandle.lock();

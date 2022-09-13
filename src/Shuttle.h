@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SHUTTLE__
-#define __WAVVY_SHUTTLE__
+#ifndef __WAVACITY_SHUTTLE__
+#define __WAVACITY_SHUTTLE__
 
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 
 class ComponentInterfaceSymbol;
 class WrappedType;

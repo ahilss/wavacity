@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_IMAGE_ROLL__
-#define __WAVVY_IMAGE_ROLL__
+#ifndef __WAVACITY_IMAGE_ROLL__
+#define __WAVACITY_IMAGE_ROLL__
 
 #include <vector>
 // #include <wx/dc.h> // for enum wxRasterOperationMode
@@ -94,4 +94,4 @@ class ImageRollPanel final : public wxPanelWrapper
 
 };
 
-#endif // __WAVVY_IMAGE_ROLL__
+#endif // __WAVACITY_IMAGE_ROLL__

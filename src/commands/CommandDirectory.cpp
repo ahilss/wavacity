@@ -14,7 +14,7 @@ functions to look up a command by name.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "CommandDirectory.h"
 
 std::unique_ptr<CommandDirectory> CommandDirectory::mInstance;
@@ -35,7 +35,7 @@ CommandDirectory::CommandDirectory()
    // Not needed.  Sets selected/solo/mute on multiple tracks.
    //AddCommand(std::make_unique<SetProjectInfoCommandType>());
 
-//   Moved to WavvyCommand
+//   Moved to WavacityCommand
 //   AddCommand(std::make_unique<OpenProjectCommandType>());
 //   AddCommand(std::make_unique<SaveProjectCommandType>());
 //   AddCommand(std::make_unique<ImportCommandType>());

@@ -17,8 +17,8 @@
 #define __COMMANDHANDLER__
 
 #include "../MemoryX.h"
-class WavvyApp;
-class WavvyProject;
+class WavacityApp;
+class WavacityProject;
 class AppCommandEvent;
 class CommandContext;
 

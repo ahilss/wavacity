@@ -26,10 +26,10 @@ flicker-free use.
 
 *//**********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_GRABBER__
-#define __WAVVY_WIDGETS_GRABBER__
+#ifndef __WAVACITY_WIDGETS_GRABBER__
+#define __WAVACITY_WIDGETS_GRABBER__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/defs.h>
 #include <wx/statbmp.h> // to inherit
@@ -42,7 +42,7 @@ class TranslatableString;
 
 // Custom events
 
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_GRABBER_CLICKED, -1)
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_GRABBER_CLICKED, -1)
 
 class GrabberEvent final : public wxCommandEvent
 {
@@ -146,7 +146,7 @@ class Grabber final : public wxWindow
 };
 
 // Piggy back in same source file as Grabber.
-// Wavvy Flicker-free StaticBitmap.
+// Wavacity Flicker-free StaticBitmap.
 class AStaticBitmap : public wxStaticBitmap {
   public:
     AStaticBitmap(wxWindow *parent,

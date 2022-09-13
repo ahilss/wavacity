@@ -9,7 +9,7 @@
 
 **********************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "MixerBoard.h"
 
 #include "Experimental.h"
@@ -55,14 +55,14 @@
 
 #include "../images/MusicalInstruments.h"
 #ifdef __WXMSW__
-   #include "../images/WavvyLogo.xpm"
+   #include "../images/WavacityLogo.xpm"
 #else
-   #include "../images/WavvyLogo48x48.xpm"
+   #include "../images/WavacityLogo48x48.xpm"
 #endif
 
 #include "commands/CommandManager.h"
 
-#define WavvyMixerBoardTitle XO("Wavvy Mixer Board%s")
+#define WavacityMixerBoardTitle XO("Wavacity Mixer Board%s")
 
 // class MixerTrackSlider
 
@@ -168,7 +168,7 @@ BEGIN_EVENT_TABLE(MixerTrackCluster, wxPanelWrapper)
 END_EVENT_TABLE()
 
 MixerTrackCluster::MixerTrackCluster(wxWindow* parent,
-                                       MixerBoard* grandParent, WavvyProject* project,
+                                       MixerBoard* grandParent, WavacityProject* project,
                                        const std::shared_ptr<PlayableTrack> &pTrack,
                                        const wxPoint& pos /*= wxDefaultPosition*/,
                                        const wxSize& size /*= wxDefaultSize*/)
@@ -186,7 +186,7 @@ MixerTrackCluster::MixerTrackCluster(wxWindow* parent,
    // Not sure why, but sizers weren't getting offset vertically,
    // probably because not using wxDefaultPosition,
    // so positions are calculated explicitly below, and sizers code was removed.
-   // (Still available in Wavvy_UmixIt branch off 1.2.6.)
+   // (Still available in Wavacity_UmixIt branch off 1.2.6.)
 
    // track name
    wxPoint ctrlPos(kDoubleInset, kDoubleInset);
@@ -307,7 +307,7 @@ MixerTrackCluster::MixerTrackCluster(wxWindow* parent,
    mMeter.Release();
    if (GetWave()) {
       mMeter =
-         safenew MeterPanel(mProject, // WavvyProject* project,
+         safenew MeterPanel(mProject, // WavacityProject* project,
                    this, -1, // wxWindow* parent, wxWindowID id,
                    false, // bool isInput
                    ctrlPos, ctrlSize, // const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize,
@@ -521,7 +521,7 @@ void MixerTrackCluster::UpdateMeter(const double t0, const double t1)
    {
       //v Vaughan, 2011-02-25: Moved the update back to TrackPanel::OnTimer() as it helps with
       //    playback issues reported by Bill and noted on Bug 258, so no assert.
-      // Vaughan, 2011-02-04: Now that we're updating all meters from wavvyAudioCallback,
+      // Vaughan, 2011-02-04: Now that we're updating all meters from wavacityAudioCallback,
       //    this causes an assert if you click Mute while playing, because ResetMeter() resets
       //    the timer, and wxTimerbase says that can only be done from main thread --
       //    but it seems to work fine.
@@ -814,7 +814,7 @@ BEGIN_EVENT_TABLE(MixerBoardScrolledWindow, wxScrolledWindow)
    EVT_MOUSE_EVENTS(MixerBoardScrolledWindow::OnMouseEvent)
 END_EVENT_TABLE()
 
-MixerBoardScrolledWindow::MixerBoardScrolledWindow(WavvyProject* project,
+MixerBoardScrolledWindow::MixerBoardScrolledWindow(WavacityProject* project,
                                                    MixerBoard* parent, wxWindowID id /*= -1*/,
                                                    const wxPoint& pos /*= wxDefaultPosition*/,
                                                    const wxSize& size /*= wxDefaultSize*/,
@@ -856,7 +856,7 @@ BEGIN_EVENT_TABLE(MixerBoard, wxWindow)
    EVT_SIZE(MixerBoard::OnSize)
 END_EVENT_TABLE()
 
-MixerBoard::MixerBoard(WavvyProject* pProject,
+MixerBoard::MixerBoard(WavacityProject* pProject,
                         wxFrame* parent,
                         const wxPoint& pos /*= wxDefaultPosition*/,
                         const wxSize& size /*= wxDefaultSize*/)
@@ -885,7 +885,7 @@ MixerBoard::MixerBoard(WavvyProject* pProject,
    wxASSERT(pProject); // to justify safenew
    mScrolledWindow =
       safenew MixerBoardScrolledWindow(
-         pProject, // WavvyProject* project,
+         pProject, // WavacityProject* project,
          this, -1, // wxWindow* parent, wxWindowID id = -1,
          this->GetClientAreaOrigin(), // const wxPoint& pos = wxDefaultPosition,
          size, // const wxSize& size = wxDefaultSize,
@@ -1347,11 +1347,11 @@ void MixerBoard::OnTimer(wxCommandEvent &event)
    //if (pMixerBoard)
    //   pMixerBoard->ResetMeters(false);
 
-   //v Vaughan, 2011-02-25: Moved this update back here from wavvyAudioCallback.
+   //v Vaughan, 2011-02-25: Moved this update back here from wavacityAudioCallback.
    //    See note there.
    // Vaughan, 2010-01-30:
    //    Since all we're doing here is updating the meters, I moved it to
-   //    wavvyAudioCallback where it calls gAudioIO->mOutputMeter->UpdateDisplay().
+   //    wavacityAudioCallback where it calls gAudioIO->mOutputMeter->UpdateDisplay().
    if (ProjectAudioIO::Get( *mProject ).IsAudioActive())
    {
       auto gAudioIO = AudioIOBase::Get();
@@ -1408,7 +1408,7 @@ END_EVENT_TABLE()
 const wxSize kDefaultSize =
    wxSize(MIXER_BOARD_MIN_WIDTH, MIXER_BOARD_MIN_HEIGHT);
 
-MixerBoardFrame::MixerBoardFrame(WavvyProject* parent)
+MixerBoardFrame::MixerBoardFrame(WavacityProject* parent)
 :  wxFrame( &GetProjectFrame( *parent ), -1, {},
             wxDefaultPosition, kDefaultSize,
             wxDEFAULT_FRAME_STYLE | wxFRAME_FLOAT_ON_PARENT)
@@ -1432,9 +1432,9 @@ MixerBoardFrame::MixerBoardFrame(WavvyProject* parent)
 #if !defined(__WXMAC__) && !defined(__WXX11__)
    {
 #ifdef __WXMSW__
-      wxIcon ic{ wxICON(WavvyLogo) };
+      wxIcon ic{ wxICON(WavacityLogo) };
 #else
-      wxIcon ic{wxICON(WavvyLogo48x48)};
+      wxIcon ic{wxICON(WavacityLogo48x48)};
 #endif
       SetIcon(ic);
    }
@@ -1475,12 +1475,12 @@ void MixerBoardFrame::OnSize(wxSizeEvent & WXUNUSED(event))
 
 void MixerBoardFrame::OnKeyEvent(wxKeyEvent & event)
 {
-   WavvyProject *project = mMixerBoard->mProject;
+   WavacityProject *project = mMixerBoard->mProject;
    auto &commandManager = CommandManager::Get( *project );
    commandManager.FilterKeyEvent(project, event, true);
 }
 
-void MixerBoardFrame::Recreate( WavvyProject *pProject )
+void MixerBoardFrame::Recreate( WavacityProject *pProject )
 {
    wxPoint  pos = mMixerBoard->GetPosition();
    wxSize siz = mMixerBoard->GetSize();
@@ -1506,7 +1506,7 @@ void MixerBoardFrame::SetWindowTitle()
       name.Prepend(wxT(" - "));
    }
 
-   SetTitle(WavvyMixerBoardTitle.Format(name).Translation());
+   SetTitle(WavacityMixerBoardTitle.Format(name).Translation());
 }
 
 // Remaining code hooks this add-on into the application
@@ -1515,8 +1515,8 @@ void MixerBoardFrame::SetWindowTitle()
 namespace {
 
 // Mixer board window attached to each project is built on demand by:
-WavvyProject::AttachedWindows::RegisteredFactory sMixerBoardKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sMixerBoardKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       return safenew MixerBoardFrame( &parent );
    }
 };
@@ -1534,9 +1534,9 @@ struct Handler : CommandHandlerObject {
    }
 };
 
-CommandHandlerObject &findCommandHandler(WavvyProject &) {
+CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static Handler instance;
    return instance;
 }

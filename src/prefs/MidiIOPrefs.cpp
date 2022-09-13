@@ -23,7 +23,7 @@ other settings.
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "MidiIOPrefs.h"
 
 #include "../Experimental.h"
@@ -40,7 +40,7 @@ other settings.
 
 #include "../Prefs.h"
 #include "../ShuttleGui.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 #define DEFAULT_SYNTH_LATENCY 5
 
@@ -294,7 +294,7 @@ bool MidiIOPrefs::Validate()
 {
    long latency;
    if (!mLatency->GetValue().ToLong(&latency)) {
-      WavvyMessageBox( XO(
+      WavacityMessageBox( XO(
 "The MIDI Synthesizer Latency must be an integer") );
       return false;
    }
@@ -304,7 +304,7 @@ bool MidiIOPrefs::Validate()
 #ifdef EXPERIMENTAL_MIDI_OUT
 namespace{
 PrefsPanel::Registration sAttachment{ "MidiIO",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew MidiIOPrefs(parent, winid);

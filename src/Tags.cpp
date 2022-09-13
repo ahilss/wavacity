@@ -21,7 +21,7 @@
   It can present the user with a dialog for editing this information.
 
   Use of this functionality requires that libid3tag be compiled in
-  with Wavvy.
+  with Wavacity.
 
 *//****************************************************************//**
 
@@ -30,7 +30,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Tags.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -49,7 +49,7 @@
 #include "ProjectFileIORegistry.h"
 #include "ShuttleGui.h"
 #include "widgets/Grid.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/HelpSystem.h"
 #include "xml/XMLFileReader.h"
 
@@ -226,24 +226,24 @@ static const wxChar *DefaultGenres[] =
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "tags" ),
-   []( WavvyProject &project ){ return &Tags::Get( project ); }
+   []( WavacityProject &project ){ return &Tags::Get( project ); }
 };
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  [](WavvyProject &){ return std::make_shared< Tags >(); }
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  [](WavacityProject &){ return std::make_shared< Tags >(); }
 };
 
-Tags &Tags::Get( WavvyProject &project )
+Tags &Tags::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< Tags >( key );
 }
 
-const Tags &Tags::Get( const WavvyProject &project )
+const Tags &Tags::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-Tags &Tags::Set( WavvyProject &project, const std::shared_ptr< Tags > &tags )
+Tags &Tags::Set( WavacityProject &project, const std::shared_ptr< Tags > &tags )
 {
    auto &result = *tags;
    project.AttachedObjects::Assign( key, tags );
@@ -1176,7 +1176,7 @@ void TagsEditorDialog::OnEdit(wxCommandEvent & WXUNUSED(event))
    wxFileName fn(FileNames::DataDir(), wxT("genres.txt"));
    wxFile f(fn.GetFullPath(), wxFile::write);
    if (!f.IsOpened() || !f.Write(tc->GetValue())) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to save genre file."),
          XO("Reset Genres") );
       return;
@@ -1189,7 +1189,7 @@ void TagsEditorDialog::OnEdit(wxCommandEvent & WXUNUSED(event))
 
 void TagsEditorDialog::OnReset(wxCommandEvent & WXUNUSED(event))
 {
-   int id = WavvyMessageBox(
+   int id = WavacityMessageBox(
       XO("Are you sure you want to reset the genre list to defaults?"),
       XO("Reset Genres"),
       wxYES_NO);
@@ -1206,7 +1206,7 @@ void TagsEditorDialog::OnReset(wxCommandEvent & WXUNUSED(event))
                (!tf.Exists() && tf.Create());
 
    if (!open) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to open genre file."),
          XO("Reset Genres") );
       mLocal.LoadGenres();
@@ -1220,7 +1220,7 @@ void TagsEditorDialog::OnReset(wxCommandEvent & WXUNUSED(event))
    }
 
    if (!tf.Write()) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to save genre file."),
          XO("Reset Genres") );
       mLocal.LoadGenres();
@@ -1263,7 +1263,7 @@ void TagsEditorDialog::OnLoad(wxCommandEvent & WXUNUSED(event))
    XMLFileReader reader;
    if (!reader.Parse(&temp, fn)) {
       // Inform user of load failure
-      WavvyMessageBox(
+      WavacityMessageBox(
          reader.GetErrorStr(),
          XO("Error Loading Metadata"),
          wxOK | wxCENTRE,

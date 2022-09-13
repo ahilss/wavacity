@@ -3,13 +3,13 @@
 # Report how complete each translation catalog is
 
 # How many messages in total?
-total=`grep '^msgid' wavvy.pot | wc -l`
+total=`grep '^msgid' wavacity.pot | wc -l`
 
 for filename in `ls *.po`; do
     # If there are errors from msgcmp, then the last line on standard error
     # contains a count of problematic messages; else it won't match the
     # pattern in awk, so assume no errors
-    errors=`msgcmp $filename wavvy.pot 2>&1 | \
+    errors=`msgcmp $filename wavacity.pot 2>&1 | \
 	awk '/msgcmp: found [0-9]* fatal errors/ { nn = $3 } END {print 0+nn}'`
     complete=$((total-errors))
     # A few spaces after the filename makes the columns mostly aligned

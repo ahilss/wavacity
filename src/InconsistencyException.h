@@ -6,10 +6,10 @@
 
 */
 
-#ifndef __WAVVY_INCONSISTENCY_EXCEPTION__
-#define __WAVVY_INCONSISTENCY_EXCEPTION__
+#ifndef __WAVACITY_INCONSISTENCY_EXCEPTION__
+#define __WAVACITY_INCONSISTENCY_EXCEPTION__
 
-#include "WavvyException.h"
+#include "WavacityException.h"
 
 //! Exception that should be impossible in production, thrown only from provably unreachable places
 /*!  Some errors that formerly were assertion violations now throw exceptions,

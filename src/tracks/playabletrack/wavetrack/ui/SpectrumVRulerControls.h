@@ -8,8 +8,8 @@ Paul Licameli split from WaveTrackVRulerControls.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRUM_VRULER_CONTROLS__
-#define __WAVVY_SPECTRUM_VRULER_CONTROLS__
+#ifndef __WAVACITY_SPECTRUM_VRULER_CONTROLS__
+#define __WAVACITY_SPECTRUM_VRULER_CONTROLS__
 
 #include "../../../ui/TrackVRulerControls.h" // to inherit
 
@@ -29,13 +29,13 @@ public:
 
    std::vector<UIHandlePtr> HitTest(
       const TrackPanelMouseState &state,
-      const WavvyProject *) override;
+      const WavacityProject *) override;
 
    unsigned HandleWheelRotation(
       const TrackPanelMouseEvent &event,
-      WavvyProject *pProject) override;
+      WavacityProject *pProject) override;
    static unsigned DoHandleWheelRotation(
-      const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+      const TrackPanelMouseEvent &evt, WavacityProject *pProject,
       WaveTrack *wt);
 
 private:

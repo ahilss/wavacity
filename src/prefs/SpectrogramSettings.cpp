@@ -13,7 +13,7 @@ Paul Licameli
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SpectrogramSettings.h"
 
 #include "../Experimental.h"
@@ -28,7 +28,7 @@ Paul Licameli
 
 #include <cmath>
 
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 SpectrogramSettings::Globals::Globals()
 {
@@ -175,7 +175,7 @@ bool SpectrogramSettings::Validate(bool quiet)
 {
    if (!quiet &&
       maxFreq < 100) {
-      WavvyMessageBox( XO("Maximum frequency must be 100 Hz or above") );
+      WavacityMessageBox( XO("Maximum frequency must be 100 Hz or above") );
       return false;
    }
    else
@@ -183,7 +183,7 @@ bool SpectrogramSettings::Validate(bool quiet)
 
    if (!quiet &&
       minFreq < 0) {
-      WavvyMessageBox( XO("Minimum frequency must be at least 0 Hz") );
+      WavacityMessageBox( XO("Minimum frequency must be at least 0 Hz") );
       return false;
    }
    else
@@ -191,7 +191,7 @@ bool SpectrogramSettings::Validate(bool quiet)
 
    if (!quiet &&
       maxFreq <= minFreq) {
-      WavvyMessageBox( XO(
+      WavacityMessageBox( XO(
 "Minimum frequency must be less than maximum frequency") );
       return false;
    }
@@ -200,7 +200,7 @@ bool SpectrogramSettings::Validate(bool quiet)
 
    if (!quiet &&
       range <= 0) {
-      WavvyMessageBox( XO("The range must be at least 1 dB") );
+      WavacityMessageBox( XO("The range must be at least 1 dB") );
       return false;
    }
    else
@@ -208,12 +208,12 @@ bool SpectrogramSettings::Validate(bool quiet)
 
    if (!quiet &&
       frequencyGain < 0) {
-      WavvyMessageBox( XO("The frequency gain cannot be negative") );
+      WavacityMessageBox( XO("The frequency gain cannot be negative") );
       return false;
    }
    else if (!quiet &&
       frequencyGain > 60) {
-      WavvyMessageBox( XO(
+      WavacityMessageBox( XO(
 "The frequency gain must be no more than 60 dB/dec") );
       return false;
    }

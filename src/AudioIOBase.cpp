@@ -8,7 +8,7 @@ Paul Licameli split from AudioIO.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "AudioIOBase.h"
 
 #include "Experimental.h"
@@ -311,7 +311,7 @@ void AudioIOBase::HandleDeviceChange()
 #endif   // USE_PORTMIXER
 }
 
-void AudioIOBase::SetCaptureMeter(WavvyProject *project, MeterPanelBase *meter)
+void AudioIOBase::SetCaptureMeter(WavacityProject *project, MeterPanelBase *meter)
 {
    if (( mOwningProject ) && ( mOwningProject != project))
       return;
@@ -325,7 +325,7 @@ void AudioIOBase::SetCaptureMeter(WavvyProject *project, MeterPanelBase *meter)
       mInputMeter.Release();
 }
 
-void AudioIOBase::SetPlaybackMeter(WavvyProject *project, MeterPanelBase *meter)
+void AudioIOBase::SetPlaybackMeter(WavacityProject *project, MeterPanelBase *meter)
 {
    if (( mOwningProject ) && ( mOwningProject != project))
       return;

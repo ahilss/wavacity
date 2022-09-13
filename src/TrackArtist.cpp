@@ -17,7 +17,7 @@
   waveforms at least it needs to cache the samples that are
   currently on-screen.
 
-<b>How Wavvy Redisplay Works \n
+<b>How Wavacity Redisplay Works \n
  Roger Dannenberg</b> \n
 Oct 2010 \n
 
@@ -38,7 +38,7 @@ audio tracks.
 
 *//*******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros and HAVE_ALLOCA_H
+#include "Wavacity.h" // for USE_* macros and HAVE_ALLOCA_H
 #include "TrackArtist.h"
 
 #include "Experimental.h"

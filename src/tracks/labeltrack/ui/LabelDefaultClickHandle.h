@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_DEFAULT_CLICK_HANDLE__
-#define __WAVVY_LABEL_DEFAULT_CLICK_HANDLE__
+#ifndef __WAVACITY_LABEL_DEFAULT_CLICK_HANDLE__
+#define __WAVACITY_LABEL_DEFAULT_CLICK_HANDLE__
 
 #include "../../../UIHandle.h"
 
@@ -28,24 +28,24 @@ public:
       (const LabelDefaultClickHandle&) = default;
    
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    // does not override Preview()
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
 private:
    struct LabelState;
    std::shared_ptr< LabelState > mLabelState;
-   void SaveState( WavvyProject *pProject );
-   void RestoreState( WavvyProject *pProject );
+   void SaveState( WavacityProject *pProject );
+   void RestoreState( WavacityProject *pProject );
 };
 
 #endif

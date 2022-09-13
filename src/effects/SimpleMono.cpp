@@ -19,7 +19,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SimpleMono.h"
 
 #include "../WaveTrack.h"

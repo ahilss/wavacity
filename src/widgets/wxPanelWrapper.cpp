@@ -1,12 +1,12 @@
 //
 //  wxPanelWrapper.cpp
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 6/25/16.
 //
 //
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "wxPanelWrapper.h"
 
 #include <wx/grid.h>

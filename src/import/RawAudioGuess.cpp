@@ -13,10 +13,10 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "RawAudioGuess.h"
 
-#include "../WavvyException.h"
+#include "../WavacityException.h"
 
 #include <stdio.h>
 #include <stdlib.h>

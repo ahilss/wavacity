@@ -75,7 +75,7 @@ CommandManager.  It holds the callback for one command.
 
 *//******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../Experimental.h"
 
@@ -96,7 +96,7 @@ CommandManager.  It holds the callback for one command.
 #include "../Menus.h"
 
 #include "../Project.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 
@@ -150,7 +150,7 @@ struct CommandListEntry
    CommandParameter parameter;
 
    // type of a function that determines checkmark state
-   using CheckFn = std::function< bool(WavvyProject&) >;
+   using CheckFn = std::function< bool(WavacityProject&) >;
    CheckFn checkmarkFn;
 
    bool multi;
@@ -195,20 +195,20 @@ SubMenuListEntry::~SubMenuListEntry()
 }
 
 ///
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   [](WavvyProject&) {
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   [](WavacityProject&) {
       return std::make_unique<CommandManager>();
    }
 };
 
-CommandManager &CommandManager::Get( WavvyProject &project )
+CommandManager &CommandManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< CommandManager >( key );
 }
 
-const CommandManager &CommandManager::Get( const WavvyProject &project )
+const CommandManager &CommandManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 static CommandManager::MenuHook &sMenuHook()
@@ -529,7 +529,7 @@ wxMenu * CommandManager::CurrentMenu() const
    return tmpCurrentSubMenu;
 }
 
-void CommandManager::UpdateCheckmarks( WavvyProject &project )
+void CommandManager::UpdateCheckmarks( WavacityProject &project )
 {
    for ( const auto &entry : mCommandList ) {
       if ( entry->menu && entry->checkmarkFn && !entry->isOccult) {
@@ -540,7 +540,7 @@ void CommandManager::UpdateCheckmarks( WavvyProject &project )
 
 
 
-void CommandManager::AddItem(WavvyProject &project,
+void CommandManager::AddItem(WavacityProject &project,
                              const CommandID &name,
                              const TranslatableString &label_in,
                              CommandHandlerFinder finder,
@@ -585,7 +585,7 @@ void CommandManager::AddItem(WavvyProject &project,
 auto CommandManager::Options::MakeCheckFn(
    const wxString key, bool defaultValue ) -> CheckFn
 {
-   return [=](WavvyProject&){ return gPrefs->ReadBool( key, defaultValue ); };
+   return [=](WavacityProject&){ return gPrefs->ReadBool( key, defaultValue ); };
 }
 
 ///
@@ -1070,7 +1070,7 @@ TranslatableString CommandManager::DescribeCommandsAndShortcuts(
 ///
 ///
 ///
-bool CommandManager::FilterKeyEvent(WavvyProject *project, const wxKeyEvent & evt, bool permit)
+bool CommandManager::FilterKeyEvent(WavacityProject *project, const wxKeyEvent & evt, bool permit)
 {
    if (!project)
       return false;
@@ -1183,7 +1183,7 @@ bool CommandManager::FilterKeyEvent(WavvyProject *project, const wxKeyEvent & ev
 /// returning true iff successful.  If you pass any flags,
 ///the command won't be executed unless the flags are compatible
 ///with the command's flags.
-bool CommandManager::HandleCommandEntry(WavvyProject &project,
+bool CommandManager::HandleCommandEntry(WavacityProject &project,
    const CommandListEntry * entry,
    CommandFlag flags, bool alwaysEnabled, const wxEvent * evt)
 {
@@ -1260,7 +1260,7 @@ void CommandManager::DoRepeatProcess(const CommandContext& context, int id) {
 ///the command won't be executed unless the flags are compatible
 ///with the command's flags.
 bool CommandManager::HandleMenuID(
-   WavvyProject &project, int id, CommandFlag flags, bool alwaysEnabled)
+   WavacityProject &project, int id, CommandFlag flags, bool alwaysEnabled)
 {
    mLastProcessId = id;
    CommandListEntry *entry = mCommandNumericIDHash[id];
@@ -1312,7 +1312,7 @@ CommandManager::HandleTextualCommand(const CommandID & Str,
    return CommandNotFound;
 }
 
-TranslatableStrings CommandManager::GetCategories( WavvyProject& )
+TranslatableStrings CommandManager::GetCategories( WavacityProject& )
 {
    TranslatableStrings cats;
 
@@ -1468,7 +1468,7 @@ NormalizedKeyString CommandManager::GetDefaultKeyFromName(const CommandID &name)
 
 bool CommandManager::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
 {
-   if (!wxStrcmp(tag, wxT("wavvykeyboard"))) {
+   if (!wxStrcmp(tag, wxT("wavacitykeyboard"))) {
       mXMLKeysRead = 0;
    }
 
@@ -1502,8 +1502,8 @@ bool CommandManager::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
 void CommandManager::HandleXMLEndTag(const wxChar *tag)
 {
    /*
-   if (!wxStrcmp(tag, wxT("wavvykeyboard"))) {
-      WavvyMessageBox(
+   if (!wxStrcmp(tag, wxT("wavacitykeyboard"))) {
+      WavacityMessageBox(
          XO("Loaded %d keyboard shortcuts\n")
             .Format( mXMLKeysRead ),
          XO("Loading Keyboard Shortcuts"),
@@ -1520,8 +1520,8 @@ XMLTagHandler *CommandManager::HandleXMLChild(const wxChar * WXUNUSED(tag))
 void CommandManager::WriteXML(XMLWriter &xmlFile) const
 // may throw
 {
-   xmlFile.StartTag(wxT("wavvykeyboard"));
-   xmlFile.WriteAttr(wxT("wavvyversion"), WAVVY_VERSION_STRING);
+   xmlFile.StartTag(wxT("wavacitykeyboard"));
+   xmlFile.WriteAttr(wxT("wavacityversion"), WAVACITY_VERSION_STRING);
 
    for(const auto &entry : mCommandList) {
 
@@ -1531,7 +1531,7 @@ void CommandManager::WriteXML(XMLWriter &xmlFile) const
       xmlFile.EndTag(wxT("command"));
    }
 
-   xmlFile.EndTag(wxT("wavvykeyboard"));
+   xmlFile.EndTag(wxT("wavacitykeyboard"));
 }
 
 void CommandManager::BeginOccultCommands()
@@ -1604,8 +1604,8 @@ void CommandManager::CheckDups()
 // must both be in either the first or the second group, so there is no need
 // to test for this case.
 // Note that if a user is using the full set of default shortcuts, and one
-// of these is changed, then if /GUI/Shortcuts/FullDefaults is not set in wavvy.cfg,
-// because the defaults appear as user assigned shortcuts in wavvy.cfg,
+// of these is changed, then if /GUI/Shortcuts/FullDefaults is not set in wavacity.cfg,
+// because the defaults appear as user assigned shortcuts in wavacity.cfg,
 // the previous default overrides the changed default, and no duplicate can
 // be introduced.
 void CommandManager::RemoveDuplicateShortcuts()
@@ -1634,7 +1634,7 @@ void CommandManager::RemoveDuplicateShortcuts()
       " because their default shortcut is new or changed, and is the same shortcut"
       " that you have assigned to another command.")
          + disabledShortcuts;
-      WavvyMessageBox(message, XO("Shortcuts have been removed"), wxOK | wxCENTRE);
+      WavacityMessageBox(message, XO("Shortcuts have been removed"), wxOK | wxCENTRE);
 
       gPrefs->Flush();
       MenuCreator::RebuildAllMenuBars();
@@ -1650,12 +1650,12 @@ static struct InstallHandlers
       KeyboardCapture::SetPreFilter( []( wxKeyEvent & ) {
          // We must have a project since we will be working with the
          // CommandManager, which is tied to individual projects.
-         WavvyProject *project = GetActiveProject();
+         WavacityProject *project = GetActiveProject();
          return project && GetProjectFrame( *project ).IsEnabled();
       } );
       KeyboardCapture::SetPostFilter( []( wxKeyEvent &key ) {
          // Capture handler window didn't want it, so ask the CommandManager.
-         WavvyProject *project = GetActiveProject();
+         WavacityProject *project = GetActiveProject();
          auto &manager = CommandManager::Get( *project );
          return manager.FilterKeyEvent(project, key);
       } );

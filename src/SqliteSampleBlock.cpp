@@ -131,7 +131,7 @@ class SqliteSampleBlockFactory final
    , public std::enable_shared_from_this<SqliteSampleBlockFactory>
 {
 public:
-   explicit SqliteSampleBlockFactory( WavvyProject &project );
+   explicit SqliteSampleBlockFactory( WavacityProject &project );
 
    ~SqliteSampleBlockFactory() override;
 
@@ -168,7 +168,7 @@ private:
    BlockDeletionCallback mCallback;
 };
 
-SqliteSampleBlockFactory::SqliteSampleBlockFactory( WavvyProject &project )
+SqliteSampleBlockFactory::SqliteSampleBlockFactory( WavacityProject &project )
    : mppConnection{ ConnectionPtr::Get(project).shared_from_this() }
 {
    
@@ -444,7 +444,7 @@ bool SqliteSampleBlock::GetSummary(float *dest,
                      numframes * fields * SAMPLE_SIZE(floatSample));
          return true;
       }
-      catch ( const WavvyException & ) {
+      catch ( const WavacityException & ) {
       }
    }
    memset(dest, 0, 3 * numframes * sizeof( float ));
@@ -954,7 +954,7 @@ static struct Injector
    {
       // Do this some time before the first project is created
       (void) SampleBlockFactory::RegisterFactoryFactory(
-         []( WavvyProject &project )
+         []( WavacityProject &project )
          {
             return std::make_shared<SqliteSampleBlockFactory>( project );
          }

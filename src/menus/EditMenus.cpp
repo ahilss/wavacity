@@ -1,4 +1,4 @@
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "../AdornedRulerPanel.h"
 #include "../Clipboard.h"
 #include "../CommonCommandFlags.h"
@@ -23,7 +23,7 @@
 #include "../export/Export.h"
 #include "../prefs/PrefsDialog.h"
 #include "../tracks/labeltrack/ui/LabelTrackView.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 // private helper classes and functions
 namespace {
@@ -37,7 +37,7 @@ void FinishCopy
 
 // Handle text paste (into active label), if any. Return true if did paste.
 // (This was formerly the first part of overly-long OnPaste.)
-bool DoPasteText(WavvyProject &project)
+bool DoPasteText(WavacityProject &project)
 {
    auto &tracks = TrackList::Get( project );
    auto &selectedRegion = ViewInfo::Get( project ).selectedRegion;
@@ -72,7 +72,7 @@ bool DoPasteText(WavvyProject &project)
 // Return true if nothing selected, regardless of paste result.
 // If nothing was selected, create and paste into NEW tracks.
 // (This was formerly the second part of overly-long OnPaste.)
-bool DoPasteNothingSelected(WavvyProject &project)
+bool DoPasteNothingSelected(WavacityProject &project)
 {
    auto &tracks = TrackList::Get( project );
    auto &selectedRegion = ViewInfo::Get( project ).selectedRegion;
@@ -145,7 +145,7 @@ void OnUndo(const CommandContext &context)
    auto &window = ProjectWindow::Get( project );
 
    if (!ProjectHistory::Get( project ).UndoAvailable()) {
-      WavvyMessageBox( XO("Nothing to undo") );
+      WavacityMessageBox( XO("Nothing to undo") );
       return;
    }
 
@@ -176,7 +176,7 @@ void OnRedo(const CommandContext &context)
    auto &window = ProjectWindow::Get( project );
 
    if (!ProjectHistory::Get( project ).RedoAvailable()) {
-      WavvyMessageBox( XO("Nothing to redo") );
+      WavacityMessageBox( XO("Nothing to redo") );
       return;
    }
    // Can't redo whilst dragging
@@ -909,7 +909,7 @@ void OnPreferences(const CommandContext &context)
    if( ScreenshotCommand::MayCapture( dialog ) )
       return;
 
-   dialog->WavvyCommandDialog::ShowModal([this, dialog](int retCode) {
+   dialog->WavacityCommandDialog::ShowModal([this, dialog](int retCode) {
       dialog->Destroy();
       if (retCode != wxID_CANCEL)
       {
@@ -924,7 +924,7 @@ void OnPreferences(const CommandContext &context)
             //
             //   http://bugzilla.audacityteam.org/show_bug.cgi?id=458
             //
-            // This workaround should be removed when Wavvy updates to wxWidgets
+            // This workaround should be removed when Wavacity updates to wxWidgets
             // 3.x which has a fix.
             auto &window = GetProjectFrame( *p );
             wxRect r = window.GetRect();
@@ -944,11 +944,11 @@ void OnPasteOver(const CommandContext &context)
    auto &project = context.project;
    auto &selectedRegion = project.GetViewInfo().selectedRegion;
 
-   if((WavvyProject::msClipT1 - WavvyProject::msClipT0) > 0.0)
+   if((WavacityProject::msClipT1 - WavacityProject::msClipT0) > 0.0)
    {
       selectedRegion.setT1(
          selectedRegion.t0() +
-         (WavvyProject::msClipT1 - WavvyProject::msClipT0));
+         (WavacityProject::msClipT1 - WavacityProject::msClipT0));
          // MJS: pointless, given what we do in OnPaste?
    }
    OnPaste(context);
@@ -961,9 +961,9 @@ void OnPasteOver(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static EditActions::Handler instance;
    return instance;
 };
@@ -974,12 +974,12 @@ static CommandHandlerObject &findCommandHandler(WavvyProject &) {
 
 static const ReservedCommandFlag
 &CutCopyAvailableFlag() { static ReservedCommandFlag flag{
-   [](const WavvyProject &project){
+   [](const WavacityProject &project){
       auto range = TrackList::Get( project ).Any<const LabelTrack>()
          + [&](const LabelTrack *pTrack){
             return LabelTrackView::Get( *pTrack ).IsTextSelected(
                // unhappy const_cast because track focus might be set
-               const_cast<WavvyProject&>(project)
+               const_cast<WavacityProject&>(project)
             );
          };
       if ( !range.empty() )
@@ -1036,7 +1036,7 @@ BaseItemSharedPtr EditMenu()
             AudioIONotBusyFlag() | RedoAvailableFlag(), redoKey ),
             
          Special( wxT("UndoItemsUpdateStep"),
-         [](WavvyProject &project, wxMenu&) {
+         [](WavacityProject &project, wxMenu&) {
             // Change names in the CommandManager as a side-effect
             MenuManager::ModifyUndoMenuItems(project);
          })
@@ -1123,7 +1123,7 @@ BaseItemSharedPtr EditMenu()
 
       // Note that on Mac, the Preferences menu item is specially handled in
       // CommandManager (assigned a special wxWidgets id) so that it does
-      // not appear in the Edit menu but instead under Wavvy, consistent with
+      // not appear in the Edit menu but instead under Wavacity, consistent with
       // MacOS conventions.
       Section( "Preferences",
          Command( wxT("Preferences"), XXO("Pre&ferences..."), FN(OnPreferences),
@@ -1157,9 +1157,9 @@ BaseItemSharedPtr ExtraEditMenu()
    return menu;
 }
 
-auto canSelectAll = [](const WavvyProject &project){
+auto canSelectAll = [](const WavacityProject &project){
    return MenuManager::Get( project ).mWhatIfNoSelection != 0; };
-auto selectAll = []( WavvyProject &project, CommandFlag flagsRqd ){
+auto selectAll = []( WavacityProject &project, CommandFlag flagsRqd ){
    if ( MenuManager::Get( project ).mWhatIfNoSelection == 1 &&
       (flagsRqd & NoAutoSelect()).none() )
       SelectUtilities::DoSelectAllAudio(project);

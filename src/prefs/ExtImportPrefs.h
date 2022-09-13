@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EXT_IMPORT_PREFS__
-#define __WAVVY_EXT_IMPORT_PREFS__
+#ifndef __WAVACITY_EXT_IMPORT_PREFS__
+#define __WAVACITY_EXT_IMPORT_PREFS__
 
 #include <wx/defs.h>
 #include <wx/dnd.h> // to inherit wxDropTarget

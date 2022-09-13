@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_VIEWINFO__
-#define __WAVVY_VIEWINFO__
+#ifndef __WAVACITY_VIEWINFO__
+#define __WAVACITY_VIEWINFO__
 
 #include <utility>
 #include <vector>
@@ -33,7 +33,7 @@ struct SelectedRegionEvent : public wxEvent
 };
 
 // To do:  distinguish time changes from frequency changes perhaps?
-wxDECLARE_EXPORTED_EVENT( WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT( WAVACITY_DLL_API,
                           EVT_SELECTED_REGION_CHANGE, SelectedRegionEvent );
 
 // This heavyweight wrapper of the SelectedRegion structure emits events
@@ -167,12 +167,12 @@ private:
    bool mLocked{ false };
 };
 
-class WAVVY_DLL_API ViewInfo final
+class WAVACITY_DLL_API ViewInfo final
    : public wxEvtHandler, public ZoomInfo
 {
 public:
-   static ViewInfo &Get( WavvyProject &project );
-   static const ViewInfo &Get( const WavvyProject &project );
+   static ViewInfo &Get( WavacityProject &project );
+   static const ViewInfo &Get( const WavacityProject &project );
 
    ViewInfo(double start, double screenDuration, double pixelsPerSecond);
    ViewInfo( const ViewInfo & ) PROHIBITED;

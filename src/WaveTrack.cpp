@@ -66,7 +66,7 @@ using std::max;
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "wavetrack" ),
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       auto &trackFactory = WaveTrackFactory::Get( project );
       auto &tracks = TrackList::Get( project );
       auto result = tracks.Add(trackFactory.NewWaveTrack());
@@ -333,7 +333,7 @@ static Container MakeIntervals(const std::vector<WaveClipHolder> &clips)
    return result;
 }
 
-Track::Holder WaveTrack::PasteInto( WavvyProject &project ) const
+Track::Holder WaveTrack::PasteInto( WavacityProject &project ) const
 {
    auto &trackFactory = WaveTrackFactory::Get( project );
    auto &pSampleBlockFactory = trackFactory.GetSampleBlockFactory();
@@ -745,7 +745,7 @@ void WaveTrack::SetWaveformSettings(std::unique_ptr<WaveformSettings> &&pSetting
 // be pasted with visible split lines.  Normally, effects do not
 // want these extra lines, so they may be merged out.
 //
-/*! @excsafety{Weak} -- This WaveTrack remains destructible in case of WavvyException.
+/*! @excsafety{Weak} -- This WaveTrack remains destructible in case of WavacityException.
 But some of its cutline clips may have been destroyed. */
 void WaveTrack::ClearAndPaste(double t0, // Start of time to clear
                               double t1, // End of time to clear
@@ -1764,7 +1764,7 @@ bool WaveTrack::CloseLock()
    return true;
 }
 
-WAVVY_DLL_API sampleCount WaveTrack::TimeToLongSamples(double t0) const
+WAVACITY_DLL_API sampleCount WaveTrack::TimeToLongSamples(double t0) const
 {
    return sampleCount( floor(t0 * mRate + 0.5) );
 }
@@ -2773,34 +2773,34 @@ void InspectBlocks(const TrackList &tracks, BlockInspector inspector,
 
 #include "Project.h"
 #include "SampleBlock.h"
-static auto TrackFactoryFactory = []( WavvyProject &project ) {
+static auto TrackFactoryFactory = []( WavacityProject &project ) {
    return std::make_shared< WaveTrackFactory >(
       ProjectSettings::Get( project ),
       SampleBlockFactory::New( project ) );
 };
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key2{
+static const WavacityProject::AttachedObjects::RegisteredFactory key2{
    TrackFactoryFactory
 };
 
-WaveTrackFactory &WaveTrackFactory::Get( WavvyProject &project )
+WaveTrackFactory &WaveTrackFactory::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< WaveTrackFactory >( key2 );
 }
 
-const WaveTrackFactory &WaveTrackFactory::Get( const WavvyProject &project )
+const WaveTrackFactory &WaveTrackFactory::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-WaveTrackFactory &WaveTrackFactory::Reset( WavvyProject &project )
+WaveTrackFactory &WaveTrackFactory::Reset( WavacityProject &project )
 {
    auto result = TrackFactoryFactory( project );
    project.AttachedObjects::Assign( key2, result );
    return *result;
 }
 
-void WaveTrackFactory::Destroy( WavvyProject &project )
+void WaveTrackFactory::Destroy( WavacityProject &project )
 {
    project.AttachedObjects::Assign( key2, nullptr );
 }

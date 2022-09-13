@@ -38,7 +38,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "NoiseRemoval.h"
 
 #include "../Experimental.h"
@@ -712,7 +712,7 @@ void NoiseRemovalDialog::PopulateOrExchange(ShuttleGui & S)
    S.StartStatic(XO("Step 1"));
    {
       S.AddVariableText(XO(
-"Select a few seconds of just noise so Wavvy knows what to filter out,\nthen click Get Noise Profile:"));
+"Select a few seconds of just noise so Wavacity knows what to filter out,\nthen click Get Noise Profile:"));
       m_pButton_GetProfile = S.Id(ID_BUTTON_GETPROFILE).AddButton(XXO("&Get Noise Profile"));
    }
    S.EndStatic();

@@ -19,7 +19,7 @@
 #include "Command.h"
 #include "CommandType.h"
 
-class SetLabelCommand : public WavvyCommand
+class SetLabelCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -31,7 +31,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#set_label");};
 
    bool Apply(const CommandContext & context) override;

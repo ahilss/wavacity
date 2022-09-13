@@ -8,8 +8,8 @@ Paul Licameli split from class TrackView
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMON_TRACK_VIEW__
-#define __WAVVY_COMMON_TRACK_VIEW__
+#ifndef __WAVACITY_COMMON_TRACK_VIEW__
+#define __WAVACITY_COMMON_TRACK_VIEW__
 
 #include "TrackView.h" // to inherit
 
@@ -28,7 +28,7 @@ public:
    // uniformly in all tracks, disregarding track contents.
    // Do not further override this...
    std::vector<UIHandlePtr> HitTest
-      (const TrackPanelMouseState &, const WavvyProject *pProject)
+      (const TrackPanelMouseState &, const WavacityProject *pProject)
       final override;
 
    void TimeShiftHitTest();
@@ -39,7 +39,7 @@ protected:
    // Rather override this for subclasses:
    virtual std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &,
-       const WavvyProject *pProject, int currentTool, bool bMultiTool)
+       const WavacityProject *pProject, int currentTool, bool bMultiTool)
       = 0;
 
    std::weak_ptr<SelectHandle> mSelectHandle;

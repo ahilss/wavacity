@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_NOTETRACK__
-#define __WAVVY_NOTETRACK__
+#ifndef __WAVACITY_NOTETRACK__
+#define __WAVACITY_NOTETRACK__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 
 #include "Experimental.h"
 
@@ -61,7 +61,7 @@ using QuantizedTimeAndBeat = std::pair< double, double >;
 class StretchHandle;
 class TimeWarper;
 
-class WAVVY_DLL_API NoteTrack final
+class WAVACITY_DLL_API NoteTrack final
    : public NoteTrackBase
 {
 public:
@@ -185,7 +185,7 @@ public:
          mVisibleChannels = CHANNEL_BIT(c);
    }
 
-   Track::Holder PasteInto( WavvyProject & ) const override;
+   Track::Holder PasteInto( WavacityProject & ) const override;
 
    ConstIntervals GetIntervals() const override;
    Intervals GetIntervals() override;
@@ -270,7 +270,7 @@ public:
    int GetWhitePos(int i) const { return 1 + (i * GetOctaveHeight()) / 7; }
 };
 #else
-class WAVVY_DLL_API NoteTrack final
+class WAVACITY_DLL_API NoteTrack final
 {
 public:
    NoteTrack() {}

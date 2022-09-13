@@ -10,16 +10,16 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_AUDIO_IO_LISTENER__
-#define __WAVVY_AUDIO_IO_LISTENER__
+#ifndef __WAVACITY_AUDIO_IO_LISTENER__
+#define __WAVACITY_AUDIO_IO_LISTENER__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 class WaveTrack;
 using WaveTrackArray =
    std::vector < std::shared_ptr < WaveTrack > >;
 
-class WAVVY_DLL_API AudioIOListener /* not final */ {
+class WAVACITY_DLL_API AudioIOListener /* not final */ {
 public:
    AudioIOListener() {}
    virtual ~AudioIOListener() {}

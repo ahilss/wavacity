@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "GetTrackInfoCommand.h"
 
 #include "LoadCommands.h"

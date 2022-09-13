@@ -8,8 +8,8 @@
 
 *******************************************************************/
 
-#ifndef __WAVVY_PROJECTSERIALIZER__
-#define __WAVVY_PROJECTSERIALIZER__
+#ifndef __WAVACITY_PROJECTSERIALIZER__
+#define __WAVACITY_PROJECTSERIALIZER__
 
 #include "xml/XMLTagHandler.h"
 
@@ -17,7 +17,7 @@
 
 #include <unordered_set>
 #include <unordered_map>
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 // From SampleBlock.h
 using SampleBlockID = long long;
@@ -29,8 +29,8 @@ using SampleBlockID = long long;
 using NameMap = std::unordered_map<wxString, unsigned short>;
 using IdMap = std::unordered_map<unsigned short, wxString>;
 
-// This class's overrides do NOT throw WavvyException.
-class WAVVY_DLL_API ProjectSerializer final : public XMLWriter
+// This class's overrides do NOT throw WavacityException.
+class WAVACITY_DLL_API ProjectSerializer final : public XMLWriter
 {
 public:
 

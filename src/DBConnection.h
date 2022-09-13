@@ -9,8 +9,8 @@ Paul Licameli -- split from ProjectFileIO.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_DB_CONNECTION__
-#define __WAVVY_DB_CONNECTION__
+#ifndef __WAVACITY_DB_CONNECTION__
+#define __WAVACITY_DB_CONNECTION__
 
 #include <atomic>
 #include <condition_variable>
@@ -25,7 +25,7 @@ Paul Licameli -- split from ProjectFileIO.h
 struct sqlite3;
 struct sqlite3_stmt;
 class wxString;
-class WavvyProject;
+class WavacityProject;
 
 struct DBConnectionErrors
 {
@@ -43,7 +43,7 @@ public:
    using CheckpointFailureCallback = std::function<void()>;
 
    DBConnection(
-      const std::weak_ptr<WavvyProject> &pProject,
+      const std::weak_ptr<WavacityProject> &pProject,
       const std::shared_ptr<DBConnectionErrors> &pErrors,
       CheckpointFailureCallback callback);
    ~DBConnection();
@@ -102,7 +102,7 @@ private:
    static int CheckpointHook(void *data, sqlite3 *db, const char *schema, int pages);
 
 private:
-   std::weak_ptr<WavvyProject> mpProject;
+   std::weak_ptr<WavacityProject> mpProject;
    sqlite3 *mDB;
    sqlite3 *mCheckpointDB;
 
@@ -159,8 +159,8 @@ class ConnectionPtr final
    , public std::enable_shared_from_this< ConnectionPtr >
 {
 public:
-   static ConnectionPtr &Get( WavvyProject &project );
-   static const ConnectionPtr &Get( const WavvyProject &project );
+   static ConnectionPtr &Get( WavacityProject &project );
+   static const ConnectionPtr &Get( const WavacityProject &project );
 
    ~ConnectionPtr() override;
 

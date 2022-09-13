@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_NORMALIZE__
-#define __WAVVY_EFFECT_NORMALIZE__
+#ifndef __WAVACITY_EFFECT_NORMALIZE__
+#define __WAVACITY_EFFECT_NORMALIZE__
 
 #include "../Experimental.h"
 

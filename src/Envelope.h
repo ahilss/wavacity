@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ENVELOPE__
-#define __WAVVY_ENVELOPE__
+#ifndef __WAVACITY_ENVELOPE__
+#define __WAVACITY_ENVELOPE__
 
 #include <stdlib.h>
 #include <algorithm>

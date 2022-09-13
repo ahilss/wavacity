@@ -1,6 +1,6 @@
 //
 //  Overlay.cpp
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 5/7/16.
 //

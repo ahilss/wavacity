@@ -11,7 +11,7 @@
  
  *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
@@ -36,7 +36,7 @@
 IMPLEMENT_CLASS(TimeToolBar, ToolBar);
 
 // Having a fixed ID for the Audio Position is helpful for
-// the Jaws screen reader script for Wavvy.
+// the Jaws screen reader script for Wavacity.
 enum {
    TimeBarFirstID = 2800,
    AudioPositionID
@@ -48,7 +48,7 @@ BEGIN_EVENT_TABLE(TimeToolBar, ToolBar)
    EVT_IDLE(TimeToolBar::OnIdle)
 END_EVENT_TABLE()
 
-TimeToolBar::TimeToolBar(WavvyProject &project)
+TimeToolBar::TimeToolBar(WavacityProject &project)
 :  ToolBar(project, TimeBarID, XO("Time"), wxT("Time"), true),
    mListener(NULL),
    mAudioTime(NULL)
@@ -60,15 +60,15 @@ TimeToolBar::~TimeToolBar()
 {
 }
 
-TimeToolBar &TimeToolBar::Get(WavvyProject &project)
+TimeToolBar &TimeToolBar::Get(WavacityProject &project)
 {
    auto &toolManager = ToolManager::Get(project);
    return *static_cast<TimeToolBar*>(toolManager.GetToolBar(TimeBarID));
 }
 
-const TimeToolBar &TimeToolBar::Get(const WavvyProject &project)
+const TimeToolBar &TimeToolBar::Get(const WavacityProject &project)
 {
-   return Get(const_cast<WavvyProject&>(project)) ;
+   return Get(const_cast<WavacityProject&>(project)) ;
 }
 
 void TimeToolBar::Populate()
@@ -376,7 +376,7 @@ void TimeToolBar::OnIdle(wxIdleEvent &evt)
 static RegisteredToolbarFactory factory
 {
    TimeBarID,
-   []( WavvyProject &project )
+   []( WavacityProject &project )
    {
       return ToolBar::Holder{ safenew TimeToolBar{ project } };
    }

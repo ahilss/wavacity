@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SELECTION_BAR__
-#define __WAVVY_SELECTION_BAR__
+#ifndef __WAVACITY_SELECTION_BAR__
+#define __WAVACITY_SELECTION_BAR__
 
 #include <wx/defs.h>
 
@@ -38,18 +38,18 @@ class wxDC;
 class wxSizeEvent;
 class wxStaticText;
 
-class WavvyProject;
+class WavacityProject;
 class SelectionBarListener;
 class NumericTextCtrl;
 
 class SelectionBar final : public ToolBar {
 
  public:
-   SelectionBar( WavvyProject &project );
+   SelectionBar( WavacityProject &project );
    virtual ~SelectionBar();
 
-   static SelectionBar &Get( WavvyProject &project );
-   static const SelectionBar &Get( const WavvyProject &project );
+   static SelectionBar &Get( WavacityProject &project );
+   static const SelectionBar &Get( const WavacityProject &project );
 
    void Create(wxWindow *parent) override;
 

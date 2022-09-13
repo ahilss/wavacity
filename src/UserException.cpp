@@ -6,7 +6,7 @@
 
 */
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "UserException.h"
 
 UserException::~UserException()

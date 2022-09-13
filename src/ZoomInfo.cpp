@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ZoomInfo.h"
 
 #include "Experimental.h"
@@ -96,7 +96,7 @@ void ZoomInfo::SetZoom(double pixelsPerSecond)
    // still quite close together.
    if( zoom > (gMaxZoom * 0.06  ))
    {
-      WavvyProject * project = GetActiveProject();
+      WavacityProject * project = GetActiveProject();
       if( project )
          project->OnSnapToOff();
    }

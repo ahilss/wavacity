@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "LegacyAliasBlockFile.h"
 
 #include <wx/utils.h>
@@ -151,7 +151,7 @@ void LegacyAliasBlockFile::Recover(){
 
 static const auto sFactory = []( DirManager &dm, const wxChar **attrs ){
 
-   // Support Wavvy version 1.1.1 project files
+   // Support Wavacity version 1.1.1 project files
 
    int i=0;
    bool alias = false;

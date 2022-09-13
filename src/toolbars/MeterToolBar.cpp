@@ -17,7 +17,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "MeterToolBar.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -48,7 +48,7 @@ BEGIN_EVENT_TABLE( MeterToolBar, ToolBar )
 END_EVENT_TABLE()
 
 //Standard constructor
-MeterToolBar::MeterToolBar(WavvyProject &project, int type)
+MeterToolBar::MeterToolBar(WavacityProject &project, int type)
 : ToolBar(project, type, XO("Combined Meter"), wxT("CombinedMeter"), true)
 {
    if( mType == RecordMeterBarID ){
@@ -257,17 +257,17 @@ void MeterToolBar::SetDocked(ToolDock *dock, bool pushed) {
 }
 
 static RegisteredToolbarFactory factory1{ RecordMeterBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{
          safenew MeterToolBar{ project, RecordMeterBarID } }; }
 };
 static RegisteredToolbarFactory factory2{ PlayMeterBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{
          safenew MeterToolBar{ project, PlayMeterBarID } }; }
 };
 static RegisteredToolbarFactory factory3{ MeterBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{
          safenew MeterToolBar{ project, MeterBarID } }; }
 };

@@ -20,7 +20,7 @@ but it will probably work fine if you use it on a high level.
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Profiler.h"
 
 #include <stdio.h>
@@ -33,11 +33,11 @@ Profiler::~Profiler()
    if(mTasks.size())
    {
       //print everything out.  append to a log.
-      FILE* log = fopen("WavvyProfilerLog.txt", "a");
+      FILE* log = fopen("WavacityProfilerLog.txt", "a");
       time_t now;
 
       time(&now);
-      wxFprintf(log,"Wavvy Profiler Run, Ended at ");
+      wxFprintf(log,"Wavacity Profiler Run, Ended at ");
       wxFprintf(log,"%s",ctime(&now));
       wxFprintf(log,"****************************************\n");
       //print out the tasks

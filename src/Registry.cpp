@@ -14,7 +14,7 @@ Paul Licameli split from Menus.cpp
 
 #include <wx/log.h>
 
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 namespace {
 
@@ -174,7 +174,7 @@ using Path = std::vector< Identifier >;
         wxLogDebug( msg.Translation() );
 #ifdef IS_ALPHA
         // user-visible message
-        WavvyMessageBox( msg );
+        WavacityMessageBox( msg );
 #endif
      }
    }

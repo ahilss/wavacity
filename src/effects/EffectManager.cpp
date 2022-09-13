@@ -18,7 +18,7 @@ effects.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "EffectManager.h"
 
 #include "Effect.h"
@@ -26,11 +26,11 @@ effects.
 #include <algorithm>
 #include <wx/tokenzr.h>
 
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 #include "../ShuttleGetDefinition.h"
 #include "../commands/CommandContext.h"
-#include "../commands/WavvyCommand.h"
+#include "../commands/WavacityCommand.h"
 #include "../PluginManager.h"
 
 
@@ -74,21 +74,21 @@ void EffectManager::UnregisterEffect(const PluginID & ID)
    mEffects.erase(id);
 }
 
-bool EffectManager::DoWavvyCommand(const PluginID & ID,
+bool EffectManager::DoWavacityCommand(const PluginID & ID,
                              const CommandContext &context,
                              wxWindow *parent,
                              bool shouldPrompt /* = true */)
 
 {
    this->SetSkipStateFlag(false);
-   WavvyCommand *command = GetWavvyCommand(ID);
+   WavacityCommand *command = GetWavacityCommand(ID);
    
    if (!command)
    {
       return false;
    }
 
-   bool res = command->DoWavvyCommand(parent, context, shouldPrompt);
+   bool res = command->DoWavacityCommand(parent, context, shouldPrompt);
 
    return res;
 }
@@ -129,7 +129,7 @@ TranslatableString EffectManager::GetCommandDescription(const PluginID & ID)
 {
    if (GetEffect(ID))
       return XO("Applied effect: %s").Format( GetCommandName(ID) );
-   if (GetWavvyCommand(ID))
+   if (GetWavacityCommand(ID))
       return XO("Applied command: %s").Format( GetCommandName(ID) );
 
    return {};
@@ -140,7 +140,7 @@ wxString EffectManager::GetCommandUrl(const PluginID & ID)
    Effect* pEff = GetEffect(ID);
    if( pEff )
       return pEff->ManualPage();
-   WavvyCommand * pCom = GetWavvyCommand(ID);
+   WavacityCommand * pCom = GetWavacityCommand(ID);
    if( pCom )
       return pCom->ManualPage();
 
@@ -152,7 +152,7 @@ TranslatableString EffectManager::GetCommandTip(const PluginID & ID)
    Effect* pEff = GetEffect(ID);
    if( pEff )
       return pEff->GetDescription();
-   WavvyCommand * pCom = GetWavvyCommand(ID);
+   WavacityCommand * pCom = GetWavacityCommand(ID);
    if( pCom )
       return pCom->GetDescription();
 
@@ -165,7 +165,7 @@ void EffectManager::GetCommandDefinition(const PluginID & ID, const CommandConte
    ComponentInterface *command;
    command = GetEffect(ID);
    if( !command )
-      command = GetWavvyCommand( ID );
+      command = GetWavacityCommand( ID );
    if( !command )
       return;
 
@@ -251,7 +251,7 @@ wxString EffectManager::GetEffectParameters(const PluginID & ID)
       return parms;
    }
 
-   WavvyCommand *command = GetWavvyCommand(ID);
+   WavacityCommand *command = GetWavacityCommand(ID);
    
    if (command)
    {
@@ -286,7 +286,7 @@ bool EffectManager::SetEffectParameters(const PluginID & ID, const wxString & pa
 
       return effect->SetAutomationParameters(params);
    }
-   WavvyCommand *command = GetWavvyCommand(ID);
+   WavacityCommand *command = GetWavacityCommand(ID);
    
    if (command)
    {
@@ -318,7 +318,7 @@ bool EffectManager::PromptUser(
       return result;
    }
 
-   WavvyCommand *command = GetWavvyCommand(ID);
+   WavacityCommand *command = GetWavacityCommand(ID);
 
    if (command)
    {
@@ -694,7 +694,7 @@ void EffectManager::SetBatchProcessing(const PluginID & ID, bool start)
       return;
    }
 
-   WavvyCommand *command = GetWavvyCommand(ID);
+   WavacityCommand *command = GetWavacityCommand(ID);
    if (command)
    {
       command->SetBatchProcessing(start);
@@ -743,9 +743,9 @@ Effect *EffectManager::GetEffect(const PluginID & ID)
          }
       }
 
-      auto command = dynamic_cast<WavvyCommand *>(PluginManager::Get().GetInstance(ID));
+      auto command = dynamic_cast<WavacityCommand *>(PluginManager::Get().GetInstance(ID));
       if( !command )
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO(
 "Attempting to initialize the following effect failed:\n\n%s\n\nMore information may be available in 'Help > Diagnostics > Show Log'")
                .Format( GetCommandName(ID) ),
@@ -757,7 +757,7 @@ Effect *EffectManager::GetEffect(const PluginID & ID)
    return mEffects[ID];
 }
 
-WavvyCommand *EffectManager::GetWavvyCommand(const PluginID & ID)
+WavacityCommand *EffectManager::GetWavacityCommand(const PluginID & ID)
 {
    // Must have a "valid" ID
    if (ID.empty())
@@ -770,7 +770,7 @@ WavvyCommand *EffectManager::GetWavvyCommand(const PluginID & ID)
    {
 
       // This will instantiate the effect client if it hasn't already been done
-      auto command = dynamic_cast<WavvyCommand *>(PluginManager::Get().GetInstance(ID));
+      auto command = dynamic_cast<WavacityCommand *>(PluginManager::Get().GetInstance(ID));
       if (command )//&& command->Startup(NULL))
       {
          command->Init();
@@ -781,7 +781,7 @@ WavvyCommand *EffectManager::GetWavvyCommand(const PluginID & ID)
          /*
       if (ident && ident->IsLegacy())
       {
-         auto command = dynamic_cast<WavvyCommand *>(ident);
+         auto command = dynamic_cast<WavacityCommand *>(ident);
          if (commandt && command->Startup(NULL))
          {
             mCommands[ID] = command;
@@ -790,10 +790,10 @@ WavvyCommand *EffectManager::GetWavvyCommand(const PluginID & ID)
       }
 
 
-      auto command = std::make_shared<WavvyCommand>(); // TODO: use make_unique and store in std::unordered_map
+      auto command = std::make_shared<WavacityCommand>(); // TODO: use make_unique and store in std::unordered_map
       if (command)
       {
-         WavvyCommand *client = dynamic_cast<WavvyCommand *>(ident);
+         WavacityCommand *client = dynamic_cast<WavacityCommand *>(ident);
          if (client && command->Startup(client))
          {
             auto pCommand = command.get();
@@ -803,7 +803,7 @@ WavvyCommand *EffectManager::GetWavvyCommand(const PluginID & ID)
          }
       }
 */
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
 "Attempting to initialize the following command failed:\n\n%s\n\nMore information may be available in 'Help > Diagnostics > Show Log'")
             .Format( GetCommandName(ID) ),
@@ -826,14 +826,14 @@ const PluginID & EffectManager::GetEffectByIdentifier(const CommandID & strTarge
 
    PluginManager & pm = PluginManager::Get();
    // Effects OR Generic commands...
-   const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect | PluginTypeWavvyCommand);
+   const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect | PluginTypeWavacityCommand);
    while (plug)
    {
       if (GetCommandIdentifier(plug->GetID()) == strTarget)
       {
          return plug->GetID();
       }
-      plug = pm.GetNextPlugin(PluginTypeEffect | PluginTypeWavvyCommand);
+      plug = pm.GetNextPlugin(PluginTypeEffect | PluginTypeWavacityCommand);
    }
    return empty;;
 }

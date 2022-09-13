@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MULTIFORMATREADER_H__
-#define __WAVVY_MULTIFORMATREADER_H__
+#ifndef __WAVACITY_MULTIFORMATREADER_H__
+#define __WAVACITY_MULTIFORMATREADER_H__
 
 #include <stdio.h>
 #include <stdint.h>

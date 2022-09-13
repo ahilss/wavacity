@@ -6,7 +6,7 @@ SampleBlock.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "InconsistencyException.h"
 #include "SampleBlock.h"
 #include "SampleFormat.h"
@@ -28,7 +28,7 @@ SampleBlockFactoryFactory SampleBlockFactory::RegisterFactoryFactory(
    return result;
 }
 
-SampleBlockFactoryPtr SampleBlockFactory::New( WavvyProject &project )
+SampleBlockFactoryPtr SampleBlockFactory::New( WavacityProject &project )
 {
    auto &factory = installedFactory();
    if ( ! factory )

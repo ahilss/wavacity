@@ -18,7 +18,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Amplify.h"
 #include "LoadEffects.h"
 

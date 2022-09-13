@@ -55,7 +55,7 @@ private:
 
 using MakeNoteTrackShifter = MakeTrackShifter::Override<NoteTrack>;
 template<> template<> auto MakeNoteTrackShifter::Implementation() -> Function {
-   return [](NoteTrack &track, WavvyProject&) {
+   return [](NoteTrack &track, WavacityProject&) {
       return std::make_unique<NoteTrackShifter>(track);
    };
 }

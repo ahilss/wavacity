@@ -11,7 +11,7 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if defined(USE_VAMP)
 #include "VampEffect.h"
@@ -38,7 +38,7 @@
 
 #include "../../ShuttleGui.h"
 #include "../../widgets/valnum.h"
-#include "../../widgets/WavvyMessageBox.h"
+#include "../../widgets/WavacityMessageBox.h"
 
 #include "../../LabelTrack.h"
 #include "../../WaveTrack.h"

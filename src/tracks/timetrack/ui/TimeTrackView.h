@@ -8,8 +8,8 @@ Paul Licameli split from class TimeTrack
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIME_TRACK_VIEW__
-#define __WAVVY_TIME_TRACK_VIEW__
+#ifndef __WAVACITY_TIME_TRACK_VIEW__
+#define __WAVACITY_TIME_TRACK_VIEW__
 
 #include "../../ui/CommonTrackView.h"
 
@@ -30,7 +30,7 @@ public:
 private:
    std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject, int currentTool, bool bMultiTool)
+       const WavacityProject *pProject, int currentTool, bool bMultiTool)
       override;
 
    std::weak_ptr<EnvelopeHandle> mEnvelopeHandle;

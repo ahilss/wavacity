@@ -15,8 +15,8 @@ tables, and automatically attaches and detaches the event handlers.
 
 **********************************************************************/
 
-#ifndef __WAVVY_POPUP_MENU_TABLE__
-#define __WAVVY_POPUP_MENU_TABLE__
+#ifndef __WAVACITY_POPUP_MENU_TABLE__
+#define __WAVACITY_POPUP_MENU_TABLE__
 
 class wxCommandEvent;
 

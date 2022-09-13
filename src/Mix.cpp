@@ -21,7 +21,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Mix.h"
 
 #include <math.h>
@@ -739,7 +739,7 @@ void Mixer::Restart()
       mQueueLen[i] = 0;
    }
 
-   // Bug 1887:  libsoxr 0.1.3, first used in Wavvy 2.3.0, crashes with
+   // Bug 1887:  libsoxr 0.1.3, first used in Wavacity 2.3.0, crashes with
    // constant rate resampling if you try to reuse the resampler after it has
    // flushed.  Should that be considered a bug in sox?  This works around it:
    MakeResamplers();
@@ -760,7 +760,7 @@ void Mixer::Reposition(double t, bool bSkipping)
       mQueueLen[i] = 0;
    }
 
-   // Bug 2025:  libsoxr 0.1.3, first used in Wavvy 2.3.0, crashes with
+   // Bug 2025:  libsoxr 0.1.3, first used in Wavacity 2.3.0, crashes with
    // constant rate resampling if you try to reuse the resampler after it has
    // flushed.  Should that be considered a bug in sox?  This works around it.
    // (See also bug 1887, and the same work around in Mixer::Restart().)

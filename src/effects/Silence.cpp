@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Silence.h"
 #include "LoadEffects.h"
 

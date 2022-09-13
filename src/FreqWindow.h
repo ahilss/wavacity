@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FREQ_WINDOW__
-#define __WAVVY_FREQ_WINDOW__
+#ifndef __WAVACITY_FREQ_WINDOW__
+#define __WAVACITY_FREQ_WINDOW__
 
 #include <vector>
 #include <wx/font.h> // member variable
@@ -27,12 +27,12 @@ class wxButton;
 class wxCheckBox;
 class wxChoice;
 
-class WavvyProject;
+class WavacityProject;
 class FrequencyPlotDialog;
 class FreqGauge;
 class RulerPanel;
 
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_FREQWINDOW_RECALC, -1);
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_FREQWINDOW_RECALC, -1);
 
 class FreqPlot final : public wxWindow
 {
@@ -58,7 +58,7 @@ class FrequencyPlotDialog final : public wxDialogWrapper,
 {
 public:
    FrequencyPlotDialog(wxWindow *parent, wxWindowID id,
-              WavvyProject &project,
+              WavacityProject &project,
               const TranslatableString & title, const wxPoint & pos);
    virtual ~ FrequencyPlotDialog();
 
@@ -102,7 +102,7 @@ private:
    int mFunc;
    int mAxis;
    int dBRange;
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 
 #ifdef __WXMSW__
    static const int fontSize = 8;

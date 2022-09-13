@@ -19,10 +19,10 @@
 
 
 
-#ifndef __WAVVY_ODTASKTHREAD__
-#define __WAVVY_ODTASKTHREAD__
+#ifndef __WAVACITY_ODTASKTHREAD__
+#define __WAVACITY_ODTASKTHREAD__
 
-#include "../Wavvy.h"	// contains the set-up of WAVVY_DLL_API
+#include "../Wavacity.h"	// contains the set-up of WAVACITY_DLL_API
 
 #include <wx/thread.h> // to inherit
 
@@ -85,7 +85,7 @@ protected:
 
 
 //a wrapper for wxMutex.
-class WAVVY_DLL_API ODLock final : public wxMutex
+class WAVACITY_DLL_API ODLock final : public wxMutex
 {
 public:
    ///Constructs a ODTaskThread
@@ -149,5 +149,5 @@ public:
    ODLocker &operator= (const ODLocker &that) PROHIBITED;
 };
 
-#endif //__WAVVY_ODTASKTHREAD__
+#endif //__WAVACITY_ODTASKTHREAD__
 

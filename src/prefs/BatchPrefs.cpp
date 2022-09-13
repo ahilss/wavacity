@@ -14,7 +14,7 @@
 setting used in debugging batch (aka macros) processing.
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "BatchPrefs.h"
 
 #include <wx/defs.h>
@@ -82,7 +82,7 @@ void BatchPrefs::PopulateOrExchange( ShuttleGui & S )
    return;
 }
 
-/// Send changed values back to Prefs, and update Wavvy.
+/// Send changed values back to Prefs, and update Wavacity.
 bool BatchPrefs::Commit()
 {
    ShuttleGui S( this, eIsSavingToPrefs );
@@ -98,7 +98,7 @@ BatchPrefs::~BatchPrefs()
 #if 0
 namespace{
 PrefsPanel::Registration sAttachment{ "Batch",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew BatchPrefs(parent, winid);

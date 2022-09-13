@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MULTIDIALOG__
-#define __WAVVY_MULTIDIALOG__
+#ifndef __WAVACITY_MULTIDIALOG__
+#define __WAVACITY_MULTIDIALOG__
 
 #include <wx/defs.h>
 
@@ -32,4 +32,4 @@ int ShowMultiDialog(const TranslatableString &message,
                        = DefaultMultiDialogMessage(),
                     bool log = true);
 
-#endif // __WAVVY_MULTIDIALOG__
+#endif // __WAVACITY_MULTIDIALOG__

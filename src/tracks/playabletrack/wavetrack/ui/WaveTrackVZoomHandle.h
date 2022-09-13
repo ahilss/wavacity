@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVE_TRACK_VZOOM_HANDLE__
-#define __WAVVY_WAVE_TRACK_VZOOM_HANDLE__
+#ifndef __WAVACITY_WAVE_TRACK_VZOOM_HANDLE__
+#define __WAVACITY_WAVE_TRACK_VZOOM_HANDLE__
 
 class wxMouseState;
 class PopupMenuTable;
@@ -27,18 +27,18 @@ namespace WaveTrackVZoomHandle
 
    bool IsDragZooming(int zoomStart, int zoomEnd);
 
-   using DoZoomFunction = void (*)( WavvyProject *pProject,
+   using DoZoomFunction = void (*)( WavacityProject *pProject,
        WaveTrack *pTrack,
        WaveTrackViewConstants::ZoomActions ZoomKind,
        const wxRect &rect, int zoomStart, int zoomEnd,
        bool fixedMousePoint);
 
    Result DoDrag(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      const TrackPanelMouseEvent &event, WavacityProject *pProject,
       int zoomStart, int &zoomEnd );
 
    Result DoRelease(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      const TrackPanelMouseEvent &event, WavacityProject *pProject,
       wxWindow *pParent, WaveTrack *pTrack, const wxRect &mRect,
       DoZoomFunction doZoom, PopupMenuTable &table,
       int zoomStart, int zoomEnd );
@@ -61,7 +61,7 @@ public:
    struct InitMenuData
    {
    public:
-      WavvyProject &project;
+      WavacityProject &project;
       WaveTrack *pTrack;
       wxRect rect;
       unsigned result;

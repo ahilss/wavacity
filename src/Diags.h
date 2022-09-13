@@ -12,8 +12,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DIAGS__
-#define __WAVVY_DIAGS__
+#ifndef __WAVACITY_DIAGS__
+#define __WAVACITY_DIAGS__
 
 typedef long t_diag_timer;
 

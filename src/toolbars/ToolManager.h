@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TOOLMANAGER__
-#define __WAVVY_TOOLMANAGER__
+#ifndef __WAVACITY_TOOLMANAGER__
+#define __WAVACITY_TOOLMANAGER__
 
 #include <functional>
 
@@ -39,7 +39,7 @@ class wxTimer;
 class wxTimerEvent;
 class wxWindow;
 
-class WavvyProject;
+class WavacityProject;
 class ProjectWindow;
 class ToolFrame;
 
@@ -58,10 +58,10 @@ class ToolManager final
    using GetTopPanelHook = std::function< wxWindow*( wxWindow& ) >;
    static GetTopPanelHook SetGetTopPanelHook( const GetTopPanelHook& );
 
-   static ToolManager &Get( WavvyProject &project );
-   static const ToolManager &Get( const WavvyProject &project );
+   static ToolManager &Get( WavacityProject &project );
+   static const ToolManager &Get( const WavacityProject &project );
 
-   ToolManager( WavvyProject *parent );
+   ToolManager( WavacityProject *parent );
    ToolManager( const ToolManager & ) PROHIBITED;
    ToolManager &operator=( const ToolManager & ) PROHIBITED;
    ~ToolManager();
@@ -114,7 +114,7 @@ class ToolManager final
    void WriteConfig();
    void Updated();
 
-   WavvyProject *mParent;
+   WavacityProject *mParent;
    wxWindowRef mLastFocus{};
 
    ToolFrame *mDragWindow;
@@ -166,7 +166,7 @@ class ToolFrame final : public wxFrame
 {
 public:
 
-   ToolFrame( WavvyProject *parent, ToolManager *manager, ToolBar *bar, wxPoint pos );
+   ToolFrame( WavacityProject *parent, ToolManager *manager, ToolBar *bar, wxPoint pos );
 
    ~ToolFrame();
 
@@ -205,7 +205,7 @@ public:
 
 private:
 
-   WavvyProject *const mParent;
+   WavacityProject *const mParent;
    ToolManager *mManager;
    ToolBar *mBar;
    wxSize mMinSize;

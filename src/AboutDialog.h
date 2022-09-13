@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ABOUT_DLG__
-#define __WAVVY_ABOUT_DLG__
+#ifndef __WAVACITY_ABOUT_DLG__
+#define __WAVACITY_ABOUT_DLG__
 
 #include <vector>
 #include "widgets/wxPanelWrapper.h" // to inherit
@@ -56,7 +56,7 @@ class AboutDialog final : public wxDialogWrapper {
    };
 
    AboutDialogCreditItemsList creditItems;
-   void PopulateWavvyPage( ShuttleGui & S );
+   void PopulateWavacityPage( ShuttleGui & S );
    void PopulateLicensePage( ShuttleGui & S );
    void PopulateInformationPage (ShuttleGui & S );
 

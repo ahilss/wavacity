@@ -6,15 +6,15 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/
 
-#ifndef __WAVVY_THEME__
-#define __WAVVY_THEME__
+#ifndef __WAVACITY_THEME__
+#define __WAVACITY_THEME__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <vector>
 #include <wx/defs.h>
@@ -62,7 +62,7 @@ enum teThemeType
 
 
 
-class WAVVY_DLL_API FlowPacker
+class WAVACITY_DLL_API FlowPacker
 {
 public:
    FlowPacker(){;};
@@ -95,7 +95,7 @@ private:
 
 };
 
-class WAVVY_DLL_API ThemeBase /* not final */
+class WAVACITY_DLL_API ThemeBase /* not final */
 {
 public:
    ThemeBase(void);
@@ -160,7 +160,7 @@ protected:
 };
 
 
-class WAVVY_DLL_API Theme final : public ThemeBase
+class WAVACITY_DLL_API Theme final : public ThemeBase
 {
 public:
    Theme(void);
@@ -191,10 +191,10 @@ public:
    DECLARE_EVENT_TABLE();
 };
 
-extern WAVVY_DLL_API Theme theTheme;
+extern WAVACITY_DLL_API Theme theTheme;
 
 extern ChoiceSetting
      GUITheme
 ;
 
-#endif // __WAVVY_THEME__
+#endif // __WAVACITY_THEME__

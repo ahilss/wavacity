@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_METER_TOOLBAR__
-#define __WAVVY_METER_TOOLBAR__
+#ifndef __WAVACITY_METER_TOOLBAR__
+#define __WAVACITY_METER_TOOLBAR__
 
 #include "ToolBar.h"
 
@@ -21,7 +21,7 @@ class wxGridBagSizer;
 class wxSizeEvent;
 class wxWindow;
 
-class WavvyProject;
+class WavacityProject;
 class MeterPanel;
 
 
@@ -33,7 +33,7 @@ class MeterToolBar final : public ToolBar {
 
  public:
 
-   MeterToolBar(WavvyProject &project, int type);
+   MeterToolBar(WavacityProject &project, int type);
    virtual ~MeterToolBar();
 
    void Create(wxWindow *parent) override;

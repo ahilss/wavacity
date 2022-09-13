@@ -17,7 +17,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "PitchName.h"
 
 #include <math.h>

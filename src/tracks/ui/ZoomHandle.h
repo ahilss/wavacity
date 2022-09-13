@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_ZOOM_HANDLE__
-#define __WAVVY_ZOOM_HANDLE__
+#ifndef __WAVACITY_ZOOM_HANDLE__
+#define __WAVACITY_ZOOM_HANDLE__
 
 #include "../../UIHandle.h"
 
@@ -20,7 +20,7 @@ class ZoomHandle final : public UIHandle
 {
    ZoomHandle(const ZoomHandle&) = delete;
    static HitTestPreview HitPreview
-      (const wxMouseState &state, const WavvyProject *pProject);
+      (const wxMouseState &state, const WavacityProject *pProject);
 
 public:
    ZoomHandle();
@@ -35,20 +35,20 @@ public:
    virtual ~ZoomHandle();
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
 private:
 

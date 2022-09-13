@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectAudioIO.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
@@ -14,7 +14,7 @@ Paul Licameli split from WavvyProject.h
 #include "ClientData.h" // to inherit
 #include <wx/weakref.h>
 
-class WavvyProject;
+class WavacityProject;
 class MeterPanelBase;
 
 ///\ brief Holds per-project state needed for interaction with AudioIO,
@@ -23,10 +23,10 @@ class ProjectAudioIO final
    : public ClientData::Base
 {
 public:
-   static ProjectAudioIO &Get( WavvyProject &project );
-   static const ProjectAudioIO &Get( const WavvyProject &project );
+   static ProjectAudioIO &Get( WavacityProject &project );
+   static const ProjectAudioIO &Get( const WavacityProject &project );
 
-   explicit ProjectAudioIO( WavvyProject &project );
+   explicit ProjectAudioIO( WavacityProject &project );
    ProjectAudioIO( const ProjectAudioIO & ) PROHIBITED;
    ProjectAudioIO &operator=( const ProjectAudioIO & ) PROHIBITED;
    ~ProjectAudioIO();
@@ -41,7 +41,7 @@ public:
    void SetCaptureMeter(MeterPanelBase *capture);
 
 private:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    // Project owned meters
    wxWeakRef<MeterPanelBase> mPlaybackMeter{};

@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_AUTODUCK__
-#define __WAVVY_EFFECT_AUTODUCK__
+#ifndef __WAVACITY_EFFECT_AUTODUCK__
+#define __WAVACITY_EFFECT_AUTODUCK__
 
 #include "Effect.h"
 

@@ -8,8 +8,8 @@ Paul Licameli split from class WaveTrack
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVE_TRACK_VIEW__
-#define __WAVVY_WAVE_TRACK_VIEW__
+#ifndef __WAVACITY_WAVE_TRACK_VIEW__
+#define __WAVACITY_WAVE_TRACK_VIEW__
 
 #include "../../../ui/CommonTrackView.h"
 #include "../../../../ClientData.h"
@@ -38,7 +38,7 @@ public:
       std::vector<UIHandlePtr>
    > DoDetailedHitTest(
       const TrackPanelMouseState &state,
-      const WavvyProject *pProject, int currentTool, bool bMultiTool,
+      const WavacityProject *pProject, int currentTool, bool bMultiTool,
       const std::shared_ptr<WaveTrack> &wt );
    
 protected:
@@ -95,7 +95,7 @@ public:
       std::vector<UIHandlePtr>
    > DoDetailedHitTest(
       const TrackPanelMouseState &state,
-      const WavvyProject *pProject, int currentTool, bool bMultiTool,
+      const WavacityProject *pProject, int currentTool, bool bMultiTool,
       const std::shared_ptr<WaveTrack> &wt,
       CommonTrackView &view);
 
@@ -132,7 +132,7 @@ private:
 
    std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject, int currentTool, bool bMultiTool)
+       const WavacityProject *pProject, int currentTool, bool bMultiTool)
       override;
 
    // TrackView implementation

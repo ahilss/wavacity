@@ -32,7 +32,7 @@ the mouse around.
 */
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "FreqWindow.h"
 
 #include <algorithm>
@@ -82,7 +82,7 @@ the mouse around.
 #include "WaveTrack.h"
 
 #include "./widgets/HelpSystem.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/Ruler.h"
 
 #if wxUSE_ACCESSIBILITY
@@ -184,7 +184,7 @@ BEGIN_EVENT_TABLE(FrequencyPlotDialog, wxDialogWrapper)
 END_EVENT_TABLE()
 
 FrequencyPlotDialog::FrequencyPlotDialog(wxWindow * parent, wxWindowID id,
-                           WavvyProject &project,
+                           WavacityProject &project,
                            const TranslatableString & title,
                            const wxPoint & pos)
 :  wxDialogWrapper(parent, id, title, pos, wxDefaultSize,
@@ -607,7 +607,7 @@ void FrequencyPlotDialog::GetAudio()
       }
       else {
          if (track->GetRate() != mRate) {
-            WavvyMessageBox(
+            WavacityMessageBox(
                XO(
 "To plot the spectrum, all selected tracks must be the same sample rate.") );
             mData.reset();
@@ -632,7 +632,7 @@ void FrequencyPlotDialog::GetAudio()
       auto msg = XO(
 "Too much audio was selected. Only the first %.1f seconds of audio will be analyzed.")
          .Format(mDataLen / mRate);
-      WavvyMessageBox( msg );
+      WavacityMessageBox( msg );
    }
 }
 
@@ -1070,7 +1070,7 @@ void FrequencyPlotDialog::OnExport(wxCommandEvent & WXUNUSED(event))
 
    wxFFileOutputStream ffStream{ fName };
    if (!ffStream.IsOk()) {
-      WavvyMessageBox( XO("Couldn't write to file: %s").Format( fName ) );
+      WavacityMessageBox( XO("Couldn't write to file: %s").Format( fName ) );
       return;
    }
 
@@ -1199,8 +1199,8 @@ void FreqPlot::OnMouseEvent(wxMouseEvent & event)
 
 namespace {
 
-WavvyProject::AttachedWindows::RegisteredFactory sFrequencyWindowKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sFrequencyWindowKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       auto &window = ProjectWindow::Get( parent );
       return safenew FrequencyPlotDialog(
          &window, -1, parent, FrequencyAnalysisTitle,
@@ -1226,9 +1226,9 @@ struct Handler : CommandHandlerObject {
    }
 };
 
-CommandHandlerObject &findCommandHandler(WavvyProject &) {
+CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static Handler instance;
    return instance;
 }

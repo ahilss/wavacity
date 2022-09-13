@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRAL_SELECTION_BAR__
-#define __WAVVY_SPECTRAL_SELECTION_BAR__
+#ifndef __WAVACITY_SPECTRAL_SELECTION_BAR__
+#define __WAVACITY_SPECTRAL_SELECTION_BAR__
 
 #include <wx/defs.h>
 
@@ -21,7 +21,7 @@ class wxCommandEvent;
 class wxDC;
 class wxSizeEvent;
 
-class WavvyProject;
+class WavacityProject;
 class SpectralSelectionBarListener;
 class NumericTextCtrl;
 
@@ -29,11 +29,11 @@ class SpectralSelectionBar final : public ToolBar {
 
 public:
 
-   SpectralSelectionBar( WavvyProject &project );
+   SpectralSelectionBar( WavacityProject &project );
    virtual ~SpectralSelectionBar();
 
-   static SpectralSelectionBar &Get( WavvyProject &project );
-   static const SpectralSelectionBar &Get( const WavvyProject &project );
+   static SpectralSelectionBar &Get( WavacityProject &project );
+   static const SpectralSelectionBar &Get( const WavacityProject &project );
 
    void Create(wxWindow *parent) override;
 

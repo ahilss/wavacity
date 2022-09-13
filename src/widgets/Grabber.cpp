@@ -20,7 +20,7 @@ around to NEW positions.
 
 *//**********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Grabber.h"
 
 #include <wx/defs.h>
@@ -306,7 +306,7 @@ void Grabber::OnKeyDown(wxKeyEvent &event)
 }
 
 // Piggy back in same source file as Grabber.
-// Wavvy Flicker-free StaticBitmap.
+// Wavacity Flicker-free StaticBitmap.
 BEGIN_EVENT_TABLE(AStaticBitmap,wxStaticBitmap)
     EVT_ERASE_BACKGROUND(AStaticBitmap::OnErase)
 END_EVENT_TABLE()

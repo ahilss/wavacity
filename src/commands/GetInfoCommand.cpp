@@ -20,7 +20,7 @@ This class now lists
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "GetInfoCommand.h"
 
 #include "LoadCommands.h"
@@ -414,14 +414,14 @@ bool GetInfoCommand::SendCommands(const CommandContext &context, int flags )
    PluginManager & pm = PluginManager::Get();
    EffectManager & em = EffectManager::Get();
    {
-      const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect | PluginTypeWavvyCommand);
+      const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect | PluginTypeWavacityCommand);
       while (plug)
       {
          auto command = em.GetCommandIdentifier(plug->GetID());
          if (!command.empty()){
             em.GetCommandDefinition( plug->GetID(), context, flags );
          }
-         plug = pm.GetNextPlugin(PluginTypeEffect | PluginTypeWavvyCommand );
+         plug = pm.GetNextPlugin(PluginTypeEffect | PluginTypeWavacityCommand );
       }
    }
    context.EndArray();
@@ -441,7 +441,7 @@ bool GetInfoCommand::SendBoxes(const CommandContext &context)
    //wxString Name = pWin->GetName();
    context.StartStruct();
    context.AddItem( 0, "depth" );
-   context.AddItem( "Wavvy Window", "name" ); 
+   context.AddItem( "Wavacity Window", "name" ); 
    context.StartField( "box" );
    context.StartArray( );
    context.AddItem( R.GetLeft() );
@@ -656,7 +656,7 @@ void GetInfoCommand::ExploreMenu( const CommandContext &context, wxMenu * pMenu,
       if( !Name.empty() )
          // using GET to expose CommandID in results of GetInfoCommand...
          // PRL asks, is that all right?
-         context.AddItem( Name.GET(), "id" );// It is called Scripting ID outside Wavvy.
+         context.AddItem( Name.GET(), "id" );// It is called Scripting ID outside Wavacity.
       context.EndStruct();
 
       if (item->IsSubMenu()) {
@@ -696,7 +696,7 @@ void GetInfoCommand::ExploreAdornments( const CommandContext &context,
 void GetInfoCommand::ExploreTrackPanel( const CommandContext &context,
    wxPoint P, wxWindow * pWin, int WXUNUSED(Id), int depth )
 {
-   WavvyProject * pProj = &context.project;
+   WavacityProject * pProj = &context.project;
    auto &tp = TrackPanel::Get( *pProj );
    auto &viewInfo = ViewInfo::Get( *pProj );
 

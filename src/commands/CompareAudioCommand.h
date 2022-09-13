@@ -23,7 +23,7 @@ classes
 
 class WaveTrack;
 
-class CompareAudioCommand final : public WavvyCommand
+class CompareAudioCommand final : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -34,7 +34,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#compare_Audio");};
    bool Apply(const CommandContext &context) override;
 
@@ -46,7 +46,7 @@ private:
    const WaveTrack *mTrack1;
 
    // Update member variables with project selection data (and validate)
-   bool GetSelection(const CommandContext &context, WavvyProject &proj);
+   bool GetSelection(const CommandContext &context, WavacityProject &proj);
 
 protected:
    double CompareSample(double value1, double value2) /* not override */;

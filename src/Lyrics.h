@@ -9,17 +9,17 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LYRICS__
-#define __WAVVY_LYRICS__
+#ifndef __WAVACITY_LYRICS__
+#define __WAVACITY_LYRICS__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <vector>
 #include <wx/textctrl.h> // to inherit
 #include "commands/CommandManagerWindowClasses.h"
 #include "widgets/wxPanelWrapper.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 class LabelTrack;
 
 
@@ -86,7 +86,7 @@ class LyricsPanel final
 
  public:
    LyricsPanel(wxWindow* parent, wxWindowID id,
-          WavvyProject *project,
+          WavacityProject *project,
           const wxPoint& pos = wxDefaultPosition,
           const wxSize& size = wxDefaultSize);
    virtual ~LyricsPanel();
@@ -156,10 +156,10 @@ private:
    int            mTextHeight; // only for drawn text
    bool           mMeasurementsDone; // only for drawn text
 
-   wxWeakRef<WavvyProject> mProject;
+   wxWeakRef<WavacityProject> mProject;
    bool           mDelayedUpdate{ false };
 
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_LYRICS__
+#endif // __WAVACITY_LYRICS__

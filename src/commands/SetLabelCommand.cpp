@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SetLabelCommand.h"
 
 #include "LoadCommands.h"
@@ -72,7 +72,7 @@ bool SetLabelCommand::Apply(const CommandContext & context)
    // this code could be put in subroutines/reduced.
 
    //wxString mode = GetString(wxT("Type"));
-   WavvyProject * p = &context.project;
+   WavacityProject * p = &context.project;
    auto &tracks = TrackList::Get( *p );
    auto &selectedRegion = ViewInfo::Get( *p ).selectedRegion;
    const LabelStruct * pLabel = nullptr;

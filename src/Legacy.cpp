@@ -9,12 +9,12 @@
 *******************************************************************//*!
 
 \file Legacy.cpp
-\brief Converts old Wavvy file types.  Implements
+\brief Converts old Wavacity file types.  Implements
 AutoRollbackRenamer.
 
-  These routines convert Wavvy project files from the
+  These routines convert Wavacity project files from the
   0.98...1.0 format into an XML format that's compatible with
-  Wavvy 1.2.0 and newer.
+  Wavacity 1.2.0 and newer.
 
 *//****************************************************************//**
 
@@ -26,7 +26,7 @@ On failure the old version is put back in place.
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Legacy.h"
 
 #include <stdio.h>
@@ -40,7 +40,7 @@ On failure the old version is put back in place.
 #include <wx/string.h>
 #include <wx/textfile.h>
 
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "xml/XMLWriter.h"
 
 static bool ConvertLegacyTrack(wxTextFile *f, XMLFileWriter &xmlFile)
@@ -266,7 +266,7 @@ bool ConvertLegacyProjectFile(const wxFileName &filename)
       wxString label;
       wxString value;
 
-      if (f.GetFirstLine() != wxT("WavvyProject"))
+      if (f.GetFirstLine() != wxT("WavacityProject"))
          return false;
       if (f.GetNextLine() != wxT("Version"))
          return false;
@@ -275,10 +275,10 @@ bool ConvertLegacyProjectFile(const wxFileName &filename)
       if (f.GetNextLine() != wxT("projName"))
          return false;
 
-      xmlFile.StartTag(wxT("wavvyproject"));
+      xmlFile.StartTag(wxT("wavacityproject"));
       xmlFile.WriteAttr(wxT("projname"), f.GetNextLine());
       xmlFile.WriteAttr(wxT("version"), wxT("1.1.0"));
-      xmlFile.WriteAttr(wxT("wavvyversion"),WAVVY_VERSION_STRING);
+      xmlFile.WriteAttr(wxT("wavacityversion"),WAVACITY_VERSION_STRING);
 
       label = f.GetNextLine();
       while (label != wxT("BeginTracks")) {
@@ -297,14 +297,14 @@ bool ConvertLegacyProjectFile(const wxFileName &filename)
       // Close original before Commit() tries to overwrite it.
       f.Close();
 
-      xmlFile.EndTag(wxT("wavvyproject"));
+      xmlFile.EndTag(wxT("wavacityproject"));
       xmlFile.Commit();
 
-      ::WavvyMessageBox(
+      ::WavacityMessageBox(
          XO(
 "Converted a 1.0 project file to the new format.\nThe old file has been saved as '%s'")
             .Format( xmlFile.GetBackupName() ),
-         XO("Opening Wavvy Project"));
+         XO("Opening Wavacity Project"));
 
       return true;
    } );

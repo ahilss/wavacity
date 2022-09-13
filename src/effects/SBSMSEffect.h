@@ -11,10 +11,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_SBSMS__
-#define __WAVVY_EFFECT_SBSMS__
+#ifndef __WAVACITY_EFFECT_SBSMS__
+#define __WAVACITY_EFFECT_SBSMS__
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #if USE_SBSMS
 

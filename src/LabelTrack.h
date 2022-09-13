@@ -19,7 +19,7 @@
 
 class wxTextFile;
 
-class WavvyProject;
+class WavacityProject;
 class NotifyingSelectedRegion;
 class TimeWarper;
 
@@ -82,7 +82,7 @@ public:
 
 using LabelArray = std::vector<LabelStruct>;
 
-class WAVVY_DLL_API LabelTrack final
+class WAVACITY_DLL_API LabelTrack final
    : public Track
    , public wxEvtHandler
 {
@@ -155,7 +155,7 @@ public:
    int FindNextLabel(const SelectedRegion& currentSelection);
    int FindPrevLabel(const SelectedRegion& currentSelection);
 
-   Track::Holder PasteInto( WavvyProject & ) const override;
+   Track::Holder PasteInto( WavacityProject & ) const override;
 
    struct IntervalData final : Track::IntervalData {
       size_t index;
@@ -211,18 +211,18 @@ struct LabelTrackEvent : TrackListEvent
 };
 
 // Posted when a label is added.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_LABELTRACK_ADDITION, LabelTrackEvent);
 
 // Posted when a label is deleted.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_LABELTRACK_DELETION, LabelTrackEvent);
 
 // Posted when a label is repositioned in the sequence of labels.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_LABELTRACK_PERMUTED, LabelTrackEvent);
 
 // Posted when the track is selected or unselected.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_LABELTRACK_SELECTION, LabelTrackEvent);
 #endif

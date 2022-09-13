@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WINDOW_ACCESSIBLE__
-#define __WAVVY_WINDOW_ACCESSIBLE__
+#ifndef __WAVACITY_WINDOW_ACCESSIBLE__
+#define __WAVACITY_WINDOW_ACCESSIBLE__
 
 #include <wx/setup.h> // for wxUSE_* macros
 
@@ -99,4 +99,4 @@ private:
 };
 
 #endif      // wxUSE_ACCESSIBILITY
-#endif      // __WAVVY_WINDOW_ACCESSIBLE__
+#endif      // __WAVACITY_WINDOW_ACCESSIBLE__

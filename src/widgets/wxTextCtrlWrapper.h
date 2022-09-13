@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WXTEXTCTRLWRAPPER__
-#define __WAVVY_WXTEXTCTRLWRAPPER__
+#ifndef __WAVACITY_WXTEXTCTRLWRAPPER__
+#define __WAVACITY_WXTEXTCTRLWRAPPER__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/textctrl.h>
 
@@ -72,4 +72,4 @@ private:
    bool mReadOnly;
 };
 
-#endif // __WAVVY_WXTEXTCTRLWRAPPER__
+#endif // __WAVACITY_WXTEXTCTRLWRAPPER__

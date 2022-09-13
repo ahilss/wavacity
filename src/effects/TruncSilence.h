@@ -14,8 +14,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_TRUNC_SILENCE__
-#define __WAVVY_EFFECT_TRUNC_SILENCE__
+#ifndef __WAVACITY_EFFECT_TRUNC_SILENCE__
+#define __WAVACITY_EFFECT_TRUNC_SILENCE__
 
 #include "Effect.h"
 

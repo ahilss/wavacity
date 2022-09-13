@@ -69,10 +69,10 @@ PluginPath PrefsPanel::GetPath()
 { return BUILTIN_PREFS_PANEL_PREFIX + GetSymbol().Internal(); }
 
 VendorSymbol PrefsPanel::GetVendor()
-{  return XO("Wavvy");}
+{  return XO("Wavacity");}
 
 wxString PrefsPanel::GetVersion()
-{     return WAVVY_VERSION_STRING;}
+{     return WAVACITY_VERSION_STRING;}
 
 PrefsPanel::Registration::Registration( const wxString &name,
    const Factory &factory, bool expanded,

@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <vector>
 struct XML_ParserStruct;
@@ -17,7 +17,7 @@ typedef struct XML_ParserStruct *XML_Parser;
 #include "XMLTagHandler.h"
 #include "Internat.h" // for TranslatableString
 
-class WAVVY_DLL_API XMLFileReader final {
+class WAVACITY_DLL_API XMLFileReader final {
  public:
    XMLFileReader();
    ~XMLFileReader();

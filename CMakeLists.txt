@@ -83,10 +83,10 @@ if( CCACHE_PROGRAM )
 endif()
 
 # Our very own project
-project( Wavvy )
+project( Wavacity )
 
 # Load our functions/macros
-include( WavvyFunctions )
+include( WavacityFunctions )
 
 # Pull all the modules we'll need
 include( CheckCXXCompilerFlag )
@@ -167,13 +167,13 @@ message( STATUS "  Current Commit: ${GIT_COMMIT_SHORT}" )
 message( STATUS )
 
 # Define option() prefix
-set( _OPT "wavvy_" )
+set( _OPT "wavacity_" )
 
 # Organize subdirectories/targets into folders for the IDEs
 set_property( GLOBAL PROPERTY USE_FOLDERS ON )
 
 if( CMAKE_GENERATOR MATCHES "Visual Studio" )
-   # Make sure Wavvy is the startup project
+   # Make sure Wavacity is the startup project
    set_directory_properties(
       PROPERTIES
          VS_STARTUP_PROJECT "${CMAKE_PROJECT_NAME}"
@@ -208,8 +208,8 @@ set( _DEST "${_DESTDIR}" )
 set( _PREFIX "${CMAKE_INSTALL_PREFIX}" )
 set( _LIBDIR "${CMAKE_INSTALL_LIBDIR}" )
 set( _DATADIR "${CMAKE_INSTALL_DATADIR}" )
-set( _PKGLIB "${_LIBDIR}/wavvy" )
-set( _PKGDATA "${_DATADIR}/wavvy/" )
+set( _PKGLIB "${_LIBDIR}/wavacity" )
+set( _PKGDATA "${_DATADIR}/wavacity/" )
 set( _MANDIR "${CMAKE_INSTALL_MANDIR}" )
 set( _MODDIR "${_DEST}/modules" )
 set( _EXEDIR "${_DEST}" )
@@ -222,7 +222,7 @@ set( CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE )
 
 # Adjust them for the Mac
 if( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
-   set( _APPDIR "Wavvy.app/Contents" )
+   set( _APPDIR "Wavacity.app/Contents" )
    set( _DEST "${_DESTDIR}/${_APPDIR}" )
    set( _EXEDIR "${_DEST}/MacOS" )
    set( _MODDIR "${_DEST}/modules" )
@@ -376,19 +376,19 @@ if( NOT CMAKE_INSTALL_LIBDIR STREQUAL "lib" AND NOT EXISTS "${CMAKE_BINARY_DIR}/
    file( CREATE_LINK "${CMAKE_BINARY_DIR}/lib" "${CMAKE_BINARY_DIR}/lib64" SYMBOLIC )
 endif()
 
-# Define Wavvy's name
+# Define Wavacity's name
 if( CMAKE_SYSTEM_NAME MATCHES "Darwin|Windows" )
-   set( WAVVY_NAME "Wavvy" )
+   set( WAVACITY_NAME "Wavacity" )
 else()
-   set( WAVVY_NAME "wavvy" )
+   set( WAVACITY_NAME "wavacity" )
 endif()
 
-# Extract the Wavvy version information
+# Extract the Wavacity version information
 file(
    STRINGS
-      ${topdir}/src/Wavvy.h output
+      ${topdir}/src/Wavacity.h output
    REGEX
-      "^#define +WAVVY_(VERSION|RELEASE|REVISION|MODLEVEL|BUILD_LEVEL) +"
+      "^#define +WAVACITY_(VERSION|RELEASE|REVISION|MODLEVEL|BUILD_LEVEL) +"
 )
 
 # And store as variables
@@ -400,17 +400,17 @@ foreach( line ${output} )
 endforeach()
 
 # Create short and full version strings
-set( WAVVY_DIST_VERSION ${WAVVY_VERSION}.${WAVVY_RELEASE}.${WAVVY_REVISION} )
-set( WAVVY_INFO_VERSION ${WAVVY_VERSION}.${WAVVY_RELEASE}.${WAVVY_REVISION}.${WAVVY_MODLEVEL} )
+set( WAVACITY_DIST_VERSION ${WAVACITY_VERSION}.${WAVACITY_RELEASE}.${WAVACITY_REVISION} )
+set( WAVACITY_INFO_VERSION ${WAVACITY_VERSION}.${WAVACITY_RELEASE}.${WAVACITY_REVISION}.${WAVACITY_MODLEVEL} )
 
-# Define the version suffix (duplicates what happens in src/Wavvy.h)
+# Define the version suffix (duplicates what happens in src/Wavacity.h)
 string( TIMESTAMP __TDATE__ "%Y%m%d" )
-if( WAVVY_BUILD_LEVEL EQUAL 0 )
-   set( WAVVY_SUFFIX "-alpha-${__TDATE__}" )
-elseif(  WAVVY_BUILD_LEVEL EQUAL 1 )
-   set( WAVVY_SUFFIX "-beta-${__TDATE__}" )
+if( WAVACITY_BUILD_LEVEL EQUAL 0 )
+   set( WAVACITY_SUFFIX "-alpha-${__TDATE__}" )
+elseif(  WAVACITY_BUILD_LEVEL EQUAL 1 )
+   set( WAVACITY_SUFFIX "-beta-${__TDATE__}" )
 else()
-   set( WAVVY_SUFFIX "" )
+   set( WAVACITY_SUFFIX "" )
 endif()
 
 # Python is used for the manual and (possibly) message catalogs

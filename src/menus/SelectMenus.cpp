@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include "../AdornedRulerPanel.h"
@@ -27,7 +27,7 @@
 // private helper classes and functions
 namespace {
 
-void DoNextPeakFrequency(WavvyProject &project, bool up)
+void DoNextPeakFrequency(WavacityProject &project, bool up)
 {
    auto &tracks = TrackList::Get( project );
    auto &viewInfo = ViewInfo::Get( project );
@@ -54,7 +54,7 @@ void DoNextPeakFrequency(WavvyProject &project, bool up)
 }
 
 double NearestZeroCrossing
-(WavvyProject &project, double t0)
+(WavacityProject &project, double t0)
 {
    const auto &settings = ProjectSettings::Get( project );
    auto rate = settings.GetRate();
@@ -189,7 +189,7 @@ void SeekWhenAudioActive(double seekStep, wxLongLong &lastSelectionAdjustment)
 // negative to move backward.
 // Helper for moving by keyboard with snap-to-grid enabled
 double GridMove
-(WavvyProject &project, double t, int minPix)
+(WavacityProject &project, double t, int minPix)
 {
    const auto &settings = ProjectSettings::Get( project );
    auto rate = settings.GetRate();
@@ -215,7 +215,7 @@ double GridMove
 }
 
 double OffsetTime
-(WavvyProject &project,
+(WavacityProject &project,
  double t, double offset, TimeUnit timeUnit, int snapToTime)
 {
    auto &viewInfo = ViewInfo::Get( project );
@@ -231,7 +231,7 @@ double OffsetTime
 
 // Moving a cursor, and collapsed selection.
 void MoveWhenAudioInactive
-(WavvyProject &project, double seekStep, TimeUnit timeUnit)
+(WavacityProject &project, double seekStep, TimeUnit timeUnit)
 {
    auto &viewInfo = ViewInfo::Get( project );
    auto &trackPanel = TrackPanel::Get( project );
@@ -282,7 +282,7 @@ void MoveWhenAudioInactive
 }
 
 void SeekWhenAudioInactive
-(WavvyProject &project, double seekStep, TimeUnit timeUnit,
+(WavacityProject &project, double seekStep, TimeUnit timeUnit,
 SelectionOperation operation)
 {
    auto &viewInfo = ViewInfo::Get( project );
@@ -328,7 +328,7 @@ SelectionOperation operation)
 
 // Handle small cursor and play head movements
 void SeekLeftOrRight
-(WavvyProject &project, double direction, SelectionOperation operation,
+(WavacityProject &project, double direction, SelectionOperation operation,
  SeekInfo &info)
 {
    // PRL:  What I found and preserved, strange though it be:
@@ -366,7 +366,7 @@ void SeekLeftOrRight
 
 // Move the cursor forward or backward, while paused or while playing.
 void DoCursorMove(
-   WavvyProject &project, double seekStep,
+   WavacityProject &project, double seekStep,
    wxLongLong &lastSelectionAdjustment)
 {
    if (ProjectAudioIO::Get( project ).IsAudioActive()) {
@@ -381,7 +381,7 @@ void DoCursorMove(
    ProjectHistory::Get( project ).ModifyState(false);
 }
 
-void DoBoundaryMove(WavvyProject &project, int step, SeekInfo &info)
+void DoBoundaryMove(WavacityProject &project, int step, SeekInfo &info)
 {
    auto &viewInfo = ViewInfo::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -1011,14 +1011,14 @@ Handler &operator=( const Handler & ) PROHIBITED;
 } // namespace
 
 // Handler is stateful.  Needs a factory registered with
-// WavvyProject.
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   [](WavvyProject&) {
+// WavacityProject.
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   [](WavacityProject&) {
       return std::make_unique< SelectActions::Handler >(); } };
 
 void RegisterSelectMenu() {}
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &project) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &project) {
    return project.AttachedObjects::Get< SelectActions::Handler >( key );
 };
 
@@ -1082,14 +1082,14 @@ BaseItemSharedPtr SelectMenu()
             ),
 
             Section( "",
-               // GA: Wavvy had 'Store Re&gion' here previously. There is no
+               // GA: Wavacity had 'Store Re&gion' here previously. There is no
                // one-step way to restore the 'Saved Cursor Position' in Select Menu,
                // so arguably using the word 'Selection' to do duty for both saving
                // the region or the cursor is better. But it does not belong in a
                // 'Region' submenu.
                Command( wxT("SelSave"), XXO("S&tore Selection"), FN(OnSelectionSave),
                   WaveTracksSelectedFlag() ),
-               // Wavvy had 'Retrieve Regio&n' here previously.
+               // Wavacity had 'Retrieve Regio&n' here previously.
                Command( wxT("SelRestore"), XXO("Retrieve Selectio&n"),
                   FN(OnSelectionRestore), TracksExistFlag() )
             )

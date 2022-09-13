@@ -17,7 +17,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #include "Import.h"
 #include "ImportPlugin.h"
@@ -43,7 +43,7 @@
 #include "../WaveClip.h"
 #include "../WaveTrack.h"
 #include "../toolbars/SelectionBar.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/NumericTextCtrl.h"
 #include "../widgets/ProgressDialog.h"
 #include "../xml/XMLFileReader.h"
@@ -78,7 +78,7 @@ public:
    TranslatableString GetPluginFormatDescription() override;
 
    ImportHandle Open(const FilePath &fileName,
-                     WavvyProject *project) override;
+                     WavacityProject *project) override;
 };
 
 class AUPImportFileHandle final : public ImportFileHandle,
@@ -86,7 +86,7 @@ class AUPImportFileHandle final : public ImportFileHandle,
 {
 public:
    AUPImportFileHandle(const FilePath &name,
-                       WavvyProject *project);
+                       WavacityProject *project);
    ~AUPImportFileHandle();
 
    TranslatableString GetFileDescription() override;
@@ -157,7 +157,7 @@ private:
    bool SetWarning(const TranslatableString &msg);
 
 private:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
    Tags *mTags;
 
    // project tag values that will be set in the actual project if the
@@ -238,7 +238,7 @@ TranslatableString AUPImportPlugin::GetPluginFormatDescription()
 }
 
 ImportHandle AUPImportPlugin::Open(const FilePath &fileName,
-                                   WavvyProject *project)
+                                   WavacityProject *project)
 {
    auto handle = std::make_unique<AUPImportFileHandle>(fileName, project);
 
@@ -259,7 +259,7 @@ static Importer::RegisteredImportPlugin registered
 void RegisterAUPImportPlugin() {}
 
 AUPImportFileHandle::AUPImportFileHandle(const FilePath &fileName,
-                                         WavvyProject *project)
+                                         WavacityProject *project)
 :  ImportFileHandle(fileName),
    mProject(*project)
 {
@@ -316,7 +316,7 @@ ProgressResult AUPImportFileHandle::Import(WaveTrackFactory *WXUNUSED(trackFacto
    bool success = xmlFile.Parse(this, mFilename);
    if (!success)
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Couldn't import the project:\n\n%s").Format(xmlFile.GetErrorStr()),
          XO("Import Project"),
          wxOK | wxCENTRE,
@@ -328,7 +328,7 @@ ProgressResult AUPImportFileHandle::Import(WaveTrackFactory *WXUNUSED(trackFacto
    if (!mErrorMsg.empty())
    {
       // Error or warning
-      WavvyMessageBox(
+      WavacityMessageBox(
          mErrorMsg,
          XO("Import Project"),
          wxOK | wxCENTRE,
@@ -481,13 +481,13 @@ bool AUPImportFileHandle::Open()
 
       buf[sizeof(buf) - 1] = '\0';
 
-      if (!wxStrncmp(buf, wxT("WavvyProject"), 15))
+      if (!wxStrncmp(buf, wxT("WavacityProject"), 15))
       {
-         WavvyMessageBox(
-            XO("This project was saved by Wavvy version 1.0 or earlier. The format has\n"
-               "changed and this version of Wavvy is unable to import the project.\n\n"
-               "Use a version of Wavvy prior to v3.0.0 to upgrade the project and then\n"
-               "you may import it with this version of Wavvy."),
+         WavacityMessageBox(
+            XO("This project was saved by Wavacity version 1.0 or earlier. The format has\n"
+               "changed and this version of Wavacity is unable to import the project.\n\n"
+               "Use a version of Wavacity prior to v3.0.0 to upgrade the project and then\n"
+               "you may import it with this version of Wavacity."),
             XO("Import Project"),
             wxOK | wxCENTRE,
             &GetProjectFrame(mProject));
@@ -496,7 +496,7 @@ bool AUPImportFileHandle::Open()
       }
 
       if (wxStrncmp(buf, "<?xml", 5) == 0 &&
-          (wxStrstr(buf, "<wavvyproject") ||
+          (wxStrstr(buf, "<wavacityproject") ||
            wxStrstr(buf, "<project") ))
       {
          return true;
@@ -555,7 +555,7 @@ bool AUPImportFileHandle::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
    bool success = false;
 
    if (mCurrentTag.IsSameAs(wxT("project")) ||
-       mCurrentTag.IsSameAs(wxT("wavvyproject")))
+       mCurrentTag.IsSameAs(wxT("wavacityproject")))
    {
       success = HandleProject(handler);
    }
@@ -735,7 +735,7 @@ bool AUPImportFileHandle::HandleProject(XMLTagHandler *&handler)
          requiredTags++;
       }
 
-      else if (!wxStrcmp(attr, wxT("wavvyversion")))
+      else if (!wxStrcmp(attr, wxT("wavacityversion")))
       {
          requiredTags++;
       }
@@ -778,7 +778,7 @@ bool AUPImportFileHandle::HandleProject(XMLTagHandler *&handler)
          // No luck...complain and bail
          if (projName.empty())
          {
-            WavvyMessageBox(
+            WavacityMessageBox(
                XO("Couldn't find the project data folder: \"%s\"").Format(value),
                XO("Error Opening Project"),
                wxOK | wxCENTRE,
@@ -859,8 +859,8 @@ bool AUPImportFileHandle::HandleNoteTrack(XMLTagHandler *&handler)
 
    return true;
 #else
-   WavvyMessageBox(
-      XO("MIDI tracks found in project file, but this build of Wavvy does not include MIDI support, bypassing track."),
+   WavacityMessageBox(
+      XO("MIDI tracks found in project file, but this build of Wavacity does not include MIDI support, bypassing track."),
       XO("Project Import"),
       wxOK | wxICON_EXCLAMATION | wxCENTRE,
       &GetProjectFrame(mProject));
@@ -877,7 +877,7 @@ bool AUPImportFileHandle::HandleTimeTrack(XMLTagHandler *&handler)
    // (See HandleTimeEnvelope and HandleControlPoint also)
    if (*tracks.Any<TimeTrack>().begin())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("The active project already has a time track and one was encountered in the project being imported, bypassing imported time track."),
          XO("Project Import"),
          wxOK | wxICON_EXCLAMATION | wxCENTRE,
@@ -899,7 +899,7 @@ bool AUPImportFileHandle::HandleWaveTrack(XMLTagHandler *&handler)
    handler = mWaveTrack =
       TrackList::Get(mProject).Add(trackFactory.NewWaveTrack());
 
-   // No active clip.  In early versions of Wavvy, there was a single
+   // No active clip.  In early versions of Wavacity, there was a single
    // implied clip so we'll create a clip when the first "sequence" is
    // found.
    mClip = nullptr;
@@ -1056,7 +1056,7 @@ bool AUPImportFileHandle::HandleEnvelope(XMLTagHandler *&handler)
          handler = timetrack->GetEnvelope();
       }
    }
-   // Earlier versions of Wavvy had a single implied waveclip, so for
+   // Earlier versions of Wavacity had a single implied waveclip, so for
    // these versions, we get or create the only clip in the track.
    else if (mParentTag.IsSameAs(wxT("wavetrack")))
    {
@@ -1098,7 +1098,7 @@ bool AUPImportFileHandle::HandleSequence(XMLTagHandler *&handler)
 
    WaveClip *waveclip = static_cast<WaveClip *>(node.handler);
 
-   // Earlier versions of Wavvy had a single implied waveclip, so for
+   // Earlier versions of Wavacity had a single implied waveclip, so for
    // these versions, we get or create the only clip in the track.
    if (mParentTag.IsSameAs(wxT("wavetrack")))
    {
@@ -1404,7 +1404,7 @@ bool AUPImportFileHandle::HandleImport(XMLTagHandler *&handler)
    GuardedCall(
       [&] {
          ProjectFileManager::Get( mProject ).Import(strAttr, false); },
-      [&] (WavvyException*) {}
+      [&] (WavacityException*) {}
    );
 
    if (oldNumTracks == tracks.size())

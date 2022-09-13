@@ -21,7 +21,7 @@
   normal project window, or within a ToolBarFrame.
 
   All of the controls in this window were custom-written for
-  Wavvy - they are not native controls on any platform -
+  Wavacity - they are not native controls on any platform -
   however, it is intended that the images could be easily
   replaced to allow "skinning" or just customization to
   match the look and feel of each platform.
@@ -30,7 +30,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ToolsToolBar.h"
 #include "ToolManager.h"
 
@@ -72,7 +72,7 @@ BEGIN_EVENT_TABLE(ToolsToolBar, ToolBar)
 END_EVENT_TABLE()
 
 //Standard constructor
-ToolsToolBar::ToolsToolBar( WavvyProject &project )
+ToolsToolBar::ToolsToolBar( WavacityProject &project )
 : ToolBar(project, ToolsBarID, XO("Tools"), wxT("Tools"))
 {
    using namespace ToolCodes;
@@ -100,15 +100,15 @@ ToolsToolBar::~ToolsToolBar()
       "mismatch in number of tools" );
 }
 
-ToolsToolBar &ToolsToolBar::Get( WavvyProject &project )
+ToolsToolBar &ToolsToolBar::Get( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<ToolsToolBar*>( toolManager.GetToolBar(ToolsBarID) );
 }
 
-const ToolsToolBar &ToolsToolBar::Get( const WavvyProject &project )
+const ToolsToolBar &ToolsToolBar::Get( const WavacityProject &project )
 {
-   return Get( const_cast<WavvyProject&>( project )) ;
+   return Get( const_cast<WavacityProject&>( project )) ;
 }
 
 void ToolsToolBar::RegenerateTooltips()
@@ -117,7 +117,7 @@ void ToolsToolBar::RegenerateTooltips()
 // JKC:
 //   Under Win98 Tooltips appear to be buggy, when you have a lot of
 //   tooltip messages flying around.  I found that just creating a
-//   twelfth tooltip caused Wavvy to crash when it tried to show
+//   twelfth tooltip caused Wavacity to crash when it tried to show
 //   any tooltip.
 //
 //   Win98 does NOT recover from this crash - for any application which is
@@ -296,7 +296,7 @@ void ToolsToolBar::Create(wxWindow * parent)
 }
 
 static RegisteredToolbarFactory factory{ ToolsBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew ToolsToolBar{ project } }; }
 };
 
@@ -318,7 +318,7 @@ AttachedToolBarMenuItem sAttachment{
 namespace {
 
 /// Called by handlers that set tools.
-void SetTool(WavvyProject &project, int tool)
+void SetTool(WavacityProject &project, int tool)
 {
    auto toolbar = &ToolsToolBar::Get( project );
    if (toolbar) {
@@ -400,9 +400,9 @@ void OnNextTool(const CommandContext &context)
 
 }; // struct Handler
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static ToolActions::Handler instance;
    return instance;
 };

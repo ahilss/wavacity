@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "WaveTrackVZoomHandle.h"
 
 #include "../../../../Experimental.h"
@@ -82,7 +82,7 @@ HitTestPreview WaveTrackVZoomHandle::HitPreview(const wxMouseState &state)
 }
 
 UIHandle::Result WaveTrackVZoomHandle::DoDrag(
-   const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+   const TrackPanelMouseEvent &evt, WavacityProject *pProject,
    const int zoomStart, int &zoomEnd)
 {
    using namespace RefreshCode;
@@ -97,7 +97,7 @@ UIHandle::Result WaveTrackVZoomHandle::DoDrag(
 }
 
 UIHandle::Result WaveTrackVZoomHandle::DoRelease(
-   const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+   const TrackPanelMouseEvent &evt, WavacityProject *pProject,
    wxWindow *pParent, WaveTrack *pTrack, const wxRect &rect,
    DoZoomFunction doZoom, PopupMenuTable &table,
    int zoomStart, int zoomEnd )

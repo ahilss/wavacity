@@ -38,14 +38,14 @@ CommonTrackPanelCell::~CommonTrackPanelCell()
 }
 
 HitTestPreview CommonTrackPanelCell::DefaultPreview
-(const TrackPanelMouseState &, const WavvyProject *)
+(const TrackPanelMouseState &, const WavacityProject *)
 {
    static wxCursor defaultCursor{ wxCURSOR_ARROW };
    return { {}, &defaultCursor, {} };
 }
 
 unsigned CommonTrackPanelCell::HandleWheelRotation
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto hook = GetHook();
    return hook ? hook( evt, pProject ) : RefreshCode::Cancelled;

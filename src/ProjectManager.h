@@ -4,12 +4,12 @@ Audacity: A Digital Audio Editor
 
 ProjectManager.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_MANAGER__
-#define __WAVVY_PROJECT_MANAGER__
+#ifndef __WAVACITY_PROJECT_MANAGER__
+#define __WAVACITY_PROJECT_MANAGER__
 
 #include <memory>
 
@@ -19,7 +19,7 @@ Paul Licameli split from WavvyProject.h
 class wxTimer;
 class wxTimerEvent;
 
-class WavvyProject;
+class WavacityProject;
 struct AudioIOStartStreamOptions;
 
 ///\brief Object associated with a project for high-level management of the
@@ -30,26 +30,26 @@ class ProjectManager final
    , public ClientData::Base
 {
 public:
-   static ProjectManager &Get( WavvyProject &project );
-   static const ProjectManager &Get( const WavvyProject &project );
+   static ProjectManager &Get( WavacityProject &project );
+   static const ProjectManager &Get( const WavacityProject &project );
 
-   explicit ProjectManager( WavvyProject &project );
+   explicit ProjectManager( WavacityProject &project );
    ProjectManager( const ProjectManager & ) PROHIBITED;
    ProjectManager &operator=( const ProjectManager & ) PROHIBITED;
    ~ProjectManager() override;
 
    // This is the factory for projects:
-   static WavvyProject *New();
+   static WavacityProject *New();
 
    // The function that imports files can act as a factory too, and for that
    // reason remains in this class, not in ProjectFileManager
-   static void OpenFiles(WavvyProject *proj);
+   static void OpenFiles(WavacityProject *proj);
 
    // Return the given project if that is not NULL, else create a project.
    // Then open the given project path.
    // But if an exception escapes this function, create no NEW project.
-   static WavvyProject *OpenProject(
-      WavvyProject *pProject,
+   static WavacityProject *OpenProject(
+      WavacityProject *pProject,
       const FilePath &fileNameArg, bool addtohistory = true);
 
    void ResetProjectToEmpty();
@@ -74,7 +74,7 @@ private:
    void RestartTimer();
 
    // non-static data members
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    std::unique_ptr<wxTimer> mTimer;
 

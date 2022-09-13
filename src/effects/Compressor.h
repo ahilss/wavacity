@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_COMPRESSOR__
-#define __WAVVY_EFFECT_COMPRESSOR__
+#ifndef __WAVACITY_EFFECT_COMPRESSOR__
+#define __WAVACITY_EFFECT_COMPRESSOR__
 
 #include "TwoPassSimpleMono.h"
 

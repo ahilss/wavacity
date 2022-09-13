@@ -8,7 +8,7 @@ Paul Licameli split from WaveTrackView.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "WaveformView.h"
 
 #include "../../../../Experimental.h"
@@ -50,7 +50,7 @@ WaveformView::~WaveformView() = default;
 
 std::vector<UIHandlePtr> WaveformView::DetailedHitTest(
    const TrackPanelMouseState &st,
-   const WavvyProject *pProject, int currentTool, bool bMultiTool )
+   const WavacityProject *pProject, int currentTool, bool bMultiTool )
 {
    auto &view = *this;
    const auto pTrack =
@@ -1149,7 +1149,7 @@ void WaveColorMenuTable::OnWaveColorChange(wxCommandEvent & event)
 
    int newWaveColor = id - OnInstrument1ID;
 
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
 
    for (auto channel : TrackList::Channels(pTrack))
       channel->SetWaveColorIndex(newWaveColor);

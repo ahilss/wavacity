@@ -24,13 +24,13 @@
 // WARNING:  This is NOT 64-bit safe
 // *******************************************************************
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 #include "VSTEffect.h"
 
 #include "../../widgets/ProgressDialog.h"
 
 #if 0
-#if defined(BUILDING_WAVVY)
+#if defined(BUILDING_WAVACITY)
 #include "../../PlatformCompatibility.h"
 
 // Make the main function private
@@ -77,7 +77,7 @@
 #include <dlfcn.h>
 #endif
 
-// TODO:  Unfortunately we have some dependencies on Wavvy provided 
+// TODO:  Unfortunately we have some dependencies on Wavacity provided 
 //        dialogs, widgets and other stuff.  This will need to be cleaned up.
 
 #include "../../FileNames.h"
@@ -85,7 +85,7 @@
 #include "../../ShuttleGui.h"
 #include "../../effects/Effect.h"
 #include "../../widgets/valnum.h"
-#include "../../widgets/WavvyMessageBox.h"
+#include "../../widgets/WavacityMessageBox.h"
 #include "../../widgets/NumericTextCtrl.h"
 #include "../../xml/XMLFileReader.h"
 
@@ -93,7 +93,7 @@
 #include "../../widgets/WindowAccessible.h"
 #endif
 
-#include "wavvy/ConfigInterface.h"
+#include "wavacity/ConfigInterface.h"
 
 #include <cstring>
 
@@ -131,14 +131,14 @@ static uint32_t reinterpretAsUint32(float f)
 //
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 //
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create our effects module and register
    // Trust the module manager not to leak this
@@ -150,7 +150,7 @@ DECLARE_MODULE_ENTRY(WavvyModule)
 // Register this as a builtin module
 // 
 // We also take advantage of the fact that wxModules are initialized before
-// the wxApp::OnInit() method is called.  We check to see if Wavvy was
+// the wxApp::OnInit() method is called.  We check to see if Wavacity was
 // executed to scan a VST effect in a different process.
 //
 // ============================================================================
@@ -172,8 +172,8 @@ public:
       {
          // NOTE:  This can really hide failures, which is what we want for those pesky
          //        VSTs that are bad or that our support isn't correct.  But, it can also
-         //        hide Wavvy failures in the subprocess, so if you're having an unruley
-         //        VST or odd Wavvy failures, comment it out and you might get more info.
+         //        hide Wavacity failures in the subprocess, so if you're having an unruley
+         //        VST or odd Wavacity failures, comment it out and you might get more info.
          //wxHandleFatalExceptions();
          VSTEffectsModule::Check(wxTheApp->argv[2]);
 
@@ -340,12 +340,12 @@ VendorSymbol VSTEffectsModule::GetVendor()
 wxString VSTEffectsModule::GetVersion()
 {
    // This "may" be different if this were to be maintained as a separate DLL
-   return WAVVY_VERSION_STRING;
+   return WAVACITY_VERSION_STRING;
 }
 
 TranslatableString VSTEffectsModule::GetDescription()
 {
-   return XO("Adds the ability to use VST effects in Wavvy.");
+   return XO("Adds the ability to use VST effects in Wavacity.");
 }
 
 // ============================================================================
@@ -713,7 +713,7 @@ void VSTEffectsModule::DeleteInstance(ComponentInterface *instance)
 
 // static
 //
-// Called from reinvokation of Wavvy or DLL to check in a separate process
+// Called from reinvokation of Wavacity or DLL to check in a separate process
 void VSTEffectsModule::Check(const wxChar *path)
 {
    VSTEffect effect(path);
@@ -837,7 +837,7 @@ void VSTEffectOptionsDialog::PopulateOrExchange(ShuttleGui & S)
          {
             S.AddVariableText( XO(
 "As part of their processing, some VST effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will "
+"audio to Wavacity. When not compensating for this delay, you will "
 "notice that small silences have been inserted into the audio. "
 "Enabling this option will provide that compensation, but it may "
 "not work for all VST effects."),
@@ -971,14 +971,14 @@ intptr_t VSTEffect::AudioMaster(AEffect * effect,
          return 1;
 
       case audioMasterGetProductString:
-         strcpy((char *) ptr, "Wavvy");         // Do not translate, max 64 + 1 for null terminator
+         strcpy((char *) ptr, "Wavacity");         // Do not translate, max 64 + 1 for null terminator
          return 1;
 
       case audioMasterGetVendorVersion:
-         return (intptr_t) (WAVVY_VERSION << 24 |
-                            WAVVY_RELEASE << 16 |
-                            WAVVY_REVISION << 8 |
-                            WAVVY_MODLEVEL);
+         return (intptr_t) (WAVACITY_VERSION << 24 |
+                            WAVACITY_RELEASE << 16 |
+                            WAVACITY_REVISION << 8 |
+                            WAVACITY_MODLEVEL);
 
       // Some (older) effects depend on an effIdle call when requested.  An
       // example is the Antress Modern plugins which uses the call to update
@@ -1596,7 +1596,7 @@ bool VSTEffect::RealtimeProcessEnd()
 /// from the beginning.  I've left the default 8k, just in case, but now the user
 /// can set the buffering based on their specific setup and needs.
 ///
-/// And at the same time I added buffer delay compensation, which allows Wavvy
+/// And at the same time I added buffer delay compensation, which allows Wavacity
 /// to account for latency introduced by some effects.  This is based on information
 /// provided by the effect, so it will not work with all effects since they don't
 /// all provide the information (kn0ck0ut is one).
@@ -1871,7 +1871,7 @@ void VSTEffect::ExportPresets()
       {
         { XO("Standard VST bank file"), { wxT("fxb") }, true },
         { XO("Standard VST program file"), { wxT("fxp") }, true },
-        { XO("Wavvy VST preset file"), { wxT("xml") }, true },
+        { XO("Wavacity VST preset file"), { wxT("xml") }, true },
       },
       wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxRESIZE_BORDER,
       NULL);
@@ -1900,7 +1900,7 @@ void VSTEffect::ExportPresets()
    else
    {
       // This shouldn't happen, but complain anyway
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unrecognized file extension."),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -1957,7 +1957,7 @@ void VSTEffect::ImportPresets()
    else
    {
       // This shouldn't happen, but complain anyway
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unrecognized file extension."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -1968,7 +1968,7 @@ void VSTEffect::ImportPresets()
 
    if (!success)
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to load presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -2127,8 +2127,8 @@ bool VSTEffect::Load()
    // Attempt to load it
    //
    // Spent a few days trying to figure out why some VSTs where running okay and
-   // others were hit or miss.  The cause was that we export all of Wavvy's
-   // symbols and some of the loaded libraries were picking up Wavvy's and 
+   // others were hit or miss.  The cause was that we export all of Wavacity's
+   // symbols and some of the loaded libraries were picking up Wavacity's and 
    // not their own.
    //
    // So far, I've only seen this issue on Linux, but we might just be getting
@@ -2136,7 +2136,7 @@ bool VSTEffect::Load()
    // the better.
    //
    // To get around the problem, I just added the RTLD_DEEPBIND flag to the load
-   // and that "basically" puts Wavvy last when the loader needs to resolve
+   // and that "basically" puts Wavacity last when the loader needs to resolve
    // symbols.
    //
    // Once we define a proper external API, the flags can be removed.
@@ -2258,7 +2258,7 @@ bool VSTEffect::Load()
 
          // Make sure we start out with a valid program selection
          // I've found one plugin (SoundHack +morphfilter) that will
-         // crash Wavvy when saving the initial default parameters
+         // crash Wavacity when saving the initial default parameters
          // with this.
          callSetProgram(0);
 
@@ -3072,7 +3072,7 @@ bool VSTEffect::LoadFXB(const wxFileName & fn)
    ArrayOf<unsigned char> data{ size_t(f.Length()) };
    if (!data)
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to allocate memory when loading presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3087,7 +3087,7 @@ bool VSTEffect::LoadFXB(const wxFileName & fn)
       ssize_t len = f.Read((void *) bptr, f.Length());
       if (f.Error())
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Unable to read presets file."),
             XO("Error Loading VST Presets"),
             wxOK | wxCENTRE,
@@ -3245,7 +3245,7 @@ bool VSTEffect::LoadFXP(const wxFileName & fn)
    ArrayOf<unsigned char> data{ size_t(f.Length()) };
    if (!data)
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Unable to allocate memory when loading presets file."),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3260,7 +3260,7 @@ bool VSTEffect::LoadFXP(const wxFileName & fn)
       ssize_t len = f.Read((void *) bptr, f.Length());
       if (f.Error())
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Unable to read presets file."),
             XO("Error Loading VST Presets"),
             wxOK | wxCENTRE,
@@ -3457,7 +3457,7 @@ bool VSTEffect::LoadXML(const wxFileName & fn)
    if (!ok)
    {
       // Inform user of load failure
-      WavvyMessageBox(
+      WavacityMessageBox(
          reader.GetErrorStr(),
          XO("Error Loading VST Presets"),
          wxOK | wxCENTRE,
@@ -3475,7 +3475,7 @@ void VSTEffect::SaveFXB(const wxFileName & fn)
    wxFFile f(fullPath, wxT("wb"));
    if (!f.IsOpened())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3543,7 +3543,7 @@ void VSTEffect::SaveFXB(const wxFileName & fn)
 
    if (f.Error())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Error writing to file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3562,7 +3562,7 @@ void VSTEffect::SaveFXP(const wxFileName & fn)
    wxFFile f(fullPath, wxT("wb"));
    if (!f.IsOpened())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3578,7 +3578,7 @@ void VSTEffect::SaveFXP(const wxFileName & fn)
    f.Write(buf.GetData(), buf.GetDataLen());
    if (f.Error())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Error writing to file: \"%s\"").Format( fullPath ),
          XO("Error Saving VST Presets"),
          wxOK | wxCENTRE,
@@ -3775,7 +3775,7 @@ bool VSTEffect::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
             {
                auto msg = XO("This parameter file was saved from %s. Continue?")
                   .Format( value );
-               int result = WavvyMessageBox(
+               int result = WavacityMessageBox(
                   msg,
                   XO("Confirm"),
                   wxYES_NO,

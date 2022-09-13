@@ -39,7 +39,7 @@
     * 9: Gaussian(a=4.5)
 */
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "FFT.h"
 
 #include "Internat.h"

@@ -16,8 +16,8 @@ number of threads.
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_ODMANAGER__
-#define __WAVVY_ODMANAGER__
+#ifndef __WAVACITY_ODMANAGER__
+#define __WAVACITY_ODMANAGER__
 
 #include <vector>
 #include "ODTaskThread.h"
@@ -31,7 +31,7 @@ number of threads.
 #endif //__WXMAC__
 
 // This event is posted to the application
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_ODTASK_UPDATE, wxCommandEvent);
 
 ///wxstring compare function for sorting case, which is needed to load correctly.

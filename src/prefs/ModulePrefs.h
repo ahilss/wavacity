@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MODULE_PREFS__
-#define __WAVVY_MODULE_PREFS__
+#ifndef __WAVACITY_MODULE_PREFS__
+#define __WAVACITY_MODULE_PREFS__
 
 #include <wx/defs.h>
 
@@ -24,9 +24,9 @@ class ShuttleGui;
 enum {
    kModuleDisabled = 0,
    kModuleEnabled = 1,
-   kModuleAsk = 2,     // Will ask, each time, when wavvy starts.
-   kModuleFailed = 3,  // Wavvy thinks this is a bad module.
-   kModuleNew = 4      // Wavvy will ask once, and remember the answer.
+   kModuleAsk = 2,     // Will ask, each time, when wavacity starts.
+   kModuleFailed = 3,  // Wavacity thinks this is a bad module.
+   kModuleNew = 4      // Wavacity will ask once, and remember the answer.
 };
 
 

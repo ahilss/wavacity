@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_BATCH_PREFS__
-#define __WAVVY_BATCH_PREFS__
+#ifndef __WAVACITY_BATCH_PREFS__
+#define __WAVACITY_BATCH_PREFS__
 
 #include <wx/defs.h>
 

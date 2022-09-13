@@ -10,12 +10,12 @@
 
 \class LangChoiceDialog
 \brief A dialog used (at start up) to present the user with a choice
-of languages for Wavvy.
+of languages for Wavacity.
 
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "LangChoice.h"
 
 #include <wx/defs.h>
@@ -27,7 +27,7 @@ of languages for Wavvy.
 
 #include "Languages.h"
 #include "ShuttleGui.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/wxPanelWrapper.h"
 
 class LangChoiceDialog final : public wxDialogWrapper {
@@ -56,8 +56,8 @@ wxString ChooseLanguage(wxWindow *parent)
    wxString returnVal;
 
    /* i18n-hint: Title on a dialog indicating that this is the first
-    * time Wavvy has been run. */
-   LangChoiceDialog dlog(parent, -1, XO("Wavvy First Run"));
+    * time Wavacity has been run. */
+   LangChoiceDialog dlog(parent, -1, XO("Wavacity First Run"));
    dlog.CentreOnParent();
    dlog.ShowModal();
    returnVal = dlog.GetLang();
@@ -86,7 +86,7 @@ LangChoiceDialog::LangChoiceDialog(wxWindow * parent,
       S.StartHorizontalLay();
       {
          S.SetBorder(15);
-         mChoice = S.AddChoice(XXO("Choose Language for Wavvy to use:"),
+         mChoice = S.AddChoice(XXO("Choose Language for Wavacity to use:"),
             mLangNames,
             lang);
       }
@@ -127,7 +127,7 @@ void LangChoiceDialog::OnOk(wxCommandEvent & WXUNUSED(event))
                  mLang,
                  sname,
                  slang);
-      if ( wxNO == WavvyMessageBox( msg, XO("Confirm"), wxYES_NO ) ) {
+      if ( wxNO == WavacityMessageBox( msg, XO("Confirm"), wxYES_NO ) ) {
          return;
       }
    }

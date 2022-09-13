@@ -6,7 +6,7 @@
  
  *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "CrashReport.h"
 #include "Experimental.h"
 
@@ -21,7 +21,7 @@
 #endif
 
 #include "wxFileNameWrapper.h"
-#include "WavvyLogger.h"
+#include "WavacityLogger.h"
 #include "AudioIOBase.h"
 #include "FileNames.h"
 #include "Internat.h"
@@ -44,7 +44,7 @@ void Generate(wxDebugReport::Context ctx)
 
    {
       // Provides a progress dialog with indeterminate mode
-      wxGenericProgressDialog pd(XO("Wavvy Support Data").Translation(),
+      wxGenericProgressDialog pd(XO("Wavacity Support Data").Translation(),
                                  XO("This may take several seconds").Translation(),
                                  300000,     // range
                                  nullptr,    // parent
@@ -53,8 +53,8 @@ void Generate(wxDebugReport::Context ctx)
       std::atomic_bool done = {false};
       auto thread = std::thread([&]
       {
-         wxFileNameWrapper fn{ FileNames::DataDir(), wxT("wavvy.cfg") };
-         rpt.AddFile(fn.GetFullPath(), _TS("Wavvy Configuration"));
+         wxFileNameWrapper fn{ FileNames::DataDir(), wxT("wavacity.cfg") };
+         rpt.AddFile(fn.GetFullPath(), _TS("Wavacity Configuration"));
          rpt.AddFile(FileNames::PluginRegistry(), wxT("Plugin Registry"));
          rpt.AddFile(FileNames::PluginSettings(), wxT("Plugin Settings"));
    
@@ -74,10 +74,10 @@ void Generate(wxDebugReport::Context ctx)
             rpt.AddText(wxT("project.txt"), projectFileIO.GenerateDoc(), wxT("Active project doc"));
          }
    
-         auto logger = WavvyLogger::Get();
+         auto logger = WavacityLogger::Get();
          if (logger)
          {
-            rpt.AddText(wxT("log.txt"), logger->GetLog(), _TS("Wavvy Log"));
+            rpt.AddText(wxT("log.txt"), logger->GetLog(), _TS("Wavacity Log"));
          }
    
          done = true;
@@ -100,9 +100,9 @@ void Generate(wxDebugReport::Context ctx)
    
    if (ok && rpt.Process())
    {
-      WavvyTextEntryDialog dlg(nullptr,
+      WavacityTextEntryDialog dlg(nullptr,
          XO("Report generated to:"),
-         XO("Wavvy Support Data"),
+         XO("Wavacity Support Data"),
          rpt.GetCompressedFileName(),
          wxOK | wxCENTER);
       dlg.SetName(dlg.GetTitle());

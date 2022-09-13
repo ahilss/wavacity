@@ -9,21 +9,21 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_INTERNAT__
-#define __WAVVY_INTERNAT__
+#ifndef __WAVACITY_INTERNAT__
+#define __WAVACITY_INTERNAT__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <wx/longlong.h>
 
 #ifndef IN_RC
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxArrayString;
 class wxArrayStringEx;
 
-extern WAVVY_DLL_API const wxString& GetCustomTranslation(const wxString& str1 );
-extern WAVVY_DLL_API const wxString& GetCustomSubstitution(const wxString& str1 );
+extern WAVACITY_DLL_API const wxString& GetCustomTranslation(const wxString& str1 );
+extern WAVACITY_DLL_API const wxString& GetCustomSubstitution(const wxString& str1 );
 
 // Marks string for substitution only.
 #define _TS( s ) GetCustomSubstitution( s )

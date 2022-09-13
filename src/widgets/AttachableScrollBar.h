@@ -9,19 +9,19 @@
   A scroll bar that can be attached to multiple items and so control
   their scrolling.
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/
 
-#ifndef __WAVVY_ATTACHABLE_SCROLL_BAR__
-#define __WAVVY_ATTACHABLE_SCROLL_BAR__
+#ifndef __WAVACITY_ATTACHABLE_SCROLL_BAR__
+#define __WAVACITY_ATTACHABLE_SCROLL_BAR__
 
 #include <wx/scrolbar.h> // to inherit
 
 class ViewInfo;
 
-class WAVVY_DLL_API AttachableScrollBar final :
+class WAVACITY_DLL_API AttachableScrollBar final :
    public wxScrollBar
 {
 public:
@@ -43,4 +43,4 @@ public:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_ATTACHABLE_SCROLL_BAR__
+#endif // __WAVACITY_ATTACHABLE_SCROLL_BAR__

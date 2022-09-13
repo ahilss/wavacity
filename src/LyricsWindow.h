@@ -9,14 +9,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LYRICS_WINDOW__
-#define __WAVVY_LYRICS_WINDOW__
+#ifndef __WAVACITY_LYRICS_WINDOW__
+#define __WAVACITY_LYRICS_WINDOW__
 
 #include <wx/frame.h> // to inherit
 
 #include "Prefs.h"
 
-class WavvyProject;
+class WavacityProject;
 class LyricsPanel;
 
 class LyricsWindow final : public wxFrame,
@@ -24,7 +24,7 @@ class LyricsWindow final : public wxFrame,
 {
 
  public:
-   LyricsWindow(WavvyProject* parent);
+   LyricsWindow(WavacityProject* parent);
 
    LyricsPanel *GetLyricsPanel() { return mLyricsPanel; };
 
@@ -40,7 +40,7 @@ class LyricsWindow final : public wxFrame,
    // PrefsListener implementation
    void UpdatePrefs() override;
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
    LyricsPanel *mLyricsPanel;
 
  public:

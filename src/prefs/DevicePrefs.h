@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DEVICE_PREFS__
-#define __WAVVY_DEVICE_PREFS__
+#ifndef __WAVACITY_DEVICE_PREFS__
+#define __WAVACITY_DEVICE_PREFS__
 
 #include <wx/defs.h>
 

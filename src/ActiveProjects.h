@@ -6,11 +6,11 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ACTIVE_PROJECTS__
-#define __WAVVY_ACTIVE_PROJECTS__
+#ifndef __WAVACITY_ACTIVE_PROJECTS__
+#define __WAVACITY_ACTIVE_PROJECTS__
 
-#include "Wavvy.h"
-#include "wavvy/Types.h"
+#include "Wavacity.h"
+#include "wavacity/Types.h"
 
 #include <wx/string.h>
 

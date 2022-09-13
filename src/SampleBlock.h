@@ -6,16 +6,16 @@ SampleBlock.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_SAMPLE_BLOCK__
-#define __WAVVY_SAMPLE_BLOCK__
+#ifndef __WAVACITY_SAMPLE_BLOCK__
+#define __WAVACITY_SAMPLE_BLOCK__
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 #include <functional>
 #include <memory>
 #include <unordered_set>
 
-class WavvyProject;
+class WavacityProject;
 class ProjectFileIO;
 class XMLWriter;
 
@@ -24,7 +24,7 @@ using SampleBlockPtr = std::shared_ptr<SampleBlock>;
 class SampleBlockFactory;
 using SampleBlockFactoryPtr = std::shared_ptr<SampleBlockFactory>;
 using SampleBlockFactoryFactory =
-   std::function< SampleBlockFactoryPtr( WavvyProject& ) >;
+   std::function< SampleBlockFactoryPtr( WavacityProject& ) >;
 
 using SampleBlockID = long long;
 
@@ -112,7 +112,7 @@ public:
       SampleBlockFactoryFactory newFactory );
 
    // Invoke the installed factory (throw an exception if none was installed)
-   static SampleBlockFactoryPtr New( WavvyProject &project );
+   static SampleBlockFactoryPtr New( WavacityProject &project );
 
    virtual ~SampleBlockFactory();
 

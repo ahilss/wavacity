@@ -33,7 +33,7 @@ SetTrackAudioCommand and SetTrackVisualsCommand.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SetTrackInfoCommand.h"
 
 #include "LoadCommands.h"

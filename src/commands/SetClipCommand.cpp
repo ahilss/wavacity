@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SetClipCommand.h"
 
 #include "LoadCommands.h"

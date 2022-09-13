@@ -15,8 +15,8 @@
 **********************************************************************/
 
 
-#ifndef __WAVVY_GENERATOR__
-#define __WAVVY_GENERATOR__
+#ifndef __WAVACITY_GENERATOR__
+#define __WAVACITY_GENERATOR__
 
 #include "Effect.h"
 

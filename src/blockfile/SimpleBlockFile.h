@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SIMPLE_BLOCKFILE__
-#define __WAVVY_SIMPLE_BLOCKFILE__
+#ifndef __WAVACITY_SIMPLE_BLOCKFILE__
+#define __WAVACITY_SIMPLE_BLOCKFILE__
 
 #include "../BlockFile.h"
 

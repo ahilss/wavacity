@@ -1,13 +1,13 @@
 //
 //  CommandFlag.h
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 11/22/16.
 //
 //
 
-#ifndef __WAVVY_COMMAND_FLAG__
-#define __WAVVY_COMMAND_FLAG__
+#ifndef __WAVACITY_COMMAND_FLAG__
+#define __WAVACITY_COMMAND_FLAG__
 
 // Flags used in command handling.
 
@@ -16,9 +16,9 @@
 #include <utility>
 #include <wx/string.h>
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
-class WavvyProject;
+class WavacityProject;
 
 // Increase the template parameter as needed to allow more flags
 constexpr size_t NCommandFlags = 64;
@@ -88,7 +88,7 @@ struct CommandFlagOptions{
 class ReservedCommandFlag : public CommandFlag
 {
 public:
-   using Predicate = std::function< bool( const WavvyProject& ) >;
+   using Predicate = std::function< bool( const WavacityProject& ) >;
    ReservedCommandFlag( const Predicate &predicate,
       const CommandFlagOptions &options = {} );
 };
@@ -106,8 +106,8 @@ public:
 // while they may not have been initialized yet, during static initialization.
 struct MenuItemEnabler {
    using Flags = std::function< CommandFlag() >;
-   using Test = std::function< bool( const WavvyProject& ) >;
-   using Action = std::function< void( WavvyProject&, CommandFlag ) >;
+   using Test = std::function< bool( const WavacityProject& ) >;
+   using Action = std::function< void( WavacityProject&, CommandFlag ) >;
 
    const Flags actualFlags;
    const Flags possibleFlags;

@@ -13,7 +13,7 @@ Paul Licameli
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "WaveformSettings.h"
 
 #include "GUISettings.h"

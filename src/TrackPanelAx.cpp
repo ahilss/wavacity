@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "TrackPanelAx.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -36,7 +36,7 @@
 
 wxDEFINE_EVENT(EVT_TRACK_FOCUS_CHANGE, wxCommandEvent);
 
-TrackPanelAx::TrackPanelAx( WavvyProject &project )
+TrackPanelAx::TrackPanelAx( WavacityProject &project )
    :
 #if wxUSE_ACCESSIBILITY
      WindowAccessible( nullptr ) // window pointer must be set after construction
@@ -328,7 +328,7 @@ wxAccStatus TrackPanelAx::GetLocation( wxRect& rect, int elementId )
       }
 
       rect = mFinder ? mFinder( *t ) : wxRect{};
-      // Inflate the screen reader's rectangle so it overpaints Wavvy's own
+      // Inflate the screen reader's rectangle so it overpaints Wavacity's own
       // yellow focus rectangle.
 #ifdef __WXMAC__
       const int dx = 2;
@@ -727,23 +727,23 @@ wxAccStatus TrackPanelAx::Select(int childId, wxAccSelectionFlags selectFlags)
 
 #endif // wxUSE_ACCESSIBILITY
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   []( WavacityProject &parent ){
       return std::make_shared< TrackFocus >( parent );
    }
 };
 
-TrackFocus &TrackFocus::Get( WavvyProject &project )
+TrackFocus &TrackFocus::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< TrackFocus >( key );
 }
 
-const TrackFocus &TrackFocus::Get( const WavvyProject &project )
+const TrackFocus &TrackFocus::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-TrackFocus::TrackFocus( WavvyProject &project )
+TrackFocus::TrackFocus( WavacityProject &project )
    : mProject{ project }
 {
 }

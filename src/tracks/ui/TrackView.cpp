@@ -167,9 +167,9 @@ namespace {
 // track Y coordinates
 struct TrackPositioner final : ClientData::Base, wxEvtHandler
 {
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
-   explicit TrackPositioner( WavvyProject &project )
+   explicit TrackPositioner( WavacityProject &project )
       : mProject{ project }
    {
       TrackList::Get( project ).Bind(
@@ -205,8 +205,8 @@ struct TrackPositioner final : ClientData::Base, wxEvtHandler
    }
 };
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &project ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &project ){
      return std::make_shared< TrackPositioner >( project );
    }
 };

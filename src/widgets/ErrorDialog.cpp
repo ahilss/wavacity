@@ -14,7 +14,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ErrorDialog.h"
 
 #include <wx/app.h>
@@ -182,12 +182,12 @@ void ShowModelessErrorDialog(wxWindow *parent,
    // but in practice Destroy() in OnOK does that
 }
 
-void WavvyTextEntryDialog::SetInsertionPointEnd()
+void WavacityTextEntryDialog::SetInsertionPointEnd()
 {
    mSetInsertionPointEnd = true;
 }
 
-bool WavvyTextEntryDialog::Show(bool show)
+bool WavacityTextEntryDialog::Show(bool show)
 {
    bool ret = wxTabTraversalWrapper< wxTextEntryDialog >::Show(show);
 

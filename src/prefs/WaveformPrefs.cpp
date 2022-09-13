@@ -13,7 +13,7 @@ Paul Licameli
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "WaveformPrefs.h"
 
 #include "GUIPrefs.h"
@@ -31,7 +31,7 @@ Paul Licameli
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h"
 
 WaveformPrefs::WaveformPrefs(wxWindow * parent, wxWindowID winid,
-   WavvyProject *pProject, WaveTrack *wt)
+   WavacityProject *pProject, WaveTrack *wt)
 /* i18n-hint: A waveform is a visual representation of vibration */
 : PrefsPanel(parent, winid, XO("Waveforms"))
 , mProject{ pProject }
@@ -257,7 +257,7 @@ END_EVENT_TABLE()
 PrefsPanel::Factory
 WaveformPrefsFactory(WaveTrack *wt)
 {
-   return [=](wxWindow *parent, wxWindowID winid, WavvyProject *pProject)
+   return [=](wxWindow *parent, wxWindowID winid, WavacityProject *pProject)
    {
       wxASSERT(parent); // to justify safenew
       return safenew WaveformPrefs(parent, winid, pProject, wt);

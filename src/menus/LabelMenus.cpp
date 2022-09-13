@@ -21,7 +21,7 @@ namespace {
 
 const ReservedCommandFlag
 &LabelsSelectedFlag() { static ReservedCommandFlag flag{
-   [](const WavvyProject &project){
+   [](const WavacityProject &project){
       // At least one label track selected, having at least one label
       // completely within the time selection.
       const auto &selectedRegion = ViewInfo::Get( project ).selectedRegion;
@@ -45,7 +45,7 @@ const ReservedCommandFlag
 
 //Adds label and returns index of label in labeltrack.
 int DoAddLabel(
-   WavvyProject &project, const SelectedRegion &region,
+   WavacityProject &project, const SelectedRegion &region,
    bool preserveFocus = false)
 {
    auto &tracks = TrackList::Get( project );
@@ -158,7 +158,7 @@ using EditFunction = std::function<void(Track *, double, double)>;
 //If the function replaces the selection with audio of a different length,
 // bSyncLockedTracks should be set true to perform the same action on sync-lock
 // selected tracks.
-void EditByLabel(WavvyProject &project,
+void EditByLabel(WavacityProject &project,
    TrackList &tracks, const SelectedRegion &selectedRegion,
    EditFunction action)
 {
@@ -197,7 +197,7 @@ using EditDestFunction = std::function<Track::Holder (Track *, double, double)>;
 //Functions copy the edited regions to clipboard, possibly in multiple tracks
 //This probably should not be called if *action() changes the timeline, because
 // the copy needs to happen by track, and the timeline change by group.
-void EditClipboardByLabel( WavvyProject &project,
+void EditClipboardByLabel( WavacityProject &project,
    TrackList &tracks, const SelectedRegion &selectedRegion,
    EditDestFunction action )
 {
@@ -433,7 +433,7 @@ void OnCutLabels(const CommandContext &context)
    selectedRegion.collapseToT0();
 
    ProjectHistory::Get( project ).PushState(
-   /* i18n-hint: (verb) past tense.  Wavvy has just cut the labeled audio
+   /* i18n-hint: (verb) past tense.  Wavacity has just cut the labeled audio
       regions.*/
       XO( "Cut labeled audio regions to clipboard" ),
    /* i18n-hint: (verb)*/
@@ -458,7 +458,7 @@ void OnDeleteLabels(const CommandContext &context)
    selectedRegion.collapseToT0();
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) Wavvy has just deleted the labeled audio regions*/
+      /* i18n-hint: (verb) Wavacity has just deleted the labeled audio regions*/
       XO( "Deleted labeled audio regions" ),
       /* i18n-hint: (verb)*/
       XO( "Delete Labeled Audio" ) );
@@ -492,7 +492,7 @@ void OnSplitCutLabels(const CommandContext &context)
    EditClipboardByLabel( project, tracks, selectedRegion, copyfunc );
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) Wavvy has just split cut the labeled audio
+      /* i18n-hint: (verb) Wavacity has just split cut the labeled audio
          regions*/
       XO( "Split Cut labeled audio regions to clipboard" ),
       /* i18n-hint: (verb) Do a special kind of cut on the labels*/
@@ -524,7 +524,7 @@ void OnSplitDeleteLabels(const CommandContext &context)
    EditByLabel(project, tracks, selectedRegion, editfunc);
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) Wavvy has just done a special kind of DELETE on
+      /* i18n-hint: (verb) Wavacity has just done a special kind of DELETE on
          the labeled audio regions */
       XO( "Split Deleted labeled audio regions" ),
       /* i18n-hint: (verb) Do a special kind of DELETE on labeled audio
@@ -606,7 +606,7 @@ void OnSplitLabels(const CommandContext &context)
    EditByLabel(project, tracks, selectedRegion, editfunc);
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) past tense.  Wavvy has just split the labeled
+      /* i18n-hint: (verb) past tense.  Wavacity has just split the labeled
          audio (a point or a region)*/
       XO( "Split labeled audio (points or regions)" ),
       /* i18n-hint: (verb)*/
@@ -634,7 +634,7 @@ void OnJoinLabels(const CommandContext &context)
    EditByLabel(project, tracks, selectedRegion, editfunc);
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) Wavvy has just joined the labeled audio (points or
+      /* i18n-hint: (verb) Wavacity has just joined the labeled audio (points or
          regions) */
       XO( "Joined labeled audio (points or regions)" ),
       /* i18n-hint: (verb) */
@@ -662,9 +662,9 @@ void OnDisjoinLabels(const CommandContext &context)
    EditByLabel(project, tracks, selectedRegion, editfunc);
 
    ProjectHistory::Get( project ).PushState(
-      /* i18n-hint: (verb) Wavvy has just detached the labeled audio regions.
+      /* i18n-hint: (verb) Wavacity has just detached the labeled audio regions.
       This message appears in history and tells you about something
-      Wavvy has done.*/
+      Wavacity has done.*/
       XO( "Detached labeled audio regions" ),
       /* i18n-hint: (verb)*/
       XO( "Detach Labeled Audio" ) );
@@ -674,9 +674,9 @@ void OnDisjoinLabels(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static LabelEditActions::Handler instance;
    return instance;
 };

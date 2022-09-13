@@ -8,17 +8,17 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PLUGINMANAGER_H__
-#define __WAVVY_PLUGINMANAGER_H__
+#ifndef __WAVACITY_PLUGINMANAGER_H__
+#define __WAVACITY_PLUGINMANAGER_H__
 
 #include <wx/defs.h>
 
 #include "MemoryX.h"
 #include <map>
 
-#include "wavvy/EffectInterface.h"
-#include "wavvy/ImporterInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/ImporterInterface.h"
+#include "wavacity/PluginInterface.h"
 
 class wxArrayString;
 class FileConfig;
@@ -34,7 +34,7 @@ typedef enum
    PluginTypeNone = 0,          // 2.1.0 placeholder entries...not used by 2.1.1 or greater
    PluginTypeStub =1,               // Used for plugins that have not yet been registered
    PluginTypeEffect =1<<1,
-   PluginTypeWavvyCommand=1<<2,
+   PluginTypeWavacityCommand=1<<2,
    PluginTypeExporter=1<<3,
    PluginTypeImporter=1<<4,
    PluginTypeModule=1<<5,
@@ -89,7 +89,7 @@ public:
    // Internal string only, no translated counterpart!
    // (Use Effect::GetFamilyName instead)
    // This string persists in configuration files
-   // So config compatibility will break if it is changed across Wavvy versions
+   // So config compatibility will break if it is changed across Wavacity versions
    wxString GetEffectFamily() const;
 
    EffectType GetEffectType() const;
@@ -240,7 +240,7 @@ public:
    static PluginID GetID(ImporterInterface *importer);
 
    // This string persists in configuration files
-   // So config compatibility will break if it is changed across Wavvy versions
+   // So config compatibility will break if it is changed across Wavacity versions
    static wxString GetPluginTypeString(PluginType type);
 
    int GetPluginCount(PluginType type);
@@ -324,4 +324,4 @@ private:
    friend class PluginRegistrationDialog;
 };
 
-#endif /* __WAVVY_PLUGINMANAGER_H__ */
+#endif /* __WAVACITY_PLUGINMANAGER_H__ */

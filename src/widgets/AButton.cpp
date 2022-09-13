@@ -11,7 +11,7 @@
 \class AButton
 \brief A wxButton with mouse-over behaviour.
 
-  AButton is a custom button class for Wavvy.  The main feature it
+  AButton is a custom button class for Wavacity.  The main feature it
   supports that a wxButton does not is mouseovers.
 
   It uses an image for all of its states: up, over, down, and
@@ -21,7 +21,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "AButton.h"
 
 #include "../AColor.h"

@@ -11,11 +11,11 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #if USE_SOUNDTOUCH
 
-#ifndef __WAVVY_EFFECT_CHANGETEMPO__
-#define __WAVVY_EFFECT_CHANGETEMPO__
+#ifndef __WAVACITY_EFFECT_CHANGETEMPO__
+#define __WAVACITY_EFFECT_CHANGETEMPO__
 
 #if USE_SBSMS
 #include "SBSMSEffect.h"
@@ -105,6 +105,6 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_EFFECT_CHANGETEMPO__
+#endif // __WAVACITY_EFFECT_CHANGETEMPO__
 
 #endif // USE_SOUNDTOUCH

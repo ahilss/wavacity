@@ -43,7 +43,7 @@ TimeTrackView::~TimeTrackView()
 
 std::vector<UIHandlePtr> TimeTrackView::DetailedHitTest
 (const TrackPanelMouseState &st,
- const WavvyProject *pProject, int, bool)
+ const WavacityProject *pProject, int, bool)
 {
    std::vector<UIHandlePtr> results;
    auto result = EnvelopeHandle::TimeTrackHitTest

@@ -4,12 +4,12 @@ Audacity: A Digital Audio Editor
 
 ProjectFileIO.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_FILE_IO__
-#define __WAVVY_PROJECT_FILE_IO__
+#ifndef __WAVACITY_PROJECT_FILE_IO__
+#define __WAVACITY_PROJECT_FILE_IO__
 
 #include <memory>
 #include <unordered_set>
@@ -23,7 +23,7 @@ struct sqlite3_context;
 struct sqlite3_stmt;
 struct sqlite3_value;
 
-class WavvyProject;
+class WavacityProject;
 class DBConnection;
 struct DBConnectionErrors;
 class ProjectSerializer;
@@ -42,16 +42,16 @@ using BlockIDs = std::unordered_set<SampleBlockID>;
 
 // An event processed by the project in the main thread after a checkpoint
 // failure was detected in a worker thread
-wxDECLARE_EXPORTED_EVENT( WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT( WAVACITY_DLL_API,
                           EVT_CHECKPOINT_FAILURE, wxCommandEvent );
 
 // An event processed by the project in the main thread after failure to
 // reconnect to the database, after temporary close and attempted file movement
-wxDECLARE_EXPORTED_EVENT( WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT( WAVACITY_DLL_API,
                           EVT_RECONNECTION_FAILURE, wxCommandEvent );
 
 ///\brief Object associated with a project that manages reading and writing
-/// of Wavvy project file formats, and autosave
+/// of Wavacity project file formats, and autosave
 class ProjectFileIO final
    : public ClientData::Base
    , public XMLTagHandler
@@ -63,10 +63,10 @@ public:
    // class.  Reinvocations have no effect.  Return value is true for success.
    static bool InitializeSQL();
 
-   static ProjectFileIO &Get( WavvyProject &project );
-   static const ProjectFileIO &Get( const WavvyProject &project );
+   static ProjectFileIO &Get( WavacityProject &project );
+   static const ProjectFileIO &Get( const WavacityProject &project );
 
-   explicit ProjectFileIO( WavvyProject &project );
+   explicit ProjectFileIO( WavacityProject &project );
 
    ProjectFileIO( const ProjectFileIO & ) PROHIBITED;
    ProjectFileIO &operator=( const ProjectFileIO & ) PROHIBITED;
@@ -282,7 +282,7 @@ private:
    Connection &CurrConn();
 
    // non-static data members
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    std::shared_ptr<DBConnectionErrors> mpErrors;
 
@@ -314,7 +314,7 @@ class wxTopLevelWindow;
 // TitleRestorer restores project window titles to what they were, in its destructor.
 class TitleRestorer{
 public:
-   TitleRestorer( wxTopLevelWindow &window, WavvyProject &project );
+   TitleRestorer( wxTopLevelWindow &window, WavacityProject &project );
    ~TitleRestorer();
    wxString sProjNumber;
    wxString sProjName;
@@ -323,7 +323,7 @@ public:
 
 // This event is emitted by the project when there is a change
 // in its title
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_PROJECT_TITLE_CHANGE, wxCommandEvent);
 
 //! Makes a temporary project that doesn't display on the screen
@@ -332,12 +332,12 @@ class InvisibleTemporaryProject
 public:
    InvisibleTemporaryProject();
    ~InvisibleTemporaryProject();
-   WavvyProject &Project()
+   WavacityProject &Project()
    {
       return *mpProject;
    }
 private:
-   std::shared_ptr<WavvyProject> mpProject;
+   std::shared_ptr<WavacityProject> mpProject;
 };
 
 #endif

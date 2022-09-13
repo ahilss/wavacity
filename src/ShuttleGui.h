@@ -6,7 +6,7 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************/
@@ -14,8 +14,8 @@
 #ifndef SHUTTLE_GUI
 #define SHUTTLE_GUI
 
-#include "Wavvy.h"
-#include "wavvy/Types.h"
+#include "Wavacity.h"
+#include "wavacity/Types.h"
 
 #include <vector>
 #include <wx/slider.h> // to inherit
@@ -250,7 +250,7 @@ struct Item {
 
 }
 
-class WAVVY_DLL_API ShuttleGuiBase /* not final */
+class WAVACITY_DLL_API ShuttleGuiBase /* not final */
 {
 public:
    ShuttleGuiBase(
@@ -629,12 +629,12 @@ enum
    eCloseID       = wxID_CANCEL
 };
 
-WAVVY_DLL_API std::unique_ptr<wxSizer> CreateStdButtonSizer( wxWindow *parent,
+WAVACITY_DLL_API std::unique_ptr<wxSizer> CreateStdButtonSizer( wxWindow *parent,
                                long buttons = eOkButton | eCancelButton,
                                wxWindow *extra = NULL );
 
-// ShuttleGui extends ShuttleGuiBase with Wavvy specific extensions.
-class WAVVY_DLL_API ShuttleGui /* not final */ : public ShuttleGuiBase
+// ShuttleGui extends ShuttleGuiBase with Wavacity specific extensions.
+class WAVACITY_DLL_API ShuttleGui /* not final */ : public ShuttleGuiBase
 {
 public:
    ShuttleGui(

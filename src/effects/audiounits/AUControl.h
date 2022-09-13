@@ -15,8 +15,8 @@
 \brief a wxWidgetCocoaImpl 
 
 *//********************************************************************/
-#ifndef WAVVY_AUCONTROL_H
-#define WAVVY_AUCONTROL_H
+#ifndef WAVACITY_AUCONTROL_H
+#define WAVACITY_AUCONTROL_H
 
 #if !defined(_LP64)
 #include <Carbon/Carbon.h>

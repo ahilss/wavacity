@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ENVELOPE_EDITOR__
-#define __WAVVY_ENVELOPE_EDITOR__
+#ifndef __WAVACITY_ENVELOPE_EDITOR__
+#define __WAVACITY_ENVELOPE_EDITOR__
 
 class wxMouseEvent;
 class wxRect;

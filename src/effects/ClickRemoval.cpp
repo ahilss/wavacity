@@ -19,12 +19,12 @@
   The structure was largely stolen from Domonic Mazzoni's NoiseRemoval
   module, and reworked for the NEW effect.
 
-  This file is intended to become part of Wavvy.  You may modify
-  and/or distribute it under the same terms as Wavvy itself.
+  This file is intended to become part of Wavacity.  You may modify
+  and/or distribute it under the same terms as Wavacity itself.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ClickRemoval.h"
 #include "LoadEffects.h"
 
@@ -37,7 +37,7 @@
 #include "../Prefs.h"
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/valnum.h"
 
 #include "../WaveTrack.h"

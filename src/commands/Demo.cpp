@@ -9,7 +9,7 @@
 *******************************************************************//**
 
 \class DemoCommand
-\brief An WavvyCommand that does nothing but provide 
+\brief An WavacityCommand that does nothing but provide 
 parameters.  It is for development purposes.
 
 *//****************************************************************//**
@@ -19,7 +19,7 @@ parameters.  It is for development purposes.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Demo.h"
 #include "LoadCommands.h"
 
@@ -29,7 +29,7 @@ parameters.  It is for development purposes.
 
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/valnum.h"
 #include "../commands/CommandContext.h"
 

@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SEQUENCE__
-#define __WAVVY_SEQUENCE__
+#ifndef __WAVACITY_SEQUENCE__
+#define __WAVACITY_SEQUENCE__
 
 #include <vector>
 #include <functional>
@@ -17,7 +17,7 @@
 #include "SampleFormat.h"
 #include "xml/XMLTagHandler.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class SampleBlock;
 class SampleBlockFactory;
@@ -271,5 +271,5 @@ private:
 
 };
 
-#endif // __WAVVY_SEQUENCE__
+#endif // __WAVACITY_SEQUENCE__
 

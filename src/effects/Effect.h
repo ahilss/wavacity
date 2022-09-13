@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT__
-#define __WAVVY_EFFECT__
+#ifndef __WAVACITY_EFFECT__
+#define __WAVACITY_EFFECT__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../Experimental.h"
 
@@ -27,8 +27,8 @@ class wxChoice;
 class wxListBox;
 class wxWindow;
 
-#include "wavvy/ConfigInterface.h"
-#include "wavvy/EffectInterface.h"
+#include "wavacity/ConfigInterface.h"
+#include "wavacity/EffectInterface.h"
 
 #include "../SelectedRegion.h"
 
@@ -38,11 +38,11 @@ class wxWindow;
 
 class wxArrayString;
 class ShuttleGui;
-class WavvyCommand;
+class WavacityCommand;
 
 #define BUILTIN_EFFECT_PREFIX wxT("Built-in Effect: ")
 
-class WavvyProject;
+class WavacityProject;
 class LabelTrack;
 class NotifyingSelectedRegion;
 class ProgressDialog;
@@ -54,7 +54,7 @@ class WaveTrackFactory;
 class WaveTrack;
 
 /* i18n-hint: "Nyquist" is an embedded interpreted programming language in
- Wavvy, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
+ Wavacity, named in honor of the Swedish-American Harry Nyquist (or Nyqvist).
  In the translations of this and other strings, you may transliterate the
  name into another alphabet.  */
 #define NYQUISTEFFECTS_FAMILY ( EffectFamilySymbol{ XO("Nyquist") } )
@@ -66,7 +66,7 @@ class WaveTrack;
 // TODO:  Much more cleanup of old methods and variables is needed, but
 // TODO:  can't be done until after all effects are using the NEW API.
 
-class WAVVY_DLL_API Effect /* not final */ : public wxEvtHandler,
+class WAVACITY_DLL_API Effect /* not final */ : public wxEvtHandler,
                                 public EffectClientInterface,
                                 public EffectUIClientInterface,
                                 public EffectHostInterface
@@ -241,7 +241,7 @@ class WAVVY_DLL_API Effect /* not final */ : public wxEvtHandler,
    virtual bool HasCurrentSettings();
    virtual bool HasFactoryDefaults();
 
-   // Name of page in the Wavvy alpha manual
+   // Name of page in the Wavacity alpha manual
    virtual wxString ManualPage();
    // Fully qualified local help file name
    virtual wxString HelpPage();
@@ -258,7 +258,7 @@ class WAVVY_DLL_API Effect /* not final */ : public wxEvtHandler,
 
    // Returns true on success.  Will only operate on tracks that
    // have the "selected" flag set to true, which is consistent with
-   // Wavvy's standard UI.
+   // Wavacity's standard UI.
    // Create a user interface only if the supplied function is not null.
    /* not virtual */ bool DoEffect( double projectRate, TrackList *list,
       WaveTrackFactory *factory, NotifyingSelectedRegion &selectedRegion,
@@ -465,7 +465,7 @@ protected:
    wxWeakRef<NotifyingSelectedRegion> mpSelectedRegion{};
    WaveTrackFactory   *mFactory;
    const TrackList *inputTracks() const { return mTracks; }
-   const WavvyProject *FindProject() const;
+   const WavacityProject *FindProject() const;
    std::shared_ptr<TrackList> mOutputTracks; // used only if CopyInputTracks() is called.
    double         mT0;
    double         mT1;

@@ -18,7 +18,7 @@
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "SoundActivatedRecord.h"
 
 #include "ShuttleGui.h"

@@ -8,15 +8,15 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_CELL__
-#define __WAVVY_TRACK_PANEL_CELL__
+#ifndef __WAVACITY_TRACK_PANEL_CELL__
+#define __WAVACITY_TRACK_PANEL_CELL__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "MemoryX.h"
 #include "TrackPanelDrawable.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 struct HitTestPreview;
 struct TrackPanelDrawingContext;
 struct TrackPanelMouseEvent;
@@ -34,7 +34,7 @@ using UIHandlePtr = std::shared_ptr<UIHandle>;
 
 /// \brief The TrackPanel is built up of nodes, subtrees of the CellularPanel's area
 /// Common base class for TrackPanelCell (leaf) and TrackPanelGroup (nonleaf)
-class WAVVY_DLL_API /* not final */ TrackPanelNode
+class WAVACITY_DLL_API /* not final */ TrackPanelNode
    : public TrackPanelDrawable
 {
 public:
@@ -43,7 +43,7 @@ public:
 };
 
 // A node of the TrackPanel that contains other nodes.
-class WAVVY_DLL_API TrackPanelGroup /* not final */ : public TrackPanelNode
+class WAVACITY_DLL_API TrackPanelGroup /* not final */ : public TrackPanelNode
 {
 public:
    TrackPanelGroup();
@@ -70,7 +70,7 @@ public:
 
 /// Abstract base class defining TrackPanel's access to specialist classes that
 /// implement drawing and user interactions
-class WAVVY_DLL_API TrackPanelCell /* not final */ : public TrackPanelNode
+class WAVACITY_DLL_API TrackPanelCell /* not final */ : public TrackPanelNode
 {
 public:
    TrackPanelCell() = default;
@@ -82,7 +82,7 @@ public:
    // May supply default cursor, status message, and tooltip, when there is no
    // handle to hit at the mouse position, or the handle does not supply them.
    virtual HitTestPreview DefaultPreview
-      (const TrackPanelMouseState &state, const WavvyProject *pProject);
+      (const TrackPanelMouseState &state, const WavacityProject *pProject);
 
    // Return pointers to objects that can be queried for a status
    // bar message and cursor appropriate to the point, and that dispatch
@@ -91,14 +91,14 @@ public:
    // time -- not necessarily as it is now.
    virtual std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) = 0;
+       const WavacityProject *pProject) = 0;
 
    // Return value is a bitwise OR of RefreshCode values
    // Include Cancelled in the flags to indicate that the event is not handled.
    // Default does only that.
    virtual unsigned HandleWheelRotation
       (const TrackPanelMouseEvent &event,
-       WavvyProject *pProject);
+       WavacityProject *pProject);
 
    // A cell may delegate context menu handling to another one
    virtual std::shared_ptr<TrackPanelCell> ContextMenuDelegate()
@@ -109,31 +109,31 @@ public:
    // Default implementation does nothing
    virtual unsigned DoContextMenu
       (const wxRect &rect,
-       wxWindow *pParent, wxPoint *pPosition, WavvyProject *pProject);
+       wxWindow *pParent, wxPoint *pPosition, WavacityProject *pProject);
 
    // Return value is a bitwise OR of RefreshCode values
    // Default skips the event and does nothing
    virtual unsigned CaptureKey
       (wxKeyEvent &event, ViewInfo &viewInfo, wxWindow *pParent,
-       WavvyProject *project);
+       WavacityProject *project);
 
    // Return value is a bitwise OR of RefreshCode values
    // Default skips the event and does nothing
    virtual unsigned KeyDown
       (wxKeyEvent & event, ViewInfo &viewInfo, wxWindow *pParent,
-       WavvyProject *project);
+       WavacityProject *project);
 
    // Return value is a bitwise OR of RefreshCode values
    // Default skips the event and does nothing
    virtual unsigned KeyUp
       (wxKeyEvent & event, ViewInfo &viewInfo, wxWindow *pParent,
-       WavvyProject *project);
+       WavacityProject *project);
 
    // Return value is a bitwise OR of RefreshCode values
    // Default skips the event and does nothing
    virtual unsigned Char
       (wxKeyEvent & event, ViewInfo &viewInfo, wxWindow *pParent,
-       WavvyProject *project);
+       WavacityProject *project);
 };
 
 #endif

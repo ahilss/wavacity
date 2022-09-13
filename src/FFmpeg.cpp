@@ -17,12 +17,12 @@ License: GPL v2.  See License.txt.
 // Store function pointers here when including FFmpeg.h
 #define DEFINE_FFMPEG_POINTERS
 
-#include "Wavvy.h"   // for config*.h // for USE_* macros
+#include "Wavacity.h"   // for config*.h // for USE_* macros
 #include "FFmpeg.h"
 
 #include "FileNames.h"
 #include "widgets/HelpSystem.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 #include <wx/checkbox.h>
 #include <wx/dynlib.h>
@@ -91,7 +91,7 @@ bool LoadFFmpeg(bool showerror)
    }
 }
 
-/** Called during Wavvy start-up to try and load the ffmpeg libraries */
+/** Called during Wavacity start-up to try and load the ffmpeg libraries */
 void FFmpegStartup()
 {
    bool enabled = false;
@@ -101,9 +101,9 @@ void FFmpegStartup()
    {
       if (enabled)
       {
-         WavvyMessageBox(XO(
+         WavacityMessageBox(XO(
 "FFmpeg was configured in Preferences and successfully loaded before, \
-\nbut this time Wavvy failed to load it at startup. \
+\nbut this time Wavacity failed to load it at startup. \
 \n\nYou may want to go back to Preferences > Libraries and re-configure it."),
             XO("FFmpeg startup failed"));
       }
@@ -476,7 +476,7 @@ public:
       {
          S.AddTitle(
             XO(
-"Wavvy needs the file '%s' to import and export audio via FFmpeg.")
+"Wavacity needs the file '%s' to import and export audio via FFmpeg.")
                .Format( mName ) );
 
          S.SetBorder(3);
@@ -585,7 +585,7 @@ void FFmpegNotFoundDialog::PopulateOrExchange(ShuttleGui & S)
    S.StartVerticalLay(true);
    {
       S.AddFixedText(XO(
-"Wavvy attempted to use FFmpeg to import an audio file,\n\
+"Wavacity attempted to use FFmpeg to import an audio file,\n\
 but the libraries were not found.\n\n\
 To use FFmpeg import, go to Edit > Preferences > Libraries\n\
 to download or locate the FFmpeg libraries."
@@ -719,7 +719,7 @@ bool FFmpegLibs::LoadLibs(wxWindow * WXUNUSED(parent), bool showerr)
 #if defined(__WXMAC__)
    // If not successful, try loading it from legacy path
    if (!mLibsLoaded && !GetLibAVFormatPath().empty()) {
-      const wxFileName fn{wxT("/usr/local/lib/wavvy"), GetLibAVFormatName()};
+      const wxFileName fn{wxT("/usr/local/lib/wavacity"), GetLibAVFormatName()};
       wxString path = fn.GetFullPath();
       wxLogMessage(wxT("Trying to load FFmpeg libraries from legacy path, '%s'."), path);
       mLibsLoaded = InitLibs(path,showerr);
@@ -754,7 +754,7 @@ bool FFmpegLibs::LoadLibs(wxWindow * WXUNUSED(parent), bool showerr)
    if (!ValidLibsLoaded()) {
       auto msg = XO("Failed to find compatible FFmpeg libraries.");
       if (showerr)
-         WavvyMessageBox( msg );
+         WavacityMessageBox( msg );
       wxLogError(msg.Debug());
       return false;
    }

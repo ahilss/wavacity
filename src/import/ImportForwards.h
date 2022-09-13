@@ -1,13 +1,13 @@
 //
 //  ImportForwards.h
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 8/10/16.
 //
 //
 
-#ifndef __WAVVY_IMPORT_FORWARDS__
-#define __WAVVY_IMPORT_FORWARDS__
+#ifndef __WAVACITY_IMPORT_FORWARDS__
+#define __WAVACITY_IMPORT_FORWARDS__
 
 #include <vector>
 #include "../MemoryX.h"

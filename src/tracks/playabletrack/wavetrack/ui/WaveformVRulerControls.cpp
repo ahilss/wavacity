@@ -26,7 +26,7 @@ WaveformVRulerControls::~WaveformVRulerControls() = default;
 
 std::vector<UIHandlePtr> WaveformVRulerControls::HitTest(
    const TrackPanelMouseState &st,
-   const WavvyProject *pProject)
+   const WavacityProject *pProject)
 {
    std::vector<UIHandlePtr> results;
 
@@ -47,7 +47,7 @@ std::vector<UIHandlePtr> WaveformVRulerControls::HitTest(
 }
 
 unsigned WaveformVRulerControls::HandleWheelRotation(
-   const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+   const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const auto pTrack = FindTrack();
@@ -58,7 +58,7 @@ unsigned WaveformVRulerControls::HandleWheelRotation(
 }
 
 unsigned WaveformVRulerControls::DoHandleWheelRotation(
-   const TrackPanelMouseEvent &evt, WavvyProject *pProject, WaveTrack *wt)
+   const TrackPanelMouseEvent &evt, WavacityProject *pProject, WaveTrack *wt)
 {
    using namespace RefreshCode;
    const wxMouseEvent &event = evt.event;

@@ -1,13 +1,13 @@
 //
 //  wxPanelWrapper.h
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 6/25/16.
 //
 //
 
-#ifndef __WAVVY_WXPANEL_WRAPPER__
-#define __WAVVY_WXPANEL_WRAPPER__
+#ifndef __WAVACITY_WXPANEL_WRAPPER__
+#define __WAVACITY_WXPANEL_WRAPPER__
 
 #include "../MemoryX.h"
 #include <wx/panel.h> // to inherit
@@ -15,12 +15,12 @@
 
 #include "../Internat.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 void wxTabTraversalWrapperCharHook(wxKeyEvent &event);
 
 template <typename Base>
-class WAVVY_DLL_API wxTabTraversalWrapper : public Base
+class WAVACITY_DLL_API wxTabTraversalWrapper : public Base
 {
 public:
    template <typename... Args>
@@ -37,7 +37,7 @@ public:
 
 };
 
-class WAVVY_DLL_API wxPanelWrapper : public wxTabTraversalWrapper<wxPanel>
+class WAVACITY_DLL_API wxPanelWrapper : public wxTabTraversalWrapper<wxPanel>
 {
 public:
    // Constructors
@@ -77,7 +77,7 @@ public:
    void SetName();
 };
 
-class WAVVY_DLL_API wxDialogWrapper : public wxTabTraversalWrapper<wxDialog>
+class WAVACITY_DLL_API wxDialogWrapper : public wxTabTraversalWrapper<wxDialog>
 {
 public:
    // Constructors
@@ -121,7 +121,7 @@ public:
 
 #include <wx/dirdlg.h> // to inherit
 
-class WAVVY_DLL_API wxDirDialogWrapper
+class WAVACITY_DLL_API wxDirDialogWrapper
    : public wxTabTraversalWrapper<wxDirDialog>
 {
 public:
@@ -160,7 +160,7 @@ public:
 #include "FileDialog/FileDialog.h"
 #include "../FileNames.h" // for FileTypes
 
-class WAVVY_DLL_API FileDialogWrapper
+class WAVACITY_DLL_API FileDialogWrapper
    : public wxTabTraversalWrapper<FileDialog>
 {
 public:
@@ -211,10 +211,10 @@ public:
 
 \brief Wrap wxMessageDialog so that caption IS translatable.
 ********************************************************************************/
-class WavvyMessageDialog : public wxTabTraversalWrapper< wxMessageDialog >
+class WavacityMessageDialog : public wxTabTraversalWrapper< wxMessageDialog >
 {
 public:
-    WavvyMessageDialog(
+    WavacityMessageDialog(
          wxWindow *parent,
          const TranslatableString &message,
          const TranslatableString &caption, // don't use = wxMessageBoxCaptionStr,

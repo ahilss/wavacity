@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_TEXT_HANDLE__
-#define __WAVVY_LABEL_TEXT_HANDLE__
+#ifndef __WAVACITY_LABEL_TEXT_HANDLE__
+#define __WAVACITY_LABEL_TEXT_HANDLE__
 
 #include "LabelDefaultClickHandle.h"
 #include "../../../SelectedRegion.h"
@@ -38,31 +38,31 @@ public:
    std::shared_ptr<LabelTrack> GetTrack() const { return mpLT.lock(); }
    int GetLabelNum() const { return mLabelNum; }
 
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
 private:
    void HandleTextClick
-      (WavvyProject &project,
+      (WavacityProject &project,
        const wxMouseEvent & evt, const wxRect & r, const ZoomInfo &zoomInfo,
        NotifyingSelectedRegion &newSel);
    void HandleTextDragRelease(
-      WavvyProject &project, const wxMouseEvent & evt);
+      WavacityProject &project, const wxMouseEvent & evt);
 
    std::weak_ptr<LabelTrack> mpLT {};
    int mLabelNum{ -1 };

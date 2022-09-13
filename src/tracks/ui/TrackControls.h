@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_CONTROLS__
-#define __WAVVY_TRACK_CONTROLS__
+#ifndef __WAVACITY_TRACK_CONTROLS__
+#define __WAVACITY_TRACK_CONTROLS__
 
 #include "CommonTrackPanelCell.h"
 

@@ -18,7 +18,7 @@ or "OFF" point
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "VoiceKey.h"
 
 #include <wx/string.h>
@@ -30,7 +30,7 @@ or "OFF" point
 #include <iostream>
 
 #include "WaveTrack.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ErrorDialog.h"
 
 using std::cout;
@@ -95,7 +95,7 @@ sampleCount VoiceKey::OnForward (
          backwards by words.  So 'key' is being used in the sense of an index.
          This error message means that you've selected too short
          a region of audio to be able to use this feature.*/
-      WavvyMessageBox( XO("Selection is too small to use voice key.") );
+      WavacityMessageBox( XO("Selection is too small to use voice key.") );
       return start;
    }
    else {
@@ -243,7 +243,7 @@ sampleCount VoiceKey::OnBackward (
 
    if((mWindowSize) >= (len + 10).as_double() ){
 
-      WavvyMessageBox( XO("Selection is too small to use voice key.") );
+      WavacityMessageBox( XO("Selection is too small to use voice key.") );
       return end;
    }
    else {
@@ -387,7 +387,7 @@ sampleCount VoiceKey::OffForward (
 {
 
    if((mWindowSize) >= (len + 10).as_double() ){
-      WavvyMessageBox( XO("Selection is too small to use voice key.") );
+      WavacityMessageBox( XO("Selection is too small to use voice key.") );
 
       return start;
    }
@@ -525,7 +525,7 @@ sampleCount VoiceKey::OffBackward (
 
    if((mWindowSize) >= (len + 10).as_double() ){
 
-      WavvyMessageBox( XO("Selection is too small to use voice key.") );
+      WavacityMessageBox( XO("Selection is too small to use voice key.") );
       return end;
    }
    else {
@@ -829,7 +829,7 @@ void VoiceKey::CalibrateNoise(const WaveTrack & t, sampleCount start, sampleCoun
    text +=
       XO("Direction Changes  -- mean: %1.4f  sd: (%1.4f)\n")
          .Format( mDirectionChangesMean, mDirectionChangesSD );
-   WavvyMessageDialog{
+   WavacityMessageDialog{
       nullptr,
       text,
       XO("Calibration Complete"),

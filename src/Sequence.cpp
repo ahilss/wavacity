@@ -28,7 +28,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Sequence.h"
 
 #include <algorithm>
@@ -42,7 +42,7 @@
 
 #include "SampleBlock.h"
 #include "InconsistencyException.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 size_t Sequence::sMaxDiskBlockSize = 1048576;
 
@@ -123,7 +123,7 @@ namespace {
          if (!buffer.ptr() || (pSecondBuffer && !pSecondBuffer->ptr())) {
             // malloc failed
             // Perhaps required is a really crazy value,
-            // and perhaps we should throw an WavvyException, but that is
+            // and perhaps we should throw an WavacityException, but that is
             // a second-order concern
             THROW_INCONSISTENCY_EXCEPTION;
          }
@@ -977,7 +977,7 @@ void Sequence::WriteXML(XMLWriter &xmlFile) const
          auto sMsg =
             XO("Sequence has block file exceeding maximum %s samples per block.\nTruncating to this maximum length.")
                .Format( Internat::ToString(((wxLongLong)mMaxSamples).ToDouble(), 0) );
-         WavvyMessageBox(
+         WavacityMessageBox(
             sMsg,
             XO("Warning - Truncating Overlong Block File"),
             wxICON_EXCLAMATION | wxOK);

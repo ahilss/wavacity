@@ -16,7 +16,7 @@ tasks associated with a WaveTrack.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ODWaveTrackTaskQueue.h"
 
 #include "ODTask.h"

@@ -8,7 +8,7 @@ Paul Licameli split from ProjectManager.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ProjectAudioManager.h"
 
 #include "Experimental.h"
@@ -38,32 +38,32 @@ Paul Licameli split from ProjectManager.cpp
 #include "widgets/ErrorDialog.h"
 #include "widgets/MeterPanelBase.h"
 #include "widgets/Warning.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 #ifdef __WXWASM__
 #include "emscripten.h"
 #endif
 
-static WavvyProject::AttachedObjects::RegisteredFactory
+static WavacityProject::AttachedObjects::RegisteredFactory
 sProjectAudioManagerKey {
-   []( WavvyProject &project ) {
+   []( WavacityProject &project ) {
       return std::make_shared< ProjectAudioManager >( project );
    }
 };
 
-ProjectAudioManager &ProjectAudioManager::Get( WavvyProject &project )
+ProjectAudioManager &ProjectAudioManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectAudioManager >(
       sProjectAudioManagerKey );
 }
 
 const ProjectAudioManager &ProjectAudioManager::Get(
-   const WavvyProject &project )
+   const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectAudioManager::ProjectAudioManager( WavvyProject &project )
+ProjectAudioManager::ProjectAudioManager( WavacityProject &project )
    : mProject{ project }
 {
    static ProjectStatus::RegisteredStatusWidthFunction
@@ -85,7 +85,7 @@ static TranslatableString FormatRate( int rate )
 }
 
 auto ProjectAudioManager::StatusWidthFunction(
-   const WavvyProject &project, StatusBarField field )
+   const WavacityProject &project, StatusBarField field )
    -> ProjectStatus::StatusWidthResult
 {
    if ( field == rateStatusBarField ) {
@@ -143,7 +143,7 @@ int ProjectAudioManager::PlayPlayRegion(const SelectedRegion &selectedRegion,
    if (cutpreview && t0==t1)
       return -1; /* msmeyer: makes no sense */
 
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
 
    auto &tracks = TrackList::Get( *p );
 
@@ -289,7 +289,7 @@ void ProjectAudioManager::PlayCurrentRegion(bool looped /* = false */,
    if ( !canStop )
       return;
 
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
 
 #ifdef __WXWASM__
    if (EM_ASM_INT({return isAudioPlaybackSupported();}) == 0) {
@@ -322,7 +322,7 @@ void ProjectAudioManager::PlayCurrentRegion(bool looped /* = false */,
 
 void ProjectAudioManager::Stop(bool stopStream /* = true*/)
 {
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
    auto &projectAudioManager = *this;
    bool canStop = projectAudioManager.CanStopAudioStream();
 
@@ -400,7 +400,7 @@ void ProjectAudioManager::Pause()
 }
 
 WaveTrackArray ProjectAudioManager::ChooseExistingRecordingTracks(
-   WavvyProject &proj, bool selectedOnly, double targetRate)
+   WavacityProject &proj, bool selectedOnly, double targetRate)
 {
    auto p = &proj;
    size_t recordingChannels =
@@ -483,7 +483,7 @@ void ProjectAudioManager::OnRecord(bool altAppearance)
    const bool appendRecord = (altAppearance == bPreferNewTrack);
 
    // Code from CommandHandler start...
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
 
    if (p) {
       const auto &selectedRegion = ViewInfo::Get( *p ).selectedRegion;
@@ -504,7 +504,7 @@ void ProjectAudioManager::OnRecord(bool altAppearance)
       const bool allSameRate{ selectedTracks.allSameRate };
 
       if (!allSameRate) {
-         WavvyMessageBox(XO("The tracks selected "
+         WavacityMessageBox(XO("The tracks selected "
             "for recording must all have the same sampling rate"),
             XO("Mismatched Sampling Rates"),
             wxICON_ERROR | wxCENTRE);
@@ -524,9 +524,9 @@ void ProjectAudioManager::OnRecord(bool altAppearance)
          }
          else {
             if (numberOfSelected > 0 && rateOfSelected != options.rate) {
-               WavvyMessageBox(XO(
+               WavacityMessageBox(XO(
                   "Too few tracks are selected for recording at this sample rate.\n"
-                  "(Wavvy requires two channels at the same sample rate for\n"
+                  "(Wavacity requires two channels at the same sample rate for\n"
                   "each stereo track)"),
                   XO("Too Few Compatible Tracks Selected"),
                   wxICON_ERROR | wxCENTRE);
@@ -586,7 +586,7 @@ bool ProjectAudioManager::UseDuplex()
    return duplex;
 }
 
-bool ProjectAudioManager::DoRecord(WavvyProject &project,
+bool ProjectAudioManager::DoRecord(WavacityProject &project,
    const TransportTracks &tracks,
    double t0, double t1,
    bool altAppearance,
@@ -826,7 +826,7 @@ void ProjectAudioManager::SetupCutPreviewTracks(double WXUNUSED(playStart), doub
 
 {
    ClearCutPreviewTracks();
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
    {
       auto trackRange = TrackList::Get( *p ).Selected< const PlayableTrack >();
       if( !trackRange.empty() ) {
@@ -934,7 +934,7 @@ void ProjectAudioManager::OnAudioIOStopRecording()
                ShowWarningDialog(&window, wxT("DropoutDetected"), XO("\
 Recorded audio was lost at the labeled locations. Possible causes:\n\
 \n\
-Other applications are competing with Wavvy for processor time\n\
+Other applications are competing with Wavacity for processor time\n\
 \n\
 You are saving directly to a slow external storage device\n\
 "
@@ -1006,7 +1006,7 @@ bool ProjectAudioManager::CanStopAudioStream() const
 
 const ReservedCommandFlag&
    CanStopAudioStreamFlag(){ static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          auto &projectAudioManager = ProjectAudioManager::Get( project );
          bool canStop = projectAudioManager.CanStopAudioStream();
          return canStop;
@@ -1014,7 +1014,7 @@ const ReservedCommandFlag&
    }; return flag; }
 
 AudioIOStartStreamOptions
-DefaultPlayOptions( WavvyProject &project )
+DefaultPlayOptions( WavacityProject &project )
 {
    auto &projectAudioIO = ProjectAudioIO::Get( project );
    AudioIOStartStreamOptions options { &project,
@@ -1028,7 +1028,7 @@ DefaultPlayOptions( WavvyProject &project )
 }
 
 AudioIOStartStreamOptions
-DefaultSpeedPlayOptions( WavvyProject &project )
+DefaultSpeedPlayOptions( WavacityProject &project )
 {
    auto &projectAudioIO = ProjectAudioIO::Get( project );
    auto gAudioIO = AudioIO::Get();
@@ -1156,9 +1156,9 @@ void ProjectAudioManager::DoPlayStopSelect()
 static RegisteredMenuItemEnabler stopIfPaused{{
    []{ return PausedFlag(); },
    []{ return AudioIONotBusyFlag(); },
-   []( const WavvyProject &project ){
+   []( const WavacityProject &project ){
       return MenuManager::Get( project ).mStopIfWasPaused; },
-   []( WavvyProject &project, CommandFlag ){
+   []( WavacityProject &project, CommandFlag ){
       if ( MenuManager::Get( project ).mStopIfWasPaused )
          ProjectAudioManager::Get( project ).StopIfPaused();
    }
@@ -1167,7 +1167,7 @@ static RegisteredMenuItemEnabler stopIfPaused{{
 // GetSelectedProperties collects information about 
 // currently selected audio tracks
 PropertiesOfSelected
-GetPropertiesOfSelected(const WavvyProject &proj)
+GetPropertiesOfSelected(const WavacityProject &proj)
 {
    double rateOfSelection{ RATE_NOT_SELECTED };
 

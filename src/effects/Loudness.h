@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_LOUDNESS__
-#define __WAVVY_EFFECT_LOUDNESS__
+#ifndef __WAVACITY_EFFECT_LOUDNESS__
+#define __WAVACITY_EFFECT_LOUDNESS__
 
 #include <wx/checkbox.h>
 #include <wx/choice.h>

@@ -16,7 +16,7 @@ The summary is eventually computed and written to a file in a background thread.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ODDecodeBlockFile.h"
 
 #include <float.h>
@@ -33,7 +33,7 @@ The summary is eventually computed and written to a file in a background thread.
 #include "NotYetAvailableException.h"
 
 const int bheaderTagLen = 20;
-char bheaderTag[bheaderTagLen + 1] = "WavvyBlockFile112";
+char bheaderTag[bheaderTagLen + 1] = "WavacityBlockFile112";
 
 
 

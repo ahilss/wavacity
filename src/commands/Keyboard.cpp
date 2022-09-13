@@ -9,7 +9,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Keyboard.h"
 
 #include <wx/event.h>

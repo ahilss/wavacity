@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EXPANDING_TOOL_BAR__
-#define __WAVVY_EXPANDING_TOOL_BAR__
+#ifndef __WAVACITY_EXPANDING_TOOL_BAR__
+#define __WAVACITY_EXPANDING_TOOL_BAR__
 
 #include <vector>
 #include <wx/defs.h>
@@ -249,4 +249,4 @@ class ToolBarArea final : public wxPanelWrapper
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_EXPANDING_TOOL_BAR__
+#endif // __WAVACITY_EXPANDING_TOOL_BAR__

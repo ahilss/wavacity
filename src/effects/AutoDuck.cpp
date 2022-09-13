@@ -16,7 +16,7 @@
 
 *******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "AutoDuck.h"
 #include "LoadEffects.h"
 
@@ -36,7 +36,7 @@
 #include "../widgets/valnum.h"
 
 #include "../WaveTrack.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 // Define keys, defaults, minimums, and maximums for the effect parameters
 //

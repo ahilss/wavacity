@@ -15,8 +15,8 @@
 *//*******************************************************************/
 
 
-#ifndef __WAVVY_PITCHNAME__
-#define __WAVVY_PITCHNAME__
+#ifndef __WAVACITY_PITCHNAME__
+#define __WAVACITY_PITCHNAME__
 
 class TranslatableString;
 
@@ -59,4 +59,4 @@ double PitchToMIDInote(const unsigned int nPitchIndex, const int nPitchOctave);
 
 double PitchToFreq(const unsigned int nPitchIndex, const int nPitchOctave);
 
-#endif	// __WAVVY_PITCHNAME__
+#endif	// __WAVACITY_PITCHNAME__

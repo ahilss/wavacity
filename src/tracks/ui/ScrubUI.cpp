@@ -33,7 +33,7 @@ class ScrubbingOverlay final
 {
 public:
    explicit
-   ScrubbingOverlay(WavvyProject *project);
+   ScrubbingOverlay(WavacityProject *project);
 
 private:
    unsigned SequenceNumber() const override;
@@ -45,13 +45,13 @@ private:
    const Scrubber &GetScrubber() const;
    Scrubber &GetScrubber();
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 
    wxRect mLastScrubRect, mNextScrubRect;
    wxString mLastScrubSpeedText, mNextScrubSpeedText;
 };
 
-ScrubbingOverlay::ScrubbingOverlay(WavvyProject *project)
+ScrubbingOverlay::ScrubbingOverlay(WavacityProject *project)
    : mProject(project)
    , mLastScrubRect()
    , mNextScrubRect()
@@ -202,8 +202,8 @@ Scrubber &ScrubbingOverlay::GetScrubber()
    return Scrubber::Get( *mProject );
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sOverlayKey{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sOverlayKey{
+  []( WavacityProject &parent ){
      auto result = std::make_shared< ScrubbingOverlay >( &parent );
      TrackPanel::Get( parent ).AddOverlay( result );
      return result;
@@ -221,7 +221,7 @@ struct ScrubForwarder
     : public wxEvtHandler
     , public ClientData::Base
 {
-   ScrubForwarder( WavvyProject &project )
+   ScrubForwarder( WavacityProject &project )
       : mProject{ project }
    {
       mWindow = &ProjectWindow::Get( project );
@@ -237,7 +237,7 @@ struct ScrubForwarder
          mWindow->PopEventHandler();
    }
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
    wxWindowPtr<wxWindow> mWindow;
    wxWeakRef<AdornedRulerPanel> mRuler;
    std::weak_ptr<Scrubber> mScrubber;
@@ -293,8 +293,8 @@ BEGIN_EVENT_TABLE(ScrubForwarder, wxEvtHandler)
    EVT_MOUSE_EVENTS(ScrubForwarder::OnMouse)
 END_EVENT_TABLE()
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sForwarderKey{
-   []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sForwarderKey{
+   []( WavacityProject &parent ){
       return std::make_shared< ScrubForwarder >( parent );
    }
 };

@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SilentBlockFile.h"
 
 #include "../FileFormats.h"

@@ -12,7 +12,7 @@ effect that uses SoundTouch to do its processing (ChangeTempo
 
 **********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #if USE_SOUNDTOUCH
 #include "SoundTouchEffect.h"

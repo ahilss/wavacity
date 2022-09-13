@@ -15,7 +15,7 @@
 // headers
 // ----------------------------------------------------------------------------
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "numformatter.h"
 
 // For compilers that support precompilation, includes "wx.h".

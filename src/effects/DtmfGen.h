@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_DTMF__
-#define __WAVVY_EFFECT_DTMF__
+#ifndef __WAVACITY_EFFECT_DTMF__
+#define __WAVACITY_EFFECT_DTMF__
 
 #include "Effect.h"
 

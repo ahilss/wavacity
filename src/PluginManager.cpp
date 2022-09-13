@@ -18,7 +18,7 @@ effects, generators, analysis-effects, commands.  It also has functions
 for shared and private configs - which need to move out.
 *****************************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "PluginManager.h"
 
 #include "Experimental.h"
@@ -39,17 +39,17 @@ for shared and private configs - which need to move out.
 #include <wx/wfstream.h>
 #include <wx/utils.h>
 
-#include "wavvy/EffectInterface.h"
-#include "wavvy/ModuleInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/ModuleInterface.h"
 
-#include "WavvyFileConfig.h"
+#include "WavacityFileConfig.h"
 #include "FileNames.h"
 #include "ModuleManager.h"
 #include "PlatformCompatibility.h"
 #include "Prefs.h"
 #include "ShuttleGui.h"
 #include "wxFileNameWrapper.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ProgressDialog.h"
 
 #include <unordered_map>
@@ -1043,7 +1043,7 @@ void PluginRegistrationDialog::OnOK(wxCommandEvent & WXUNUSED(evt))
                }
             }
             if (!errMsgs.empty())
-               WavvyMessageBox(
+               WavacityMessageBox(
                   XO("Effect or Command at %s failed to register:\n%s")
                      .Format( path, errMsgs ) );
          }
@@ -1394,7 +1394,7 @@ const PluginID &PluginManagerInterface::DefaultRegistrationCallback(
    return empty;
 }
 
-const PluginID &PluginManagerInterface::WavvyCommandRegistrationCallback(
+const PluginID &PluginManagerInterface::WavacityCommandRegistrationCallback(
    ModuleInterface *provider, ComponentInterface *pInterface )
 {
    ComponentInterface * pCInterface = dynamic_cast<ComponentInterface*>(pInterface);
@@ -1461,7 +1461,7 @@ const PluginID & PluginManager::RegisterPlugin(ModuleInterface *module)
 
 const PluginID & PluginManager::RegisterPlugin(ModuleInterface *provider, ComponentInterface *command)
 {
-   PluginDescriptor & plug = CreatePlugin(GetID(command), command, (PluginType)PluginTypeWavvyCommand);
+   PluginDescriptor & plug = CreatePlugin(GetID(command), command, (PluginType)PluginTypeWavacityCommand);
 
    plug.SetProviderID(PluginManager::GetID(provider));
 
@@ -1516,7 +1516,7 @@ void PluginManager::FindFilesInPathList(const wxString & pattern,
       return;
    }
 
-   // TODO:  We REALLY need to figure out the "Wavvy" plug-in path(s)
+   // TODO:  We REALLY need to figure out the "Wavacity" plug-in path(s)
 
    FilePaths paths;
 
@@ -1526,10 +1526,10 @@ void PluginManager::FindFilesInPathList(const wxString & pattern,
       paths.push_back(ff.GetFullPath());
    }
  
-   // Add the "Wavvy" plug-ins directory
+   // Add the "Wavacity" plug-ins directory
    wxFileName ff = PlatformCompatibility::GetExecutablePath();
 #if defined(__WXMAC__)
-   // Path ends for example in "Wavvy.app/Contents/MacOSX"
+   // Path ends for example in "Wavacity.app/Contents/MacOSX"
    //ff.RemoveLastDir();
    //ff.RemoveLastDir();
    // just remove the MacOSX part.
@@ -1846,7 +1846,7 @@ bool PluginManager::DropFile(const wxString &fileName)
             dst.SetFullName( src.GetFullName() );
             if ( dst.Exists() ) {
                // Query whether to overwrite
-               bool overwrite = (wxYES == ::WavvyMessageBox(
+               bool overwrite = (wxYES == ::WavacityMessageBox(
                   XO("Overwrite the plug-in file %s?")
                      .Format( dst.GetFullPath() ),
                   XO("Plug-in already exists"),
@@ -1870,7 +1870,7 @@ bool PluginManager::DropFile(const wxString &fileName)
             }
 
             if (!copied) {
-               ::WavvyMessageBox(
+               ::WavacityMessageBox(
                   XO("Plug-in file is in use. Failed to overwrite") );
                return true;
             }
@@ -1891,7 +1891,7 @@ bool PluginManager::DropFile(const wxString &fileName)
                });
             if ( ! nPlugIns ) {
                // Unlikely after the dry run succeeded
-               ::WavvyMessageBox(
+               ::WavacityMessageBox(
                   XO("Failed to register:\n%s").Format( errMsg ) );
                return true;
             }
@@ -1908,7 +1908,7 @@ bool PluginManager::DropFile(const wxString &fileName)
                )( nIds );
                for (const auto &name : names)
                   message.Join( Verbatim( name ), wxT("\n") );
-               bool enable = (wxYES == ::WavvyMessageBox(
+               bool enable = (wxYES == ::WavacityMessageBox(
                   message,
                   XO("Enable new plug-ins"),
                   wxYES_NO ) );
@@ -1929,7 +1929,7 @@ bool PluginManager::DropFile(const wxString &fileName)
 void PluginManager::Load()
 {
    // Create/Open the registry
-   auto pRegistry = WavvyFileConfig::Create(
+   auto pRegistry = WavacityFileConfig::Create(
       {}, {}, FileNames::PluginRegistry());
    auto &registry = *pRegistry;
 
@@ -2003,7 +2003,7 @@ void PluginManager::Load()
 
    // Now the rest
    LoadGroup(&registry, PluginTypeEffect);
-   LoadGroup(&registry, PluginTypeWavvyCommand );
+   LoadGroup(&registry, PluginTypeWavacityCommand );
    LoadGroup(&registry, PluginTypeExporter);
    LoadGroup(&registry, PluginTypeImporter);
 
@@ -2015,7 +2015,7 @@ void PluginManager::LoadGroup(FileConfig *pRegistry, PluginType type)
 {
 #ifdef __WXMAC__
    // Bug 1590: On Mac, we should purge the registry of Nyquist plug-ins
-   // bundled with other versions of Wavvy, assuming both versions
+   // bundled with other versions of Wavacity, assuming both versions
    // were properly installed in /Applications (or whatever it is called in
    // your locale)
 
@@ -2094,13 +2094,13 @@ void PluginManager::LoadGroup(FileConfig *pRegistry, PluginType type)
       if (!AcceptPath(strVal))
          // Ignore the obsolete path in the config file, during session,
          // but don't remove it from the file.  Maybe you really want to
-         // switch back to the other version of Wavvy and lose nothing.
+         // switch back to the other version of Wavacity and lose nothing.
          continue;
       plug.SetPath(strVal);
 
       /*
        // PRL: Ignore names  written in configs before 2.3.0!
-       // use Internal string only!  Let the present version of Wavvy map
+       // use Internal string only!  Let the present version of Wavacity map
        // that to a user-visible string.
       // Get the name and bypass group if not found
       if (!pRegistry->Read(KEY_NAME, &strVal))
@@ -2110,7 +2110,7 @@ void PluginManager::LoadGroup(FileConfig *pRegistry, PluginType type)
       plug.SetName(strVal);
        */
 
-      // Get the symbol...Wavvy 2.3.0 or later requires it
+      // Get the symbol...Wavacity 2.3.0 or later requires it
       // bypass group if not found
       // Note, KEY_SYMBOL started getting written to config files in 2.1.0.
       // KEY_NAME (now ignored) was written before that, but only for VST
@@ -2273,7 +2273,7 @@ void PluginManager::LoadGroup(FileConfig *pRegistry, PluginType type)
 void PluginManager::Save()
 {
    // Create/Open the registry
-   auto pRegistry = WavvyFileConfig::Create(
+   auto pRegistry = WavacityFileConfig::Create(
       {}, {}, FileNames::PluginRegistry());
    auto &registry = *pRegistry;
 
@@ -2286,7 +2286,7 @@ void PluginManager::Save()
    // Save the individual groups
    SaveGroup(&registry, PluginTypeEffect);
    SaveGroup(&registry, PluginTypeExporter);
-   SaveGroup(&registry, PluginTypeWavvyCommand);
+   SaveGroup(&registry, PluginTypeWavacityCommand);
    SaveGroup(&registry, PluginTypeImporter);
    SaveGroup(&registry, PluginTypeStub);
 
@@ -2318,7 +2318,7 @@ void PluginManager::SaveGroup(FileConfig *pRegistry, PluginType type)
       pRegistry->Write(KEY_PATH, plug.GetPath());
       pRegistry->Write(KEY_SYMBOL, plug.GetSymbol().Internal());
 
-      // PRL:  Writing KEY_NAME which is no longer read, but older Wavvy
+      // PRL:  Writing KEY_NAME which is no longer read, but older Wavacity
       // versions expect to find it.
       pRegistry->Write(KEY_NAME, plug.GetSymbol().Msgid().MSGID());
 
@@ -2701,7 +2701,7 @@ PluginID PluginManager::GetID(ModuleInterface *module)
 PluginID PluginManager::GetID(ComponentInterface *command)
 {
    return wxString::Format(wxT("%s_%s_%s_%s_%s"),
-                           GetPluginTypeString(PluginTypeWavvyCommand),
+                           GetPluginTypeString(PluginTypeWavacityCommand),
                            wxEmptyString,
                            command->GetVendor().Internal(),
                            command->GetSymbol().Internal(),
@@ -2729,7 +2729,7 @@ PluginID PluginManager::GetID(ImporterInterface *importer)
 }
 
 // This string persists in configuration files
-// So config compatibility will break if it is changed across Wavvy versions
+// So config compatibility will break if it is changed across Wavacity versions
 wxString PluginManager::GetPluginTypeString(PluginType type)
 {
    wxString str;
@@ -2746,7 +2746,7 @@ wxString PluginManager::GetPluginTypeString(PluginType type)
    case PluginTypeEffect:
       str = wxT("Effect");
       break;
-   case PluginTypeWavvyCommand:
+   case PluginTypeWavacityCommand:
       str = wxT("Generic");
       break;
    case PluginTypeExporter:
@@ -2786,7 +2786,7 @@ FileConfig *PluginManager::GetSettings()
    if (!mSettings)
    {
       mSettings =
-         WavvyFileConfig::Create({}, {}, FileNames::PluginSettings());
+         WavacityFileConfig::Create({}, {}, FileNames::PluginSettings());
 
       // Check for a settings version that we can understand
       if (mSettings->HasEntry(SETVERKEY))
@@ -3008,7 +3008,7 @@ RegistryPath PluginManager::SettingsPath(const PluginID & ID, bool shared)
 {
    // All the strings reported by PluginDescriptor and used in this function
    // persist in the plugin settings configuration file, so they should not
-   // be changed across Wavvy versions, or else compatibility of the
+   // be changed across Wavacity versions, or else compatibility of the
    // configuration files will break.
 
    if (mPlugins.find(ID) == mPlugins.end())

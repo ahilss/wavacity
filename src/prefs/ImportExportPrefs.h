@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_IMPORT_EXPORT_PREFS__
-#define __WAVVY_IMPORT_EXPORT_PREFS__
+#ifndef __WAVACITY_IMPORT_EXPORT_PREFS__
+#define __WAVACITY_IMPORT_EXPORT_PREFS__
 
 #include <wx/defs.h>
 

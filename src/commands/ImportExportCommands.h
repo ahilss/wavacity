@@ -23,7 +23,7 @@
 
 // Import
 
-class ImportCommand : public WavvyCommand
+class ImportCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -35,13 +35,13 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#import");};
 public:
    wxString mFileName;
 };
 
-class ExportCommand : public WavvyCommand
+class ExportCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -53,7 +53,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#export");};
 public:
    wxString mFileName;

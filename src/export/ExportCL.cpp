@@ -6,12 +6,12 @@
 
   Joshua Haberman
 
-  This code allows Wavvy to export data by piping it to an external
+  This code allows Wavacity to export data by piping it to an external
   program.
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../ProjectSettings.h"
 
@@ -37,7 +37,7 @@
 #include "../Track.h"
 #include "../float_cast.h"
 #include "../widgets/FileHistory.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 #include "../widgets/Warning.h"
 #include "../wxFileNameWrapper.h"
@@ -280,7 +280,7 @@ public:
    // Required
    void OptionsCreate(ShuttleGui &S, int format) override;
 
-   ProgressResult Export(WavvyProject *project,
+   ProgressResult Export(WavacityProject *project,
                          std::unique_ptr<ProgressDialog> &pDialog,
                          unsigned channels,
                          const wxFileNameWrapper &fName,
@@ -309,8 +309,8 @@ private:
       ExtendPath()
       {
          // Give Windows a chance at finding lame command in the default location.
-         wxString paths[] = {wxT("HKEY_LOCAL_MACHINE\\Software\\Lame for Wavvy"),
-                             wxT("HKEY_LOCAL_MACHINE\\Software\\FFmpeg for Wavvy")};
+         wxString paths[] = {wxT("HKEY_LOCAL_MACHINE\\Software\\Lame for Wavacity"),
+                             wxT("HKEY_LOCAL_MACHINE\\Software\\FFmpeg for Wavacity")};
          wxString npath;
          wxRegKey reg;
 
@@ -354,7 +354,7 @@ ExportCL::ExportCL()
    SetDescription(XO("(external program)"),0);
 }
 
-ProgressResult ExportCL::Export(WavvyProject *project,
+ProgressResult ExportCL::Export(WavacityProject *project,
                                 std::unique_ptr<ProgressDialog> &pDialog,
                                 unsigned channels,
                                 const wxFileNameWrapper &fName,
@@ -385,7 +385,7 @@ ProgressResult ExportCL::Export(WavvyProject *project,
 
    rc = wxExecute(mCmd, wxEXEC_ASYNC, &process);
    if (!rc) {
-      WavvyMessageBox( XO("Cannot export audio to %s").Format( path ) );
+      WavacityMessageBox( XO("Cannot export audio to %s").Format( path ) );
       process.Detach();
       process.CloseOutput();
 
@@ -753,7 +753,7 @@ bool ExportCL::CheckFileName(wxFileName &filename, int WXUNUSED(format))
    // Just verify the given path exists if it is absolute.
    if (cmd.IsAbsolute()) {
       if (!cmd.Exists()) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("\"%s\" couldn't be found.").Format(cmd.GetFullPath()),
             XO("Warning"),
             wxOK | wxICON_EXCLAMATION);
@@ -776,7 +776,7 @@ bool ExportCL::CheckFileName(wxFileName &filename, int WXUNUSED(format))
 #endif
 
    if (path.empty()) {
-      int action = WavvyMessageBox(
+      int action = WavacityMessageBox(
          XO("Unable to locate \"%s\" in your path.").Format(cmd.GetFullPath()),
          XO("Warning"),
          wxOK | wxICON_EXCLAMATION);

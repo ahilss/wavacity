@@ -13,8 +13,8 @@
 
 ********************************************************************/
 
-#ifndef __WAVVY_SOUND_ACTIVATED_RECORD__
-#define __WAVVY_SOUND_ACTIVATED_RECORD__
+#ifndef __WAVACITY_SOUND_ACTIVATED_RECORD__
+#define __WAVACITY_SOUND_ACTIVATED_RECORD__
 
 #include "widgets/wxPanelWrapper.h" // to inherit
 

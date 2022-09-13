@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Snap.h"
 
 #include <algorithm>
@@ -24,7 +24,7 @@ inline bool operator < (SnapPoint s1, SnapPoint s2)
    return s1.t < s2.t;
 }
 
-SnapManager::SnapManager(const WavvyProject &project,
+SnapManager::SnapManager(const WavacityProject &project,
                          SnapPointArray candidates,
                          const ZoomInfo &zoomInfo,
                          bool noTimeSnap,
@@ -56,7 +56,7 @@ SnapPointArray FindCandidates( const TrackList &tracks )
 }
 }
 
-SnapManager::SnapManager(const WavvyProject &project,
+SnapManager::SnapManager(const WavacityProject &project,
             const TrackList &tracks,
             const ZoomInfo &zoomInfo,
             bool noTimeSnap,

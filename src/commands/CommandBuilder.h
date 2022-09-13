@@ -18,7 +18,7 @@
 
 #include "../MemoryX.h"
 
-class WavvyProject;
+class WavacityProject;
 class ResponseTarget;
 using ResponseTargetPointer = std::shared_ptr<ResponseTarget>;
 class OldStyleCommand;
@@ -38,12 +38,12 @@ class CommandBuilder
 
       void Failure(const wxString &msg = {});
       void Success(const OldStyleCommandPointer &cmd);
-      void BuildCommand( WavvyProject *project,
+      void BuildCommand( WavacityProject *project,
          const wxString &cmdName, const wxString &cmdParams);
-      void BuildCommand( WavvyProject *project, const wxString &cmdString);
+      void BuildCommand( WavacityProject *project, const wxString &cmdString);
    public:
-      CommandBuilder(WavvyProject *project, const wxString &cmdString);
-      CommandBuilder(WavvyProject *project, const wxString &cmdName,
+      CommandBuilder(WavacityProject *project, const wxString &cmdString);
+      CommandBuilder(WavacityProject *project, const wxString &cmdName,
                      const wxString &cmdParams);
       ~CommandBuilder();
       bool WasValid();

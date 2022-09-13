@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_MOUSE_EVENT__
-#define __WAVVY_TRACK_PANEL_MOUSE_EVENT__
+#ifndef __WAVACITY_TRACK_PANEL_MOUSE_EVENT__
+#define __WAVACITY_TRACK_PANEL_MOUSE_EVENT__
 
 class wxMouseEvent;
 class wxMouseState;

@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "LabelGlyphHandle.h"
 
 #include "LabelTrackView.h"
@@ -68,7 +68,7 @@ LabelGlyphHandle::LabelGlyphHandle
 {
 }
 
-void LabelGlyphHandle::Enter(bool, WavvyProject *)
+void LabelGlyphHandle::Enter(bool, WavacityProject *)
 {
    mChangeHighlight = RefreshCode::RefreshCell;
 }
@@ -196,7 +196,7 @@ void LabelGlyphHandle::HandleGlyphClick
 }
 
 UIHandle::Result LabelGlyphHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto result = LabelDefaultClickHandle::Click( evt, pProject );
 
@@ -291,7 +291,7 @@ static int Constrain( int value, int min, int max )
 }
 
 bool LabelGlyphHandle::HandleGlyphDragRelease
-(WavvyProject &project,
+(WavacityProject &project,
  LabelTrackHit &hit, const wxMouseEvent & evt,
  wxRect & r, const ZoomInfo &zoomInfo,
  NotifyingSelectedRegion &newSel)
@@ -365,7 +365,7 @@ bool LabelGlyphHandle::HandleGlyphDragRelease
 }
 
 UIHandle::Result LabelGlyphHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto result = LabelDefaultClickHandle::Drag( evt, pProject );
 
@@ -379,13 +379,13 @@ UIHandle::Result LabelGlyphHandle::Drag
 }
 
 HitTestPreview LabelGlyphHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *)
+(const TrackPanelMouseState &, WavacityProject *)
 {
    return HitPreview( (mpHit->mEdge & 4 )!=0);
 }
 
 UIHandle::Result LabelGlyphHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    auto result = LabelDefaultClickHandle::Release( evt, pProject, pParent );
@@ -403,7 +403,7 @@ UIHandle::Result LabelGlyphHandle::Release
    return result | RefreshCode::RefreshAll | RefreshCode::DrawOverlays;
 }
 
-UIHandle::Result LabelGlyphHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result LabelGlyphHandle::Cancel(WavacityProject *pProject)
 {
    ProjectHistory::Get( *pProject ).RollbackState();
    auto result = LabelDefaultClickHandle::Cancel( pProject );

@@ -17,20 +17,20 @@ Paul Licameli split from ProjectManager.cpp
 #include "UndoManager.h"
 #include "ViewInfo.h"
 
-static WavvyProject::AttachedObjects::RegisteredFactory sProjectHistoryKey {
-   []( WavvyProject &project ) {
+static WavacityProject::AttachedObjects::RegisteredFactory sProjectHistoryKey {
+   []( WavacityProject &project ) {
       return std::make_shared< ProjectHistory >( project );
    }
 };
 
-ProjectHistory &ProjectHistory::Get( WavvyProject &project )
+ProjectHistory &ProjectHistory::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectHistory >( sProjectHistoryKey );
 }
 
-const ProjectHistory &ProjectHistory::Get( const WavvyProject &project )
+const ProjectHistory &ProjectHistory::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 ProjectHistory::~ProjectHistory() = default;

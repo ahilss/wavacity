@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h" // for USE_* macros
+#include "../../../../Wavacity.h" // for USE_* macros
 #ifdef USE_MIDI
 #include "NoteTrackVZoomHandle.h"
 
@@ -35,7 +35,7 @@ namespace
    struct InitMenuData
    {
    public:
-      WavvyProject &project;
+      WavacityProject &project;
       NoteTrack *pTrack;
       wxRect rect;
       unsigned result;
@@ -60,7 +60,7 @@ NoteTrackVZoomHandle::NoteTrackVZoomHandle
 {
 }
 
-void NoteTrackVZoomHandle::Enter(bool, WavvyProject *)
+void NoteTrackVZoomHandle::Enter(bool, WavacityProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -108,7 +108,7 @@ NoteTrackVZoomHandle::~NoteTrackVZoomHandle()
 }
 
 UIHandle::Result NoteTrackVZoomHandle::Click
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    // change note track to zoom like audio track
    //          mpTrack->StartVScroll();
@@ -117,7 +117,7 @@ UIHandle::Result NoteTrackVZoomHandle::Click
 }
 
 UIHandle::Result NoteTrackVZoomHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -135,7 +135,7 @@ UIHandle::Result NoteTrackVZoomHandle::Drag
 }
 
 HitTestPreview NoteTrackVZoomHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *)
+(const TrackPanelMouseState &st, WavacityProject *)
 {
    return HitPreview(st.state);
 }
@@ -247,7 +247,7 @@ void NoteTrackVRulerMenuTable::OnZoom( int iZoomCode ){
       mpData->pTrack->ShiftNoteRange(-12);
       break;
    }
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    ProjectHistory::Get( *project ).ModifyState(false);
    using namespace RefreshCode;
    mpData->result = UpdateVRuler | RefreshAll;
@@ -290,7 +290,7 @@ END_POPUP_MENU()
 
 
 UIHandle::Result NoteTrackVZoomHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    using namespace RefreshCode;
@@ -356,7 +356,7 @@ UIHandle::Result NoteTrackVZoomHandle::Release
    return RefreshAll;
 }
 
-UIHandle::Result NoteTrackVZoomHandle::Cancel(WavvyProject *WXUNUSED(pProject))
+UIHandle::Result NoteTrackVZoomHandle::Cancel(WavacityProject *WXUNUSED(pProject))
 {
    // Cancel is implemented!  And there is no initial state to restore,
    // so just return a code.

@@ -24,7 +24,7 @@ in which buttons can be placed.
 
 *//**********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "ToolBar.h"
 
 #include "../Experimental.h"
@@ -329,7 +329,7 @@ END_EVENT_TABLE()
 //
 // Constructor
 //
-ToolBar::ToolBar( WavvyProject &project,
+ToolBar::ToolBar( WavacityProject &project,
                   int type,
                   const TranslatableString &label,
                   const wxString &section,
@@ -367,7 +367,7 @@ ToolBar::~ToolBar()
 TranslatableString ToolBar::GetTitle()
 {
    /* i18n-hint: %s will be replaced by the name of the kind of toolbar.*/
-   return XO("Wavvy %s Toolbar").Format( GetLabel() );
+   return XO("Wavacity %s Toolbar").Format( GetLabel() );
 }
 
 //
@@ -897,7 +897,7 @@ void ToolBar::MakeAlternateImages(AButton &button, int idx,
 }
 
 void ToolBar::SetButtonToolTip
-(WavvyProject &theProject,
+(WavacityProject &theProject,
  AButton &button, const ComponentInterfaceSymbol commands[], size_t nCommands)
 {
    TranslatableString result;

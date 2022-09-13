@@ -10,8 +10,8 @@ Vaughan Johnson (Preview)
 
 ***********************************************************************/
 
-#ifndef __WAVVY_EFFECT_SCIENFILTER__
-#define __WAVVY_EFFECT_SCIENFILTER__
+#ifndef __WAVACITY_EFFECT_SCIENFILTER__
+#define __WAVACITY_EFFECT_SCIENFILTER__
 
 #include <wx/setup.h> // for wxUSE_* macros
 

@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_NYQUIST__
-#define __WAVVY_EFFECT_NYQUIST__
+#ifndef __WAVACITY_EFFECT_NYQUIST__
+#define __WAVACITY_EFFECT_NYQUIST__
 
 #include "../Effect.h"
 #include "../../FileNames.h"
@@ -61,7 +61,7 @@ public:
 };
 
 
-class WAVVY_DLL_API NyquistEffect final : public Effect
+class WAVACITY_DLL_API NyquistEffect final : public Effect
 {
 public:
 
@@ -230,7 +230,7 @@ private:
    TranslatableString mInfo;
    TranslatableString mAuthor;
    // Version number of the specific plug-in (not to be confused with mVersion)
-   // For shipped plug-ins this will be the same as the Wavvy release version
+   // For shipped plug-ins this will be the same as the Wavacity release version
    // when the plug-in was last modified.
    TranslatableString mReleaseVersion;
    TranslatableString mCopyright;

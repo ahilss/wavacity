@@ -12,7 +12,7 @@
 
 class wxFileName;
 
-//! Update Wavvy 1.0 file in-place to XML format
+//! Update Wavacity 1.0 file in-place to XML format
 /*! @return true if successful, else no effect on the file
  @excsafety{Strong}
  */

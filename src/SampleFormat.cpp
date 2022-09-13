@@ -13,7 +13,7 @@
 
 
   This file handles converting between all of the different
-  sample formats that Wavvy supports, such as 16-bit,
+  sample formats that Wavacity supports, such as 16-bit,
   24-bit (packed into a 32-bit int), and 32-bit float.
 
   Floating-point samples use the range -1.0...1.0, inclusive.
@@ -26,7 +26,7 @@
   clipping by 1 LSB.  This creates some distortion, but I (MJS) have
   not been able to measure it, it's so small.  Zero is preserved.
 
-  http://limpet.net/wavvy/bugzilla/show_bug.cgi?id=200
+  http://limpet.net/wavacity/bugzilla/show_bug.cgi?id=200
   leads to some of the discussions that were held about this.
 
    Note: These things are now handled by the Dither class, which

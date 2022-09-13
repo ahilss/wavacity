@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVE_TRACK_SLIDER_HANDLES__
-#define __WAVVY_WAVE_TRACK_SLIDER_HANDLES__
+#ifndef __WAVACITY_WAVE_TRACK_SLIDER_HANDLES__
+#define __WAVACITY_WAVE_TRACK_SLIDER_HANDLES__
 
 #include "../../../ui/SliderHandle.h"
 
@@ -34,12 +34,12 @@ public:
 protected:
    float GetValue() override;
    Result SetValue
-      (WavvyProject *pProject, float newValue) override;
+      (WavacityProject *pProject, float newValue) override;
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject) override;
+      (const wxMouseEvent &event, WavacityProject *pProject) override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
    bool StopsOnKeystroke () override { return true; }
 
@@ -69,12 +69,12 @@ public:
 
 protected:
    float GetValue() override;
-   Result SetValue(WavvyProject *pProject, float newValue) override;
+   Result SetValue(WavacityProject *pProject, float newValue) override;
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject) override;
+      (const wxMouseEvent &event, WavacityProject *pProject) override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
    bool StopsOnKeystroke () override { return true; }
 

@@ -8,14 +8,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SELECTION_BAR_LISTENER__
-#define __WAVVY_SELECTION_BAR_LISTENER__
+#ifndef __WAVACITY_SELECTION_BAR_LISTENER__
+#define __WAVACITY_SELECTION_BAR_LISTENER__
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class SelectedRegion;
 
-class WAVVY_DLL_API SelectionBarListener /* not final */ {
+class WAVACITY_DLL_API SelectionBarListener /* not final */ {
 
  public:
 
@@ -31,7 +31,7 @@ class WAVVY_DLL_API SelectionBarListener /* not final */ {
    virtual void AS_ModifySelection(double &start, double &end, bool done) = 0;
 };
 
-class WAVVY_DLL_API TimeToolBarListener /* not final */ {
+class WAVACITY_DLL_API TimeToolBarListener /* not final */ {
 
  public:
 

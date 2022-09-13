@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "LabelTrackVRulerControls.h"
 
 #include "../../../HitTestResult.h"

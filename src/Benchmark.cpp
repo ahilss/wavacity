@@ -15,7 +15,7 @@ of sample block storage.
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Benchmark.h"
 
 #include <wx/app.h>
@@ -44,7 +44,7 @@ of sample block storage.
 #include "ViewInfo.h"
 
 #include "FileNames.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/wxPanelWrapper.h"
 
 // Change these to the desired format...should probably make the
@@ -56,7 +56,7 @@ class BenchmarkDialog final : public wxDialogWrapper
 {
 public:
    // constructors and destructors
-   BenchmarkDialog( wxWindow *parent, WavvyProject &project );
+   BenchmarkDialog( wxWindow *parent, WavacityProject &project );
 
    void MakeBenchmarkDialog();
 
@@ -71,7 +71,7 @@ private:
    void HoldPrint(bool hold);
    void FlushPrint();
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
    const ProjectSettings &mSettings;
 
    bool      mHoldPrint;
@@ -91,11 +91,11 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-void RunBenchmark( wxWindow *parent, WavvyProject &project )
+void RunBenchmark( wxWindow *parent, WavacityProject &project )
 {
    /*
-   int action = WavvyMessageBox(
-XO("This will close all project windows (without saving)\nand open the Wavvy Benchmark dialog.\n\nAre you sure you want to do this?"),
+   int action = WavacityMessageBox(
+XO("This will close all project windows (without saving)\nand open the Wavacity Benchmark dialog.\n\nAre you sure you want to do this?"),
       XO("Benchmark"),
       wxYES_NO | wxICON_EXCLAMATION,
       NULL);
@@ -137,7 +137,7 @@ BEGIN_EVENT_TABLE(BenchmarkDialog, wxDialogWrapper)
 END_EVENT_TABLE()
 
 BenchmarkDialog::BenchmarkDialog(
-   wxWindow *parent, WavvyProject &project)
+   wxWindow *parent, WavacityProject &project)
    :
       /* i18n-hint: Benchmark means a software speed test */
       wxDialogWrapper( parent, 0, XO("Benchmark"),
@@ -326,7 +326,7 @@ void BenchmarkDialog::OnRun( wxCommandEvent & WXUNUSED(event))
    if (!Validate())
       return;
 
-   // This code will become part of libwavvy,
+   // This code will become part of libwavacity,
    // and this class will be phased out.
    long blockSize, numEdits, dataSize, randSeed;
 
@@ -336,19 +336,19 @@ void BenchmarkDialog::OnRun( wxCommandEvent & WXUNUSED(event))
    mRandSeedStr.ToLong(&randSeed);
 
    if (blockSize < 1 || blockSize > 1024) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Block size should be in the range 1 - 1024 KB.") );
       return;
    }
 
    if (numEdits < 1 || numEdits > 10000) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Number of edits should be in the range 1 - 10000.") );
       return;
    }
 
    if (dataSize < 1 || dataSize > 2000) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Test data size should be in the range 1 - 2000 MB.") );
       return;
    }
@@ -461,7 +461,7 @@ void BenchmarkDialog::OnRun( wxCommandEvent & WXUNUSED(event))
       try {
          tmp = t->Cut(double (x0 * chunkSize), double ((x0 + xlen) * chunkSize));
       }
-      catch (const WavvyException&) {
+      catch (const WavacityException&) {
          Printf( XO("Trial %d\n").Format( z ) );
          Printf( XO("Cut (%lld, %lld) failed.\n")
             .Format( (x0 * chunkSize), (x0 + xlen) * chunkSize) );
@@ -483,7 +483,7 @@ void BenchmarkDialog::OnRun( wxCommandEvent & WXUNUSED(event))
       try {
          t->Paste((double)(y0 * chunkSize), tmp.get());
       }
-      catch (const WavvyException&) {
+      catch (const WavacityException&) {
          Printf( XO("Trial %d\nFailed on Paste.\n").Format( z ) );
          goto fail;
       }
@@ -521,7 +521,7 @@ void BenchmarkDialog::OnRun( wxCommandEvent & WXUNUSED(event))
    Printf( XO("Checking file pointer leaks:\n") );
    Printf( XO("Track # blocks: %ld\n").Format( t->GetBlockArray()->size() ) );
    Printf( XO("Disk # blocks: \n") );
-   system("ls .wavvy_temp/* | wc --lines");
+   system("ls .wavacity_temp/* | wc --lines");
 #endif
 
    Printf( XO("Doing correctness check...\n") );

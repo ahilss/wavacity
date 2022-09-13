@@ -14,8 +14,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_SIMPLE_MONO__
-#define __WAVVY_EFFECT_SIMPLE_MONO__
+#ifndef __WAVACITY_EFFECT_SIMPLE_MONO__
+#define __WAVACITY_EFFECT_SIMPLE_MONO__
 
 #include "Effect.h"
 

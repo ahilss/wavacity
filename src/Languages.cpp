@@ -30,7 +30,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Languages.h"
 #include "MemoryX.h"
 
@@ -47,23 +47,23 @@
 using LangHash = std::unordered_map<wxString, TranslatableString>;
 using ReverseLangHash = std::unordered_map<TranslatableString, wxString>;
 
-static bool TranslationExists(const FilePaths &wavvyPathList, wxString code)
+static bool TranslationExists(const FilePaths &wavacityPathList, wxString code)
 {
    FilePaths results;
-   FileNames::FindFilesInPathList(wxString::Format(wxT("%s/wavvy.mo"),
+   FileNames::FindFilesInPathList(wxString::Format(wxT("%s/wavacity.mo"),
                                                    code),
-                                  wavvyPathList,
+                                  wavacityPathList,
                                   results);
 #if defined(__WXMAC__)
-   FileNames::FindFilesInPathList(wxString::Format(wxT("%s.lproj/wavvy.mo"),
+   FileNames::FindFilesInPathList(wxString::Format(wxT("%s.lproj/wavacity.mo"),
                                                    code),
-                                  wavvyPathList,
+                                  wavacityPathList,
                                   results);
 #endif
 
-   FileNames::FindFilesInPathList(wxString::Format(wxT("%s/LC_MESSAGES/wavvy.mo"),
+   FileNames::FindFilesInPathList(wxString::Format(wxT("%s/LC_MESSAGES/wavacity.mo"),
                                                    code),
-                                  wavvyPathList,
+                                  wavacityPathList,
                                   results);
 
    return (results.size() > 0);
@@ -209,13 +209,13 @@ void GetLanguages(
       return localLanguageName;
    }();
 
-   auto wavvyPathList = FileNames::WavvyPathList();
+   auto wavacityPathList = FileNames::WavacityPathList();
 
 #if defined(__WXGTK__)
    FileNames::AddUniquePathToPathList(
       wxString::Format(wxT("%s/share/locale"),
          wxT(INSTALL_PREFIX)),
-      wavvyPathList);
+      wavacityPathList);
 #endif
 
    // For each language in our list we look for a corresponding entry in
@@ -257,14 +257,14 @@ void GetLanguages(
          name = found->second;
       }
 
-      if (TranslationExists(wavvyPathList, fullCode)) {
+      if (TranslationExists(wavacityPathList, fullCode)) {
          code = fullCode;
       }
 
       if (!tempHash[code].empty())
          continue;
 
-      if (TranslationExists(wavvyPathList, code) || code==wxT("en")) {
+      if (TranslationExists(wavacityPathList, code) || code==wxT("en")) {
          tempCodes.push_back(code);
          tempNames.push_back(name);
          tempHash[code] = name;
@@ -276,12 +276,12 @@ void GetLanguages(
       }
    }
 
-   // JKC: Adding language for simplified wavvy.
+   // JKC: Adding language for simplified wavacity.
    {
       wxString code;
       code = wxT("en-simple");
       auto name = XO("Simplified");
-      if (TranslationExists(wavvyPathList, code) ) {
+      if (TranslationExists(wavacityPathList, code) ) {
          tempCodes.push_back(code);
          tempNames.push_back(name);
          tempHash[code] = name;

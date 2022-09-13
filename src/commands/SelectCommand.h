@@ -22,9 +22,9 @@
 #include "CommandType.h"
 #include "Command.h"
 
-//#include "../commands/WavvyCommand.h"
+//#include "../commands/WavacityCommand.h"
 
-class SelectTimeCommand : public WavvyCommand
+class SelectTimeCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -36,7 +36,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#select_time");};
 
    bool bHasT0;
@@ -50,7 +50,7 @@ public:
    bool mFromEnd;
 };
 
-class SelectFrequenciesCommand : public WavvyCommand
+class SelectFrequenciesCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -62,7 +62,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#select_frequencies");};
 
    bool bHasBottom;
@@ -73,7 +73,7 @@ public:
 };
 
 
-class SelectTracksCommand : public WavvyCommand
+class SelectTracksCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -84,7 +84,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#select_tracks");};
 
    bool bHasFirstTrack;
@@ -97,7 +97,7 @@ public:
 };
 
 
-class SelectCommand : public WavvyCommand
+class SelectCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -122,7 +122,7 @@ public:
          mSelFreq.Apply( context )&&
          mSelTracks.Apply(context);
    }
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#select");};
 private:
    SelectTimeCommand mSelTime;

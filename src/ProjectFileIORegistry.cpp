@@ -10,7 +10,7 @@
 
 #include "ProjectFileIORegistry.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include <unordered_map>
 #include <wx/string.h>
 

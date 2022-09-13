@@ -26,7 +26,7 @@ with changes in the SelectionBar.
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SelectionBar.h"
 
 #include "SelectionBarListener.h"
@@ -106,7 +106,7 @@ BEGIN_EVENT_TABLE(SelectionBar, ToolBar)
    EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, SelectionBar::OnCaptureKey)
 END_EVENT_TABLE()
 
-SelectionBar::SelectionBar( WavvyProject &project )
+SelectionBar::SelectionBar( WavacityProject &project )
 : ToolBar(project, SelectionBarID, XO("Selection"), wxT("Selection")),
   mListener(NULL), mRate(0.0),
   mStart(0.0), mEnd(0.0), mLength(0.0), mCenter(0.0), mAudio(0.0),
@@ -121,7 +121,7 @@ SelectionBar::SelectionBar( WavvyProject &project )
    // depend on it.  Otherwise, division-by-zero floating point exceptions
    // will occur.
    // Refer to bug #462 for a scenario where the division-by-zero causes
-   // Wavvy to fail.
+   // Wavacity to fail.
    // We expect mRate to be set from the project later.
    mRate = (double) gPrefs->Read(wxT("/SamplingRate/DefaultProjectSampleRate"),
       AudioIOBase::GetOptimalSupportedSampleRate());
@@ -134,15 +134,15 @@ SelectionBar::~SelectionBar()
 {
 }
 
-SelectionBar &SelectionBar::Get( WavvyProject &project )
+SelectionBar &SelectionBar::Get( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<SelectionBar*>( toolManager.GetToolBar(SelectionBarID) );
 }
 
-const SelectionBar &SelectionBar::Get( const WavvyProject &project )
+const SelectionBar &SelectionBar::Get( const WavacityProject &project )
 {
-   return Get( const_cast<WavvyProject&>( project )) ;
+   return Get( const_cast<WavacityProject&>( project )) ;
 }
 
 void SelectionBar::Create(wxWindow * parent)
@@ -828,7 +828,7 @@ void SelectionBar::OnSnapTo(wxCommandEvent & WXUNUSED(event))
 }
 
 static RegisteredToolbarFactory factory{ SelectionBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew SelectionBar{ project } }; }
 };
 

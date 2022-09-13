@@ -17,7 +17,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SetProjectCommand.h"
 
 #include "LoadCommands.h"

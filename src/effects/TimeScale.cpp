@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_SBSMS
+#include "../Wavacity.h" // for USE_SBSMS
 
 #if USE_SBSMS
 #include "TimeScale.h"

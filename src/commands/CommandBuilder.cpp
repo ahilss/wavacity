@@ -21,7 +21,7 @@ system by constructing BatchCommandEval objects.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "CommandBuilder.h"
 
 #include "CommandDirectory.h"
@@ -31,13 +31,13 @@ system by constructing BatchCommandEval objects.
 #include "../Shuttle.h"
 
 CommandBuilder::CommandBuilder(
-   WavvyProject *project, const wxString &cmdString)
+   WavacityProject *project, const wxString &cmdString)
    : mValid(false)
 {
    BuildCommand(project, cmdString);
 }
 
-CommandBuilder::CommandBuilder(WavvyProject *project,
+CommandBuilder::CommandBuilder(WavacityProject *project,
    const wxString &cmdName, const wxString &params)
    : mValid(false)
 {
@@ -82,7 +82,7 @@ void CommandBuilder::Success(const OldStyleCommandPointer &cmd)
    mValid = true;
 }
 
-void CommandBuilder::BuildCommand(WavvyProject *project,
+void CommandBuilder::BuildCommand(WavacityProject *project,
                                   const wxString &cmdName,
                                   const wxString &cmdParamsArg)
 {
@@ -188,7 +188,7 @@ void CommandBuilder::BuildCommand(WavvyProject *project,
 }
 
 void CommandBuilder::BuildCommand(
-   WavvyProject *project, const wxString &cmdStringArg)
+   WavacityProject *project, const wxString &cmdStringArg)
 {
    wxString cmdString(cmdStringArg);
 

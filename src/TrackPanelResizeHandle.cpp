@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "TrackPanelResizeHandle.h"
 
 #include <wx/cursor.h>
@@ -53,7 +53,7 @@ TrackPanelResizeHandle::~TrackPanelResizeHandle()
 }
 
 UIHandle::Result TrackPanelResizeHandle::Click(
-   const TrackPanelMouseEvent &evt, WavvyProject *pProject )
+   const TrackPanelMouseEvent &evt, WavacityProject *pProject )
 {
    using namespace RefreshCode;
    if ( evt.event.LeftDClick() && mMode == IsResizingBetweenLinkedTracks ) {
@@ -114,7 +114,7 @@ TrackPanelResizeHandle::TrackPanelResizeHandle
 }
 
 UIHandle::Result TrackPanelResizeHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    auto &tracks = TrackList::Get( *pProject );
    auto pTrack = tracks.Lock(mpTrack);
@@ -237,13 +237,13 @@ UIHandle::Result TrackPanelResizeHandle::Drag
 }
 
 HitTestPreview TrackPanelResizeHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *)
+(const TrackPanelMouseState &, WavacityProject *)
 {
    return HitPreview(mMode == IsResizingBetweenLinkedTracks);
 }
 
 UIHandle::Result TrackPanelResizeHandle::Release
-(const TrackPanelMouseEvent &, WavvyProject *pProject,
+(const TrackPanelMouseEvent &, WavacityProject *pProject,
  wxWindow *)
 {
    ///  This happens when the button is released from a drag.
@@ -256,7 +256,7 @@ UIHandle::Result TrackPanelResizeHandle::Release
    return RefreshCode::FixScrollbars;
 }
 
-UIHandle::Result TrackPanelResizeHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result TrackPanelResizeHandle::Cancel(WavacityProject *pProject)
 {
    auto &tracks = TrackList::Get( *pProject );
    auto pTrack = tracks.Lock(mpTrack);

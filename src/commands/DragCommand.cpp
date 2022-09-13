@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "DragCommand.h"
 
 #include "LoadCommands.h"
@@ -108,7 +108,7 @@ bool DragCommand::Apply(const CommandContext & context)
       pWin1 = pWin->FindWindowByName( mWinName );
    if( pWin1 )
       pWin = pWin1;
-   // Process twice - possible bug in Wavvy being worked around
+   // Process twice - possible bug in Wavacity being worked around
    // where we need an event to enter AND an event to move.
    // AdornedRuler Quick-Play bug.
    pWin->GetEventHandler()->ProcessEvent( Evt );

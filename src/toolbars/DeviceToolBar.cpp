@@ -14,7 +14,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "DeviceToolBar.h"
 #include "ToolManager.h"
 
@@ -46,7 +46,7 @@
 #include "../ShuttleGui.h"
 #include "../widgets/Grabber.h"
 #include "../DeviceManager.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/Grabber.h"
 
 #if wxUSE_ACCESSIBILITY
@@ -71,7 +71,7 @@ static int DeviceToolbarPrefsID()
 }
 
 //Standard constructor
-DeviceToolBar::DeviceToolBar( WavvyProject &project )
+DeviceToolBar::DeviceToolBar( WavacityProject &project )
 : ToolBar( project, DeviceBarID, XO("Device"), wxT("Device"), true )
 {
    wxTheApp->Bind( EVT_RESCANNED_DEVICES,
@@ -82,15 +82,15 @@ DeviceToolBar::~DeviceToolBar()
 {
 }
 
-DeviceToolBar &DeviceToolBar::Get( WavvyProject &project )
+DeviceToolBar &DeviceToolBar::Get( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<DeviceToolBar*>( toolManager.GetToolBar(DeviceBarID) );
 }
 
-const DeviceToolBar &DeviceToolBar::Get( const WavvyProject &project )
+const DeviceToolBar &DeviceToolBar::Get( const WavacityProject &project )
 {
-   return Get( const_cast<WavvyProject&>( project )) ;
+   return Get( const_cast<WavacityProject&>( project )) ;
 }
 
 void DeviceToolBar::Create(wxWindow *parent)
@@ -664,7 +664,7 @@ void DeviceToolBar::OnChoice(wxCommandEvent &event)
    if (gAudioIO) {
       // We cannot have gotten here if gAudioIO->IsAudioTokenActive(),
       // per the setting of AudioIONotBusyFlag and AudioIOBusyFlag in
-      // WavvyProject::GetUpdateFlags().
+      // WavacityProject::GetUpdateFlags().
       // However, we can have an invalid audio token (so IsAudioTokenActive()
       // is false), but be monitoring.
       // If monitoring, have to stop the stream, so HandleDeviceChange() can work.
@@ -708,7 +708,7 @@ void DeviceToolBar::ShowChannelsDialog()
 void DeviceToolBar::ShowComboDialog(wxChoice *combo, const TranslatableString &title)
 {
    if (!combo || combo->GetCount() == 0) {
-      WavvyMessageBox( XO("Device information is not available.") );
+      WavacityMessageBox( XO("Device information is not available.") );
       return;
    }
 
@@ -749,7 +749,7 @@ void DeviceToolBar::ShowComboDialog(wxChoice *combo, const TranslatableString &t
 }
 
 static RegisteredToolbarFactory factory{ DeviceBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew DeviceToolBar{ project } }; }
 };
 

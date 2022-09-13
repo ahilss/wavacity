@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRUM__
-#define __WAVVY_SPECTRUM__
+#ifndef __WAVACITY_SPECTRUM__
+#define __WAVACITY_SPECTRUM__
 
 #include "FFT.h"
 

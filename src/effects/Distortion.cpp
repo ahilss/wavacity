@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Distortion.h"
 #include "LoadEffects.h"
 
@@ -214,7 +214,7 @@ EffectType EffectDistortion::GetType()
 
 bool EffectDistortion::SupportsRealtime()
 {
-#if defined(EXPERIMENTAL_REALTIME_WAVVY_EFFECTS)
+#if defined(EXPERIMENTAL_REALTIME_WAVACITY_EFFECTS)
    return true;
 #else
    return false;

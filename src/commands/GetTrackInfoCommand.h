@@ -19,7 +19,7 @@
 #include "Command.h"
 #include "CommandType.h"
 
-class GetTrackInfoCommand final : public WavvyCommand
+class GetTrackInfoCommand final : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -31,7 +31,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Tools#get_track_info");};
 
    bool Apply(const CommandContext &context ) override;

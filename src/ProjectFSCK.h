@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_FSCK__
-#define __WAVVY_PROJECT_FSCK__
+#ifndef __WAVACITY_PROJECT_FSCK__
+#define __WAVACITY_PROJECT_FSCK__
 
 class DirManager;
 

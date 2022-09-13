@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TOOLBAR__
-#define __WAVVY_TOOLBAR__
+#ifndef __WAVACITY_TOOLBAR__
+#define __WAVACITY_TOOLBAR__
 
 #include "../Experimental.h"
 
@@ -49,7 +49,7 @@ class ToolBarResizer;
 //
 // Custom event
 //
-DECLARE_EXPORTED_EVENT_TYPE(WAVVY_DLL_API, EVT_TOOLBAR_UPDATED, -1);
+DECLARE_EXPORTED_EVENT_TYPE(WAVACITY_DLL_API, EVT_TOOLBAR_UPDATED, -1);
 
 //
 // Height of a single line toolbar
@@ -88,7 +88,7 @@ enum ToolBarID
 // How may pixels padding each side of a floating toolbar
 enum { ToolBarFloatMargin = 1 };
 
-class WavvyProject;
+class WavacityProject;
 
 class ToolBar /* not final */
 : public wxPanelWrapper
@@ -99,7 +99,7 @@ class ToolBar /* not final */
 
    using Holder = wxWindowPtr<ToolBar>;
 
-   ToolBar( WavvyProject &project,
+   ToolBar( WavacityProject &project,
       int type, const TranslatableString & label, const wxString & section,
       bool resizable = false);
    virtual ~ToolBar();
@@ -174,7 +174,7 @@ public:
 
    static
    void SetButtonToolTip
-      (WavvyProject &project, AButton &button,
+      (WavacityProject &project, AButton &button,
        // If a shortcut key is defined for the command, then it is appended,
        // parenthesized, after the translated name.
        const ComponentInterfaceSymbol commands[], size_t nCommands);
@@ -230,7 +230,7 @@ public:
    void OnMouseEvents(wxMouseEvent &event);
 
  protected:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
    TranslatableString mLabel;
    wxString mSection;
    int mType;
@@ -257,7 +257,7 @@ public:
 };
 
 struct RegisteredToolbarFactory {
-   using Function = std::function< ToolBar::Holder( WavvyProject & ) >;
+   using Function = std::function< ToolBar::Holder( WavacityProject & ) >;
    using Functions = std::vector< Function >;
 
    RegisteredToolbarFactory( int id, const Function &function );

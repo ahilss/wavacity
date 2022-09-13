@@ -8,7 +8,7 @@ Paul Licameli
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "UIHandle.h"
 
 #include "RefreshCode.h"
@@ -17,7 +17,7 @@ UIHandle::~UIHandle()
 {
 }
 
-void UIHandle::Enter(bool, WavvyProject *)
+void UIHandle::Enter(bool, WavacityProject *)
 {
 }
 
@@ -36,7 +36,7 @@ bool UIHandle::HasEscape() const
    return false;
 }
 
-bool UIHandle::Escape(WavvyProject *)
+bool UIHandle::Escape(WavacityProject *)
 {
    return false;
 }
@@ -46,6 +46,6 @@ bool UIHandle::StopsOnKeystroke()
    return false;
 }
 
-void UIHandle::OnProjectChange(WavvyProject *)
+void UIHandle::OnProjectChange(WavacityProject *)
 {
 }

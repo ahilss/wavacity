@@ -16,7 +16,7 @@ MP3 and FFmpeg encoding libraries.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "LibraryPrefs.h"
 
 #include "../Experimental.h"
@@ -28,7 +28,7 @@ MP3 and FFmpeg encoding libraries.
 #include "../FFmpeg.h"
 #include "../export/ExportMP3.h"
 #include "../widgets/HelpSystem.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ReadOnlyText.h"
 #include "../widgets/wxTextCtrlWrapper.h"
 
@@ -195,9 +195,9 @@ void LibraryPrefs::OnFFmpegFindButton(wxCommandEvent & WXUNUSED(event))
 
    // Libs are fine, don't show "locate" dialog unless user really wants it
    if (!locate) {
-      int response = WavvyMessageBox(
+      int response = WavacityMessageBox(
          XO(
-"Wavvy has automatically detected valid FFmpeg libraries.\nDo you still want to locate them manually?"),
+"Wavacity has automatically detected valid FFmpeg libraries.\nDo you still want to locate them manually?"),
          XO("Success"),
          wxCENTRE | wxYES_NO | wxNO_DEFAULT |wxICON_QUESTION);
       if (response == wxYES) {
@@ -233,7 +233,7 @@ bool LibraryPrefs::Commit()
 #if !defined(DISABLE_DYNAMIC_LOADING_FFMPEG) || !defined(DISABLE_DYNAMIC_LOADING_LAME)
 namespace{
 PrefsPanel::Registration sAttachment{ "Library",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew LibraryPrefs(parent, winid);

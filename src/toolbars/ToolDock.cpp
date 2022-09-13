@@ -21,7 +21,7 @@
 
 *//**********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ToolDock.h"
 
 #include <wx/tokenzr.h>
@@ -345,8 +345,8 @@ void ToolBarConfiguration::Write
       gPrefs->Write(wxT("Path"), strPath);
 
       // Remove any legacy configuration info.
-      // Note:  this causes Wavvy 2.1.2 and earlier to create toolbars
-      // always in default position when reading a .cfg saved by Wavvy
+      // Note:  this causes Wavacity 2.1.2 and earlier to create toolbars
+      // always in default position when reading a .cfg saved by Wavacity
       // 2.1.3 or later
       gPrefs->DeleteEntry(wxT("Order"));
    }

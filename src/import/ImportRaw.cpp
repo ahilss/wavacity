@@ -21,7 +21,7 @@ and sample size to help you importing data of an unknown format.
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ImportRaw.h"
 
 #include "ImportPlugin.h"
@@ -96,7 +96,7 @@ class ImportRawDialog final : public wxDialogWrapper {
 // This function leaves outTracks empty as an indication of error,
 // but may also throw FileException to make use of the application's
 // user visible error reporting.
-void ImportRaw(const WavvyProject &project, wxWindow *parent, const wxString &fileName,
+void ImportRaw(const WavacityProject &project, wxWindow *parent, const wxString &fileName,
               WaveTrackFactory *trackFactory, TrackHolders &outTracks)
 {
    outTracks.clear();
@@ -480,7 +480,7 @@ void ImportRawDialog::OnOK(wxCommandEvent & WXUNUSED(event))
       mPercent = 100.0;
    if (mRate < 100.0)
       mRate = 100.0;
-   // Highest preset sample rate supported in Wavvy 2.3.0 is 384 kHz
+   // Highest preset sample rate supported in Wavacity 2.3.0 is 384 kHz
    if (mRate > 384000.0)
       mRate = 384000.0;
 

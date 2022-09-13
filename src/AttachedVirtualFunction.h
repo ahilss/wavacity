@@ -9,8 +9,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_ATTACHED_VIRTUAL_FUNCTION__
-#define __WAVVY_ATTACHED_VIRTUAL_FUNCTION__
+#ifndef __WAVACITY_ATTACHED_VIRTUAL_FUNCTION__
+#define __WAVACITY_ATTACHED_VIRTUAL_FUNCTION__
 
 
 #include <functional>

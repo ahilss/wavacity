@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SILENT_BLOCKFILE__
-#define __WAVVY_SILENT_BLOCKFILE__
+#ifndef __WAVACITY_SILENT_BLOCKFILE__
+#define __WAVACITY_SILENT_BLOCKFILE__
 
 #include "../BlockFile.h"
 

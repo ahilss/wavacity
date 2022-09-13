@@ -12,7 +12,7 @@
 \brief Given a key, returns some html.
 *//********************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "HelpText.h"
 
 #include "Experimental.h"
@@ -186,7 +186,7 @@ TranslatableString TitleText( const wxString & Key )
    if(Key ==wxT("save") )
    {
       /* i18n-hint: Title for a topic.*/
-      return XO("Saving an Wavvy Project");
+      return XO("Saving an Wavacity Project");
    }
    if(Key ==wxT("wma-proprietary") )
    {
@@ -210,9 +210,9 @@ static wxString HelpTextBuiltIn( const wxString & Key )
 {
    // PRL:  Is it necessary to define these outside of conditional compilation so that both get into the .pot file?
    const auto alphamsg = XO(
-"<br><br>The version of Wavvy you are using is an <b>Alpha test version</b>.");
+"<br><br>The version of Wavacity you are using is an <b>Alpha test version</b>.");
    const auto betamsg = XO(
-"<br><br>The version of Wavvy you are using is a <b>Beta test version</b>.");
+"<br><br>The version of Wavacity you are using is a <b>Beta test version</b>.");
 
    if (Key == wxT("welcome"))
    {
@@ -221,7 +221,7 @@ static wxString HelpTextBuiltIn( const wxString & Key )
       s
 #if defined(IS_ALPHA) || defined(IS_BETA)
          << wxT("<hr><center><h3>")
-         << XO("Get the Official Released Version of Wavvy")
+         << XO("Get the Official Released Version of Wavacity")
          << wxT("</h3></center>")
          << VerCheckHtml()
 #ifdef IS_ALPHA
@@ -233,34 +233,34 @@ static wxString HelpTextBuiltIn( const wxString & Key )
          << XO(
 "We strongly recommend that you use our latest stable released version, which has full documentation and support.<br><br>")
          << XO(
-"You can help us get Wavvy ready for release by joining our [[https://www.audacityteam.org/community/|community]].<hr><br><br>")
+"You can help us get Wavacity ready for release by joining our [[https://www.audacityteam.org/community/|community]].<hr><br><br>")
 #endif
 
 // DA: Support methods text.
 #ifdef EXPERIMENTAL_DA
          // Deliberately not translated.
-         << wxT("<center><h3>DarkWavvy ")
-         << WAVVY_VERSION_STRING
+         << wxT("<center><h3>DarkWavacity ")
+         << WAVACITY_VERSION_STRING
          << wxT("</h3></center>")
-         << wxT("<br><br>DarkWavvy is based on Wavvy:")
+         << wxT("<br><br>DarkWavacity is based on Wavacity:")
          << wxT("<ul><li>")
-         << wxT(" [[http://www.darkwavvy.com|www.darkwavvy.com]] - for differences between them.")
+         << wxT(" [[http://www.darkwavacity.com|www.darkwavacity.com]] - for differences between them.")
          << wxT("</li><li>")
          << wxT(
-" email to [[mailto:james@audacityteam.org|james@audacityteam.org]] - for help using DarkWavvy.")
+" email to [[mailto:james@audacityteam.org|james@audacityteam.org]] - for help using DarkWavacity.")
          << wxT("</li><li>")
          << wxT(
-" [[http://www.darkwavvy.com/video.html|Tutorials]] - for getting started with DarkWavvy.")
+" [[http://www.darkwavacity.com/video.html|Tutorials]] - for getting started with DarkWavacity.")
          << wxT("</li></ul>")
-         << wxT("<br><br>Wavvy has these support methods:")
+         << wxT("<br><br>Wavacity has these support methods:")
          << wxT("<ul><li>")
-         << wxT(" [[https://manual.audacityteam.org/|Manual]] - for comprehensive Wavvy documentation")
+         << wxT(" [[https://manual.audacityteam.org/|Manual]] - for comprehensive Wavacity documentation")
          << wxT("</li><li>")
-         << wxT(" [[https://forum.audacityteam.org/|Forum]] - for large knowledge base on using Wavvy.")
+         << wxT(" [[https://forum.audacityteam.org/|Forum]] - for large knowledge base on using Wavacity.")
          << wxT("</li></ul>")
 #else
-         << wxT("<center><h3>Wavvy ")
-         << WAVVY_VERSION_STRING
+         << wxT("<center><h3>Wavacity ")
+         << WAVACITY_VERSION_STRING
          << wxT("</h3><h3>")
          << XO("How to get help")
          << wxT("</h3></center>")
@@ -297,7 +297,7 @@ static wxString HelpTextBuiltIn( const wxString & Key )
       s
          << wxT("<p>")
          << XO(
-"Wavvy can import unprotected files in many other formats (such as M4A and WMA, \
+"Wavacity can import unprotected files in many other formats (such as M4A and WMA, \
 compressed WAV files from portable recorders and audio from video files) if you download and install \
 the optional [[https://manual.audacityteam.org/man/faq_opening_and_saving_files.html#foreign| \
 FFmpeg library]] to your computer.")
@@ -377,7 +377,7 @@ wxString FormatHtmlText( const wxString & Text ){
 
 // Function to give the extra arguments to put on the version check string.
 const wxString VerCheckArgs(){
-   wxString result = wxString("from_ver=") + WAVVY_VERSION_STRING;
+   wxString result = wxString("from_ver=") + WAVACITY_VERSION_STRING;
 #ifdef REV_LONG
    result += wxString("&CommitId=")+wxString(REV_LONG).Left(6);
 #endif
@@ -401,7 +401,7 @@ const wxString VerCheckHtml(){
 
 // Url with Version check args attached.
 const wxString VerCheckUrl(){
-   //The version we intend to use for live Wavvy.
+   //The version we intend to use for live Wavacity.
 #define VER_CHECK_URL "https://www.audacityteam.org/download/?"
 //For testing of our scriptlet.
 //#define VER_CHECK_URL "http://www.audacityteam.org/slug/?"

@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h" // for USE_* macros
+#include "../../../../Wavacity.h" // for USE_* macros
 
 #ifdef USE_MIDI
 #include "NoteTrackVRulerControls.h"
@@ -36,7 +36,7 @@ NoteTrackVRulerControls::~NoteTrackVRulerControls()
 
 std::vector<UIHandlePtr> NoteTrackVRulerControls::HitTest
 (const TrackPanelMouseState &st,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    std::vector<UIHandlePtr> results;
    UIHandlePtr result;
@@ -56,7 +56,7 @@ std::vector<UIHandlePtr> NoteTrackVRulerControls::HitTest
 }
 
 unsigned NoteTrackVRulerControls::HandleWheelRotation
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const wxMouseEvent &event = evt.event;

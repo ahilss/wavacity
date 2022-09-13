@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT__
-#define __WAVVY_PROJECT__
+#ifndef __WAVACITY_PROJECT__
+#define __WAVACITY_PROJECT__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "ClientData.h" // to inherit
 
@@ -23,11 +23,11 @@
 class wxFrame;
 class wxWindow;
 
-class WavvyProject;
+class WavacityProject;
 
-WAVVY_DLL_API WavvyProject *GetActiveProject();
+WAVACITY_DLL_API WavacityProject *GetActiveProject();
 // For use by ProjectManager only:
-extern void SetActiveProject(WavvyProject * project);
+extern void SetActiveProject(WavacityProject * project);
 
 /// \brief an object of class AllProjects acts like a standard library
 /// container, but refers to a global array of open projects.  So you can
@@ -37,9 +37,9 @@ extern void SetActiveProject(WavvyProject * project);
 class AllProjects
 {
    // Use shared_ptr to projects, because elsewhere we need weak_ptr
-   using AProjectHolder = std::shared_ptr< WavvyProject >;
+   using AProjectHolder = std::shared_ptr< WavacityProject >;
    using Container = std::vector< AProjectHolder >;
-   static Container gWavvyProjects;
+   static Container gWavacityProjects;
 
 public:
    AllProjects() = default;
@@ -59,7 +59,7 @@ public:
 
    // If the project is present, remove it from the global array and return
    // a shared pointer, else return null.  This invalidates any iterators.
-   value_type Remove( WavvyProject &project );
+   value_type Remove( WavacityProject &project );
 
    // This invalidates iterators
    void Add( const value_type &pProject );
@@ -82,40 +82,40 @@ private:
 // Container of various objects associated with the project, which is
 // responsible for destroying them
 using AttachedProjectObjects = ClientData::Site<
-   WavvyProject, ClientData::Base, ClientData::SkipCopying, std::shared_ptr
+   WavacityProject, ClientData::Base, ClientData::SkipCopying, std::shared_ptr
 >;
 // Container of pointers to various windows associated with the project, which
 // is not responsible for destroying them -- wxWidgets handles that instead
 using AttachedProjectWindows = ClientData::Site<
-   WavvyProject, wxWindow, ClientData::SkipCopying, ClientData::BarePtr
+   WavacityProject, wxWindow, ClientData::SkipCopying, ClientData::BarePtr
 >;
 
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACK_PANEL_TIMER, wxCommandEvent);
 
 // This event is emitted by the application object when there is a change
 // in the activated project
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_PROJECT_ACTIVATION, wxCommandEvent);
 
-///\brief The top-level handle to an Wavvy project.  It serves as a source
+///\brief The top-level handle to an Wavacity project.  It serves as a source
 /// of events that other objects can bind to, and a container of associated
 /// sub-objects that it treats opaquely.  It stores a filename and a status
 /// message and a few other things.
 /// There is very little in this class, most of the intelligence residing in
 /// the cooperating attached objects.
-class WAVVY_DLL_API WavvyProject final
+class WAVACITY_DLL_API WavacityProject final
    : public wxEvtHandler
    , public AttachedProjectObjects
    , public AttachedProjectWindows
-   , public std::enable_shared_from_this<WavvyProject>
+   , public std::enable_shared_from_this<WavacityProject>
 {
  public:
    using AttachedObjects = ::AttachedProjectObjects;
    using AttachedWindows = ::AttachedProjectWindows;
 
-   WavvyProject();
-   virtual ~WavvyProject();
+   WavacityProject();
+   virtual ~WavacityProject();
 
    wxFrame *GetFrame() { return mFrame; }
    const wxFrame *GetFrame() const { return mFrame; }
@@ -164,22 +164,22 @@ private:
 
 ///\brief Get the top-level window associated with the project (as a wxFrame
 /// only, when you do not need to use the subclass ProjectWindow)
-WAVVY_DLL_API wxFrame &GetProjectFrame( WavvyProject &project );
-WAVVY_DLL_API const wxFrame &GetProjectFrame( const WavvyProject &project );
+WAVACITY_DLL_API wxFrame &GetProjectFrame( WavacityProject &project );
+WAVACITY_DLL_API const wxFrame &GetProjectFrame( const WavacityProject &project );
 
 ///\brief Get a pointer to the window associated with a project, or null if
 /// the given pointer is null.
-inline wxFrame *FindProjectFrame( WavvyProject *project ) {
+inline wxFrame *FindProjectFrame( WavacityProject *project ) {
    return project ? &GetProjectFrame( *project ) : nullptr;
 }
-inline const wxFrame *FindProjectFrame( const WavvyProject *project ) {
+inline const wxFrame *FindProjectFrame( const WavacityProject *project ) {
    return project ? &GetProjectFrame( *project ) : nullptr;
 }
 
 ///\brief Get the main sub-window of the project frame that displays track data
 // (as a wxWindow only, when you do not need to use the subclass TrackPanel)
-WAVVY_DLL_API wxWindow &GetProjectPanel( WavvyProject &project );
-WAVVY_DLL_API const wxWindow &GetProjectPanel(
-   const WavvyProject &project );
+WAVACITY_DLL_API wxWindow &GetProjectPanel( WavacityProject &project );
+WAVACITY_DLL_API const wxWindow &GetProjectPanel(
+   const WavacityProject &project );
 
 #endif

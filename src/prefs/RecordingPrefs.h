@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_RECORDING_PREFS__
-#define __WAVVY_RECORDING_PREFS__
+#ifndef __WAVACITY_RECORDING_PREFS__
+#define __WAVACITY_RECORDING_PREFS__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include <wx/defs.h>

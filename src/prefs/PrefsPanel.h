@@ -24,12 +24,12 @@ MousePrefs, QualityPrefs, SpectrumPrefs and ThemePrefs.
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_PREFS_PANEL__
-#define __WAVVY_PREFS_PANEL__
+#ifndef __WAVACITY_PREFS_PANEL__
+#define __WAVACITY_PREFS_PANEL__
 
 #include <functional>
 #include "../widgets/wxPanelWrapper.h" // to inherit
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 #include "../Registry.h"
 
 /* A few constants for an attempt at semi-uniformity */
@@ -43,7 +43,7 @@ MousePrefs, QualityPrefs, SpectrumPrefs and ThemePrefs.
 #define TOP_LEVEL_BORDER       5
 #define GENERIC_CONTROL_BORDER 5
 
-class WavvyProject;
+class WavacityProject;
 class ShuttleGui;
 
 class PrefsPanel /* not final */ : public wxPanelWrapper, ComponentInterface
@@ -53,7 +53,7 @@ class PrefsPanel /* not final */ : public wxPanelWrapper, ComponentInterface
     struct PrefsNode {
        using Factory =
          std::function< PrefsPanel * (
-            wxWindow *parent, wxWindowID winid, WavvyProject *) >;
+            wxWindow *parent, wxWindowID winid, WavacityProject *) >;
        Factory factory;
        size_t nChildren{ 0 };
        bool expanded{ false };
@@ -75,7 +75,7 @@ class PrefsPanel /* not final */ : public wxPanelWrapper, ComponentInterface
    // preview the preference changes for spectrograms.
    using Factory =
       std::function< PrefsPanel * (
-         wxWindow *parent, wxWindowID winid, WavvyProject *) >;
+         wxWindow *parent, wxWindowID winid, WavacityProject *) >;
 
    // Typically you make a static object of this type in the .cpp file that
    // also implements the PrefsPanel subclass.

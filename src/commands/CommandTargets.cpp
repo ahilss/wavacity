@@ -21,7 +21,7 @@ capture the more lengthy output from some commands.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "CommandTargets.h"
 
 #include <wx/app.h>
@@ -29,7 +29,7 @@ capture the more lengthy output from some commands.
 #include <wx/string.h>
 #include <wx/textctrl.h>
 #include "../ShuttleGui.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/wxPanelWrapper.h"
 
 #include <locale>
@@ -254,7 +254,7 @@ void BriefCommandMessageTarget::EndField(){
 void MessageBoxTarget::Update(const wxString &message)
 {
    // Should these messages be localized?
-   WavvyMessageBox( Verbatim( message ) );
+   WavacityMessageBox( Verbatim( message ) );
 }
 
 
@@ -302,7 +302,7 @@ BriefCommandOutputTargets::~BriefCommandOutputTargets()
 
 
 
-class WAVVY_DLL_API LongMessageDialog /* not final */ : public wxDialogWrapper
+class WAVACITY_DLL_API LongMessageDialog /* not final */ : public wxDialogWrapper
 {
 public:
    // constructors and destructors

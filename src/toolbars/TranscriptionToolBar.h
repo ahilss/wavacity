@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRANSCRIPTION_TOOLBAR__
-#define __WAVVY_TRANSCRIPTION_TOOLBAR__
+#ifndef __WAVACITY_TRANSCRIPTION_TOOLBAR__
+#define __WAVACITY_TRANSCRIPTION_TOOLBAR__
 
 #include "../Experimental.h"
 
@@ -19,7 +19,7 @@
 
 #include <wx/brush.h> // member variable
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxChoice;
 class wxCommandEvent;
@@ -28,7 +28,7 @@ class wxKeyEvent;
 
 class AButton;
 class ASlider;
-class WavvyProject;
+class WavacityProject;
 class BoundedEnvelope;
 class WaveTrack;
 
@@ -65,11 +65,11 @@ class TranscriptionToolBar final : public ToolBar {
 
  public:
 
-   TranscriptionToolBar( WavvyProject &project );
+   TranscriptionToolBar( WavacityProject &project );
    virtual ~TranscriptionToolBar();
 
-   static TranscriptionToolBar &Get( WavvyProject &project );
-   static const TranscriptionToolBar &Get( const WavvyProject &project );
+   static TranscriptionToolBar &Get( WavacityProject &project );
+   static const TranscriptionToolBar &Get( const WavacityProject &project );
 
    void Create(wxWindow *parent) override;
 

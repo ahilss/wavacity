@@ -19,7 +19,7 @@
 
 namespace TrackUtilities {
 
-void DoRemoveTracks( WavvyProject &project )
+void DoRemoveTracks( WavacityProject &project )
 {
    auto &tracks = TrackList::Get( project );
    auto &trackPanel = TrackPanel::Get( project );
@@ -61,7 +61,7 @@ void DoRemoveTracks( WavvyProject &project )
    trackPanel.UpdateViewIfNoTracks();
 }
 
-void DoTrackMute(WavvyProject &project, Track *t, bool exclusive)
+void DoTrackMute(WavacityProject &project, Track *t, bool exclusive)
 {
    const auto &settings = ProjectSettings::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -109,7 +109,7 @@ void DoTrackMute(WavvyProject &project, Track *t, bool exclusive)
    TrackFocus::Get( project ).UpdateAccessibility();
 }
 
-void DoTrackSolo(WavvyProject &project, Track *t, bool exclusive)
+void DoTrackSolo(WavacityProject &project, Track *t, bool exclusive)
 {
    const auto &settings = ProjectSettings::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -160,7 +160,7 @@ void DoTrackSolo(WavvyProject &project, Track *t, bool exclusive)
    TrackFocus::Get( project ).UpdateAccessibility();
 }
 
-void DoRemoveTrack(WavvyProject &project, Track * toRemove)
+void DoRemoveTrack(WavacityProject &project, Track * toRemove)
 {
    auto &tracks = TrackList::Get( project );
    auto &trackFocus = TrackFocus::Get( project );
@@ -196,7 +196,7 @@ void DoRemoveTrack(WavvyProject &project, Track * toRemove)
 }
 
 void DoMoveTrack
-(WavvyProject &project, Track* target, MoveChoice choice)
+(WavacityProject &project, Track* target, MoveChoice choice)
 {
    auto &tracks = TrackList::Get( project );
 

@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "TrackPanelResizerCell.h"
 
 #include "AColor.h"
@@ -30,7 +30,7 @@ TrackPanelResizerCell::TrackPanelResizerCell(
 {}
 
 std::vector<UIHandlePtr> TrackPanelResizerCell::HitTest
-(const TrackPanelMouseState &st, const WavvyProject *pProject)
+(const TrackPanelMouseState &st, const WavacityProject *pProject)
 {
    (void)pProject;// Compiler food
    std::vector<UIHandlePtr> results;

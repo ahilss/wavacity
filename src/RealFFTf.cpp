@@ -36,7 +36,7 @@
 *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "RealFFTf.h"
 
 #include "Experimental.h"

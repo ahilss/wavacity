@@ -13,11 +13,11 @@
 \class AColor
 \brief AColor Manages color brushes and pens
 
-It is also a place to document colour usage policy in Wavvy
+It is also a place to document colour usage policy in Wavacity
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "AColor.h"
 
 #include "Experimental.h"

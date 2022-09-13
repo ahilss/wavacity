@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "SelectHandle.h"
 
 #include "../../Experimental.h"
@@ -362,7 +362,7 @@ namespace
 
 UIHandlePtr SelectHandle::HitTest
 (std::weak_ptr<SelectHandle> &holder,
- const TrackPanelMouseState &st, const WavvyProject *pProject,
+ const TrackPanelMouseState &st, const WavacityProject *pProject,
  const std::shared_ptr<TrackView> &pTrackView)
 {
    // This handle is a little special because there may be some state to
@@ -472,12 +472,12 @@ namespace {
    }
 }
 
-void SelectHandle::Enter(bool, WavvyProject *project)
+void SelectHandle::Enter(bool, WavacityProject *project)
 {
    SetUseSnap(true, project);
 }
 
-void SelectHandle::SetUseSnap(bool use, WavvyProject *project)
+void SelectHandle::SetUseSnap(bool use, WavacityProject *project)
 {
    mUseSnap = use;
 
@@ -506,7 +506,7 @@ bool SelectHandle::HasEscape() const
    return HasSnap() && mUseSnap;
 }
 
-bool SelectHandle::Escape(WavvyProject *project)
+bool SelectHandle::Escape(WavacityProject *project)
 {
    if (SelectHandle::HasEscape()) {
       SetUseSnap(false, project);
@@ -516,7 +516,7 @@ bool SelectHandle::Escape(WavvyProject *project)
 }
 
 UIHandle::Result SelectHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    /// This method gets called when we're handling selection
    /// and the mouse was just clicked.
@@ -782,7 +782,7 @@ UIHandle::Result SelectHandle::Click
 }
 
 UIHandle::Result SelectHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
 
@@ -876,7 +876,7 @@ UIHandle::Result SelectHandle::Drag
 }
 
 HitTestPreview SelectHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *pProject)
+(const TrackPanelMouseState &st, WavacityProject *pProject)
 {
    if (!HasSnap() && !mUseSnap)
       // Moved out of snapping; revert to un-escaped state
@@ -987,7 +987,7 @@ HitTestPreview SelectHandle::Preview
 }
 
 UIHandle::Result SelectHandle::Release
-(const TrackPanelMouseEvent &, WavvyProject *pProject,
+(const TrackPanelMouseEvent &, WavacityProject *pProject,
  wxWindow *)
 {
    using namespace RefreshCode;
@@ -1005,7 +1005,7 @@ UIHandle::Result SelectHandle::Release
       return RefreshNone;
 }
 
-UIHandle::Result SelectHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result SelectHandle::Cancel(WavacityProject *pProject)
 {
    mSelectionStateChanger.reset();
    ViewInfo::Get( *pProject ).selectedRegion = mInitialSelection;
@@ -1047,7 +1047,7 @@ std::weak_ptr<Track> SelectHandle::FindTrack()
       return pView->FindTrack();
 }
 
-void SelectHandle::Connect(WavvyProject *pProject)
+void SelectHandle::Connect(WavacityProject *pProject)
 {
    mTimerHandler = std::make_shared<TimerHandler>( this, pProject );
 }
@@ -1055,7 +1055,7 @@ void SelectHandle::Connect(WavvyProject *pProject)
 class SelectHandle::TimerHandler : public wxEvtHandler
 {
 public:
-   TimerHandler( SelectHandle *pParent, WavvyProject *pProject )
+   TimerHandler( SelectHandle *pParent, WavacityProject *pProject )
       : mParent{ pParent }
       , mConnectedProject{ pProject }
    {
@@ -1070,7 +1070,7 @@ public:
 
 private:
    SelectHandle *mParent;
-   WavvyProject *mConnectedProject;
+   WavacityProject *mConnectedProject;
 };
 
 void SelectHandle::TimerHandler::OnTimer(wxCommandEvent &event)
@@ -1147,7 +1147,7 @@ void SelectHandle::TimerHandler::OnTimer(wxCommandEvent &event)
 }
 
 /// Reset our selection markers.
-void SelectHandle::StartSelection( WavvyProject *pProject )
+void SelectHandle::StartSelection( WavacityProject *pProject )
 {
    auto &viewInfo = ViewInfo::Get( *pProject );
    mSelStartValid = true;
@@ -1163,7 +1163,7 @@ void SelectHandle::StartSelection( WavvyProject *pProject )
 
 /// Extend or contract the existing selection
 void SelectHandle::AdjustSelection
-(WavvyProject *pProject,
+(WavacityProject *pProject,
  ViewInfo &viewInfo, int mouseXCoordinate, int trackLeftEdge,
  Track *track)
 {
@@ -1390,7 +1390,7 @@ void SelectHandle::StartSnappingFreqSelection
 }
 
 void SelectHandle::MoveSnappingFreqSelection
-   (WavvyProject *pProject, ViewInfo &viewInfo, int mouseYCoordinate,
+   (WavacityProject *pProject, ViewInfo &viewInfo, int mouseYCoordinate,
     int trackTopEdge,
     int trackHeight, TrackView *pTrackView)
 {

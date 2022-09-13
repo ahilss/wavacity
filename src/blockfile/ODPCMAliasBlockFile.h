@@ -33,8 +33,8 @@ Some of these methods have been overridden only because they used the unsafe wxL
 
 
 
-#ifndef __WAVVY_ODPCMALIASBLOCKFILE__
-#define __WAVVY_ODPCMALIASBLOCKFILE__
+#ifndef __WAVACITY_ODPCMALIASBLOCKFILE__
+#define __WAVACITY_ODPCMALIASBLOCKFILE__
 
 #include "PCMAliasBlockFile.h"
 

@@ -13,7 +13,7 @@
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ProjectSerializer.h"
 
 #include <algorithm>
@@ -83,8 +83,8 @@ wxMemoryBuffer ProjectSerializer::mDict;
 TranslatableString ProjectSerializer::FailureMessage( const FilePath &/*filePath*/ )
 {
    return 
-XO("This recovery file was saved by Wavvy 2.3.0 or before.\n"
-   "You need to run that version of Wavvy to recover the project." );
+XO("This recovery file was saved by Wavacity 2.3.0 or before.\n"
+   "You need to run that version of Wavacity to recover the project." );
 }
 
 namespace {

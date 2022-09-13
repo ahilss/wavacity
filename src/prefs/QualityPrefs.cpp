@@ -15,7 +15,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "QualityPrefs.h"
 
 #include <wx/choice.h>
@@ -235,7 +235,7 @@ bool QualityPrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Quality",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew QualityPrefs(parent, winid);

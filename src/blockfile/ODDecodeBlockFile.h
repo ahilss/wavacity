@@ -24,8 +24,8 @@ Also, see ODPCMAliasBlockFile for a similar file.
 
 
 
-#ifndef __WAVVY_ODDecodeBlockFile__
-#define __WAVVY_ODDecodeBlockFile__
+#ifndef __WAVACITY_ODDecodeBlockFile__
+#define __WAVACITY_ODDecodeBlockFile__
 
 #include "SimpleBlockFile.h"
 #include <wx/atomic.h> // member variable

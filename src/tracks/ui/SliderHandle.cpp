@@ -8,7 +8,7 @@ Paul Licameli
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "SliderHandle.h"
 
 #include "../../widgets/ASlider.h"
@@ -25,7 +25,7 @@ SliderHandle::SliderHandle
 {
 }
 
-void SliderHandle::Enter(bool, WavvyProject *)
+void SliderHandle::Enter(bool, WavacityProject *)
 {
    mChangeHighlight = RefreshCode::RefreshCell;
 }
@@ -35,7 +35,7 @@ SliderHandle::~SliderHandle()
 }
 
 UIHandle::Result SliderHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    wxMouseEvent &event = evt.event;
    using namespace RefreshCode;
@@ -62,7 +62,7 @@ UIHandle::Result SliderHandle::Click
 }
 
 UIHandle::Result SliderHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    wxMouseEvent &event = evt.event;
    using namespace RefreshCode;
@@ -74,7 +74,7 @@ UIHandle::Result SliderHandle::Drag
 }
 
 HitTestPreview SliderHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *project)
+(const TrackPanelMouseState &st, WavacityProject *project)
 {
    // No special cursor
    TranslatableString message;
@@ -84,7 +84,7 @@ HitTestPreview SliderHandle::Preview
 }
 
 UIHandle::Result SliderHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *)
 {
    using namespace RefreshCode;
@@ -102,7 +102,7 @@ UIHandle::Result SliderHandle::Release
    return result;
 }
 
-UIHandle::Result SliderHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result SliderHandle::Cancel(WavacityProject *pProject)
 {
    wxMouseEvent event(wxEVT_LEFT_UP);
    GetSlider( pProject )->OnMouseEvent(event);
@@ -113,7 +113,7 @@ UIHandle::Result SliderHandle::Cancel(WavvyProject *pProject)
    return RefreshCode::RefreshCell | result;
 }
 
-LWSlider *SliderHandle::GetSlider( WavvyProject *pProject )
+LWSlider *SliderHandle::GetSlider( WavacityProject *pProject )
 {
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
    return mSliderFn( pProject, mRect, pTrack.get() );

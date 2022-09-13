@@ -8,13 +8,13 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_CELLULAR_PANEL__
-#define __WAVVY_CELLULAR_PANEL__
+#ifndef __WAVACITY_CELLULAR_PANEL__
+#define __WAVACITY_CELLULAR_PANEL__
 
 #include "widgets/OverlayPanel.h" // to inherit
 
 class ViewInfo;
-class WavvyProject;
+class WavacityProject;
 
 class TrackPanelCell;
 struct TrackPanelDrawingContext;
@@ -31,7 +31,7 @@ using UIHandlePtr = std::shared_ptr<UIHandle>;
 // cells, that each implement hit tests returning click-drag-release handler
 // objects, and other services.
 // It has no dependency on the Track class.
-class WAVVY_DLL_API CellularPanel : public OverlayPanel {
+class WAVACITY_DLL_API CellularPanel : public OverlayPanel {
 public:
    CellularPanel(wxWindow * parent, wxWindowID id,
                  const wxPoint & pos,
@@ -43,7 +43,7 @@ public:
    
    // Overridables:
    
-   virtual WavvyProject *GetProject() const = 0;
+   virtual WavacityProject *GetProject() const = 0;
    
    // Get the root object defining a recursive subdivision of the panel's
    // area into cells

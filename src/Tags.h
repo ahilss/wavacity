@@ -22,14 +22,14 @@
   useful for streaming.
 
   Use of this functionality requires that libid3tag be compiled in
-  with Wavvy.
+  with Wavacity.
 
 **********************************************************************/
 
-#ifndef __WAVVY_TAGS__
-#define __WAVVY_TAGS__
+#ifndef __WAVACITY_TAGS__
+#define __WAVACITY_TAGS__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "xml/XMLTagHandler.h"
 
@@ -40,7 +40,7 @@
 
 #include <memory>
 #include <unordered_map>
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxArrayString;
 class wxComboBox;
@@ -49,7 +49,7 @@ class wxGridCellStringRenderer;
 class wxGridEvent;
 class wxTextCtrl;
 
-class WavvyProject;
+class WavacityProject;
 class Grid;
 class ShuttleGui;
 class TagsEditorDialog;
@@ -67,7 +67,7 @@ using TagMap = std::unordered_map< wxString, wxString >;
 #define TAG_SOFTWARE wxT("Software")
 #define TAG_COPYRIGHT wxT("Copyright")
 
-class WAVVY_DLL_API Tags final
+class WAVACITY_DLL_API Tags final
    : public XMLTagHandler
    , public std::enable_shared_from_this< Tags >
    , public ClientData::Base
@@ -75,11 +75,11 @@ class WAVVY_DLL_API Tags final
 
  public:
 
-   static Tags &Get( WavvyProject &project );
-   static const Tags &Get( const WavvyProject &project );
+   static Tags &Get( WavacityProject &project );
+   static const Tags &Get( const WavacityProject &project );
    // Returns reference to *tags
    static Tags &Set(
-      WavvyProject &project, const std::shared_ptr<Tags> &tags );
+      WavacityProject &project, const std::shared_ptr<Tags> &tags );
 
    Tags();  // constructor
    Tags( const Tags& ) = default;

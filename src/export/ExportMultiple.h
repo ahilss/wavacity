@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EXPORT_MULTIPLE__
-#define __WAVVY_EXPORT_MULTIPLE__
+#ifndef __WAVACITY_EXPORT_MULTIPLE__
+#define __WAVACITY_EXPORT_MULTIPLE__
 
 #include "Export.h"
 #include "../wxFileNameWrapper.h" // member variable
@@ -23,7 +23,7 @@ class wxSimplebook;
 class wxStaticText;
 class wxTextCtrl;
 
-class WavvyProject;
+class WavacityProject;
 class LabelTrack;
 class SelectionState;
 class ShuttleGui;
@@ -33,7 +33,7 @@ class ExportMultipleDialog final : public wxDialogWrapper
 {
 public:
 
-   ExportMultipleDialog(WavvyProject *parent);
+   ExportMultipleDialog(WavacityProject *parent);
    virtual ~ExportMultipleDialog();
 
    void ShowModal(std::function<void (int)> callback);
@@ -106,7 +106,7 @@ private:
    Exporter mExporter;
    std::vector<ExportPlugin*> mPlugins;   /**< Array of references to available exporter
                                    plug-ins */
-   WavvyProject *mProject;
+   WavacityProject *mProject;
    TrackList *mTracks;           /**< The list of tracks in the project that is
                                    being exported */
    const LabelTrack *mLabels;

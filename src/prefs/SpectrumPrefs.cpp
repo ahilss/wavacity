@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SpectrumPrefs.h"
 
 #include "../Experimental.h"
@@ -35,10 +35,10 @@
 
 #include <algorithm>
 
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 SpectrumPrefs::SpectrumPrefs(wxWindow * parent, wxWindowID winid,
-   WavvyProject *pProject, WaveTrack *wt)
+   WavacityProject *pProject, WaveTrack *wt)
 :  PrefsPanel(parent, winid, wt ? XO("Spectrogram Settings") : XO("Spectrograms"))
 , mProject{ pProject }
 , mWt(wt)
@@ -342,48 +342,48 @@ bool SpectrumPrefs::Validate()
 
    long maxFreq;
    if (!mMaxFreq->GetValue().ToLong(&maxFreq)) {
-      WavvyMessageBox( XO("The maximum frequency must be an integer") );
+      WavacityMessageBox( XO("The maximum frequency must be an integer") );
       return false;
    }
 
    long minFreq;
    if (!mMinFreq->GetValue().ToLong(&minFreq)) {
-      WavvyMessageBox( XO("The minimum frequency must be an integer") );
+      WavacityMessageBox( XO("The minimum frequency must be an integer") );
       return false;
    }
 
    long gain;
    if (!mGain->GetValue().ToLong(&gain)) {
-      WavvyMessageBox( XO("The gain must be an integer") );
+      WavacityMessageBox( XO("The gain must be an integer") );
       return false;
    }
 
    long range;
    if (!mRange->GetValue().ToLong(&range)) {
-      WavvyMessageBox( XO("The range must be a positive integer") );
+      WavacityMessageBox( XO("The range must be a positive integer") );
       return false;
    }
 
    long frequencygain;
    if (!mFrequencyGain->GetValue().ToLong(&frequencygain)) {
-      WavvyMessageBox( XO("The frequency gain must be an integer") );
+      WavacityMessageBox( XO("The frequency gain must be an integer") );
       return false;
    }
 
 #ifdef EXPERIMENTAL_FIND_NOTES
    long findNotesMinA;
    if (!mFindNotesMinA->GetValue().ToLong(&findNotesMinA)) {
-      WavvyMessageBox( XO("The minimum amplitude (dB) must be an integer") );
+      WavacityMessageBox( XO("The minimum amplitude (dB) must be an integer") );
       return false;
    }
 
    long findNotesN;
    if (!mFindNotesN->GetValue().ToLong(&findNotesN)) {
-      WavvyMessageBox( XO("The maximum number of notes must be an integer") );
+      WavacityMessageBox( XO("The maximum number of notes must be an integer") );
       return false;
    }
    if (findNotesN < 1 || findNotesN > 128) {
-      WavvyMessageBox( XO(
+      WavacityMessageBox( XO(
 "The maximum number of notes must be in the range 1..128") );
       return false;
    }
@@ -594,7 +594,7 @@ END_EVENT_TABLE()
 PrefsPanel::Factory
 SpectrumPrefsFactory( WaveTrack *wt )
 {
-   return [=](wxWindow *parent, wxWindowID winid, WavvyProject *pProject)
+   return [=](wxWindow *parent, wxWindowID winid, WavacityProject *pProject)
    {
       wxASSERT(parent); // to justify safenew
       return safenew SpectrumPrefs(parent, winid, pProject, wt);

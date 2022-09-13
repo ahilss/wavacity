@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACKS_PREFS__
-#define __WAVVY_TRACKS_PREFS__
+#ifndef __WAVACITY_TRACKS_PREFS__
+#define __WAVACITY_TRACKS_PREFS__
 
 //#include <wx/defs.h>
 

@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_FADE__
-#define __WAVVY_EFFECT_FADE__
+#ifndef __WAVACITY_EFFECT_FADE__
+#define __WAVACITY_EFFECT_FADE__
 
 #include "Effect.h"
 

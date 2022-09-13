@@ -25,10 +25,10 @@ class ToolManager;
 class CommandOutputTargets;
 class TrackPanel;
 class AdornedRulerPanel;
-class WavvyProject;
+class WavacityProject;
 class CommandContext;
 
-class ScreenshotCommand : public WavvyCommand
+class ScreenshotCommand : public WavacityCommand
 {
 public:
    enum kBackgrounds
@@ -86,7 +86,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#screenshot_short_format");};
 
 private:
@@ -122,9 +122,9 @@ private:
    bool CaptureToolbar(const CommandContext & Context, ToolManager *man, int type, const wxString &name);
    bool CaptureDock(const CommandContext & Context, wxWindow *win, const wxString &fileName);
    void CaptureCommands(const CommandContext & Context, const wxArrayStringEx &Commands  );
-   void CaptureEffects(const CommandContext & Context, WavvyProject * pProject, const wxString &fileName );
-   void CaptureScriptables(const CommandContext & Context, WavvyProject * pProject, const wxString &fileName );
-   void CapturePreferences(const CommandContext & Context, WavvyProject * pProject, const wxString &fileName );
+   void CaptureEffects(const CommandContext & Context, WavacityProject * pProject, const wxString &fileName );
+   void CaptureScriptables(const CommandContext & Context, WavacityProject * pProject, const wxString &fileName );
+   void CapturePreferences(const CommandContext & Context, WavacityProject * pProject, const wxString &fileName );
    bool Capture(
       const CommandContext & Context,
       const wxString &basename,
@@ -136,17 +136,17 @@ private:
    wxRect GetPanelRect(TrackPanel * panel);
    wxRect GetRulerRect(AdornedRulerPanel *ruler);
    wxRect GetTracksRect(TrackPanel * panel);
-   wxRect GetTrackRect( WavvyProject * pProj, TrackPanel * panel,int n);
-   wxString WindowFileName(WavvyProject * proj, wxTopLevelWindow *w);
+   wxRect GetTrackRect( WavacityProject * pProj, TrackPanel * panel,int n);
+   wxString WindowFileName(WavacityProject * proj, wxTopLevelWindow *w);
 
 public:
    static ScreenshotCommand * mpShooter;
    static void (*mIdleHandler)(wxIdleEvent& event);
-   static void SetIdleHandler( WavvyProject &project );
+   static void SetIdleHandler( WavacityProject &project );
    static bool MayCapture( wxDialog * pDlg );
 
    void CaptureWindowOnIdle( const CommandContext & context, wxWindow * pWin );
-   wxTopLevelWindow *GetFrontWindow(WavvyProject *project);
+   wxTopLevelWindow *GetFrontWindow(WavacityProject *project);
 };
 
 #endif /* End of include guard: __SCREENSHOT_COMMAND__ */

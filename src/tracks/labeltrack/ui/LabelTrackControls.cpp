@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "LabelTrackControls.h"
 
 #include "LabelTrackView.h"
@@ -30,7 +30,7 @@ LabelTrackControls::~LabelTrackControls()
 
 std::vector<UIHandlePtr> LabelTrackControls::HitTest
 (const TrackPanelMouseState & state,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    return CommonTrackControls::HitTest(state, pProject);
 }

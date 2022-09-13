@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_INVERT__
-#define __WAVVY_EFFECT_INVERT__
+#ifndef __WAVACITY_EFFECT_INVERT__
+#define __WAVACITY_EFFECT_INVERT__
 
 #include "Effect.h"
 

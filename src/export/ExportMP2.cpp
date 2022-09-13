@@ -32,7 +32,7 @@
 
 */
 
-#include "../Wavvy.h"// for USE_* macros
+#include "../Wavacity.h"// for USE_* macros
 
 #ifdef USE_LIBTWOLAME
 
@@ -54,7 +54,7 @@
 #include "../ShuttleGui.h"
 #include "../Tags.h"
 #include "../Track.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 
 #define LIBTWOLAME_STATIC
@@ -209,7 +209,7 @@ public:
    // Required
 
    void OptionsCreate(ShuttleGui &S, int format) override;
-   ProgressResult Export(WavvyProject *project,
+   ProgressResult Export(WavacityProject *project,
                std::unique_ptr<ProgressDialog> &pDialog,
                unsigned channels,
                const wxFileNameWrapper &fName,
@@ -222,7 +222,7 @@ public:
 
 private:
 
-   int AddTags(WavvyProject *project, ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags);
+   int AddTags(WavacityProject *project, ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags);
 #ifdef USE_LIBID3TAG
    void AddFrame(struct id3_tag *tp, const wxString & n, const wxString & v, const char *name);
 #endif
@@ -240,7 +240,7 @@ ExportMP2::ExportMP2()
    SetDescription(XO("MP2 Files"),0);
 }
 
-ProgressResult ExportMP2::Export(WavvyProject *project,
+ProgressResult ExportMP2::Export(WavacityProject *project,
    std::unique_ptr<ProgressDialog> &pDialog,
    unsigned channels, const wxFileNameWrapper &fName,
    bool selectionOnly, double t0, double t1, MixerSpec *mixerSpec, const Tags *metadata,
@@ -265,7 +265,7 @@ ProgressResult ExportMP2::Export(WavvyProject *project,
 
    if (twolame_init_params(encodeOptions) != 0)
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Cannot export MP2 with this sample rate and bit rate"),
          XO("Error"),
          wxICON_STOP);
@@ -278,7 +278,7 @@ ProgressResult ExportMP2::Export(WavvyProject *project,
 
    FileIO outFile(fName, FileIO::Output);
    if (!outFile.IsOpened()) {
-      WavvyMessageBox( XO("Unable to open target file for writing") );
+      WavacityMessageBox( XO("Unable to open target file for writing") );
       return ProgressResult::Cancelled;
    }
 
@@ -395,7 +395,7 @@ using id3_tag_holder = std::unique_ptr<id3_tag, id3_tag_deleter>;
 
 // returns buffer len; caller frees
 int ExportMP2::AddTags(
-   WavvyProject * WXUNUSED(project), ArrayOf< char > &buffer,
+   WavacityProject * WXUNUSED(project), ArrayOf< char > &buffer,
    bool *endOfFile, const Tags *tags)
 {
 #ifdef USE_LIBID3TAG

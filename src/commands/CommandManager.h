@@ -9,12 +9,12 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMAND_MANAGER__
-#define __WAVVY_COMMAND_MANAGER__
+#ifndef __WAVACITY_COMMAND_MANAGER__
+#define __WAVACITY_COMMAND_MANAGER__
 
 #include "../Experimental.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 #include "../ClientData.h"
 #include "CommandFunctors.h"
@@ -29,7 +29,7 @@
 
 #include "../xml/XMLTagHandler.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 #include <unordered_map>
 
@@ -52,16 +52,16 @@ using CommandKeyHash = std::unordered_map<NormalizedKeyString, CommandListEntry*
 using CommandNameHash = std::unordered_map<CommandID, CommandListEntry*>;
 using CommandNumericIDHash = std::unordered_map<int, CommandListEntry*>;
 
-class WavvyProject;
+class WavacityProject;
 class CommandContext;
 
-class WAVVY_DLL_API CommandManager final
+class WAVACITY_DLL_API CommandManager final
    : public XMLTagHandler
    , public ClientData::Base
 {
  public:
-   static CommandManager &Get( WavvyProject &project );
-   static const CommandManager &Get( const WavvyProject &project );
+   static CommandManager &Get( WavacityProject &project );
+   static const CommandManager &Get( const WavacityProject &project );
 
    // Type of a function that can intercept menu item handling.
    // If it returns true, bypass the usual dipatch of commands.
@@ -93,7 +93,7 @@ class WAVVY_DLL_API CommandManager final
    void EndMenu();
 
    // type of a function that determines checkmark state
-   using CheckFn = std::function< bool(WavvyProject&) >;
+   using CheckFn = std::function< bool(WavacityProject&) >;
 
    // For specifying unusual arguments in AddItem
    struct Options
@@ -167,7 +167,7 @@ class WAVVY_DLL_API CommandManager final
                     CommandFlag flags,
                     bool bIsEffect = false);
 
-   void AddItem(WavvyProject &project,
+   void AddItem(WavacityProject &project,
                 const CommandID & name,
                 const TranslatableString &label_in,
                 CommandHandlerFinder finder,
@@ -207,8 +207,8 @@ class WAVVY_DLL_API CommandManager final
 
    // "permit" allows filtering even if the active window isn't a child of the project.
    // Lyrics and MixerTrackCluster classes use it.
-   bool FilterKeyEvent(WavvyProject *project, const wxKeyEvent & evt, bool permit = false);
-   bool HandleMenuID(WavvyProject &project, int id, CommandFlag flags, bool alwaysEnabled);
+   bool FilterKeyEvent(WavacityProject *project, const wxKeyEvent & evt, bool permit = false);
+   bool HandleMenuID(WavacityProject &project, int id, CommandFlag flags, bool alwaysEnabled);
    void RegisterLastAnalyzer(const CommandContext& context);
    void RegisterLastTool(const CommandContext& context);
    void DoRepeatProcess(const CommandContext& context, int);
@@ -227,7 +227,7 @@ class WAVVY_DLL_API CommandManager final
    // Accessing
    //
 
-   TranslatableStrings GetCategories( WavvyProject& );
+   TranslatableStrings GetCategories( WavacityProject& );
    void GetAllCommandNames(CommandIDs &names, bool includeMultis) const;
    void GetAllCommandLabels(
       TranslatableStrings &labels, std::vector<bool> &vExcludeFromMacros,
@@ -305,7 +305,7 @@ private:
    // Executing commands
    //
 
-   bool HandleCommandEntry(WavvyProject &project,
+   bool HandleCommandEntry(WavacityProject &project,
       const CommandListEntry * entry, CommandFlag flags,
       bool alwaysEnabled, const wxEvent * evt = NULL);
 
@@ -329,7 +329,7 @@ private:
 public:
    wxMenu * CurrentMenu() const;
 
-   void UpdateCheckmarks( WavvyProject &project );
+   void UpdateCheckmarks( WavacityProject &project );
 private:
    wxString FormatLabelForMenu(const CommandListEntry *entry) const;
    wxString FormatLabelWithDisabledAccel(const CommandListEntry *entry) const;
@@ -389,9 +389,9 @@ private:
 
 struct ToolbarMenuVisitor : MenuVisitor
 {
-   explicit ToolbarMenuVisitor( WavvyProject &p ) : project{ p } {}
-   operator WavvyProject & () const { return project; }
-   WavvyProject &project;
+   explicit ToolbarMenuVisitor( WavacityProject &p ) : project{ p } {}
+   operator WavacityProject & () const { return project; }
+   WavacityProject &project;
 };
 
 // Define items that populate tables that specifically describe menu trees
@@ -545,7 +545,7 @@ namespace MenuTable {
    // adding any number of items, not using the CommandManager
    struct SpecialItem final : SingleItem
    {
-      using Appender = std::function< void( WavvyProject&, wxMenu& ) >;
+      using Appender = std::function< void( WavacityProject&, wxMenu& ) >;
 
       explicit SpecialItem( const Identifier &internalName, const Appender &fn_ )
       : SingleItem{ internalName }
@@ -576,7 +576,7 @@ namespace MenuTable {
    // Items are spliced into the enclosing menu.
    // The name is untranslated and may be empty, to make the group transparent
    // in identification of items by path.  Otherwise try to keep the name
-   // stable across Wavvy versions.
+   // stable across Wavacity versions.
    template< typename... Args >
    inline std::unique_ptr< MenuItems > Items(
       const Identifier &internalName, Args&&... args )
@@ -596,7 +596,7 @@ namespace MenuTable {
    
    // Menu items can be constructed two ways, as for group items
    // Items will appear in a main toolbar menu or in a sub-menu.
-   // The name is untranslated.  Try to keep the name stable across Wavvy
+   // The name is untranslated.  Try to keep the name stable across Wavacity
    // versions.
    // If the name of a menu is empty, then subordinate items cannot be located
    // by path.
@@ -613,7 +613,7 @@ namespace MenuTable {
    // Conditional group items can be constructed two ways, as for group items
    // These items register in the CommandManager but are not shown in menus
    // if the condition evaluates false.
-   // The name is untranslated.  Try to keep the name stable across Wavvy
+   // The name is untranslated.  Try to keep the name stable across Wavacity
    // versions.
    // Name for conditional group must be non-empty.
    template< typename... Args >
@@ -632,7 +632,7 @@ namespace MenuTable {
    // of the title.
    // The name is untranslated and may be empty, to make the group transparent
    // in identification of items by path.  Otherwise try to keep the name
-   // stable across Wavvy versions.
+   // stable across Wavacity versions.
    // If the name of a menu is empty, then subordinate items cannot be located
    // by path.
    template< typename... Args >

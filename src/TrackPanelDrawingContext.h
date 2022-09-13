@@ -8,8 +8,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_DRAWING_CONTEXT__
-#define __WAVVY_TRACK_PANEL_DRAWING_CONTEXT__
+#ifndef __WAVACITY_TRACK_PANEL_DRAWING_CONTEXT__
+#define __WAVACITY_TRACK_PANEL_DRAWING_CONTEXT__
 
 #include "MemoryX.h"
 

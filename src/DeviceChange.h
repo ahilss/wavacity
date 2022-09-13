@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DEVICECHANGE_H__
-#define __WAVVY_DEVICECHANGE_H__
+#ifndef __WAVACITY_DEVICECHANGE_H__
+#define __WAVACITY_DEVICECHANGE_H__
 
-#include "Wavvy.h" // for HAVE_LIBUDEV_H
+#include "Wavacity.h" // for HAVE_LIBUDEV_H
 
 #include "Experimental.h"
 

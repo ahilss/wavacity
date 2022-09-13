@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "TrackButtonHandles.h"
 
 #include "../../Project.h"
@@ -35,7 +35,7 @@ MinimizeButtonHandle::~MinimizeButtonHandle()
 }
 
 UIHandle::Result MinimizeButtonHandle::CommitChanges
-(const wxMouseEvent &, WavvyProject *pProject, wxWindow*)
+(const wxMouseEvent &, WavacityProject *pProject, wxWindow*)
 {
    using namespace RefreshCode;
 
@@ -58,7 +58,7 @@ UIHandle::Result MinimizeButtonHandle::CommitChanges
 }
 
 TranslatableString MinimizeButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &) const
+   const wxMouseState &, WavacityProject &) const
 {
    auto pTrack = GetTrack();
    return TrackView::Get( *pTrack ).GetMinimized()
@@ -93,7 +93,7 @@ SelectButtonHandle::~SelectButtonHandle()
 }
 
 UIHandle::Result SelectButtonHandle::CommitChanges
-(const wxMouseEvent &event, WavvyProject *pProject, wxWindow*)
+(const wxMouseEvent &event, WavacityProject *pProject, wxWindow*)
 {
    using namespace RefreshCode;
 
@@ -110,7 +110,7 @@ UIHandle::Result SelectButtonHandle::CommitChanges
 }
 
 TranslatableString SelectButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &) const
+   const wxMouseState &, WavacityProject &) const
 {
    auto pTrack = GetTrack();
 #if defined(__WXMAC__)
@@ -149,7 +149,7 @@ CloseButtonHandle::~CloseButtonHandle()
 }
 
 UIHandle::Result CloseButtonHandle::CommitChanges
-(const wxMouseEvent &, WavvyProject *pProject, wxWindow*)
+(const wxMouseEvent &, WavacityProject *pProject, wxWindow*)
 {
    using namespace RefreshCode;
    Result result = RefreshNone;
@@ -173,7 +173,7 @@ UIHandle::Result CloseButtonHandle::CommitChanges
 }
 
 TranslatableString CloseButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &project) const
+   const wxMouseState &, WavacityProject &project) const
 {
    auto name = XO("Close");
    auto focused =
@@ -217,7 +217,7 @@ MenuButtonHandle::~MenuButtonHandle()
 }
 
 UIHandle::Result MenuButtonHandle::CommitChanges
-(const wxMouseEvent &, WavvyProject *pProject, wxWindow *WXUNUSED(pParent))
+(const wxMouseEvent &, WavacityProject *pProject, wxWindow *WXUNUSED(pParent))
 {
    auto &trackPanel = TrackPanel::Get( *pProject );
    auto pCell = mpCell.lock();
@@ -233,7 +233,7 @@ UIHandle::Result MenuButtonHandle::CommitChanges
 }
 
 TranslatableString MenuButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &project) const
+   const wxMouseState &, WavacityProject &project) const
 {
    auto name = XO("Open menu...");
    auto focused =

@@ -9,7 +9,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Contrast.h"
 
 #include "../CommonCommandFlags.h"
@@ -24,7 +24,7 @@
 #include "../ViewInfo.h"
 #include "../widgets/HelpSystem.h"
 #include "../widgets/NumericTextCtrl.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ErrorDialog.h"
 
 #include <cmath>
@@ -59,7 +59,7 @@ bool ContrastDialog::GetDB(float &dB)
       TrackList::Get( *p ).SelectedLeaders< const WaveTrack >();
    auto numberSelectedTracks = range.size();
    if (numberSelectedTracks > 1) {
-      WavvyMessageDialog m(
+      WavacityMessageDialog m(
          nullptr,
          XO("You can only measure one track at a time."),
          XO("Error"),
@@ -68,7 +68,7 @@ bool ContrastDialog::GetDB(float &dB)
       return false;
    }
    if(numberSelectedTracks == 0) {
-      WavvyMessageDialog m(
+      WavacityMessageDialog m(
          nullptr,
          XO("Please select an audio track."),
          XO("Error"),
@@ -92,7 +92,7 @@ bool ContrastDialog::GetDB(float &dB)
 
       if(SelT0 > SelT1)
       {
-         WavvyMessageDialog m(
+         WavacityMessageDialog m(
             nullptr,
             XO("Invalid audio selection.\nPlease ensure that audio is selected."),
             XO("Error"),
@@ -103,7 +103,7 @@ bool ContrastDialog::GetDB(float &dB)
 
       if(SelT0 == SelT1)
       {
-         WavvyMessageDialog m(
+         WavacityMessageDialog m(
             nullptr,
             XO("Nothing to measure.\nPlease select a section of a track."),
             XO("Error"),
@@ -547,7 +547,7 @@ void ContrastDialog::OnExport(wxCommandEvent & WXUNUSED(event))
    wxFFileOutputStream ffStream{ fName };
 
    if (!ffStream.IsOk()) {
-      WavvyMessageBox( XO("Couldn't write to file: %s").Format( fName ) );
+      WavacityMessageBox( XO("Couldn't write to file: %s").Format( fName ) );
       return;
    }
 
@@ -657,8 +657,8 @@ void ContrastDialog::OnReset(wxCommandEvent & /*event*/)
 namespace {
 
 // Contrast window attached to each project is built on demand by:
-WavvyProject::AttachedWindows::RegisteredFactory sContrastDialogKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sContrastDialogKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       auto &window = ProjectWindow::Get( parent );
       return safenew ContrastDialog(
          &window, -1, XO("Contrast Analysis (WCAG 2 compliance)"),
@@ -683,9 +683,9 @@ struct Handler : CommandHandlerObject {
    }
 };
 
-CommandHandlerObject &findCommandHandler(WavvyProject &) {
+CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static Handler instance;
    return instance;
 }

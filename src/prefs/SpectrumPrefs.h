@@ -18,8 +18,8 @@
 */
 
 
-#ifndef __WAVVY_SPECTRUM_PREFS__
-#define __WAVVY_SPECTRUM_PREFS__
+#ifndef __WAVACITY_SPECTRUM_PREFS__
+#define __WAVACITY_SPECTRUM_PREFS__
 
 #include "../Experimental.h"
 
@@ -44,7 +44,7 @@ class SpectrumPrefs final : public PrefsPanel
 {
  public:
    SpectrumPrefs(wxWindow * parent, wxWindowID winid,
-      WavvyProject *pProject, WaveTrack *wt);
+      WavacityProject *pProject, WaveTrack *wt);
    virtual ~SpectrumPrefs();
    ComponentInterfaceSymbol GetSymbol() override;
    TranslatableString GetDescription() override;
@@ -69,7 +69,7 @@ class SpectrumPrefs final : public PrefsPanel
 
    void EnableDisableSTFTOnlyControls();
 
-   WavvyProject *mProject{};
+   WavacityProject *mProject{};
 
    WaveTrack *const mWt;
    bool mDefaulted, mOrigDefaulted;

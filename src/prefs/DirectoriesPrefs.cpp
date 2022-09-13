@@ -15,7 +15,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "DirectoriesPrefs.h"
 
 #include <math.h>
@@ -35,7 +35,7 @@
 #include "../Prefs.h"
 #include "../ShuttleGui.h"
 #include "../TempDirectory.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ReadOnlyText.h"
 #include "../widgets/wxTextCtrlWrapper.h"
 
@@ -295,7 +295,7 @@ void DirectoriesPrefs::OnTempBrowse(wxCommandEvent &evt)
          return;
       }
 
-      // Append an "wavvy_temp" directory to this path if necessary (the
+      // Append an "wavacity_temp" directory to this path if necessary (the
       // default, the existing pref (as stored in the control), and any path
       // ending in a directory with the same name as what we'd add should be OK
       // already)
@@ -306,7 +306,7 @@ void DirectoriesPrefs::OnTempBrowse(wxCommandEvent &evt)
       // Clearing Bug 1271 residual issue.  Let's NOT have temp in the name.
       newDirName = wxT("SessionData");
 #else
-      newDirName = wxT(".wavvy_temp");
+      newDirName = wxT(".wavacity_temp");
 #endif
       auto dirsInPath = tmpDirPath.GetDirs();
 
@@ -381,7 +381,7 @@ bool DirectoriesPrefs::Validate()
 
    wxString path{Temp.GetPath()};
    if( !IsTempDirectoryNameOK( path ) ) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Directory %s is not suitable (at risk of being cleaned out)")
             .Format( path ),
          XO("Error"),
@@ -390,7 +390,7 @@ bool DirectoriesPrefs::Validate()
    }
 
    if (!Temp.DirExists()) {
-      int ans = WavvyMessageBox(
+      int ans = WavacityMessageBox(
          XO("Directory %s does not exist. Create it?")
             .Format( path ),
          XO("New Temporary Directory"),
@@ -411,7 +411,7 @@ bool DirectoriesPrefs::Validate()
       Temp.AppendDir(wxT("canicreate"));
       path =  Temp.GetPath();
       if (!Temp.Mkdir(0755)) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Directory %s is not writable")
                .Format( path ),
             XO("Error"),
@@ -425,9 +425,9 @@ bool DirectoriesPrefs::Validate()
    wxFileName oldDir;
    oldDir.SetPath(TempDir());
    if (Temp != oldDir) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
-"Changes to temporary directory will not take effect until Wavvy is restarted"),
+"Changes to temporary directory will not take effect until Wavacity is restarted"),
          XO("Temp Directory Update"),
          wxOK | wxCENTRE | wxICON_INFORMATION);
    }
@@ -446,7 +446,7 @@ bool DirectoriesPrefs::Commit()
 PrefsPanel::Factory
 DirectoriesPrefsFactory()
 {
-   return [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   return [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew DirectoriesPrefs(parent, winid);

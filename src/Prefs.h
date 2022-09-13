@@ -7,11 +7,11 @@
   Dominic Mazzoni
   Markus Meyer
 
-  Wavvy uses wxWidgets' wxFileConfig class to handle preferences.
-  In Wavvy versions prior to 1.3.1, it used wxConfig, which would
+  Wavacity uses wxWidgets' wxFileConfig class to handle preferences.
+  In Wavacity versions prior to 1.3.1, it used wxConfig, which would
   store the prefs in a platform-dependent way (e.g. in the registry
   on Windows). Now it always stores the settings in a configuration file
-  in the Wavvy Data Directory.
+  in the Wavacity Data Directory.
 
   Every time we read a preference, we need to specify the default
   value for that preference, to be used if the preference hasn't
@@ -26,12 +26,12 @@
   track of...
 
 **********************************************************************/
-#ifndef __WAVVY_PREFS__
-#define __WAVVY_PREFS__
+#ifndef __WAVACITY_PREFS__
+#define __WAVACITY_PREFS__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 #include "MemoryX.h" // for wxArrayStringEx
 #include "widgets/FileConfig.h"
 
@@ -44,7 +44,7 @@ class wxFileName;
 void InitPreferences( std::unique_ptr<wxConfig> uPrefs );
 void FinishPreferences();
 
-extern WAVVY_DLL_API wxConfig *gPrefs;
+extern WAVACITY_DLL_API wxConfig *gPrefs;
 extern int gMenusDirty;
 
 
@@ -208,7 +208,7 @@ public:
 wxDECLARE_EVENT(EVT_PREFS_UPDATE, wxCommandEvent);
 
 // Invoke UpdatePrefs() when Preference dialog commits changes.
-class WAVVY_DLL_API PrefsListener
+class WAVACITY_DLL_API PrefsListener
 {
 public:
    PrefsListener();

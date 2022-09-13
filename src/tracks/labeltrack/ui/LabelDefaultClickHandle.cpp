@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "LabelDefaultClickHandle.h"
 
 #include "LabelTrackView.h"
@@ -31,7 +31,7 @@ struct LabelDefaultClickHandle::LabelState {
    > mPairs;
 };
 
-void LabelDefaultClickHandle::SaveState( WavvyProject *pProject )
+void LabelDefaultClickHandle::SaveState( WavacityProject *pProject )
 {
    mLabelState = std::make_shared<LabelState>();
    auto &pairs = mLabelState->mPairs;
@@ -44,7 +44,7 @@ void LabelDefaultClickHandle::SaveState( WavvyProject *pProject )
    }
 }
 
-void LabelDefaultClickHandle::RestoreState( WavvyProject *pProject )
+void LabelDefaultClickHandle::RestoreState( WavacityProject *pProject )
 {
    if ( mLabelState ) {
       for ( const auto &pair : mLabelState->mPairs )
@@ -57,7 +57,7 @@ void LabelDefaultClickHandle::RestoreState( WavvyProject *pProject )
 }
 
 UIHandle::Result LabelDefaultClickHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    // Redraw to show the change of text box selection status
@@ -81,20 +81,20 @@ UIHandle::Result LabelDefaultClickHandle::Click
 }
 
 UIHandle::Result LabelDefaultClickHandle::Drag
-(const TrackPanelMouseEvent &WXUNUSED(evt), WavvyProject *WXUNUSED(pProject))
+(const TrackPanelMouseEvent &WXUNUSED(evt), WavacityProject *WXUNUSED(pProject))
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result LabelDefaultClickHandle::Release
-(const TrackPanelMouseEvent &WXUNUSED(evt), WavvyProject *WXUNUSED(pProject),
+(const TrackPanelMouseEvent &WXUNUSED(evt), WavacityProject *WXUNUSED(pProject),
  wxWindow *WXUNUSED(pParent))
 {
    mLabelState.reset();
    return RefreshCode::RefreshNone;
 }
 
-UIHandle::Result LabelDefaultClickHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result LabelDefaultClickHandle::Cancel(WavacityProject *pProject)
 {
    UIHandle::Result result = RefreshCode::RefreshNone;
    RestoreState( pProject );

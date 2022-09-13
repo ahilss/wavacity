@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIMETRACK__
-#define __WAVVY_TIMETRACK__
+#ifndef __WAVACITY_TIMETRACK__
+#define __WAVACITY_TIMETRACK__
 
 #include "Track.h"
 
@@ -42,7 +42,7 @@ class TimeTrack final : public Track {
 
    bool SupportsBasicEditing() const override;
 
-   Holder PasteInto( WavvyProject & ) const override;
+   Holder PasteInto( WavacityProject & ) const override;
 
    Holder Cut( double t0, double t1 ) override;
    Holder Copy( double t0, double t1, bool forClipboard ) const override;
@@ -120,5 +120,5 @@ private:
 };
 
 
-#endif // __WAVVY_TIMETRACK__
+#endif // __WAVACITY_TIMETRACK__
 

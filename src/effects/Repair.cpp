@@ -21,7 +21,7 @@ the audio, rather than actually finding the clicks.
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Repair.h"
 
 #include <math.h>
@@ -30,7 +30,7 @@ the audio, rather than actually finding the clicks.
 
 #include "../InterpolateAudio.h"
 #include "../WaveTrack.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 #include "LoadEffects.h"
 

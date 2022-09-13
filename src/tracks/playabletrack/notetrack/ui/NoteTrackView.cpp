@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h" // for USE_* macros
+#include "../../../../Wavacity.h" // for USE_* macros
 #include "NoteTrackView.h"
 
 #ifdef USE_MIDI
@@ -43,7 +43,7 @@ NoteTrackView::~NoteTrackView()
 
 std::vector<UIHandlePtr> NoteTrackView::DetailedHitTest
 (const TrackPanelMouseState &WXUNUSED(state),
- const WavvyProject *WXUNUSED(pProject), int, bool )
+ const WavacityProject *WXUNUSED(pProject), int, bool )
 {
    // Eligible for stretch?
    UIHandlePtr result;

@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "EditCursorOverlay.h"
 
 #include "TrackView.h"
@@ -30,8 +30,8 @@ namespace {
    }
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sOverlayKey{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sOverlayKey{
+  []( WavacityProject &parent ){
      auto result = std::make_shared< EditCursorOverlay >( &parent );
      TrackPanel::Get( parent ).AddOverlay( result );
      return result;
@@ -40,7 +40,7 @@ static const WavvyProject::AttachedObjects::RegisteredFactory sOverlayKey{
 
 void RegisterEditCursorOverlay() {}
 
-EditCursorOverlay::EditCursorOverlay(WavvyProject *project, bool isMaster)
+EditCursorOverlay::EditCursorOverlay(WavacityProject *project, bool isMaster)
    : mProject(project)
    , mIsMaster(isMaster)
    , mLastCursorX(-1)

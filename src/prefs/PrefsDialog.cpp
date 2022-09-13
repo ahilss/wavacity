@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "PrefsDialog.h"
 
 #include <wx/app.h>
@@ -220,8 +220,8 @@ wxAccStatus TreeCtrlAx::GetDescription( int WXUNUSED(childId), wxString *descrip
    return wxACC_OK;
 }
 
-// This isn't really used yet by wxWidgets as patched by Wavvy for
-// Mac accessibility, as of Wavvy 2.3.2, but here it is anyway, keeping the
+// This isn't really used yet by wxWidgets as patched by Wavacity for
+// Mac accessibility, as of Wavacity 2.3.2, but here it is anyway, keeping the
 // analogy with TrackPanelAx
 wxAccStatus TreeCtrlAx::GetFocus( int *childId, wxAccessible **child )
 {
@@ -443,10 +443,10 @@ int wxTreebookExt::SetSelection(size_t n)
 }
 
 PrefsDialog::PrefsDialog(
-   wxWindow * parent, WavvyProject *pProject,
+   wxWindow * parent, WavacityProject *pProject,
    const TranslatableString &titlePrefix,
    PrefsPanel::Factories &factories)
-:  wxDialogWrapper(parent, wxID_ANY, XO("Wavvy Preferences"),
+:  wxDialogWrapper(parent, wxID_ANY, XO("Wavacity Preferences"),
             wxDefaultPosition,
             wxDefaultSize,
             wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
@@ -747,7 +747,7 @@ void PrefsDialog::OnOK(wxCommandEvent & WXUNUSED(event))
    if (gAudioIO) {
       // We cannot have opened this dialog if gAudioIO->IsAudioTokenActive(),
       // per the setting of AudioIONotBusyFlag and AudioIOBusyFlag in
-      // WavvyProject::GetUpdateFlags().
+      // WavacityProject::GetUpdateFlags().
       // However, we can have an invalid audio token (so IsAudioTokenActive()
       // is false), but be monitoring.
       // If monitoring, have to stop the stream, so HandleDeviceChange() can work.
@@ -772,7 +772,7 @@ void PrefsDialog::OnOK(wxCommandEvent & WXUNUSED(event))
    //      handled instead by delayed event processing?
 
    // LL:  wxMac can't handle recreating the menus when this dialog is still active,
-   //      so WavvyProject::UpdatePrefs() or any of the routines it calls must
+   //      so WavacityProject::UpdatePrefs() or any of the routines it calls must
    //      not cause MenuCreator::RebuildMenuBar() to be executed.
 
    wxTheApp->AddPendingEvent(wxCommandEvent{ EVT_PREFS_UPDATE });
@@ -806,7 +806,7 @@ int PrefsDialog::GetSelectedPage() const
 }
 
 GlobalPrefsDialog::GlobalPrefsDialog(
-   wxWindow * parent, WavvyProject *pProject,
+   wxWindow * parent, WavacityProject *pProject,
    PrefsPanel::Factories &factories)
    : PrefsDialog(parent, pProject, XO("Preferences:"), factories)
 {
@@ -846,7 +846,7 @@ void PrefsDialog::RecordExpansionState()
 #include "../Menus.h"
 #include "../Project.h"
 
-void DoReloadPreferences( WavvyProject &project )
+void DoReloadPreferences( WavacityProject &project )
 {
    PreferenceInitializer::ReinitializeAll();
 
@@ -869,7 +869,7 @@ void DoReloadPreferences( WavvyProject &project )
       //
       //   http://bugzilla.audacityteam.org/show_bug.cgi?id=458
       //
-      // This workaround should be removed when Wavvy updates to wxWidgets
+      // This workaround should be removed when Wavacity updates to wxWidgets
       // 3.x which has a fix.
       auto &window = GetProjectFrame( *p );
       wxRect r = window.GetRect();

@@ -4,12 +4,12 @@ Audacity: A Digital Audio Editor
 
 ProjectSettings.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_SETTINGS__
-#define __WAVVY_PROJECT_SETTINGS__
+#ifndef __WAVACITY_PROJECT_SETTINGS__
+#define __WAVACITY_PROJECT_SETTINGS__
 
 #include <atomic>
 #include <wx/event.h> // to declare custom event type
@@ -17,10 +17,10 @@ Paul Licameli split from WavvyProject.h
 #include "ClientData.h" // to inherit
 #include "Prefs.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 
 // Sent to the project when certain settings change
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
    EVT_PROJECT_SETTINGS_CHANGE, wxCommandEvent);
 
 enum
@@ -52,8 +52,8 @@ class ProjectSettings final
    , private PrefsListener
 {
 public:
-   static ProjectSettings &Get( WavvyProject &project );
-   static const ProjectSettings &Get( const WavvyProject &project );
+   static ProjectSettings &Get( WavacityProject &project );
+   static const ProjectSettings &Get( const WavacityProject &project );
    
    // Values retrievable from GetInt() of the event for settings change
    enum EventCode : int {
@@ -61,7 +61,7 @@ public:
       ChangedProjectRate
    };
 
-   explicit ProjectSettings( WavvyProject &project );
+   explicit ProjectSettings( WavacityProject &project );
    ProjectSettings( const ProjectSettings & ) PROHIBITED;
    ProjectSettings &operator=( const ProjectSettings & ) PROHIBITED;
 
@@ -121,7 +121,7 @@ public:
 private:
    void UpdatePrefs() override;
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    NumericFormatSymbol mSelectionFormat;
    NumericFormatSymbol mFrequencySelectionFormatName;

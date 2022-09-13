@@ -29,8 +29,8 @@
   you need to use doubles.
 
 **********************************************************************/
-#ifndef __WAVVY_FFT_H__
-#define __WAVVY_FFT_H__
+#ifndef __WAVACITY_FFT_H__
+#define __WAVACITY_FFT_H__
 
 #include <wx/defs.h>
 

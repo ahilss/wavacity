@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ZOOM_INFO__
-#define __WAVVY_ZOOM_INFO__
+#ifndef __WAVACITY_ZOOM_INFO__
+#define __WAVACITY_ZOOM_INFO__
 
 #include "ClientData.h" // to inherit
 #include "Prefs.h" // to inherit
@@ -20,7 +20,7 @@
 #define CONST const
 #endif
 
-class WavvyProject;
+class WavacityProject;
 
 // See big pictorial comment in TrackPanel.cpp for explanation of these numbers
 enum : int {
@@ -39,7 +39,7 @@ enum : int {
 // The subset of ViewInfo information (other than selection)
 // that is sufficient for purposes of TrackArtist,
 // and for computing conversions between track times and pixel positions.
-class WAVVY_DLL_API ZoomInfo /* not final */
+class WAVACITY_DLL_API ZoomInfo /* not final */
    // Note that ViewInfo inherits from ZoomInfo but there are no virtual functions.
    // That's okay if we pass always by reference and never copy, suffering "slicing."
    : public ClientData::Base

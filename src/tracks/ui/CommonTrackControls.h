@@ -8,8 +8,8 @@ Paul Licameli split from TrackControls.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMON_TRACK_CONTROLS__
-#define __WAVVY_COMMON_TRACK_CONTROLS__
+#ifndef __WAVACITY_COMMON_TRACK_CONTROLS__
+#define __WAVACITY_COMMON_TRACK_CONTROLS__
 
 #include "TrackControls.h" // to inherit
 
@@ -33,7 +33,7 @@ public:
    struct InitMenuData
    {
    public:
-      WavvyProject &project;
+      WavacityProject &project;
       Track *pTrack;
       wxWindow *pParent;
       unsigned result;
@@ -51,11 +51,11 @@ protected:
    // still marked pure virtual
    virtual std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *) override = 0;
+       const WavacityProject *) override = 0;
 
    unsigned DoContextMenu
       (const wxRect &rect, wxWindow *pParent, wxPoint *pPosition,
-       WavvyProject *pProject) override;
+       WavacityProject *pProject) override;
    virtual PopupMenuTable *GetMenuExtension(Track *pTrack) = 0;
 
    // TrackPanelDrawable implementation

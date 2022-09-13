@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVETRACK__
-#define __WAVVY_WAVETRACK__
+#ifndef __WAVACITY_WAVETRACK__
+#define __WAVACITY_WAVETRACK__
 
 #include "Track.h"
 
@@ -65,7 +65,7 @@ using Regions = std::vector < Region >;
 
 class Envelope;
 
-class WAVVY_DLL_API WaveTrack final : public PlayableTrack {
+class WAVACITY_DLL_API WaveTrack final : public PlayableTrack {
 public:
 
    //
@@ -537,7 +537,7 @@ private:
       std::shared_ptr<WaveClip> pClip;
    };
 
-   Track::Holder PasteInto( WavvyProject & ) const override;
+   Track::Holder PasteInto( WavacityProject & ) const override;
 
    ConstIntervals GetIntervals() const override;
    Intervals GetIntervals() override;
@@ -670,14 +670,14 @@ void VisitBlocks(TrackList &tracks, BlockVisitor visitor,
 void InspectBlocks(const TrackList &tracks, BlockInspector inspector,
    SampleBlockIDSet *pIDs = nullptr);
 
-class WAVVY_DLL_API WaveTrackFactory final
+class WAVACITY_DLL_API WaveTrackFactory final
    : public ClientData::Base
 {
  public:
-   static WaveTrackFactory &Get( WavvyProject &project );
-   static const WaveTrackFactory &Get( const WavvyProject &project );
-   static WaveTrackFactory &Reset( WavvyProject &project );
-   static void Destroy( WavvyProject &project );
+   static WaveTrackFactory &Get( WavacityProject &project );
+   static const WaveTrackFactory &Get( const WavacityProject &project );
+   static WaveTrackFactory &Reset( WavacityProject &project );
+   static void Destroy( WavacityProject &project );
 
    WaveTrackFactory( const ProjectSettings &settings,
       const SampleBlockFactoryPtr &pFactory)
@@ -701,4 +701,4 @@ class WAVVY_DLL_API WaveTrackFactory final
       double rate = 0);
 };
 
-#endif // __WAVVY_WAVETRACK__
+#endif // __WAVACITY_WAVETRACK__

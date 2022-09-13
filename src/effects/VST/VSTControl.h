@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef WAVVY_VSTCONTROL_H
-#define WAVVY_VSTCONTROL_H
+#ifndef WAVACITY_VSTCONTROL_H
+#define WAVACITY_VSTCONTROL_H
 
 #include <wx/control.h> // to inherit
 

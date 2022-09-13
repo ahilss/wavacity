@@ -9,16 +9,16 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ERRORDIALOG__
-#define __WAVVY_ERRORDIALOG__
+#ifndef __WAVACITY_ERRORDIALOG__
+#define __WAVACITY_ERRORDIALOG__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/defs.h>
 #include <wx/msgdlg.h> // to inherit
 #include "wxPanelWrapper.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 class wxCollapsiblePaneEvent;
 
 class ErrorDialog /* not final */ : public wxDialogWrapper
@@ -64,13 +64,13 @@ void ShowModelessErrorDialog(wxWindow *parent,
 #include <wx/textdlg.h> // to inherit
 
 /**************************************************************************//**
-\class WavvyTextEntryDialog
+\class WavacityTextEntryDialog
 \brief Wrap wxTextEntryDialog so that caption IS translatable.
 ********************************************************************************/
-class WavvyTextEntryDialog : public wxTabTraversalWrapper< wxTextEntryDialog >
+class WavacityTextEntryDialog : public wxTabTraversalWrapper< wxTextEntryDialog >
 {
 public:
-    WavvyTextEntryDialog(
+    WavacityTextEntryDialog(
          wxWindow *parent,
          const TranslatableString& message,
          const TranslatableString& caption, // don't use = wxGetTextFromUserPromptStr,
@@ -89,4 +89,4 @@ private:
    bool mSetInsertionPointEnd{};
 };
 
-#endif // __WAVVY_ERRORDIALOG__
+#endif // __WAVACITY_ERRORDIALOG__

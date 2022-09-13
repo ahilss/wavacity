@@ -6,11 +6,11 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_KEYVIEW__
-#define __WAVVY_WIDGETS_KEYVIEW__
+#ifndef __WAVACITY_WIDGETS_KEYVIEW__
+#define __WAVACITY_WIDGETS_KEYVIEW__
 
-#include "../Wavvy.h"
-#include "wavvy/Types.h"
+#include "../Wavacity.h"
+#include "wavacity/Types.h"
 
 #include <vector>
 #include <wx/setup.h> // for wxUSE_* macros

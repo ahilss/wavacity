@@ -7,20 +7,20 @@
   Leland Lucius
 
 **********************************************************************/
-#ifndef __WAVVY_XML_XML_FILE_WRITER__
-#define __WAVVY_XML_XML_FILE_WRITER__
+#ifndef __WAVACITY_XML_XML_FILE_WRITER__
+#define __WAVACITY_XML_XML_FILE_WRITER__
 
 #include <vector>
 #include <wx/ffile.h> // to inherit
 
 #include "../FileException.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 ///
 /// XMLWriter
 ///
-class WAVVY_DLL_API XMLWriter /* not final */ {
+class WAVACITY_DLL_API XMLWriter /* not final */ {
 
  public:
 
@@ -78,7 +78,7 @@ class WAVVY_DLL_API XMLWriter /* not final */ {
 /// If the construction and all operations are inside a GuardedCall or event
 /// handler, then the default delayed handler action in case of exceptions will
 /// notify the user of problems.
-class WAVVY_DLL_API XMLFileWriter final : private wxFFile, public XMLWriter {
+class WAVACITY_DLL_API XMLFileWriter final : private wxFFile, public XMLWriter {
 
  public:
 

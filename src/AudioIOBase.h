@@ -8,10 +8,10 @@ Paul Licameli split from AudioIO.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_AUDIO_IO_BASE__
-#define __WAVVY_AUDIO_IO_BASE__
+#ifndef __WAVACITY_AUDIO_IO_BASE__
+#define __WAVACITY_AUDIO_IO_BASE__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Experimental.h"
 
 #include <atomic>
@@ -31,7 +31,7 @@ typedef void PxMixer;
 
 class AudioIOBase;
 
-class WavvyProject;
+class WavacityProject;
 class AudioIOListener;
 class BoundedEnvelope;
 class MeterPanelBase;
@@ -75,7 +75,7 @@ struct ScrubbingOptions {
 struct AudioIOStartStreamOptions
 {
    explicit
-   AudioIOStartStreamOptions(WavvyProject *pProject_, double rate_)
+   AudioIOStartStreamOptions(WavacityProject *pProject_, double rate_)
       : pProject{ pProject_ }
       , envelope(nullptr)
       , rate(rate_)
@@ -86,7 +86,7 @@ struct AudioIOStartStreamOptions
       , preRoll(0.0)
    {}
 
-   WavvyProject *pProject{};
+   WavacityProject *pProject{};
    MeterPanelBase *captureMeter{}, *playbackMeter{};
    const BoundedEnvelope *envelope; // for time warping
    std::shared_ptr< AudioIOListener > listener;
@@ -115,15 +115,15 @@ struct AudioIOStartStreamOptions
 
 ///\brief A singleton object supporting queries of the state of any active
 /// audio streams, and audio device capabilities
-class WAVVY_DLL_API AudioIOBase /* not final */
+class WAVACITY_DLL_API AudioIOBase /* not final */
 {
 public:
    static AudioIOBase *Get();
 
    virtual ~AudioIOBase();
 
-   void SetCaptureMeter(WavvyProject *project, MeterPanelBase *meter);
-   void SetPlaybackMeter(WavvyProject *project, MeterPanelBase *meter);
+   void SetCaptureMeter(WavacityProject *project, MeterPanelBase *meter);
+   void SetPlaybackMeter(WavacityProject *project, MeterPanelBase *meter);
 
    /** \brief update state after changing what audio devices are selected
     *
@@ -204,7 +204,7 @@ public:
    /** \brief Array of common audio sample rates
     *
     * These are the rates we will always support, regardless of hardware support
-    * for them (by resampling in wavvy if needed) */
+    * for them (by resampling in wavacity if needed) */
    static const int StandardRates[];
    /** \brief How many standard sample rates there are */
    static const int NumStandardRates;
@@ -263,7 +263,7 @@ protected:
    static wxString DeviceName(const PaDeviceInfo* info);
    static wxString HostName(const PaDeviceInfo* info);
 
-   WavvyProject    *mOwningProject;
+   WavacityProject    *mOwningProject;
 
    /// True if audio playback is paused
    bool                mPaused;

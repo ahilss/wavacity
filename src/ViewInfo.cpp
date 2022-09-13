@@ -148,8 +148,8 @@ void NotifyingSelectedRegion::Notify( bool delayed )
       ProcessEvent( evt );
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   []( WavvyProject &project ) {
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   []( WavacityProject &project ) {
       auto result =
          std::make_unique<ViewInfo>(0.0, 1.0, ZoomInfo::GetDefaultZoom());
       project.Bind(EVT_TRACK_PANEL_TIMER,
@@ -159,14 +159,14 @@ static const WavvyProject::AttachedObjects::RegisteredFactory key{
    }
 };
 
-ViewInfo &ViewInfo::Get( WavvyProject &project )
+ViewInfo &ViewInfo::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ViewInfo >( key );
 }
 
-const ViewInfo &ViewInfo::Get( const WavvyProject &project )
+const ViewInfo &ViewInfo::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 ViewInfo::ViewInfo(double start, double screenDuration, double pixelsPerSecond)

@@ -22,7 +22,7 @@ other settings.
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "DevicePrefs.h"
 
 #include "RecordingPrefs.h"
@@ -425,7 +425,7 @@ bool DevicePrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Device",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew DevicePrefs(parent, winid);

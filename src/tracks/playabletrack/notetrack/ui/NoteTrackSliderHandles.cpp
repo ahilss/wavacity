@@ -8,7 +8,7 @@
 
  **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "NoteTrackSliderHandles.h"
 
 #include "../../../../Experimental.h"
@@ -49,7 +49,7 @@ float VelocitySliderHandle::GetValue()
 }
 
 UIHandle::Result VelocitySliderHandle::SetValue
-(WavvyProject *pProject, float newValue)
+(WavacityProject *pProject, float newValue)
 {
    (void)pProject;//Compiler food
    auto pTrack = GetNoteTrack();
@@ -62,7 +62,7 @@ UIHandle::Result VelocitySliderHandle::SetValue
 }
 
 UIHandle::Result VelocitySliderHandle::CommitChanges
-(const wxMouseEvent &, WavvyProject *pProject)
+(const wxMouseEvent &, WavacityProject *pProject)
 {
    ProjectHistory::Get( *pProject )
       .PushState(XO("Moved velocity slider"), XO("Velocity"),
@@ -71,7 +71,7 @@ UIHandle::Result VelocitySliderHandle::CommitChanges
 }
 
 TranslatableString VelocitySliderHandle::Tip(
-   const wxMouseState &, WavvyProject &project) const
+   const wxMouseState &, WavacityProject &project) const
 {
    TranslatableString val;
    float value = 0;
@@ -108,7 +108,7 @@ UIHandlePtr VelocitySliderHandle::HitTest
       return {};
    if (sliderRect.Contains(state.m_x, state.m_y)) {
       auto sliderFn =
-      []( WavvyProject *pProject, const wxRect &sliderRect, Track *pTrack ) {
+      []( WavacityProject *pProject, const wxRect &sliderRect, Track *pTrack ) {
          return NoteTrackControls::VelocitySlider
             (sliderRect, static_cast<NoteTrack*>( pTrack ), true,
              &TrackPanel::Get( *pProject ));

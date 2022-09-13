@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LEGACYALIASBLOCKFILE__
-#define __WAVVY_LEGACYALIASBLOCKFILE__
+#ifndef __WAVACITY_LEGACYALIASBLOCKFILE__
+#define __WAVACITY_LEGACYALIASBLOCKFILE__
 
 #include "PCMAliasBlockFile.h"
 

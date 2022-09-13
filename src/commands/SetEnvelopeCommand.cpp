@@ -16,7 +16,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SetEnvelopeCommand.h"
 
 #include "LoadCommands.h"

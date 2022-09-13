@@ -9,18 +9,18 @@
 ********************************************************************//**
 
 \class SplashDialog
-\brief The SplashDialog shows help information for Wavvy when
-Wavvy starts up.
+\brief The SplashDialog shows help information for Wavacity when
+Wavacity starts up.
 
 It was written for the benefit of NEW users who do not want to
 read the manual.  The text of the dialog is kept short to increase the
 chance of it being read.  The content is designed to reduce the
-most commonly asked questions about Wavvy.
+most commonly asked questions about Wavacity.
 
 *//********************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "SplashDialog.h"
 
 #include "Experimental.h"
@@ -37,7 +37,7 @@ most commonly asked questions about Wavvy.
 #include "FileNames.h"
 #include "Project.h"
 #include "ShuttleGui.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/HelpSystem.h"
 
 #include "AllThemeResources.h"
@@ -46,9 +46,9 @@ most commonly asked questions about Wavvy.
 
 // DA: Logo for Splash Dialog (welcome dialog)
 #ifdef EXPERIMENTAL_DA
-#include "../images/DarkWavvyLogoWithName.xpm"
+#include "../images/DarkWavacityLogoWithName.xpm"
 #else
-#include "../images/WavvyLogoWithName.xpm"
+#include "../images/WavacityLogoWithName.xpm"
 #endif
 
 SplashDialog * SplashDialog::pSelf=NULL;
@@ -65,13 +65,13 @@ END_EVENT_TABLE()
 
 IMPLEMENT_CLASS(SplashDialog, wxDialogWrapper)
 
-void SplashDialog::DoHelpWelcome( WavvyProject &project )
+void SplashDialog::DoHelpWelcome( WavacityProject &project )
 {
    Show2( &GetProjectFrame( project ) );
 }
 
 SplashDialog::SplashDialog(wxWindow * parent)
-   :  wxDialogWrapper(parent, -1, XO("Welcome to Wavvy!"),
+   :  wxDialogWrapper(parent, -1, XO("Welcome to Wavacity!"),
       wxPoint( -1, 60 ), // default x position, y position 60 pixels from top of screen.
       wxDefaultSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
 {
@@ -98,8 +98,8 @@ void SplashDialog::Populate( ShuttleGui & S )
    gPrefs->Read(wxT("/GUI/ShowSplashScreen"), &bShow, true );
    S.StartVerticalLay(1);
 
-   //v For now, change to WavvyLogoWithName via old-fashioned ways, not Theme.
-   m_pLogo = std::make_unique<wxBitmap>((const char **) WavvyLogoWithName_xpm); //v
+   //v For now, change to WavacityLogoWithName via old-fashioned ways, not Theme.
+   m_pLogo = std::make_unique<wxBitmap>((const char **) WavacityLogoWithName_xpm); //v
 
 
    // JKC: Resize to 50% of size.  Later we may use a smaller xpm as
@@ -118,7 +118,7 @@ void SplashDialog::Populate( ShuttleGui & S )
    wxBitmap RescaledBitmap( RescaledImage );
    wxStaticBitmap *const icon =
        safenew wxStaticBitmap(S.GetParent(), -1,
-                          //*m_pLogo, //v theTheme.Bitmap(bmpWavvyLogoWithName),
+                          //*m_pLogo, //v theTheme.Bitmap(bmpWavacityLogoWithName),
                           RescaledBitmap,
                           wxDefaultPosition,
                           wxSize((int)(LOGOWITHNAME_WIDTH*fScale), (int)(LOGOWITHNAME_HEIGHT*fScale)));

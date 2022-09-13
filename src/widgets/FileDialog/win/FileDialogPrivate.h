@@ -1,5 +1,5 @@
 //
-// Copied from wxWidgets 3.0.2 and modified for Wavvy
+// Copied from wxWidgets 3.0.2 and modified for Wavacity
 //
 /////////////////////////////////////////////////////////////////////////////
 // Name:        wx/msw/filedlg.h
@@ -22,7 +22,7 @@
 // FileDialog
 //-------------------------------------------------------------------------
 
-class WAVVY_DLL_API FileDialog : public FileDialogBase
+class WAVACITY_DLL_API FileDialog : public FileDialogBase
 {
 public:
    FileDialog();

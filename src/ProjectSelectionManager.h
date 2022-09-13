@@ -8,14 +8,14 @@ Paul Licameli split from ProjectManager.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_SELECTION_MANAGER__
-#define __WAVVY_PROJECT_SELECTION_MANAGER__
+#ifndef __WAVACITY_PROJECT_SELECTION_MANAGER__
+#define __WAVACITY_PROJECT_SELECTION_MANAGER__
 
 #include "ClientData.h" // to inherit
 #include "toolbars/SelectionBarListener.h" // to inherit
 #include "toolbars/SpectralSelectionBarListener.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 
 class ProjectSelectionManager final
    : public ClientData::Base
@@ -24,10 +24,10 @@ class ProjectSelectionManager final
    , public TimeToolBarListener
 {
 public:
-   static ProjectSelectionManager &Get( WavvyProject &project );
-   static const ProjectSelectionManager &Get( const WavvyProject &project );
+   static ProjectSelectionManager &Get( WavacityProject &project );
+   static const ProjectSelectionManager &Get( const WavacityProject &project );
 
-   explicit ProjectSelectionManager( WavvyProject &project );
+   explicit ProjectSelectionManager( WavacityProject &project );
    ProjectSelectionManager( const ProjectSelectionManager & ) PROHIBITED;
    ProjectSelectionManager &operator=(
       const ProjectSelectionManager & ) PROHIBITED;
@@ -58,7 +58,7 @@ public:
 private:
    bool SnapSelection();
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 };
 
 #endif

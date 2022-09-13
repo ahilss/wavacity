@@ -13,10 +13,10 @@ Describes shared object that is used to access FFmpeg libraries.
 
 *//*******************************************************************/
 
-#if !defined(__WAVVY_FFMPEG__)
-#define __WAVVY_FFMPEG__
+#if !defined(__WAVACITY_FFMPEG__)
+#define __WAVACITY_FFMPEG__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 
 #include "widgets/wxPanelWrapper.h" // to inherit
 
@@ -41,7 +41,7 @@ class wxCheckBox;
 /* In order to be able to compile this file when ffmpeg is not available we
  * need access to the value of USE_FFMPEG, which means config*.h needs to come
  * in before this file. The suggest way to achieve this is by including
- * Wavvy.h */
+ * Wavacity.h */
 
 #if defined(USE_FFMPEG)
 extern "C" {
@@ -156,11 +156,11 @@ extern "C" {
 #include "ShuttleGui.h"
 #include "Prefs.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxDynamicLibrary;
 
-// if you needed them, any other wavvy header files would go here
+// if you needed them, any other wavacity header files would go here
 
 /// Callback function to catch FFmpeg log messages.
 void av_log_wx_callback(void* ptr, int level, const char* fmt, va_list vl);
@@ -181,7 +181,7 @@ void FFmpegStartup();
 bool LoadFFmpeg(bool showerror);
 
 
-/// If Wavvy failed to load libav*, this dialog
+/// If Wavacity failed to load libav*, this dialog
 /// shows up and tells user about that. It will pop-up
 /// again and again until it is disabled.
 class FFmpegNotFoundDialog final : public wxDialogWrapper
@@ -255,7 +255,7 @@ public:
 
    wxString GetLibAVFormatPath()
    {
-      wxRegKey reg(wxT("HKEY_LOCAL_MACHINE\\Software\\FFmpeg for Wavvy"));
+      wxRegKey reg(wxT("HKEY_LOCAL_MACHINE\\Software\\FFmpeg for Wavacity"));
       wxString path;
 
       if (reg.Exists()) {
@@ -291,7 +291,7 @@ public:
 
    wxString GetLibAVFormatPath()
    {
-      return wxT("/Library/Application Support/wavvy/libs");
+      return wxT("/Library/Application Support/wavacity/libs");
    }
 
    wxString GetLibAVFormatName()
@@ -1008,7 +1008,7 @@ template<typename T> using AVMallocHolder = std::unique_ptr<
 
 struct streamContext
 {
-   bool                 m_use{};                           // TRUE = this stream will be loaded into Wavvy
+   bool                 m_use{};                           // TRUE = this stream will be loaded into Wavacity
    AVStream            *m_stream{};                        // an AVStream *
    AVCodecContext      *m_codecCtx{};                      // pointer to m_stream->codec
 
@@ -1043,5 +1043,5 @@ using ScsPtr = std::shared_ptr<Scs>;
 extern FFmpegLibs *FFmpegLibsInst();
 
 #endif // USE_FFMPEG
-#endif // __WAVVY_FFMPEG__
+#endif // __WAVACITY_FFMPEG__
 

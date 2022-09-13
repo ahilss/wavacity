@@ -18,9 +18,9 @@
 #define __COMMAND__
 
 #include "CommandSignature.h"
-#include "../commands/WavvyCommand.h"
+#include "../commands/WavacityCommand.h"
 
-class WavvyApp;
+class WavacityApp;
 class CommandContext;
 class CommandOutputTargets;
 
@@ -28,9 +28,9 @@ class CommandOutputTargets;
 class OldStyleCommand /* not final */
 {
 public:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
-   OldStyleCommand(WavvyProject &project) : mProject{ project } {};
+   OldStyleCommand(WavacityProject &project) : mProject{ project } {};
    virtual ~OldStyleCommand() { }
    virtual ComponentInterfaceSymbol GetSymbol() = 0;
    virtual CommandSignature &GetSignature() = 0;
@@ -98,7 +98,7 @@ protected:
 public:
    /// Constructor should not be called directly; only by a factory which
    /// ensures name and params are set appropriately for the command.
-   CommandImplementation(WavvyProject &project, OldStyleCommandType &type);
+   CommandImplementation(WavacityProject &project, OldStyleCommandType &type);
 
    virtual ~CommandImplementation();
 

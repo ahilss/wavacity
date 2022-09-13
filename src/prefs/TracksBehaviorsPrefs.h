@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACKSBEHAVIORS_PREFS__
-#define __WAVVY_TRACKSBEHAVIORS_PREFS__
+#ifndef __WAVACITY_TRACKSBEHAVIORS_PREFS__
+#define __WAVACITY_TRACKSBEHAVIORS_PREFS__
 
 #include "PrefsPanel.h"
 

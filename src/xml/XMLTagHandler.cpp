@@ -21,7 +21,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "XMLTagHandler.h"
 
 #ifdef _WIN32

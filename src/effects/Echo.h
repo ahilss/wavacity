@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_ECHO__
-#define __WAVVY_EFFECT_ECHO__
+#ifndef __WAVACITY_EFFECT_ECHO__
+#define __WAVACITY_EFFECT_ECHO__
 
 #include "Effect.h"
 
@@ -61,4 +61,4 @@ private:
    size_t histLen;
 };
 
-#endif // __WAVVY_EFFECT_ECHO__
+#endif // __WAVACITY_EFFECT_ECHO__

@@ -8,13 +8,13 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EXPORT__
-#define __WAVVY_EXPORT__
+#ifndef __WAVACITY_EXPORT__
+#define __WAVACITY_EXPORT__
 
 #include <functional>
 #include <vector>
 #include <wx/filename.h> // member variable
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include "../SampleFormat.h"
 #include "../widgets/wxPanelWrapper.h" // to inherit
 #include "../FileNames.h" // for FileTypes
@@ -27,7 +27,7 @@ class wxFileCtrlEvent;
 class wxMemoryDC;
 class wxSimplebook;
 class wxStaticText;
-class WavvyProject;
+class WavacityProject;
 class WaveTrack;
 class Tags;
 class TrackList;
@@ -39,7 +39,7 @@ using WaveTrackConstArray = std::vector < std::shared_ptr < const WaveTrack > >;
 enum class ProgressResult : unsigned;
 class wxFileNameWrapper;
 
-class WAVVY_DLL_API FormatInfo
+class WAVACITY_DLL_API FormatInfo
 {
    public:
       FormatInfo() {}
@@ -61,7 +61,7 @@ class WAVVY_DLL_API FormatInfo
 //----------------------------------------------------------------------------
 // ExportPlugin
 //----------------------------------------------------------------------------
-class WAVVY_DLL_API ExportPlugin /* not final */
+class WAVACITY_DLL_API ExportPlugin /* not final */
 {
 public:
 
@@ -122,7 +122,7 @@ public:
     * responsible for alerting the user.  Otherwise ProgressResult::Success or
     * ProgressResult::Stopped
     */
-   virtual ProgressResult Export(WavvyProject *project,
+   virtual ProgressResult Export(WavacityProject *project,
                        std::unique_ptr<ProgressDialog> &pDialog,
                        unsigned channels,
                        const wxFileNameWrapper &fName,
@@ -158,9 +158,9 @@ using ExportPluginArray = std::vector < std::unique_ptr< ExportPlugin > > ;
 //----------------------------------------------------------------------------
 
 // For a file suffix change from the options.
-wxDECLARE_EVENT(WAVVY_FILE_SUFFIX_EVENT, wxCommandEvent);
+wxDECLARE_EVENT(WAVACITY_FILE_SUFFIX_EVENT, wxCommandEvent);
 
-class  WAVVY_DLL_API Exporter final : public wxEvtHandler
+class  WAVACITY_DLL_API Exporter final : public wxEvtHandler
 {
 public:
 
@@ -179,11 +179,11 @@ public:
          const Registry::Placement &placement = { wxEmptyString, {} } );
    };
 
-   static bool DoEditMetadata(WavvyProject &project,
+   static bool DoEditMetadata(WavacityProject &project,
       const TranslatableString &title,
       const TranslatableString &shortUndoDescription, bool force);
 
-   Exporter( WavvyProject &project );
+   Exporter( WavacityProject &project );
    virtual ~Exporter();
 
    void SetFileDialogTitle( const TranslatableString & DialogTitle );
@@ -233,7 +233,7 @@ private:
    FileExtension mFormatName;
    FileDialogWrapper *mDialog;
    TranslatableString mFileDialogTitle;
-   WavvyProject *mProject;
+   WavacityProject *mProject;
    std::unique_ptr<MixerSpec> mMixerSpec;
 
    ExportPluginArray mPlugins;
@@ -324,15 +324,15 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-TranslatableString WavvyExportCaptionStr();
-TranslatableString WavvyExportMessageStr();
+TranslatableString WavacityExportCaptionStr();
+TranslatableString WavacityExportMessageStr();
 
 /// We have many Export errors that are essentially anonymous
 /// and are distinguished only by an error code number.
 /// Rather than repeat the code, we have it just once.
 void ShowExportErrorDialog(wxString ErrorCode,
-   TranslatableString message = WavvyExportMessageStr(),
-   const TranslatableString& caption = WavvyExportCaptionStr());
+   TranslatableString message = WavacityExportMessageStr(),
+   const TranslatableString& caption = WavacityExportCaptionStr());
 
 void ShowDiskFullExportErrorDialog(const wxFileNameWrapper &fileName);
 

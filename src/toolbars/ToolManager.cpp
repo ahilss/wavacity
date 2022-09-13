@@ -24,7 +24,7 @@
 
 *//**********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ToolManager.h"
 
 #include "../Experimental.h"
@@ -72,7 +72,7 @@
 // Constructor
 //
 ToolFrame::ToolFrame
-   ( WavvyProject *parent, ToolManager *manager, ToolBar *bar, wxPoint pos )
+   ( WavacityProject *parent, ToolManager *manager, ToolBar *bar, wxPoint pos )
    : wxFrame( FindProjectFrame( parent ),
           bar->GetId(),
           wxEmptyString,
@@ -348,25 +348,25 @@ auto ToolManager::SetGetTopPanelHook( const GetTopPanelHook &hook )
    return result;
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &parent ){
      return std::make_shared< ToolManager >( &parent ); }
 };
 
-ToolManager &ToolManager::Get( WavvyProject &project )
+ToolManager &ToolManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ToolManager >( key );
 }
 
-const ToolManager &ToolManager::Get( const WavvyProject &project )
+const ToolManager &ToolManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
 //
 // Constructor
 //
-ToolManager::ToolManager( WavvyProject *parent )
+ToolManager::ToolManager( WavacityProject *parent )
 : wxEvtHandler()
 {
    wxPoint pt[ 3 ];
@@ -502,7 +502,7 @@ void ToolManager::Destroy()
 
       // This function causes the toolbars to be destroyed, so
       // clear the configuration of the ToolDocks which refer to
-      // these toolbars. This change was needed to stop Wavvy
+      // these toolbars. This change was needed to stop Wavacity
       // crashing when running with Jaws on Windows 10 1703.
       mTopDock->GetConfiguration().Clear();
       mBotDock->GetConfiguration().Clear();
@@ -692,7 +692,7 @@ void ToolManager::Reset()
    // If audio was playing, we stopped the VU meters,
    // It would be nice to show them again, but hardly essential as
    // they will show up again on the next play.
-   // SetVUMeters(WavvyProject *p);
+   // SetVUMeters(WavacityProject *p);
    Updated();
 }
 
@@ -753,15 +753,15 @@ void ToolManager::ReadConfig()
    ToolBarConfiguration::Legacy topLegacy, botLegacy;
 
 #ifndef __WXWASM__
-   int vMajor = WAVVY_VERSION, vMinor = WAVVY_RELEASE, vMicro = WAVVY_REVISION;
+   int vMajor = WAVACITY_VERSION, vMinor = WAVACITY_RELEASE, vMicro = WAVACITY_REVISION;
 #else
    int vMajor = 3, vMinor = 0, vMicro = 2;
 #endif
    //gPrefs->GetVersionKeysInit(vMajor, vMinor, vMicro);
    bool useLegacyDock = false;
-   // note that vMajor, vMinor, and vMicro will all be zero if either it's a new wavvy.cfg file
+   // note that vMajor, vMinor, and vMicro will all be zero if either it's a new wavacity.cfg file
    // or the version is less than 1.3.13 (when there were no version keys according to the comments in
-   // InitPreferences()). So for new wavvy.cfg
+   // InitPreferences()). So for new wavacity.cfg
    // file useLegacyDock will be true, but this doesn't matter as there are no Dock or DockV2 keys in the file yet.
    if (vMajor <= 1 ||
       (vMajor == 2 && (vMinor <= 1 || (vMinor == 2 && vMicro <= 1))))   // version <= 2.2.1
@@ -870,7 +870,7 @@ void ToolManager::ReadConfig()
          }
 #else
          // note that this section is here because if you had been using sync-lock and now you aren't,
-         // the space for the extra button is stored in wavvy.cfg, and so you get an extra space
+         // the space for the extra button is stored in wavacity.cfg, and so you get an extra space
          // in the EditToolbar.
          // It is needed so that the meterToolbar size gets preserved.
          // Longer-term we should find a better fix for this.
@@ -1598,12 +1598,12 @@ AttachedToolBarMenuItem::AttachedToolBarMenuItem(
    , mAttachedItem{
       Registry::Placement{ wxT("View/Other/Toolbars/Toolbars/Other"), hint },
       (  MenuTable::FinderScope(
-            [this](WavvyProject &) -> CommandHandlerObject&
+            [this](WavacityProject &) -> CommandHandlerObject&
                { return *this; } ),
          MenuTable::Command( name, label_in,
             &AttachedToolBarMenuItem::OnShowToolBar,
             AlwaysEnabledFlag,
-            CommandManager::Options{}.CheckTest( [id](WavvyProject &project){
+            CommandManager::Options{}.CheckTest( [id](WavacityProject &project){
                auto &toolManager = ToolManager::Get( project );
                return toolManager.IsVisible( id ); } ) ) ) }
    , mExcludeIds{ std::move( excludeIDs ) }

@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_ENVELOPE_HANDLE__
-#define __WAVVY_ENVELOPE_HANDLE__
+#ifndef __WAVACITY_ENVELOPE_HANDLE__
+#define __WAVACITY_ENVELOPE_HANDLE__
 
 #include "../../UIHandle.h"
 
@@ -32,7 +32,7 @@ class EnvelopeHandle final : public UIHandle
    static UIHandlePtr HitEnvelope
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const WavvyProject *pProject,
+       const WavacityProject *pProject,
        Envelope *envelope, float zoomMin, float zoomMax,
        bool dB, float dBRange, bool timeTrack);
 
@@ -47,31 +47,31 @@ public:
    static UIHandlePtr TimeTrackHitTest
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const WavvyProject *pProject, const std::shared_ptr<TimeTrack> &tt);
+       const WavacityProject *pProject, const std::shared_ptr<TimeTrack> &tt);
    static UIHandlePtr WaveTrackHitTest
       (std::weak_ptr<EnvelopeHandle> &holder,
        const wxMouseState &state, const wxRect &rect,
-       const WavvyProject *pProject, const std::shared_ptr<WaveTrack> &wt);
+       const WavacityProject *pProject, const std::shared_ptr<WaveTrack> &wt);
 
    Envelope *GetEnvelope() const { return mEnvelope; }
 
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
       wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 

@@ -14,7 +14,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h" // for rint from configwin.h
+#include "../Wavacity.h" // for rint from configwin.h
 #include "Loudness.h"
 
 #include <math.h>

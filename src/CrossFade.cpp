@@ -7,12 +7,12 @@
 *******************************************************************//**
 
 \class CrossFader
-\brief Not used by Wavvy (yet) apparently work in progress that has
+\brief Not used by Wavacity (yet) apparently work in progress that has
 been abandoned.
 
 *//********************************************************************/
 
-#pragma message( "--- CrossFade.cpp: This is abandoned code, not included in Wavvy builds")
+#pragma message( "--- CrossFade.cpp: This is abandoned code, not included in Wavacity builds")
 
 #include "CrossFade.h"
 

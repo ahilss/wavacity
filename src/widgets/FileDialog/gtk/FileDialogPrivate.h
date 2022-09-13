@@ -1,5 +1,5 @@
 //
-// Copied from wxWidgets 3.0.2 and modified for Wavvy
+// Copied from wxWidgets 3.0.2 and modified for Wavacity
 //
 /////////////////////////////////////////////////////////////////////////////
 // Name:        wx/gtk/filedlg.h

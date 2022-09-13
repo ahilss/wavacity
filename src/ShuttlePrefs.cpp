@@ -24,7 +24,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ShuttlePrefs.h"
 
 #include <wx/defs.h>

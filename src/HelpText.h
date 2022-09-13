@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_HELP_TEXT__
-#define __WAVVY_HELP_TEXT__
+#ifndef __WAVACITY_HELP_TEXT__
+#define __WAVACITY_HELP_TEXT__
 
 class TranslatableString;
 class wxString;

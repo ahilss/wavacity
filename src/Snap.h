@@ -12,14 +12,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SNAP__
-#define __WAVVY_SNAP__
+#ifndef __WAVACITY_SNAP__
+#define __WAVACITY_SNAP__
 
 #include <vector>
 #include <wx/defs.h>
 #include "widgets/NumericTextCtrl.h" // member variable
 
-class WavvyProject;
+class WavacityProject;
 class Track;
 class TrackList;
 class ZoomInfo;
@@ -55,13 +55,13 @@ struct SnapResults {
 class SnapManager
 {
 public:
-   SnapManager(const WavvyProject &project,
+   SnapManager(const WavacityProject &project,
                SnapPointArray candidates,
                const ZoomInfo &zoomInfo,
                bool noTimeSnap = false,
                int pixelTolerance = kPixelTolerance);
 
-   SnapManager(const WavvyProject &project,
+   SnapManager(const WavacityProject &project,
                const TrackList &tracks,
                const ZoomInfo &zoomInfo,
                bool noTimeSnap = false,
@@ -94,7 +94,7 @@ private:
 
 private:
 
-   const WavvyProject *mProject;
+   const WavacityProject *mProject;
    const ZoomInfo *mZoomInfo;
    int mPixelTolerance;
    bool mNoTimeSnap;

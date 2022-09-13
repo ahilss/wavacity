@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_STEREO_TO_MONO__
-#define __WAVVY_EFFECT_STEREO_TO_MONO__
+#ifndef __WAVACITY_EFFECT_STEREO_TO_MONO__
+#define __WAVACITY_EFFECT_STEREO_TO_MONO__
 
 #include "Effect.h"
 

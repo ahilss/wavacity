@@ -22,10 +22,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SELECTEDREGION__
-#define __WAVVY_SELECTEDREGION__
+#ifndef __WAVACITY_SELECTEDREGION__
+#define __WAVACITY_SELECTEDREGION__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "Experimental.h"
 
@@ -35,7 +35,7 @@
 
 class XMLWriter;
 
-class WAVVY_DLL_API SelectedRegion {
+class WAVACITY_DLL_API SelectedRegion {
 
    // Maintains the invariant:  t1() >= t0()
 

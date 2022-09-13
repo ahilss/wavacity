@@ -19,7 +19,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "FindClipping.h"
 #include "LoadEffects.h"
 
@@ -30,7 +30,7 @@
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
 #include "../widgets/valnum.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 #include "../LabelTrack.h"
 #include "../WaveTrack.h"

@@ -15,7 +15,7 @@ the pitch without changing the tempo.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_SOUNDTOUCH
+#include "../Wavacity.h" // for USE_SOUNDTOUCH
 
 #if USE_SOUNDTOUCH
 #include "ChangePitch.h"

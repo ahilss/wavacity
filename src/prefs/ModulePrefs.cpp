@@ -10,12 +10,12 @@
 
 \class ModulePrefs
 \brief A PrefsPanel to enable/disable certain modules.  'Modules' are 
-dynamically linked libraries that modify Wavvy.  They are plug-ins 
+dynamically linked libraries that modify Wavacity.  They are plug-ins 
 with names like mnod-script-pipe that add NEW features.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ModulePrefs.h"
 
 #include "Experimental.h"
@@ -30,7 +30,7 @@ with names like mnod-script-pipe that add NEW features.
 ////////////////////////////////////////////////////////////////////////////////
 
 ModulePrefs::ModulePrefs(wxWindow * parent, wxWindowID winid)
-/* i18n-hint: Modules are optional extensions to Wavvy that add NEW features.*/
+/* i18n-hint: Modules are optional extensions to Wavacity that add NEW features.*/
 :  PrefsPanel(parent, winid, XO("Modules"))
 {
    Populate();
@@ -65,7 +65,7 @@ void ModulePrefs::GetAllModuleStatuses(){
    //    mod-menu-munger
    //    mod-theming
 
-   // TODO: On an Wavvy upgrade we should (?) actually untick modules.
+   // TODO: On an Wavacity upgrade we should (?) actually untick modules.
    // The old modules might be still around, and we do not want to use them.
    mModules.clear();
    mStatuses.clear();
@@ -116,18 +116,18 @@ void ModulePrefs::PopulateOrExchange(ShuttleGui & S)
    S.StartStatic( {} );
    {
       S.AddFixedText(XO(
-"These are experimental modules. Enable them only if you've read the Wavvy Manual\nand know what you are doing.") );
+"These are experimental modules. Enable them only if you've read the Wavacity Manual\nand know what you are doing.") );
       S.AddFixedText(XO(
 /* i18n-hint preserve the leading spaces */
-"  'Ask' means Wavvy will ask if you want to load the module each time it starts.") );
+"  'Ask' means Wavacity will ask if you want to load the module each time it starts.") );
       S.AddFixedText(XO(
 /* i18n-hint preserve the leading spaces */
-"  'Failed' means Wavvy thinks the module is broken and won't run it.") );
+"  'Failed' means Wavacity thinks the module is broken and won't run it.") );
       S.AddFixedText(XO(
 /* i18n-hint preserve the leading spaces */
 "  'New' means no choice has been made yet.") );
       S.AddFixedText(XO(
-"Changes to these settings only take effect when Wavvy starts up."));
+"Changes to these settings only take effect when Wavacity starts up."));
       {
         S.StartMultiColumn( 2 );
         int i;
@@ -228,7 +228,7 @@ void ModulePrefs::SetModuleStatus(const FilePath &fname, int iStatus)
 #ifdef EXPERIMENTAL_MODULE_PREFS
 namespace{
 PrefsPanel::Registration sAttachment{ "Module",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew ModulePrefs(parent, winid);

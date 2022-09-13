@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_SELECT_HANDLE__
-#define __WAVVY_TRACK_SELECT_HANDLE__
+#ifndef __WAVACITY_TRACK_SELECT_HANDLE__
+#define __WAVACITY_TRACK_SELECT_HANDLE__
 
 #include "../../UIHandle.h"
 
@@ -32,20 +32,20 @@ public:
    virtual ~TrackSelectHandle();
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *) override;
+   Result Cancel(WavacityProject *) override;
 
    bool StopsOnKeystroke() override { return true; }
 
@@ -60,7 +60,7 @@ private:
    int mRearrangeCount {};
 
    void CalculateRearrangingThresholds(
-      const wxMouseEvent & event, WavvyProject *project);
+      const wxMouseEvent & event, WavacityProject *project);
 };
 
 #endif

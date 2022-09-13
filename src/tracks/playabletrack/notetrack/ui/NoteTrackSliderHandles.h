@@ -8,8 +8,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_NOTE_TRACK_SLIDER_HANDLES__
-#define __WAVVY_NOTE_TRACK_SLIDER_HANDLES__
+#ifndef __WAVACITY_NOTE_TRACK_SLIDER_HANDLES__
+#define __WAVACITY_NOTE_TRACK_SLIDER_HANDLES__
 
 #include "../../../../Experimental.h"
 
@@ -38,12 +38,12 @@ public:
 protected:
    float GetValue() override;
    Result SetValue
-   (WavvyProject *pProject, float newValue) override;
+   (WavacityProject *pProject, float newValue) override;
    Result CommitChanges
-   (const wxMouseEvent &event, WavvyProject *pProject) override;
+   (const wxMouseEvent &event, WavacityProject *pProject) override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
    bool StopsOnKeystroke () override { return true; }
 

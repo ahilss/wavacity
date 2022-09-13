@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../commands/CommandManager.h"
 
@@ -31,7 +31,7 @@
 // private helper classes and functions
 namespace {
 
-void DoMacMinimize(WavvyProject *project)
+void DoMacMinimize(WavacityProject *project)
 {
    if (project) {
       auto window = &GetProjectFrame( *project );
@@ -54,7 +54,7 @@ void DoMacMinimize(WavvyProject *project)
 }
 
 std::vector< wxWindowID > sReservedIds;
-std::vector< std::weak_ptr< WavvyProject > > sProjects;
+std::vector< std::weak_ptr< WavacityProject > > sProjects;
 
 void RebuildMenu(wxCommandEvent &evt)
 {
@@ -69,7 +69,7 @@ void RebuildMenu(wxCommandEvent &evt)
 }
 
 wxWindowID ReservedID(
-   size_t index, const std::shared_ptr< WavvyProject > &pProject )
+   size_t index, const std::shared_ptr< WavacityProject > &pProject )
 {
    if ( sReservedIds.empty() ) {
       // Do this once only per session, and don't worry about unbinding
@@ -165,9 +165,9 @@ void OnMacMinimizeAll(const CommandContext &)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static WindowActions::Handler instance;
    return instance;
 };
@@ -206,7 +206,7 @@ BaseItemSharedPtr WindowMenu()
 
       Section( "",
          Special( wxT("PopulateWindowsStep"),
-         [](WavvyProject &, wxMenu &theMenu)
+         [](WavacityProject &, wxMenu &theMenu)
          {
             // Undo previous bindings
             for ( auto id : sReservedIds )

@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "TimeTrack.h"
 
 #include "Experimental.h"
@@ -39,7 +39,7 @@
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "timetrack" ),
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       auto &tracks = TrackList::Get( project );
       auto &viewInfo = ViewInfo::Get( project );
       auto result = tracks.Add(std::make_shared<TimeTrack>(&viewInfo));
@@ -141,7 +141,7 @@ bool TimeTrack::SupportsBasicEditing() const
    return false;
 }
 
-Track::Holder TimeTrack::PasteInto( WavvyProject &project ) const
+Track::Holder TimeTrack::PasteInto( WavacityProject &project ) const
 {
    // Maintain uniqueness of the time track!
    std::shared_ptr<TimeTrack> pNewTrack;

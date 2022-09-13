@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_GRID__
-#define __WAVVY_WIDGETS_GRID__
+#ifndef __WAVACITY_WIDGETS_GRID__
+#define __WAVACITY_WIDGETS_GRID__
 
 #include <vector>
 #include <wx/setup.h> // for wxUSE_* macros

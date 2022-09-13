@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "BatchProcessDialog.h"
 
 #include <wx/setup.h> // for wxUSE_* macros
@@ -59,7 +59,7 @@
 #include "FileNames.h"
 #include "import/Import.h"
 #include "widgets/ErrorDialog.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/HelpSystem.h"
 
 #if wxUSE_ACCESSIBILITY
@@ -88,7 +88,7 @@ BEGIN_EVENT_TABLE(ApplyMacroDialog, wxDialogWrapper)
 END_EVENT_TABLE()
 
 ApplyMacroDialog::ApplyMacroDialog(
-   wxWindow * parent, WavvyProject &project, bool bInherited):
+   wxWindow * parent, WavacityProject &project, bool bInherited):
    wxDialogWrapper(parent, wxID_ANY, MacrosPaletteTitle,
             wxDefaultPosition, wxDefaultSize,
             wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
@@ -233,7 +233,7 @@ void ApplyMacroDialog::OnApplyToProject(wxCommandEvent & WXUNUSED(event))
                                     wxLIST_STATE_SELECTED);
 
    if (item == -1) {
-      WavvyMessageBox(XO("No macro selected"));
+      WavacityMessageBox(XO("No macro selected"));
       return;
    }
    ApplyMacroToProject( item );
@@ -331,7 +331,7 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
                                     wxLIST_NEXT_ALL,
                                     wxLIST_STATE_SELECTED);
    if (item == -1) {
-      WavvyMessageBox( XO("No macro selected") );
+      WavacityMessageBox( XO("No macro selected") );
       return;
    }
 
@@ -339,9 +339,9 @@ void ApplyMacroDialog::OnApplyToFiles(wxCommandEvent & WXUNUSED(event))
    gPrefs->Write(wxT("/Batch/ActiveMacro"), name);
    gPrefs->Flush();
 
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
    if (!TrackList::Get( *project ).empty()) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Please save and close the current project first.") );
       return;
    }
@@ -559,7 +559,7 @@ enum {
 
 /// Constructor
 MacrosWindow::MacrosWindow(
-   wxWindow * parent, WavvyProject &project, bool bExpanded):
+   wxWindow * parent, WavacityProject &project, bool bExpanded):
    ApplyMacroDialog(parent, project, true)
    , mProject{ project }
 {
@@ -830,7 +830,7 @@ bool MacrosWindow::ChangeOK()
       auto title = XO("%s changed").Format( mActiveMacro );
       auto msg = XO("Do you want to save the changes?");
 
-      id = WavvyMessageBox(
+      id = WavacityMessageBox(
          msg,
          title,
          wxYES_NO | wxCANCEL);
@@ -989,7 +989,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
    }
 
    while (true) {
-      WavvyTextEntryDialog d(this,
+      WavacityTextEntryDialog d(this,
          XO("Enter name of new macro"),
          XO("Name of new macro"));
       d.SetName(d.GetTitle());
@@ -1004,7 +1004,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
       name = d.GetValue().Strip(wxString::both);
 
       if (name.length() == 0) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Name must not be blank"),
             WindowTitle(),
             wxOK | wxICON_ERROR,
@@ -1014,7 +1014,7 @@ void MacrosWindow::OnAdd(wxCommandEvent & WXUNUSED(event))
 
       if (name.Contains(wxFILE_SEP_PATH) ||
           name.Contains(wxFILE_SEP_PATH_UNIX)) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             /*i18n-hint: The %c will be replaced with 'forbidden characters', like '/' and '\'.*/
             XO("Names may not contain '%c' and '%c'")
                .Format(wxFILE_SEP_PATH, wxFILE_SEP_PATH_UNIX),
@@ -1046,7 +1046,7 @@ void MacrosWindow::OnRemove(wxCommandEvent & WXUNUSED(event))
    }
 
    wxString name = mMacros->GetItemText(item);
-   WavvyMessageDialog m(
+   WavacityMessageDialog m(
       this,
       /*i18n-hint: %s will be replaced by the name of a file.*/
       XO("Are you sure you want to delete %s?").Format( name ),
@@ -1331,7 +1331,7 @@ bool MacrosWindow::SaveChanges(){
    return true;
 }
 
-/// Send changed values back to Prefs, and update Wavvy.
+/// Send changed values back to Prefs, and update Wavacity.
 void MacrosWindow::OnOK(wxCommandEvent & WXUNUSED(event))
 {
    if( !SaveChanges() )

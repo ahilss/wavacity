@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_DISTORTION__
-#define __WAVVY_EFFECT_DISTORTION__
+#ifndef __WAVACITY_EFFECT_DISTORTION__
+#define __WAVACITY_EFFECT_DISTORTION__
 
 #include <queue>
 

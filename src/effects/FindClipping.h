@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_FINDCLIPPING__
-#define __WAVVY_EFFECT_FINDCLIPPING__
+#ifndef __WAVACITY_EFFECT_FINDCLIPPING__
+#define __WAVACITY_EFFECT_FINDCLIPPING__
 
 class wxString;
 
@@ -60,4 +60,4 @@ private:
    int mStop;    ///< Using int rather than sampleCount because values are only ever small numbers
 };
 
-#endif // __WAVVY_EFFECT_FINDCLIPPING__
+#endif // __WAVACITY_EFFECT_FINDCLIPPING__

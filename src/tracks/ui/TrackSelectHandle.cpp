@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "TrackSelectHandle.h"
 
 #include "TrackView.h"
@@ -66,7 +66,7 @@ TrackSelectHandle::~TrackSelectHandle()
 }
 
 UIHandle::Result TrackSelectHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    // If unsafe to drag, still, it does harmlessly change the selected track
    // set on button down.
@@ -107,7 +107,7 @@ UIHandle::Result TrackSelectHandle::Click
 }
 
 UIHandle::Result TrackSelectHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    Result result = RefreshNone;
@@ -142,7 +142,7 @@ UIHandle::Result TrackSelectHandle::Drag
 }
 
 HitTestPreview TrackSelectHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *project)
+(const TrackPanelMouseState &, WavacityProject *project)
 {
    static auto disabledCursor =
       ::MakeCursor(wxCURSOR_NO_ENTRY, DisabledCursorXpm, 16, 16);
@@ -184,7 +184,7 @@ HitTestPreview TrackSelectHandle::Preview
 }
 
 UIHandle::Result TrackSelectHandle::Release
-(const TrackPanelMouseEvent &, WavvyProject *project, wxWindow *)
+(const TrackPanelMouseEvent &, WavacityProject *project, wxWindow *)
 {
    // If we're releasing, surely we are dragging a track?
    wxASSERT( mpTrack );
@@ -204,7 +204,7 @@ UIHandle::Result TrackSelectHandle::Release
    return RefreshCode::RefreshNone;
 }
 
-UIHandle::Result TrackSelectHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result TrackSelectHandle::Cancel(WavacityProject *pProject)
 {
    ProjectHistory::Get( *pProject ).RollbackState();
    // Bug 1677
@@ -215,7 +215,7 @@ UIHandle::Result TrackSelectHandle::Cancel(WavvyProject *pProject)
 /// Figure out how far the user must drag the mouse up or down
 /// before the track will swap with the one above or below
 void TrackSelectHandle::CalculateRearrangingThresholds(
-   const wxMouseEvent & event, WavvyProject *project)
+   const wxMouseEvent & event, WavacityProject *project)
 {
    // JH: this will probably need to be tweaked a bit, I'm just
    //   not sure what formula will have the best feel for the

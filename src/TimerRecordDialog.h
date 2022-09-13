@@ -13,8 +13,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIMERRECORD_DIALOG__
-#define __WAVVY_TIMERRECORD_DIALOG__
+#ifndef __WAVACITY_TIMERRECORD_DIALOG__
+#define __WAVACITY_TIMERRECORD_DIALOG__
 
 #include <wx/textctrl.h> // to inherit
 #include <wx/timer.h> // member variable
@@ -50,13 +50,13 @@ enum {
 #endif
 };
 
-class WavvyProject;
+class WavacityProject;
 
 class TimerRecordDialog final : public wxDialogWrapper
 {
 public:
    TimerRecordDialog(
-      wxWindow* parent, WavvyProject &project, bool bAlreadySaved);
+      wxWindow* parent, WavacityProject &project, bool bAlreadySaved);
    ~TimerRecordDialog();
 
    void OnTimer(wxTimerEvent& event);
@@ -103,7 +103,7 @@ private:
    ProgressResult PreActionDelay(int iActionIndex, TimerRecordCompletedActions eCompletedActions);
 
 private:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    wxDateTime m_DateTime_Start;
    wxDateTime m_DateTime_End;

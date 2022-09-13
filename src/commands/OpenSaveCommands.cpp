@@ -14,11 +14,11 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "OpenSaveCommands.h"
 
 #include "LoadCommands.h"
-#include "../WavvyLogger.h"
+#include "../WavacityLogger.h"
 #include "../Project.h"
 #include "../ProjectFileIO.h"
 #include "../ProjectFileManager.h"
@@ -158,7 +158,7 @@ void SaveLogCommand::PopulateOrExchange(ShuttleGui & S)
 
 bool SaveLogCommand::Apply(const CommandContext &context)
 {
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    return logger->SaveLog(mFileName);
 }
 
@@ -179,6 +179,6 @@ bool ClearLogCommand::PromptUser(wxWindow *parent, std::function<void (bool)> ca
 
 bool ClearLogCommand::Apply(const CommandContext &context)
 {
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    return logger->ClearLog();
 }

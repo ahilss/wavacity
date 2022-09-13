@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "BassTreble.h"
 #include "LoadEffects.h"
 
@@ -114,7 +114,7 @@ EffectType EffectBassTreble::GetType()
 
 bool EffectBassTreble::SupportsRealtime()
 {
-#if defined(EXPERIMENTAL_REALTIME_WAVVY_EFFECTS)
+#if defined(EXPERIMENTAL_REALTIME_WAVACITY_EFFECTS)
    return true;
 #else
    return false;

@@ -8,10 +8,10 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_SCRUBBING__
-#define __WAVVY_SCRUBBING__
+#ifndef __WAVACITY_SCRUBBING__
+#define __WAVACITY_SCRUBBING__
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "../../Experimental.h"
 
 #include <vector>
@@ -23,9 +23,9 @@ Paul Licameli split from TrackPanel.cpp
 #include "../../widgets/Overlay.h" // to inherit
 #include "../../commands/CommandContext.h"
 #include "../../commands/CommandManager.h" // for MenuTable
-#include "../../../include/wavvy/Types.h"
+#include "../../../include/wavacity/Types.h"
 
-class WavvyProject;
+class WavacityProject;
 class TranslatableString;
 
 // Conditionally compile either a separate thead, or else use a timer in the main
@@ -45,11 +45,11 @@ class Scrubber final
    , public std::enable_shared_from_this< Scrubber >
 {
 public:   
-   static Scrubber &Get( WavvyProject &project );
-   static const Scrubber &Get( const WavvyProject &project );
+   static Scrubber &Get( WavacityProject &project );
+   static const Scrubber &Get( const WavacityProject &project );
 
    explicit
-   Scrubber(WavvyProject *project);
+   Scrubber(WavacityProject *project);
    Scrubber( const Scrubber & ) PROHIBITED;
    Scrubber &operator=( const Scrubber & ) PROHIBITED;
    ~Scrubber();
@@ -177,7 +177,7 @@ private:
    int mLogMaxScrubSpeed;
 #endif
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
 
    DECLARE_EVENT_TABLE()
 

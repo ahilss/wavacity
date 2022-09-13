@@ -9,8 +9,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_CLIENT_DATA_HELPERS__
-#define __WAVVY_CLIENT_DATA_HELPERS__
+#ifndef __WAVACITY_CLIENT_DATA_HELPERS__
+#define __WAVACITY_CLIENT_DATA_HELPERS__
 
 #include <memory>
 #include <mutex>

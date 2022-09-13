@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "FileIO.h"
 
 #include <wx/defs.h>

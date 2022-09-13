@@ -6,10 +6,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_READONLYTEXT__
-#define __WAVVY_READONLYTEXT__
+#ifndef __WAVACITY_READONLYTEXT__
+#define __WAVACITY_READONLYTEXT__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include <wx/wx.h>
 
 
@@ -134,4 +134,4 @@ public:
    }
 };
 
-#endif // __WAVVY_READONLYTEXT__
+#endif // __WAVACITY_READONLYTEXT__

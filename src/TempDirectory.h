@@ -8,11 +8,11 @@
  
  **********************************************************************/
 
-#ifndef __WAVVY_TEMP_DIRECTORY__
-#define __WAVVY_TEMP_DIRECTORY__
+#ifndef __WAVACITY_TEMP_DIRECTORY__
+#define __WAVACITY_TEMP_DIRECTORY__
 
-#include "Wavvy.h"
-#include "wavvy/Types.h"
+#include "Wavacity.h"
+#include "wavacity/Types.h"
 
 namespace TempDirectory
 {

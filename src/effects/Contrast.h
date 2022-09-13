@@ -6,8 +6,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_CONTRAST_DIALOG__
-#define __WAVVY_CONTRAST_DIALOG__
+#ifndef __WAVACITY_CONTRAST_DIALOG__
+#define __WAVACITY_CONTRAST_DIALOG__
 
 #include "../widgets/wxPanelWrapper.h" // to inherit
 

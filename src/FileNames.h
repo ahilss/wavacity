@@ -8,14 +8,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FILE_NAMES__
-#define __WAVVY_FILE_NAMES__
+#ifndef __WAVACITY_FILE_NAMES__
+#define __WAVACITY_FILE_NAMES__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <wx/dir.h> // for wxDIR_FILES
 #include <wx/string.h> // function return value
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include "Prefs.h"
 #include "MemoryX.h"
 
@@ -44,7 +44,7 @@ namespace FileNames
    // Frequently used types
    extern const FileType
         AllFiles // *
-      , WavvyProjects // *.aup3
+      , WavacityProjects // *.aup3
       , DynamicLibraries // depends on the operating system
       , TextFiles // *.txt
       , XMLFiles; // *.xml, *.XML
@@ -68,26 +68,26 @@ namespace FileNames
 
    bool IsMidi(const FilePath &fName);
 
-   /** \brief A list of directories that should be searched for Wavvy files
+   /** \brief A list of directories that should be searched for Wavacity files
     * (plug-ins, help files, etc.).
     *
-    * On Unix this will include the directory Wavvy was installed into,
-    * plus the current user's .wavvy-data/Plug-Ins directory.  Additional
-    * directories can be specified using the WAVVY_PATH environment
+    * On Unix this will include the directory Wavacity was installed into,
+    * plus the current user's .wavacity-data/Plug-Ins directory.  Additional
+    * directories can be specified using the WAVACITY_PATH environment
     * variable.  On Windows or Mac OS, this will include the directory
-    * which contains the Wavvy program. */
-   const FilePaths &WavvyPathList();
-   void SetWavvyPathList( FilePaths list );
+    * which contains the Wavacity program. */
+   const FilePaths &WavacityPathList();
+   void SetWavacityPathList( FilePaths list );
 
    // originally an ExportMultipleDialog method. Append suffix if newName appears in otherNames.
    void MakeNameUnique(
       FilePaths &otherNames, wxFileName &newName);
 
    wxString LowerCaseAppNameInPath( const wxString & dirIn);
-   /** \brief Wavvy user data directory
+   /** \brief Wavacity user data directory
     *
-    * Where wavvy keeps its settings and other user data squirreled away,
-    * by default ~/.wavvy-data/ on Unix, Application Data/Wavvy on
+    * Where wavacity keeps its settings and other user data squirreled away,
+    * by default ~/.wavacity-data/ on Unix, Application Data/Wavacity on
     * windows system */
    FilePath DataDir();
    FilePath ResourcesDir();
@@ -214,10 +214,10 @@ namespace FileNames
    // File extension used for unsaved/temporary project files
    wxString UnsavedProjectExtension();
 
-   WAVVY_DLL_API
+   WAVACITY_DLL_API
    bool IsOnFATFileSystem(const FilePath &path);
 
-   WAVVY_DLL_API
+   WAVACITY_DLL_API
    //! Give enough of the path to identify the device.  (On Windows, drive letter plus ':')
    wxString AbbreviatePath(const wxFileName &fileName);
 };

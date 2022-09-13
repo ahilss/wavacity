@@ -9,16 +9,16 @@
 ******************************************************************//**
 
 \class LegacyBlockFile
-\brief Wavvy 1.1.0 block file format:
+\brief Wavacity 1.1.0 block file format:
 
-  - Header tag: 20 bytes "WavvyBlockFile110"
+  - Header tag: 20 bytes "WavacityBlockFile110"
   - 64K summaries (min, max, RMS, each a 4-byte float)
   - 256 summaries (min, max, RMS, each a 4-byte float)
 
 *//******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "LegacyBlockFile.h"
 
 #include <float.h>

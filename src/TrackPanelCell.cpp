@@ -35,46 +35,46 @@ TrackPanelCell::~TrackPanelCell()
 }
 
 HitTestPreview TrackPanelCell::DefaultPreview
-(const TrackPanelMouseState &, const WavvyProject *)
+(const TrackPanelMouseState &, const WavacityProject *)
 {
    return {};
 }
 
 unsigned TrackPanelCell::HandleWheelRotation
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    return RefreshCode::Cancelled;
 }
 
 unsigned TrackPanelCell::DoContextMenu
-   (const wxRect &, wxWindow*, wxPoint *, WavvyProject*)
+   (const wxRect &, wxWindow*, wxPoint *, WavacityProject*)
 {
    return RefreshCode::RefreshNone;
 }
 
 unsigned TrackPanelCell::CaptureKey(
-   wxKeyEvent &event, ViewInfo &, wxWindow *, WavvyProject *)
+   wxKeyEvent &event, ViewInfo &, wxWindow *, WavacityProject *)
 {
    event.Skip();
    return RefreshCode::RefreshNone;
 }
 
 unsigned TrackPanelCell::KeyDown(
-   wxKeyEvent &event, ViewInfo &, wxWindow *, WavvyProject *)
+   wxKeyEvent &event, ViewInfo &, wxWindow *, WavacityProject *)
 {
    event.Skip();
    return RefreshCode::RefreshNone;
 }
 
 unsigned TrackPanelCell::KeyUp(
-   wxKeyEvent &event, ViewInfo &, wxWindow *, WavvyProject *)
+   wxKeyEvent &event, ViewInfo &, wxWindow *, WavacityProject *)
 {
    event.Skip();
    return RefreshCode::RefreshNone;
 }
 
 unsigned TrackPanelCell::Char(
-   wxKeyEvent &event, ViewInfo &, wxWindow *, WavvyProject *)
+   wxKeyEvent &event, ViewInfo &, wxWindow *, WavacityProject *)
 {
    event.Skip();
    return RefreshCode::RefreshNone;

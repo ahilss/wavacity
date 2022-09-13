@@ -14,7 +14,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "NoteTrack.h"
 
 #include "Experimental.h"
@@ -111,7 +111,7 @@ SONFNS(AutoSave)
 
 static ProjectFileIORegistry::Entry registerFactory{
    wxT( "notetrack" ),
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       auto &tracks = TrackList::Get( project );
       auto result = tracks.Add( std::make_shared<NoteTrack>());
       TrackView::Get( *result );
@@ -289,7 +289,7 @@ void NoteTrack::DrawLabelControls
                AColor::MIDIChannel(&dc, chanName);
             dc.DrawRectangle(box);
 // two choices: channel is enabled (to see and play) when button is in
-// "up" position (original Wavvy style) or in "down" position
+// "up" position (original Wavacity style) or in "down" position
 //
 #define CHANNEL_ON_IS_DOWN 1
 #if CHANNEL_ON_IS_DOWN
@@ -679,11 +679,11 @@ QuantizedTimeAndBeat NoteTrack::NearestBeatTime( double time ) const
    double beat;
    auto &seq = GetSeq();
    seq_time = seq.nearest_beat_time(seq_time, &beat);
-   // add the offset back in to get "actual" wavvy track time
+   // add the offset back in to get "actual" wavacity track time
    return { seq_time + GetOffset(), beat };
 }
 
-Track::Holder NoteTrack::PasteInto( WavvyProject & ) const
+Track::Holder NoteTrack::PasteInto( WavacityProject & ) const
 {
    auto pNewTrack = std::make_shared<NoteTrack>();
    pNewTrack->Paste(0.0, this);

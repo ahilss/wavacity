@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_REFRESH_CODE__
-#define __WAVVY_REFRESH_CODE__
+#ifndef __WAVACITY_REFRESH_CODE__
+#define __WAVACITY_REFRESH_CODE__
 
 /// Namespace containing an enum 'what to do on a refresh?'
 namespace RefreshCode

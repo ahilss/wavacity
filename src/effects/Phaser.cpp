@@ -19,7 +19,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Phaser.h"
 #include "LoadEffects.h"
 
@@ -131,7 +131,7 @@ EffectType EffectPhaser::GetType()
 
 bool EffectPhaser::SupportsRealtime()
 {
-#if defined(EXPERIMENTAL_REALTIME_WAVVY_EFFECTS)
+#if defined(EXPERIMENTAL_REALTIME_WAVACITY_EFFECTS)
    return true;
 #else
    return false;

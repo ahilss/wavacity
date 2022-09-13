@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_NOISE_REDUCTION__
-#define __WAVVY_EFFECT_NOISE_REDUCTION__
+#ifndef __WAVACITY_EFFECT_NOISE_REDUCTION__
+#define __WAVACITY_EFFECT_NOISE_REDUCTION__
 
 #include "Effect.h"
 

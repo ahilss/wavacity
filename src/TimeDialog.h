@@ -8,12 +8,12 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TimeDialog__
-#define __WAVVY_TimeDialog__
+#ifndef __WAVACITY_TimeDialog__
+#define __WAVACITY_TimeDialog__
 
 #include <wx/defs.h>
 
-#include "wavvy/ComponentInterface.h" // member variable
+#include "wavacity/ComponentInterface.h" // member variable
 
 #include "widgets/wxPanelWrapper.h" // to inherit
 

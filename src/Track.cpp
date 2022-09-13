@@ -9,7 +9,7 @@
 *******************************************************************//**
 
 \class Track
-\brief Fundamental data object of Wavvy, displayed in the TrackPanel.
+\brief Fundamental data object of Wavacity, displayed in the TrackPanel.
 Classes derived form it include the WaveTrack, NoteTrack, LabelTrack
 and TimeTrack.
 
@@ -21,7 +21,7 @@ and TimeTrack.
 
 *//*******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 
 #include "Track.h"
 
@@ -488,28 +488,28 @@ wxDEFINE_EVENT(EVT_TRACKLIST_DELETION, TrackListEvent);
 // same value as in the default constructed TrackId:
 long TrackList::sCounter = -1;
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   [](WavvyProject &project) { return TrackList::Create( &project ); }
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   [](WavacityProject &project) { return TrackList::Create( &project ); }
 };
 
-TrackList &TrackList::Get( WavvyProject &project )
+TrackList &TrackList::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< TrackList >( key );
 }
 
-const TrackList &TrackList::Get( const WavvyProject &project )
+const TrackList &TrackList::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-TrackList::TrackList( WavvyProject *pOwner )
+TrackList::TrackList( WavacityProject *pOwner )
 :  wxEvtHandler()
 , mOwner{ pOwner }
 {
 }
 
 // Factory function
-std::shared_ptr<TrackList> TrackList::Create( WavvyProject *pOwner )
+std::shared_ptr<TrackList> TrackList::Create( WavacityProject *pOwner )
 {
    return std::make_shared<TrackList>( pOwner );
 }

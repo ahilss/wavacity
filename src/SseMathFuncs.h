@@ -6,7 +6,7 @@
 
    Stephen Moshier (wrote original C version, The Cephes Library)
    Julien Pommier (converted to use SSE)
-   Andrew Hallendorff (adapted for Wavvy)
+   Andrew Hallendorff (adapted for Wavacity)
 
 *******************************************************************//**
 

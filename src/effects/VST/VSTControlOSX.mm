@@ -21,7 +21,7 @@
       
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "VSTControlOSX.h"
 
 #include "../../MemoryX.h"

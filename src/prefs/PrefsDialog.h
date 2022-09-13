@@ -9,15 +9,15 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PREFS_DIALOG__
-#define __WAVVY_PREFS_DIALOG__
+#ifndef __WAVACITY_PREFS_DIALOG__
+#define __WAVACITY_PREFS_DIALOG__
 
 #include <functional>
 #include <vector>
 #include "../widgets/wxPanelWrapper.h" // to inherit
 #include "PrefsPanel.h"
 
-class WavvyProject;
+class WavacityProject;
 class wxTreebook;
 class wxTreeEvent;
 class ShuttleGui;
@@ -28,13 +28,13 @@ class ShuttleGui;
 #define CONST const
 #endif
 
-class WavvyProject;
+class WavacityProject;
 
 class PrefsDialog /* not final */ : public wxDialogWrapper
 {
  public:
    PrefsDialog(wxWindow * parent,
-      WavvyProject *pProject, // may be null
+      WavacityProject *pProject, // may be null
       const TranslatableString &titlePrefix = XO("Preferences:"),
       PrefsPanel::Factories &factories =
          PrefsPanel::DefaultFactories());
@@ -83,7 +83,7 @@ class GlobalPrefsDialog final : public PrefsDialog
 {
 public:
    GlobalPrefsDialog(
-      wxWindow * parent, WavvyProject *pProject,
+      wxWindow * parent, WavacityProject *pProject,
       PrefsPanel::Factories &factories =
          PrefsPanel::DefaultFactories());
    virtual ~GlobalPrefsDialog();
@@ -91,7 +91,7 @@ public:
    void SavePreferredPage() override;
 };
 
-class WavvyProject;
-void DoReloadPreferences( WavvyProject &project );
+class WavacityProject;
+void DoReloadPreferences( WavacityProject &project );
 
 #endif

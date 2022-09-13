@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIME_TRACK_VRULER_CONTROLS__
-#define __WAVVY_TIME_TRACK_VRULER_CONTROLS__
+#ifndef __WAVACITY_TIME_TRACK_VRULER_CONTROLS__
+#define __WAVACITY_TIME_TRACK_VRULER_CONTROLS__
 
 #include "../../ui/TrackVRulerControls.h"
 
@@ -30,7 +30,7 @@ public:
 
    std::vector<UIHandlePtr> HitTest(
       const TrackPanelMouseState &state,
-      const WavvyProject *) override;
+      const WavacityProject *) override;
 
 private:
 

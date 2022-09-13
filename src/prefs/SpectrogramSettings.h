@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTROGRAM_SETTINGS__
-#define __WAVVY_SPECTROGRAM_SETTINGS__
+#ifndef __WAVACITY_SPECTROGRAM_SETTINGS__
+#define __WAVACITY_SPECTROGRAM_SETTINGS__
 
 #include "../Experimental.h"
 

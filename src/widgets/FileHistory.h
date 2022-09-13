@@ -8,21 +8,21 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_FILEHISTORY__
-#define __WAVVY_WIDGETS_FILEHISTORY__
+#ifndef __WAVACITY_WIDGETS_FILEHISTORY__
+#define __WAVACITY_WIDGETS_FILEHISTORY__
 
 #include <vector>
 #include <algorithm>
 #include <wx/defs.h>
 #include <wx/weakref.h> // member variable
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include "../MemoryX.h"
 
 class wxConfigBase;
 class wxMenu;
 
-class WAVVY_DLL_API FileHistory
+class WAVACITY_DLL_API FileHistory
 {
  public:
    FileHistory(size_t maxfiles = 12, wxWindowID idbase = wxID_FILE);

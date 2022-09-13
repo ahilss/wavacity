@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "ImportMIDI.h"
 
 #include <wx/defs.h>
@@ -30,11 +30,11 @@
 #include "../ProjectHistory.h"
 #include "../ProjectWindow.h"
 #include "../SelectUtilities.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/FileHistory.h"
 
 // Given an existing project, try to import into it, return true on success
-bool DoImportMIDI( WavvyProject &project, const FilePath &fileName )
+bool DoImportMIDI( WavacityProject &project, const FilePath &fileName )
 {
    auto &projectFileIO = ProjectFileIO::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -81,7 +81,7 @@ bool DoImportMIDI( WavvyProject &project, const FilePath &fileName )
 bool ImportMIDI(const FilePath &fName, NoteTrack * dest)
 {
    if (fName.length() <= 4){
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file %s: Filename too short.").Format( fName ) );
       return false;
    }
@@ -90,14 +90,14 @@ bool ImportMIDI(const FilePath &fName, NoteTrack * dest)
    if (fName.Right(4).CmpNoCase(wxT(".mid")) == 0 || fName.Right(5).CmpNoCase(wxT(".midi")) == 0)
       is_midi = true;
    else if(fName.Right(4).CmpNoCase(wxT(".gro")) != 0) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file %s: Incorrect filetype.").Format( fName ) );
       return false;
    }
 
    wxFFile mf(fName, wxT("rb"));
    if (!mf.IsOpened()) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file %s.").Format( fName ) );
       return false;
    }
@@ -107,7 +107,7 @@ bool ImportMIDI(const FilePath &fName, NoteTrack * dest)
 
    //Should we also check if(seq->tracks() == 0) ?
    if(new_seq->get_read_error() == alg_error_open){
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file %s.").Format( fName ) );
       mf.Close();
       return false;

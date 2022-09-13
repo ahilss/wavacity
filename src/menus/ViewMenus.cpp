@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include "../CommonCommandFlags.h"
@@ -28,7 +28,7 @@
 // private helper classes and functions
 namespace {
 
-double GetZoomOfSelection( const WavvyProject &project )
+double GetZoomOfSelection( const WavacityProject &project )
 {
    auto &viewInfo = ViewInfo::Get( project );
    auto &window = ProjectWindow::Get( project );
@@ -55,7 +55,7 @@ double GetZoomOfSelection( const WavvyProject &project )
    return (width - 1) / denom;
 }
 
-double GetZoomOfPreset( const WavvyProject &project, int preset )
+double GetZoomOfPreset( const WavacityProject &project, int preset )
 {
 
    // Sets a limit on how far we will zoom out as a factor over zoom to fit.
@@ -123,7 +123,7 @@ double GetZoomOfPreset( const WavvyProject &project, int preset )
 }
 
 namespace {
-void DoZoomFitV(WavvyProject &project)
+void DoZoomFitV(WavacityProject &project)
 {
    auto &viewInfo = ViewInfo::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -351,7 +351,7 @@ void OnUndoPushed( wxCommandEvent &evt )
       DoZoomFitV( mProject );
 }
 
-Handler( WavvyProject &project )
+Handler( WavacityProject &project )
    : mProject{ project }
 {
    mProject.Bind( EVT_UNDO_PUSHED, &Handler::OnUndoPushed, this );
@@ -364,19 +364,19 @@ Handler( WavvyProject &project )
 Handler( const Handler & ) PROHIBITED;
 Handler &operator=( const Handler & ) PROHIBITED;
 
-WavvyProject &mProject;
+WavacityProject &mProject;
 
 }; // struct Handler
 
 } // namespace
 
 // Handler needs a back-reference to the project, so needs a factory registered
-// with WavvyProject.
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   []( WavvyProject &project ) {
+// with WavacityProject.
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   []( WavacityProject &project ) {
       return std::make_unique< ViewActions::Handler >( project ); } };
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &project) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &project) {
    return project.AttachedObjects::Get< ViewActions::Handler >( key );
 };
 
@@ -449,7 +449,7 @@ BaseItemSharedPtr ViewMenu()
          ,
          Command( wxT("ShowEffectsRack"), XXO("Show Effects Rack"),
             FN(OnShowEffectsRack), AlwaysEnabledFlag,
-            Options{}.CheckTest( [](WavvyProject &project){
+            Options{}.CheckTest( [](WavacityProject &project){
                auto &rack = EffectRack::Get( project );
                return rack.IsShown(); } ) )
    #endif

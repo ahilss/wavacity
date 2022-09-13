@@ -8,10 +8,10 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMON_TRACK_PANEL_CELL__
-#define __WAVVY_COMMON_TRACK_PANEL_CELL__
+#ifndef __WAVACITY_COMMON_TRACK_PANEL_CELL__
+#define __WAVACITY_COMMON_TRACK_PANEL_CELL__
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "../../TrackPanelCell.h"
 
 #include <stdlib.h>
@@ -21,13 +21,13 @@ Paul Licameli split from TrackPanel.cpp
 class Track;
 class XMLWriter;
 
-class WAVVY_DLL_API CommonTrackPanelCell /* not final */
+class WAVACITY_DLL_API CommonTrackPanelCell /* not final */
    : public TrackPanelCell
 {
 public:
    // Type of function to dispatch mouse wheel events
    using Hook = std::function<
-      unsigned(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+      unsigned(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
    >;
    // Install a dispatcher function, returning the previous function
    static Hook InstallMouseWheelHook( const Hook &hook );
@@ -39,7 +39,7 @@ public:
 
    // Default to the arrow cursor
    HitTestPreview DefaultPreview
-      (const TrackPanelMouseState &, const WavvyProject *) override;
+      (const TrackPanelMouseState &, const WavacityProject *) override;
 
    std::shared_ptr<Track> FindTrack() { return DoFindTrack(); }
    std::shared_ptr<const Track> FindTrack() const
@@ -50,11 +50,11 @@ protected:
 
    unsigned HandleWheelRotation
       (const TrackPanelMouseEvent &event,
-      WavvyProject *pProject) override;
+      WavacityProject *pProject) override;
 
 };
 
-class WAVVY_DLL_API CommonTrackCell /* not final */
+class WAVACITY_DLL_API CommonTrackCell /* not final */
    : public CommonTrackPanelCell
 {
 public:

@@ -8,12 +8,12 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_FILE_IO_REGISTRY__
-#define __WAVVY_PROJECT_FILE_IO_REGISTRY__
+#ifndef __WAVACITY_PROJECT_FILE_IO_REGISTRY__
+#define __WAVACITY_PROJECT_FILE_IO_REGISTRY__
 
 #include <functional>
 
-class WavvyProject;
+class WavacityProject;
 class XMLTagHandler;
 class wxString;
 
@@ -21,7 +21,7 @@ namespace ProjectFileIORegistry {
 
 // Type of functions returning objects that interpret a part of the saved XML
 using TagHandlerFactory =
-   std::function< XMLTagHandler *( WavvyProject & ) >;
+   std::function< XMLTagHandler *( WavacityProject & ) >;
 
 // Typically statically constructed
 struct Entry{

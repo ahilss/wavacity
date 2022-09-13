@@ -9,8 +9,8 @@ Paul Licameli
 **********************************************************************/
 
 
-#ifndef __WAVVY_WAVEFORM_PREFS__
-#define __WAVVY_WAVEFORM_PREFS__
+#ifndef __WAVACITY_WAVEFORM_PREFS__
+#define __WAVACITY_WAVEFORM_PREFS__
 
 #include "PrefsPanel.h"
 #include "WaveformSettings.h"
@@ -26,7 +26,7 @@ class WaveformPrefs final : public PrefsPanel
 {
 public:
    WaveformPrefs(wxWindow * parent, wxWindowID winid,
-      WavvyProject *pProject, WaveTrack *wt);
+      WavacityProject *pProject, WaveTrack *wt);
    virtual ~WaveformPrefs();
    ComponentInterfaceSymbol GetSymbol() override;
    TranslatableString GetDescription() override;
@@ -47,7 +47,7 @@ private:
 
    void EnableDisableRange();
 
-   WavvyProject *mProject{};
+   WavacityProject *mProject{};
 
    WaveTrack *const mWt;
    bool mDefaulted;

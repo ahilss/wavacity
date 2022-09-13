@@ -8,15 +8,15 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if defined(USE_VAMP)
 
 #include <memory>
 
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/EffectInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #include <vamp-hostsdk/PluginLoader.h>
 

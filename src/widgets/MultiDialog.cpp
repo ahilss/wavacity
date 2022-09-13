@@ -18,7 +18,7 @@ for each problem encountered, since there can be many orphans.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "MultiDialog.h"
 
 #include "../ShuttleGui.h"
@@ -36,7 +36,7 @@ for each problem encountered, since there can be many orphans.
 #include <wx/bmpbuttn.h>
 
 
-#include "../WavvyLogger.h"
+#include "../WavacityLogger.h"
 #include "wxPanelWrapper.h"
 #include "../Theme.h"
 #include "../AllThemeResources.h"
@@ -169,7 +169,7 @@ void MultiDialog::OnOK(wxCommandEvent & WXUNUSED(event))
 
 void MultiDialog::OnShowLog(wxCommandEvent & WXUNUSED(event))
 {
-   auto logger = WavvyLogger::Get();
+   auto logger = WavacityLogger::Get();
    if (logger) {
       logger->Show();
    }

@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_CONTROL_TOOLBAR__
-#define __WAVVY_CONTROL_TOOLBAR__
+#ifndef __WAVACITY_CONTROL_TOOLBAR__
+#define __WAVACITY_CONTROL_TOOLBAR__
 
 #include "ToolBar.h"
 
@@ -26,19 +26,19 @@ class wxWindow;
 class wxStatusBar;
 
 class AButton;
-class WavvyProject;
+class WavacityProject;
 
 // In the GUI, ControlToolBar appears as the "Transport Toolbar". "Control Toolbar" is historic.
 class ControlToolBar final : public ToolBar {
 
  public:
 
-   ControlToolBar( WavvyProject &project );
+   ControlToolBar( WavacityProject &project );
    virtual ~ControlToolBar();
 
-   static ControlToolBar *Find( WavvyProject &project );
-   static ControlToolBar &Get( WavvyProject &project );
-   static const ControlToolBar &Get( const WavvyProject &project );
+   static ControlToolBar *Find( WavacityProject &project );
+   static ControlToolBar &Get( WavacityProject &project );
+   static const ControlToolBar &Get( const WavacityProject &project );
 
    void Create(wxWindow *parent) override;
 

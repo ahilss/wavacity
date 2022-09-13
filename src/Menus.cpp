@@ -25,7 +25,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Menus.h"
 
 #include "Experimental.h"
@@ -38,7 +38,7 @@
 #include "UndoManager.h"
 #include "commands/CommandManager.h"
 #include "toolbars/ToolManager.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ErrorDialog.h"
 
 #include <unordered_set>
@@ -61,22 +61,22 @@ MenuCreator::~MenuCreator()
 {
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &project ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &project ){
      return std::make_shared< MenuManager >( project ); }
 };
 
-MenuManager &MenuManager::Get( WavvyProject &project )
+MenuManager &MenuManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< MenuManager >( key );
 }
 
-const MenuManager &MenuManager::Get( const WavvyProject &project )
+const MenuManager &MenuManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-MenuManager::MenuManager( WavvyProject &project )
+MenuManager::MenuManager( WavacityProject &project )
    : mProject{ project }
 {
    UpdatePrefs();
@@ -102,7 +102,7 @@ void MenuManager::UpdatePrefs()
    // DA warns or greys out.
    mWhatIfNoSelection = bSelectAllIfNone ? 2 : 0;
 #else
-   // Wavvy autoselects or warns.
+   // Wavacity autoselects or warns.
    mWhatIfNoSelection = bSelectAllIfNone ? 1 : 2;
 #endif
    mStopIfWasPaused = true;  // not configurable for now, but could be later.
@@ -234,7 +234,7 @@ MenuSection::~MenuSection() {}
 WholeMenu::~WholeMenu() {}
 
 CommandHandlerFinder FinderScope::sFinder =
-   [](WavvyProject &project) -> CommandHandlerObject & {
+   [](WavacityProject &project) -> CommandHandlerObject & {
       // If this default finder function is reached, then FinderScope should
       // have been used somewhere, or an explicit CommandHandlerFinder passed
       // to menu item constructors
@@ -278,7 +278,7 @@ using namespace MenuTable;
 
 struct MenuItemVisitor : ToolbarMenuVisitor
 {
-   MenuItemVisitor( WavvyProject &proj, CommandManager &man )
+   MenuItemVisitor( WavacityProject &proj, CommandManager &man )
       : ToolbarMenuVisitor(proj), manager( man ) {}
 
    void DoBeginGroup( GroupItem &item, const Path& ) override
@@ -378,7 +378,7 @@ struct MenuItemVisitor : ToolbarMenuVisitor
 };
 }
 
-void MenuCreator::CreateMenusAndCommands(WavvyProject &project)
+void MenuCreator::CreateMenusAndCommands(WavacityProject &project)
 {
    // Once only, cause initial population of preferences for the ordering
    // of some menu items that used to be given in tables but are now separately
@@ -440,7 +440,7 @@ void MenuManager::Visit( ToolbarMenuVisitor &visitor )
 }
 
 // TODO: This surely belongs in CommandManager?
-void MenuManager::ModifyUndoMenuItems(WavvyProject &project)
+void MenuManager::ModifyUndoMenuItems(WavacityProject &project)
 {
    TranslatableString desc;
    auto &undoManager = UndoManager::Get( project );
@@ -482,7 +482,7 @@ public:
    using wxFrame::DetachMenuBar;
 };
 
-void MenuCreator::RebuildMenuBar(WavvyProject &project)
+void MenuCreator::RebuildMenuBar(WavacityProject &project)
 {
    // On OSX, we can't rebuild the menus while a modal dialog is being shown
    // since the enabled state for menus like Quit and Preference gets out of
@@ -588,7 +588,7 @@ void MenuManager::ModifyAllProjectToolbarMenus()
    }
 }
 
-void MenuManager::ModifyToolbarMenus(WavvyProject &project)
+void MenuManager::ModifyToolbarMenus(WavacityProject &project)
 {
    // Refreshes can occur during shutdown and the toolmanager may already
    // be deleted, so protect against it.
@@ -684,7 +684,7 @@ void MenuCreator::RebuildAllMenuBars()
       //
       //   http://bugzilla.audacityteam.org/show_bug.cgi?id=458
       //
-      // This workaround should be removed when Wavvy updates to wxWidgets 3.x which has a fix.
+      // This workaround should be removed when Wavacity updates to wxWidgets 3.x which has a fix.
       auto &window = GetProjectFrame( *p );
       wxRect r = window.GetRect();
       window.SetSize(wxSize(1,1));

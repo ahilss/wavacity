@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_NOTE_TRACK_CONTROLS__
-#define __WAVVY_NOTE_TRACK_CONTROLS__
+#ifndef __WAVACITY_NOTE_TRACK_CONTROLS__
+#define __WAVACITY_NOTE_TRACK_CONTROLS__
 
 #include "../../ui/PlayableTrackControls.h" // to inherit
 class wxEvent;
@@ -20,7 +20,7 @@ class SoloButtonHandle;
 class NoteTrackButtonHandle;
 class VelocitySliderHandle;
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "../../../../Experimental.h"
 
 using NoteTrackControlsBase =
@@ -50,7 +50,7 @@ public:
 
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
 
    PopupMenuTable *GetMenuExtension(Track *pTrack) override;
 

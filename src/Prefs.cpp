@@ -12,7 +12,7 @@
 \brief Utility functions for working with our wxConf (gPrefs)
 
 
-  Wavvy uses wxWidgets' wxConfig class to handle preferences.
+  Wavacity uses wxWidgets' wxConfig class to handle preferences.
   See Prefs.h for more information on how it works...
 
 \verbatim
@@ -20,7 +20,7 @@
 
   Preference field specification:
    /
-      Version					- Wavvy Version that created these prefs
+      Version					- Wavacity Version that created these prefs
       DefaultOpenPath			- Default directory for NEW file selector
    /FileFormats
       CopyOrEditUncompressedData - Copy data from uncompressed files or
@@ -50,7 +50,7 @@
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Prefs.h"
 
 #include <wx/defs.h>
@@ -344,7 +344,7 @@ void EnumSettingBase::Migrate( wxString &value )
         gPrefs->Read(mOldKey, &intValue, 0) ) {
       // Make the migration, only once and persistently.
       // Do not DELETE the old key -- let that be read if user downgrades
-      // Wavvy.  But further changes will be stored only to the NEW key
+      // Wavacity.  But further changes will be stored only to the NEW key
       // and won't be seen then.
       auto index = (long) FindInt( intValue );
       if ( index >= (long)mSymbols.size() )

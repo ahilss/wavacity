@@ -14,7 +14,7 @@ Functions that find and load all LV2 plugins on the system.
 
 *//*******************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if defined(USE_LV2)
 
@@ -49,13 +49,13 @@ Functions that find and load all LV2 plugins on the system.
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -115,7 +115,7 @@ wxString LV2EffectsModule::GetVersion()
 
 TranslatableString LV2EffectsModule::GetDescription()
 {
-   return XO("Provides LV2 Effects support to Wavvy");
+   return XO("Provides LV2 Effects support to Wavacity");
 }
 
 // ============================================================================

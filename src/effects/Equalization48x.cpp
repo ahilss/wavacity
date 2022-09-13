@@ -13,7 +13,7 @@
 
 *//****************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "Equalization48x.h"
 
 #include "../Experimental.h"

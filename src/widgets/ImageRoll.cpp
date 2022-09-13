@@ -94,7 +94,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ImageRoll.h"
 
 #include <wx/bitmap.h>

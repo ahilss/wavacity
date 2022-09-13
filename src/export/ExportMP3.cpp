@@ -59,7 +59,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "ExportMP3.h"
 
 #include <wx/app.h>
@@ -89,7 +89,7 @@
 #include "../Tags.h"
 #include "../Track.h"
 #include "../widgets/HelpSystem.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 #include "../wxFileNameWrapper.h"
 
@@ -609,7 +609,7 @@ public:
       S.StartVerticalLay(true);
       {
          S.AddTitle(
-            XO("Wavvy needs the file %s to create MP3s.")
+            XO("Wavacity needs the file %s to create MP3s.")
                .Format( mName ) );
 
          S.SetBorder(3);
@@ -759,7 +759,7 @@ typedef void lame_mp3_tags_fid_t(lame_global_flags *, FILE *);
 #if defined(__WXMSW__)
 // An alternative solution to give Windows an additional chance of writing the tag before
 // falling bato to lame_mp3_tag_fid().  The latter can have DLL sharing issues when mixing
-// Debug/Release builds of Wavvy and the lame DLL.
+// Debug/Release builds of Wavacity and the lame DLL.
 typedef unsigned long beWriteInfoTag_t(lame_global_flags *, char *);
 
 // We use this to determine if the user has selected an older, Blade API only, lame_enc.dll
@@ -1042,7 +1042,7 @@ bool MP3Exporter::LoadLibrary(wxWindow *parent, AskUser askuser)
    if (!ValidLibraryLoaded()) {
 #if defined(__WXMSW__)
       if (askuser && !mBladeVersion.empty()) {
-         WavvyMessageBox( mBladeVersion );
+         WavacityMessageBox( mBladeVersion );
       }
 #endif
       wxLogMessage(wxT("Failed to locate LAME library"));
@@ -1234,13 +1234,13 @@ bool MP3Exporter::InitLibraryExternal(wxString libpath)
          beVersion(&v);
 
          mBladeVersion = XO(
-"You are linking to lame_enc.dll v%d.%d. This version is not compatible with Wavvy %d.%d.%d.\nPlease download the latest version of 'LAME for Wavvy'.")
+"You are linking to lame_enc.dll v%d.%d. This version is not compatible with Wavacity %d.%d.%d.\nPlease download the latest version of 'LAME for Wavacity'.")
             .Format(
                v.byMajorVersion,
                v.byMinorVersion,
-               WAVVY_VERSION,
-               WAVVY_RELEASE,
-               WAVVY_REVISION);
+               WAVACITY_VERSION,
+               WAVACITY_RELEASE,
+               WAVACITY_REVISION);
       }
 #endif
 
@@ -1495,7 +1495,7 @@ bool MP3Exporter::PutInfoTag(wxFFile & f, wxFileOffset off)
 
 wxString MP3Exporter::GetLibraryPath()
 {
-   wxRegKey reg(wxT("HKEY_LOCAL_MACHINE\\Software\\Lame for Wavvy"));
+   wxRegKey reg(wxT("HKEY_LOCAL_MACHINE\\Software\\Lame for Wavacity"));
    wxString path;
 
    if (reg.Exists()) {
@@ -1532,19 +1532,19 @@ wxString MP3Exporter::GetLibraryPath()
 {
    wxString path;
 
-   path = wxT("/Library/Application Support/wavvy/libs");
+   path = wxT("/Library/Application Support/wavacity/libs");
    if (wxFileExists(path + wxT("/") + GetLibraryName()))
    {
         return path;
    }
 
-   path = wxT("/usr/local/lib/wavvy");
+   path = wxT("/usr/local/lib/wavacity");
    if (wxFileExists(path + wxT("/") + GetLibraryName()))
    {
         return path;
    }
     
-   return wxT("/Library/Application Support/wavvy/libs");
+   return wxT("/Library/Application Support/wavacity/libs");
 }
 
 wxString MP3Exporter::GetLibraryName()
@@ -1717,7 +1717,7 @@ public:
    // Required
 
    void OptionsCreate(ShuttleGui &S, int format) override;
-   ProgressResult Export(WavvyProject *project,
+   ProgressResult Export(WavacityProject *project,
                std::unique_ptr<ProgressDialog> &pDialog,
                unsigned channels,
                const wxFileNameWrapper &fName,
@@ -1731,7 +1731,7 @@ public:
 private:
 
    int AskResample(int bitrate, int rate, int lowrate, int highrate);
-   unsigned long AddTags(WavvyProject *project, ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags);
+   unsigned long AddTags(WavacityProject *project, ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags);
 #ifdef USE_LIBID3TAG
    void AddFrame(struct id3_tag *tp, const wxString & n, const wxString & v, const char *name);
 #endif
@@ -1755,7 +1755,7 @@ bool ExportMP3::CheckFileName(wxFileName & WXUNUSED(filename), int WXUNUSED(form
    MP3Exporter exporter;
 
    if (!exporter.LoadLibrary(wxTheApp->GetTopWindow(), MP3Exporter::Maybe)) {
-      WavvyMessageBox( XO("Could not open MP3 encoding library!") );
+      WavacityMessageBox( XO("Could not open MP3 encoding library!") );
       gPrefs->Write(wxT("/MP3/MP3LibPath"), wxString(wxT("")));
       gPrefs->Flush();
 
@@ -1775,7 +1775,7 @@ int ExportMP3::SetNumExportChannels()
 }
 
 
-ProgressResult ExportMP3::Export(WavvyProject *project,
+ProgressResult ExportMP3::Export(WavacityProject *project,
                        std::unique_ptr<ProgressDialog> &pDialog,
                        unsigned channels,
                        const wxFileNameWrapper &fName,
@@ -1795,7 +1795,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
 
 #ifdef DISABLE_DYNAMIC_LOADING_LAME
    if (!exporter.InitLibrary(wxT(""))) {
-      WavvyMessageBox( XO("Could not initialize MP3 encoding library!") );
+      WavacityMessageBox( XO("Could not initialize MP3 encoding library!") );
       gPrefs->Write(wxT("/MP3/MP3LibPath"), wxString(wxT("")));
       gPrefs->Flush();
 
@@ -1803,7 +1803,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
    }
 #else
    if (!exporter.LoadLibrary(parent, MP3Exporter::Maybe)) {
-      WavvyMessageBox( XO("Could not open MP3 encoding library!") );
+      WavacityMessageBox( XO("Could not open MP3 encoding library!") );
       gPrefs->Write(wxT("/MP3/MP3LibPath"), wxString(wxT("")));
       gPrefs->Flush();
 
@@ -1811,7 +1811,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
    }
 
    if (!exporter.ValidLibraryLoaded()) {
-      WavvyMessageBox( XO("Not a valid or supported MP3 encoding library!") );
+      WavacityMessageBox( XO("Not a valid or supported MP3 encoding library!") );
       gPrefs->Write(wxT("/MP3/MP3LibPath"), wxString(wxT("")));
       gPrefs->Flush();
 
@@ -1895,7 +1895,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
 
    auto inSamples = exporter.InitializeStream(channels, rate);
    if (((int)inSamples) < 0) {
-      WavvyMessageBox( XO("Unable to initialize MP3 stream") );
+      WavacityMessageBox( XO("Unable to initialize MP3 stream") );
       return ProgressResult::Cancelled;
    }
 
@@ -1906,7 +1906,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
    // Open file for writing
    wxFFile outFile(fName.GetFullPath(), wxT("w+b"));
    if (!outFile.IsOpened()) {
-      WavvyMessageBox( XO("Unable to open target file for writing") );
+      WavacityMessageBox( XO("Unable to open target file for writing") );
       return ProgressResult::Cancelled;
    }
 
@@ -1993,7 +1993,7 @@ ProgressResult ExportMP3::Export(WavvyProject *project,
          if (bytes < 0) {
             auto msg = XO("Error %ld returned from MP3 encoder")
                .Format( bytes );
-            WavvyMessageBox( msg );
+            WavacityMessageBox( msg );
             updateResult = ProgressResult::Cancelled;
             break;
          }
@@ -2134,7 +2134,7 @@ using id3_tag_holder = std::unique_ptr<id3_tag, id3_tag_deleter>;
 #endif
 
 // returns buffer len; caller frees
-unsigned long ExportMP3::AddTags(WavvyProject *WXUNUSED(project), ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags)
+unsigned long ExportMP3::AddTags(WavacityProject *WXUNUSED(project), ArrayOf<char> &buffer, bool *endOfFile, const Tags *tags)
 {
 #ifdef USE_LIBID3TAG
    id3_tag_holder tp { id3_tag_new() };

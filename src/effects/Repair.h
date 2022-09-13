@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_REPAIR__
-#define __WAVVY_EFFECT_REPAIR__
+#ifndef __WAVACITY_EFFECT_REPAIR__
+#define __WAVACITY_EFFECT_REPAIR__
 
 #include "Effect.h"
 
@@ -47,4 +47,4 @@ private:
                    size_t repairLen);
 };
 
-#endif // __WAVVY_EFFECT_REPAIT__
+#endif // __WAVACITY_EFFECT_REPAIT__

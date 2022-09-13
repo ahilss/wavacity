@@ -20,7 +20,7 @@ UndoManager
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "UndoManager.h"
 
 #include <wx/hashset.h>
@@ -49,22 +49,22 @@ wxDEFINE_EVENT(EVT_UNDO_PURGE, wxCommandEvent);
 
 using SampleBlockID = long long;
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   [](WavvyProject &project)
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   [](WavacityProject &project)
       { return std::make_unique<UndoManager>( project ); }
 };
 
-UndoManager &UndoManager::Get( WavvyProject &project )
+UndoManager &UndoManager::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< UndoManager >( key );
 }
 
-const UndoManager &UndoManager::Get( const WavvyProject &project )
+const UndoManager &UndoManager::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-UndoManager::UndoManager( WavvyProject &project )
+UndoManager::UndoManager( WavacityProject &project )
    : mProject{ project }
 {
    current = -1;

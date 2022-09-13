@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIMESHIFT_HANDLE__
-#define __WAVVY_TIMESHIFT_HANDLE__
+#ifndef __WAVACITY_TIMESHIFT_HANDLE__
+#define __WAVACITY_TIMESHIFT_HANDLE__
 
 #include <functional>
 #include <unordered_map>
@@ -191,7 +191,7 @@ private:
 
 struct MakeTrackShifterTag;
 using MakeTrackShifter = AttachedVirtualFunction<
-   MakeTrackShifterTag, std::unique_ptr<TrackShifter>, Track, WavvyProject&>;
+   MakeTrackShifterTag, std::unique_ptr<TrackShifter>, Track, WavacityProject&>;
 
 class ViewInfo;
 
@@ -200,7 +200,7 @@ struct ClipMoveState {
    
    //! Will associate a TrackShifter with each track in the list
    void Init(
-      WavvyProject &project,
+      WavacityProject &project,
       Track &capturedTrack, //<! pHit if not null associates with this track
       TrackShifter::HitTestResult hitTestResult, //!< must not be `Miss`
       std::unique_ptr<TrackShifter> pHit, /*!<
@@ -243,7 +243,7 @@ class TimeShiftHandle final : public UIHandle
 {
    TimeShiftHandle(const TimeShiftHandle&) = delete;
    static HitTestPreview HitPreview
-      (const WavvyProject *pProject, bool unsafe);
+      (const WavacityProject *pProject, bool unsafe);
 
 public:
    explicit TimeShiftHandle
@@ -272,23 +272,23 @@ public:
 
    virtual ~TimeShiftHandle();
 
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 

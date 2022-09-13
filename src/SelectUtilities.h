@@ -8,26 +8,26 @@
  
  **********************************************************************/
 
-#ifndef __WAVVY_SELECT_UTILITIES__
-#define __WAVVY_SELECT_UTILITIES__
+#ifndef __WAVACITY_SELECT_UTILITIES__
+#define __WAVACITY_SELECT_UTILITIES__
 
-class WavvyProject;
+class WavacityProject;
 class Track;
 
 /// Namespace for functions for Select menu
 namespace SelectUtilities {
 
 void DoSelectTimeAndTracks(
-   WavvyProject &project, bool bAllTime, bool bAllTracks);
-void SelectAllIfNone( WavvyProject &project );
-bool SelectAllIfNoneAndAllowed( WavvyProject &project );
-void SelectNone( WavvyProject &project );
+   WavacityProject &project, bool bAllTime, bool bAllTracks);
+void SelectAllIfNone( WavacityProject &project );
+bool SelectAllIfNoneAndAllowed( WavacityProject &project );
+void SelectNone( WavacityProject &project );
 void DoListSelection(
-   WavvyProject &project, Track *t,
+   WavacityProject &project, Track *t,
    bool shift, bool ctrl, bool modifyState );
-void DoSelectAll( WavvyProject &project );
-void DoSelectAllAudio( WavvyProject &project );
-void DoSelectSomething( WavvyProject &project );
+void DoSelectAll( WavacityProject &project );
+void DoSelectAllAudio( WavacityProject &project );
+void DoSelectSomething( WavacityProject &project );
 
 }
 

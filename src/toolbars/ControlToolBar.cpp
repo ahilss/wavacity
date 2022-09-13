@@ -23,14 +23,14 @@
   normal project window, or within a ToolBarFrame.
 
   All of the controls in this window were custom-written for
-  Wavvy - they are not native controls on any platform -
+  Wavacity - they are not native controls on any platform -
   however, it is intended that the images could be easily
   replaced to allow "skinning" or just customization to
   match the look and feel of each platform.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "ControlToolBar.h"
 
 #include "../Experimental.h"
@@ -93,13 +93,13 @@ BEGIN_EVENT_TABLE(ControlToolBar, ToolBar)
 END_EVENT_TABLE()
 
 static const TranslatableString
-   /* i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+   /* i18n-hint: These are strings for the status bar, and indicate whether Wavacity
    is playing or recording or stopped, and whether it is paused. */
      sStatePlay = XO("Playing")
-   /* i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+   /* i18n-hint: These are strings for the status bar, and indicate whether Wavacity
    is playing or recording or stopped, and whether it is paused. */
    , sStateStop = XO("Stopped")
-   /* i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+   /* i18n-hint: These are strings for the status bar, and indicate whether Wavacity
    is playing or recording or stopped, and whether it is paused. */
    , sStateRecord = XO("Recording")
 ;
@@ -109,7 +109,7 @@ static const TranslatableString
 // Note that we use the legacy "Control" string as the section because this
 // gets written to prefs and cannot be changed in prefs to maintain backwards
 // compatibility
-ControlToolBar::ControlToolBar( WavvyProject &project )
+ControlToolBar::ControlToolBar( WavacityProject &project )
 : ToolBar(project, TransportBarID, XO("Transport"), wxT("Control"))
 {
    gPrefs->Read(wxT("/GUI/ErgonomicTransportButtons"), &mErgonomicTransportButtons, true);
@@ -123,23 +123,23 @@ ControlToolBar::~ControlToolBar()
 }
 
 
-ControlToolBar *ControlToolBar::Find( WavvyProject &project )
+ControlToolBar *ControlToolBar::Find( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return static_cast<ControlToolBar*>(
       toolManager.GetToolBar(TransportBarID) );
 }
 
-ControlToolBar &ControlToolBar::Get( WavvyProject &project )
+ControlToolBar &ControlToolBar::Get( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<ControlToolBar*>(
       toolManager.GetToolBar(TransportBarID) );
 }
 
-const ControlToolBar &ControlToolBar::Get( const WavvyProject &project )
+const ControlToolBar &ControlToolBar::Get( const WavacityProject &project )
 {
-   return Get( const_cast<WavvyProject&>( project )) ;
+   return Get( const_cast<WavacityProject&>( project )) ;
 }
 
 void ControlToolBar::Create(wxWindow * parent)
@@ -472,7 +472,7 @@ void ControlToolBar::Repaint( wxDC *dc )
 
 void ControlToolBar::EnableDisableButtons()
 {
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
    auto &projectAudioManager = ProjectAudioManager::Get( mProject );
    bool canStop = projectAudioManager.CanStopAudioStream();
 
@@ -665,7 +665,7 @@ void ControlToolBar::OnRewind(wxCommandEvent & WXUNUSED(evt))
    mRewind->PushDown();
    mRewind->PopUp();
 
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
    {
       ProjectAudioManager::Get( *p ).StopIfPaused();
       ProjectWindow::Get( *p ).Rewind(mRewind->WasShiftDown());
@@ -677,7 +677,7 @@ void ControlToolBar::OnFF(wxCommandEvent & WXUNUSED(evt))
    mFF->PushDown();
    mFF->PopUp();
 
-   WavvyProject *p = &mProject;
+   WavacityProject *p = &mProject;
 
    {
       ProjectAudioManager::Get( *p ).StopIfPaused();
@@ -688,7 +688,7 @@ void ControlToolBar::OnFF(wxCommandEvent & WXUNUSED(evt))
 // works out the width of the field in the status bar needed for the state (eg play, record pause)
 static ProjectStatus::RegisteredStatusWidthFunction
 registeredStatusWidthFunction{
-   []( const WavvyProject &, StatusBarField field )
+   []( const WavacityProject &, StatusBarField field )
       -> ProjectStatus::StatusWidthResult
    {
       if ( field == stateStatusBarField ) {
@@ -697,7 +697,7 @@ registeredStatusWidthFunction{
             { &sStatePlay, &sStateStop, &sStateRecord } )
          {
             strings.push_back(
-   /* i18n-hint: These are strings for the status bar, and indicate whether Wavvy
+   /* i18n-hint: These are strings for the status bar, and indicate whether Wavacity
    is playing or recording or stopped, and whether it is paused. */
                XO("%s Paused.").Format(*pString) );
          }
@@ -804,7 +804,7 @@ void ControlToolBar::StopScrolling()
 }
 
 static RegisteredToolbarFactory factory{ TransportBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew ControlToolBar{ project } }; }
 };
 

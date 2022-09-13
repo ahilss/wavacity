@@ -11,7 +11,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "EffectUI.h"
 
 #include "../Experimental.h"
@@ -82,7 +82,7 @@ BEGIN_EVENT_TABLE(EffectRack, wxFrame)
    EVT_COMMAND_RANGE(ID_FAV,    ID_FAV + 99,    wxEVT_COMMAND_BUTTON_CLICKED, EffectRack::OnFav)
 END_EVENT_TABLE()
 
-EffectRack::EffectRack( WavvyProject &project )
+EffectRack::EffectRack( WavacityProject &project )
 :  wxFrame( &GetProjectFrame( project ),
       wxID_ANY,
       _("Effects Rack"),
@@ -299,7 +299,7 @@ void EffectRack::OnTimer(wxTimerEvent & WXUNUSED(evt))
 
 void EffectRack::OnApply(wxCommandEvent & WXUNUSED(evt))
 {
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
 
    bool success = false;
    auto state = UndoManager::Get( *project ).GetCurrentState();
@@ -576,8 +576,8 @@ void EffectRack::UpdateActive()
 
 namespace
 {
-WavvyProject::AttachedWindows::RegisteredFactory sKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       auto result = safenew EffectRack( parent );
       result->CenterOnParent();
       return result;
@@ -585,7 +585,7 @@ WavvyProject::AttachedWindows::RegisteredFactory sKey{
 };
 }
 
-EffectRack &EffectRack::Get( WavvyProject &project )
+EffectRack &EffectRack::Get( WavacityProject &project )
 {
    return project.AttachedWindows::Get< EffectRack >( sKey );
 }
@@ -656,9 +656,9 @@ private:
 #include "../ProjectAudioManager.h"
 #include "../ShuttleGui.h"
 #include "../ViewInfo.h"
-#include "../commands/WavvyCommand.h"
+#include "../commands/WavacityCommand.h"
 #include "../commands/CommandContext.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 #include <wx/bmpbuttn.h>
@@ -718,7 +718,7 @@ EVT_MENU_RANGE(kFactoryPresetsID, kFactoryPresetsID + 999, EffectUIHost::OnFacto
 END_EVENT_TABLE()
 
 EffectUIHost::EffectUIHost(wxWindow *parent,
-                           WavvyProject &project,
+                           WavacityProject &project,
                            Effect *effect,
                            EffectUIClientInterface *client)
 :  wxDialogWrapper(parent, wxID_ANY, effect->GetName(),
@@ -752,8 +752,8 @@ EffectUIHost::EffectUIHost(wxWindow *parent,
 }
 
 EffectUIHost::EffectUIHost(wxWindow *parent,
-                           WavvyProject &project,
-                           WavvyCommand *command,
+                           WavacityProject &project,
+                           WavacityCommand *command,
                            EffectUIClientInterface *client)
 :  wxDialogWrapper(parent, wxID_ANY, XO("Some Command") /*command->GetName()*/,
                    wxDefaultPosition, wxDefaultSize,
@@ -1542,7 +1542,7 @@ void EffectUIHost::OnDeletePreset(wxCommandEvent & evt)
 {
    auto preset = mUserPresets[evt.GetId() - kDeletePresetID];
    
-   int res = WavvyMessageBox(
+   int res = WavacityMessageBox(
                                 XO("Are you sure you want to delete \"%s\"?").Format( preset ),
                                 XO("Delete Preset"),
                                 wxICON_QUESTION | wxYES_NO);
@@ -1596,7 +1596,7 @@ void EffectUIHost::OnSaveAs(wxCommandEvent & WXUNUSED(evt))
       name = text->GetValue();
       if (name.empty())
       {
-         WavvyMessageDialog md(
+         WavacityMessageDialog md(
                                   this,
                                   XO("You must specify a name"),
                                   XO("Save Preset") );
@@ -1607,7 +1607,7 @@ void EffectUIHost::OnSaveAs(wxCommandEvent & WXUNUSED(evt))
       
       if ( make_iterator_range( mUserPresets ).contains( name ) )
       {
-         WavvyMessageDialog md(
+         WavacityMessageDialog md(
                                   this,
                                   XO("Preset already exists.\n\nReplace?"),
                                   XO("Save Preset"),
@@ -1646,7 +1646,7 @@ void EffectUIHost::OnImport(wxCommandEvent & WXUNUSED(evt))
 void EffectUIHost::OnExport(wxCommandEvent & WXUNUSED(evt))
 {
    // may throw
-   // exceptions are handled in WavvyApp::OnExceptionInMainLoop
+   // exceptions are handled in WavacityApp::OnExceptionInMainLoop
    mClient->ExportPresets();
    
    return;
@@ -1861,7 +1861,7 @@ wxDialog *EffectUI::DialogFactory( wxWindow &parent, EffectHostInterface *pHost,
 /* static */ bool EffectUI::DoEffect(
    const PluginID & ID, const CommandContext &context, unsigned flags )
 {
-   WavvyProject &project = context.project;
+   WavacityProject &project = context.project;
    const auto &settings = ProjectSettings::Get( project );
    auto &tracks = TrackList::Get( project );
    auto &trackPanel = TrackPanel::Get( project );

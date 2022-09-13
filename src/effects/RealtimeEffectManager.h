@@ -8,8 +8,8 @@
  
  **********************************************************************/
 
-#ifndef __WAVVY_REALTIME_EFFECT_MANAGER__
-#define __WAVVY_REALTIME_EFFECT_MANAGER__
+#ifndef __WAVACITY_REALTIME_EFFECT_MANAGER__
+#define __WAVACITY_REALTIME_EFFECT_MANAGER__
 
 #include <memory>
 #include <vector>
@@ -18,7 +18,7 @@
 class EffectClientInterface;
 class RealtimeEffectState;
 
-class WAVVY_DLL_API RealtimeEffectManager final
+class WAVACITY_DLL_API RealtimeEffectManager final
 {
 public:
    using EffectArray = std::vector <EffectClientInterface*> ;

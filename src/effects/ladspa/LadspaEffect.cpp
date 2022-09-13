@@ -22,7 +22,7 @@ effects from this one class.
 *//*******************************************************************/
 
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "LadspaEffect.h"       // This class's header file
 
 #include <float.h>
@@ -64,7 +64,7 @@ effects from this one class.
 #endif
 
 // ============================================================================
-// List of effects that ship with Wavvy.  These will be autoregistered.
+// List of effects that ship with Wavacity.  These will be autoregistered.
 // ============================================================================
 const static wxChar *kShippedEffects[] =
 {
@@ -74,13 +74,13 @@ const static wxChar *kShippedEffects[] =
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -200,7 +200,7 @@ FilePath LadspaEffectsModule::InstallPath()
 bool LadspaEffectsModule::AutoRegisterPlugins(PluginManagerInterface & pm)
 {
    // Autoregister effects that we "think" are ones that have been shipped with
-   // Wavvy.  A little simplistic, but it should suffice for now.
+   // Wavacity.  A little simplistic, but it should suffice for now.
    auto pathList = GetSearchPaths();
    FilePaths files;
    TranslatableString ignoredErrMsg;
@@ -258,7 +258,7 @@ unsigned LadspaEffectsModule::DiscoverPluginsAtPath(
    // causes duplicate menu entries to appear.
    wxFileName ff(path);
    if (ff.GetName().CmpNoCase(wxT("vst-bridge")) == 0) {
-      errMsg = XO("Wavvy no longer uses vst-bridge");
+      errMsg = XO("Wavacity no longer uses vst-bridge");
       return 0;
    }
 
@@ -452,7 +452,7 @@ void LadspaEffectOptionsDialog::PopulateOrExchange(ShuttleGui & S)
          {
             S.AddVariableText( XO(
 "As part of their processing, some LADSPA effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will "
+"audio to Wavacity. When not compensating for this delay, you will "
 "notice that small silences have been inserted into the audio. "
 "Enabling this option will provide that compensation, but it may "
 "not work for all LADSPA effects."),

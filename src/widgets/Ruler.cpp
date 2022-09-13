@@ -54,7 +54,7 @@ array of Ruler::Label.
 
 *//******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Ruler.h"
 
 #include "../Experimental.h"

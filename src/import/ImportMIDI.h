@@ -18,15 +18,15 @@ into a NoteTrack.
 #ifndef _IMPORT_MIDI_
 #define _IMPORT_MIDI_
 
-#include "../Wavvy.h" // for USE_* macros
-#include "wavvy/Types.h"
+#include "../Wavacity.h" // for USE_* macros
+#include "wavacity/Types.h"
 
 #if defined(USE_MIDI)
 
-class WavvyProject;
+class WavacityProject;
 class NoteTrack;
 
-bool DoImportMIDI( WavvyProject &project, const FilePath &fileName );
+bool DoImportMIDI( WavacityProject &project, const FilePath &fileName );
 
 bool ImportMIDI(const FilePath &fName, NoteTrack * dest);
 

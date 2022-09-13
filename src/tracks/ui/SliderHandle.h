@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_SLIDER_HANDLE__
-#define __WAVVY_SLIDER_HANDLE__
+#ifndef __WAVACITY_SLIDER_HANDLE__
+#define __WAVACITY_SLIDER_HANDLE__
 
 #include "../../UIHandle.h"
 
@@ -23,7 +23,7 @@ class SliderHandle /* not final */ : public UIHandle
    SliderHandle(const SliderHandle&) = delete;
 
 public:
-   using SliderFn = LWSlider *(*)( WavvyProject*, const wxRect&, Track* );
+   using SliderFn = LWSlider *(*)( WavacityProject*, const wxRect&, Track* );
 
    explicit SliderHandle
       ( SliderFn sliderFn, const wxRect &rect,
@@ -42,39 +42,39 @@ protected:
    // change.
    // Subclass can decide to refresh other things and the results will be ORed.
    virtual float GetValue() = 0;
-   virtual Result SetValue(WavvyProject *pProject, float newValue) = 0;
+   virtual Result SetValue(WavacityProject *pProject, float newValue) = 0;
    virtual Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject) = 0;
+      (const wxMouseEvent &event, WavacityProject *pProject) = 0;
 
    // Define a message for the status bar and tooltip.
    virtual TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &project) const = 0;
+      const wxMouseState &state, WavacityProject &project) const = 0;
  
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject)
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject)
       final override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject)
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject)
       final override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       final override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) final override;
 
-   Result Cancel(WavvyProject *pProject) final override;
+   Result Cancel(WavacityProject *pProject) final override;
 
    // Derived class is expected to set these two before Click():
    std::weak_ptr<Track> mpTrack;
    wxRect mRect{};
    SliderFn mSliderFn;
-   LWSlider *GetSlider( WavvyProject *pProject );
+   LWSlider *GetSlider( WavacityProject *pProject );
 
    float mStartingValue {};
 

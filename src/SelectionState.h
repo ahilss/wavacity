@@ -6,10 +6,10 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_SELECTION_STATE__
-#define __WAVVY_SELECTION_STATE__
+#ifndef __WAVACITY_SELECTION_STATE__
+#define __WAVACITY_SELECTION_STATE__
 
-class WavvyProject;
+class WavacityProject;
 class Track;
 class TrackList;
 class ViewInfo;
@@ -26,8 +26,8 @@ public:
    SelectionState( const SelectionState & ) PROHIBITED;
    SelectionState &operator=( const SelectionState & ) PROHIBITED;
 
-   static SelectionState &Get( WavvyProject &project );
-   static const SelectionState &Get( const WavvyProject &project );
+   static SelectionState &Get( WavacityProject &project );
+   static const SelectionState &Get( const WavacityProject &project );
 
    static void SelectTrackLength
       ( ViewInfo &viewInfo, Track &track, bool syncLocked );

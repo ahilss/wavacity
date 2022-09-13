@@ -6,7 +6,7 @@
 //
 //
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "NotYetAvailableException.h"
 
 NotYetAvailableException::~NotYetAvailableException()

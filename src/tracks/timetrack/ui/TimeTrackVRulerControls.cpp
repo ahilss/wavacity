@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "TimeTrackVRulerControls.h"
 #include "TimeTrackVZoomHandle.h"
 
@@ -40,7 +40,7 @@ namespace {
 
 std::vector<UIHandlePtr> TimeTrackVRulerControls::HitTest(
    const TrackPanelMouseState &st,
-   const WavvyProject *pProject)
+   const WavacityProject *pProject)
 {
    std::vector<UIHandlePtr> results;
 

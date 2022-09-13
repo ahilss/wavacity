@@ -8,7 +8,7 @@ Paul Licameli split from WaveTrackVZoomHandle.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "SpectrumVZoomHandle.h"
 
 #include "WaveTrackVZoomHandle.h"
@@ -32,7 +32,7 @@ SpectrumVZoomHandle::SpectrumVZoomHandle
 
 SpectrumVZoomHandle::~SpectrumVZoomHandle() = default;
 
-void SpectrumVZoomHandle::Enter( bool, WavvyProject* )
+void SpectrumVZoomHandle::Enter( bool, WavacityProject* )
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -40,13 +40,13 @@ void SpectrumVZoomHandle::Enter( bool, WavvyProject* )
 }
 
 UIHandle::Result SpectrumVZoomHandle::Click
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result SpectrumVZoomHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -56,13 +56,13 @@ UIHandle::Result SpectrumVZoomHandle::Drag
 }
 
 HitTestPreview SpectrumVZoomHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *)
+(const TrackPanelMouseState &st, WavacityProject *)
 {
    return WaveTrackVZoomHandle::HitPreview(st.state);
 }
 
 UIHandle::Result SpectrumVZoomHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -72,7 +72,7 @@ UIHandle::Result SpectrumVZoomHandle::Release
       mZoomStart, mZoomEnd );
 }
 
-UIHandle::Result SpectrumVZoomHandle::Cancel(WavvyProject*)
+UIHandle::Result SpectrumVZoomHandle::Cancel(WavacityProject*)
 {
    // Cancel is implemented!  And there is no initial state to restore,
    // so just return a code.
@@ -100,7 +100,7 @@ wxRect SpectrumVZoomHandle::DrawingArea(
 // If ZoomStart and ZoomEnd are not equal, this may override
 // the zoomKind and cause a drag-zoom-in.
 void SpectrumVZoomHandle::DoZoom(
-   WavvyProject *pProject,
+   WavacityProject *pProject,
    WaveTrack *pTrack,
    WaveTrackViewConstants::ZoomActions ZoomKind,
    const wxRect &rect, int zoomStart, int zoomEnd,
@@ -156,8 +156,8 @@ void SpectrumVZoomHandle::DoZoom(
    {
    default:
       // If we have covered all the cases, this won't happen.
-      // In release builds Wavvy will ignore the zoom.
-      wxFAIL_MSG("Zooming Case not implemented by Wavvy");
+      // In release builds Wavacity will ignore the zoom.
+      wxFAIL_MSG("Zooming Case not implemented by Wavacity");
       break;
 
    // VZooming on spectral we don't implement the other zoom presets.

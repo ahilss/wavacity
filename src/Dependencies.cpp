@@ -23,18 +23,18 @@
 
 \class AliasedFile
 \brief An audio file that is referenced (pointed into) directly from
-an Wavvy .aup file rather than Wavvy having its own copies of the
+an Wavacity .aup file rather than Wavacity having its own copies of the
 data.
 
 *//*****************************************************************//**
 
 \class DependencyDialog
-\brief DependencyDialog shows dependencies of an WavvyProject on 
+\brief DependencyDialog shows dependencies of an WavacityProject on 
 AliasedFile s.
 
 *//********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Dependencies.h"
 
 #include <wx/button.h>
@@ -59,7 +59,7 @@ AliasedFile s.
 #include "WaveTrack.h"
 #include "WaveClip.h"
 #include "prefs/QualityPrefs.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ProgressDialog.h"
 
 #include <unordered_map>
@@ -74,7 +74,7 @@ using BoolBlockFileHash = std::unordered_map<BlockFile *, bool>;
 // Given a project, returns a single array of all SeqBlocks
 // in the current set of tracks.  Enumerating that array allows
 // you to process all block files in the current set.
-static void GetAllSeqBlocks(WavvyProject *project,
+static void GetAllSeqBlocks(WavacityProject *project,
                             BlockPtrArray *outBlocks)
 {
    for (auto waveTrack : TrackList::Get( *project ).Any< WaveTrack >()) {
@@ -87,7 +87,7 @@ static void GetAllSeqBlocks(WavvyProject *project,
    }
 }
 
-// Given an Wavvy project and a hash mapping aliased block
+// Given an Wavacity project and a hash mapping aliased block
 // files to un-aliased block files, walk through all of the
 // tracks and replace each aliased block file with its replacement.
 // Note that this code respects reference-counting and thus the
@@ -106,7 +106,7 @@ static void ReplaceBlockFiles(BlockPtrArray &blocks,
    }
 }
 
-void FindDependencies(WavvyProject *project,
+void FindDependencies(WavacityProject *project,
                       AliasedFileArray &outAliasedFiles)
 {
    sampleFormat format = QualityPrefs::SampleFormatChoice();
@@ -161,7 +161,7 @@ void FindDependencies(WavvyProject *project,
 // Given a project and a list of aliased files that should no
 // longer be external dependencies (selected by the user), replace
 // all of those alias block files with disk block files.
-static void RemoveDependencies(WavvyProject *project,
+static void RemoveDependencies(WavacityProject *project,
                                AliasedFileArray &aliasedFiles)
 // STRONG-GUARANTEE
 {
@@ -246,7 +246,7 @@ class DependencyDialog final : public wxDialogWrapper
 public:
    DependencyDialog(wxWindow *parent,
                     wxWindowID id,
-                    WavvyProject *project,
+                    WavacityProject *project,
                     AliasedFileArray &aliasedFiles,
                     bool isSaving);
 
@@ -268,7 +268,7 @@ private:
    void SaveFutureActionChoice();
 
 
-   WavvyProject  *mProject;
+   WavacityProject  *mProject;
    AliasedFileArray &mAliasedFiles;
    bool              mIsSaving;
    bool              mHasMissingFiles;
@@ -305,7 +305,7 @@ END_EVENT_TABLE()
 
 DependencyDialog::DependencyDialog(wxWindow *parent,
                                    wxWindowID id,
-                                   WavvyProject *project,
+                                   WavacityProject *project,
                                    AliasedFileArray &aliasedFiles,
                                    bool isSaving)
 : wxDialogWrapper(parent, id, XO("Project Depends on Other Audio Files"),
@@ -396,14 +396,14 @@ void DependencyDialog::PopulateOrExchange(ShuttleGui& S)
                S.Id(FutureActionChoiceID).AddChoice(
                   XXO("Whenever a project depends on other files:"),
                   {
-                     /*i18n-hint: One of the choices of what you want Wavvy to do when
-                     * Wavvy finds a project depends on another file.*/
+                     /*i18n-hint: One of the choices of what you want Wavacity to do when
+                     * Wavacity finds a project depends on another file.*/
                      XO("Ask me") ,
-                     /*i18n-hint: One of the choices of what you want Wavvy to do when
-                     * Wavvy finds a project depends on another file.*/
+                     /*i18n-hint: One of the choices of what you want Wavacity to do when
+                     * Wavacity finds a project depends on another file.*/
                      XO("Always copy all files (safest)") ,
-                     /*i18n-hint: One of the choices of what you want Wavvy to do when
-                     * Wavvy finds a project depends on another file.*/
+                     /*i18n-hint: One of the choices of what you want Wavacity to do when
+                     * Wavacity finds a project depends on another file.*/
                      XO("Never copy any files") ,
                   },
                   0 // "Ask me"
@@ -567,7 +567,7 @@ void DependencyDialog::OnCancel(wxCommandEvent& WXUNUSED(event))
 {
    if (mIsSaving)
    {
-      int ret = WavvyMessageBox(
+      int ret = WavacityMessageBox(
          XO(
 "If you proceed, your project will not be saved to disk. Is this what you want?"),
          XO("Cancel Save"),
@@ -599,7 +599,7 @@ void DependencyDialog::SaveFutureActionChoice()
 // Checks for alias block files, modifies the project if the
 // user requests it, and returns true if the user continues.
 // Returns false only if the user clicks Cancel.
-bool ShowDependencyDialogIfNeeded(WavvyProject *project,
+bool ShowDependencyDialogIfNeeded(WavacityProject *project,
                                   bool isSaving)
 {
    auto pWindow = FindProjectFrame( project );
@@ -611,10 +611,10 @@ bool ShowDependencyDialogIfNeeded(WavvyProject *project,
       {
          auto msg =
 XO("Your project is self-contained; it does not depend on any external audio files. \
-\n\nSome older Wavvy projects may not be self-contained, and care \n\
+\n\nSome older Wavacity projects may not be self-contained, and care \n\
 is needed to keep their external dependencies in the right place.\n\
 New projects will be self-contained and are less risky.");
-         WavvyMessageBox(
+         WavacityMessageBox(
             msg,
             XO("Dependency Check"),
             wxOK | wxICON_INFORMATION,

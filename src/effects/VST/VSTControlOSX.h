@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef WAVVY_VSTCONTROLOSX_H
-#define WAVVY_VSTCONTROLOSX_H
+#ifndef WAVACITY_VSTCONTROLOSX_H
+#define WAVACITY_VSTCONTROLOSX_H
 
 #if !defined(_LP64)
 #include <Carbon/Carbon.h>

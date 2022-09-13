@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_COLOR__
-#define __WAVVY_COLOR__
+#ifndef __WAVACITY_COLOR__
+#define __WAVACITY_COLOR__
 
 #include <memory>
 #include <wx/brush.h> // member variable

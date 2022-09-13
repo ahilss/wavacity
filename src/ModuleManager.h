@@ -9,14 +9,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MODULEMANAGER_H__
-#define __WAVVY_MODULEMANAGER_H__
+#ifndef __WAVACITY_MODULEMANAGER_H__
+#define __WAVACITY_MODULEMANAGER_H__
 
 #include "MemoryX.h"
 #include <map>
 #include <vector>
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxArrayString;
 class wxDynamicLibrary;
@@ -130,4 +130,4 @@ private:
    std::vector<std::unique_ptr<Module>> mModules;
 };
 
-#endif /* __WAVVY_MODULEMANAGER_H__ */
+#endif /* __WAVACITY_MODULEMANAGER_H__ */

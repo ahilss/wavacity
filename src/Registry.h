@@ -8,8 +8,8 @@ Paul Licameli split from CommandManager.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_REGISTRY__
-#define __WAVVY_REGISTRY__
+#ifndef __WAVACITY_REGISTRY__
+#define __WAVACITY_REGISTRY__
 
 #include "Prefs.h"
 

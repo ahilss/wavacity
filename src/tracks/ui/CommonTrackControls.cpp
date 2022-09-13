@@ -22,7 +22,7 @@ Paul Licameli split from TrackControls.cpp
 #include "../../TrackPanelMouseEvent.h"
 #include "../../TrackUtilities.h"
 #include <wx/textdlg.h>
-#include "../../commands/WavvyCommand.h"
+#include "../../commands/WavacityCommand.h"
 #include "../../commands/CommandManager.h"
 #include "../../ShuttleGui.h"
 #include "../../Track.h"
@@ -33,7 +33,7 @@ Paul Licameli split from TrackControls.cpp
 
 std::vector<UIHandlePtr> CommonTrackControls::HitTest
 (const TrackPanelMouseState &st,
- const WavvyProject *WXUNUSED(project))
+ const WavacityProject *WXUNUSED(project))
 {
    // Hits are mutually exclusive, results single
 
@@ -185,11 +185,11 @@ END_POPUP_MENU()
 
 
 
-// An example of using an WavvyCommand simply to create a dialog.
+// An example of using an WavacityCommand simply to create a dialog.
 // We can add additional functions later, if we want to make it
 // available to scripting.
 // However there is no reason to, as SetTrackStatus is already provided.
-class SetTrackNameCommand : public WavvyCommand
+class SetTrackNameCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -227,7 +227,7 @@ void TrackMenuTable::OnSetName(wxCommandEvent &)
    Track *const pTrack = mpData->pTrack;
    if (pTrack)
    {
-      WavvyProject *const proj = &mpData->project;
+      WavacityProject *const proj = &mpData->project;
       wxString* oldName = safenew wxString(pTrack->GetName());
 
       SetTrackNameCommand *Command = safenew SetTrackNameCommand();
@@ -255,7 +255,7 @@ void TrackMenuTable::OnSetName(wxCommandEvent &)
 
 void TrackMenuTable::OnMoveTrack(wxCommandEvent &event)
 {
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    TrackUtilities::MoveChoice choice;
    switch (event.GetId()) {
    default:
@@ -278,7 +278,7 @@ void TrackMenuTable::OnMoveTrack(wxCommandEvent &event)
 }
 
 unsigned CommonTrackControls::DoContextMenu(
-   const wxRect &rect, wxWindow *pParent, wxPoint *, WavvyProject *pProject)
+   const wxRect &rect, wxWindow *pParent, wxPoint *, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    wxRect buttonRect;

@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../CommonCommandFlags.h"
 #include "../Prefs.h"
@@ -19,7 +19,7 @@
 // private helper classes and functions
 namespace {
 
-void NextOrPrevFrame(WavvyProject &project, bool forward)
+void NextOrPrevFrame(WavacityProject &project, bool forward)
 {
    // Focus won't take in a dock unless at least one descendant window
    // accepts focus.  Tell controls to take focus for the duration of this
@@ -84,7 +84,7 @@ void NextOrPrevFrame(WavvyProject &project, bool forward)
 
 /// \todo Merge related methods, OnPrevTrack and OnNextTrack.
 void DoPrevTrack(
-   WavvyProject &project, bool shift, bool circularTrackNavigation )
+   WavacityProject &project, bool shift, bool circularTrackNavigation )
 {
    auto &projectHistory = ProjectHistory::Get( project );
    auto &trackFocus = TrackFocus::Get( project );
@@ -194,7 +194,7 @@ void DoPrevTrack(
 /// selecting and unselecting depending if you are on the start of a
 /// block or not.
 void DoNextTrack(
-   WavvyProject &project, bool shift, bool circularTrackNavigation )
+   WavacityProject &project, bool shift, bool circularTrackNavigation )
 {
    auto &projectHistory = ProjectHistory::Get( project );
    auto &trackFocus = TrackFocus::Get( project );
@@ -542,14 +542,14 @@ Handler &operator=( const Handler & ) PROHIBITED;
 } // namespace
 
 // Handler is stateful.  Needs a factory registered with
-// WavvyProject.
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-   [](WavvyProject&) {
+// WavacityProject.
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+   [](WavacityProject&) {
       return std::make_unique< NavigationActions::Handler >(); } };
 
 void RegisterNavigationMenu() {}
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &project) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &project) {
    return project.AttachedObjects::Get< NavigationActions::Handler >( key );
 };
 

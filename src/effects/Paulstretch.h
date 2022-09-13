@@ -7,8 +7,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_PAULSTRETCH__
-#define __WAVVY_EFFECT_PAULSTRETCH__
+#ifndef __WAVACITY_EFFECT_PAULSTRETCH__
+#define __WAVACITY_EFFECT_PAULSTRETCH__
 
 #include "Effect.h"
 

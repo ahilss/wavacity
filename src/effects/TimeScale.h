@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_TIMESCALE__
-#define __WAVVY_EFFECT_TIMESCALE__
+#ifndef __WAVACITY_EFFECT_TIMESCALE__
+#define __WAVACITY_EFFECT_TIMESCALE__
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #if USE_SBSMS
 
@@ -105,6 +105,6 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_EFFECT_TIMESCALE
+#endif // __WAVACITY_EFFECT_TIMESCALE
 
 #endif // USE_SBSMS

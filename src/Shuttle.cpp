@@ -3,7 +3,7 @@
   Shuttle.cpp
 
   James Crook
-  (C) Wavvy Developers, 2007
+  (C) Wavacity Developers, 2007
 
   wxWidgets license. See Licensing.txt
 
@@ -50,7 +50,7 @@ preferences.
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Shuttle.h"
 
 #include <wx/defs.h>
@@ -65,7 +65,7 @@ preferences.
 #include <wx/radiobut.h>
 #include <wx/button.h>
 
-#include "../include/wavvy/EffectAutomationParameters.h" // for command automation
+#include "../include/wavacity/EffectAutomationParameters.h" // for command automation
 
 #include "WrappedType.h"
 //#include "effects/Effect.h"

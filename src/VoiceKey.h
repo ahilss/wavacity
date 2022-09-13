@@ -1,6 +1,6 @@
 /***************************************************************************
 
-   Wavvy: A Digtial Audio Editor
+   Wavacity: A Digtial Audio Editor
 
    VoiceKey.h: a class implementing a voice key
 
@@ -8,15 +8,15 @@
    Distributed under the terms of the GPL Version 2 or later.
 
 ***************************************************************************/
-#ifndef __WAVVY_VOICEKEY__
-#define __WAVVY_VOICEKEY__
+#ifndef __WAVACITY_VOICEKEY__
+#define __WAVACITY_VOICEKEY__
 
 
 #ifndef M_PI
 #define	M_PI		3.14159265358979323846  /* pi */
 #endif
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class WaveTrack;
 

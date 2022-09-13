@@ -8,8 +8,8 @@
 
 *******************************************************************/
 
-#ifndef __WAVVY_RING_BUFFER__
-#define __WAVVY_RING_BUFFER__
+#ifndef __WAVACITY_RING_BUFFER__
+#define __WAVACITY_RING_BUFFER__
 
 #include "SampleFormat.h"
 #include <atomic>
@@ -58,4 +58,4 @@ class RingBuffer {
    SampleBuffer  mBuffer;
 };
 
-#endif /*  __WAVVY_RING_BUFFER__ */
+#endif /*  __WAVACITY_RING_BUFFER__ */

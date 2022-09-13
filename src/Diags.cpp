@@ -28,7 +28,7 @@ count down so that we track how many times the event happens.
 *//********************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Diags.h"
 
 #include <wx/defs.h>

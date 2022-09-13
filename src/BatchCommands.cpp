@@ -17,7 +17,7 @@ processing.  See also MacrosWindow and ApplyMacroDialog.
 
 #define wxLOG_COMPONENT "MacroCommands"
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "BatchCommands.h"
 
 #include <wx/defs.h>
@@ -44,11 +44,11 @@ processing.  See also MacrosWindow and ApplyMacroDialog.
 
 #include "AllThemeResources.h"
 
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 #include "commands/CommandContext.h"
 
-MacroCommands::MacroCommands( WavvyProject &project )
+MacroCommands::MacroCommands( WavacityProject &project )
 : mProject{ project }
 , mExporter{ project }
 {
@@ -146,7 +146,7 @@ wxString MacroCommands::ReadMacro(const wxString & macro, wxWindow *parent)
       check.SetPath(name.GetPath());
       if (check.FileExists())
       {
-         int id = WavvyMessageBox(
+         int id = WavacityMessageBox(
             XO("Macro %s already exists. Would you like to replace it?").Format(check.GetName()),
             XO("Import Macro"),
             wxYES_NO);
@@ -297,7 +297,7 @@ bool MacroCommands::RenameMacro(const wxString & oldmacro, const wxString & newm
 }
 
 // Gets all commands that are valid for this mode.
-MacroCommandsCatalog::MacroCommandsCatalog( const WavvyProject *project )
+MacroCommandsCatalog::MacroCommandsCatalog( const WavacityProject *project )
 {
    if (!project)
       return;
@@ -307,7 +307,7 @@ MacroCommandsCatalog::MacroCommandsCatalog( const WavvyProject *project )
    PluginManager & pm = PluginManager::Get();
    EffectManager & em = EffectManager::Get();
    {
-      const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect|PluginTypeWavvyCommand);
+      const PluginDescriptor *plug = pm.GetFirstPlugin(PluginTypeEffect|PluginTypeWavacityCommand);
       while (plug)
       {
          auto command = em.GetCommandIdentifier(plug->GetID());
@@ -317,7 +317,7 @@ MacroCommandsCatalog::MacroCommandsCatalog( const WavvyProject *project )
                plug->GetPluginType() == PluginTypeEffect ?
                   XO("Effect") : XO("Menu Command (With Parameters)")
             } );
-         plug = pm.GetNextPlugin(PluginTypeEffect|PluginTypeWavvyCommand);
+         plug = pm.GetNextPlugin(PluginTypeEffect|PluginTypeWavacityCommand);
       }
    }
 
@@ -489,11 +489,11 @@ wxString MacroCommands::PromptForPresetFor(const CommandID & command, const wxSt
    return preset;
 }
 
-/// DoWavvyCommand() takes a PluginID and executes the associated command.
+/// DoWavacityCommand() takes a PluginID and executes the associated command.
 ///
 /// At the moment flags are used only to indicate whether to prompt for
 /// parameters
-bool MacroCommands::DoWavvyCommand(
+bool MacroCommands::DoWavacityCommand(
    const PluginID & ID, const CommandContext & context, unsigned flags )
 {
    auto &project = context.project;
@@ -509,7 +509,7 @@ bool MacroCommands::DoWavvyCommand(
    }
 
    EffectManager & em = EffectManager::Get();
-   bool success = em.DoWavvyCommand(ID, 
+   bool success = em.DoWavacityCommand(ID, 
       context,
       &window,
       (flags & EffectManager::kConfigured) == 0);
@@ -547,16 +547,16 @@ bool MacroCommands::ApplyEffectCommand(
    if (!plug)
       return false;
 
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
 
    // IF nothing selected, THEN select everything depending
    // on preferences setting.
    // (most effects require that you have something selected).
-   if( plug->GetPluginType() != PluginTypeWavvyCommand )
+   if( plug->GetPluginType() != PluginTypeWavacityCommand )
    {
       if( !SelectUtilities::SelectAllIfNoneAndAllowed( *project ) )
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             // i18n-hint: %s will be replaced by the name of an action, such as "Remove Tracks".
             XO("\"%s\" requires one or more tracks to be selected.").Format(friendlyCommand));
          return false;
@@ -570,9 +570,9 @@ bool MacroCommands::ApplyEffectCommand(
    // transfer the parameters to the effect...
    if (EffectManager::Get().SetEffectParameters(ID, params))
    {
-      if( plug->GetPluginType() == PluginTypeWavvyCommand )
+      if( plug->GetPluginType() == PluginTypeWavacityCommand )
          // and apply the effect...
-         res = DoWavvyCommand(ID,
+         res = DoWavacityCommand(ID,
             Context,
             EffectManager::kConfigured |
             EffectManager::kSkipState |
@@ -641,7 +641,7 @@ bool MacroCommands::ApplyCommand( const TranslatableString &friendlyCommand,
          ID, friendlyCommand, command, params, context);
    }
 
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
    auto &manager = CommandManager::Get( *project );
    if( pContext ){
       if( HandleTextualCommand(
@@ -659,7 +659,7 @@ bool MacroCommands::ApplyCommand( const TranslatableString &friendlyCommand,
          return true;
    }
 
-   WavvyMessageBox(
+   WavacityMessageBox(
       XO("Your batch command of %s was not recognized.")
          .Format( friendlyCommand ) );
 
@@ -671,7 +671,7 @@ bool MacroCommands::ApplyCommandInBatchMode(
    const CommandID & command, const wxString &params,
    CommandContext const * pContext)
 {
-   WavvyProject *project = &mProject;
+   WavacityProject *project = &mProject;
    auto &settings = ProjectSettings::Get( *project );
    // Recalc flags and enable items that may have become enabled.
    MenuManager::Get(*project).UpdateMenus(false);
@@ -705,7 +705,7 @@ bool MacroCommands::ApplyMacro(
    auto cleanup1 = valueRestorer(MacroReentryCount);
    MacroReentryCount++;
 
-   WavvyProject *proj = &mProject;
+   WavacityProject *proj = &mProject;
    bool res = false;
 
    // Only perform this group on initial entry.  They should not be done
@@ -854,14 +854,14 @@ bool MacroCommands::ReportAndSkip(
    //TODO: Add a cancel button to these, and add the logic so that we can abort.
    if( !params.empty() )
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Apply %s with parameter(s)\n\n%s")
             .Format( friendlyCommand, params ),
          XO("Test Mode"));
    }
    else
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Apply %s").Format( friendlyCommand ),
          XO("Test Mode"));
    }
@@ -878,9 +878,9 @@ void MacroCommands::MigrateLegacyChains()
       // but only if like-named files are not already present in Macros.
 
       // Leave the old copies in place, in case a user wants to go back to
-      // an old Wavvy version.  They will have their old chains intact, but
+      // an old Wavacity version.  They will have their old chains intact, but
       // won't have any edits they made to the copy that now lives in Macros
-      // which old Wavvy will not read.
+      // which old Wavacity will not read.
 
       const auto oldDir = FileNames::LegacyChainDir();
       FilePaths files;

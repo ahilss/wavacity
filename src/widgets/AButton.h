@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_BUTTON__
-#define __WAVVY_BUTTON__
+#ifndef __WAVACITY_BUTTON__
+#define __WAVACITY_BUTTON__
 
 #include <vector>
 

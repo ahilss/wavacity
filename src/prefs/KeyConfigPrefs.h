@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_KEY_CONFIG_PREFS__
-#define __WAVVY_KEY_CONFIG_PREFS__
+#ifndef __WAVACITY_KEY_CONFIG_PREFS__
+#define __WAVACITY_KEY_CONFIG_PREFS__
 
 class CommandManager;
 class ShuttleGui;
@@ -33,7 +33,7 @@ class KeyConfigPrefs final : public PrefsPanel
 {
 public:
    KeyConfigPrefs(wxWindow * parent, wxWindowID winid,
-      WavvyProject *pProject,
+      WavacityProject *pProject,
       const CommandID &name);
    ComponentInterfaceSymbol GetSymbol() override;
    TranslatableString GetDescription() override;
@@ -93,7 +93,7 @@ private:
    wxRadioButton *mViewByName;
    wxRadioButton *mViewByKey;
 
-   WavvyProject *mProject{};
+   WavacityProject *mProject{};
 
    CommandManager *mManager;
    int mCommandSelected;

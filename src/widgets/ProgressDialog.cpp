@@ -22,11 +22,11 @@
 *//*******************************************************************//**
 
 \class ProgressDialog
-\brief Custom progress dialog with Wavvy specific semantics.
+\brief Custom progress dialog with Wavacity specific semantics.
 
 *//**********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ProgressDialog.h"
 
 #include <algorithm>
@@ -1641,7 +1641,7 @@ bool ProgressDialog::ConfirmAction(const TranslatableString & sPrompt,
       return true;
    }
 
-   WavvyMessageDialog dlgMessage(
+   WavacityMessageDialog dlgMessage(
       this,
       sPrompt,
       sTitle,

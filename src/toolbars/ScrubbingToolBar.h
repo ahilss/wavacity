@@ -9,8 +9,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_SCRUBBING_TOOLBAR__
-#define __WAVVY_SCRUBBING_TOOLBAR__
+#ifndef __WAVACITY_SCRUBBING_TOOLBAR__
+#define __WAVACITY_SCRUBBING_TOOLBAR__
 
 
 
@@ -18,7 +18,7 @@
 
 #include "ToolBar.h"
 
-class WavvyProject;
+class WavacityProject;
 
 class wxCommandEvent;
 class wxDC;
@@ -40,11 +40,11 @@ class ScrubbingToolBar final : public ToolBar {
 
 public:
 
-   ScrubbingToolBar( WavvyProject &project );
+   ScrubbingToolBar( WavacityProject &project );
    virtual ~ScrubbingToolBar();
 
-   static ScrubbingToolBar &Get( WavvyProject &project );
-   static const ScrubbingToolBar &Get( const WavvyProject &project );
+   static ScrubbingToolBar &Get( WavacityProject &project );
+   static const ScrubbingToolBar &Get( const WavacityProject &project );
 
    void Create(wxWindow *parent) override;
 

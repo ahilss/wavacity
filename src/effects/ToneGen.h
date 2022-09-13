@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_TONEGEN__
-#define __WAVVY_EFFECT_TONEGEN__
+#ifndef __WAVACITY_EFFECT_TONEGEN__
+#define __WAVACITY_EFFECT_TONEGEN__
 
 #include "Effect.h"
 

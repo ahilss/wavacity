@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_LEVELER__
-#define __WAVVY_EFFECT_LEVELER__
+#ifndef __WAVACITY_EFFECT_LEVELER__
+#define __WAVACITY_EFFECT_LEVELER__
 
 // PRL: no longer used
 

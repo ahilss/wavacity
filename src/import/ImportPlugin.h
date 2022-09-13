@@ -15,7 +15,7 @@
   them that) must implement.  Defines ImportFileHandle, ImportPlugin,
   UnusableImportPlugin, ImportPluginList and UnusableImportPluginList.
 
-  Since this is part of libwavvy, it must not use any GUI parts
+  Since this is part of libwavacity, it must not use any GUI parts
   of wxWidgets.
 
 *//****************************************************************//**
@@ -36,22 +36,22 @@ Gives API for sound file import.
 
 \class UnusableImportPlugin
 \brief Used in place of a real plug in for plug ins that have not
-been compiled or are not available in this version of Wavvy.  Has
+been compiled or are not available in this version of Wavacity.  Has
 enough information to identify the file extensions that would be used,
 but little else.
 
 *//*******************************************************************/
 
-#ifndef __WAVVY_IMPORTER__
-#define __WAVVY_IMPORTER__
+#ifndef __WAVACITY_IMPORTER__
+#define __WAVACITY_IMPORTER__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include "../Internat.h"
 #include "../MemoryX.h"
 
-class WavvyProject;
+class WavacityProject;
 class ProgressDialog;
 enum class ProgressResult : unsigned;
 class WaveTrackFactory;
@@ -66,7 +66,7 @@ public:
 
    // Get unique string ID of this plugin, usually it corresponds
    // to the underlying library, i.e. "libsndfile", "libflac", "libav"
-   // These MUST NOT change across Wavvy versions (but NEW IDs can
+   // These MUST NOT change across Wavacity versions (but NEW IDs can
    // be added).
    virtual wxString GetPluginStringID() = 0;
 
@@ -92,7 +92,7 @@ public:
    // format, false otherwise.  This puts the importer into the open
    // state.
    virtual std::unique_ptr<ImportFileHandle> Open(
-      const FilePath &Filename, WavvyProject*) = 0;
+      const FilePath &Filename, WavacityProject*) = 0;
 
    virtual ~ImportPlugin() { }
 

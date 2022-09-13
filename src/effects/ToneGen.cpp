@@ -18,7 +18,7 @@ frequency changes smoothly during the tone.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ToneGen.h"
 #include "LoadEffects.h"
 

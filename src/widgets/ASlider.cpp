@@ -29,7 +29,7 @@ or ASlider.
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ASlider.h"
 
 #include "../Experimental.h"

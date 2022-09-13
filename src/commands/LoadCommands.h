@@ -9,17 +9,17 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LOAD_COMMANDS__
-#define __WAVVY_LOAD_COMMANDS__
+#ifndef __WAVACITY_LOAD_COMMANDS__
+#define __WAVACITY_LOAD_COMMANDS__
 
-#include "wavvy/ModuleInterface.h"
+#include "wavacity/ModuleInterface.h"
 
 #include <functional>
 #include <memory>
 #include <unordered_map>
 #include "../MemoryX.h"
 
-class WavvyCommand;
+class WavacityCommand;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -33,7 +33,7 @@ public:
    BuiltinCommandsModule(const wxString *path);
    virtual ~BuiltinCommandsModule();
 
-   using Factory = std::function< std::unique_ptr<WavvyCommand> () >;
+   using Factory = std::function< std::unique_ptr<WavacityCommand> () >;
 
    // Typically you make a static object of this type in the .cpp file that
    // also implements the Command subclass.
@@ -75,7 +75,7 @@ public:
 private:
    // BuiltinEffectModule implementation
 
-   std::unique_ptr<WavvyCommand> Instantiate(const PluginPath & path);
+   std::unique_ptr<WavacityCommand> Instantiate(const PluginPath & path);
 
 private:
    struct Entry;

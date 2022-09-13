@@ -32,7 +32,7 @@ and on Mac OS X for the filesystem.
 #include <locale.h>
 #include <math.h> // for pow()
 
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 
 // in order for the static member variables to exist, they must appear here
 // (_outside_) the class definition, in order to be allocated some storage.
@@ -42,22 +42,22 @@ wxChar Internat::mDecimalSeparator = wxT('.'); // default
 // exclude is used by SanitiseFilename.
 wxArrayString Internat::exclude;
 
-// DA: Use tweaked translation mechanism to replace 'Wavvy' by 'DarkWavvy'.
+// DA: Use tweaked translation mechanism to replace 'Wavacity' by 'DarkWavacity'.
 #ifdef EXPERIMENTAL_DA
-// This function allows us to replace Wavvy by DarkWavvy without peppering 
+// This function allows us to replace Wavacity by DarkWavacity without peppering 
 // the source code with changes.  We split out this step, the customisation, as 
 // it is used on its own (without translation) in the wxTS macro.
-WAVVY_DLL_API const wxString& GetCustomSubstitution(const wxString& str2)
+WAVACITY_DLL_API const wxString& GetCustomSubstitution(const wxString& str2)
 {
-   // If contains 'DarkWavvy, already converted.
-   if( str2.Contains( "DarkWavvy" ))
+   // If contains 'DarkWavacity, already converted.
+   if( str2.Contains( "DarkWavacity" ))
       return str2;
-   // If does not contain 'Wavvy', nothing to do.
-   if( !str2.Contains( "Wavvy" ))
+   // If does not contain 'Wavacity', nothing to do.
+   if( !str2.Contains( "Wavacity" ))
       return str2;
    wxString str3 = str2;
-   str3.Replace( "Wavvy", "DarkWavvy" );
-   str3.Replace( " an DarkWavvy", " a DarkWavvy" );
+   str3.Replace( "Wavacity", "DarkWavacity" );
+   str3.Replace( " an DarkWavacity", " a DarkWavacity" );
    // DA also renames sync-lock(ed) as time-lock(ed).
    str3.Replace( "Sync-Lock", "Time-Lock" );
    str3.Replace( "Sync-&Lock", "Time-&Lock" );
@@ -65,15 +65,15 @@ WAVVY_DLL_API const wxString& GetCustomSubstitution(const wxString& str2)
    return wxTranslations::GetUntranslatedString(str3);
 }
 #else 
-WAVVY_DLL_API const wxString& GetCustomSubstitution(const wxString& str1)
+WAVACITY_DLL_API const wxString& GetCustomSubstitution(const wxString& str1)
 {
    return str1 ;
 }
 #endif
 
-// In any translated string, we can replace the name 'Wavvy' by 'DarkWavvy'
+// In any translated string, we can replace the name 'Wavacity' by 'DarkWavacity'
 // without requiring translators to see extra strings for the two versions.
-WAVVY_DLL_API const wxString& GetCustomTranslation(const wxString& str1)
+WAVACITY_DLL_API const wxString& GetCustomTranslation(const wxString& str1)
 {
    const wxString& str2 = wxGetTranslation( str1 );
    return GetCustomSubstitution( str2 );
@@ -279,7 +279,7 @@ TranslatableStrings Msgids( const std::vector<EnumValueSymbol> &strings )
 }
 
 // Find a better place for this?
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 Identifier::Identifier(
                        std::initializer_list<Identifier> components, wxChar separator )
 {

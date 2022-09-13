@@ -8,22 +8,22 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SAMPLE_FORMAT__
-#define __WAVVY_SAMPLE_FORMAT__
+#ifndef __WAVACITY_SAMPLE_FORMAT__
+#define __WAVACITY_SAMPLE_FORMAT__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "MemoryX.h"
 #include <wx/defs.h>
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 //
 // Definitions / Meta-Information
 //
 
 #if 0
-// Moved to wavvy/types.h
+// Moved to wavacity/types.h
 typedef enum {
    int16Sample = 0x00020001,
    int24Sample = 0x00040001,

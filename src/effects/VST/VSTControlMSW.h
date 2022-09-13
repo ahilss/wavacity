@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef WAVVY_VSTCONTROLMSW_H
-#define WAVVY_VSTCONTROLMSW_H
+#ifndef WAVACITY_VSTCONTROLMSW_H
+#define WAVACITY_VSTCONTROLMSW_H
 
 #include <Windows.h>
 

@@ -41,10 +41,10 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"   // keep ffmpeg before wx because they interact // for USE_* macros
+#include "../Wavacity.h"   // keep ffmpeg before wx because they interact // for USE_* macros
 #include "ExportFFmpegDialogs.h"
 
-#include "../FFmpeg.h"     // and Wavvy.h before FFmpeg for config*.h
+#include "../FFmpeg.h"     // and Wavacity.h before FFmpeg for config*.h
 
 #include <wx/checkbox.h>
 #include <wx/choice.h>
@@ -62,7 +62,7 @@
 
 #include "../Mix.h"
 #include "../Tags.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/HelpSystem.h"
 
 #include "Export.h"
@@ -958,7 +958,7 @@ bool FFmpegPresets::OverwriteIsOk( wxString &name )
    if (preset)
    {
       auto query = XO("Overwrite preset '%s'?").Format(name);
-      int action = WavvyMessageBox(
+      int action = WavacityMessageBox(
          query,
          XO("Confirm Overwrite"),
          wxYES_NO | wxCENTRE);
@@ -982,7 +982,7 @@ bool FFmpegPresets::SavePreset(ExportFFmpegOptions *parent, wxString &name)
       lb = dynamic_cast<wxListBox*>(wnd);
       if (lb->GetSelection() < 0)
       {
-         WavvyMessageBox( XO("Please select format before saving a profile") );
+         WavacityMessageBox( XO("Please select format before saving a profile") );
          return false;
       }
       format = lb->GetStringSelection();
@@ -992,7 +992,7 @@ bool FFmpegPresets::SavePreset(ExportFFmpegOptions *parent, wxString &name)
       if (lb->GetSelection() < 0)
       {
          /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
-         WavvyMessageBox( XO("Please select codec before saving a profile") );
+         WavacityMessageBox( XO("Please select codec before saving a profile") );
          return false;
       }
       codec = lb->GetStringSelection();
@@ -1067,7 +1067,7 @@ void FFmpegPresets::LoadPreset(ExportFFmpegOptions *parent, wxString &name)
    FFmpegPreset *preset = FindPreset(name);
    if (!preset)
    {
-      WavvyMessageBox( XO("Preset '%s' does not exist." ).Format(name));
+      WavacityMessageBox( XO("Preset '%s' does not exist." ).Format(name));
       return;
    }
 
@@ -1169,7 +1169,7 @@ bool FFmpegPresets::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
             if (mPreset)
             {
                auto query = XO("Replace preset '%s'?").Format( value );
-               int action = WavvyMessageBox(
+               int action = WavacityMessageBox(
                   query,
                   XO("Confirm Overwrite"),
                   wxYES_NO | wxCANCEL | wxCENTRE);
@@ -1250,15 +1250,15 @@ void FFmpegPresets::WriteXMLHeader(XMLWriter &xmlFile) const
    xmlFile.Write(wxT("standalone=\"no\" "));
    xmlFile.Write(wxT("?>\n"));
 
-   wxString dtdName = wxT("-//wavvyffmpegpreset-1.0.0//DTD//EN");
+   wxString dtdName = wxT("-//wavacityffmpegpreset-1.0.0//DTD//EN");
    wxString dtdURI =
-      wxT("http://wavvy.sourceforge.net/xml/wavvyffmpegpreset-1.0.0.dtd");
+      wxT("http://wavacity.sourceforge.net/xml/wavacityffmpegpreset-1.0.0.dtd");
 
    xmlFile.Write(wxT("<!DOCTYPE "));
    xmlFile.Write(wxT("project "));
    xmlFile.Write(wxT("PUBLIC "));
-   xmlFile.Write(wxT("\"-//wavvyffmpegpreset-1.0.0//DTD//EN\" "));
-   xmlFile.Write(wxT("\"http://wavvy.sourceforge.net/xml/wavvyffmpegpreset-1.0.0.dtd\" "));
+   xmlFile.Write(wxT("\"-//wavacityffmpegpreset-1.0.0//DTD//EN\" "));
+   xmlFile.Write(wxT("\"http://wavacity.sourceforge.net/xml/wavacityffmpegpreset-1.0.0.dtd\" "));
    xmlFile.Write(wxT(">\n"));
 }
 
@@ -2198,12 +2198,12 @@ void ExportFFmpegOptions::OnDeletePreset(wxCommandEvent& WXUNUSED(event))
    wxString presetname = preset->GetValue();
    if (presetname.empty())
    {
-      WavvyMessageBox( XO("You can't delete a preset without name") );
+      WavacityMessageBox( XO("You can't delete a preset without name") );
       return;
    }
 
    auto query = XO("Delete preset '%s'?").Format( presetname );
-   int action = WavvyMessageBox(
+   int action = WavacityMessageBox(
       query,
       XO("Confirm Deletion"),
       wxYES_NO | wxCENTRE);
@@ -2232,7 +2232,7 @@ bool ExportFFmpegOptions::SavePreset(bool bCheckForOverwrite)
    wxString name = preset->GetValue();
    if (name.empty())
    {
-      WavvyMessageBox( XO("You can't save a preset without a name") );
+      WavacityMessageBox( XO("You can't save a preset without a name") );
       return false;
    }
    if( bCheckForOverwrite && !mPresets->OverwriteIsOk(name))
@@ -2313,7 +2313,7 @@ void ExportFFmpegOptions::OnExportPresets(wxCommandEvent& WXUNUSED(event))
    mPresets->GetPresetList( presets);
    if( presets.Count() < 1)
    {
-      WavvyMessageBox( XO("No presets to export") );
+      WavacityMessageBox( XO("No presets to export") );
       return;
    }
 
@@ -2399,7 +2399,7 @@ bool ExportFFmpegOptions::ReportIfBadCombination()
    if( bFound )
       return false;
 
-   WavvyMessageBox(
+   WavacityMessageBox(
       /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
       XO("Format %s is not compatible with codec %s.")
          .Format( *selfmt, *selcdc ),

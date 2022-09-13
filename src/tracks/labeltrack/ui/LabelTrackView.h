@@ -8,8 +8,8 @@ Paul Licameli split from class LabelTrack
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_TRACK_VIEW__
-#define __WAVVY_LABEL_TRACK_VIEW__
+#ifndef __WAVACITY_LABEL_TRACK_VIEW__
+#define __WAVACITY_LABEL_TRACK_VIEW__
 
 #include "../../ui/CommonTrackView.h"
 
@@ -53,11 +53,11 @@ public:
    static LabelTrackView &Get( LabelTrack& );
    static const LabelTrackView &Get( const LabelTrack& );
 
-   bool DoCaptureKey( WavvyProject &project, wxKeyEvent &event );
+   bool DoCaptureKey( WavacityProject &project, wxKeyEvent &event );
    bool DoKeyDown(
-      WavvyProject &project, NotifyingSelectedRegion &sel, wxKeyEvent & event);
+      WavacityProject &project, NotifyingSelectedRegion &sel, wxKeyEvent & event);
    bool DoChar(
-      WavvyProject &project, NotifyingSelectedRegion &sel, wxKeyEvent & event);
+      WavacityProject &project, NotifyingSelectedRegion &sel, wxKeyEvent & event);
 
    //This returns the index of the label we just added.
    int AddLabel(const SelectedRegion &region,
@@ -70,20 +70,20 @@ private:
 
    std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject, int currentTool, bool bMultiTool)
+       const WavacityProject *pProject, int currentTool, bool bMultiTool)
       override;
 
    unsigned CaptureKey
      (wxKeyEvent &event, ViewInfo &viewInfo, wxWindow *pParent,
-      WavvyProject *project) override;
+      WavacityProject *project) override;
 
    unsigned KeyDown
       (wxKeyEvent &event, ViewInfo &viewInfo, wxWindow *pParent,
-      WavvyProject *project) override;
+      WavacityProject *project) override;
 
    unsigned Char
       (wxKeyEvent &event, ViewInfo &viewInfo, wxWindow *pParent,
-      WavvyProject *project) override;
+      WavacityProject *project) override;
 
    std::shared_ptr<TrackVRulerControls> DoGetVRulerControls() override;
 
@@ -92,13 +92,13 @@ private:
 
 public:
    static void DoEditLabels(
-      WavvyProject &project, LabelTrack *lt = nullptr, int index = -1);
+      WavacityProject &project, LabelTrack *lt = nullptr, int index = -1);
 
    static int DialogForLabelName(
-      WavvyProject &project, const SelectedRegion& region,
+      WavacityProject &project, const SelectedRegion& region,
       const wxString& initialValue, wxString& value);
 
-   bool IsTextSelected( WavvyProject &project ) const;
+   bool IsTextSelected( WavacityProject &project ) const;
 
 private:
    void CreateCustomGlyphs();
@@ -109,13 +109,13 @@ public:
 
    void Draw( TrackPanelDrawingContext &context, const wxRect & r ) const;
 
-   int GetSelectedIndex( WavvyProject &project ) const;
+   int GetSelectedIndex( WavacityProject &project ) const;
    void SetSelectedIndex( int index );
 
-   bool CutSelectedText( WavvyProject &project );
-   bool CopySelectedText( WavvyProject &project );
+   bool CutSelectedText( WavacityProject &project );
+   bool CopySelectedText( WavacityProject &project );
    bool PasteSelectedText(
-      WavvyProject &project, double sel0, double sel1 );
+      WavacityProject &project, double sel0, double sel1 );
 
    static void OverGlyph(
       const LabelTrack &track, LabelTrackHit &hit, int x, int y );
@@ -176,16 +176,16 @@ private:
 public:
    //get current cursor position,
    // relative to the left edge of the track panel
-   bool CalcCursorX( WavvyProject &project, int * x ) const;
+   bool CalcCursorX( WavacityProject &project, int * x ) const;
 
 private:
    void CalcHighlightXs(int *x1, int *x2) const;
 
 public:
-   void ShowContextMenu( WavvyProject &project );
+   void ShowContextMenu( WavacityProject &project );
 
 private:
-   void OnContextMenu( WavvyProject &project, wxCommandEvent & evt);
+   void OnContextMenu( WavacityProject &project, wxCommandEvent & evt);
 
    mutable Index mSelIndex{-1};  /// Keeps track of the currently selected label
 
@@ -235,7 +235,7 @@ private:
    static void calculateFontHeight(wxDC & dc);
 
 public:
-   bool HasSelection( WavvyProject &project ) const;
+   bool HasSelection( WavacityProject &project ) const;
 
 private:
    void RemoveSelectedText();

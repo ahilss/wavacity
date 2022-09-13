@@ -18,21 +18,21 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_HELPSYSTEM__
-#define __WAVVY_HELPSYSTEM__
+#ifndef __WAVACITY_HELPSYSTEM__
+#define __WAVACITY_HELPSYSTEM__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/defs.h>
 #include "wxPanelWrapper.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 
 /** @brief Class which contains static methods and data needed for implementing
  * help buttons
  *
  * This class should be the only place in the codebase where the location of
- * the online copy of the Wavvy manual is stored, so that it can be 
+ * the online copy of the Wavacity manual is stored, so that it can be 
  * changed if required
  */
 class HelpSystem
@@ -75,7 +75,7 @@ public:
                      bool bModal = false,
                      bool alwaysDefaultBrowser = false);
 
-   /// Displays a page from the Wavvy manual  in your browser, if
+   /// Displays a page from the Wavacity manual  in your browser, if
    /// it's available locally, OR else links to the internet.
    /// @param PageName The name of the manual page to display as it is in
    /// _development version_ of the manual (i.e. in MediaWiki), _not_ the
@@ -121,7 +121,7 @@ void OpenInDefaultBrowser(const wxHtmlLinkInfo& link);
 /// \brief An HtmlWindow that handles linked clicked - usually the
 /// link will go to our own local copy of the manual, but it could
 /// launch a new browser window.
-class WAVVY_DLL_API LinkingHtmlWindow final : public HtmlWindow
+class WAVACITY_DLL_API LinkingHtmlWindow final : public HtmlWindow
 {
  public:
    LinkingHtmlWindow(wxWindow *parent, wxWindowID id = -1,
@@ -155,4 +155,4 @@ public:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_HELPSYSTEM__
+#endif // __WAVACITY_HELPSYSTEM__

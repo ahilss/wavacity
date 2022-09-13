@@ -201,7 +201,7 @@ public:
    void Update(const wxString &) override {}
 };
 
-/// Displays messages from a command in an WavvyMessageBox
+/// Displays messages from a command in an WavacityMessageBox
 class MessageBoxTarget final : public CommandMessageTarget
 {
 public:

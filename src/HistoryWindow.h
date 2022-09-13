@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_HISTORY_WINDOW__
-#define __WAVVY_HISTORY_WINDOW__
+#ifndef __WAVACITY_HISTORY_WINDOW__
+#define __WAVACITY_HISTORY_WINDOW__
 
 #include "Prefs.h"
 #include "widgets/wxPanelWrapper.h" // to inherit
@@ -19,7 +19,7 @@ class wxListCtrl;
 class wxListEvent;
 class wxSpinCtrl;
 class wxTextCtrl;
-class WavvyProject;
+class WavacityProject;
 class ShuttleGui;
 class UndoManager;
 
@@ -28,7 +28,7 @@ class HistoryDialog final : public wxDialogWrapper,
 {
 
  public:
-   HistoryDialog(WavvyProject * parent, UndoManager *manager);
+   HistoryDialog(WavacityProject * parent, UndoManager *manager);
 
    void UpdateDisplay(wxEvent &e);
    
@@ -54,7 +54,7 @@ class HistoryDialog final : public wxDialogWrapper,
    // PrefsListener implementation
    void UpdatePrefs() override;
 
-   WavvyProject   *mProject;
+   WavacityProject   *mProject;
    UndoManager       *mManager;
    wxListCtrl        *mList;
    wxTextCtrl        *mTotal;

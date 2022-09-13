@@ -17,7 +17,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "GUIPrefs.h"
 
 #include "../Experimental.h"
@@ -36,10 +36,10 @@
 
 #include "ThemePrefs.h"
 #include "../AColor.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 GUIPrefs::GUIPrefs(wxWindow * parent, wxWindowID winid)
-/* i18n-hint: refers to Wavvy's user interface settings */
+/* i18n-hint: refers to Wavacity's user interface settings */
 :  PrefsPanel(parent, winid, XC("Interface", "GUI"))
 {
    Populate();
@@ -208,7 +208,7 @@ void GUIPrefs::PopulateOrExchange(ShuttleGui & S)
       S.TieCheckBox(XXO("Re&tain labels if selection snaps to a label"),
                     {wxT("/GUI/RetainLabels"),
                      false});
-      S.TieCheckBox(XXO("B&lend system and Wavvy theme"),
+      S.TieCheckBox(XXO("B&lend system and Wavacity theme"),
                     {wxT("/GUI/BlendThemes"),
                      true});
 #ifndef __WXMAC__
@@ -300,7 +300,7 @@ wxString GUIPrefs::SetLang( const wxString & lang )
    if (!lang.empty() && lang != wxT("System")) {
       info = wxLocale::FindLanguageInfo(lang);
       if (!info)
-         ::WavvyMessageBox(
+         ::WavacityMessageBox(
             XO("Language \"%s\" is unknown").Format( lang ) );
    }
    if (!info)
@@ -312,7 +312,7 @@ wxString GUIPrefs::SetLang( const wxString & lang )
    }
    sLocale = std::make_unique<wxLocale>(info->Language);
 
-   for( const auto &path : FileNames::WavvyPathList() )
+   for( const auto &path : FileNames::WavacityPathList() )
       sLocale->AddCatalogLookupPathPrefix( path );
 
    // LL:  Must add the wxWidgets catalog manually since the search
@@ -321,7 +321,7 @@ wxString GUIPrefs::SetLang( const wxString & lang )
    sLocale->AddCatalog(wxT("wxstd"));
 
    // Must match TranslationExists() in Languages.cpp
-   sLocale->AddCatalog("wavvy");
+   sLocale->AddCatalog("wavacity");
 
    // Initialize internationalisation (number formats etc.)
    //
@@ -379,7 +379,7 @@ int ShowClippingPrefsID()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "GUI",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew GUIPrefs(parent, winid);

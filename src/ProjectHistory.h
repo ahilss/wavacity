@@ -8,12 +8,12 @@ Paul Licameli split from ProjectManager.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_HISTORY__
-#define __WAVVY_PROJECT_HISTORY__
+#ifndef __WAVACITY_PROJECT_HISTORY__
+#define __WAVACITY_PROJECT_HISTORY__
 
 #include "ClientData.h"
 
-class WavvyProject;
+class WavacityProject;
 struct UndoState;
 enum class UndoPush : unsigned char;
 
@@ -21,10 +21,10 @@ class ProjectHistory final
    : public ClientData::Base
 {
 public:
-   static ProjectHistory &Get( WavvyProject &project );
-   static const ProjectHistory &Get( const WavvyProject &project );
+   static ProjectHistory &Get( WavacityProject &project );
+   static const ProjectHistory &Get( const WavacityProject &project );
 
-   explicit ProjectHistory( WavvyProject &project )
+   explicit ProjectHistory( WavacityProject &project )
       : mProject{ project }
    {}
    ProjectHistory( const ProjectHistory & ) PROHIBITED;
@@ -52,7 +52,7 @@ public:
    void SetDirty( bool value ) { mDirty = value; }
 
 private:
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    bool mDirty{ false };
 };

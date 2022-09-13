@@ -20,19 +20,19 @@ in a background thread.
 
 
 
-#ifndef __WAVVY_ODTASK__
-#define __WAVVY_ODTASK__
+#ifndef __WAVACITY_ODTASK__
+#define __WAVACITY_ODTASK__
 
 #include "../BlockFile.h"
 
 #include <vector>
 #include <wx/event.h> // to declare custom event type
-class WavvyProject;
+class WavacityProject;
 class Track;
 class WaveTrack;
 
 
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_ODTASK_COMPLETE, wxCommandEvent);
 
 /// A class representing a modular task to be used with the On-Demand structures.
@@ -120,7 +120,7 @@ class ODTask /* not final */
    virtual TranslatableString GetTip()=0;
 
     ///returns true if the task is associated with the project.
-   virtual bool IsTaskAssociatedWithProject(WavvyProject* proj);
+   virtual bool IsTaskAssociatedWithProject(WavacityProject* proj);
 
    bool IsRunning();
 

@@ -15,14 +15,14 @@ information.
 *//*******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "FileFormats.h"
 
 #include <wx/arrstr.h>
 #include <wx/intl.h>
 #include "sndfile.h"
 #include "Internat.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "Prefs.h"
 
 #ifndef SNDFILE_1
@@ -339,7 +339,7 @@ int SFFileCloser::operator() (SNDFILE *sf) const
    if (err) {
       char buffer[1000];
       sf_error_str(sf, buffer, 1000);
-      WavvyMessageBox(
+      WavacityMessageBox(
          /* i18n-hint: %s will be the error message from the libsndfile software library */
          XO( "Error (file may not have been written): %s" )
             // Not attempting to localize error messages

@@ -8,7 +8,7 @@ Paul Licameli split from TimeTrackVZoomHandle.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "TimeTrackVZoomHandle.h"
 #include "TimeTrackVRulerControls.h"
 #include "TimeTrackControls.h"
@@ -31,7 +31,7 @@ TimeTrackVZoomHandle::TimeTrackVZoomHandle(
 
 TimeTrackVZoomHandle::~TimeTrackVZoomHandle() = default;
 
-void TimeTrackVZoomHandle::Enter( bool, WavvyProject* )
+void TimeTrackVZoomHandle::Enter( bool, WavacityProject* )
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -39,13 +39,13 @@ void TimeTrackVZoomHandle::Enter( bool, WavvyProject* )
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Click
-(const TrackPanelMouseEvent &, WavvyProject *)
+(const TrackPanelMouseEvent &, WavacityProject *)
 {
    return RefreshCode::RefreshNone;
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -55,7 +55,7 @@ UIHandle::Result TimeTrackVZoomHandle::Drag
 }
 
 HitTestPreview TimeTrackVZoomHandle::Preview
-(const TrackPanelMouseState &st, WavvyProject *)
+(const TrackPanelMouseState &st, WavacityProject *)
 {
    static  wxCursor arrowCursor{ wxCURSOR_ARROW };
 
@@ -67,7 +67,7 @@ HitTestPreview TimeTrackVZoomHandle::Preview
 }
 
 UIHandle::Result TimeTrackVZoomHandle::Release
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject,
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject,
  wxWindow *pParent)
 {
    auto pTrack = TrackList::Get( *pProject ).Lock(mpTrack);
@@ -95,7 +95,7 @@ UIHandle::Result TimeTrackVZoomHandle::Release
    return UpdateVRuler | RefreshAll;
 }
 
-UIHandle::Result TimeTrackVZoomHandle::Cancel(WavvyProject*)
+UIHandle::Result TimeTrackVZoomHandle::Cancel(WavacityProject*)
 {
    // Cancel is implemented!  And there is no initial state to restore,
    // so just return a code.

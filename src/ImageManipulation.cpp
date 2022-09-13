@@ -22,7 +22,7 @@ channel.  This collection of functions fills that gap.
 *//*********************************************************************/
 
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "ImageManipulation.h"
 
 #include <wx/image.h>
@@ -52,7 +52,7 @@ std::unique_ptr<wxImage> ChangeImageColour(wxImage * srcImage,
    // be grayscale, and smoothly changes the overall color
    // to the specified color, and returns the result as a
    // NEW image.  This works well for grayscale 3D images.
-   // Wavvy uses this routines to make the buttons
+   // Wavacity uses this routines to make the buttons
    // (skip-start, play, stop, record, skip-end) adapt to
    // the color scheme of the user.
 

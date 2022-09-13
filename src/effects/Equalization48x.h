@@ -8,8 +8,8 @@ Intrinsics (SSE/AVX) and Threaded Equalization
 
 ***********************************************************************/
 
-#ifndef __WAVVY_EFFECT_EQUALIZATION48X__
-#define __WAVVY_EFFECT_EQUALIZATION48X__
+#ifndef __WAVACITY_EFFECT_EQUALIZATION48X__
+#define __WAVACITY_EFFECT_EQUALIZATION48X__
 
 #include "../Experimental.h"
 
@@ -18,7 +18,7 @@ Intrinsics (SSE/AVX) and Threaded Equalization
 #include "../MemoryX.h"
 
 #include <wx/thread.h> // to inherit
-#include <wavvy/Types.h>
+#include <wavacity/Types.h>
 class WaveTrack;
 using fft_type = float;
 

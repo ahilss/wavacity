@@ -15,7 +15,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #ifdef USE_LIBVORBIS
 
@@ -35,7 +35,7 @@
 
 #include "../Tags.h"
 #include "../Track.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 
 //----------------------------------------------------------------------------
@@ -133,7 +133,7 @@ public:
    // Required
    void OptionsCreate(ShuttleGui &S, int format) override;
 
-   ProgressResult Export(WavvyProject *project,
+   ProgressResult Export(WavacityProject *project,
                std::unique_ptr<ProgressDialog> &pDialog,
                unsigned channels,
                const wxFileNameWrapper &fName,
@@ -146,7 +146,7 @@ public:
 
 private:
 
-   bool FillComment(WavvyProject *project, vorbis_comment *comment, const Tags *metadata);
+   bool FillComment(WavacityProject *project, vorbis_comment *comment, const Tags *metadata);
 };
 
 ExportOGG::ExportOGG()
@@ -160,7 +160,7 @@ ExportOGG::ExportOGG()
    SetDescription(XO("Ogg Vorbis Files"),0);
 }
 
-ProgressResult ExportOGG::Export(WavvyProject *project,
+ProgressResult ExportOGG::Export(WavacityProject *project,
                        std::unique_ptr<ProgressDialog> &pDialog,
                        unsigned numChannels,
                        const wxFileNameWrapper &fName,
@@ -182,7 +182,7 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
    FileIO outFile(fName, FileIO::Output);
 
    if (!outFile.IsOpened()) {
-      WavvyMessageBox( XO("Unable to open target file for writing") );
+      WavacityMessageBox( XO("Unable to open target file for writing") );
       return ProgressResult::Cancelled;
    }
 
@@ -209,7 +209,7 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
    vorbis_info_init(&info);
    if (vorbis_encode_init_vbr(&info, numChannels, (int)(rate + 0.5), quality)) {
       // TODO: more precise message
-      WavvyMessageBox( XO("Unable to export - rate or quality problem") );
+      WavacityMessageBox( XO("Unable to export - rate or quality problem") );
       return ProgressResult::Cancelled;
    }
 
@@ -223,14 +223,14 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
 
    // Retrieve tags
    if (!FillComment(project, &comment, metadata)) {
-      WavvyMessageBox( XO("Unable to export - problem with metadata") );
+      WavacityMessageBox( XO("Unable to export - problem with metadata") );
       return ProgressResult::Cancelled;
    }
 
    // Set up analysis state and auxiliary encoding storage
    if (vorbis_analysis_init(&dsp, &info) ||
        vorbis_block_init(&dsp, &block)) {
-      WavvyMessageBox( XO("Unable to export - problem initialising") );
+      WavacityMessageBox( XO("Unable to export - problem initialising") );
       return ProgressResult::Cancelled;
    }
 
@@ -239,7 +239,7 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
    // chained streams with concatenation.
    srand(time(NULL));
    if (ogg_stream_init(&stream, rand())) {
-      WavvyMessageBox( XO("Unable to export - problem creating stream") );
+      WavacityMessageBox( XO("Unable to export - problem creating stream") );
       return ProgressResult::Cancelled;
    }
 
@@ -261,7 +261,7 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
       ogg_stream_packetin(&stream, &bitstream_header) ||
       ogg_stream_packetin(&stream, &comment_header) ||
       ogg_stream_packetin(&stream, &codebook_header)) {
-      WavvyMessageBox( XO("Unable to export - problem with packets") );
+      WavacityMessageBox( XO("Unable to export - problem with packets") );
       return ProgressResult::Cancelled;
    }
 
@@ -270,7 +270,7 @@ ProgressResult ExportOGG::Export(WavvyProject *project,
    while (ogg_stream_flush(&stream, &page)) {
       if ( outFile.Write(page.header, page.header_len).GetLastError() ||
            outFile.Write(page.body, page.body_len).GetLastError()) {
-         WavvyMessageBox( XO("Unable to export - problem with file") );
+         WavacityMessageBox( XO("Unable to export - problem with file") );
          return ProgressResult::Cancelled;
       }
    }
@@ -374,7 +374,7 @@ void ExportOGG::OptionsCreate(ShuttleGui &S, int format)
    S.AddWindow( safenew ExportOGGOptions{ S.GetParent(), format } );
 }
 
-bool ExportOGG::FillComment(WavvyProject *project, vorbis_comment *comment, const Tags *metadata)
+bool ExportOGG::FillComment(WavacityProject *project, vorbis_comment *comment, const Tags *metadata)
 {
    // Retrieve tags from project if not over-ridden
    if (metadata == NULL)

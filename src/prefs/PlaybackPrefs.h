@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PLAYBACK_PREFS__
-#define __WAVVY_PLAYBACK_PREFS__
+#ifndef __WAVACITY_PLAYBACK_PREFS__
+#define __WAVACITY_PLAYBACK_PREFS__
 
 #include <wx/defs.h>
 

@@ -8,15 +8,15 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DEMO_COMMAND__
-#define __WAVVY_DEMO_COMMAND__
+#ifndef __WAVACITY_DEMO_COMMAND__
+#define __WAVACITY_DEMO_COMMAND__
 
-#include "WavvyCommand.h"
+#include "WavacityCommand.h"
 #include "../SampleFormat.h"
 
 class ShuttleGui;
 
-class DemoCommand final : public WavvyCommand
+class DemoCommand final : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -28,7 +28,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I");};
 
 private:
@@ -36,4 +36,4 @@ private:
    double decay;
 };
 
-#endif // __WAVVY_DEMO_COMMAND__
+#endif // __WAVACITY_DEMO_COMMAND__

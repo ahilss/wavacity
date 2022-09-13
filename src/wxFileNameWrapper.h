@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_WXFILENAMEWRAPPER__
-#define __WAVVY_WXFILENAMEWRAPPER__
+#ifndef __WAVACITY_WXFILENAMEWRAPPER__
+#define __WAVACITY_WXFILENAMEWRAPPER__
 
 class wxArrayString;
 

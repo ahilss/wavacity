@@ -22,7 +22,7 @@
 
 class Track;
 
-class SetTrackBase : public WavvyCommand
+class SetTrackBase : public WavacityCommand
 {
 public:
    SetTrackBase();
@@ -53,7 +53,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#set_track_status");};
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -80,7 +80,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#set_track_audio");};
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -109,7 +109,7 @@ public:
    bool DefineParams( ShuttleParams & S ) override;
    void PopulateOrExchange(ShuttleGui & S) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_I#set_track_visuals");};
    bool ApplyInner( const CommandContext & context, Track * t ) override;
 
@@ -149,7 +149,7 @@ public:
    // ComponentInterface overrides
    ComponentInterfaceSymbol GetSymbol() override {return Symbol;};
    TranslatableString GetDescription() override {return XO("Sets various values for a track.");};
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#set_track");};
 
 public:

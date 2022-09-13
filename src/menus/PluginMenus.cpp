@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include "../AudioIO.h"
@@ -28,8 +28,8 @@
 // private helper classes and functions
 namespace {
 
-WavvyProject::AttachedWindows::RegisteredFactory sMacrosWindowKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sMacrosWindowKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       auto &window = ProjectWindow::Get( parent );
       return safenew MacrosWindow(
          &window, parent, true
@@ -37,7 +37,7 @@ WavvyProject::AttachedWindows::RegisteredFactory sMacrosWindowKey{
    }
 };
 
-void DoManagePluginsMenu(WavvyProject &project, EffectType type)
+void DoManagePluginsMenu(WavacityProject &project, EffectType type)
 {
    auto &window = GetProjectFrame( project );
    PluginManager::Get().ShowManager(&window, type, [](bool result) {
@@ -413,12 +413,12 @@ void OnResetConfig(const CommandContext &context)
    // These are necessary to preserve the newly correctly laid out toolbars.
    // In particular the Device Toolbar ends up short on next restart, 
    // if they are left out.
-   gPrefs->Write(wxT("/PrefsVersion"), wxString(wxT(WAVVY_PREFS_VERSION_STRING)));
+   gPrefs->Write(wxT("/PrefsVersion"), wxString(wxT(WAVACITY_PREFS_VERSION_STRING)));
 
    // write out the version numbers to the prefs file for future checking
-   gPrefs->Write(wxT("/Version/Major"), WAVVY_VERSION);
-   gPrefs->Write(wxT("/Version/Minor"), WAVVY_RELEASE);
-   gPrefs->Write(wxT("/Version/Micro"), WAVVY_REVISION);
+   gPrefs->Write(wxT("/Version/Major"), WAVACITY_VERSION);
+   gPrefs->Write(wxT("/Version/Minor"), WAVACITY_RELEASE);
+   gPrefs->Write(wxT("/Version/Micro"), WAVACITY_REVISION);
 
    gPrefs->Flush();
 
@@ -634,12 +634,12 @@ void OnApplyMacroDirectlyByName(const CommandContext& context, const MacroID& Na
 
 }
 
-void OnWavvyCommand(const CommandContext & ctx)
+void OnWavacityCommand(const CommandContext & ctx)
 {
    // using GET in a log message for devs' eyes only
    wxLogDebug( "Command was: %s", ctx.parameter.GET());
    // Not configured, so prompt user.
-   MacroCommands::DoWavvyCommand(
+   MacroCommands::DoWavacityCommand(
       EffectManager::Get().GetEffectByIdentifier(ctx.parameter),
       ctx, EffectManager::kNone);
 }
@@ -648,9 +648,9 @@ void OnWavvyCommand(const CommandContext & ctx)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static PluginActions::Handler instance;
    return instance;
 };
@@ -823,7 +823,7 @@ using namespace MenuTable;
 
 const ReservedCommandFlag&
    HasLastGeneratorFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project){
+      [](const WavacityProject &project){
          return !MenuManager::Get( project ).mLastGenerator.empty();
       }
    }; return flag; }
@@ -847,7 +847,7 @@ BaseItemSharedPtr GenerateMenu()
 
       Section("RepeatLast",
          // Delayed evaluation:
-         [](WavvyProject &project)
+         [](WavacityProject &project)
          {
             const auto &lastGenerator = MenuManager::Get(project).mLastGenerator;
             TranslatableString buildMenuLabel;
@@ -867,7 +867,7 @@ BaseItemSharedPtr GenerateMenu()
 
       Section( "Generators",
          // Delayed evaluation:
-         [](WavvyProject &)
+         [](WavacityProject &)
          { return Items( wxEmptyString, PopulateEffectsMenu(
             EffectTypeGenerate,
             AudioIONotBusyFlag(),
@@ -880,7 +880,7 @@ BaseItemSharedPtr GenerateMenu()
 
 static const ReservedCommandFlag
 &IsRealtimeNotActiveFlag() { static ReservedCommandFlag flag{
-   [](const WavvyProject &){
+   [](const WavacityProject &){
       return !RealtimeEffectManager::Get().RealtimeIsActive();
    }
 }; return flag; }  //lll
@@ -892,7 +892,7 @@ AttachedItem sAttachment1{
 
 const ReservedCommandFlag&
    HasLastEffectFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project) {
+      [](const WavacityProject &project) {
          return !MenuManager::Get(project).mLastEffect.empty();
       }
    }; return flag;
@@ -915,7 +915,7 @@ BaseItemSharedPtr EffectMenu()
 
       Section( "RepeatLast",
          // Delayed evaluation:
-         [](WavvyProject &project)
+         [](WavacityProject &project)
          {
             const auto &lastEffect = MenuManager::Get(project).mLastEffect;
             TranslatableString buildMenuLabel;
@@ -935,7 +935,7 @@ BaseItemSharedPtr EffectMenu()
 
       Section( "Effects",
          // Delayed evaluation:
-         [](WavvyProject &)
+         [](WavacityProject &)
          { return Items( wxEmptyString, PopulateEffectsMenu(
             EffectTypeProcess,
             AudioIONotBusyFlag() | TimeSelectedFlag() | WaveTracksSelectedFlag(),
@@ -953,7 +953,7 @@ AttachedItem sAttachment2{
 
 const ReservedCommandFlag&
    HasLastAnalyzerFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project) {
+      [](const WavacityProject &project) {
          if (MenuManager::Get(project).mLastAnalyzerRegistration == MenuCreator::repeattypeunique) return true;
          return !MenuManager::Get(project).mLastAnalyzer.empty();
       }
@@ -979,7 +979,7 @@ BaseItemSharedPtr AnalyzeMenu()
 
       Section("RepeatLast",
          // Delayed evaluation:
-         [](WavvyProject &project)
+         [](WavacityProject &project)
          {
             const auto &lastAnalyzer = MenuManager::Get(project).mLastAnalyzer;
             TranslatableString buildMenuLabel;
@@ -1001,7 +1001,7 @@ BaseItemSharedPtr AnalyzeMenu()
          Items( "Windows" ),
 
          // Delayed evaluation:
-         [](WavvyProject&)
+         [](WavacityProject&)
          { return Items( wxEmptyString, PopulateEffectsMenu(
             EffectTypeAnalyze,
             AudioIONotBusyFlag() | TimeSelectedFlag() | WaveTracksSelectedFlag(),
@@ -1019,7 +1019,7 @@ AttachedItem sAttachment3{
 
 const ReservedCommandFlag&
    HasLastToolFlag() { static ReservedCommandFlag flag{
-      [](const WavvyProject &project) {
+      [](const WavacityProject &project) {
       auto& menuManager = MenuManager::Get(project);
          if (menuManager.mLastToolRegistration == MenuCreator::repeattypeunique) return true;
          return !menuManager.mLastTool.empty();
@@ -1045,7 +1045,7 @@ BaseItemSharedPtr ToolsMenu()
 
          Section( "RepeatLast",
          // Delayed evaluation:
-         [](WavvyProject &project)
+         [](WavacityProject &project)
          {
             const auto &lastTool = MenuManager::Get(project).mLastTool;
             TranslatableString buildMenuLabel;
@@ -1076,7 +1076,7 @@ BaseItemSharedPtr ToolsMenu()
 
             Section( "",
                // Delayed evaluation:
-               [](WavvyProject&)
+               [](WavacityProject&)
                { return Items( wxEmptyString, PopulateMacrosMenu( AudioIONotBusyFlag() ) ); }
             )
          )
@@ -1102,7 +1102,7 @@ BaseItemSharedPtr ToolsMenu()
 
       Section( "Tools",
          // Delayed evaluation:
-         [](WavvyProject&)
+         [](WavacityProject&)
          { return Items( wxEmptyString, PopulateEffectsMenu(
             EffectTypeTool,
             AudioIONotBusyFlag(),
@@ -1118,14 +1118,14 @@ BaseItemSharedPtr ToolsMenu()
             FN(OnSimulateRecordingErrors),
             AudioIONotBusyFlag(),
             Options{}.CheckTest(
-               [](WavvyProject&){
+               [](WavacityProject&){
                   return AudioIO::Get()->mSimulateRecordingErrors; } ) ),
          Command( wxT("DetectUpstreamDropouts"),
             XXO("Detect Upstream Dropouts"),
             FN(OnDetectUpstreamDropouts),
             AudioIONotBusyFlag(),
             Options{}.CheckTest(
-               [](WavvyProject&){
+               [](WavacityProject&){
                   return AudioIO::Get()->mDetectUpstreamDropouts; } ) )
       )
 #endif
@@ -1150,37 +1150,37 @@ BaseItemSharedPtr ExtraScriptablesIMenu()
       // whereas the short-form used here must not.
       // (So if you did write "CompareAudio" for the PLUGIN_SYMBOL name, then
       // you would have to use "Compareaudio" here.)
-      Command( wxT("SelectTime"), XXO("Select Time..."), FN(OnWavvyCommand),
+      Command( wxT("SelectTime"), XXO("Select Time..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SelectFrequencies"), XXO("Select Frequencies..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SelectTracks"), XXO("Select Tracks..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SetTrackStatus"), XXO("Set Track Status..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SetTrackAudio"), XXO("Set Track Audio..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SetTrackVisuals"), XXO("Set Track Visuals..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("GetPreference"), XXO("Get Preference..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SetPreference"), XXO("Set Preference..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("SetClip"), XXO("Set Clip..."), FN(OnWavvyCommand),
+      Command( wxT("SetClip"), XXO("Set Clip..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SetEnvelope"), XXO("Set Envelope..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("SetLabel"), XXO("Set Label..."), FN(OnWavvyCommand),
+      Command( wxT("SetLabel"), XXO("Set Label..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("SetProject"), XXO("Set Project..."), FN(OnWavvyCommand),
+      Command( wxT("SetProject"), XXO("Set Project..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() )
    ) ) };
    return menu;
@@ -1198,34 +1198,34 @@ BaseItemSharedPtr ExtraScriptablesIIMenu()
    ( FinderScope{ findCommandHandler },
    // i18n-hint: Scriptables are commands normally used from Python, Perl etc.
    Menu( wxT("Scriptables2"), XXO("Scripta&bles II"),
-      Command( wxT("Select"), XXO("Select..."), FN(OnWavvyCommand),
+      Command( wxT("Select"), XXO("Select..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("SetTrack"), XXO("Set Track..."), FN(OnWavvyCommand),
+      Command( wxT("SetTrack"), XXO("Set Track..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("GetInfo"), XXO("Get Info..."), FN(OnWavvyCommand),
+      Command( wxT("GetInfo"), XXO("Get Info..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("Message"), XXO("Message..."), FN(OnWavvyCommand),
+      Command( wxT("Message"), XXO("Message..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("Help"), XXO("Help..."), FN(OnWavvyCommand),
+      Command( wxT("Help"), XXO("Help..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("Import2"), XXO("Import..."), FN(OnWavvyCommand),
+      Command( wxT("Import2"), XXO("Import..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("Export2"), XXO("Export..."), FN(OnWavvyCommand),
+      Command( wxT("Export2"), XXO("Export..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("OpenProject2"), XXO("Open Project..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("SaveProject2"), XXO("Save Project..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
-      Command( wxT("Drag"), XXO("Move Mouse..."), FN(OnWavvyCommand),
+      Command( wxT("Drag"), XXO("Move Mouse..."), FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       Command( wxT("CompareAudio"), XXO("Compare Audio..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() ),
       // i18n-hint: Screenshot in the help menu has a much bigger dialog.
       Command( wxT("Screenshot"), XXO("Screenshot (short format)..."),
-         FN(OnWavvyCommand),
+         FN(OnWavacityCommand),
          AudioIONotBusyFlag() )
    ) ) };
    return menu;

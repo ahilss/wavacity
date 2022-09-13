@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_GLYPH_HANDLE__
-#define __WAVVY_LABEL_GLYPH_HANDLE__
+#ifndef __WAVACITY_LABEL_GLYPH_HANDLE__
+#define __WAVACITY_LABEL_GLYPH_HANDLE__
 
 #include "LabelDefaultClickHandle.h"
 
@@ -63,23 +63,23 @@ public:
 
    virtual ~LabelGlyphHandle();
 
-   void Enter(bool forward, WavvyProject *) override;
+   void Enter(bool forward, WavacityProject *) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
    bool StopsOnKeystroke() override { return true; }
 
@@ -94,7 +94,7 @@ private:
        const wxMouseEvent & evt, const wxRect & r, const ZoomInfo &zoomInfo,
        NotifyingSelectedRegion &newSel);
    bool HandleGlyphDragRelease
-      (WavvyProject &project,
+      (WavacityProject &project,
        LabelTrackHit &hit,
        const wxMouseEvent & evt, wxRect & r, const ZoomInfo &zoomInfo,
        NotifyingSelectedRegion &newSel);

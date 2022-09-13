@@ -13,9 +13,9 @@
 modelled on BuiltinEffectsModule
 *****************************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "LoadCommands.h"
-#include "WavvyCommand.h"
+#include "WavacityCommand.h"
 
 #include "../Prefs.h"
 
@@ -45,13 +45,13 @@ void BuiltinCommandsModule::DoRegistration(
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -104,12 +104,12 @@ VendorSymbol BuiltinCommandsModule::GetVendor()
 wxString BuiltinCommandsModule::GetVersion()
 {
    // This "may" be different if this were to be maintained as a separate DLL
-   return WAVVY_VERSION_STRING;
+   return WAVACITY_VERSION_STRING;
 }
 
 TranslatableString BuiltinCommandsModule::GetDescription()
 {
-   return XO("Provides builtin commands to Wavvy");
+   return XO("Provides builtin commands to Wavacity");
 }
 
 // ============================================================================
@@ -156,7 +156,7 @@ bool BuiltinCommandsModule::AutoRegisterPlugins(PluginManagerInterface & pm)
          // Uses Generic Registration, not Default.
          // Registers as TypeGeneric, not TypeEffect.
          DiscoverPluginsAtPath(path, ignoredErrMsg,
-            PluginManagerInterface::WavvyCommandRegistrationCallback);
+            PluginManagerInterface::WavacityCommandRegistrationCallback);
       }
    }
 
@@ -207,8 +207,8 @@ ComponentInterface *BuiltinCommandsModule::CreateInstance(const PluginPath & pat
 void BuiltinCommandsModule::DeleteInstance(ComponentInterface *instance)
 {
    // Releases the resource.
-   std::unique_ptr < WavvyCommand > {
-      dynamic_cast<WavvyCommand *>(instance)
+   std::unique_ptr < WavacityCommand > {
+      dynamic_cast<WavacityCommand *>(instance)
    };
 }
 
@@ -216,7 +216,7 @@ void BuiltinCommandsModule::DeleteInstance(ComponentInterface *instance)
 // BuiltinCommandsModule implementation
 // ============================================================================
 
-std::unique_ptr<WavvyCommand> BuiltinCommandsModule::Instantiate(const PluginPath & path)
+std::unique_ptr<WavacityCommand> BuiltinCommandsModule::Instantiate(const PluginPath & path)
 {
    wxASSERT(path.StartsWith(BUILTIN_GENERIC_COMMAND_PREFIX));
    auto iter = mCommands.find( path );

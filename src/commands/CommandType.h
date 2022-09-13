@@ -17,7 +17,7 @@
 #define __COMMANDTYPE__
 
 #include "CommandSignature.h"
-#include "../commands/WavvyCommand.h"
+#include "../commands/WavacityCommand.h"
 
 class OldStyleCommand;
 
@@ -39,7 +39,7 @@ class CommandOutputTargets;
 class CommandSignature;
 class wxString;
 
-class OldStyleCommandType : public WavvyCommand
+class OldStyleCommandType : public WavacityCommand
 {
 private:
    ComponentInterfaceSymbol mSymbol;
@@ -64,7 +64,7 @@ public:
 
    // Create a command instance with the specified output target
    virtual OldStyleCommandPointer Create(
-      WavvyProject *project, std::unique_ptr<CommandOutputTargets> &&target) = 0;
+      WavacityProject *project, std::unique_ptr<CommandOutputTargets> &&target) = 0;
 };
 
 #endif /* End of include guard: __COMMANDTYPE__ */

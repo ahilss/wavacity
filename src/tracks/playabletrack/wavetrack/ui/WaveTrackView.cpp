@@ -249,7 +249,7 @@ public:
    }
 
    Result Click(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject ) override
+      const TrackPanelMouseEvent &event, WavacityProject *pProject ) override
    {
       using namespace RefreshCode;
       const auto &permutation = mAdjuster.mPermutation;
@@ -301,7 +301,7 @@ public:
       return RefreshNone;
    }
 
-   Result Drag( const TrackPanelMouseEvent &event, WavvyProject * ) override
+   Result Drag( const TrackPanelMouseEvent &event, WavacityProject * ) override
    {
       using namespace RefreshCode;
       auto pView = mAdjuster.mwView.lock();
@@ -375,7 +375,7 @@ public:
    }
 
    HitTestPreview Preview(
-      const TrackPanelMouseState &state, WavvyProject * ) override
+      const TrackPanelMouseState &state, WavacityProject * ) override
    {
       static auto resizeCursor =
          ::MakeCursor(wxCURSOR_ARROW, SubViewsCursorXpm, 16, 16);
@@ -387,14 +387,14 @@ public:
    }
 
    Result Release(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      const TrackPanelMouseEvent &event, WavacityProject *pProject,
       wxWindow *pParent) override
    {
       ProjectHistory::Get( *pProject ).ModifyState( false );
       return RefreshCode::RefreshNone;
    }
 
-   Result Cancel( WavvyProject * ) override
+   Result Cancel( WavacityProject * ) override
    {
       mAdjuster.UpdateViews( true );
       return RefreshCode::RefreshAll;
@@ -475,7 +475,7 @@ public:
    }
    
    Result Click(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject ) override
+      const TrackPanelMouseEvent &event, WavacityProject *pProject ) override
    {
       using namespace RefreshCode;
       const auto &permutation = mAdjuster.mPermutation;
@@ -530,7 +530,7 @@ public:
       return Neutral;
    }
 
-   Result Drag( const TrackPanelMouseEvent &event, WavvyProject * ) override
+   Result Drag( const TrackPanelMouseEvent &event, WavacityProject * ) override
    {
       using namespace RefreshCode;
       auto pView = mAdjuster.mwView.lock();
@@ -568,7 +568,7 @@ public:
    }
 
    HitTestPreview Preview(
-      const TrackPanelMouseState &state, WavvyProject * ) override
+      const TrackPanelMouseState &state, WavacityProject * ) override
    {
       static auto hoverCursor =
          ::MakeCursor(wxCURSOR_HAND, RearrangeCursorXpm, 16, 16);
@@ -582,14 +582,14 @@ public:
    }
 
    Result Release(
-      const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      const TrackPanelMouseEvent &event, WavacityProject *pProject,
       wxWindow *pParent) override
    {
       ProjectHistory::Get( *pProject ).ModifyState( false );
       return RefreshCode::RefreshNone;
    }
 
-   Result Cancel( WavvyProject * ) override
+   Result Cancel( WavacityProject * ) override
    {
       mAdjuster.UpdateViews( true );
       return RefreshCode::RefreshAll;
@@ -648,7 +648,7 @@ public:
    }
 
    Result CommitChanges(
-      const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent)
+      const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent)
       override
    {
       ProjectHistory::Get( *pProject ).ModifyState( false );
@@ -660,7 +660,7 @@ public:
    }
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &project) const override
+      const wxMouseState &state, WavacityProject &project) const override
    {
       return XO("Close sub-view");
    }
@@ -688,7 +688,7 @@ std::pair<
    std::vector<UIHandlePtr>
 > WaveTrackSubView::DoDetailedHitTest(
    const TrackPanelMouseState &state,
-   const WavvyProject *pProject, int currentTool, bool bMultiTool,
+   const WavacityProject *pProject, int currentTool, bool bMultiTool,
    const std::shared_ptr<WaveTrack> &wt)
 {
    auto results = WaveTrackView::DoDetailedHitTest(
@@ -802,7 +802,7 @@ void WaveTrackView::CopyTo( Track &track ) const
 
 std::vector<UIHandlePtr> WaveTrackView::DetailedHitTest
 (const TrackPanelMouseState &st,
- const WavvyProject *pProject, int currentTool, bool bMultiTool)
+ const WavacityProject *pProject, int currentTool, bool bMultiTool)
 {
    // should not come here any more, delegation to sub-view instead
    wxASSERT( false );
@@ -812,7 +812,7 @@ std::vector<UIHandlePtr> WaveTrackView::DetailedHitTest
 std::pair< bool, std::vector<UIHandlePtr> >
 WaveTrackView::DoDetailedHitTest
 (const TrackPanelMouseState &st,
- const WavvyProject *pProject, int currentTool, bool bMultiTool,
+ const WavacityProject *pProject, int currentTool, bool bMultiTool,
  const std::shared_ptr<WaveTrack> &pTrack,
  CommonTrackView &view)
 {

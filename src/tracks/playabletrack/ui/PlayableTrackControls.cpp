@@ -10,7 +10,7 @@ Paul Licameli split from TrackInfo.cpp
 
 #include "PlayableTrackControls.h"
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "../../../Experimental.h"
 
 #include "PlayableTrackButtonHandles.h"

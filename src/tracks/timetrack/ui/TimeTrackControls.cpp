@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "TimeTrackControls.h"
 
 #include "../../../HitTestResult.h"
@@ -25,7 +25,7 @@ TimeTrackControls::~TimeTrackControls()
 
 std::vector<UIHandlePtr> TimeTrackControls::HitTest
 (const TrackPanelMouseState & state,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    return CommonTrackControls::HitTest(state, pProject);
 }
@@ -93,7 +93,7 @@ void TimeTrackMenuTable::OnSetTimeTrackRange(wxCommandEvent & /*event*/)
                   if (newLower >= TimeTrackControls::kRangeMin &&
                       newUpper <= TimeTrackControls::kRangeMax &&
                       newLower < newUpper) {
-                     WavvyProject *const project = &mpData->project;
+                     WavacityProject *const project = &mpData->project;
                      pTrack->SetRangeLower((double)newLower / 100.0);
                      pTrack->SetRangeUpper((double)newUpper / 100.0);
                      ProjectHistory::Get( *project )
@@ -115,7 +115,7 @@ void TimeTrackMenuTable::OnTimeTrackLin(wxCommandEvent & /*event*/)
 {
    TimeTrack *const pTrack = static_cast<TimeTrack*>(mpData->pTrack);
    pTrack->SetDisplayLog(false);
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    ProjectHistory::Get( *project )
       .PushState(XO("Set time track display to linear"), XO("Set Display"));
 
@@ -127,7 +127,7 @@ void TimeTrackMenuTable::OnTimeTrackLog(wxCommandEvent & /*event*/)
 {
    TimeTrack *const pTrack = static_cast<TimeTrack*>(mpData->pTrack);
    pTrack->SetDisplayLog(true);
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    ProjectHistory::Get( *project )
       .PushState(XO("Set time track display to logarithmic"), XO("Set Display"));
 
@@ -138,7 +138,7 @@ void TimeTrackMenuTable::OnTimeTrackLog(wxCommandEvent & /*event*/)
 void TimeTrackMenuTable::OnTimeTrackLogInt(wxCommandEvent & /*event*/)
 {
    TimeTrack *const pTrack = static_cast<TimeTrack*>(mpData->pTrack);
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    if (pTrack->GetInterpolateLog()) {
       pTrack->SetInterpolateLog(false);
       ProjectHistory::Get( *project )

@@ -1,12 +1,12 @@
 //
 //  OverlayPanel.cpp
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 5/7/16.
 //
 //
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "OverlayPanel.h"
 
 #include "Overlay.h"

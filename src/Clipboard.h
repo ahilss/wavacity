@@ -8,19 +8,19 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_CLIPBOARD__
-#define __WAVVY_CLIPBOARD__
+#ifndef __WAVACITY_CLIPBOARD__
+#define __WAVACITY_CLIPBOARD__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <memory>
 #include <wx/event.h> // to inherit wxEvtHandler
 
-class WavvyProject;
+class WavacityProject;
 class TrackList;
 
 // An event emitted by the clipboard whenever its contents change.
-wxDECLARE_EXPORTED_EVENT( WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT( WAVACITY_DLL_API,
                           EVT_CLIPBOARD_CHANGE, wxCommandEvent );
 
 class Clipboard final
@@ -35,13 +35,13 @@ public:
    double T1() const { return mT1; }
    double Duration() const { return mT1 - mT0; }
 
-   const std::weak_ptr<WavvyProject> &Project() const { return mProject; }
+   const std::weak_ptr<WavacityProject> &Project() const { return mProject; }
 
    void Clear();
    
    void Assign(
      TrackList && newContents, double t0, double t1,
-     const std::weak_ptr<WavvyProject> &pProject );
+     const std::weak_ptr<WavacityProject> &pProject );
 
    Clipboard();
    ~Clipboard();
@@ -51,7 +51,7 @@ public:
 private:
 
    std::shared_ptr<TrackList> mTracks;
-   std::weak_ptr<WavvyProject> mProject{};
+   std::weak_ptr<WavacityProject> mProject{};
    double mT0{ 0 };
    double mT1{ 0 };
 };

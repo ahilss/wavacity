@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectWindow.cpp
 
-Paul Licameli split from WavvyProject.cpp
+Paul Licameli split from WavacityProject.cpp
 
 **********************************************************************/
 
@@ -363,7 +363,7 @@ MouseWheelHandler()
 mutable double mVertScrollRemainder = 0.0;
 
 unsigned operator()
-   ( const TrackPanelMouseEvent &evt, WavvyProject *pProject ) const
+   ( const TrackPanelMouseEvent &evt, WavacityProject *pProject ) const
 {
    using namespace RefreshCode;
 
@@ -395,11 +395,11 @@ unsigned operator()
    {
 #if 0
          // JKC: Alternative scroll wheel zooming code
-         // using WavvyProject zooming, which is smarter,
+         // using WavacityProject zooming, which is smarter,
          // it keeps selections on screen and centred if it can,
          // also this ensures mousewheel and zoom buttons give same result.
          double ZoomFactor = pow(2.0, steps);
-         WavvyProject *p = GetProject();
+         WavacityProject *p = GetProject();
          if( steps > 0 )
             // PRL:  Track panel refresh may be needed if you reenable this
             // code, but we don't want this file dependent on TrackPanel.cpp
@@ -495,8 +495,8 @@ unsigned operator()
 
 } sMouseWheelHandler;
 
-WavvyProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
-   []( WavvyProject &parent ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
+   []( WavacityProject &parent ) -> wxWeakRef< wxWindow > {
       wxRect wndRect;
       bool bMaximized = false;
       bool bIconized = false;
@@ -528,26 +528,26 @@ WavvyProject::AttachedWindows::RegisteredFactory sProjectWindowKey{
 
 }
 
-ProjectWindow &ProjectWindow::Get( WavvyProject &project )
+ProjectWindow &ProjectWindow::Get( WavacityProject &project )
 {
    return project.AttachedWindows::Get< ProjectWindow >( sProjectWindowKey );
 }
 
-const ProjectWindow &ProjectWindow::Get( const WavvyProject &project )
+const ProjectWindow &ProjectWindow::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectWindow *ProjectWindow::Find( WavvyProject *pProject )
+ProjectWindow *ProjectWindow::Find( WavacityProject *pProject )
 {
    return pProject
       ? pProject->AttachedWindows::Find< ProjectWindow >( sProjectWindowKey )
       : nullptr;
 }
 
-const ProjectWindow *ProjectWindow::Find( const WavvyProject *pProject )
+const ProjectWindow *ProjectWindow::Find( const WavacityProject *pProject )
 {
-   return Find( const_cast< WavvyProject * >( pProject ) );
+   return Find( const_cast< WavacityProject * >( pProject ) );
 }
 
 int ProjectWindow::NextWindowID()
@@ -568,7 +568,7 @@ enum {
 
 ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
                                  const wxPoint & pos,
-                                 const wxSize & size, WavvyProject &project)
+                                 const wxSize & size, WavacityProject &project)
    : ProjectWindowBase{ parent, id, pos, size, project }
 {
    mNextWindowID = NextID;
@@ -604,7 +604,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
       this, wxPoint( left, top ), wxSize( width, height ) );
    pNotebook  = Factory.AddNotebook( mMainPanel );
    /* i18n-hint: This is an experimental feature where the main panel in
-      Wavvy is put on a notebook tab, and this is the name on that tab.
+      Wavacity is put on a notebook tab, and this is the name on that tab.
       Other tabs in that notebook may have instruments, patch panels etc.*/
    pPage = Factory.AddPage( pNotebook, _("Main Mix"));
 #else
@@ -619,7 +619,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    mMainPanel->SetLabel("Main Panel");// Not localised.
    pPage = mMainPanel;
    // Set the colour here to the track panel background to avoid
-   // flicker when Wavvy starts up.
+   // flicker when Wavacity starts up.
    // However, that leads to areas next to the horizontal scroller
    // being painted in background colour and not scroller background
    // colour, so suppress this for now.
@@ -638,7 +638,7 @@ ProjectWindow::ProjectWindow(wxWindow * parent, wxWindowID id,
    // PRL: Old comments below.  No longer observing the ordering that it
    //      recommends.  ProjectWindow::OnActivate puts the focus directly into
    //      the TrackPanel, which avoids the problems.
-   // LLL: When Wavvy starts or becomes active after returning from
+   // LLL: When Wavacity starts or becomes active after returning from
    //      another application, the first window that can accept focus
    //      will be given the focus even if we try to SetFocus().  By
    //      creating the scrollbars after the TrackPanel, we resolve
@@ -1067,7 +1067,7 @@ void ProjectWindow::FixScrollbars()
    // Setting mVSbar earlier, int HandlXMLTag, didn't succeed in restoring
    // the vertical scrollbar to its saved position.  So defer that till now.
    // mbInitializingScrollbar should be true only at the start of the life
-   // of an WavvyProject reopened from disk.
+   // of an WavacityProject reopened from disk.
    if (!mbInitializingScrollbar) {
       viewInfo.vpos = mVsbar->GetThumbPosition() * viewInfo.scrollStep;
    }
@@ -1345,14 +1345,14 @@ void ProjectWindow::OnShow(wxShowEvent & event)
    // Remember that the window has been shown at least once
    mShownOnce = true;
 
-   // (From Debian...see also TrackPanel::OnTimer and WavvyTimer::Notify)
+   // (From Debian...see also TrackPanel::OnTimer and WavacityTimer::Notify)
    //
    // Description: Workaround for wxWidgets bug: Reentry in clipboard
    //  The wxWidgets bug http://trac.wxwidgets.org/ticket/16636 prevents
    //  us from doing clipboard operations in wxShowEvent and wxTimerEvent
    //  processing because those event could possibly be processed during
    //  the (not sufficiently protected) Yield() of a first clipboard
-   //  operation, causing reentry. Wavvy had a workaround in place
+   //  operation, causing reentry. Wavacity had a workaround in place
    //  for this problem (the class "CaptureEvents"), which however isn't
    //  applicable with wxWidgets 3.0 because it's based on changing the
    //  gdk event handler, a change that would be overridden by wxWidgets's
@@ -1506,10 +1506,10 @@ void ProjectWindow::OnActivate(wxActivateEvent & event)
    mActive = event.GetActive();
 
    // Under Windows, focus can be "lost" when returning to
-   // Wavvy from a different application.
+   // Wavacity from a different application.
    //
    // This was observed by minimizing all windows using WINDOWS+M and
-   // then ALT+TAB to return to Wavvy.  Focus will be given to the
+   // then ALT+TAB to return to Wavacity.  Focus will be given to the
    // project window frame which is not at all useful.
    //
    // So, we use ToolManager's observation of focus changes in a wxEventFilter.
@@ -1650,7 +1650,7 @@ void ProjectWindow::TP_HandleResize()
    HandleResize();
 }
 
-ProjectWindow::PlaybackScroller::PlaybackScroller(WavvyProject *project)
+ProjectWindow::PlaybackScroller::PlaybackScroller(WavacityProject *project)
 : mProject(project)
 {
    ViewInfo::Get( *mProject ).Bind(EVT_TRACK_PANEL_TIMER,

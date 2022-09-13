@@ -16,7 +16,7 @@
 
       libsoxr, written by Rob Sykes. LGPL.
 
-   Since Wavvy always does resampling on mono streams that are
+   Since Wavacity always does resampling on mono streams that are
    contiguous in memory, this class doesn't support multiple channels
    or some of the other optional features of some of these resamplers.
 
@@ -25,7 +25,7 @@
 #include "Resample.h"
 #include "Prefs.h"
 #include "Internat.h"
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 
 #include <soxr.h>
 

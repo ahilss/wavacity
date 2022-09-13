@@ -11,17 +11,17 @@ LRN
 #if !defined(__EXPORT_FFMPEG_DIALOGS_H__)
 #define __EXPORT_FFMPEG_DIALOGS_H__
 
-#include "../Wavvy.h"   // keep ffmpeg before wx because they interact // for USE_* macros
+#include "../Wavacity.h"   // keep ffmpeg before wx because they interact // for USE_* macros
 
 #if defined(USE_FFMPEG)
 
-#include "../FFmpeg.h"     // and Wavvy.h before FFmpeg for config*.h
+#include "../FFmpeg.h"     // and Wavacity.h before FFmpeg for config*.h
 
 #include "../xml/XMLFileReader.h"
 #include "../FileNames.h"
 
 #include <unordered_map>
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class wxArrayStringEx;
 

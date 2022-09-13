@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FILEIO__
-#define __WAVVY_FILEIO__
+#ifndef __WAVACITY_FILEIO__
+#define __WAVACITY_FILEIO__
 
 #include "MemoryX.h"
 

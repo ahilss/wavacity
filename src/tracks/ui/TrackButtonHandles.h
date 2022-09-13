@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_BUTTON_HANDLES__
-#define __WAVVY_TRACK_BUTTON_HANDLES__
+#ifndef __WAVACITY_TRACK_BUTTON_HANDLES__
+#define __WAVACITY_TRACK_BUTTON_HANDLES__
 
 #include "../ui/ButtonHandle.h"
 
@@ -21,11 +21,11 @@ class MinimizeButtonHandle final : public ButtonHandle
 
 protected:
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent)
+      (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent)
       override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
 public:
    explicit MinimizeButtonHandle
@@ -47,11 +47,11 @@ class SelectButtonHandle final : public ButtonHandle
 
 protected:
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent)
+      (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent)
       override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
 public:
    explicit SelectButtonHandle
@@ -73,11 +73,11 @@ class CloseButtonHandle final : public ButtonHandle
 
 protected:
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent)
+      (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent)
       override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &project) const override;
+      const wxMouseState &state, WavacityProject &project) const override;
 
    bool StopsOnKeystroke () override { return true; }
    
@@ -102,11 +102,11 @@ class MenuButtonHandle final : public ButtonHandle
 
 protected:
    Result CommitChanges
-      (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *pParent)
+      (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *pParent)
       override;
 
    TranslatableString Tip(
-      const wxMouseState &state, WavvyProject &) const override;
+      const wxMouseState &state, WavacityProject &) const override;
 
 public:
    explicit MenuButtonHandle

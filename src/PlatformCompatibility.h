@@ -17,10 +17,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMPATIBILITY__
-#define __WAVVY_COMPATIBILITY__
+#ifndef __WAVACITY_COMPATIBILITY__
+#define __WAVACITY_COMPATIBILITY__
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 class PlatformCompatibility
 {
@@ -34,8 +34,8 @@ public:
    static FilePath GetLongFileName(const FilePath& shortFileName);
 
    //
-   // Get filename and path of executable (e.g. "/usr/bin/wavvy" on
-   // Linux or "C:\Program Files\Wavvy\Wavvy.exe" on Windows)
+   // Get filename and path of executable (e.g. "/usr/bin/wavacity" on
+   // Linux or "C:\Program Files\Wavacity\Wavacity.exe" on Windows)
    // This string is unchanging
    //
    static const FilePath &GetExecutablePath();

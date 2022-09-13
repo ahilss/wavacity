@@ -15,7 +15,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ExportMultiple.h"
 
 #include <wx/defs.h>
@@ -48,7 +48,7 @@
 #include "../Tags.h"
 #include "../WaveTrack.h"
 #include "../widgets/HelpSystem.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ErrorDialog.h"
 #include "../widgets/ProgressDialog.h"
 
@@ -70,7 +70,7 @@ namespace {
    };  // end of ExportKit declaration
    /* we are going to want an set of these kits, and don't know how many until
     * runtime. I would dearly like to use a std::vector, but it seems that
-    * this isn't done anywhere else in Wavvy, presumably for a reason?, so
+    * this isn't done anywhere else in Wavacity, presumably for a reason?, so
     * I'm stuck with wxArrays, which are much harder, as well as non-standard.
     */
 }
@@ -125,7 +125,7 @@ BEGIN_EVENT_TABLE(MouseEvtHandler, wxEvtHandler)
    EVT_LEFT_DCLICK(MouseEvtHandler::OnMouse)
 END_EVENT_TABLE()
 
-ExportMultipleDialog::ExportMultipleDialog(WavvyProject *project)
+ExportMultipleDialog::ExportMultipleDialog(WavacityProject *project)
 : wxDialogWrapper( &GetProjectFrame( *project ),
    wxID_ANY, XO("Export Multiple") )
 , mExporter{ *project }
@@ -182,7 +182,7 @@ void ExportMultipleDialog::ShowModal(std::function<void (int)> callback)
    // Cannot export if all audio tracks are muted.
    if (mNumWaveTracks == 0)
    {
-      ::WavvyMessageBox(
+      ::WavacityMessageBox(
          XO("All audio is muted."),
          XO("Cannot Export Multiple"),
          wxOK | wxCENTRE,
@@ -192,7 +192,7 @@ void ExportMultipleDialog::ShowModal(std::function<void (int)> callback)
 
    if ((mNumWaveTracks < 1) && (mNumLabels < 1))
    {
-      ::WavvyMessageBox(
+      ::WavacityMessageBox(
          XO(
 "You have no unmuted Audio Tracks and no applicable \
 \nlabels, so you cannot export to separate audio files."),
@@ -515,7 +515,7 @@ void ExportMultipleDialog::OnCreate(wxCommandEvent& WXUNUSED(event))
       return;
    }
 
-   ::WavvyMessageBox(
+   ::WavacityMessageBox(
       XO("\"%s\" successfully created.").Format( fn.GetPath() ),
       XO("Export Multiple"),
       wxOK | wxCENTRE,
@@ -678,7 +678,7 @@ bool ExportMultipleDialog::DirOk()
    auto prompt = XO("\"%s\" doesn't exist.\n\nWould you like to create it?")
       .Format( fn.GetFullPath() );
 
-   int action = WavvyMessageBox(
+   int action = WavacityMessageBox(
       prompt,
       XO("Warning"),
       wxYES_NO | wxICON_EXCLAMATION);
@@ -883,7 +883,7 @@ ProgressResult ExportMultipleDialog::ExportMultipleByLabel(bool byName,
       ok = DoExport(pDialog, channels, activeSetting.destfile, false,
          activeSetting.t0, activeSetting.t1, activeSetting.filetags);
       if (ok == ProgressResult::Stopped) {
-         WavvyMessageDialog dlgMessage(
+         WavacityMessageDialog dlgMessage(
             nullptr,
             XO("Continue to export remaining files?"),
             XO("Export"),
@@ -1038,7 +1038,7 @@ ProgressResult ExportMultipleDialog::ExportMultipleByTrack(bool byName,
          activeSetting.channels, activeSetting.destfile, true,
          activeSetting.t0, activeSetting.t1, activeSetting.filetags);
       if (ok == ProgressResult::Stopped) {
-         WavvyMessageDialog dlgMessage(
+         WavacityMessageDialog dlgMessage(
             nullptr,
             XO("Continue to export remaining files?"),
             XO("Export"),
@@ -1170,7 +1170,7 @@ wxString ExportMultipleDialog::MakeFileName(const wxString &input)
             .Format( input, excluded );
       }
 
-      WavvyTextEntryDialog dlg( this, msg, XO("Save As..."), newname );
+      WavacityTextEntryDialog dlg( this, msg, XO("Save As..."), newname );
 
 
       // And tell the validator about excluded chars

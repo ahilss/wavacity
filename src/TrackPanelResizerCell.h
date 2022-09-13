@@ -8,8 +8,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_RESIZER_CELL__
-#define __WAVVY_TRACK_PANEL_RESIZER_CELL__
+#ifndef __WAVACITY_TRACK_PANEL_RESIZER_CELL__
+#define __WAVACITY_TRACK_PANEL_RESIZER_CELL__
 
 #include "ClientData.h" // to inherit
 #include "tracks/ui/CommonTrackPanelCell.h" // to inherit
@@ -33,7 +33,7 @@ public:
    TrackPanelResizerCell( const std::shared_ptr<Track> &pTrack );
 
    std::vector<UIHandlePtr> HitTest
-      (const TrackPanelMouseState &, const WavvyProject *) override;
+      (const TrackPanelMouseState &, const WavacityProject *) override;
 
 protected:
    std::shared_ptr<Track> DoFindTrack() override;

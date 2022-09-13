@@ -12,7 +12,7 @@
 \class MP3ImportFileHandle
 \brief An ImportFileHandle for MP3 data
 
-  Wavvy has finally moved to using a single mp3 library on all
+  Wavacity has finally moved to using a single mp3 library on all
   platforms! It is the high performance, beautifully written libmad
   (mpeg audio decoder). Finally there is harmony in the mp3 universe.
 
@@ -26,7 +26,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #include <wx/defs.h>
 
@@ -64,7 +64,7 @@ static Importer::RegisteredUnusableImportPlugin registered
 #include "../Prefs.h"
 #include "../Tags.h"
 #include "../WaveTrack.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 
 // PRL:  include these last,
@@ -96,7 +96,7 @@ public:
 
    wxString GetPluginStringID() override;
    TranslatableString GetPluginFormatDescription() override;
-   std::unique_ptr<ImportFileHandle> Open(const FilePath &Filename, WavvyProject*) override;
+   std::unique_ptr<ImportFileHandle> Open(const FilePath &Filename, WavacityProject*) override;
 };
 
 using NewChannelGroup = std::vector< std::shared_ptr<WaveTrack> >;
@@ -194,7 +194,7 @@ TranslatableString MP3ImportPlugin::GetPluginFormatDescription()
 }
 
 std::unique_ptr<ImportFileHandle> MP3ImportPlugin::Open(
-   const FilePath &Filename, WavvyProject *)
+   const FilePath &Filename, WavacityProject *)
 {
    auto handle = std::make_unique<MP3ImportFileHandle>(Filename);
 
@@ -1099,7 +1099,7 @@ enum mad_flow MP3ImportFileHandle::ErrorCB(struct mad_stream *stream,
    }
 
    // Let the user know about the error
-   WavvyMessageBox(XO("Import failed\n\nThis is likely caused by a malformed MP3.\n\n"));
+   WavacityMessageBox(XO("Import failed\n\nThis is likely caused by a malformed MP3.\n\n"));
 
    return MAD_FLOW_BREAK;
 }

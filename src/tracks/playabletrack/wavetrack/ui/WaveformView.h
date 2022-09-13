@@ -8,8 +8,8 @@ Paul Licameli split from WaveTrackView.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVEFORM_VIEW__
-#define __WAVVY_WAVEFORM_VIEW__
+#ifndef __WAVACITY_WAVEFORM_VIEW__
+#define __WAVACITY_WAVEFORM_VIEW__
 
 #include "WaveTrackView.h" // to inherit
 
@@ -43,7 +43,7 @@ private:
 
    std::vector<UIHandlePtr> DetailedHitTest(
       const TrackPanelMouseState &state,
-      const WavvyProject *pProject, int currentTool, bool bMultiTool )
+      const WavacityProject *pProject, int currentTool, bool bMultiTool )
       override;
 
 protected:

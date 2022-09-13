@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DIRECTORIES_PREFS__
-#define __WAVVY_DIRECTORIES_PREFS__
+#ifndef __WAVACITY_DIRECTORIES_PREFS__
+#define __WAVACITY_DIRECTORIES_PREFS__
 
 #include "PrefsPanel.h"
 

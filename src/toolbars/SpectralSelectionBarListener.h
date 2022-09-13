@@ -8,13 +8,13 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRAL_SELECTION_BAR_LISTENER__
-#define __WAVVY_SPECTRAL_SELECTION_BAR_LISTENER__
+#ifndef __WAVACITY_SPECTRAL_SELECTION_BAR_LISTENER__
+#define __WAVACITY_SPECTRAL_SELECTION_BAR_LISTENER__
 
-#include "../Wavvy.h"
-#include "wavvy/Types.h"
+#include "../Wavacity.h"
+#include "wavacity/Types.h"
 
-class WAVVY_DLL_API SpectralSelectionBarListener /* not final */ {
+class WAVACITY_DLL_API SpectralSelectionBarListener /* not final */ {
 
  public:
 

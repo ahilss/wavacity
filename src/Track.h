@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK__
-#define __WAVVY_TRACK__
+#ifndef __WAVACITY_TRACK__
+#define __WAVACITY_TRACK__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 
 #include "Experimental.h"
 
@@ -39,7 +39,7 @@ class LabelTrack;
 class TimeTrack;
 class WaveTrack;
 class NoteTrack;
-class WavvyProject;
+class WavacityProject;
 
 using TrackArray = std::vector< Track* >;
 using WaveTrackArray = std::vector < std::shared_ptr< WaveTrack > > ;
@@ -231,7 +231,7 @@ using AttachedTrackObjects = ClientData::Site<
 >;
 
 //! Abstract base class for an object holding data associated with points on a time axis
-class WAVVY_DLL_API Track /* not final */
+class WAVACITY_DLL_API Track /* not final */
    : public XMLTagHandler
    , public AttachedTrackObjects
    , public std::enable_shared_from_this<Track> // see SharedPointer()
@@ -325,7 +325,7 @@ class WAVVY_DLL_API Track /* not final */
 
    //! Find or create the destination track for a paste, maybe in a different project
    /*! @return A smart pointer to the track; its `use_count()` can tell whether it is new */
-   virtual Holder PasteInto( WavvyProject & ) const = 0;
+   virtual Holder PasteInto( WavacityProject & ) const = 0;
 
    //! Report times on the track where important intervals begin and end, for UI to snap to
    /*!
@@ -817,7 +817,7 @@ protected:
 };
 
 //! Track subclass holding data representing sound (as notes, or samples, or ...)
-class WAVVY_DLL_API AudioTrack /* not final */ : public Track
+class WAVACITY_DLL_API AudioTrack /* not final */ : public Track
 {
 public:
    AudioTrack()
@@ -833,7 +833,7 @@ public:
 };
 
 //! AudioTrack subclass that can also be audibly replayed by the program
-class WAVVY_DLL_API PlayableTrack /* not final */ : public AudioTrack
+class WAVACITY_DLL_API PlayableTrack /* not final */ : public AudioTrack
 {
 public:
    PlayableTrack()
@@ -1223,33 +1223,33 @@ struct TrackListEvent : public wxCommandEvent
 };
 
 //! Posted when the set of selected tracks changes.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_SELECTION_CHANGE, TrackListEvent);
 
 //! Posted when certain fields of a track change.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_TRACK_DATA_CHANGE, TrackListEvent);
 
 //! Posted when a track needs to be scrolled into view.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_TRACK_REQUEST_VISIBLE, TrackListEvent);
 
 //! Posted when tracks are reordered but otherwise unchanged.
 /*! mpTrack points to the moved track that is earliest in the New ordering. */
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_PERMUTED, TrackListEvent);
 
 //! Posted when some track changed its height.
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_RESIZING, TrackListEvent);
 
 //! Posted when a track has been added to a tracklist.  Also posted when one track replaces another
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_ADDITION, TrackListEvent);
 
 //! Posted when a track has been deleted from a tracklist. Also posted when one track replaces another
 /*! mpTrack points to the first track after the deletion, if there is one. */
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACKLIST_DELETION, TrackListEvent);
 
 /*! @brief A flat linked list of tracks supporting Add,  Remove,
@@ -1278,15 +1278,15 @@ class TrackList final
    void clear() = delete;
 
  public:
-   static TrackList &Get( WavvyProject &project );
-   static const TrackList &Get( const WavvyProject &project );
+   static TrackList &Get( WavacityProject &project );
+   static const TrackList &Get( const WavacityProject &project );
  
    // Create an empty TrackList
    // Don't call directly -- use Create() instead
-   explicit TrackList( WavvyProject *pOwner );
+   explicit TrackList( WavacityProject *pOwner );
 
    // Create an empty TrackList
-   static std::shared_ptr<TrackList> Create( WavvyProject *pOwner );
+   static std::shared_ptr<TrackList> Create( WavacityProject *pOwner );
 
    // Move is defined in terms of Swap
    void Swap(TrackList &that);
@@ -1295,8 +1295,8 @@ class TrackList final
    virtual ~TrackList();
 
    // Find the owning project, which may be null
-   WavvyProject *GetOwner() { return mOwner; }
-   const WavvyProject *GetOwner() const { return mOwner; }
+   WavacityProject *GetOwner() { return mOwner; }
+   const WavacityProject *GetOwner() const { return mOwner; }
 
    // Iteration
 
@@ -1689,7 +1689,7 @@ public:
    bool HasPendingTracks() const;
 
 private:
-   WavvyProject *mOwner;
+   WavacityProject *mOwner;
 
    //! Shadow tracks holding append-recording in progress; need to put them into a list so that GetLink() works
    /*! Beware, they are in a disjoint iteration sequence from ordinary tracks */

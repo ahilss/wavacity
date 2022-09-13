@@ -25,7 +25,7 @@
 #include <wx/weakref.h>
 #include <wx/window.h>
 
-#include "WavvyException.h"
+#include "WavacityException.h"
 
 ////////////////////////////////////////////////////////////
 /// Custom events
@@ -242,7 +242,7 @@ public:
       },
       // Immediate handler invokes the same high level catch-all as for
       // unhandled exceptions, which will also do its own delayed handling
-      [](WavvyException *pEx){
+      [](WavacityException *pEx){
          if (pEx)
             wxTheApp->OnExceptionInMainLoop();
          else

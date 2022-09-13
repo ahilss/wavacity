@@ -11,8 +11,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EDIT_TOOLBAR__
-#define __WAVVY_EDIT_TOOLBAR__
+#ifndef __WAVACITY_EDIT_TOOLBAR__
+#define __WAVACITY_EDIT_TOOLBAR__
 
 #include "../Experimental.h"
 
@@ -74,7 +74,7 @@ class EditToolBar final : public ToolBar {
 
  public:
 
-   EditToolBar( WavvyProject &project );
+   EditToolBar( WavacityProject &project );
    virtual ~EditToolBar();
 
    void Create(wxWindow *parent) override;

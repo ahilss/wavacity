@@ -37,13 +37,13 @@
 
 *//*****************************************************************//**
 
-\class TrackPanel::WavvyTimer
+\class TrackPanel::WavacityTimer
 \brief Timer class dedicated to informing the TrackPanel that it
 is time to refresh some aspect of the screen.
 
 *//*****************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "TrackPanel.h"
 
 #include "Experimental.h"
@@ -195,8 +195,8 @@ std::unique_ptr<wxCursor> MakeCursor( int WXUNUSED(CursorId), const char * const
 
 namespace{
 
-WavvyProject::AttachedWindows::RegisteredFactory sKey{
-   []( WavvyProject &project ) -> wxWeakRef< wxWindow > {
+WavacityProject::AttachedWindows::RegisteredFactory sKey{
+   []( WavacityProject &project ) -> wxWeakRef< wxWindow > {
       auto &ruler = AdornedRulerPanel::Get( project );
       auto &viewInfo = ViewInfo::Get( project );
       auto &window = ProjectWindow::Get( project );
@@ -219,17 +219,17 @@ WavvyProject::AttachedWindows::RegisteredFactory sKey{
 
 }
 
-TrackPanel &TrackPanel::Get( WavvyProject &project )
+TrackPanel &TrackPanel::Get( WavacityProject &project )
 {
    return project.AttachedWindows::Get< TrackPanel >( sKey );
 }
 
-const TrackPanel &TrackPanel::Get( const WavvyProject &project )
+const TrackPanel &TrackPanel::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-void TrackPanel::Destroy( WavvyProject &project )
+void TrackPanel::Destroy( WavacityProject &project )
 {
    auto *pPanel = project.AttachedWindows::Find( sKey );
    if (pPanel) {
@@ -247,7 +247,7 @@ TrackPanel::TrackPanel(wxWindow * parent, wxWindowID id,
                        const wxSize & size,
                        const std::shared_ptr<TrackList> &tracks,
                        ViewInfo * viewInfo,
-                       WavvyProject * project,
+                       WavacityProject * project,
                        AdornedRulerPanel * ruler)
    : CellularPanel(parent, id, pos, size, viewInfo,
                    wxWANTS_CHARS | wxNO_BORDER),
@@ -339,9 +339,9 @@ void TrackPanel::UpdatePrefs()
    Refresh();
 }
 
-/// Gets the pointer to the WavvyProject that
+/// Gets the pointer to the WavacityProject that
 /// goes with this track panel.
-WavvyProject * TrackPanel::GetProject() const
+WavacityProject * TrackPanel::GetProject() const
 {
    //JKC casting away constness here.
    //Do it in two stages in case 'this' is not a wxWindow.
@@ -394,7 +394,7 @@ void TrackPanel::OnTimer(wxTimerEvent& )
 {
    mTimeCount++;
 
-   WavvyProject *const p = GetProject();
+   WavacityProject *const p = GetProject();
    auto &window = ProjectWindow::Get( *p );
 
    auto &projectAudioIO = ProjectAudioIO::Get( *p );
@@ -608,7 +608,7 @@ void TrackPanel::HandlePageDownKey()
 
 bool TrackPanel::IsAudioActive()
 {
-   WavvyProject *p = GetProject();
+   WavacityProject *p = GetProject();
    return ProjectAudioIO::Get( *p ).IsAudioActive();
 }
 
@@ -1160,7 +1160,7 @@ void DrawTrackName(
 
 struct EmptyCell final : CommonTrackPanelCell {
    std::vector< UIHandlePtr > HitTest(
-      const TrackPanelMouseState &, const WavvyProject *) override
+      const TrackPanelMouseState &, const WavacityProject *) override
    { return {}; }
    virtual std::shared_ptr< Track > DoFindTrack() override { return {}; }
    static std::shared_ptr<EmptyCell> Instance()
@@ -1523,7 +1523,7 @@ void TrackPanel::OnTrackFocusChange( wxCommandEvent &event )
    }
 }
 
-IsVisibleTrack::IsVisibleTrack(WavvyProject *project)
+IsVisibleTrack::IsVisibleTrack(WavacityProject *project)
    : mPanelRect {
         wxPoint{ 0, ViewInfo::Get( *project ).vpos },
         wxSize{

@@ -6,7 +6,7 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 **********************************************************************//**
@@ -18,7 +18,7 @@
 
 \class ShuttleGui
 \brief
-  Derived from ShuttleGuiBase, an Wavvy specific class for shuttling
+  Derived from ShuttleGuiBase, an Wavacity specific class for shuttling
   data to and from GUI.
 
   ShuttleGui extends the idea of the data Shuttle class to include creation
@@ -31,7 +31,7 @@
   Most of the ShuttleGui functions are actually defined in
   ShuttleGuiBase.
      - wxWidgets widgets are dealt with by ShuttleGuiBase.
-     - Wavvy specific widgets are dealt with by ShuttleGui
+     - Wavacity specific widgets are dealt with by ShuttleGui
 
   There is documentation on how to use this class in \ref ShuttleSystem
 
@@ -93,7 +93,7 @@ for registering for changes.
 *//******************************************************************/
 
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "ShuttleGui.h"
 
 #include "Experimental.h"
@@ -113,7 +113,7 @@ for registering for changes.
 #include <wx/spinctrl.h>
 #include <wx/stattext.h>
 #include <wx/bmpbuttn.h>
-#include "../include/wavvy/ComponentInterface.h"
+#include "../include/wavacity/ComponentInterface.h"
 #include "widgets/ReadOnlyText.h"
 #include "widgets/wxPanelWrapper.h"
 #include "widgets/wxTextCtrlWrapper.h"
@@ -822,7 +822,7 @@ void ShuttleGuiBase::DoInsertListColumns(
    // -- is it still correct for wxWidgets 3?
 
    // Do this BEFORE inserting the columns.  On the Mac at least, the
-   // columns are deleted and later InsertItem()s will cause Wavvy to crash.
+   // columns are deleted and later InsertItem()s will cause Wavacity to crash.
    for ( auto style = 1l; style <= listControlStyles; style <<= 1 )
       if ( (style & listControlStyles) )
          pListCtrl->SetSingleStyle(style, true);
@@ -1749,7 +1749,7 @@ wxString ShuttleGuiBase::TranslateFromIndex( const int nIn, const wxArrayStringE
 // ShuttleGui code uses the model that you read into program variables
 // and write out from program variables.
 
-// In programs like Wavvy which don't use internal program variables
+// In programs like Wavacity which don't use internal program variables
 // you have to do both steps in one go, using variants of the standard
 // 'Tie' functions which call the underlying Tie functions twice.
 
@@ -2244,7 +2244,7 @@ ShuttleGui::~ShuttleGui()
 {
 }
 
-// Now we have Wavvy specific shuttle functions.
+// Now we have Wavacity specific shuttle functions.
 ShuttleGui & ShuttleGui::Id(int id )
 {
    miIdSetByUser = id;

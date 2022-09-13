@@ -24,8 +24,8 @@ but it will probably work fine if you use it on a high level.
 
 
 
-#ifndef __WAVVY_PROFILER__
-#define __WAVVY_PROFILER__
+#ifndef __WAVACITY_PROFILER__
+#define __WAVACITY_PROFILER__
 #include <mutex>
 #include <vector>
 #include <time.h>

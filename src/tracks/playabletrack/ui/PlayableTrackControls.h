@@ -8,8 +8,8 @@
 
  **********************************************************************/
 
-#ifndef __WAVVY_PLAYABLE_TRACK_CONTROLS__
-#define __WAVVY_PLAYABLE_TRACK_CONTROLS__
+#ifndef __WAVACITY_PLAYABLE_TRACK_CONTROLS__
+#define __WAVACITY_PLAYABLE_TRACK_CONTROLS__
 
 #include "../../ui/CommonTrackControls.h"
 

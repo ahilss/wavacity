@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_HIT_TEST_RESULT__
-#define __WAVVY_HIT_TEST_RESULT__
+#ifndef __WAVACITY_HIT_TEST_RESULT__
+#define __WAVACITY_HIT_TEST_RESULT__
 
 #include "MemoryX.h"
 #include "Internat.h" // for TranslatableString

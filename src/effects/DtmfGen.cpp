@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "DtmfGen.h"
 #include "LoadEffects.h"
 
@@ -40,11 +40,11 @@ enum
    ID_DutyCycle,
 };
 
-// DA: DTMF for Wavvy uses a different string.
+// DA: DTMF for Wavacity uses a different string.
 #ifdef EXPERIMENTAL_DA
-#define SHORT_APP_NAME "darkwavvy"
+#define SHORT_APP_NAME "darkwavacity"
 #else
-#define SHORT_APP_NAME "wavvy"
+#define SHORT_APP_NAME "wavacity"
 #endif
 
 // Define keys, defaults, minimums, and maximums for the effect parameters

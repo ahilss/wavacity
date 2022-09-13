@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if defined(USE_VAMP)
 #include "LoadVamp.h"
@@ -27,13 +27,13 @@ using namespace Vamp::HostExt;
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -90,7 +90,7 @@ wxString VampEffectsModule::GetVersion()
 
 TranslatableString VampEffectsModule::GetDescription()
 {
-   return XO("Provides Vamp Effects support to Wavvy");
+   return XO("Provides Vamp Effects support to Wavacity");
 }
 
 // ============================================================================
@@ -146,7 +146,7 @@ PluginPaths VampEffectsModule::FindPluginPaths(PluginManagerInterface & WXUNUSED
       }
 
       // We limit the listed plugin outputs to those whose results can
-      // readily be displayed in an Wavvy label track.
+      // readily be displayed in an Wavacity label track.
       //
       // - Any output whose features have no values (time instants only),
       //   with or without duration, is fine
@@ -277,7 +277,7 @@ std::unique_ptr<Vamp::Plugin> VampEffectsModule::FindPlugin(const PluginPath & p
    }
 
    // We limit the listed plugin outputs to those whose results can
-   // readily be displayed in an Wavvy label track.
+   // readily be displayed in an Wavacity label track.
    //
    // - Any output whose features have no values (time instants only),
    //   with or without duration, is fine

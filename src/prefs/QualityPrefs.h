@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_QUALITY_PREFS__
-#define __WAVVY_QUALITY_PREFS__
+#ifndef __WAVACITY_QUALITY_PREFS__
+#define __WAVACITY_QUALITY_PREFS__
 
 #include <vector>
 #include <wx/defs.h>

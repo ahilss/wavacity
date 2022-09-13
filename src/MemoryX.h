@@ -1,5 +1,5 @@
-#ifndef __WAVVY_MEMORY_X_H__
-#define __WAVVY_MEMORY_X_H__
+#ifndef __WAVACITY_MEMORY_X_H__
+#define __WAVACITY_MEMORY_X_H__
 
 // C++ standard header <memory> with a few extensions
 #include <memory>
@@ -714,4 +714,4 @@ public:
    }
 };
 
-#endif // __WAVVY_MEMORY_X_H__
+#endif // __WAVACITY_MEMORY_X_H__

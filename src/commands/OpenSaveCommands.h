@@ -11,10 +11,10 @@
 ******************************************************************//**
 
 \class OpenProjectCommand
-\brief Command for opening an Wavvy project
+\brief Command for opening an Wavacity project
 
 \class SaveProjectCommand
-\brief Command for saving an Wavvy project
+\brief Command for saving an Wavacity project
 
 \class SaveCopyCommand
 \brief Command for saving a copy of currently project
@@ -27,7 +27,7 @@
 #include "Command.h"
 #include "CommandType.h"
 
-class OpenProjectCommand : public WavvyCommand
+class OpenProjectCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -39,7 +39,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#open_project");};
 public:
    wxString mFileName;
@@ -47,7 +47,7 @@ public:
    bool bHasAddToHistory;
 };
 
-class SaveProjectCommand : public WavvyCommand
+class SaveProjectCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -59,7 +59,7 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#save_project");};
 public:
    wxString mFileName;
@@ -67,7 +67,7 @@ public:
    bool bHasAddToHistory;
 };
 
-class SaveCopyCommand : public WavvyCommand
+class SaveCopyCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -79,13 +79,13 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#save_copy");};
 public:
    wxString mFileName;
 };
 
-class SaveLogCommand : public WavvyCommand
+class SaveLogCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -97,13 +97,13 @@ public:
    void PopulateOrExchange(ShuttleGui & S) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#save_log");};
 public:
    wxString mFileName;
 };
 
-class ClearLogCommand : public WavvyCommand
+class ClearLogCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -115,7 +115,7 @@ public:
    bool PromptUser(wxWindow *parent, std::function<void (bool)> callback = nullptr) override;
    bool Apply(const CommandContext & context) override;
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#Clear_log");};
 public:
    wxString mFileName;

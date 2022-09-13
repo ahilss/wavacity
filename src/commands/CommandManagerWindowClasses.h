@@ -8,15 +8,15 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_COMMAND_MANAGER_WINDOW_CLASSES__
-#define __WAVVY_COMMAND_MANAGER_WINDOW_CLASSES__
+#ifndef __WAVACITY_COMMAND_MANAGER_WINDOW_CLASSES__
+#define __WAVACITY_COMMAND_MANAGER_WINDOW_CLASSES__
 
 /*
  \brief By default, windows when focused override the association of the digits
  and certain navigation keys with commands, but certain windows do not, and
  those inherit this class.
  */
-struct WAVVY_DLL_API NonKeystrokeInterceptingWindow
+struct WAVACITY_DLL_API NonKeystrokeInterceptingWindow
 {
    virtual ~NonKeystrokeInterceptingWindow();
 };

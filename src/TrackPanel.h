@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL__
-#define __WAVVY_TRACK_PANEL__
+#ifndef __WAVACITY_TRACK_PANEL__
+#define __WAVACITY_TRACK_PANEL__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "Experimental.h"
 
 #include <vector>
@@ -57,15 +57,15 @@ enum {
 
 const int DragThreshold = 3;// Anything over 3 pixels is a drag, else a click.
 
-class WAVVY_DLL_API TrackPanel final
+class WAVACITY_DLL_API TrackPanel final
    : public CellularPanel
    , public NonKeystrokeInterceptingWindow
    , private PrefsListener
 {
  public:
-   static TrackPanel &Get( WavvyProject &project );
-   static const TrackPanel &Get( const WavvyProject &project );
-   static void Destroy( WavvyProject &project );
+   static TrackPanel &Get( WavacityProject &project );
+   static const TrackPanel &Get( const WavacityProject &project );
+   static void Destroy( WavacityProject &project );
  
    TrackPanel(wxWindow * parent,
               wxWindowID id,
@@ -73,7 +73,7 @@ class WAVVY_DLL_API TrackPanel final
               const wxSize & size,
               const std::shared_ptr<TrackList> &tracks,
               ViewInfo * viewInfo,
-              WavvyProject * project,
+              WavacityProject * project,
               AdornedRulerPanel * ruler );
 
    virtual ~ TrackPanel();
@@ -109,7 +109,7 @@ class WAVVY_DLL_API TrackPanel final
 
    void HandlePageUpKey();
    void HandlePageDownKey();
-   WavvyProject * GetProject() const override;
+   WavacityProject * GetProject() const override;
 
    void OnTrackMenu(Track *t = NULL);
 
@@ -174,7 +174,7 @@ protected:
 
    std::unique_ptr<TrackArtist> mTrackArtist;
 
-   class WAVVY_DLL_API WavvyTimer final : public wxTimer {
+   class WAVACITY_DLL_API WavacityTimer final : public wxTimer {
    public:
      void Notify() override{
        // (From Debian)
@@ -215,7 +215,7 @@ protected:
 // A predicate class
 struct IsVisibleTrack
 {
-   IsVisibleTrack(WavvyProject *project);
+   IsVisibleTrack(WavacityProject *project);
 
    bool operator () (const Track *pTrack) const;
 

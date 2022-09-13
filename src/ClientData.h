@@ -9,8 +9,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_CLIENT_DATA__
-#define __WAVVY_CLIENT_DATA__
+#ifndef __WAVACITY_CLIENT_DATA__
+#define __WAVACITY_CLIENT_DATA__
 
 #include "ClientDataHelpers.h"
 
@@ -24,7 +24,7 @@ Paul Licameli
 namespace ClientData {
 
 //! A convenient default parameter for class template @b Site
-struct WAVVY_DLL_API Base
+struct WAVACITY_DLL_API Base
 {
    virtual ~Base() {}
 };

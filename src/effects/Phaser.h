@@ -13,8 +13,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_PHASER__
-#define __WAVVY_EFFECT_PHASER__
+#ifndef __WAVACITY_EFFECT_PHASER__
+#define __WAVACITY_EFFECT_PHASER__
 
 #include "Effect.h"
 

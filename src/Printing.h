@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_PRINTING__
-#define __WAVVY_PRINTING__
+#ifndef __WAVACITY_PRINTING__
+#define __WAVACITY_PRINTING__
 
 #include <wx/defs.h>
 
@@ -23,5 +23,5 @@ void HandlePrint(
    wxWindow *parent, const wxString &name, TrackList *tracks,
    TrackPanel &panel);
 
-#endif // __WAVVY_PRINTING__
+#endif // __WAVACITY_PRINTING__
 

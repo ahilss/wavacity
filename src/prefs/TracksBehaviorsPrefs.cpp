@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "TracksBehaviorsPrefs.h"
 
 #include "../Experimental.h"
@@ -133,7 +133,7 @@ bool TracksBehaviorsPrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "TracksBehaviors",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew TracksBehaviorsPrefs(parent, winid);

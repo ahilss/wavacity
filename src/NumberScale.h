@@ -8,8 +8,8 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_NUMBER_SCALE__
-#define __WAVVY_NUMBER_SCALE__
+#ifndef __WAVACITY_NUMBER_SCALE__
+#define __WAVACITY_NUMBER_SCALE__
 
 #include <algorithm>
 #include <cmath>

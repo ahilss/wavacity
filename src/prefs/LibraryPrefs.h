@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_FILE_FORMAT_PREFS__
-#define __WAVVY_FILE_FORMAT_PREFS__
+#ifndef __WAVACITY_FILE_FORMAT_PREFS__
+#define __WAVACITY_FILE_FORMAT_PREFS__
 
 #include <wx/defs.h>
 

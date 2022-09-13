@@ -6,7 +6,7 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 ********************************************************************//**
@@ -18,7 +18,7 @@
    It maps sets of ids to the resources and to names of the resources,
    so that they can be loaded/saved from files.
 
-   Theme adds the Wavvy specific images to ThemeBase.
+   Theme adds the Wavacity specific images to ThemeBase.
 
 \see \ref Themability
 
@@ -28,7 +28,7 @@
 \brief Theme management - Image loading and saving.
 
    Base for the Theme class. ThemeBase is a generic
-   non-Wavvy specific class.
+   non-Wavacity specific class.
 
 \see \ref Themability
 
@@ -59,7 +59,7 @@ can't be.
 
 *//*****************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Theme.h"
 
 #include "Experimental.h"
@@ -77,7 +77,7 @@ can't be.
 #include "Prefs.h"
 #include "ImageManipulation.h"
 #include "Internat.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 
 // JKC: First get the MAC specific images.
 // As we've disabled USE_AQUA_THEME, we need to name each file we use.
@@ -176,9 +176,9 @@ can't be.
 #include "../images/GlyphImages.h"
 #include "../images/UploadImages.h"
 
-#include "../images/WavvyLogoWithName.xpm"
-//#include "../images/WavvyLogo.xpm"
-#include "../images/WavvyLogo48x48.xpm"
+#include "../images/WavacityLogoWithName.xpm"
+//#include "../images/WavacityLogo.xpm"
+#include "../images/WavacityLogo48x48.xpm"
 #endif
 
 
@@ -198,7 +198,7 @@ static const unsigned char HiContrastImageCacheAsData[] = {
 };
 
 // theTheme is a global variable.
-WAVVY_DLL_API Theme theTheme;
+WAVACITY_DLL_API Theme theTheme;
 
 Theme::Theme(void)
 {
@@ -623,7 +623,7 @@ SourceOutputStream::~SourceOutputStream()
 }
 
 
-// Must be wide enough for bmpWavvyLogo. Use double width + 10.
+// Must be wide enough for bmpWavacityLogo. Use double width + 10.
 const int ImageCacheWidth = 440;
 
 const int ImageCacheHeight = 836;
@@ -738,7 +738,7 @@ void ThemeBase::CreateImageCache( bool bBinarySave )
 //"Theme cache file:\n  %s\nalready exists.\nAre you sure you want to replace it?")
 //             .Format( FileName );
             TranslatableString{ FileName };
-         WavvyMessageBox( message );
+         WavacityMessageBox( message );
          return;
       }
 #endif
@@ -752,15 +752,15 @@ void ThemeBase::CreateImageCache( bool bBinarySave )
 #endif
       if( !ImageCache.SaveFile( FileName, wxBITMAP_TYPE_PNG ))
       {
-         WavvyMessageBox(
-            XO("Wavvy could not write file:\n  %s.")
+         WavacityMessageBox(
+            XO("Wavacity could not write file:\n  %s.")
                .Format( FileName ));
          return;
       }
-      WavvyMessageBox(
+      WavacityMessageBox(
 /* i18n-hint: A theme is a consistent visual style across an application's
  graphical user interface, including choices of colors, and similarity of images
- such as those on button controls.  Wavvy can load and save alternative
+ such as those on button controls.  Wavacity can load and save alternative
  themes. */
          XO("Theme written to:\n  %s.")
             .Format( FileName ));
@@ -772,19 +772,19 @@ void ThemeBase::CreateImageCache( bool bBinarySave )
       const auto &FileName = FileNames::ThemeCacheAsCee( );
       if( !OutStream.OpenFile( FileName ))
       {
-         WavvyMessageBox(
-            XO("Wavvy could not open file:\n  %s\nfor writing.")
+         WavacityMessageBox(
+            XO("Wavacity could not open file:\n  %s\nfor writing.")
                .Format( FileName ));
          return;
       }
       if( !ImageCache.SaveFile(OutStream, wxBITMAP_TYPE_PNG ) )
       {
-         WavvyMessageBox(
-            XO("Wavvy could not write images to file:\n  %s.")
+         WavacityMessageBox(
+            XO("Wavacity could not write images to file:\n  %s.")
                .Format( FileName ));
          return;
       }
-      WavvyMessageBox(
+      WavacityMessageBox(
          /* i18n-hint "Cee" means the C computer programming language */
          XO("Theme as Cee code written to:\n  %s.")
             .Format( FileName ));
@@ -939,16 +939,16 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
       {
          if( bOkIfNotFound )
             return false; // did not load the images, so return false.
-         WavvyMessageBox(
-            XO("Wavvy could not find file:\n  %s.\nTheme not loaded.")
+         WavacityMessageBox(
+            XO("Wavacity could not find file:\n  %s.\nTheme not loaded.")
                .Format( FileName ));
          return false;
       }
       if( !ImageCache.LoadFile( FileName, wxBITMAP_TYPE_PNG ))
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             /* i18n-hint: Do not translate png.  It is the name of a file format.*/
-            XO("Wavvy could not load file:\n  %s.\nBad png format perhaps?")
+            XO("Wavacity could not load file:\n  %s.\nBad png format perhaps?")
                .Format( FileName ));
          return false;
       }
@@ -986,9 +986,9 @@ bool ThemeBase::ReadImageCache( teThemeType type, bool bOkIfNotFound)
          // was not a valid png image.
          // Most likely someone edited it by mistake,
          // Or some experiment is being tried with NEW formats for it.
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO(
-"Wavvy could not read its default theme.\nPlease report the problem."));
+"Wavacity could not read its default theme.\nPlease report the problem."));
          return false;
       }
       //wxLogDebug("Read %i by %i", ImageCache.GetWidth(), ImageCache.GetHeight() );
@@ -1070,10 +1070,10 @@ void ThemeBase::LoadComponents( bool bOkIfNotFound )
          {
             if( !mImages[i].LoadFile( FileName, wxBITMAP_TYPE_PNG ))
             {
-               WavvyMessageBox(
+               WavacityMessageBox(
                   XO(
                /* i18n-hint: Do not translate png.  It is the name of a file format.*/
-"Wavvy could not load file:\n  %s.\nBad png format perhaps?")
+"Wavacity could not load file:\n  %s.\nBad png format perhaps?")
                      .Format( FileName ));
                return;
             }
@@ -1095,7 +1095,7 @@ void ThemeBase::LoadComponents( bool bOkIfNotFound )
    {
       if( bOkIfNotFound )
          return;
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
 "None of the expected theme component files\n were found in:\n  %s.")
             .Format( FileNames::ThemeComponentsDir() ));
@@ -1119,7 +1119,7 @@ void ThemeBase::SaveComponents()
 #endif
       if( !wxDirExists( FileNames::ThemeComponentsDir() ))
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Could not create directory:\n  %s")
                .Format( FileNames::ThemeComponentsDir() ) );
          return;
@@ -1146,11 +1146,11 @@ void ThemeBase::SaveComponents()
    if (n > 0)
    {
       auto result =
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO(
 "Some required files in:\n  %s\nwere already present. Overwrite?")
                .Format( FileNames::ThemeComponentsDir() ),
-            WavvyMessageBoxCaptionStr(),
+            WavacityMessageBoxCaptionStr(),
             wxYES_NO | wxNO_DEFAULT);
       if(result == wxNO)
          return;
@@ -1163,14 +1163,14 @@ void ThemeBase::SaveComponents()
          FileName = FileNames::ThemeComponent( mBitmapNames[i] );
          if( !mImages[i].SaveFile( FileName, wxBITMAP_TYPE_PNG ))
          {
-            WavvyMessageBox(
-               XO("Wavvy could not save file:\n  %s")
+            WavacityMessageBox(
+               XO("Wavacity could not save file:\n  %s")
                   .Format( FileName ));
             return;
          }
       }
    }
-   WavvyMessageBox(
+   WavacityMessageBox(
       XO("Theme written to:\n  %s.")
          .Format( FileNames::ThemeComponentsDir() ) );
 }
@@ -1312,7 +1312,7 @@ ChoiceSetting GUITheme{
       ByColumns,
       {
          /* i18n-hint: describing the "classic" or traditional
-            appearance of older versions of Wavvy */
+            appearance of older versions of Wavacity */
          XO("Classic")  ,
          /* i18n-hint: Light meaning opposite of dark */
          XO("Light")  ,

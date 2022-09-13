@@ -4,12 +4,12 @@ Audacity: A Digital Audio Editor
 
 ProjectFileManager.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_FILE_MANAGER__
-#define __WAVVY_PROJECT_FILE_MANAGER__
+#ifndef __WAVACITY_PROJECT_FILE_MANAGER__
+#define __WAVACITY_PROJECT_FILE_MANAGER__
 
 #include <memory>
 #include <vector>
@@ -19,7 +19,7 @@ Paul Licameli split from WavvyProject.h
 
 class wxString;
 class wxFileName;
-class WavvyProject;
+class WavacityProject;
 class Track;
 class TrackList;
 class WaveTrack;
@@ -32,13 +32,13 @@ class ProjectFileManager final
    : public ClientData::Base
 {
 public:
-   static ProjectFileManager &Get( WavvyProject &project );
-   static const ProjectFileManager &Get( const WavvyProject &project );
+   static ProjectFileManager &Get( WavacityProject &project );
+   static const ProjectFileManager &Get( const WavacityProject &project );
 
    // Open and close a file, invisibly, removing its Autosave blob
    static void DiscardAutosave(const FilePath &filename);
 
-   explicit ProjectFileManager( WavvyProject &project );
+   explicit ProjectFileManager( WavacityProject &project );
    ProjectFileManager( const ProjectFileManager & ) PROHIBITED;
    ProjectFileManager &operator=( const ProjectFileManager & ) PROHIBITED;
    ~ProjectFileManager();
@@ -72,9 +72,9 @@ public:
     * The file type filter will automatically contain:
     * - "All files" with any extension or none,
     * - "All supported files" based on the file formats supported in this
-    *   build of Wavvy,
+    *   build of Wavacity,
     * - All of the individual formats specified by the importer plug-ins which
-    *   are built into this build of Wavvy, each with the relevant file
+    *   are built into this build of Wavacity, each with the relevant file
     *   extensions for that format.
     * The dialogue will start in the DefaultOpenPath directory read from the
     * preferences, failing that the working directory. The file format filter
@@ -108,7 +108,7 @@ public:
 private:
    bool DoSave(const FilePath & fileName, bool fromSaveAs);
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
    std::shared_ptr<TrackList> mLastSavedTracks;
    

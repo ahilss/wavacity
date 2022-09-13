@@ -26,21 +26,21 @@ to that system.
 #include "CommandType.h"
 #include "../BatchCommands.h"
 
-class WavvyProject;
+class WavacityProject;
 
 class BatchEvalCommandType final : public OldStyleCommandType
 {
 public:
    ComponentInterfaceSymbol BuildName() override;
    void BuildSignature(CommandSignature &signature) override;
-   OldStyleCommandPointer Create( WavvyProject *project,
+   OldStyleCommandPointer Create( WavacityProject *project,
       std::unique_ptr<CommandOutputTargets> &&target) override;
 };
 
 class BatchEvalCommand final : public CommandImplementation
 {
 public:
-   BatchEvalCommand(WavvyProject &project, OldStyleCommandType &type)
+   BatchEvalCommand(WavacityProject &project, OldStyleCommandType &type)
       : CommandImplementation(project, type)
    { }
 

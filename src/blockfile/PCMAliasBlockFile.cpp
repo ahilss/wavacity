@@ -8,7 +8,7 @@
 
 **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "PCMAliasBlockFile.h"
 
 #include <wx/file.h>

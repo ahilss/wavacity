@@ -13,8 +13,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_METER__
-#define __WAVVY_METER__
+#ifndef __WAVACITY_METER__
+#define __WAVACITY_METER__
 
 #include <wx/setup.h> // for wxUSE_* macros
 #include <wx/brush.h> // member variable
@@ -26,7 +26,7 @@
 #include "MeterPanelBase.h" // to inherit
 #include "Ruler.h" // member variable
 
-class WavvyProject;
+class WavacityProject;
 
 // Increase this when we add support for multichannel meters
 // (most of the code is already there)
@@ -109,7 +109,7 @@ class MeterPanel final : public MeterPanelBase, private PrefsListener
    };
 
 
-   MeterPanel(WavvyProject *,
+   MeterPanel(WavacityProject *,
          wxWindow* parent, wxWindowID id,
          bool isInput,
          const wxPoint& pos = wxDefaultPosition,
@@ -225,7 +225,7 @@ class MeterPanel final : public MeterPanelBase, private PrefsListener
 
    wxString Key(const wxString & key) const;
 
-   WavvyProject *mProject;
+   WavacityProject *mProject;
    MeterUpdateQueue mQueue;
    wxTimer          mTimer;
 
@@ -295,4 +295,4 @@ class MeterPanel final : public MeterPanelBase, private PrefsListener
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_METER__
+#endif // __WAVACITY_METER__

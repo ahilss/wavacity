@@ -15,7 +15,7 @@ Geometric TimeWarper classes
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "TimeWarper.h"
 
 #include <wx/string.h>

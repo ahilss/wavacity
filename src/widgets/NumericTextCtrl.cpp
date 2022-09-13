@@ -11,7 +11,7 @@
 NumericConverter
 \class NumericConverter
 \brief NumericConverter provides the advanced formatting control used
-in the selection bar of Wavvy.
+in the selection bar of Wavacity.
 
   Any negative value given to the converter is considered invalid and
   all digit positions of the resulting string will be filled with hyphens.
@@ -165,10 +165,10 @@ different formats.
 **********************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "NumericTextCtrl.h"
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 #include "../AllThemeResources.h"
 #include "../AColor.h"
 #include "../KeyboardCapture.h"
@@ -2092,8 +2092,8 @@ void NumericTextCtrl::ValueToControls()
    if (mValueString != previousValueString) {
       // Doing this only when needed is an optimization.
       // NumerixTextCtrls are used in the selection bar at the bottom
-      // of Wavvy, and are updated at high frequency through
-      // SetValue() when Wavvy is playing. This consumes a
+      // of Wavacity, and are updated at high frequency through
+      // SetValue() when Wavacity is playing. This consumes a
       // significant amount of CPU. Typically, when a track is
       // playing, only one of the NumericTextCtrl actually changes
       // (the audio position). We save CPU by updating the control

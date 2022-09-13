@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WARNING__
-#define __WAVVY_WARNING__
+#ifndef __WAVACITY_WARNING__
+#define __WAVACITY_WARNING__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/defs.h>
 class wxString;
@@ -31,4 +31,4 @@ int ShowWarningDialog(wxWindow *parent,
                       // This message appears by the checkbox:
                       const TranslatableString &footer = DefaultWarningFooter());
 
-#endif // __WAVVY_WARNING__
+#endif // __WAVACITY_WARNING__

@@ -8,8 +8,8 @@ Paul Licameli split from class Track
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_VIEW__
-#define __WAVVY_TRACK_VIEW__
+#ifndef __WAVACITY_TRACK_VIEW__
+#define __WAVACITY_TRACK_VIEW__
 
 #include <memory>
 #include "CommonTrackPanelCell.h" // to inherit

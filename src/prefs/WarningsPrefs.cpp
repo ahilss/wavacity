@@ -17,7 +17,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "WarningsPrefs.h"
 
 #include <wx/defs.h>
@@ -103,7 +103,7 @@ bool WarningsPrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Warnings",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew WarningsPrefs(parent, winid);

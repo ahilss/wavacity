@@ -23,7 +23,7 @@
 #include "CommandType.h"
 #include "Command.h"
 
-class HelpCommand : public WavvyCommand
+class HelpCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -37,13 +37,13 @@ public:
    bool Apply(const CommandContext & context) override;
    bool ApplyInner(const CommandContext & context);
 
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#help");};
 public:
    wxString mCommandName;
 };
 
-class CommentCommand : public WavvyCommand
+class CommentCommand : public WavacityCommand
 {
 public:
    static const ComponentInterfaceSymbol Symbol;
@@ -57,7 +57,7 @@ public:
    bool Apply(const CommandContext & context) override {
       return true;
    };
-   // WavvyCommand overrides
+   // WavacityCommand overrides
    wxString ManualPage() override {return wxT("Extra_Menu:_Scriptables_II#comment");};
 public:
    wxString mComment;

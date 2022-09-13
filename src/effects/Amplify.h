@@ -12,8 +12,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_AMPLIFY__
-#define __WAVVY_EFFECT_AMPLIFY__
+#ifndef __WAVACITY_EFFECT_AMPLIFY__
+#define __WAVACITY_EFFECT_AMPLIFY__
 
 #include "Effect.h"
 
@@ -85,4 +85,4 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_EFFECT_AMPLIFY__
+#endif // __WAVACITY_EFFECT_AMPLIFY__

@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_WARNINGS_PREFS__
-#define __WAVVY_WARNINGS_PREFS__
+#ifndef __WAVACITY_WARNINGS_PREFS__
+#define __WAVACITY_WARNINGS_PREFS__
 
 #include <wx/defs.h>
 

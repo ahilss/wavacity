@@ -25,7 +25,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "TrackInfo.h"
 
 #include "Experimental.h"

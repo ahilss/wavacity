@@ -9,10 +9,10 @@
 
 *******************************************************************/
 
-#ifndef __WAVVY_WAVECLIP__
-#define __WAVVY_WAVECLIP__
+#ifndef __WAVACITY_WAVECLIP__
+#define __WAVACITY_WAVECLIP__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "SampleFormat.h"
 #include "xml/XMLTagHandler.h"
@@ -168,7 +168,7 @@ public:
    }
 };
 
-class WAVVY_DLL_API WaveClip final : public XMLTagHandler
+class WAVACITY_DLL_API WaveClip final : public XMLTagHandler
 {
 private:
    // It is an error to copy a WaveClip without specifying the

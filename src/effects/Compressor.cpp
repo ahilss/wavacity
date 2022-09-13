@@ -24,7 +24,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Compressor.h"
 #include "LoadEffects.h"
 

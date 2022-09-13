@@ -8,9 +8,9 @@
 
 **********************************************************************/
 
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/EffectInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/PluginInterface.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //

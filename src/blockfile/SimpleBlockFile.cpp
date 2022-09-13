@@ -35,7 +35,7 @@ to get its definition, rather than rolling our own.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "SimpleBlockFile.h"
 
 #include <wx/wx.h>

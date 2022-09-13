@@ -17,8 +17,8 @@
 
 *//********************************************************************/
 
-#ifndef __WAVVY_MIX__
-#define __WAVVY_MIX__
+#ifndef __WAVACITY_MIX__
+#define __WAVACITY_MIX__
 
 #include "SampleFormat.h"
 #include <vector>
@@ -53,7 +53,7 @@ void MixBuffers(unsigned numChannels, int *channelFlags, float *gains,
                 samplePtr src,
                 samplePtr *dests, int len, bool interleaved);
 
-class WAVVY_DLL_API MixerSpec
+class WAVACITY_DLL_API MixerSpec
 {
    unsigned mNumTracks, mNumChannels, mMaxNumChannels;
 
@@ -75,7 +75,7 @@ public:
    MixerSpec& operator=( const MixerSpec &mixerSpec );
 };
 
-class WAVVY_DLL_API Mixer {
+class WAVACITY_DLL_API Mixer {
  public:
 
     // An argument to Mixer's constructor

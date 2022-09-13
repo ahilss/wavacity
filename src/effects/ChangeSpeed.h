@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_CHANGESPEED__
-#define __WAVVY_EFFECT_CHANGESPEED__
+#ifndef __WAVACITY_EFFECT_CHANGESPEED__
+#define __WAVACITY_EFFECT_CHANGESPEED__
 
 #include "Effect.h"
 
@@ -116,4 +116,4 @@ private:
    DECLARE_EVENT_TABLE()
 };
 
-#endif // __WAVVY_EFFECT_CHANGESPEED__
+#endif // __WAVACITY_EFFECT_CHANGESPEED__

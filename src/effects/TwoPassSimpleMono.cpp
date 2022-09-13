@@ -18,7 +18,7 @@ doing the second pass over all selected tracks.
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "TwoPassSimpleMono.h"
 
 #include "../WaveTrack.h"
@@ -32,7 +32,7 @@ bool EffectTwoPassSimpleMono::Process()
    this->CopyInputTracks(); // Set up mOutputTracks.
 
    mWorkTracks = TrackList::Create(
-      const_cast<WavvyProject*>( FindProject() ) );
+      const_cast<WavacityProject*>( FindProject() ) );
    for (auto track : mOutputTracks->Selected< WaveTrack >()) {
       mWorkTracks->Add(track->EmptyCopy())->ConvertToSampleFormat(floatSample);
       if( mT0 > 0 )

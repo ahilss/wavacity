@@ -8,17 +8,17 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_LANGUAGES__
-#define __WAVVY_LANGUAGES__
+#ifndef __WAVACITY_LANGUAGES__
+#define __WAVACITY_LANGUAGES__
 
 class wxArrayString;
 class wxString;
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 void GetLanguages(
    wxArrayString &langCodes, TranslatableStrings &langNames);
 
 wxString GetSystemLanguageCode();
 
-#endif // __WAVVY_LANGUAGES__
+#endif // __WAVACITY_LANGUAGES__

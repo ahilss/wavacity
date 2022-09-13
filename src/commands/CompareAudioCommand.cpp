@@ -18,7 +18,7 @@ threshold of difference in two selected tracks
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "CompareAudioCommand.h"
 
 #include "LoadCommands.h"
@@ -31,7 +31,7 @@ threshold of difference in two selected tracks
 
 #include "../Shuttle.h"
 #include "../ShuttleGui.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/valnum.h"
 #include "CommandContext.h"
 
@@ -64,7 +64,7 @@ void CompareAudioCommand::PopulateOrExchange(ShuttleGui & S)
 }
 
 // Update member variables with project selection data (and validate)
-bool CompareAudioCommand::GetSelection(const CommandContext &context, WavvyProject &proj)
+bool CompareAudioCommand::GetSelection(const CommandContext &context, WavacityProject &proj)
 {
    // Get the selected time interval
    auto &selectedRegion = ViewInfo::Get( proj ).selectedRegion;

@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_VRULER_CONTROLS__
-#define __WAVVY_TRACK_VRULER_CONTROLS__
+#ifndef __WAVACITY_TRACK_VRULER_CONTROLS__
+#define __WAVACITY_TRACK_VRULER_CONTROLS__
 
 #include "CommonTrackPanelCell.h"
 
@@ -34,7 +34,7 @@ public:
    // Define a default hit test method, just for message and cursor
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
 
    // Helpers for handle classes' TrackPanelDrawable implementations
    static void DrawZooming

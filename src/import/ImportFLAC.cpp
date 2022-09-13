@@ -22,7 +22,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #include "../Experimental.h"
 
@@ -131,7 +131,7 @@ class FLACImportPlugin final : public ImportPlugin
    wxString GetPluginStringID() override { return wxT("libflac"); }
    TranslatableString GetPluginFormatDescription() override;
    std::unique_ptr<ImportFileHandle> Open(
-      const FilePath &Filename, WavvyProject*)  override;
+      const FilePath &Filename, WavacityProject*)  override;
 };
 
 
@@ -282,7 +282,7 @@ TranslatableString FLACImportPlugin::GetPluginFormatDescription()
 
 
 std::unique_ptr<ImportFileHandle> FLACImportPlugin::Open(
-   const FilePath &filename, WavvyProject*)
+   const FilePath &filename, WavacityProject*)
 {
    // First check if it really is a FLAC file
 

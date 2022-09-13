@@ -3,7 +3,7 @@
   WrappedType.h
 
   James Crook
-  (C) Wavvy Developers, 2007
+  (C) Wavacity Developers, 2007
 
   wxWidgets license. See Licensing.txt
 
@@ -12,7 +12,7 @@
 #ifndef __WRAPPED_TYPE__
 #define __WRAPPED_TYPE__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 enum teWrappedType
 {
@@ -27,7 +27,7 @@ enum teWrappedType
 class wxString;
 class ShuttlePrefs;
 
-class WAVVY_DLL_API WrappedType
+class WAVACITY_DLL_API WrappedType
 {
 public:
 

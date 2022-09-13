@@ -8,8 +8,8 @@ Paul Licameli split from Meter.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_METER_PANEL_BASE__
-#define __WAVVY_METER_PANEL_BASE__
+#ifndef __WAVACITY_METER_PANEL_BASE__
+#define __WAVACITY_METER_PANEL_BASE__
 
 #include "wxPanelWrapper.h"
 

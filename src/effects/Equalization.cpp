@@ -30,7 +30,7 @@
 
    The filter is applied using overlap/add of Hann windows.
 
-   Clone of the FFT Filter effect, no longer part of Wavvy.
+   Clone of the FFT Filter effect, no longer part of Wavacity.
 
 *//****************************************************************//**
 
@@ -52,7 +52,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Equalization.h"
 #include "LoadEffects.h"
 
@@ -1604,8 +1604,8 @@ void EffectEqualization::LoadCurves(const wxString &fileName, bool append)
    //
    // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
    //       between wxStandardPaths and wxConfig under Linux.  The latter
-   //       creates a normal file as "$HOME/.wavvy", while the former
-   //       expects the ".wavvy" portion to be a directory.
+   //       creates a normal file as "$HOME/.wavacity", while the former
+   //       expects the ".wavacity" portion to be a directory.
    // MJS:  I don't know what the above means, or if I have broken it.
    wxFileName fn;
 
@@ -1686,7 +1686,7 @@ void EffectEqualization::LoadCurves(const wxString &fileName, bool append)
 }
 
 //
-// Update presets to match Wavvy version.
+// Update presets to match Wavacity version.
 //
 void EffectEqualization::UpdateDefaultCurves(bool updateAll /* false */)
 {
@@ -1842,8 +1842,8 @@ void EffectEqualization::SaveCurves(const wxString &fileName)
       //
       // LLL:  Wouldn't you know that as of WX 2.6.2, there is a conflict
       //       between wxStandardPaths and wxConfig under Linux.  The latter
-      //       creates a normal file as "$HOME/.wavvy", while the former
-      //       expects the ".wavvy" portion to be a directory.
+      //       creates a normal file as "$HOME/.wavacity", while the former
+      //       expects the ".wavacity" portion to be a directory.
       fn = wxFileName( FileNames::DataDir(), wxT("EQCurves.xml") );
 
       // If the directory doesn't exist...
@@ -3557,7 +3557,7 @@ void EditCurvesDialog::OnRename(wxCommandEvent & WXUNUSED(event))
       {   // Show the dialog and bail if the user cancels
          bad = false;
          // build the dialog
-         WavvyTextEntryDialog dlg( this,
+         WavacityTextEntryDialog dlg( this,
             XO("Rename '%s' to...").Format( mEditCurves[ item ].Name ),
             XO("Rename...") );
          dlg.SetTextValidator( wxFILTER_EXCLUDE_CHAR_LIST );

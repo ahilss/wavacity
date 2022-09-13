@@ -4,12 +4,12 @@ Audacity: A Digital Audio Editor
 
 ProjectWindow.h
 
-Paul Licameli split from WavvyProject.h
+Paul Licameli split from WavacityProject.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_PROJECT_WINDOW__
-#define __WAVVY_PROJECT_WINDOW__
+#ifndef __WAVACITY_PROJECT_WINDOW__
+#define __WAVACITY_PROJECT_WINDOW__
 
 #include <memory>
 #include "ProjectWindowBase.h" // to inherit
@@ -31,15 +31,15 @@ class ProjectWindow final : public ProjectWindowBase
    , public PrefsListener
 {
 public:
-   static ProjectWindow &Get( WavvyProject &project );
-   static const ProjectWindow &Get( const WavvyProject &project );
-   static ProjectWindow *Find( WavvyProject *pProject );
-   static const ProjectWindow *Find( const WavvyProject *pProject );
+   static ProjectWindow &Get( WavacityProject &project );
+   static const ProjectWindow &Get( const WavacityProject &project );
+   static ProjectWindow *Find( WavacityProject *pProject );
+   static const ProjectWindow *Find( const WavacityProject *pProject );
 
    explicit ProjectWindow(
       wxWindow * parent, wxWindowID id,
       const wxPoint & pos, const wxSize &size,
-      WavvyProject &project );
+      WavacityProject &project );
    ~ProjectWindow() override;
 
    // Next available ID for sub-windows
@@ -60,7 +60,7 @@ public:
    class PlaybackScroller final : public wxEvtHandler
    {
    public:
-      explicit PlaybackScroller(WavvyProject *project);
+      explicit PlaybackScroller(WavacityProject *project);
 
       enum class Mode {
          Off,
@@ -78,7 +78,7 @@ public:
    private:
       void OnTimer(wxCommandEvent &event);
 
-      WavvyProject *mProject;
+      WavacityProject *mProject;
       Mode mMode { Mode::Off };
    };
    PlaybackScroller &GetPlaybackScroller() { return *mPlaybackScroller; }

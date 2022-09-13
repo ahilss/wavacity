@@ -18,7 +18,7 @@ selected command.
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "BatchCommandDialog.h"
 
 #ifdef __WXMSW__
@@ -62,7 +62,7 @@ BEGIN_EVENT_TABLE(MacroCommandDialog, wxDialogWrapper)
 END_EVENT_TABLE();
 
 MacroCommandDialog::MacroCommandDialog(
-   wxWindow * parent, wxWindowID id, WavvyProject &project):
+   wxWindow * parent, wxWindowID id, WavacityProject &project):
    wxDialogWrapper(parent, id, XO("Select Command"),
             wxDefaultPosition, wxDefaultSize,
             wxCAPTION | wxRESIZE_BORDER)

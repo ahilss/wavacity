@@ -16,7 +16,7 @@ It \TODO: description
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ScoreAlignDialog.h"
 
 #include "../Experimental.h"

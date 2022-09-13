@@ -8,30 +8,30 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_ADORNED_RULER_PANEL__
-#define __WAVVY_ADORNED_RULER_PANEL__
+#ifndef __WAVACITY_ADORNED_RULER_PANEL__
+#define __WAVACITY_ADORNED_RULER_PANEL__
 
 #include "CellularPanel.h"
 #include "widgets/Ruler.h" // member variable
 #include "Prefs.h"
 #include "ViewInfo.h" // for PlayRegion
 
-class WavvyProject;
+class WavacityProject;
 struct SelectedRegionEvent;
 class SnapManager;
 class TrackList;
 
-// This is an Wavvy Specific ruler panel.
-class WAVVY_DLL_API AdornedRulerPanel final
+// This is an Wavacity Specific ruler panel.
+class WAVACITY_DLL_API AdornedRulerPanel final
 : public CellularPanel
 , private PrefsListener
 {
 public:
-   static AdornedRulerPanel &Get( WavvyProject &project );
-   static const AdornedRulerPanel &Get( const WavvyProject &project );
-   static void Destroy( WavvyProject &project );
+   static AdornedRulerPanel &Get( WavacityProject &project );
+   static const AdornedRulerPanel &Get( const WavacityProject &project );
+   static void Destroy( WavacityProject &project );
 
-   AdornedRulerPanel(WavvyProject *project,
+   AdornedRulerPanel(WavacityProject *project,
                      wxWindow* parent,
                      wxWindowID id,
                      const wxPoint& pos = wxDefaultPosition,
@@ -127,7 +127,7 @@ private:
 private:
 
    Ruler mRuler;
-   WavvyProject *const mProject;
+   WavacityProject *const mProject;
    TrackList *mTracks;
 
    wxRect mOuter;
@@ -193,7 +193,7 @@ private:
    // area into cells
    std::shared_ptr<TrackPanelNode> Root() override;
 public:
-   WavvyProject * GetProject() const override;
+   WavacityProject * GetProject() const override;
 private:
    TrackPanelCell *GetFocusedCell() override;
    void SetFocusedCell() override;
@@ -234,4 +234,4 @@ private:
    bool mDirtySelectedRegion{};
 };
 
-#endif //define __WAVVY_ADORNED_RULER_PANEL__
+#endif //define __WAVACITY_ADORNED_RULER_PANEL__

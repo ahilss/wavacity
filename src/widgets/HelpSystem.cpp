@@ -19,7 +19,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "HelpSystem.h"
 
 #include "../Experimental.h"
@@ -54,9 +54,9 @@ const wxString HelpSystem::HelpHostname = wxT("alphamanual.audacityteam.org");
 const wxString HelpSystem::HelpServerHomeDir = wxT("/man/");
 const wxString HelpSystem::HelpServerManDir = wxT("/man/");
 #else
-const wxString HelpSystem::HelpHostname = wxT("wavvy.app");
-const wxString HelpSystem::HelpServerHomeDir = wxT("/manual.html");
-const wxString HelpSystem::HelpServerManDir = wxT("/manual.html");
+const wxString HelpSystem::HelpHostname = wxT("www.apollovibes.com");
+const wxString HelpSystem::HelpServerHomeDir = wxT("/wavacity/manual.html");
+const wxString HelpSystem::HelpServerManDir = wxT("/wavacity/manual.html");
 #endif
 const wxString HelpSystem::LocalHelpManDir = wxT("/man/");
 const wxString HelpSystem::ReleaseSuffix = wxT(".html");
@@ -79,7 +79,7 @@ public:
 #if !wxCHECK_VERSION(3, 0, 0)
       MakeModal( false );
 #endif
-      // On Windows, for some odd reason, the Wavvy window will be sent to
+      // On Windows, for some odd reason, the Wavacity window will be sent to
       // the back.  So, make sure that doesn't happen.
       GetParent()->Raise();
    }
@@ -208,10 +208,10 @@ void HelpSystem::ShowHtmlText(wxWindow *pParent,
    // If this section (providing an icon) causes compilation errors on linux, comment it out for now.
    // it will just mean that the icon is missing.  Works OK on Windows.
    #ifdef __WXMSW__
-   wxIcon ic{ wxICON(WavvyLogo) };
+   wxIcon ic{ wxICON(WavacityLogo) };
    #else
    wxIcon ic{};
-      ic.CopyFromBitmap(theTheme.Bitmap(bmpWavvyLogo48x48));
+      ic.CopyFromBitmap(theTheme.Bitmap(bmpWavacityLogo48x48));
    #endif
    pFrame->SetIcon( ic );
    // -- END of ICON stuff -----
@@ -335,7 +335,7 @@ void HelpSystem::ShowHelp(wxWindow *parent,
       anchor = wxT("");
    }
    // The wiki pages are transformed to static HTML by
-   // scripts/mw2html_wavvy/mw2html.py
+   // scripts/mw2html_wavacity/mw2html.py
    // The name is first transformed to lower case, then all
    // 'special characters' are replaced by underscores. Spaces are
    // transformed to "+".
@@ -359,7 +359,7 @@ void HelpSystem::ShowHelp(wxWindow *parent,
 #ifdef EXPERIMENTAL_DA
       releasePageName = wxT("video") + HelpSystem::ReleaseSuffix + anchor;
       localHelpPage = wxFileName(FileNames::HtmlHelpDir(), releasePageName).GetFullPath();
-      webHelpPath = wxT("http://www.darkwavvy.com/");
+      webHelpPath = wxT("http://www.darkwavacity.com/");
 #else
       releasePageName = wxT("quick_help") + HelpSystem::ReleaseSuffix + anchor;
       localHelpPage = wxFileName(FileNames::HtmlHelpDir(), releasePageName).GetFullPath();
@@ -408,7 +408,7 @@ void HelpSystem::ShowHelp(wxWindow *parent,
 #ifdef USE_ALPHA_MANUAL
    webHelpPage = webHelpPath + PageName;
 #else
-   webHelpPage = webHelpPath + "?category=help&page=" + releasePageName + "&anchor=" + anchor + "&app_version=" + WAVVY_VERSION_STRING;
+   webHelpPage = webHelpPath + "?category=help&page=" + releasePageName + "&anchor=" + anchor + "&app_version=" + WAVACITY_VERSION_STRING;
 #endif
 
    wxLogMessage(wxT("Help button pressed: PageName %s, releasePageName %s"),

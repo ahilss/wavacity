@@ -14,7 +14,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ExtImportPrefs.h"
 
 #include <wx/defs.h>
@@ -24,7 +24,7 @@
 #include "../Prefs.h"
 #include "../ShuttleGui.h"
 #include "../import/Import.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/Grid.h"
 
 #define EXTIMPORT_MIME_SUPPORT 0
@@ -545,12 +545,12 @@ void ExtImportPrefs::OnRuleTableEdit (wxGridEvent& event)
       {
          if (!askedAboutSpaces)
          {
-            fixSpaces = WavvyMessageBox(
+            fixSpaces = WavacityMessageBox(
                XO(
 "There are space characters (spaces, newlines, tabs or linefeeds) in one of \
 the items. They are likely to break the pattern matching. Unless you know \
 what you are doing, it is recommended to trim spaces. Do you want \
-Wavvy to trim spaces for you?"),
+Wavacity to trim spaces for you?"),
                XO("Spaces detected"),
                wxYES_NO);
             askedAboutSpaces = true;
@@ -638,7 +638,7 @@ void ExtImportPrefs::OnDelRule(wxCommandEvent& WXUNUSED(event))
       return;
    auto &items = Importer::Get().GetImportItems();
 
-   int msgres = WavvyMessageBox (
+   int msgres = WavacityMessageBox (
       XO("Do you really want to delete selected rule?"),
       XO("Rule deletion confirmation"),
       wxYES_NO,
@@ -852,7 +852,7 @@ void ExtImportPrefsDropTarget::OnLeave()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "ExtImport",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew ExtImportPrefs(parent, winid);

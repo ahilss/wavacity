@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h"
+#include "../../Wavacity.h"
 #include "TrackVRulerControls.h"
 
 #include "TrackView.h"
@@ -52,7 +52,7 @@ std::shared_ptr<Track> TrackVRulerControls::DoFindTrack()
 }
 
 std::vector<UIHandlePtr> TrackVRulerControls::HitTest
-(const TrackPanelMouseState &, const WavvyProject *)
+(const TrackPanelMouseState &, const WavacityProject *)
 {
    return std::vector<UIHandlePtr>{};
 }

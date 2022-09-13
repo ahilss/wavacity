@@ -5,14 +5,14 @@
  CrashReport.h
  
  Paul Licameli
- split from WavvyApp.h
+ split from WavacityApp.h
  
  **********************************************************************/
 
-#ifndef __WAVVY_CRASH_REPORT__
-#define __WAVVY_CRASH_REPORT__
+#ifndef __WAVACITY_CRASH_REPORT__
+#define __WAVACITY_CRASH_REPORT__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "Experimental.h"
 
 #if defined(EXPERIMENTAL_CRASH_REPORT)

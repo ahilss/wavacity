@@ -31,9 +31,9 @@
 #include "lv2/uri-map/uri-map.h"
 #include "lv2/units/units.h"
 
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/EffectInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #include "lv2_external_ui.h"
 

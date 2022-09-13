@@ -8,8 +8,8 @@ Paul Licameli -- split from WaveTrack.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_WAVE_TRACK_LOCATION__
-#define __WAVVY_WAVE_TRACK_LOCATION__
+#ifndef __WAVACITY_WAVE_TRACK_LOCATION__
+#define __WAVACITY_WAVE_TRACK_LOCATION__
 
 struct WaveTrackLocation {
 

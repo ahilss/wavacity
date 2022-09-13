@@ -14,7 +14,7 @@
 *//*******************************************************************/
 
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "MixerToolBar.h"
 
 #include "ToolManager.h"
@@ -55,7 +55,7 @@ BEGIN_EVENT_TABLE(MixerToolBar, ToolBar)
 END_EVENT_TABLE()
 
 //Standard constructor
-MixerToolBar::MixerToolBar( WavvyProject &project )
+MixerToolBar::MixerToolBar( WavacityProject &project )
 : ToolBar(project, MixerBarID, XO("Mixer"), wxT("Mixer"), true)
 {
    mInputSliderVolume = 0.0;
@@ -67,15 +67,15 @@ MixerToolBar::~MixerToolBar()
 {
 }
 
-MixerToolBar &MixerToolBar::Get( WavvyProject &project )
+MixerToolBar &MixerToolBar::Get( WavacityProject &project )
 {
    auto &toolManager = ToolManager::Get( project );
    return *static_cast<MixerToolBar*>( toolManager.GetToolBar(MixerBarID) );
 }
 
-const MixerToolBar &MixerToolBar::Get( const WavvyProject &project )
+const MixerToolBar &MixerToolBar::Get( const WavacityProject &project )
 {
-   return Get( const_cast<WavvyProject&>( project )) ;
+   return Get( const_cast<WavacityProject&>( project )) ;
 }
 
 void MixerToolBar::Create(wxWindow *parent)
@@ -140,8 +140,8 @@ void MixerToolBar::OnAudioCapture(wxCommandEvent & event)
 {
    event.Skip();
 
-   WavvyProject *p = &mProject;
-   if ((WavvyProject *) event.GetEventObject() != p)
+   WavacityProject *p = &mProject;
+   if ((WavacityProject *) event.GetEventObject() != p)
    {
       mEnabled = !event.GetInt();
       mInputSlider->Enable(mEnabled);
@@ -332,7 +332,7 @@ void MixerToolBar::SetToolTips()
 }
 
 static RegisteredToolbarFactory factory{ MixerBarID,
-   []( WavvyProject &project ){
+   []( WavacityProject &project ){
       return ToolBar::Holder{ safenew MixerToolBar{ project } }; }
 };
 

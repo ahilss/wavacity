@@ -8,7 +8,7 @@ Paul Licameli split from WaveTrackView.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h"
+#include "../../../../Wavacity.h"
 #include "SpectrumView.h"
 
 #include "../../../../Experimental.h"
@@ -49,7 +49,7 @@ bool SpectrumView::IsSpectral() const
 
 std::vector<UIHandlePtr> SpectrumView::DetailedHitTest(
    const TrackPanelMouseState &state,
-   const WavvyProject *pProject, int currentTool, bool bMultiTool )
+   const WavacityProject *pProject, int currentTool, bool bMultiTool )
 {
    const auto wt = std::static_pointer_cast< WaveTrack >( FindTrack() );
 
@@ -684,7 +684,7 @@ static const WaveTrackSubViews::RegisteredFactory key{
 #include "../../../../RefreshCode.h"
 #include "../../../../prefs/PrefsDialog.h"
 #include "../../../../prefs/SpectrumPrefs.h"
-#include "../../../../widgets/WavvyMessageBox.h"
+#include "../../../../widgets/WavacityMessageBox.h"
 #include "../../../../widgets/PopupMenuTable.h"
 
 namespace {
@@ -715,7 +715,7 @@ void SpectrogramSettingsHandler::OnSpectrogramSettings(wxCommandEvent &)
    class ViewSettingsDialog final : public PrefsDialog
    {
    public:
-      ViewSettingsDialog(wxWindow *parent, WavvyProject &project,
+      ViewSettingsDialog(wxWindow *parent, WavacityProject &project,
          const TranslatableString &title, PrefsPanel::Factories &factories,
          int page)
          : PrefsDialog(parent, &project, title, factories)
@@ -738,7 +738,7 @@ void SpectrogramSettingsHandler::OnSpectrogramSettings(wxCommandEvent &)
 
    auto gAudioIO = AudioIOBase::Get();
    if (gAudioIO->IsBusy()){
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
 "To change Spectrogram Settings, stop any\n playing or recording first."),
          XO("Stop the Audio First"),
@@ -762,7 +762,7 @@ void SpectrogramSettingsHandler::OnSpectrogramSettings(wxCommandEvent &)
    dialog->ShowModal([this, dialog](int retCode) {
       if (retCode != 0) {
          // Redraw
-         WavvyProject *const project = &mpData->project;
+         WavacityProject *const project = &mpData->project;
          ProjectHistory::Get( *project ).ModifyState(true);
          //Bug 1725 Toolbar was left greyed out.
          //This solution is overkill, but does fix the problem and is what the

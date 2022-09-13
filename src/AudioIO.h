@@ -10,10 +10,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_AUDIO_IO__
-#define __WAVVY_AUDIO_IO__
+#ifndef __WAVACITY_AUDIO_IO__
+#define __WAVACITY_AUDIO_IO__
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 
 #include "AudioIOBase.h" // to inherit
 
@@ -56,7 +56,7 @@ class Resample;
 class AudioThread;
 class SelectedRegion;
 
-class WavvyProject;
+class WavacityProject;
 
 class WaveTrack;
 using WaveTrackArray = std::vector < std::shared_ptr < WaveTrack > >;
@@ -71,11 +71,11 @@ bool ValidateDeviceNames();
 #define MAX_MIDI_BUFFER_SIZE 5000
 #define DEFAULT_SYNTH_LATENCY 5
 
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_AUDIOIO_PLAYBACK, wxCommandEvent);
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_AUDIOIO_CAPTURE, wxCommandEvent);
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_AUDIOIO_MONITOR, wxCommandEvent);
 
 // PRL:
@@ -122,10 +122,10 @@ struct TransportTracks {
  * structure, which tells us how long we have been playing / recording
  * @param statusFlags PortAudio stream status flags
  * @param userData pointer to user-defined data structure. Provided for
- * flexibility by PortAudio, but not used by Wavvy - the data is stored in
+ * flexibility by PortAudio, but not used by Wavacity - the data is stored in
  * the AudioIO class instead.
  */
-int wavvyAudioCallback(
+int wavacityAudioCallback(
    const void *inputBuffer, void *outputBuffer,
    unsigned long framesPerBuffer,
    const PaStreamCallbackTimeInfo *timeInfo,
@@ -234,7 +234,7 @@ void MessageBuffer<Data>::Write( Data &&data )
    mSlots[idx].mBusy.store( false, std::memory_order_release );
 }
 
-class WAVVY_DLL_API AudioIoCallback /* not final */
+class WAVACITY_DLL_API AudioIoCallback /* not final */
    : public AudioIOBase
 {
 public:
@@ -554,7 +554,7 @@ public:
    // Used only for testing purposes in alpha builds
    bool mSimulateRecordingErrors{ false };
 
-   // Whether to check the error code passed to wavvyAudioCallback to
+   // Whether to check the error code passed to wavacityAudioCallback to
    // detect more dropouts
    bool mDetectUpstreamDropouts{ true };
 
@@ -584,7 +584,7 @@ protected:
 
 };
 
-class WAVVY_DLL_API AudioIO final
+class WAVACITY_DLL_API AudioIO final
    : public AudioIoCallback
 {
 
@@ -646,7 +646,7 @@ public:
    wxString LastPaErrorString();
 
    wxLongLong GetLastPlaybackTime() const { return mLastPlaybackTimeMillis; }
-   WavvyProject *GetOwningProject() const { return mOwningProject; }
+   WavacityProject *GetOwningProject() const { return mOwningProject; }
 
    /** \brief Pause and un-pause playback and recording */
    void SetPaused(bool state);
@@ -707,13 +707,13 @@ public:
       double AILAGetLastDecisionTime();
    #endif
 
-   bool IsAvailable(WavvyProject *projecT) const;
+   bool IsAvailable(WavacityProject *projecT) const;
 
    /** \brief Return a valid sample rate that is supported by the current I/O
    * device(s).
    *
    * The return from this function is used to determine the sample rate that
-   * wavvy actually runs the audio I/O stream at. if there is no suitable
+   * wavacity actually runs the audio I/O stream at. if there is no suitable
    * rate available from the hardware, it returns 0.
    * The sampleRate argument gives the desired sample rate (the rate of the
    * audio to be handled, i.e. the currently Project Rate).

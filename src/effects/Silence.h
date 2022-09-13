@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_SILENCE__
-#define __WAVVY_EFFECT_SILENCE__
+#ifndef __WAVACITY_EFFECT_SILENCE__
+#define __WAVACITY_EFFECT_SILENCE__
 
 #include "Generator.h"
 

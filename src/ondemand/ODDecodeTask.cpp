@@ -16,7 +16,7 @@ updating the ODDecodeBlockFile and the GUI of the newly available data.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "ODDecodeTask.h"
 
 #include "../blockfile/ODDecodeBlockFile.h"

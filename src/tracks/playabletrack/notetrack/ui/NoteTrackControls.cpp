@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../../Wavvy.h" // for USE_* macros
+#include "../../../../Wavacity.h" // for USE_* macros
 #ifdef USE_MIDI
 #include "NoteTrackControls.h"
 
@@ -40,7 +40,7 @@ NoteTrackControls::~NoteTrackControls()
 
 std::vector<UIHandlePtr> NoteTrackControls::HitTest
 (const TrackPanelMouseState & st,
- const WavvyProject *pProject)
+ const WavacityProject *pProject)
 {
    // Hits are mutually exclusive, results single
    std::vector<UIHandlePtr> results;
@@ -124,7 +124,7 @@ void NoteTrackMenuTable::OnChangeOctave(wxCommandEvent &event)
    const bool bDown = (OnDownOctaveID == event.GetId());
    pTrack->ShiftNoteRange((bDown) ? -12 : 12);
 
-   WavvyProject *const project = &mpData->project;
+   WavacityProject *const project = &mpData->project;
    ProjectHistory::Get( *project )
       .ModifyState(false);
    mpData->result = RefreshCode::RefreshAll;

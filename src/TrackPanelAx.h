@@ -8,10 +8,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_ACCESSIBILITY__
-#define __WAVVY_TRACK_PANEL_ACCESSIBILITY__
+#ifndef __WAVACITY_TRACK_PANEL_ACCESSIBILITY__
+#define __WAVACITY_TRACK_PANEL_ACCESSIBILITY__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <functional>
 #include <memory>
@@ -29,12 +29,12 @@
 
 class wxRect;
 
-class WavvyProject;
+class WavacityProject;
 class Track;
 class TrackList;
 
 // An event sent to the project
-wxDECLARE_EXPORTED_EVENT(WAVVY_DLL_API,
+wxDECLARE_EXPORTED_EVENT(WAVACITY_DLL_API,
                          EVT_TRACK_FOCUS_CHANGE, wxCommandEvent);
 
 class TrackPanelAx final
@@ -43,7 +43,7 @@ class TrackPanelAx final
 #endif
 {
 public:
-   TrackPanelAx(WavvyProject &project);
+   TrackPanelAx(WavacityProject &project);
    virtual ~ TrackPanelAx();
 
    using RectangleFinder = std::function< wxRect( Track& ) >;
@@ -140,7 +140,7 @@ private:
    int TrackNum( const std::shared_ptr<Track> &track );
    std::shared_ptr<Track> FindTrack( int num );
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
 #if !wxUSE_ACCESSIBILITY
    wxWindow *mWindow{};
@@ -160,10 +160,10 @@ class TrackFocus final
    : public ClientData::Base
 {
 public:
-   static TrackFocus &Get( WavvyProject &project );
-   static const TrackFocus &Get( const WavvyProject &project );
+   static TrackFocus &Get( WavacityProject &project );
+   static const TrackFocus &Get( const WavacityProject &project );
 
-   explicit TrackFocus( WavvyProject &project );
+   explicit TrackFocus( WavacityProject &project );
    ~TrackFocus() override;
 
    TrackFocus( const TrackFocus & ) PROHIBITED;
@@ -192,7 +192,7 @@ public:
 
 private:
 
-   WavvyProject &mProject;
+   WavacityProject &mProject;
 
 #if wxUSE_ACCESSIBILITY
    TrackPanelAx *mAx{};
@@ -201,4 +201,4 @@ private:
 #endif
 };
 
-#endif // __WAVVY_TRACK_PANEL_ACCESSIBILITY__
+#endif // __WAVACITY_TRACK_PANEL_ACCESSIBILITY__

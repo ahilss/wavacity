@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MIXER_TOOLBAR__
-#define __WAVVY_MIXER_TOOLBAR__
+#ifndef __WAVACITY_MIXER_TOOLBAR__
+#define __WAVACITY_MIXER_TOOLBAR__
 
 #include "ToolBar.h"
 
@@ -17,17 +17,17 @@ class wxSize;
 class wxPoint;
 
 class ASlider;
-class WavvyProject;
+class WavacityProject;
 
 class MixerToolBar final : public ToolBar {
 
  public:
 
-   MixerToolBar( WavvyProject &project );
+   MixerToolBar( WavacityProject &project );
    virtual ~MixerToolBar();
 
-   static MixerToolBar &Get( WavvyProject &project );
-   static const MixerToolBar &Get( const WavvyProject &project );
+   static MixerToolBar &Get( WavacityProject &project );
+   static const MixerToolBar &Get( const WavacityProject &project );
 
    void Create(wxWindow * parent) override;
 

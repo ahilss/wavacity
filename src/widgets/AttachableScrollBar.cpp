@@ -6,7 +6,7 @@
 
   James Crook
 
-  Wavvy is free software.
+  Wavacity is free software.
   This file is licensed under the wxWidgets license, see License.txt
 
 *****************************************************************//**
@@ -27,7 +27,7 @@ internally, not ints, allowing for (external) control of zooming.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "AttachableScrollBar.h"
 
 #include <wx/wxprec.h>

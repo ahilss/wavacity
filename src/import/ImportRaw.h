@@ -8,12 +8,12 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_IMPORT_RAW__
-#define __WAVVY_IMPORT_RAW__
+#ifndef __WAVACITY_IMPORT_RAW__
+#define __WAVACITY_IMPORT_RAW__
 
 #include "../MemoryX.h"
 
-class WavvyProject;
+class WavacityProject;
 class WaveTrackFactory;
 class WaveTrack;
 class wxString;
@@ -27,7 +27,7 @@ using NewChannelGroup = std::vector< std::shared_ptr<WaveTrack> >;
 using TrackHolders = std::vector< NewChannelGroup >;
 
 
-void ImportRaw(const WavvyProject &project, wxWindow *parent, const wxString &fileName,
+void ImportRaw(const WavacityProject &project, wxWindow *parent, const wxString &fileName,
    WaveTrackFactory *trackFactory, TrackHolders &outTracks);
 
 #endif

@@ -15,14 +15,14 @@
   input values from XML files.
 
 **********************************************************************/
-#ifndef __WAVVY_XML_TAG_HANDLER__
-#define __WAVVY_XML_TAG_HANDLER__
+#ifndef __WAVACITY_XML_TAG_HANDLER__
+#define __WAVACITY_XML_TAG_HANDLER__
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 #include <stdio.h>
 
-#include "wavvy/Types.h"
+#include "wavacity/Types.h"
 
 #include "XMLWriter.h"
 class XMLValueChecker
@@ -77,7 +77,7 @@ public:
 };
 
 
-class WAVVY_DLL_API XMLTagHandler /* not final */ {
+class WAVACITY_DLL_API XMLTagHandler /* not final */ {
  public:
    XMLTagHandler(){};
    virtual ~XMLTagHandler(){};
@@ -116,5 +116,5 @@ class WAVVY_DLL_API XMLTagHandler /* not final */ {
    XMLTagHandler *ReadXMLChild(const char *tag);
 };
 
-#endif // define __WAVVY_XML_TAG_HANDLER__
+#endif // define __WAVACITY_XML_TAG_HANDLER__
 

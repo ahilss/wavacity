@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TOOLDOCK__
-#define __WAVVY_TOOLDOCK__
+#ifndef __WAVACITY_TOOLDOCK__
+#define __WAVACITY_TOOLDOCK__
 
 #include <vector>
 #include <wx/defs.h>

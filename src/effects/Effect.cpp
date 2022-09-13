@@ -11,11 +11,11 @@
 *******************************************************************//**
 
 \class Effect
-\brief Base class for many of the effects in Wavvy.
+\brief Base class for many of the effects in Wavacity.
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Effect.h"
 #include "TimeWarper.h"
 
@@ -44,7 +44,7 @@
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackView.h"
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h"
 #include "../widgets/NumericTextCtrl.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ErrorDialog.h"
 
 #include <unordered_map>
@@ -168,7 +168,7 @@ VendorSymbol Effect::GetVendor()
       return mClient->GetVendor();
    }
 
-   return XO("Wavvy");
+   return XO("Wavacity");
 }
 
 wxString Effect::GetVersion()
@@ -178,7 +178,7 @@ wxString Effect::GetVersion()
       return mClient->GetVersion();
    }
 
-   return WAVVY_VERSION_STRING;
+   return WAVACITY_VERSION_STRING;
 }
 
 TranslatableString Effect::GetDescription()
@@ -200,7 +200,7 @@ EffectFamilySymbol Effect::GetFamily()
 
    // Unusually, the internal and visible strings differ for the built-in
    // effect family.
-   return { wxT("Wavvy"), XO("Built-in") };
+   return { wxT("Wavacity"), XO("Built-in") };
 }
 
 bool Effect::IsInteractive()
@@ -709,7 +709,7 @@ void Effect::ExportPresets()
    wxFFile f(path, wxT("wb"));
    if (!f.IsOpened())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not open file: \"%s\"").Format( path ),
          XO("Error Saving Effect Presets"),
          wxICON_EXCLAMATION,
@@ -720,7 +720,7 @@ void Effect::ExportPresets()
    f.Write(params);
    if (f.Error())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Error writing to file: \"%s\"").Format( path ),
          XO("Error Saving Effect Presets"),
          wxICON_EXCLAMATION,
@@ -1261,7 +1261,7 @@ bool Effect::DoEffect(double projectRate,
    mTracks = list;
 
    // This is for performance purposes only, no additional recovery implied
-   auto &pProject = *const_cast<WavvyProject*>(FindProject()); // how to remove this const_cast?
+   auto &pProject = *const_cast<WavacityProject*>(FindProject()); // how to remove this const_cast?
    auto &pIO = ProjectFileIO::Get(pProject);
    TransactionScope trans(pIO.GetConnection(), "Effect");
 
@@ -1400,7 +1400,7 @@ bool Effect::Process()
    bool bGoodResult = true;
 
    // It's possible that the number of channels the effect expects changed based on
-   // the parameters (the Wavvy Reverb effect does when the stereo width is 0).
+   // the parameters (the Wavacity Reverb effect does when the stereo width is 0).
    mNumAudioIn = GetAudioInCount();
    mNumAudioOut = GetAudioOutCount();
 
@@ -1738,7 +1738,7 @@ bool Effect::ProcessTrack(int count,
       {
          processed = ProcessBlock(inBufPos.get(), outBufPos.get(), curBlockSize);
       }
-      catch( const WavvyException & WXUNUSED(e) )
+      catch( const WavacityException & WXUNUSED(e) )
       {
          // PRL: Bug 437:
          // Pass this along to our application-level handler
@@ -2101,7 +2101,7 @@ void Effect::CopyInputTracks(bool allSyncLockSelected)
    mOMap.clear();
 
    mOutputTracks = TrackList::Create(
-      const_cast<WavvyProject*>( FindProject() ) // how to remove this const_cast?
+      const_cast<WavacityProject*>( FindProject() ) // how to remove this const_cast?
   );
 
    auto trackRange = mTracks->Any() +
@@ -2295,7 +2295,7 @@ void Effect::ReplaceProcessedTracks(const bool bGoodResult)
    nEffectsDone++;
 }
 
-const WavvyProject *Effect::FindProject() const
+const WavacityProject *Effect::FindProject() const
 {
    if (!inputTracks())
       return nullptr;
@@ -2508,6 +2508,6 @@ int Effect::MessageBox( const TranslatableString& message,
    auto title = titleStr.empty()
       ? GetName()
       : XO("%s: %s").Format( GetName(), titleStr );
-   return WavvyMessageBox( message, title, style, mUIParent );
+   return WavacityMessageBox( message, title, style, mUIParent );
 }
 

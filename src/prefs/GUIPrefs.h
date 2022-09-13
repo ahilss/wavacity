@@ -10,8 +10,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_GUI_PREFS__
-#define __WAVVY_GUI_PREFS__
+#ifndef __WAVACITY_GUI_PREFS__
+#define __WAVACITY_GUI_PREFS__
 
 #include <wx/defs.h>
 

@@ -28,7 +28,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 #include "Export.h"
 
 #include <wx/bmpbuttn.h>
@@ -63,7 +63,7 @@
 #include "../Tags.h"
 #include "../Theme.h"
 #include "../WaveTrack.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/Warning.h"
 #include "../widgets/HelpSystem.h"
 #include "../AColor.h"
@@ -275,12 +275,12 @@ void ExportPlugin::InitProgress(std::unique_ptr<ProgressDialog> &pDialog,
 //----------------------------------------------------------------------------
 
 
-wxDEFINE_EVENT(WAVVY_FILE_SUFFIX_EVENT, wxCommandEvent);
+wxDEFINE_EVENT(WAVACITY_FILE_SUFFIX_EVENT, wxCommandEvent);
 
 BEGIN_EVENT_TABLE(Exporter, wxEvtHandler)
    EVT_FILECTRL_FILTERCHANGED(wxID_ANY, Exporter::OnFilterChanged)
    EVT_BUTTON(wxID_HELP, Exporter::OnHelp)
-   EVT_COMMAND(wxID_ANY, WAVVY_FILE_SUFFIX_EVENT, Exporter::OnExtensionChanged)
+   EVT_COMMAND(wxID_ANY, WAVACITY_FILE_SUFFIX_EVENT, Exporter::OnExtensionChanged)
 END_EVENT_TABLE()
 
 namespace {
@@ -320,7 +320,7 @@ Exporter::RegisteredExportPlugin::RegisteredExportPlugin(
          std::make_unique< ExporterItem >( id, factory ) );
 }
 
-Exporter::Exporter( WavvyProject &project )
+Exporter::Exporter( WavacityProject &project )
 : mProject{ &project }
 {
    using namespace Registry;
@@ -399,7 +399,7 @@ const ExportPluginArray &Exporter::GetPlugins()
    return mPlugins;
 }
 
-bool Exporter::DoEditMetadata(WavvyProject &project,
+bool Exporter::DoEditMetadata(WavacityProject &project,
    const TranslatableString &title,
    const TranslatableString &shortUndoDescription, bool force)
 {
@@ -726,7 +726,7 @@ bool Exporter::GetFilename()
                XO("Are you sure you want to export the file as \"%s\"?\n")
                   .Format( mFilename.GetFullName() );
 
-            int action = WavvyMessageBox(
+            int action = WavacityMessageBox(
                prompt,
                XO("Warning"),
                wxYES_NO | wxICON_EXCLAMATION);
@@ -748,7 +748,7 @@ bool Exporter::GetFilename()
                        mFilename.GetFullName(),
                        defext);
 
-         int action = WavvyMessageBox(
+         int action = WavacityMessageBox(
             prompt,
             XO("Warning"),
             wxYES_NO | wxICON_EXCLAMATION);
@@ -758,7 +758,7 @@ bool Exporter::GetFilename()
       }
 
       if (mFilename.GetFullPath().length() >= 256) {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO( "Sorry, pathnames longer than 256 characters not supported.") );
          continue;
       }
@@ -769,7 +769,7 @@ bool Exporter::GetFilename()
          auto prompt = XO("A file named \"%s\" already exists. Replace?")
             .Format( mFilename.GetFullPath() );
 
-         int action = WavvyMessageBox(
+         int action = WavacityMessageBox(
             prompt,
             XO("Warning"),
             wxYES_NO | wxICON_EXCLAMATION);
@@ -1541,11 +1541,11 @@ void ExportMixerDialog::OnMixerPanelHelp(wxCommandEvent & WXUNUSED(event))
 }
 
 
-TranslatableString WavvyExportCaptionStr()
+TranslatableString WavacityExportCaptionStr()
 {
    return XO("Warning");
 }
-TranslatableString WavvyExportMessageStr()
+TranslatableString WavacityExportMessageStr()
 {
    return XO("Unable to export.\nError %s");
 }

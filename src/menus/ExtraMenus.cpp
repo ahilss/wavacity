@@ -126,9 +126,9 @@ void OnFullScreen(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static ExtraActions::Handler instance;
    return instance;
 };
@@ -224,7 +224,7 @@ BaseItemSharedPtr ExtraMiscItems()
    static BaseItemSharedPtr items{
    Items( wxT("Misc"),
       // Delayed evaluation
-      []( WavvyProject &project ) {
+      []( WavacityProject &project ) {
 
    static const auto key =
 #ifdef __WXMAC__
@@ -240,7 +240,7 @@ BaseItemSharedPtr ExtraMiscItems()
          Command( wxT("FullScreenOnOff"), XXO("&Full Screen (on/off)"),
             FN(OnFullScreen),
             AlwaysEnabledFlag,
-            Options{ key }.CheckTest( []( const WavvyProject &project ) {
+            Options{ key }.CheckTest( []( const WavacityProject &project ) {
                return GetProjectFrame( project )
                   .wxTopLevelWindow::IsFullScreen(); } ) )
         );

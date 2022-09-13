@@ -8,8 +8,8 @@ Paul Licameli split from class NoteTrack
 
 **********************************************************************/
 
-#ifndef __WAVVY_NOTE_TRACK_VIEW__
-#define __WAVVY_NOTE_TRACK_VIEW__
+#ifndef __WAVACITY_NOTE_TRACK_VIEW__
+#define __WAVACITY_NOTE_TRACK_VIEW__
 
 #include "../../../ui/CommonTrackView.h"
 
@@ -28,7 +28,7 @@ public:
 private:
    std::vector<UIHandlePtr> DetailedHitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject, int currentTool, bool bMultiTool)
+       const WavacityProject *pProject, int currentTool, bool bMultiTool)
       override;
 
    // TrackPanelDrawable implementation

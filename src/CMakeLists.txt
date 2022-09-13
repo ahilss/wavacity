@@ -1,10 +1,10 @@
 
-set( TARGET Wavvy )
+set( TARGET Wavacity )
 set( TARGET_ROOT ${topdir}/src )
 
 message( STATUS "========== Configuring ${TARGET} ==========" )
 
-# Allow modules to link against the Wavvy executable
+# Allow modules to link against the Wavacity executable
 set( CMAKE_ENABLE_EXPORTS ON )
 
 if( WASM )
@@ -78,18 +78,18 @@ list( APPEND SOURCES
       AllThemeResources.cpp
       AllThemeResources.h
       AttachedVirtualFunction.h
-      Wavvy.h
-      $<$<NOT:$<BOOL:${wxIS_WASM}>>:WavvyApp.cpp>
-      WavvyApp.h
-      $<$<BOOL:${wxIS_MAC}>:WavvyApp.mm>
-      WavvyException.cpp
-      WavvyException.h
-      WavvyFileConfig.cpp
-      WavvyFileConfig.h
-      WavvyHeaders.cpp
-      WavvyHeaders.h
-      WavvyLogger.cpp
-      WavvyLogger.h
+      Wavacity.h
+      $<$<NOT:$<BOOL:${wxIS_WASM}>>:WavacityApp.cpp>
+      WavacityApp.h
+      $<$<BOOL:${wxIS_MAC}>:WavacityApp.mm>
+      WavacityException.cpp
+      WavacityException.h
+      WavacityFileConfig.cpp
+      WavacityFileConfig.h
+      WavacityHeaders.cpp
+      WavacityHeaders.h
+      WavacityLogger.cpp
+      WavacityLogger.h
       AudioIO.cpp
       AudioIO.h
       AudioIOBase.cpp
@@ -341,8 +341,8 @@ list( APPEND SOURCES
 
       commands/AppCommandEvent.cpp
       commands/AppCommandEvent.h
-      commands/WavvyCommand.cpp
-      commands/WavvyCommand.h
+      commands/WavacityCommand.cpp
+      commands/WavacityCommand.h
       commands/BatchEvalCommand.cpp
       commands/BatchEvalCommand.h
       commands/Command.cpp
@@ -898,8 +898,8 @@ list( APPEND SOURCES
       widgets/ASlider.h
       widgets/AttachableScrollBar.cpp
       widgets/AttachableScrollBar.h
-      widgets/WavvyMessageBox.cpp
-      widgets/WavvyMessageBox.h
+      widgets/WavacityMessageBox.cpp
+      widgets/WavacityMessageBox.h
       widgets/BackedPanel.cpp
       widgets/BackedPanel.h
       widgets/ErrorDialog.cpp
@@ -978,21 +978,21 @@ list( APPEND SOURCES
       xml/XMLTagHandler.h
       xml/XMLWriter.cpp
       xml/XMLWriter.h
-      xml/wavvyproject.dtd
+      xml/wavacityproject.dtd
 )
 
 #
 #
 #
 list( APPEND HEADERS
-   ../include/wavvy/EffectInterface.h
-   ../include/wavvy/Types.h
-   ../include/wavvy/ConfigInterface.h
-   ../include/wavvy/ModuleInterface.h
-   ../include/wavvy/PluginInterface.h
-   ../include/wavvy/ComponentInterface.h
-   ../include/wavvy/EffectAutomationParameters.h
-   ../include/wavvy/ImporterInterface.h
+   ../include/wavacity/EffectInterface.h
+   ../include/wavacity/Types.h
+   ../include/wavacity/ConfigInterface.h
+   ../include/wavacity/ModuleInterface.h
+   ../include/wavacity/PluginInterface.h
+   ../include/wavacity/ComponentInterface.h
+   ../include/wavacity/EffectAutomationParameters.h
+   ../include/wavacity/ImporterInterface.h
 )
 
 #
@@ -1017,7 +1017,7 @@ list( APPEND RESOURCES
 #
 list( APPEND DEFINES
    PRIVATE
-      BUILDING_WAVVY
+      BUILDING_WAVACITY
       WXINTL_NO_GETTEXT_MACRO
       WXUSINGDLL
       CMAKE
@@ -1086,7 +1086,7 @@ list( APPEND LIBRARIES
       $<$<PLATFORM_ID:Linux,FreeBSD,OpenBSD,NetBSD,CYGWIN>:pthread>
 )
 
-set( BUILDING_WAVVY YES )
+set( BUILDING_WAVACITY YES )
 set( INSTALL_PREFIX "${_PREFIX}" )
 set( PKGLIBDIR "${_PKGLIBDIR}" )
 set( LIBDIR "${CMAKE_INSTALL_FULL_LIBDIR}" )
@@ -1120,11 +1120,11 @@ if( CMAKE_SYSTEM_NAME MATCHES "Windows" )
 
    # Define the Windows specific resources
    list( APPEND WIN_RESOURCES
-      ../win/wavvy.rc
+      ../win/wavacity.rc
    )
 
    # Create the config file
-   configure_file( wavvy_config.h.in private/configwin.h )
+   configure_file( wavacity_config.h.in private/configwin.h )
 
    # Copy over the wxWidgets DLLs
    if( ${_OPT}use_wxwidgets STREQUAL "system" )
@@ -1143,7 +1143,7 @@ if( CMAKE_SYSTEM_NAME MATCHES "Windows" )
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Wavvy.exe"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Wavacity.exe"
                           -D DST="${_EXEDIR}"
                           -D WXWIN="${libdir}"
                           -P ${CMAKE_MODULE_PATH}/CopyLibs.cmake
@@ -1178,13 +1178,13 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
 
    # Define Mac specific resources
    list( APPEND MAC_RESOURCES
-      ../mac/Resources/Wavvy.icns
-      ../mac/Resources/WavvyAIFF.icns
-      ../mac/Resources/WavvyAU.icns
-      ../mac/Resources/WavvyMP3.icns
-      ../mac/Resources/WavvyOGG.icns
-      ../mac/Resources/WavvyProject.icns
-      ../mac/Resources/WavvyWAV.icns
+      ../mac/Resources/Wavacity.icns
+      ../mac/Resources/WavacityAIFF.icns
+      ../mac/Resources/WavacityAU.icns
+      ../mac/Resources/WavacityMP3.icns
+      ../mac/Resources/WavacityOGG.icns
+      ../mac/Resources/WavacityProject.icns
+      ../mac/Resources/WavacityWAV.icns
    )
 
    set_target_properties(
@@ -1200,7 +1200,7 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
    # These sources must be compiled as Objective C++ and excluded
    # from precompiled header usage
    set_source_files_properties(
-      WavvyApp.mm
+      WavacityApp.mm
       KeyboardCapture.cpp
       effects/EffectUI.cpp
       effects/VST/VSTControlOSX.mm
@@ -1225,14 +1225,14 @@ elseif( CMAKE_SYSTEM_NAME MATCHES "Darwin" )
 
    # Create the config file
    set( HAVE_VISIBILITY 1 )
-   configure_file( wavvy_config.h.in private/configmac.h )
+   configure_file( wavacity_config.h.in private/configmac.h )
 
    # Copy the required wxWidgets libs into the bundle
    add_custom_command(
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Wavvy"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/Wavacity"
                           -D DST="${_PKGLIB}"
                           -P ${CMAKE_MODULE_PATH}/CopyLibs.cmake
       POST_BUILD
@@ -1253,7 +1253,7 @@ else()
 
    # Create the config file
    set( HAVE_VISIBILITY 1 )
-   configure_file( wavvy_config.h.in private/configunix.h )
+   configure_file( wavacity_config.h.in private/configunix.h )
 
    # Build the list of mimetypes
    #
@@ -1294,14 +1294,14 @@ else()
    endif()
 
    # Create the desktop file
-   configure_file( wavvy.desktop.in ${_INTDIR}/wavvy.desktop )
+   configure_file( wavacity.desktop.in ${_INTDIR}/wavacity.desktop )
 
    # Copy the required wxWidgets libs into the bundle
    add_custom_command(
       TARGET
          ${TARGET}
       COMMAND
-         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/wavvy"
+         ${CMAKE_COMMAND} -D SRC="${_EXEDIR}/wavacity"
                           -D DST="${_DEST}/${_PKGLIB}"
                           -D WXWIN="${WXWIN}"
                           -P ${CMAKE_MODULE_PATH}/CopyLibs.cmake
@@ -1309,7 +1309,7 @@ else()
    )
 endif()
 
-set_target_property_all( ${TARGET} RUNTIME_OUTPUT_NAME ${WAVVY_NAME} )
+set_target_property_all( ${TARGET} RUNTIME_OUTPUT_NAME ${WAVACITY_NAME} )
 
 organize_source( "${TARGET_ROOT}/.." "include" "${HEADERS}" )
 organize_source( "${TARGET_ROOT}/../presets" "presets" "${RESOURCES}" )
@@ -1326,8 +1326,8 @@ source_group(
     PREFIX
         "CMake"
     FILES
-        ${_INTDIR}/CMakeFiles/Wavvy.dir/cmake_pch.cxx
-        ${_INTDIR}/CMakeFiles/Wavvy.dir/cmake_pch.hxx
+        ${_INTDIR}/CMakeFiles/Wavacity.dir/cmake_pch.cxx
+        ${_INTDIR}/CMakeFiles/Wavacity.dir/cmake_pch.hxx
 )
 
 target_sources( ${TARGET} PRIVATE ${HEADERS} ${SOURCES} ${RESOURCES} ${MAC_RESOURCES} ${WIN_RESOURCES} )
@@ -1349,7 +1349,7 @@ if( CMAKE_VERSION VERSION_GREATER_EQUAL "3.16" AND NOT CCACHE_PROGRAM )
 
    if( ${_OPT}use_pch )
       message( STATUS "Using precompiled headers" )
-      target_precompile_headers( ${TARGET} PRIVATE WavvyHeaders.h )
+      target_precompile_headers( ${TARGET} PRIVATE WavacityHeaders.h )
    else()
       message( STATUS "Not using precompiled headers" )
    endif()
@@ -1366,11 +1366,11 @@ if( NOT "${CMAKE_GENERATOR}" MATCHES "Xcode|Visual Studio*" )
                DESTINATION "${_LIBDIR}"
                USE_SOURCE_PERMISSIONS
                FILES_MATCHING PATTERN "*.so*" )
-      install( FILES "${_INTDIR}/wavvy.desktop"
+      install( FILES "${_INTDIR}/wavacity.desktop"
                DESTINATION "${_DATADIR}/applications" )
       install( FILES "${topdir}/LICENSE.txt" "${topdir}/README.txt"
-               DESTINATION "${_DATADIR}/doc/${WAVVY_NAME}" )
-      install( FILES "${_SRCDIR}/wavvy.xml"
+               DESTINATION "${_DATADIR}/doc/${WAVACITY_NAME}" )
+      install( FILES "${_SRCDIR}/wavacity.xml"
                DESTINATION "${_DATADIR}/mime/packages" )
       install( FILES "${topdir}/presets/EQDefaultCurves.xml"
                DESTINATION "${_PKGDATA}" )

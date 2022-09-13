@@ -18,7 +18,7 @@
   all but the first logical bitstream.
 
   Ogg also allows for an arbitrary number of channels. Luckily, so does
-  Wavvy. We'll call the first channel LeftChannel, the second
+  Wavacity. We'll call the first channel LeftChannel, the second
   RightChannel, and all others after it MonoChannel.
 
 *//****************************************************************//**
@@ -28,7 +28,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h" // for USE_* macros
+#include "../Wavacity.h" // for USE_* macros
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
@@ -91,7 +91,7 @@ public:
    wxString GetPluginStringID() override { return wxT("liboggvorbis"); }
    TranslatableString GetPluginFormatDescription() override;
    std::unique_ptr<ImportFileHandle> Open(
-      const FilePath &Filename, WavvyProject*) override;
+      const FilePath &Filename, WavacityProject*) override;
 };
 
 
@@ -164,7 +164,7 @@ TranslatableString OggImportPlugin::GetPluginFormatDescription()
 }
 
 std::unique_ptr<ImportFileHandle> OggImportPlugin::Open(
-   const FilePath &filename, WavvyProject*)
+   const FilePath &filename, WavacityProject*)
 {
    // Suppress some compiler warnings about unused global variables in the library header
    wxUnusedVar(OV_CALLBACKS_DEFAULT);

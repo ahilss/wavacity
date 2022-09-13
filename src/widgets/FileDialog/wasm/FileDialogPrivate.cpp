@@ -1,5 +1,5 @@
 #include "Internat.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "../FileDialog.h"
 
 #include "emscripten.h"
@@ -161,7 +161,7 @@ void FileDialog::OnOpenFile(const wxString& fileName)
 
 void FileDialog::OnOpenFileFailed(const wxString& fileName)
 {
-    WavvyMessageBox(
+    WavacityMessageBox(
     XO("Could not open file: %s").Format( fileName ),
     XO("Error Opening File"),
     wxOK | wxCENTRE,

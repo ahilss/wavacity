@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../../Wavvy.h"
+#include "../../../Wavacity.h"
 #include "PlayableTrackButtonHandles.h"
 
 #include "PlayableTrackControls.h"
@@ -32,7 +32,7 @@ MuteButtonHandle::~MuteButtonHandle()
 }
 
 UIHandle::Result MuteButtonHandle::CommitChanges
-   (const wxMouseEvent &event, WavvyProject *pProject, wxWindow *)
+   (const wxMouseEvent &event, WavacityProject *pProject, wxWindow *)
 {
    auto pTrack = mpTrack.lock();
    if ( dynamic_cast< PlayableTrack* >( pTrack.get() ) )
@@ -42,7 +42,7 @@ UIHandle::Result MuteButtonHandle::CommitChanges
 }
 
 TranslatableString MuteButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &project) const
+   const wxMouseState &, WavacityProject &project) const
 {
    auto name = XO("Mute");
    auto focused =
@@ -58,7 +58,7 @@ TranslatableString MuteButtonHandle::Tip(
 UIHandlePtr MuteButtonHandle::HitTest
 (std::weak_ptr<MuteButtonHandle> &holder,
  const wxMouseState &state, const wxRect &rect,
- const WavvyProject *pProject, const std::shared_ptr<Track> &pTrack)
+ const WavacityProject *pProject, const std::shared_ptr<Track> &pTrack)
 {
    wxRect buttonRect;
    if ( pTrack )
@@ -88,7 +88,7 @@ SoloButtonHandle::~SoloButtonHandle()
 }
 
 UIHandle::Result SoloButtonHandle::CommitChanges
-(const wxMouseEvent &event, WavvyProject *pProject, wxWindow *WXUNUSED(pParent))
+(const wxMouseEvent &event, WavacityProject *pProject, wxWindow *WXUNUSED(pParent))
 {
    auto pTrack = mpTrack.lock();
    if ( dynamic_cast< PlayableTrack* >( pTrack.get() ) )
@@ -98,7 +98,7 @@ UIHandle::Result SoloButtonHandle::CommitChanges
 }
 
 TranslatableString SoloButtonHandle::Tip(
-   const wxMouseState &, WavvyProject &project) const
+   const wxMouseState &, WavacityProject &project) const
 {
    auto name = XO("Solo");
    auto focused =
@@ -114,7 +114,7 @@ TranslatableString SoloButtonHandle::Tip(
 UIHandlePtr SoloButtonHandle::HitTest
 (std::weak_ptr<SoloButtonHandle> &holder,
  const wxMouseState &state, const wxRect &rect,
- const WavvyProject *pProject, const std::shared_ptr<Track> &pTrack)
+ const WavacityProject *pProject, const std::shared_ptr<Track> &pTrack)
 {
    wxRect buttonRect;
    if ( pTrack )

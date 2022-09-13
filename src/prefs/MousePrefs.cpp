@@ -32,7 +32,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "MousePrefs.h"
 
 #include "../Experimental.h"
@@ -244,7 +244,7 @@ bool MousePrefs::Commit()
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Mouse",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew MousePrefs(parent, winid);

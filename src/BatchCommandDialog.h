@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_MACRO_COMMAND_DIALOG__
-#define __WAVVY_MACRO_COMMAND_DIALOG__
+#ifndef __WAVACITY_MACRO_COMMAND_DIALOG__
+#define __WAVACITY_MACRO_COMMAND_DIALOG__
 
 #include <wx/defs.h>
 
@@ -21,13 +21,13 @@ class wxTextCtrl;
 class wxListCtrl;
 class wxListEvent;
 class wxButton;
-class WavvyProject;
+class WavacityProject;
 class ShuttleGui;
 
 class MacroCommandDialog final : public wxDialogWrapper {
  public:
    // constructors and destructors
-   MacroCommandDialog(wxWindow *parent, wxWindowID id, WavvyProject &project);
+   MacroCommandDialog(wxWindow *parent, wxWindowID id, WavacityProject &project);
    void SetCommandAndParams(const CommandID &Command, const wxString &Params);
  public:
    CommandID   mSelectedCommand;

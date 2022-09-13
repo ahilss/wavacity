@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECPOWERMETER_H_
-#define __WAVVY_SPECPOWERMETER_H_
+#ifndef __WAVACITY_SPECPOWERMETER_H_
+#define __WAVACITY_SPECPOWERMETER_H_
 
 #include <cstddef>
 #include "../SampleFormat.h"

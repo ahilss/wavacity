@@ -48,7 +48,7 @@ foreach( source ${SOURCES} )
    endif()
 
    set( po "${_SRCDIR}/${source}" )
-   set( mo "${dst}/wavvy.mo" )
+   set( mo "${dst}/wavacity.mo" )
 
    add_custom_command(
       DEPENDS

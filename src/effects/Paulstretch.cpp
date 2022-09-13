@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "Paulstretch.h"
 #include "LoadEffects.h"
 
@@ -30,7 +30,7 @@
 #include "../ShuttleGui.h"
 #include "../FFT.h"
 #include "../widgets/valnum.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../Prefs.h"
 
 #include "../WaveTrack.h"
@@ -244,7 +244,7 @@ void EffectPaulstretch::OnText(wxCommandEvent & WXUNUSED(evt))
 
 size_t EffectPaulstretch::GetBufferSize(double rate)
 {
-   // Wavvy's fft requires a power of 2
+   // Wavacity's fft requires a power of 2
    float tmp = rate * mTime_resolution / 2.0;
    tmp = log(tmp) / log(2.0);
    tmp = pow(2.0, floor(tmp + 0.5));

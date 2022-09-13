@@ -11,14 +11,14 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DEPENDENCIES__
-#define __WAVVY_DEPENDENCIES__
+#ifndef __WAVACITY_DEPENDENCIES__
+#define __WAVACITY_DEPENDENCIES__
 
 #include <list>
 #include "MemoryX.h"
 #include "wxFileNameWrapper.h" // member variable
 
-class WavvyProject;
+class WavacityProject;
 
 class AliasedFile
 {
@@ -56,11 +56,11 @@ using AliasedFileArray = std::list<AliasedFile>;
 // user requests it, and returns True if the user continues.
 // Returns false if the user clicks Cancel, meaning that they do
 // not want to go ahead with the Save/Save As operation.
-bool ShowDependencyDialogIfNeeded(WavvyProject *project,
+bool ShowDependencyDialogIfNeeded(WavacityProject *project,
                                   bool isSaving);
 
 // Returns a list of aliased files associated with a project.
-void FindDependencies(WavvyProject *project,
+void FindDependencies(WavacityProject *project,
                       AliasedFileArray &outAliasedFiles);
 
 #endif

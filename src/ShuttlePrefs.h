@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SHUTTLE_PREFS__
-#define __WAVVY_SHUTTLE_PREFS__
+#ifndef __WAVACITY_SHUTTLE_PREFS__
+#define __WAVACITY_SHUTTLE_PREFS__
 
 #include "Shuttle.h"
 

@@ -18,7 +18,7 @@
 
 *//********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "RecordingPrefs.h"
 
 #include "../Experimental.h"
@@ -306,7 +306,7 @@ void RecordingPrefs::OnToggleCustomName(wxCommandEvent & /* Evt */)
 
 namespace{
 PrefsPanel::Registration sAttachment{ "Recording",
-   [](wxWindow *parent, wxWindowID winid, WavvyProject *)
+   [](wxWindow *parent, wxWindowID winid, WavacityProject *)
    {
       wxASSERT(parent); // to justify safenew
       return safenew RecordingPrefs(parent, winid);

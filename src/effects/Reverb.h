@@ -9,8 +9,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_REVERB__
-#define __WAVVY_EFFECT_REVERB__
+#ifndef __WAVACITY_EFFECT_REVERB__
+#define __WAVACITY_EFFECT_REVERB__
 
 #include "Effect.h"
 

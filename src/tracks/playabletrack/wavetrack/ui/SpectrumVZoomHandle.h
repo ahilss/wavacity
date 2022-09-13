@@ -8,8 +8,8 @@ Paul Licameli split from WaveTrackVZoomHandle.h
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRUM_VZOOM_HANDLE__
-#define __WAVVY_SPECTRUM_VZOOM_HANDLE__
+#ifndef __WAVACITY_SPECTRUM_VZOOM_HANDLE__
+#define __WAVACITY_SPECTRUM_VZOOM_HANDLE__
 
 #include "../../../../UIHandle.h" // to inherit
 #include "WaveTrackViewConstants.h"
@@ -27,7 +27,7 @@ public:
    SpectrumVZoomHandle &operator=(const SpectrumVZoomHandle&) = default;
 
    static void DoZoom(
-      WavvyProject *pProject, WaveTrack *pTrack,
+      WavacityProject *pProject, WaveTrack *pTrack,
       WaveTrackViewConstants::ZoomActions ZoomKind,
       const wxRect &rect, int zoomStart, int zoomEnd,
       bool fixedMousePoint);
@@ -36,23 +36,23 @@ public:
 
    std::shared_ptr<WaveTrack> GetTrack() const { return mpTrack.lock(); }
 
-   void Enter(bool forward, WavvyProject*) override;
+   void Enter(bool forward, WavacityProject*) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject *pProject) override;
+   Result Cancel(WavacityProject *pProject) override;
 
 private:
 

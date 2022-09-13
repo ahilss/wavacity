@@ -8,13 +8,13 @@
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if USE_VST
 
-#include "wavvy/EffectInterface.h"
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #include "../../SampleFormat.h"
 #include "../../xml/XMLTagHandler.h"
@@ -33,7 +33,7 @@ class VSTControl;
    developed by Steinberg GmbH */
 #define VSTPLUGINTYPE XO("VST")
 
-#define wavvyVSTID CCONST('a', 'u', 'D', 'y');
+#define wavacityVSTID CCONST('a', 'u', 'D', 'y');
 
 typedef intptr_t (*dispatcherFn)(AEffect * effect,
                                  int opCode,
@@ -85,7 +85,7 @@ DECLARE_LOCAL_EVENT_TYPE(EVT_UPDATEDISPLAY, -1);
 
 ///////////////////////////////////////////////////////////////////////////////
 ///
-/// VSTEffect is an Wavvy EffectClientInterface that forwards actual 
+/// VSTEffect is an Wavacity EffectClientInterface that forwards actual 
 /// audio processing via a VSTEffectLink
 ///
 ///////////////////////////////////////////////////////////////////////////////
@@ -396,7 +396,7 @@ private:
 
 ///////////////////////////////////////////////////////////////////////////////
 ///
-/// VSTEffectsModule is an Wavvy ModuleInterface, in other words it 
+/// VSTEffectsModule is an Wavacity ModuleInterface, in other words it 
 /// represents one plug in.
 ///
 ///////////////////////////////////////////////////////////////////////////////

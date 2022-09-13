@@ -24,7 +24,7 @@
 
 #include "TimeWarper.h"
 
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 bool Generator::Process()
 {

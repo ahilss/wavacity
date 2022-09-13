@@ -1,13 +1,13 @@
 //
 //  OverlayPanel.h
-//  Wavvy
+//  Wavacity
 //
 //  Created by Paul Licameli on 5/1/16.
 //
 //
 
-#ifndef __WAVVY_OVERLAY_PANEL__
-#define __WAVVY_OVERLAY_PANEL__
+#ifndef __WAVACITY_OVERLAY_PANEL__
+#define __WAVACITY_OVERLAY_PANEL__
 
 #include <memory>
 #include <vector>
@@ -15,7 +15,7 @@
 
 class Overlay;
 
-class WAVVY_DLL_API OverlayPanel /* not final */ : public BackedPanel {
+class WAVACITY_DLL_API OverlayPanel /* not final */ : public BackedPanel {
 public:
    OverlayPanel(wxWindow * parent, wxWindowID id,
                 const wxPoint & pos,

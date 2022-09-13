@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_RESAMPLE_H__
-#define __WAVVY_RESAMPLE_H__
+#ifndef __WAVACITY_RESAMPLE_H__
+#define __WAVACITY_RESAMPLE_H__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include "SampleFormat.h"
 
@@ -30,7 +30,7 @@ class Resample final
  public:
    /// Resamplers may have more than one method, offering a
    /// tradeoff between speed and quality.
-   /// Wavvy identifies two methods out of all of the choices:
+   /// Wavacity identifies two methods out of all of the choices:
    /// a Fast method intended for real-time audio I/O, and a Best
    /// method intended for mixing and exporting.
    //
@@ -83,4 +83,4 @@ class Resample final
    bool mbWantConstRateResampling;
 };
 
-#endif // __WAVVY_RESAMPLE_H__
+#endif // __WAVACITY_RESAMPLE_H__

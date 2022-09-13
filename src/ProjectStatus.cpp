@@ -14,23 +14,23 @@ Paul Licameli
 
 wxDEFINE_EVENT(EVT_PROJECT_STATUS_UPDATE, wxCommandEvent);
 
-static const WavvyProject::AttachedObjects::RegisteredFactory key{
-  []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory key{
+  []( WavacityProject &parent ){
      return std::make_shared< ProjectStatus >( parent );
    }
 };
 
-ProjectStatus &ProjectStatus::Get( WavvyProject &project )
+ProjectStatus &ProjectStatus::Get( WavacityProject &project )
 {
    return project.AttachedObjects::Get< ProjectStatus >( key );
 }
 
-const ProjectStatus &ProjectStatus::Get( const WavvyProject &project )
+const ProjectStatus &ProjectStatus::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectStatus::ProjectStatus( WavvyProject &project )
+ProjectStatus::ProjectStatus( WavacityProject &project )
    : mProject{ project }
 {
 }

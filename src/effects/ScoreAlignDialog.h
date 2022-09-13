@@ -6,8 +6,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SCORE_ALIGN_DIALOG__
-#define __WAVVY_SCORE_ALIGN_DIALOG__
+#ifndef __WAVACITY_SCORE_ALIGN_DIALOG__
+#define __WAVACITY_SCORE_ALIGN_DIALOG__
 
 #include "../Experimental.h"
 

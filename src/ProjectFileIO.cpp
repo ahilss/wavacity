@@ -4,7 +4,7 @@ Audacity: A Digital Audio Editor
 
 ProjectFileIO.cpp
 
-Paul Licameli split from WavvyProject.cpp
+Paul Licameli split from WavacityProject.cpp
 
 **********************************************************************/
 
@@ -29,7 +29,7 @@ Paul Licameli split from WavvyProject.cpp
 #include "TempDirectory.h"
 #include "ViewInfo.h"
 #include "WaveTrack.h"
-#include "widgets/WavvyMessageBox.h"
+#include "widgets/WavacityMessageBox.h"
 #include "widgets/ErrorDialog.h"
 #include "widgets/NumericTextCtrl.h"
 #include "widgets/ProgressDialog.h"
@@ -53,19 +53,19 @@ wxDEFINE_EVENT( EVT_RECONNECTION_FAILURE, wxCommandEvent);
 #define PACK(b1, b2, b3, b4) ((b1 << 24) | (b2 << 16) | (b3 << 8) | b4)
 
 // The ProjectFileID is stored in the SQLite database header to identify the file
-// as an Wavvy project file. It can be used by applications that identify file
+// as an Wavacity project file. It can be used by applications that identify file
 // types, such as the Linux "file" command.
 static const int ProjectFileID = PACK('A', 'U', 'D', 'Y');
 
-// The "ProjectFileVersion" represents the version of Wavvy at which a specific
+// The "ProjectFileVersion" represents the version of Wavacity at which a specific
 // database schema was used. It is assumed that any changes to the database schema
-// will require a new Wavvy version so if schema changes are required set this
+// will require a new Wavacity version so if schema changes are required set this
 // to the new release being produced.
 //
 // This version is checked before accessing any tables in the database since there's
 // no guarantee what tables exist. If it's found that the database is newer than the
-// currently running Wavvy, an error dialog will be displayed informing the user
-// that they need a newer version of Wavvy.
+// currently running Wavacity, an error dialog will be displayed informing the user
+// that they need a newer version of Wavacity.
 //
 // Note that this is NOT the "schema_version" that SQLite maintains. The value
 // specified here is stored in the "user_version" field of the SQLite database
@@ -222,7 +222,7 @@ static void RefreshAllTitles(bool bShowProjectNumbers )
 }
 
 TitleRestorer::TitleRestorer(
-   wxTopLevelWindow &window, WavvyProject &project )
+   wxTopLevelWindow &window, WavacityProject &project )
 {
    if( window.IsIconized() )
       window.Restore();
@@ -253,25 +253,25 @@ TitleRestorer::~TitleRestorer() {
       RefreshAllTitles( false );
 }
 
-static const WavvyProject::AttachedObjects::RegisteredFactory sFileIOKey{
-   []( WavvyProject &parent ){
+static const WavacityProject::AttachedObjects::RegisteredFactory sFileIOKey{
+   []( WavacityProject &parent ){
       auto result = std::make_shared< ProjectFileIO >( parent );
       return result;
    }
 };
 
-ProjectFileIO &ProjectFileIO::Get( WavvyProject &project )
+ProjectFileIO &ProjectFileIO::Get( WavacityProject &project )
 {
    auto &result = project.AttachedObjects::Get< ProjectFileIO >( sFileIOKey );
    return result;
 }
 
-const ProjectFileIO &ProjectFileIO::Get( const WavvyProject &project )
+const ProjectFileIO &ProjectFileIO::Get( const WavacityProject &project )
 {
-   return Get( const_cast< WavvyProject & >( project ) );
+   return Get( const_cast< WavacityProject & >( project ) );
 }
 
-ProjectFileIO::ProjectFileIO(WavvyProject &project)
+ProjectFileIO::ProjectFileIO(WavacityProject &project)
    : mProject{ project }
    , mpErrors{ std::make_shared<DBConnectionErrors>() }
 {
@@ -636,7 +636,7 @@ bool ProjectFileIO::CheckVersion()
    // It's a database that SQLite recognizes, but it's not one of ours
    if (wxStrtoul<char **>(result, nullptr, 10) != ProjectFileID)
    {
-      SetError(XO("This is not an Wavvy project file"));
+      SetError(XO("This is not an Wavacity project file"));
       return false;
    }
 
@@ -653,7 +653,7 @@ bool ProjectFileIO::CheckVersion()
    if (version > ProjectFileVersion)
    {
       SetError(
-         XO("This project was created with a newer version of Wavvy.\n\nYou will need to upgrade to open it.")
+         XO("This project was created with a newer version of Wavacity.\n\nYou will need to upgrade to open it.")
       );
       return false;
    }
@@ -854,7 +854,7 @@ bool ProjectFileIO::CopyTo(const FilePath &destpath,
 
          // And detach the outbound DB in case (if it's attached). Don't check for
          // errors since it may not be attached. But, if it is and the DETACH fails,
-         // subsequent CopyTo() actions will fail until Wavvy is relaunched.
+         // subsequent CopyTo() actions will fail until Wavacity is relaunched.
          sqlite3_exec(db, "DETACH DATABASE outbound;", nullptr, nullptr, nullptr);
 
          // RemoveProject not necessary to clean up attached database
@@ -1142,7 +1142,7 @@ bool ProjectFileIO::RenameOrWarn(const FilePath &src, const FilePath &dst)
       ShowError(
          &window,
          XO("Error Writing to File"),
-         XO("Wavvy failed to write file %s.\n"
+         XO("Wavacity failed to write file %s.\n"
             "Perhaps disk is full or not writable.\n"
             "For tips on freeing up space, click the help button.")
             .Format(dst),
@@ -1409,15 +1409,15 @@ void ProjectFileIO::SetProjectTitle(int number)
    {
       name =
       /* i18n-hint: The %02i is the project number, the %s is the project name.*/
-      XO("[Project %02i] Wavvy \"%s\"")
+      XO("[Project %02i] Wavacity \"%s\"")
          .Format( number + 1,
                  name.empty() ? XO("<untitled>") : Verbatim((const char *)name))
          .Translation();
    }
-   // If we are not showing numbers, then <untitled> shows as 'Wavvy'.
+   // If we are not showing numbers, then <untitled> shows as 'Wavacity'.
    else if (name.empty())
    {
-      name = _TS("Wavvy");
+      name = _TS("Wavacity");
    }
 
    if (mRecovered)
@@ -1478,7 +1478,7 @@ bool ProjectFileIO::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
    auto &settings = ProjectSettings::Get(project);
 
    wxString fileVersion;
-   wxString wavvyVersion;
+   wxString wavacityVersion;
    int requiredTags = 0;
    long longVpos = 0;
 
@@ -1507,9 +1507,9 @@ bool ProjectFileIO::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
          requiredTags++;
       }
 
-      else if (!wxStrcmp(attr, wxT("wavvyversion")))
+      else if (!wxStrcmp(attr, wxT("wavacityversion")))
       {
-         wavvyVersion = value;
+         wavacityVersion = value;
          requiredTags++;
       }
 
@@ -1570,11 +1570,11 @@ bool ProjectFileIO::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
       return false;
    }
 
-   // Parse the file version Wavvy was build with
+   // Parse the file version Wavacity was build with
    int cver;
    int crel;
    int crev;
-   wxSscanf(wxT(WAVVY_FILE_FORMAT_VERSION), wxT("%i.%i.%i"), &cver, &crel, &crev);
+   wxSscanf(wxT(WAVACITY_FILE_FORMAT_VERSION), wxT("%i.%i.%i"), &cver, &crel, &crev);
 
    int fileVer = ((fver *100)+frel)*100+frev;
    int codeVer = ((cver *100)+crel)*100+crev;
@@ -1582,14 +1582,14 @@ bool ProjectFileIO::HandleXMLTag(const wxChar *tag, const wxChar **attrs)
    if (codeVer<fileVer)
    {
       /* i18n-hint: %s will be replaced by the version number.*/
-      auto msg = XO("This file was saved using Wavvy %s.\nYou are using Wavvy %s. You may need to upgrade to a newer version to open this file.")
-         .Format(wavvyVersion, WAVVY_VERSION_STRING);
+      auto msg = XO("This file was saved using Wavacity %s.\nYou are using Wavacity %s. You may need to upgrade to a newer version to open this file.")
+         .Format(wavacityVersion, WAVACITY_VERSION_STRING);
 
       ShowError(
          &window,
          XO("Can't open project file"),
          msg, 
-         "FAQ:Errors_opening_an_Wavvy_project"
+         "FAQ:Errors_opening_an_Wavacity_project"
          );
 
       return false;
@@ -1632,8 +1632,8 @@ void ProjectFileIO::WriteXMLHeader(XMLWriter &xmlFile) const
    xmlFile.Write(wxT("<!DOCTYPE "));
    xmlFile.Write(wxT("project "));
    xmlFile.Write(wxT("PUBLIC "));
-   xmlFile.Write(wxT("\"-//wavvyproject-1.3.0//DTD//EN\" "));
-   xmlFile.Write(wxT("\"http://wavvy.sourceforge.net/xml/wavvyproject-1.3.0.dtd\" "));
+   xmlFile.Write(wxT("\"-//wavacityproject-1.3.0//DTD//EN\" "));
+   xmlFile.Write(wxT("\"http://wavacity.sourceforge.net/xml/wavacityproject-1.3.0.dtd\" "));
    xmlFile.Write(wxT(">\n"));
 }
 
@@ -1648,13 +1648,13 @@ void ProjectFileIO::WriteXML(XMLWriter &xmlFile,
    auto &tags = Tags::Get(proj);
    const auto &settings = ProjectSettings::Get(proj);
 
-   //TIMER_START( "WavvyProject::WriteXML", xml_writer_timer );
+   //TIMER_START( "WavacityProject::WriteXML", xml_writer_timer );
 
    xmlFile.StartTag(wxT("project"));
-   xmlFile.WriteAttr(wxT("xmlns"), wxT("http://wavvy.sourceforge.net/xml/"));
+   xmlFile.WriteAttr(wxT("xmlns"), wxT("http://wavacity.sourceforge.net/xml/"));
 
-   xmlFile.WriteAttr(wxT("version"), wxT(WAVVY_FILE_FORMAT_VERSION));
-   xmlFile.WriteAttr(wxT("wavvyversion"), WAVVY_VERSION_STRING);
+   xmlFile.WriteAttr(wxT("version"), wxT(WAVACITY_FILE_FORMAT_VERSION));
+   xmlFile.WriteAttr(wxT("wavacityversion"), WAVACITY_VERSION_STRING);
 
    viewInfo.WriteXMLAttributes(xmlFile);
    xmlFile.WriteAttr(wxT("rate"), settings.GetRate());
@@ -2609,7 +2609,7 @@ int ProjectFileIO::get_varint(const unsigned char *ptr, int64_t *out)
 }
 
 InvisibleTemporaryProject::InvisibleTemporaryProject()
-   : mpProject{ std::make_shared< WavvyProject >() }
+   : mpProject{ std::make_shared< WavacityProject >() }
 {
 }
 

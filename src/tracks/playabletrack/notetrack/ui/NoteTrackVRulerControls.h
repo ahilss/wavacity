@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_NOTE_TRACK_VRULER_CONTROLS__
-#define __WAVVY_NOTE_TRACK_VRULER_CONTROLS__
+#ifndef __WAVACITY_NOTE_TRACK_VRULER_CONTROLS__
+#define __WAVACITY_NOTE_TRACK_VRULER_CONTROLS__
 
 #include "../../../ui/TrackVRulerControls.h"
 
@@ -28,11 +28,11 @@ public:
 
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
 
    unsigned HandleWheelRotation
       (const TrackPanelMouseEvent &event,
-       WavvyProject *pProject) override;
+       WavacityProject *pProject) override;
 
 private:
    // TrackPanelDrawable implementation

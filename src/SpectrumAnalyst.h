@@ -9,15 +9,15 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_SPECTRUM_ANALYST__
-#define __WAVVY_SPECTRUM_ANALYST__
+#ifndef __WAVACITY_SPECTRUM_ANALYST__
+#define __WAVACITY_SPECTRUM_ANALYST__
 
 #include <vector>
 #include <wx/statusbr.h>
 
 class FreqGauge;
 
-class WAVVY_DLL_API SpectrumAnalyst
+class WAVACITY_DLL_API SpectrumAnalyst
 {
 public:
 
@@ -59,7 +59,7 @@ private:
    std::vector<float> mProcessed;
 };
 
-class WAVVY_DLL_API FreqGauge final : public wxStatusBar
+class WAVACITY_DLL_API FreqGauge final : public wxStatusBar
 {
 public:
    FreqGauge(wxWindow * parent, wxWindowID winid);

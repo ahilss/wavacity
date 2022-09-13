@@ -18,9 +18,9 @@ class NumericTextCtrl;
 #include <wx/dynlib.h> // member variable
 #include <wx/event.h> // to inherit
 
-#include "wavvy/EffectInterface.h"
-#include "wavvy/ModuleInterface.h"
-#include "wavvy/PluginInterface.h"
+#include "wavacity/EffectInterface.h"
+#include "wavacity/ModuleInterface.h"
+#include "wavacity/PluginInterface.h"
 
 #include "ladspa.h"
 #include "../../SampleFormat.h"

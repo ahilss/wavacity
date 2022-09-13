@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_TIME_TOOLBAR__
-#define __WAVVY_TIME_TOOLBAR__
+#ifndef __WAVACITY_TIME_TOOLBAR__
+#define __WAVACITY_TIME_TOOLBAR__
 
 #include <wx/defs.h>
 
@@ -22,11 +22,11 @@ class TimeToolBarListener;
 class TimeToolBar final : public ToolBar
 {
 public:
-   TimeToolBar(WavvyProject &project);
+   TimeToolBar(WavacityProject &project);
    virtual ~TimeToolBar();
    
-   static TimeToolBar &Get(WavvyProject &project);
-   static const TimeToolBar &Get(const WavvyProject &project);
+   static TimeToolBar &Get(WavacityProject &project);
+   static const TimeToolBar &Get(const WavacityProject &project);
    
    void Populate() override;
    void Repaint(wxDC * WXUNUSED(dc)) override {};

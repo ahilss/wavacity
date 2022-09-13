@@ -8,7 +8,7 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 #include "TimeShiftHandle.h"
 
 #include "../../Experimental.h"
@@ -36,7 +36,7 @@ TimeShiftHandle::TimeShiftHandle
    mClipMoveState.mCapturedTrack = pTrack;
 }
 
-void TimeShiftHandle::Enter(bool, WavvyProject *)
+void TimeShiftHandle::Enter(bool, WavacityProject *)
 {
 #ifdef EXPERIMENTAL_TRACK_PANEL_HIGHLIGHTING
    mChangeHighlight = RefreshCode::RefreshCell;
@@ -44,7 +44,7 @@ void TimeShiftHandle::Enter(bool, WavvyProject *)
 }
 
 HitTestPreview TimeShiftHandle::HitPreview
-(const WavvyProject *WXUNUSED(pProject), bool unsafe)
+(const WavacityProject *WXUNUSED(pProject), bool unsafe)
 {
    static auto disabledCursor =
       ::MakeCursor(wxCURSOR_NO_ENTRY, DisabledCursorXpm, 16, 16);
@@ -258,7 +258,7 @@ bool CoarseTrackShifter::SyncLocks()
 }
 
 template<> auto MakeTrackShifter::Implementation() -> Function {
-   return [](Track &track, WavvyProject&) {
+   return [](Track &track, WavacityProject&) {
       return std::make_unique<CoarseTrackShifter>(track);
    };
 }
@@ -267,7 +267,7 @@ static MakeTrackShifter registerMakeTrackShifter;
 void RegisterTrackShifter() {}
 
 void ClipMoveState::Init(
-   WavvyProject &project,
+   WavacityProject &project,
    Track &capturedTrack,
    TrackShifter::HitTestResult hitTestResult,
    std::unique_ptr<TrackShifter> pHit,
@@ -454,7 +454,7 @@ SnapPointArray FindCandidates(
 }
 
 UIHandle::Result TimeShiftHandle::Click
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
@@ -810,7 +810,7 @@ bool TimeShiftHandle::DoSlideVertical
 }
 
 UIHandle::Result TimeShiftHandle::Drag
-(const TrackPanelMouseEvent &evt, WavvyProject *pProject)
+(const TrackPanelMouseEvent &evt, WavacityProject *pProject)
 {
    using namespace RefreshCode;
    const bool unsafe = ProjectAudioIO::Get( *pProject ).IsAudioActive();
@@ -901,7 +901,7 @@ UIHandle::Result TimeShiftHandle::Drag
 }
 
 HitTestPreview TimeShiftHandle::Preview
-(const TrackPanelMouseState &, WavvyProject *pProject)
+(const TrackPanelMouseState &, WavacityProject *pProject)
 {
    // After all that, it still may be unsafe to drag.
    // Even if so, make an informative cursor change from default to "banned."
@@ -910,7 +910,7 @@ HitTestPreview TimeShiftHandle::Preview
 }
 
 UIHandle::Result TimeShiftHandle::Release
-(const TrackPanelMouseEvent &, WavvyProject *pProject,
+(const TrackPanelMouseEvent &, WavacityProject *pProject,
  wxWindow *)
 {
    using namespace RefreshCode;
@@ -953,7 +953,7 @@ UIHandle::Result TimeShiftHandle::Release
    return result | FixScrollbars;
 }
 
-UIHandle::Result TimeShiftHandle::Cancel(WavvyProject *pProject)
+UIHandle::Result TimeShiftHandle::Cancel(WavacityProject *pProject)
 {
    ProjectHistory::Get( *pProject ).RollbackState();
    return RefreshCode::RefreshAll;

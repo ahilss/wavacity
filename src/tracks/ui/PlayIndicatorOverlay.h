@@ -8,15 +8,15 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_PLAY_INDICATOR_OVERLAY__
-#define __WAVVY_PLAY_INDICATOR_OVERLAY__
+#ifndef __WAVACITY_PLAY_INDICATOR_OVERLAY__
+#define __WAVACITY_PLAY_INDICATOR_OVERLAY__
 
 #include <wx/event.h> // to inherit
 #include "../../MemoryX.h"
 #include "../../ClientData.h"
 #include "../../widgets/Overlay.h" // to inherit
 
-class WavvyProject;
+class WavacityProject;
 
 
 // Common class for overlaying track panel or ruler
@@ -26,7 +26,7 @@ class PlayIndicatorOverlayBase
    , public ClientData::Base
 {
 public:
-   PlayIndicatorOverlayBase(WavvyProject *project, bool isMaster);
+   PlayIndicatorOverlayBase(WavacityProject *project, bool isMaster);
    virtual ~PlayIndicatorOverlayBase();
 
    void Update(int newIndicatorX) { mNewIndicatorX = newIndicatorX; }
@@ -38,7 +38,7 @@ private:
 
 protected:
 
-   WavvyProject *const mProject;
+   WavacityProject *const mProject;
    const bool mIsMaster;
    int mLastIndicatorX { -1 };
    int mNewIndicatorX { -1 };
@@ -51,7 +51,7 @@ class PlayIndicatorOverlay final : public PlayIndicatorOverlayBase
 {
 public:
    explicit
-   PlayIndicatorOverlay(WavvyProject *project);
+   PlayIndicatorOverlay(WavacityProject *project);
 
 private:
    void OnTimer(wxCommandEvent &event);

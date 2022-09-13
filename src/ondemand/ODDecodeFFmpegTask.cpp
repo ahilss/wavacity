@@ -9,7 +9,7 @@
 
 ******************************************************************/
 
-#include "../Wavvy.h"   // needed before FFmpeg.h // for USE_* macros
+#include "../Wavacity.h"   // needed before FFmpeg.h // for USE_* macros
 #include "../blockfile/ODDecodeBlockFile.h" // base class
 #include "ODDecodeFFmpegTask.h"
 

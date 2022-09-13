@@ -13,7 +13,7 @@
 
 *//*******************************************************************/
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 #include "TimeDialog.h"
 
 #include <wx/defs.h>

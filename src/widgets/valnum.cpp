@@ -19,7 +19,7 @@
 // headers
 // ----------------------------------------------------------------------------
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "valnum.h"
 
 // For compilers that support precompilation, includes "wx.h".
@@ -27,7 +27,7 @@
 
 #include <wx/setup.h> // for wxUSE_* macros
 
-#include "WavvyMessageBox.h"
+#include "WavacityMessageBox.h"
 #include "../Internat.h"
 
 #ifdef __BORLANDC__
@@ -101,7 +101,7 @@ bool NumValidatorBase::Validate(wxWindow *parent)
 
    if ( !res )
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          errmsg,
          XO("Validation error"),
          wxOK | wxICON_ERROR,

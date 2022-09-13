@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_LABEL_TRACK_CONTROLS__
-#define __WAVVY_LABEL_TRACK_CONTROLS__
+#ifndef __WAVACITY_LABEL_TRACK_CONTROLS__
+#define __WAVACITY_LABEL_TRACK_CONTROLS__
 
 #include "../../ui/CommonTrackControls.h" // to inherit
 
@@ -26,7 +26,7 @@ public:
 
    std::vector<UIHandlePtr> HitTest
       (const TrackPanelMouseState &state,
-       const WavvyProject *pProject) override;
+       const WavacityProject *pProject) override;
 
    PopupMenuTable *GetMenuExtension(Track *pTrack) override;
 };

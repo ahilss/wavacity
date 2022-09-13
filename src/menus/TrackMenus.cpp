@@ -1,4 +1,4 @@
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "../Experimental.h"
 
 #include "../CommonCommandFlags.h"
@@ -31,7 +31,7 @@
 #include "../prefs/QualityPrefs.h"
 #include "../tracks/playabletrack/wavetrack/ui/WaveTrackControls.h"
 #include "../widgets/ASlider.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 #include "../widgets/ProgressDialog.h"
 
 #include <wx/combobox.h>
@@ -47,7 +47,7 @@
 namespace {
 
 void DoMixAndRender
-(WavvyProject &project, bool toNewTrack)
+(WavacityProject &project, bool toNewTrack)
 {
    const auto &settings = ProjectSettings::Get( project );
    auto &tracks = TrackList::Get( project );
@@ -154,7 +154,7 @@ void DoMixAndRender
    }
 }
 
-void DoPanTracks(WavvyProject &project, float PanValue)
+void DoPanTracks(WavacityProject &project, float PanValue)
 {
    auto &tracks = TrackList::Get( project );
    auto &window = ProjectWindow::Get( project );
@@ -198,7 +198,7 @@ static const std::vector< ComponentInterfaceSymbol >
 const size_t kAlignLabelsCount(){ return alignLabels().size(); }
 
 void DoAlign
-(WavvyProject &project, int index, bool moveSel)
+(WavacityProject &project, int index, bool moveSel)
 {
    auto &tracks = TrackList::Get( project );
    auto &selectedRegion = ViewInfo::Get( project ).selectedRegion;
@@ -348,10 +348,10 @@ void DoAlign
 // Write timing data to a file; useful for calibrating AUDIO_WORK_UNIT,
 // MIDI_WORK_UNIT, MATRIX_WORK_UNIT, and SMOOTHING_WORK_UNIT coefficients
 // Data is written to timing-data.txt; look in
-//     wavvy-src/win/Release/modules/
+//     wavacity-src/win/Release/modules/
 #define COLLECT_TIMING_DATA
 
-// Wavvy Score Align Progress class -- progress reports come here
+// Wavacity Score Align Progress class -- progress reports come here
 class ASAProgress final : public SAProgress {
  private:
    float mTotalWork;
@@ -485,11 +485,11 @@ long mixer_process(void *mixer, float **buffer, long n)
 #endif // EXPERIMENTAL_SCOREALIGN
 
 enum{
-   kWavvySortByTime = (1 << 1),
-   kWavvySortByName = (1 << 2),
+   kWavacitySortByTime = (1 << 1),
+   kWavacitySortByName = (1 << 2),
 };
 
-void DoSortTracks( WavvyProject &project, int flags )
+void DoSortTracks( WavacityProject &project, int flags )
 {
    auto GetTime = [](const Track *t) {
       return t->TypeSwitch< double >(
@@ -532,7 +532,7 @@ void DoSortTracks( WavvyProject &project, int flags )
          for (ndx = 0; ndx < size;) {
             Track &arrTrack = **arr[ndx].first;
             auto channels = TrackList::Channels(&arrTrack);
-            if(flags & kWavvySortByName) {
+            if(flags & kWavacitySortByName) {
                //do case insensitive sort - cmpNoCase returns less than zero if
                // the string is 'less than' its argument
                //also if we have case insensitive equality, then we need to sort
@@ -547,7 +547,7 @@ void DoSortTracks( WavvyProject &project, int flags )
                   break;
             }
             //sort by time otherwise
-            else if(flags & kWavvySortByTime) {
+            else if(flags & kWavacitySortByTime) {
                auto time1 = TrackList::Channels(track.get()).min( GetTime );
 
                //get candidate's (from sorted array) time
@@ -566,7 +566,7 @@ void DoSortTracks( WavvyProject &project, int flags )
    tracks.Permute(arr);
 }
 
-void SetTrackGain(WavvyProject &project, WaveTrack * wt, LWSlider * slider)
+void SetTrackGain(WavacityProject &project, WaveTrack * wt, LWSlider * slider)
 {
    wxASSERT(wt);
    float newValue = slider->Get();
@@ -580,7 +580,7 @@ void SetTrackGain(WavvyProject &project, WaveTrack * wt, LWSlider * slider)
    TrackPanel::Get( project ).RefreshTrack(wt);
 }
 
-void SetTrackPan(WavvyProject &project, WaveTrack * wt, LWSlider * slider)
+void SetTrackPan(WavacityProject &project, WaveTrack * wt, LWSlider * slider)
 {
    wxASSERT(wt);
    float newValue = slider->Get();
@@ -682,9 +682,9 @@ void OnNewTimeTrack(const CommandContext &context)
    auto &window = ProjectWindow::Get( project );
 
    if ( *tracks.Any<TimeTrack>().begin() ) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
-"This version of Wavvy only allows one time track for each project window.") );
+"This version of Wavacity only allows one time track for each project window.") );
       return;
    }
 
@@ -949,7 +949,7 @@ void OnScoreAlign(const CommandContext &context)
    if(numWaveTracksSelected == 0 ||
       numNoteTracksSelected != 1 ||
       numOtherTracksSelected != 0){
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Please select at least one audio track and one MIDI track.") );
       return;
    }
@@ -1020,7 +1020,7 @@ void OnScoreAlign(const CommandContext &context)
 
    if (result == SA_SUCCESS) {
       tracks->Replace(nt, holder);
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Alignment completed: MIDI from %.2f to %.2f secs, Audio from %.2f to %.2f secs.")
             .Format(
                params.mMidiStart, params.mMidiEnd,
@@ -1028,7 +1028,7 @@ void OnScoreAlign(const CommandContext &context)
       ProjectHistory::Get( project )
          .PushState(XO("Sync MIDI with Audio"), XO("Sync MIDI with Audio"));
    } else if (result == SA_TOOSHORT) {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO(
 "Alignment error: input too short: MIDI from %.2f to %.2f secs, Audio from %.2f to %.2f secs.")
             .Format(
@@ -1040,7 +1040,7 @@ void OnScoreAlign(const CommandContext &context)
       return; // no message when user cancels alignment
    } else {
       //project.OnUndo(); // recover any changes to note track
-      WavvyMessageBox( XO("Internal error reported by alignment process.") );
+      WavacityMessageBox( XO("Internal error reported by alignment process.") );
    }
 }
 #endif /* EXPERIMENTAL_SCOREALIGN */
@@ -1048,7 +1048,7 @@ void OnScoreAlign(const CommandContext &context)
 void OnSortTime(const CommandContext &context)
 {
    auto &project = context.project;
-   DoSortTracks(project, kWavvySortByTime);
+   DoSortTracks(project, kWavacitySortByTime);
 
    ProjectHistory::Get( project )
       .PushState(XO("Tracks sorted by time"), XO("Sort by Time"));
@@ -1057,7 +1057,7 @@ void OnSortTime(const CommandContext &context)
 void OnSortName(const CommandContext &context)
 {
    auto &project = context.project;
-   DoSortTracks(project, kWavvySortByName);
+   DoSortTracks(project, kWavacitySortByName);
 
    ProjectHistory::Get( project )
       .PushState(XO("Tracks sorted by name"), XO("Sort by Name"));
@@ -1273,9 +1273,9 @@ void OnTrackMoveBottom(const CommandContext &context)
 
 } // namespace
 
-static CommandHandlerObject &findCommandHandler(WavvyProject &) {
+static CommandHandlerObject &findCommandHandler(WavacityProject &) {
    // Handler is not stateful.  Doesn't need a factory registered with
-   // WavvyProject.
+   // WavacityProject.
    static TrackActions::Handler instance;
    return instance;
 };
@@ -1316,7 +1316,7 @@ BaseItemSharedPtr TracksMenu()
             // Stereo to Mono is an oddball command that is also subject to control
             // by the plug-in manager, as if an effect.  Decide whether to show or
             // hide it.
-            [](WavvyProject&) -> BaseItemPtr {
+            [](WavacityProject&) -> BaseItemPtr {
                const PluginID ID =
                   EffectManager::Get().GetEffectByIdentifier(wxT("StereoToMono"));
                const PluginDescriptor *plug = PluginManager::Get().GetPlugin(ID);

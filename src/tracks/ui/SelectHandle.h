@@ -8,8 +8,8 @@ Paul Licameli split from TrackPanel.cpp
 
 **********************************************************************/
 
-#ifndef __WAVVY_SELECT_HANDLE__
-#define __WAVVY_SELECT_HANDLE__
+#ifndef __WAVACITY_SELECT_HANDLE__
+#define __WAVACITY_SELECT_HANDLE__
 
 #include "../../UIHandle.h"
 #include "../../SelectedRegion.h"
@@ -41,7 +41,7 @@ public:
    // key state.
    static UIHandlePtr HitTest
       (std::weak_ptr<SelectHandle> &holder,
-       const TrackPanelMouseState &state, const WavvyProject *pProject,
+       const TrackPanelMouseState &state, const WavacityProject *pProject,
        const std::shared_ptr<TrackView> &pTrackView);
 
    SelectHandle &operator=(const SelectHandle&) = default;
@@ -50,29 +50,29 @@ public:
 
    bool IsClicked() const;
 
-   void SetUseSnap(bool use, WavvyProject *pProject);
-   void Enter(bool forward, WavvyProject *pProject) override;
+   void SetUseSnap(bool use, WavacityProject *pProject);
+   void Enter(bool forward, WavacityProject *pProject) override;
 
    bool HasSnap() const;
    bool HasEscape() const override;
 
-   bool Escape(WavvyProject *pProject) override;
+   bool Escape(WavacityProject *pProject) override;
 
    Result Click
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    Result Drag
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject) override;
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject) override;
 
    HitTestPreview Preview
-      (const TrackPanelMouseState &state, WavvyProject *pProject)
+      (const TrackPanelMouseState &state, WavacityProject *pProject)
       override;
 
    Result Release
-      (const TrackPanelMouseEvent &event, WavvyProject *pProject,
+      (const TrackPanelMouseEvent &event, WavacityProject *pProject,
        wxWindow *pParent) override;
 
-   Result Cancel(WavvyProject*) override;
+   Result Cancel(WavacityProject*) override;
 
    static UIHandle::Result NeedChangeHighlight
       (const SelectHandle &oldState,
@@ -81,11 +81,11 @@ public:
 private:
    std::weak_ptr<Track> FindTrack();
 
-   void Connect(WavvyProject *pProject);
+   void Connect(WavacityProject *pProject);
 
-   void StartSelection(WavvyProject *pProject);
+   void StartSelection(WavacityProject *pProject);
    void AdjustSelection
-      (WavvyProject *pProject,
+      (WavacityProject *pProject,
        ViewInfo &viewInfo, int mouseXCoordinate, int trackLeftEdge,
        Track *pTrack);
    void AssignSelection(ViewInfo &viewInfo, double selend, Track *pTrack);
@@ -105,7 +105,7 @@ private:
       (SpectrumAnalyst &analyst,
        const ViewInfo &viewInfo, const WaveTrack *pTrack);
    void MoveSnappingFreqSelection
-      (WavvyProject *pProject, ViewInfo &viewInfo, int mouseYCoordinate,
+      (WavacityProject *pProject, ViewInfo &viewInfo, int mouseYCoordinate,
        int trackTopEdge,
        int trackHeight, TrackView *pTrackView);
 public:

@@ -8,10 +8,10 @@ Paul Licameli
 
 **********************************************************************/
 
-#ifndef __WAVVY_TRACK_PANEL_DRAWABLE__
-#define __WAVVY_TRACK_PANEL_DRAWABLE__
+#ifndef __WAVACITY_TRACK_PANEL_DRAWABLE__
+#define __WAVACITY_TRACK_PANEL_DRAWABLE__
 
-#include "Wavvy.h"
+#include "Wavacity.h"
 
 #include <wx/gdicmn.h> // for wxRect
 
@@ -19,7 +19,7 @@ struct TrackPanelDrawingContext;
 class wxRect;
 
 /// \brief Drawing interface common to cells, groups of cells, and temporary handles in CellularPanel
-class WAVVY_DLL_API TrackPanelDrawable {
+class WAVACITY_DLL_API TrackPanelDrawable {
 public:
    virtual ~TrackPanelDrawable() = 0;
 

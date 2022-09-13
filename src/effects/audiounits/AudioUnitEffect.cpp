@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "../../Wavvy.h" // for USE_* macros
+#include "../../Wavacity.h" // for USE_* macros
 
 #if USE_AUDIO_UNITS
 #include "AudioUnitEffect.h"
@@ -42,7 +42,7 @@
 #include <wx/tokenzr.h>
 
 #include "../../ShuttleGui.h"
-#include "../../widgets/WavvyMessageBox.h"
+#include "../../widgets/WavacityMessageBox.h"
 #include "../../widgets/valnum.h"
 #include "../../widgets/wxPanelWrapper.h"
 
@@ -53,7 +53,7 @@
 //
 // The advantages of XML format is less chance of failures occurring
 // when exporting.  But, it can take a bit more space per preset int
-// the Wavvy settings file.
+// the Wavacity settings file.
 //
 // Using binary for now.  Use kCFPropertyListXMLFormat_v1_0 if XML
 // format is desired.
@@ -222,13 +222,13 @@ public:
 // ============================================================================
 // Module registration entry point
 //
-// This is the symbol that Wavvy looks for when the module is built as a
+// This is the symbol that Wavacity looks for when the module is built as a
 // dynamic library.
 //
-// When the module is builtin to Wavvy, we use the same function, but it is
+// When the module is builtin to Wavacity, we use the same function, but it is
 // declared static so as not to clash with other builtin modules.
 // ============================================================================
-DECLARE_MODULE_ENTRY(WavvyModule)
+DECLARE_MODULE_ENTRY(WavacityModule)
 {
    // Create and register the importer
    // Trust the module manager not to leak this
@@ -287,7 +287,7 @@ wxString AudioUnitEffectsModule::GetVersion()
 
 TranslatableString AudioUnitEffectsModule::GetDescription()
 {
-   return XO("Provides Audio Unit Effects support to Wavvy");
+   return XO("Provides Audio Unit Effects support to Wavacity");
 }
 
 // ============================================================================
@@ -566,7 +566,7 @@ void AudioUnitEffectOptionsDialog::PopulateOrExchange(ShuttleGui & S)
          {
             S.AddVariableText(XO(
 "As part of their processing, some Audio Unit effects must delay returning "
-"audio to Wavvy. When not compensating for this delay, you will "
+"audio to Wavacity. When not compensating for this delay, you will "
 "notice that small silences have been inserted into the audio. "
 "Enabling this option will provide that compensation, but it may "
 "not work for all Audio Unit effects."),
@@ -817,7 +817,7 @@ void AudioUnitEffectImportDialog::OnOk(wxCommandEvent & evt)
 
       if (!msg.empty())
       {
-         WavvyMessageBox(
+         WavacityMessageBox(
             XO("Could not import \"%s\" preset\n\n%s").Format(name, msg),
             XO("Import Audio Unit Presets"),
             wxOK | wxCENTRE,
@@ -1899,7 +1899,7 @@ void AudioUnitEffect::ExportPresets()
    auto msg = Export(path);
    if (!msg.empty())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not export \"%s\" preset\n\n%s").Format(path, msg),
          XO("Export Audio Unit Presets"),
          wxOK | wxCENTRE,
@@ -1941,7 +1941,7 @@ void AudioUnitEffect::ImportPresets()
    auto msg = Import(path);
    if (!msg.empty())
    {
-      WavvyMessageBox(
+      WavacityMessageBox(
          XO("Could not import \"%s\" preset\n\n%s").Format(path, msg),
          XO("Import Audio Unit Presets"),
          wxOK | wxCENTRE,

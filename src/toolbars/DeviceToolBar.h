@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_DEVICE_TOOLBAR__
-#define __WAVVY_DEVICE_TOOLBAR__
+#ifndef __WAVACITY_DEVICE_TOOLBAR__
+#define __WAVACITY_DEVICE_TOOLBAR__
 
 #include <vector>
 #include "ToolBar.h"
@@ -19,17 +19,17 @@ class wxPoint;
 class wxChoice;
 struct DeviceSourceMap;
 
-class WavvyProject;
+class WavacityProject;
 
 class DeviceToolBar final : public ToolBar {
 
  public:
 
-   DeviceToolBar( WavvyProject &project );
+   DeviceToolBar( WavacityProject &project );
    virtual ~DeviceToolBar();
 
-   static DeviceToolBar &Get( WavvyProject &project );
-   static const DeviceToolBar &Get( const WavvyProject &project );
+   static DeviceToolBar &Get( WavacityProject &project );
+   static const DeviceToolBar &Get( const WavacityProject &project );
 
    void Create(wxWindow * parent) override;
 
@@ -46,7 +46,7 @@ class DeviceToolBar final : public ToolBar {
    void OnChoice(wxCommandEvent & event);
 
    /// When the prefs don't exist this value is used.
-   /// 883 takes a complete row in the default initial size of Wavvy.
+   /// 883 takes a complete row in the default initial size of Wavacity.
    int GetInitialWidth()  override{ return 883; }
    int GetMinToolbarWidth() override { return 350; }
 

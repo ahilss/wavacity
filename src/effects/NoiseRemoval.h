@@ -9,10 +9,10 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_NOISE_REMOVAL__
-#define __WAVVY_EFFECT_NOISE_REMOVAL__
+#ifndef __WAVACITY_EFFECT_NOISE_REMOVAL__
+#define __WAVACITY_EFFECT_NOISE_REMOVAL__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include "../Experimental.h"
 

@@ -20,10 +20,10 @@ around to NEW positions.
 
 *//**********************************************************************/
 
-#ifndef __WAVVY_WIDGETS_HtmlWindow__
-#define __WAVVY_WIDGETS_HtmlWindow__
+#ifndef __WAVACITY_WIDGETS_HtmlWindow__
+#define __WAVACITY_WIDGETS_HtmlWindow__
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 
 #include <wx/setup.h> // for wxUSE_* macros
 #include <wx/defs.h>
@@ -33,7 +33,7 @@ around to NEW positions.
 /// HtmlWindow Class
 ////////////////////////////////////////////////////////////
 
-class WAVVY_DLL_API HtmlWindow /* not final */ : public wxHtmlWindow
+class WAVACITY_DLL_API HtmlWindow /* not final */ : public wxHtmlWindow
 {
 public:
    HtmlWindow(wxWindow *parent,

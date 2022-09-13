@@ -15,7 +15,7 @@
 
 *//*******************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "TruncSilence.h"
 #include "LoadEffects.h"
 
@@ -35,7 +35,7 @@
 #include "../ShuttleGui.h"
 #include "../WaveTrack.h"
 #include "../widgets/valnum.h"
-#include "../widgets/WavvyMessageBox.h"
+#include "../widgets/WavacityMessageBox.h"
 
 class Enums {
 public:
@@ -141,7 +141,7 @@ EffectTruncSilence::EffectTruncSilence()
 
    SetLinearEffectFlag(false);
 
-   // This used to be changeable via the wavvy.cfg/registry.  Doubtful that was
+   // This used to be changeable via the wavacity.cfg/registry.  Doubtful that was
    // ever done.
    //
    // Original comment:

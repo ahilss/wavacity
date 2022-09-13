@@ -8,12 +8,12 @@
  
  **********************************************************************/
 
-#include "../Wavvy.h"
+#include "../Wavacity.h"
 #include "RealtimeEffectManager.h"
 
 #include "../Experimental.h"
 
-#include "wavvy/EffectInterface.h"
+#include "wavacity/EffectInterface.h"
 #include "MemoryX.h"
 
 #include <atomic>

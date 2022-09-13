@@ -6,7 +6,7 @@
 
 ******************************************************************/
 
-#include "Wavvy.h" // for USE_* macros
+#include "Wavacity.h" // for USE_* macros
 #include "DeviceManager.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".

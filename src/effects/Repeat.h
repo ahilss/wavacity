@@ -8,8 +8,8 @@
 
 **********************************************************************/
 
-#ifndef __WAVVY_EFFECT_REPEAT__
-#define __WAVVY_EFFECT_REPEAT__
+#ifndef __WAVACITY_EFFECT_REPEAT__
+#define __WAVACITY_EFFECT_REPEAT__
 
 #include "Effect.h"
 
