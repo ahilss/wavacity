@@ -62,7 +62,7 @@
 // Increment as appropriate every time we release a NEW version.
 #define WAVACITY_VERSION   0
 #define WAVACITY_RELEASE   1
-#define WAVACITY_REVISION  34
+#define WAVACITY_REVISION  35
 #define WAVACITY_MODLEVEL  0
 
 #if defined(IS_BETA)
