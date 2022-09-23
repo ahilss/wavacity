@@ -757,7 +757,13 @@ void SpectrogramSettingsHandler::OnSpectrogramSettings(wxCommandEvent &)
 
    auto title = XO("%s:").Format( pTrack->GetName() );
    ViewSettingsDialog *dialog = safenew ViewSettingsDialog(
-      mpData->pParent, mpData->project, title, factories, page);
+#ifdef __WXWASM__
+// TODO(ahilss): debug dangling reference when using mpData->pParent
+      NULL,
+#else
+      mpData->pParent,
+#endif
+      mpData->project, title, factories, page);
 
    dialog->ShowModal([this, dialog](int retCode) {
       if (retCode != 0) {
