@@ -40,10 +40,6 @@ Paul Licameli split from ProjectManager.cpp
 #include "widgets/Warning.h"
 #include "widgets/WavacityMessageBox.h"
 
-#ifdef __WXWASM__
-#include "emscripten.h"
-#endif
-
 static WavacityProject::AttachedObjects::RegisteredFactory
 sProjectAudioManagerKey {
    []( WavacityProject &project ) {
@@ -290,17 +286,6 @@ void ProjectAudioManager::PlayCurrentRegion(bool looped /* = false */,
       return;
 
    WavacityProject *p = &mProject;
-
-#ifdef __WXWASM__
-   if (EM_ASM_INT({return isAudioPlaybackSupported();}) == 0) {
-      auto &window = GetProjectFrame( mProject );
-         ShowErrorDialog(&window, XO("Error"),
-                         XO("Audio playback not supported on Safari.\nTry opening in desktop Chrome or Firefox."),
-                         wxT("Error_opening_sound_device"));
-      return;
-   }
-
-#endif
 
    {
 
